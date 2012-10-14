@@ -1,0 +1,3 @@
+glob:*.swp
+glob:VitalStats/Bin/*
+glob:VitalStats/obj/*
