@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace VitalStats
 {
-    public static class GlobalState
+    public static class ViewState
     {
         public static bool IsLaunching { get; set; }
     }

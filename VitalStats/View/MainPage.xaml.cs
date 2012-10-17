@@ -24,7 +24,7 @@ namespace VitalStats.View
         {
             base.OnNavigatedTo(e);
 
-            if (!GlobalState.IsLaunching && this.State.ContainsKey("Profiles"))
+            if (!ViewState.IsLaunching && this.State.ContainsKey("Profiles"))
             {
                 vm = (ViewModel)this.State["Profiles"];
             }
@@ -48,7 +48,17 @@ namespace VitalStats.View
             {
                 this.State.Add("Profiles", vm);
             }
-            GlobalState.IsLaunching = false;
+            ViewState.IsLaunching = false;
+        }
+
+        private void Button_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
         }
 
     }
@@ -77,5 +87,19 @@ namespace VitalStats.View
 
     }
 
+    // Convertor for profile tile text
+    public class WordsOnNewlines : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            string s = (string)value;
+            return s.Replace(" ", System.Environment.NewLine);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            return null;    
+        }
+    }
 
 }
