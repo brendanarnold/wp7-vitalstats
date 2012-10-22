@@ -21,44 +21,39 @@ namespace VitalStats.View
             InitializeComponent();
         }
 
-        private void ConfirmLeave()
-        {
-        }
 
-        public void GoToProfilePage()
+        private void ConfirmLeave(Uri uri)
         {
-            NavigationService.Navigate(new Uri("/View/MainPage.xaml", UriKind.Relative));
-        }
-
-        public void cancelBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-//            this.ConfirmLeave();
-            if ((this.nameTextBox.Text != String.Empty) || (bool)this.protectCheckBox.IsChecked)
+            MessageBoxResult m = MessageBox.Show("You have entered some profile data which will be lost if you leave this page. Are you sure you want to leave this page?", 
+                "Confirm leave page", MessageBoxButton.OKCancel);    
+            if (m == MessageBoxResult.OK) 
             {
-                CustomMessageBox messageBox = new CustomMessageBox()
-                {
-                    Caption = "Confirm leave page",
-                    Message = "You have entered some profile data which will be lost if you leave this page. Are you sure you want to leave this page?",
-                    LeftButtonContent = "no",
-                    RightButtonContent = "yes"
-                };
+                NavigationService.Navigate(uri);
+            }
+        }
 
-                messageBox.Dismissed += (s1, e1) =>
-                {
-                    if (e1.Result == CustomMessageBoxResult.RightButton)
-                    {
-                        GoToProfilePage();
-                    }
-                };
-                messageBox.Show();
+        private bool DataOnPage()
+        {
+            // Returns true if data on page that will need to be saved
+            if (this.nameTextBox.Text != String.Empty)
+                return true;
+            if ((bool)this.protectCheckBox.IsChecked)
+                return true;
+            return false;
+        }
+
+        private void cancelBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+            if (this.DataOnPage())
+            {
+                this.ConfirmLeave(new Uri("/View/MainPage.xaml", UriKind.Relative));
+                
             }
             else
             {
-                GoToProfilePage();
+                NavigationService.Navigate(new Uri("/View/MainPage.xaml", UriKind.Relative));
             }
-
-
-
 
 
 		}
