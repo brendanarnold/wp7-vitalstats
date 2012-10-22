@@ -11,13 +11,18 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using VitalStats.Model;
 using System.IO.IsolatedStorage;
+using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace VitalStats.ViewModelNamespace
 {
+    [DataContract]
     public class ViewModel
     {
+        [DataMember]
         public ObservableCollection<Profile> Profiles { get; set; }
 
+        
         public void GetProfiles()
         {
             if (IsolatedStorageSettings.ApplicationSettings.Count > 0)
@@ -26,19 +31,11 @@ namespace VitalStats.ViewModelNamespace
             }
             else
             {
-                this.GetDefaultProfiles();
+                this.Profiles = new ObservableCollection<Profile>();
             }
         }
-
-        public void GetDefaultProfiles()
-        {
-            ObservableCollection<Profile> profiles = new ObservableCollection<Profile>{
-                new Profile() { Name="John Smith", IsProtected=false},
-                new Profile() { Name = "Me", IsProtected=false},
-                new Profile() { Name = "Jane Smith", IsProtected=true}
-            };
-            this.Profiles = profiles;
-        }
+    
+    
 
         public void GetSavedProfiles()
         {
@@ -69,5 +66,15 @@ namespace VitalStats.ViewModelNamespace
             settings.Save();
         }
 
+
+        internal void AddNewProfile(string name, bool isProtected)
+        {
+            this.Profiles.Add(new Profile() { Name = name, IsProtected = isProtected });
+        }
+
+        internal void DeleteProfile(Profile profile)
+        {
+            this.Profiles.Remove(profile);
+        }
     }
 }

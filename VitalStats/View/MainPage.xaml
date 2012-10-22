@@ -6,24 +6,52 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:VitalStats.View"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:VitalStats_ViewModelNamespace="clr-namespace:VitalStats.ViewModelNamespace"
     x:Class="VitalStats.View.MainPage"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
     <phone:PhoneApplicationPage.Resources>
+    	<VitalStats_ViewModelNamespace:ViewModel x:Key="ViewModelSampleData" d:IsDataSource="True"/>
+		<VitalStats_ViewModelNamespace:ViewModel x:Key="ViewModelDataSource" d:IsDataSource="True"/>
+		
     	<views:WordsOnNewlines x:Key="WordsOnNewlines"/>
     	<views:BoolToVisibility x:Key="BoolToVisibility" />
+		
+		<Style x:Key="profileButtonStyle" TargetType="Button">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="Button">
+    						<Canvas x:Name="profileCanvas" Background="{StaticResource PhoneAccentBrush}" Width="150" Height="150">
+    						<Image x:Name="isProtectedImg" Height="60" Canvas.Left="96" Canvas.Top="97" Width="60" Source="/VitalStats;component/Images/Lock.png" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}"/>
+    						<ContentPresenter Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}"/>
+    					</Canvas>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    		<Setter Property="FontSize" Value="29.333"/>
+    	</Style>
+
+		
     	<DataTemplate x:Key="ItemTemplate">
     		<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="150" Margin="12,0,0,25" Style="{StaticResource profileButtonStyle}" Width="150">
-    			<i:Interaction.Triggers>
-    				<i:EventTrigger EventName="Tap">
-    					<ec:NavigateToPageAction/>
-    				</i:EventTrigger>
-    			</i:Interaction.Triggers>
+				<toolkit:ContextMenuService.ContextMenu>
+					<toolkit:ContextMenu>
+						<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
+						<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
+					</toolkit:ContextMenu>
+				</toolkit:ContextMenuService.ContextMenu>
     		</Button>
     	</DataTemplate>
+
+
+		
     </phone:PhoneApplicationPage.Resources>
     
 	<phone:PhoneApplicationPage.FontFamily>
@@ -42,27 +70,30 @@
             	<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
             	<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile"/>
+            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding Source={StaticResource DesignDataSource}}">
-        <Grid.RowDefinitions>
-        	<RowDefinition Height="Auto"/>
-        	<RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+	<Grid x:Name="LayoutRoot">
+		<Grid x:Name="Layout" Background="Transparent">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="VITAL STATISTICS" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="profiles" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+			<!--TitlePanel contains the name of the application and page title-->
+			<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+				<TextBlock x:Name="ApplicationTitle" Text="VITAL STATISTICS" Style="{StaticResource PhoneTextNormalStyle}"/>
+				<TextBlock x:Name="PageTitle" Text="profiles" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			</StackPanel>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox x:Name="profileListBox" ItemsSource="{Binding Profiles}" ItemTemplate="{StaticResource ItemTemplate}"/>
-        </Grid>
-    </Grid>
+			<!--ContentPanel - place additional content here-->
+			<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" >
+				<ListBox x:Name="profileListBox" ItemsSource="{Binding Profiles}" ItemTemplate="{StaticResource ItemTemplate}" d:DataContext="{d:DesignData /SampleData/ViewModelSampleData.xaml}"/>
+			</Grid>
+		</Grid>
+	
+	
+	</Grid>
 
 </phone:PhoneApplicationPage>

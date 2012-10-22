@@ -4,6 +4,10 @@ using System.Windows;
 using Microsoft.Phone.Controls;
 using System.Globalization;
 using VitalStats.ViewModelNamespace;
+using System.Windows.Controls;
+using VitalStats.Model;
+using System.Collections.Generic;
+using Microsoft.Phone.Shell;
 
 namespace VitalStats.View
 {
@@ -24,15 +28,34 @@ namespace VitalStats.View
         {
             base.OnNavigatedTo(e);
 
-            if (!ViewState.IsLaunching && this.State.ContainsKey("Profiles"))
+
+            if (!ViewState.IsLaunching && PhoneApplicationService.Current.State.ContainsKey("Profiles"))
             {
-                vm = (ViewModel)this.State["Profiles"];
+                vm = (ViewModel)PhoneApplicationService.Current.State["Profiles"];
             }
             else
             {
                 vm.GetProfiles();
             }
-            profileListBox.DataContext = from Profile in vm.Profiles select Profile;
+
+            //vm.AddNewProfile("Foo", true);
+            profileListBox.ItemsSource = vm.Profiles;
+
+            string action;
+            if (NavigationContext.QueryString.TryGetValue("action", out action))
+            {
+                if (action == MainPage.UriActions.AddProfile)
+                {
+                    string s = "", name = "";
+                    bool isProtected = false;
+                    NavigationContext.QueryString.TryGetValue("name", out name);
+                    NavigationContext.QueryString.TryGetValue("isProtected", out s);
+                    bool.TryParse(s, out isProtected);
+                    this.vm.AddNewProfile(name, isProtected);
+
+                }
+            }
+
 
 
         }
@@ -40,28 +63,63 @@ namespace VitalStats.View
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            if (this.State.ContainsKey("Profiles"))
+            if (PhoneApplicationService.Current.State.ContainsKey("Profiles"))
             {
-                this.State["Profiles"] = vm;
+                PhoneApplicationService.Current.State["Profiles"] = vm;
             }
             else
             {
-                this.State.Add("Profiles", vm);
+                PhoneApplicationService.Current.State.Add("Profiles", vm);
             }
             ViewState.IsLaunching = false;
         }
 
-        private void Button_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            Profile profile = ((sender as MenuItem).DataContext) as Profile;
+            CustomMessageBox messageBox = new CustomMessageBox()
+            {
+                Caption = "Confirm delete",
+                Message = String.Format("Are you sure you want to delete the profile for '{0}'?", profile.Name),
+                LeftButtonContent = "Yes",
+                RightButtonContent = "No",
+                IsFullScreen = false
+            };
+            messageBox.Dismissed += (s1, e1) =>
+                {
+                    switch (e1.Result)
+                    {
+                        case CustomMessageBoxResult.LeftButton:
+                            
+                            this.vm.DeleteProfile(profile);
+                            break;
+                        case CustomMessageBoxResult.RightButton:
+                            // Do nothing
+                            break;
+                        default:
+                            // Do nothing
+                            break;
+                    }
+
+                };
+            messageBox.Show();
         }
 
-        private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+        	NavigationService.Navigate(new Uri("/View/AddProfilePage.xaml", UriKind.Relative));
         }
+
+
+        public static class UriActions
+        {
+            public static string AddProfile = "addprofile";
+        }
+        
 
     }
+
+
 
 
     // Convertor for the locked icon visibility

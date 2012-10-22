@@ -1,0 +1,14 @@
+﻿<VitalStats_ViewModelNamespace:ViewModel xmlns:VitalStats_ViewModelNamespace="clr-namespace:VitalStats.ViewModelNamespace" xmlns:VitalStats_Model="clr-namespace:VitalStats.Model">
+	<VitalStats_ViewModelNamespace:ViewModel.Profiles>
+		<VitalStats_Model:Profile IsProtected="True" Id="Class maecenas praesent" Name="Aaberg Jesper"/>
+		<VitalStats_Model:Profile IsProtected="False" Id="Donec duis mauris nunc etiam" Name="Adams Ellen"/>
+		<VitalStats_Model:Profile IsProtected="True" Id="Adipiscing fusce" Name="Adams Terry"/>
+		<VitalStats_Model:Profile IsProtected="False" Id="Lorem dictumst eleifend aliquam" Name="Terry"/>
+		<VitalStats_Model:Profile IsProtected="True" Id="Vestibulum est" Name="Penor Lori"/>
+		<VitalStats_Model:Profile IsProtected="False" Id="Hac arcu" Name="Pfeiffer Michael"/>
+		<VitalStats_Model:Profile IsProtected="True" Id="Adipiscing nulla proin" Name="Philips Carol"/>
+		<VitalStats_Model:Profile IsProtected="False" Id="Vivamus consequat convallis vestibulum" Name="Poe Toni"/>
+		<VitalStats_Model:Profile IsProtected="True" Id="Elementum congue" Name="Hicks Cassie"/>
+		<VitalStats_Model:Profile IsProtected="False" Id="Leo faucibus habitant mus vestibulum" Name="Argentiero Luca"/>
+	</VitalStats_ViewModelNamespace:ViewModel.Profiles>
+</VitalStats_ViewModelNamespace:ViewModel>
