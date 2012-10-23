@@ -105,10 +105,61 @@ namespace VitalStats.View
             messageBox.Show();
         }
 
+        #region AddProfilePopUp code
+
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
-        	NavigationService.Navigate(new Uri("/View/AddProfilePage.xaml", UriKind.Relative));
+            
+            if (this.addProfilePopUpStateGroup.CurrentState != this.addProfilePopUpOpen)
+            {
+                VisualStateManager.GoToState(this, "addProfilePopUpOpen", true);
+            }
+        	//NavigationService.Navigate(new Uri("/View/AddProfilePage.xaml", UriKind.Relative));
         }
+
+        private bool DataInPopUp()
+        {
+            // Returns true if data on page that will need to be saved
+            if (this.nameTextBox.Text != String.Empty)
+                return true;
+            if ((bool)this.isProtectedCheckBox.IsChecked)
+                return true;
+            return false;
+        }
+        private void ConfirmExitPopUp()
+        {
+            MessageBoxResult m = MessageBox.Show("You have entered some profile data which will be lost if you leave this page. Are you sure you want to leave this page?",
+                "Confirm leave page", MessageBoxButton.OKCancel);
+            if (m == MessageBoxResult.OK)
+            {
+                VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+            }
+        }
+
+
+        private void cancelBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (this.DataInPopUp())
+            {
+                this.ConfirmExitPopUp();
+            }
+            else
+            {
+                VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+            }
+        }
+
+        private void addBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            this.vm.AddNewProfile(this.nameTextBox.Text, (bool)this.isProtectedCheckBox.IsChecked);
+            VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+        }
+
+        #endregion
+
+
+
+
 
 
         public static class UriActions

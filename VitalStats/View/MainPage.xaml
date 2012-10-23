@@ -70,11 +70,28 @@
             	<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
             	<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click"/>
+            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     
 	<Grid x:Name="LayoutRoot">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="addProfilePopUpStateGroup">
+				<VisualState x:Name="addProfilePopUpClosed"/>
+				<VisualState x:Name="addProfilePopUpOpen">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="addProfileGrid">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+
 		<Grid x:Name="Layout" Background="Transparent">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
@@ -92,6 +109,29 @@
 				<ListBox x:Name="profileListBox" ItemsSource="{Binding Profiles}" ItemTemplate="{StaticResource ItemTemplate}" d:DataContext="{d:DesignData /SampleData/ViewModelSampleData.xaml}"/>
 			</Grid>
 		</Grid>
+		
+		
+			<Grid x:Name="addProfileGrid" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="80*"></RowDefinition>
+					<RowDefinition Height="20*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" Orientation="Vertical">
+					<TextBlock Margin="0,0,0,50" TextWrapping="Wrap" Text="add new profile" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Padding="10,0,0,0" />
+					<TextBlock TextWrapping="Wrap" Text="Name" Padding="10,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+					<TextBox x:Name="nameTextBox" TextWrapping="Wrap"/>
+					<CheckBox x:Name="isProtectedCheckBox" Content="protect with PIN"/>
+				</StackPanel>
+				<Grid Grid.Row="1" VerticalAlignment="Bottom">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="0.5*"/>
+						<ColumnDefinition Width="0.5*"/>
+					</Grid.ColumnDefinitions>
+				<Button x:Name="cancelBtn" Content="cancel" Margin="10,0,74,0" Grid.Column="0" Tap="cancelBtn_Tap" Height="72" VerticalAlignment="Bottom" />
+				<Button x:Name="addBtn" Content="add" Margin="74,0,10,0" Grid.Column="1" Tap="addBtn_Tap" />
+		</Grid>
+			</Grid>
+		
 	
 	
 	</Grid>
