@@ -21,6 +21,9 @@ namespace VitalStats.View
         {
             InitializeComponent();
             vm = new ViewModel();
+
+            this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["defaultAppBar"];
+            this.addProfilePopUpStateGroup.CurrentStateChanged += new EventHandler<VisualStateChangedEventArgs>(addProfilePopUpStateGroup_CurrentStateChanged);
         }
 
 
@@ -109,12 +112,35 @@ namespace VitalStats.View
 
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
-            
             if (this.addProfilePopUpStateGroup.CurrentState != this.addProfilePopUpOpen)
             {
                 VisualStateManager.GoToState(this, "addProfilePopUpOpen", true);
             }
-        	//NavigationService.Navigate(new Uri("/View/AddProfilePage.xaml", UriKind.Relative));
+        }
+
+        private void confirmAddBtn_Click(object sender, System.EventArgs e)
+        {
+            this.vm.AddNewProfile(this.nameTextBox.Text, (bool)this.isProtectedCheckBox.IsChecked);
+            VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+            this.ClearAddPopUp();
+        }
+
+        private void ClearAddPopUp()
+        {
+            this.nameTextBox.Text = String.Empty;
+            this.isProtectedCheckBox.IsChecked = false;
+        }
+
+        private void cancelAddBtn_Click(object sender, System.EventArgs e)
+        {
+            if (this.DataInPopUp())
+            {
+                this.ConfirmExitPopUp();
+            }
+            else
+            {
+                VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+            }
         }
 
         private bool DataInPopUp()
@@ -133,27 +159,25 @@ namespace VitalStats.View
             if (m == MessageBoxResult.OK)
             {
                 VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+                this.ClearAddPopUp();
             }
         }
 
 
-        private void cancelBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+  
+        public void addProfilePopUpStateGroup_CurrentStateChanged(object sender, EventArgs e) 
         {
-            if (this.DataInPopUp())
+            if (this.addProfilePopUpStateGroup.CurrentState == this.addProfilePopUpOpen
+                && this.ApplicationBar == (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"])
             {
-                this.ConfirmExitPopUp();
+                this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["addProfileAppBar"];
             }
-            else
+            else if (this.addProfilePopUpStateGroup.CurrentState == this.addProfilePopUpClosed)
             {
-                VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+                this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"];
             }
         }
 
-        private void addBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            this.vm.AddNewProfile(this.nameTextBox.Text, (bool)this.isProtectedCheckBox.IsChecked);
-            VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
-        }
 
         #endregion
 
@@ -166,8 +190,10 @@ namespace VitalStats.View
         {
             public static string AddProfile = "addprofile";
         }
-        
 
+
+
+        
     }
 
 

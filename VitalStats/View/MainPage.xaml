@@ -51,6 +51,20 @@
     	</DataTemplate>
 
 
+        <shell:ApplicationBar x:Key="defaultAppBar" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+            	<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
+            	<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
+        </shell:ApplicationBar>
+	
+				<shell:ApplicationBar x:Key="addProfileAppBar" IsVisible="True">
+						<shell:ApplicationBarIconButton x:Name="cancelAddBtn" Text="cancel" IconUri="/icons/appbar.close.png" Click="cancelAddBtn_Click" IsEnabled="True" />
+			      <shell:ApplicationBarIconButton x:Name="confirmAddBtn" Text="add" IconUri="/icons/appbar.check.png" Click="confirmAddBtn_Click" IsEnabled="True" />
+				</shell:ApplicationBar>
+
+
 		
     </phone:PhoneApplicationPage.Resources>
     
@@ -64,17 +78,13 @@
 		<StaticResource ResourceKey="PhoneForegroundBrush"/>
 	</phone:PhoneApplicationPage.Foreground>
 <!--Sample code showing usage of ApplicationBar-->
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBar.MenuItems>
-            	<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
-            	<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
-            </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+ 
+    
     
 	<Grid x:Name="LayoutRoot">
+		<VisualStateManager.CustomVisualStateManager>
+			<ec:ExtendedVisualStateManager/>
+		</VisualStateManager.CustomVisualStateManager>
 		<VisualStateManager.VisualStateGroups>
 			<VisualStateGroup x:Name="addProfilePopUpStateGroup">
 				<VisualState x:Name="addProfilePopUpClosed"/>
@@ -122,14 +132,6 @@
 					<TextBox x:Name="nameTextBox" TextWrapping="Wrap"/>
 					<CheckBox x:Name="isProtectedCheckBox" Content="protect with PIN"/>
 				</StackPanel>
-				<Grid Grid.Row="1" VerticalAlignment="Bottom">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="0.5*"/>
-						<ColumnDefinition Width="0.5*"/>
-					</Grid.ColumnDefinitions>
-				<Button x:Name="cancelBtn" Content="cancel" Margin="10,0,74,0" Grid.Column="0" Tap="cancelBtn_Tap" Height="72" VerticalAlignment="Bottom" />
-				<Button x:Name="addBtn" Content="add" Margin="74,0,10,0" Grid.Column="1" Tap="addBtn_Tap" />
-		</Grid>
 			</Grid>
 		
 	
