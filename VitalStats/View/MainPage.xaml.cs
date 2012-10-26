@@ -93,7 +93,7 @@ namespace VitalStats.View
                     switch (e1.Result)
                     {
                         case CustomMessageBoxResult.LeftButton:
-                            
+
                             this.vm.DeleteProfile(profile);
                             break;
                         case CustomMessageBoxResult.RightButton:
@@ -109,6 +109,23 @@ namespace VitalStats.View
         }
 
         #region AddProfilePopUp code
+
+        // Simulate page back behaviour using the Back button for the pop up
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (this.addProfilePopUpStateGroup.CurrentState == this.addProfilePopUpOpen)
+            {
+                e.Cancel = true;
+                if (this.DataInPopUp())
+                {
+                    this.ConfirmExitPopUp();
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+                }
+            }
+        }
 
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
@@ -152,6 +169,7 @@ namespace VitalStats.View
                 return true;
             return false;
         }
+
         private void ConfirmExitPopUp()
         {
             MessageBoxResult m = MessageBox.Show("You have entered some profile data which will be lost if you leave this page. Are you sure you want to leave this page?",
@@ -164,8 +182,8 @@ namespace VitalStats.View
         }
 
 
-  
-        public void addProfilePopUpStateGroup_CurrentStateChanged(object sender, EventArgs e) 
+
+        public void addProfilePopUpStateGroup_CurrentStateChanged(object sender, EventArgs e)
         {
             if (this.addProfilePopUpStateGroup.CurrentState == this.addProfilePopUpOpen
                 && this.ApplicationBar == (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"])
@@ -182,59 +200,13 @@ namespace VitalStats.View
         #endregion
 
 
-
-
-
-
         public static class UriActions
         {
             public static string AddProfile = "addprofile";
         }
 
 
-
-        
     }
-
-
-
-
-    // Convertor for the locked icon visibility
-    public class BoolToVisibility : System.Windows.Data.IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
-        {
-            if ((bool)value)
-            {
-                return Visibility.Visible;
-            }
-            else
-            {
-                return Visibility.Collapsed;
-            }
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
-        {
-           return (Visibility)value == Visibility.Visible;
-           
-        }
-
-    }
-
-    // Convertor for profile tile text
-    public class WordsOnNewlines : System.Windows.Data.IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
-        {
-            string s = (string)value;
-            return s.Replace(" ", System.Environment.NewLine);
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
-        {
-            return null;    
-        }
-    }
-
 }
+
+

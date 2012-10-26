@@ -2,3 +2,4 @@ glob:*.swp
 glob:*.suo
 glob:VitalStats/Bin/*
 glob:VitalStats/obj/*
+glob:VitalStatsTestApplication/*

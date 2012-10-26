@@ -56,6 +56,7 @@
       <HintPath>Includes\WindowsPhoneToolkit\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="system.data.linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -64,16 +65,24 @@
     <Reference Include="System.Windows.Interactivity" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddProfilePage.xaml.cs">
-      <DependentUpon>AddProfilePage.xaml</DependentUpon>
+    <Compile Include="Model\MeasurementTypeDataContext.cs" />
+    <Compile Include="Model\ProfileDataContext.cs" />
+    <Compile Include="Model\StatDataContext.cs" />
+    <Compile Include="Model\UnitDataContext.cs" />
+    <Compile Include="ViewModel\ViewModelSettings.cs" />
+    <Compile Include="View\Convertors.cs" />
+    <Compile Include="View\StatsPage.xaml.cs">
+      <DependentUpon>StatsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewSettings.cs" />
     <Compile Include="View\ViewState.cs" />
-    <Compile Include="Model\Profile.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -85,13 +94,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="View\AddProfilePage.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StatsPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +115,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Data\MeasurementTypes.xml" />
     <Content Include="icons\appbar.check.png" />
     <Content Include="icons\appbar.close.png" />
     <Resource Include="Images\Key.png" />
