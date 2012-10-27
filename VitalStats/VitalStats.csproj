@@ -72,10 +72,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\MeasurementTypeDataContext.cs" />
-    <Compile Include="Model\ProfileDataContext.cs" />
-    <Compile Include="Model\StatDataContext.cs" />
-    <Compile Include="Model\UnitDataContext.cs" />
+    <Compile Include="Model\AppDataContext.cs" />
+    <Compile Include="Model\MeasurementType.cs" />
+    <Compile Include="Model\Profile.cs" />
+    <Compile Include="Model\SetupDatabase.cs" />
+    <Compile Include="Model\Stat.cs" />
+    <Compile Include="Model\Unit.cs" />
     <Compile Include="ViewModel\ViewModelSettings.cs" />
     <Compile Include="View\Convertors.cs" />
     <Compile Include="View\StatsPage.xaml.cs">
@@ -83,7 +85,7 @@
     </Compile>
     <Compile Include="View\ViewSettings.cs" />
     <Compile Include="View\ViewState.cs" />
-    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="ViewModel\AppViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

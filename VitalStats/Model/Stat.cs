@@ -16,15 +16,16 @@ namespace VitalStats.Model
         private Binary _version;
 
         private int _id;
-        [Column(DbType = "INT NOT NULL IDENTITY", IsDbGenerated = true, IsPrimaryKey = true)]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity",
+            CanBeNull = false, AutoSync = AutoSync.OnInsert)]
         public int Id
         {
             get { return _id; }
             set
             {
-                NotifyPropertyChanging("Id");
-                _id = value;
-                NotifyPropertyChanged("Id");
+                this.NotifyPropertyChanging("Id");
+                this._id = value;
+                this.NotifyPropertyChanged("Id");
             }
         }
 
@@ -54,11 +55,30 @@ namespace VitalStats.Model
             }
         }
 
+        [Column]
+        internal int _preferredUnitId;
+        private EntityRef<Unit> _preferredUnit;
+        [Association(Storage = "_preferredUnit", ThisKey = "_preferredUnitId", OtherKey = "Id", IsForeignKey = true)]
+        public Unit PreferredUnit
+        {
+            get { return this._preferredUnit.Entity; }
+            set
+            {
+                this.NotifyPropertyChanging("PreferredUnit");
+                this._preferredUnit.Entity = value;
+                if (value != null)
+                {
+                    this._preferredUnitId = value.Id;
+                }
+                this.NotifyPropertyChanged("PreferredUnit");
+            }
+        }
+
 
         [Column]
         internal int _profileId;
         private EntityRef<Profile> _profile;
-        [Association(Storage = "_profile", ThisKey = "_profileId", OtherKey = "Is", IsForeignKey = true)]
+        [Association(Storage = "_profile", ThisKey = "_profileId", OtherKey = "Id", IsForeignKey = true)]
         public Profile Profile
         {
             get { return this._profile.Entity; }
@@ -114,7 +134,7 @@ namespace VitalStats.Model
 
         private void NotifyPropertyChanged(string propertyName)
         {
-            if (propertyName != null)
+            if (this.PropertyChanged != null)
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
@@ -135,13 +155,6 @@ namespace VitalStats.Model
         }
 
         #endregion
-
-        // Used for data binding for some reason ...
-        internal Object GetCopy()
-        {
-            return (Stat)this.MemberwiseClone();
-        }
-
         
     }
 

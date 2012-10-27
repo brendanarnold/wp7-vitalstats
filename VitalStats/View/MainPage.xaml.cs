@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using Microsoft.Phone.Controls;
 using System.Globalization;
-using VitalStats.ViewModelNamespace;
+using VitalStats.ViewModel;
 using System.Windows.Controls;
 using VitalStats.Model;
 using System.Collections.Generic;
@@ -13,14 +13,10 @@ namespace VitalStats.View
 {
     public partial class MainPage : PhoneApplicationPage
     {
-
-        private ViewModel vm;
-
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-            vm = new ViewModel();
 
             this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["defaultAppBar"];
             this.addProfilePopUpStateGroup.CurrentStateChanged += new EventHandler<VisualStateChangedEventArgs>(addProfilePopUpStateGroup_CurrentStateChanged);
@@ -32,49 +28,34 @@ namespace VitalStats.View
             base.OnNavigatedTo(e);
 
 
-            if (!ViewState.IsLaunching && PhoneApplicationService.Current.State.ContainsKey("Profiles"))
-            {
-                vm = (ViewModel)PhoneApplicationService.Current.State["Profiles"];
-            }
-            else
-            {
-                vm.GetProfiles();
-            }
+            //if (!ViewState.IsLaunching && PhoneApplicationService.Current.State.ContainsKey("Profiles"))
+            //{
+            //    App.VM = (AppViewModel)PhoneApplicationService.Current.State["Profiles"];
+            //}
+            //else
+            //{
+            //    vm.GetProfiles();
+            //}
 
-            //vm.AddNewProfile("Foo", true);
-            profileListBox.ItemsSource = vm.Profiles;
-
-            string action;
-            if (NavigationContext.QueryString.TryGetValue("action", out action))
-            {
-                if (action == MainPage.UriActions.AddProfile)
-                {
-                    string s = "", name = "";
-                    bool isProtected = false;
-                    NavigationContext.QueryString.TryGetValue("name", out name);
-                    NavigationContext.QueryString.TryGetValue("isProtected", out s);
-                    bool.TryParse(s, out isProtected);
-                    this.vm.AddNewProfile(name, isProtected);
-
-                }
-            }
-
-
+            profileListBox.ItemsSource = App.VM.Profiles;
 
         }
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            if (PhoneApplicationService.Current.State.ContainsKey("Profiles"))
-            {
-                PhoneApplicationService.Current.State["Profiles"] = vm;
-            }
-            else
-            {
-                PhoneApplicationService.Current.State.Add("Profiles", vm);
-            }
-            ViewState.IsLaunching = false;
+
+            App.VM.SaveChangesToDB();
+
+            //if (PhoneApplicationService.Current.State.ContainsKey("Profiles"))
+            //{
+            //    PhoneApplicationService.Current.State["Profiles"] = vm;
+            //}
+            //else
+            //{
+            //    PhoneApplicationService.Current.State.Add("Profiles", vm);
+            //}
+            //ViewState.IsLaunching = false;
         }
 
         private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -94,7 +75,7 @@ namespace VitalStats.View
                     {
                         case CustomMessageBoxResult.LeftButton:
 
-                            this.vm.DeleteProfile(profile);
+                            App.VM.DeleteProfile(profile);
                             break;
                         case CustomMessageBoxResult.RightButton:
                             // Do nothing
@@ -137,7 +118,7 @@ namespace VitalStats.View
 
         private void confirmAddBtn_Click(object sender, System.EventArgs e)
         {
-            this.vm.AddNewProfile(this.nameTextBox.Text, (bool)this.isProtectedCheckBox.IsChecked);
+            App.VM.AddProfile(new Profile() { Name = this.nameTextBox.Text, IsProtected = (bool)this.isProtectedCheckBox.IsChecked });
             VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
             this.ClearAddPopUp();
         }
@@ -200,10 +181,6 @@ namespace VitalStats.View
         #endregion
 
 
-        public static class UriActions
-        {
-            public static string AddProfile = "addprofile";
-        }
 
 
     }

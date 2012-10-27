@@ -17,7 +17,7 @@ namespace VitalStats.Model
                 );
             this._units = new EntitySet<Unit>(
                 new Action<Unit>(this._attachUnit),
-                new Action<Unit>(this._detatchUnit)
+                new Action<Unit>(this._detachUnit)
                 );
 
         }
@@ -27,7 +27,8 @@ namespace VitalStats.Model
         private Binary _version;
 
         private int _id;
-        [Column(DbType = "INT NOT NULL IDENTITY", IsDbGenerated = true, IsPrimaryKey = true)]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity",
+            CanBeNull = false, AutoSync = AutoSync.OnInsert)]
         public int Id
         {
             get { return _id; }
@@ -55,24 +56,8 @@ namespace VitalStats.Model
             }
         }
 
-        private string _isConvertible;
-        [Column]
-        public string IsConvertible
-        {
-            get { return this._isConvertible; }
-            set
-            {
-                if (this._isConvertible != value)
-                {
-                    this.NotifyPropertyChanging("IsConvertible");
-                    this._isConvertible = value;
-                    this.NotifyPropertyChanged("IsConvertible");
-                }
-            }
-        }
-
         private EntitySet<Stat> _stats;
-        [Association(Storage = "_stats", OtherKey = "_id", ThisKey = "Id")]
+        [Association(Storage = "_stats", OtherKey = "Id", ThisKey = "Id")]
         public EntitySet<Stat> Stats
         {
             get { return this._stats; }
@@ -80,7 +65,7 @@ namespace VitalStats.Model
         }
 
         private EntitySet<Unit> _units;
-        [Association(Storage = "_units", OtherKey = "_id", ThisKey = "Id")]
+        [Association(Storage = "_units", OtherKey = "Id", ThisKey = "Id")]
         public EntitySet<Unit> Units
         {
             get { return this._units; }
@@ -89,8 +74,14 @@ namespace VitalStats.Model
 
         #region Misc methods
 
-        //public string GetValueString(string strValue, string unitString)
-        //{
+        public bool IsConvertible()
+        {
+            return this.Units.Count > 0;
+        }
+
+
+        public string GetValueString(string strValue, string unitString)
+        {
         //    double value, factor, intercept;
         //    string[] convFactors, convIntercepts;
         //    string fmt;
@@ -122,8 +113,9 @@ namespace VitalStats.Model
         //        }
         //        return string.Format(fmt, vals.ToArray());
         //    }
-        //}
-            //return "5 ft. 8 in.";
+
+        return "5 ft. 8 in.";
+        }
             
 
 
@@ -135,7 +127,7 @@ namespace VitalStats.Model
 
         private void NotifyPropertyChanged(string propertyName)
         {
-            if (propertyName != null)
+            if (this.PropertyChanged != null)
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }

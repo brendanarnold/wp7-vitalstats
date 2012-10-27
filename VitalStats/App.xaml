@@ -8,7 +8,7 @@
 	xmlns:VitalStats_View="clr-namespace:VitalStats.View" 
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
 	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
-	xmlns:SampleData="clr-namespace:VitalStats.ViewModelNamespace" 
+	xmlns:SampleData="clr-namespace:VitalStats.ViewModel" 
 	mc:Ignorable="d" 
     x:Class="VitalStats.App"
     >

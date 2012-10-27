@@ -13,6 +13,8 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using VitalStats.View;
+using VitalStats.ViewModel;
+using VitalStats.Model;
 
 namespace VitalStats
 {
@@ -23,6 +25,14 @@ namespace VitalStats
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
+
+        // Allow access to a single view model instance throughout the app
+        private static AppViewModel _vm;
+        public static AppViewModel VM
+        {
+            get { return _vm; }
+        }
+
 
         /// <summary>
         /// Constructor for the Application object.
@@ -57,6 +67,19 @@ namespace VitalStats
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+
+
+            // Database initialisation
+            string dbConnectionString = "Data Source=isostore:/VitalStats.sdf";
+
+            using (AppDataContext db = new AppDataContext(dbConnectionString))
+            {
+                if (db.DatabaseExists() == false)
+                    SetupDatabase.InitialiseDB(db);
+            }
+
+            _vm = new AppViewModel(dbConnectionString);
+            _vm.LoadAllFromDB();
 
         }
 

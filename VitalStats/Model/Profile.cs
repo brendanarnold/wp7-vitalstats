@@ -22,7 +22,7 @@ namespace VitalStats.Model
 
         private int _id;
         [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity",
-            CanBeNull = false, AutoSync = AutoSync.OnUpdate)]
+            CanBeNull = false, AutoSync = AutoSync.OnInsert)]
         public int Id
         {
             get { return this._id; }
@@ -30,9 +30,9 @@ namespace VitalStats.Model
             {
                 if (this._id != value)
                 {
-                    this.NotifyPropertyChanging("ProfileId");
+                    this.NotifyPropertyChanging("Id");
                     this._id = value;
-                    this.NotifyPropertyChanged("ProfileId");
+                    this.NotifyPropertyChanged("Id");
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace VitalStats.Model
         }
 
         private EntitySet<Stat> _stats;
-        [Association(Storage = "_stats", OtherKey = "_id", ThisKey = "Id")]
+        [Association(Storage = "_stats", OtherKey = "Id", ThisKey = "Id")]
         public EntitySet<Stat> Stats
         {
             get { return this._stats; }
@@ -84,7 +84,7 @@ namespace VitalStats.Model
 
         private void NotifyPropertyChanged(string propertyName)
         {
-            if (propertyName != null)
+            if (this.PropertyChanged != null)
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
@@ -119,11 +119,6 @@ namespace VitalStats.Model
             stat.Profile = null;
         }
 
-        // Have to have this for binding for some reason ...
-        internal object GetCopy()
-        {
-            return (Profile)this.MemberwiseClone();
-        }
  
         
     }

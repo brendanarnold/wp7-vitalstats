@@ -16,7 +16,7 @@ namespace VitalStats.Model
 
         private int _id;
         [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity",
-            CanBeNull = false, AutoSync = AutoSync.OnUpdate)]
+            CanBeNull = false, AutoSync = AutoSync.OnInsert)]
         public int Id
         {
             get { return this._id; }
@@ -24,9 +24,9 @@ namespace VitalStats.Model
             {
                 if (this._id != value)
                 {
-                    this.NotifyPropertyChanging("ProfileId");
+                    this.NotifyPropertyChanging("Id");
                     this._id = value;
-                    this.NotifyPropertyChanged("ProfileId");
+                    this.NotifyPropertyChanged("Id");
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace VitalStats.Model
 
         private string _conversionIntercept;
         [Column]
-        public string ConversionFormat
+        public string ConversionIntercept
         {
             get { return this._conversionIntercept; }
             set
@@ -124,7 +124,7 @@ namespace VitalStats.Model
 
         private void NotifyPropertyChanged(string propertyName)
         {
-            if (propertyName != null)
+            if (this.PropertyChanged != null)
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
@@ -146,11 +146,6 @@ namespace VitalStats.Model
 
         #endregion
 
-        // Have to have this for binding for some reason ...
-        internal object GetCopy()
-        {
-            return (Profile)this.MemberwiseClone();
-        }
  
     }
 }
