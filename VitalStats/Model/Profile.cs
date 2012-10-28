@@ -107,13 +107,13 @@ namespace VitalStats.Model
         #endregion
 
 
-        private void _attachStats (Stat stat) 
+        private void _attachStats(Stat stat)
         {
             this.NotifyPropertyChanging("Stat");
             stat.Profile = this;
         }
 
-        private void _detatchStats(Stat stat) 
+        private void _detatchStats(Stat stat)
         {
             this.NotifyPropertyChanging("Stat");
             stat.Profile = null;

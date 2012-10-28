@@ -78,6 +78,9 @@
     <Compile Include="Model\SetupDatabase.cs" />
     <Compile Include="Model\Stat.cs" />
     <Compile Include="Model\Unit.cs" />
+    <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
+      <DependentUpon>SampleDataSource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ViewModelSettings.cs" />
     <Compile Include="View\Convertors.cs" />
     <Compile Include="View\StatsPage.xaml.cs">
@@ -96,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignTimeOnly>
     <Page Include="View\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +116,7 @@
     <None Include="Includes\WindowsPhoneToolkit\Microsoft.Phone.Controls.Toolkit.dll" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">
@@ -128,7 +136,7 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <DesignData Include="SampleData\ViewModelSampleData.xaml">
+    <DesignData Include="SampleData\AppViewModelSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
   </ItemGroup>

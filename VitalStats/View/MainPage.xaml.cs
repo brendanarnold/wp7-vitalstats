@@ -37,8 +37,7 @@ namespace VitalStats.View
             //    vm.GetProfiles();
             //}
 
-            profileListBox.ItemsSource = App.VM.Profiles;
-
+            this.DataContext = App.VM;
         }
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
@@ -175,6 +174,12 @@ namespace VitalStats.View
             {
                 this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"];
             }
+        }
+
+        private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Profile p = (sender as MenuItem).DataContext as Profile;
+            NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
         }
 
 

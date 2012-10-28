@@ -1,21 +1,7 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using VitalStats.Model;
-using System.IO.IsolatedStorage;
-using System.Runtime.Serialization;
 using System.ComponentModel;
-using System.Windows.Resources;
 using System.Linq;
-using System.Collections.Generic;
 
 namespace VitalStats.ViewModel
 {
@@ -24,6 +10,7 @@ namespace VitalStats.ViewModel
 
         private AppDataContext appDB;
 
+        // Empty constructor needed for design-time data created in XAML
         public AppViewModel()
         {
         }
@@ -33,6 +20,7 @@ namespace VitalStats.ViewModel
             this.appDB = new AppDataContext(connectionString);
         }
 
+        #region Properties
 
         private ObservableCollection<Profile> _profiles;
         public ObservableCollection<Profile> Profiles 
@@ -68,7 +56,18 @@ namespace VitalStats.ViewModel
             }
         }
 
-        
+        private Profile _selectedProfile;
+        public Profile SelectedProfile
+        {
+            get { return this._selectedProfile; }
+            set
+            {
+                this._selectedProfile = value;
+                this.NotifyPropertyChanged("SelectedProfile");
+            }
+        }
+
+        #endregion
 
         #region Load collections from DB
 
@@ -99,6 +98,8 @@ namespace VitalStats.ViewModel
 
         #endregion
 
+        #region Add to collection methods
+
         public void AddProfile(Profile profile)
         {
             this.appDB.Profiles.InsertOnSubmit(profile);
@@ -120,6 +121,10 @@ namespace VitalStats.ViewModel
             this.appDB.SubmitChanges();
         }
 
+        #endregion
+
+        #region Delete from collection methods
+
         public void DeleteStatTemplate(Stat stat)
         {
             this.StatTemplates.Remove(stat);
@@ -127,8 +132,8 @@ namespace VitalStats.ViewModel
             this.appDB.SubmitChanges();
         }
 
+        #endregion
 
-        
 
 
 

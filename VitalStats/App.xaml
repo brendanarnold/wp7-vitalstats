@@ -9,12 +9,16 @@
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
 	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
 	xmlns:SampleData="clr-namespace:VitalStats.ViewModel" 
+	xmlns:SampleData1="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
 	mc:Ignorable="d" 
     x:Class="VitalStats.App"
     >
 
     <!--Application Resources-->
     <Application.Resources>
+    	
+    	
+    	<SampleData1:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
     	
     	
 		<VitalStats_View:WordsOnNewlines x:Key="WordsOnNewlines"/>
