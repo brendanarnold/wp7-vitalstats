@@ -19,6 +19,7 @@ namespace VitalStats.View
             InitializeComponent();
 
             this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["defaultAppBar"];
+
             this.addProfilePopUpStateGroup.CurrentStateChanged += new EventHandler<VisualStateChangedEventArgs>(addProfilePopUpStateGroup_CurrentStateChanged);
         }
 
@@ -178,7 +179,7 @@ namespace VitalStats.View
 
         private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Profile p = (sender as MenuItem).DataContext as Profile;
+            Profile p = (sender as Button).DataContext as Profile;
             NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
         }
 

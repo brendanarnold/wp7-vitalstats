@@ -1,0 +1,35 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+	xmlns:VitalStats_View="clr-namespace:VitalStats.View"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+	x:Class="VitalStats.View.EditStatPage"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	Orientation="Portrait"
+	shell:SystemTray.IsVisible="True">
+
+	<phone:PhoneApplicationPage.Resources>
+		<VitalStats_View:BoolToStrings x:Key="BoolToStrings"/>
+	</phone:PhoneApplicationPage.Resources>
+
+	<d:DataContext>
+		<Binding Source="{StaticResource SampleDataSource}"/>
+	</d:DataContext>
+
+
+	<Grid x:Name="LayoutRoot" Background="{StaticResource PhoneAccentBrush}">
+		<StackPanel>
+			<TextBlock TextWrapping="Wrap" Text="TextBlock"/>
+			<TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding IsNewStat, ConverterParameter=Add new stat|Edit stat, Converter={StaticResource BoolToStrings}, ElementName=textBlock, FallbackValue=Add stat}"/>
+		</StackPanel>
+		
+	</Grid>
+</phone:PhoneApplicationPage>

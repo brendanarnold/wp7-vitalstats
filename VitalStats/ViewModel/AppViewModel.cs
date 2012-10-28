@@ -67,6 +67,17 @@ namespace VitalStats.ViewModel
             }
         }
 
+        private Stat _selectedStat;
+        public Stat SelectedStat
+        {
+            get { return this._selectedStat; }
+            set
+            {
+                this._selectedStat = value;
+                this.NotifyPropertyChanged("SelectedStat");
+            }
+        }
+
         #endregion
 
         #region Load collections from DB

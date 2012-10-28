@@ -11,6 +11,9 @@
       <xs:element name="Profiles" type="tns:Profiles" />
       <xs:element name="SelectedProfile" type="tns:SelectedProfile" />
       <xs:element name="MeasurementTypes" type="tns:MeasurementTypes" />
+      <xs:element name="StatTemplates" type="tns:StatTemplates" />
+      <xs:element name="SuggestedStatTemplate" type="tns:SuggestedStatTemplate" />
+      <xs:element name="SelectedStat" type="tns:SelectedStat" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Profiles">
@@ -39,6 +42,7 @@
   <xs:complexType name="StatsItem">
     <xs:sequence>
       <xs:element name="MeasurementType" type="tns:MeasurementType" />
+      <xs:element name="PreferredUnit" type="tns:PreferredUnit" />
     </xs:sequence>
     <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
     <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
@@ -64,6 +68,9 @@
     <xs:attribute blend:FormatParameters="1,8" name="ConversionIntercept" type="xs:string" />
     <xs:attribute blend:FormatParameters="1,8" name="Format" type="xs:string" />
   </xs:complexType>
+  <xs:complexType name="PreferredUnit">
+    <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
+  </xs:complexType>
   <xs:complexType name="MeasurementTypes">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="MeasurementTypesItem" type="tns:MeasurementTypesItem" />
@@ -73,5 +80,100 @@
     <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
     <xs:attribute blend:FormatParameters="1,6" name="Name" type="xs:string" />
     <xs:attribute name="IsConvertible" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="StatTemplates">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="StatTemplatesItem" type="tns:StatTemplatesItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatTemplatesItem">
+    <xs:sequence>
+      <xs:element name="MeasurementType" type="tns:MeasurementType3" />
+      <xs:element name="PreferredUnit" type="tns:PreferredUnit2" />
+    </xs:sequence>
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+  </xs:complexType>
+  <xs:complexType name="MeasurementType3">
+    <xs:sequence>
+      <xs:element name="Units" type="tns:Units3" />
+    </xs:sequence>
+    <xs:attribute name="IsConvertible" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Units3">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="UnitsItem3" type="tns:UnitsItem3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnitsItem3">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="FormattedValue" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="PreferredUnit2">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="FormattedName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SuggestedStatTemplate">
+    <xs:sequence>
+      <xs:element name="MeasurementType" type="tns:MeasurementType1" />
+    </xs:sequence>
+    <xs:attribute blend:FormatParameters="3,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1,8" name="Value" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MeasurementType1">
+    <xs:sequence>
+      <xs:element name="Units" type="tns:Units1" />
+    </xs:sequence>
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute blend:FormatParameters="3,8" name="Name" type="xs:string" />
+    <xs:attribute name="IsConvertible" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="Units1">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="UnitsItem1" type="tns:UnitsItem1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnitsItem1">
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="Format" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="ConversionFactor" type="xs:double" />
+    <xs:attribute blend:FormatParameters="2" name="ConversionIntercept" type="xs:double" />
+  </xs:complexType>
+  <xs:complexType name="SelectedStat">
+    <xs:sequence>
+      <xs:element name="MeasurementType" type="tns:MeasurementType2" />
+      <xs:element name="PreferredUnit" type="tns:PreferredUnit1" />
+    </xs:sequence>
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="Value" type="xs:double" />
+  </xs:complexType>
+  <xs:complexType name="MeasurementType2">
+    <xs:sequence>
+      <xs:element name="Units" type="tns:Units2" />
+    </xs:sequence>
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute name="IsConvertible" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="Units2">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="UnitsItem2" type="tns:UnitsItem2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnitsItem2">
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="Format" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="ConversionFactor" type="xs:double" />
+    <xs:attribute blend:FormatParameters="2" name="ConversionIntercept" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="PreferredUnit1">
+    <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
   </xs:complexType>
 </xs:schema>

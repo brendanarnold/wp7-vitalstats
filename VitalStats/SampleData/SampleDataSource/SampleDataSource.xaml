@@ -24,6 +24,9 @@
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
           </SampleData:StatsItem.MeasurementType>
+          <SampleData:StatsItem.PreferredUnit>
+            <SampleData:PreferredUnit FormattedValue="6 ft. 0 in." />
+          </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
         <SampleData:StatsItem Id="14" Name="Weight" Value="70">
           <SampleData:StatsItem.MeasurementType>
@@ -37,6 +40,9 @@
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
           </SampleData:StatsItem.MeasurementType>
+          <SampleData:StatsItem.PreferredUnit>
+            <SampleData:PreferredUnit FormattedValue="10.3 st." />
+          </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
         <SampleData:StatsItem Id="82" Name="Shoe Size" Value="25.0">
           <SampleData:StatsItem.MeasurementType>
@@ -50,6 +56,9 @@
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
           </SampleData:StatsItem.MeasurementType>
+          <SampleData:StatsItem.PreferredUnit>
+            <SampleData:PreferredUnit FormattedValue="7 UK Womens" />
+          </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
         <SampleData:StatsItem Id="54" Name="Tennis Grip" Value="4.3">
           <SampleData:StatsItem.MeasurementType>
@@ -63,6 +72,9 @@
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
           </SampleData:StatsItem.MeasurementType>
+          <SampleData:StatsItem.PreferredUnit>
+            <SampleData:PreferredUnit FormattedValue="3.2 in." />
+          </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
       </SampleData:SelectedProfile.Stats>
     </SampleData:SelectedProfile>
@@ -73,4 +85,203 @@
     <SampleData:MeasurementTypesItem Id="70" Name="Shoe Size" IsConvertible="True" />
     <SampleData:MeasurementTypesItem Id="45" Name="Other" IsConvertible="False" />
   </SampleData:SampleDataSource.MeasurementTypes>
+  <SampleData:SampleDataSource.StatTemplates>
+    <SampleData:StatTemplatesItem Name="Cras" Id="79">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Nam class maecenas aenean" Name="Maecenas cras praesent">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Aliquam integer nam quisque" FormattedValue="Cras aenean nam aliquam" />
+            <SampleData:UnitsItem3 Name="Maecenas aenean vivamus" FormattedValue="Maecenas sed integer" />
+            <SampleData:UnitsItem3 Name="Mauris nullam sed class" FormattedValue="Mauris praesent" />
+            <SampleData:UnitsItem3 Name="Dis aptent" FormattedValue="Dis accumsan class quisque" />
+            <SampleData:UnitsItem3 Name="Praesent curae accumsan bibendum" FormattedValue="Vivamus bibendum" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Nam aenean sed maecenas" FormattedName="Maecenas praesent class" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Maecenas" Id="52">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Mauris sed aliquam" Name="Aliquam duis aenean integer">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Auctor aliquam" FormattedValue="Curae est duis" />
+            <SampleData:UnitsItem3 Name="Donec congue aliquet" FormattedValue="Dictumst eleifend donec" />
+            <SampleData:UnitsItem3 Name="Dictumst cras est" FormattedValue="Aliquam aliquet nullam" />
+            <SampleData:UnitsItem3 Name="Duis hac nunc etiam" FormattedValue="Etiam aptent" />
+            <SampleData:UnitsItem3 Name="Leo eleifend amet cursus" FormattedValue="Nunc auctor amet ante" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Praesent accumsan aliquam class" FormattedName="Curae aenean nam sed" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Praesent" Id="84">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Dis cras" Name="Nunc amet mauris">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Blandit mus" FormattedValue="Fusce hac facilisi congue" />
+            <SampleData:UnitsItem3 Name="Commodo facilisi" FormattedValue="Faucibus blandit arcu cursus" />
+            <SampleData:UnitsItem3 Name="Fusce lorem" FormattedValue="Dictum lorem morbi" />
+            <SampleData:UnitsItem3 Name="Nec conubia cubilia faucibus" FormattedValue="Lectus libero habitant leo" />
+            <SampleData:UnitsItem3 Name="Dapibus non" FormattedValue="Mus nulla commodo proin" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Bibendum cras integer" FormattedName="Accumsan cras" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Aliquam" Id="16">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Praesent nullam accumsan" Name="Nam nullam quisque sed">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Ante habitant egestas" FormattedValue="Nec conubia non cubilia" />
+            <SampleData:UnitsItem3 Name="Morbi euismod dictum" FormattedValue="Inceptos ligula" />
+            <SampleData:UnitsItem3 Name="Nulla feugiat" FormattedValue="Litora interdum" />
+            <SampleData:UnitsItem3 Name="Inceptos lectus per" FormattedValue="Luctus diam augue dapibus" />
+            <SampleData:UnitsItem3 Name="Gravida iaculis" FormattedValue="Per dolor egestas euismod" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Curae duis" FormattedName="Duis donec" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Accumsan" Id="62">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Est aptent duis" Name="Vivamus class accumsan">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Lacinia laoreet" FormattedValue="Feugiat fames eget" />
+            <SampleData:UnitsItem3 Name="Proin augue sed dolor" FormattedValue="Lobortis sed" />
+            <SampleData:UnitsItem3 Name="Arcu diam libero natoque" FormattedValue="Elit felis magnis" />
+            <SampleData:UnitsItem3 Name="Interdum posuere sem fames" FormattedValue="Ipsum justo" />
+            <SampleData:UnitsItem3 Name="Eget potenti" FormattedValue="Nascetur sem" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Quisque donec" FormattedName="Bibendum nunc" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Aenean" Id="34">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Bibendum integer" Name="Ante curae aptent donec">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Ligula lobortis pretium" FormattedValue="Pharetra mattis lacus" />
+            <SampleData:UnitsItem3 Name="Sit elit rhoncus" FormattedValue="Sit mauris enim" />
+            <SampleData:UnitsItem3 Name="Enim erat sodales viverra" FormattedValue="Erat mollis eros lorem" />
+            <SampleData:UnitsItem3 Name="Litora felis ipsum" FormattedValue="Placerat pulvinar nibh sagittis" />
+            <SampleData:UnitsItem3 Name="Luctus vel nascetur nam" FormattedValue="Montes magna nisi gravida" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Nunc etiam amet" FormattedName="Aliquam dictumst" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Nam" Id="50">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Nunc amet hac dictumst" Name="Arcu etiam bibendum">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Eros aliquam magnis mattis" FormattedValue="Nisl vel senectus nam" />
+            <SampleData:UnitsItem3 Name="Nibh mauris mollis" FormattedValue="Nunc nostra odio sociosqu" />
+            <SampleData:UnitsItem3 Name="Montes integer quisque" FormattedValue="Orci iaculis pede" />
+            <SampleData:UnitsItem3 Name="Nisi vivamus" FormattedValue="Massa metus morbi" />
+            <SampleData:UnitsItem3 Name="Aliquam aliquet sed" FormattedValue="Lacinia ornare suscipit sed" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Ante dis mauris fusce" FormattedName="Eleifend amet" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Class" Id="40">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Auctor quisque eleifend" Name="Fusce diam lorem">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Nisl pharetra" FormattedValue="Laoreet quam" />
+            <SampleData:UnitsItem3 Name="Nunc blandit odio" FormattedValue="Quis natoque urna" />
+            <SampleData:UnitsItem3 Name="Commodo justo placerat" FormattedValue="Dis platea" />
+            <SampleData:UnitsItem3 Name="Nostra orci conubia lacus" FormattedValue="Neque netus nulla" />
+            <SampleData:UnitsItem3 Name="Pulvinar cubilia" FormattedValue="Primis cras" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Lorem morbi vivamus dictumst" FormattedName="Dis integer" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Duis" Id="36">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Facilisi leo" Name="Auctor dictumst aliquam congue">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Dapibus sagittis ornare" FormattedValue="Rutrum est porta posuere" />
+            <SampleData:UnitsItem3 Name="Senectus egestas" FormattedValue="Duis potenti nunc" />
+            <SampleData:UnitsItem3 Name="Sociosqu euismod platea" FormattedValue="Pretium amet" />
+            <SampleData:UnitsItem3 Name="Pede lorem magna quam" FormattedValue="Torquent ultrices sapien" />
+            <SampleData:UnitsItem3 Name="Massa primis" FormattedValue="Hac purus ante rhoncus" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Nullam eleifend aliquam nulla" FormattedName="Etiam est mauris" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+    <SampleData:StatTemplatesItem Name="Curae" Id="30">
+      <SampleData:StatTemplatesItem.MeasurementType>
+        <SampleData:MeasurementType3 IsConvertible="Mus ante faucibus" Name="Dis morbi eget elit">
+          <SampleData:MeasurementType3.Units>
+            <SampleData:UnitsItem3 Name="Dis est" FormattedValue="Leo semper" />
+            <SampleData:UnitsItem3 Name="Metus suscipit torquent" FormattedValue="Mus sodales nec risus" />
+            <SampleData:UnitsItem3 Name="Morbi hac rutrum quis" FormattedValue="Sociis non taciti" />
+            <SampleData:UnitsItem3 Name="Neque feugiat urna" FormattedValue="Tellus vehicula viverra" />
+            <SampleData:UnitsItem3 Name="Gravida iaculis leo" FormattedValue="Tempor volutpat per" />
+          </SampleData:MeasurementType3.Units>
+        </SampleData:MeasurementType3>
+      </SampleData:StatTemplatesItem.MeasurementType>
+      <SampleData:StatTemplatesItem.PreferredUnit>
+        <SampleData:PreferredUnit2 Name="Est hac arcu facilisi" FormattedName="Hac nullam leo" />
+      </SampleData:StatTemplatesItem.PreferredUnit>
+    </SampleData:StatTemplatesItem>
+  </SampleData:SampleDataSource.StatTemplates>
+  <SampleData:SampleDataSource.SuggestedStatTemplate>
+    <SampleData:SuggestedStatTemplate Name="Collar Size" Id="39" Value="null">
+      <SampleData:SuggestedStatTemplate.MeasurementType>
+        <SampleData:MeasurementType1 Id="45" Name="Length" IsConvertible="True">
+          <SampleData:MeasurementType1.Units>
+            <SampleData:UnitsItem1 Id="28" Name="Centimetre" Format="\{0\} cm." ConversionFactor="100.0" ConversionIntercept="0.0" />
+            <SampleData:UnitsItem1 Id="26" Name="Metres" Format="\{0\} m." ConversionFactor="1.0" ConversionIntercept="0.0" />
+            <SampleData:UnitsItem1 Id="91" Name="Inches" Format="\{0\} in." ConversionFactor="32" ConversionIntercept="0.0" />
+            <SampleData:UnitsItem1 Id="68" Name="Feet/Inches" Format="\{0\} ft. \{1\} in." ConversionFactor="3.2|32" ConversionIntercept="0.0|0.0" />
+          </SampleData:MeasurementType1.Units>
+        </SampleData:MeasurementType1>
+      </SampleData:SuggestedStatTemplate.MeasurementType>
+    </SampleData:SuggestedStatTemplate>
+  </SampleData:SampleDataSource.SuggestedStatTemplate>
+  <SampleData:SampleDataSource.SelectedStat>
+    <SampleData:SelectedStat Id="66" Name="Shoe Size" Value="23">
+      <SampleData:SelectedStat.MeasurementType>
+        <SampleData:MeasurementType2 Name="Shoes Size" Id="64" IsConvertible="True">
+          <SampleData:MeasurementType2.Units>
+            <SampleData:UnitsItem2 Id="12" Name="UK Mens" Format="\{0\}" ConversionFactor="53" ConversionIntercept="27" FormattedValue="9" />
+            <SampleData:UnitsItem2 Id="85" Name="UK Womens" Format="Aliquam" ConversionFactor="11" ConversionIntercept="77" FormattedValue="11" />
+            <SampleData:UnitsItem2 Id="37" Name="UK Boys" Format="Aenean" ConversionFactor="95" ConversionIntercept="54" FormattedValue="24" />
+            <SampleData:UnitsItem2 Id="94" Name="UK Girls" Format="Sed" ConversionFactor="82" ConversionIntercept="40" FormattedValue="23" />
+            <SampleData:UnitsItem2 Id="45" Name="European Mens" Format="Integer" ConversionFactor="92" ConversionIntercept="20" FormattedValue="43" />
+            <SampleData:UnitsItem2 Id="32" Name="European Womens" Format="Dis" ConversionFactor="84" ConversionIntercept="31" FormattedValue="44" />
+            <SampleData:UnitsItem2 Id="90" Name="Centimetres" Format="Est" ConversionFactor="90" ConversionIntercept="29" FormattedValue="10 cm." />
+            <SampleData:UnitsItem2 Id="58" Name="US Mens" Format="Maecenas" ConversionFactor="81" ConversionIntercept="31" FormattedValue="23" />
+            <SampleData:UnitsItem2 Id="23" Name="US Womens" Format="Quisque" ConversionFactor="28" ConversionIntercept="88" FormattedValue="23" />
+            <SampleData:UnitsItem2 Id="69" Name="US Child" Format="Hac" ConversionFactor="50" ConversionIntercept="58" FormattedValue="26" />
+          </SampleData:MeasurementType2.Units>
+        </SampleData:MeasurementType2>
+      </SampleData:SelectedStat.MeasurementType>
+      <SampleData:SelectedStat.PreferredUnit>
+        <SampleData:PreferredUnit1 FormattedValue="12 cm." Name="Centimetres" />
+      </SampleData:SelectedStat.PreferredUnit>
+    </SampleData:SelectedStat>
+  </SampleData:SampleDataSource.SelectedStat>
 </SampleData:SampleDataSource>

@@ -94,7 +94,35 @@ namespace VitalStats.View
 
     }
 
+    // Converter that returns a lowercase string
+    public class StringToLower : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            string s = (string)value;
+            return s.ToLower();
+        }
 
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            return null;    
+        }
+    }
+
+    // Converter that returns an uppercase string
+    public class StringToUpper : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            string s = (string)value;
+            return s.ToUpper();
+        }
+
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            return null;
+        }
+    }
 
 
 }

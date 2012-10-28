@@ -8,18 +8,33 @@
 	xmlns:local="clr-namespace:VitalStats"
 	xmlns:VitalStats_View="clr-namespace:VitalStats.View"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
-	x:Class="VitalStats.StatsPage"
+	x:Class="VitalStats.View.StatsPage"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
 	>
 
 	<phone:PhoneApplicationPage.Resources>
+		<VitalStats_View:StringToUpper x:Key="StringToUpper"/>
+		<VitalStats_View:StringToLower x:Key="StringToLower"/>
 		<VitalStats_View:BoolToStrings x:Key="BoolToStrings"/>
 		<VitalStats_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
+
+		<shell:ApplicationBar x:Key="defaultAppBar" IsVisible="True">
+			<shell:ApplicationBarIconButton x:Name="addStatAppBarBtn" IconUri="/Images/Add.png" Text="add stat" IsEnabled="True" Click="addStatAppBarBtn_Click" />
+            <shell:ApplicationBarIconButton x:Name="editProfileAppBarBtn" IconUri="Images/Edit.png" Text="edit profile" IsEnabled="True" Click="editProfileAppBarBtn_Click" />
+        </shell:ApplicationBar>
+		
+		<shell:ApplicationBar x:Key="showStatAppBar" IsVisible="True">
+			<shell:ApplicationBarIconButton x:Name="editStatAppBarBtn" IconUri="/Images/Edit.png" Text="edit stat" IsEnabled="True" Click="editStatAppBarBtn_Click" />
+		</shell:ApplicationBar>
+		
+
 	</phone:PhoneApplicationPage.Resources>
+	
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>
+	
 	<phone:PhoneApplicationPage.FontFamily>
 		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
 	</phone:PhoneApplicationPage.FontFamily>
@@ -32,40 +47,98 @@
 
 	<!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="statDetailPopUpStateGroup">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0">
+						<Storyboard>
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="statDetailGrid">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<Visibility>Visible</Visibility>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualTransition>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="statDetailPopUpClosed"/>
+				<VisualState x:Name="statDetailPopUpOpen">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="statDetailGrid">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
 		
-		<!--TitlePanel contains the name of the application and page title-->
-		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock x:Name="ApplicationTitle" Text="VITAL STATISTICS" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding SelectedProfile.Name, ConverterParameter=&lt;No Name&gt;, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
-		</StackPanel>
-
-		<!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="8,-8,16,8">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="0.07*"/>
-				<RowDefinition Height="0.93*"/>
-			</Grid.RowDefinitions>
-			<StackPanel Margin="12,0,0,0" Orientation="Horizontal">
-				<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+		<Grid x:Name="Layout" Margin="8,17,0,8">
+			<!--TitlePanel contains the name of the application and page title-->
+			<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="4,0,0,0" Height="116" VerticalAlignment="Top">
+				<TextBlock x:Name="ApplicationTitle" Text="VITAL STATISTICS" Style="{StaticResource PhoneTextNormalStyle}"/>
+				<TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding SelectedProfile.Name, ConverterParameter=&lt;No Name&gt;, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 			</StackPanel>
-			<StackPanel Grid.Row="1">
-				<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}">
+
+			<!--ContentPanel - place additional content here-->
+			<Grid x:Name="ContentPanel" Margin="0,136,16,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.084*"/>
+					<RowDefinition Height="0.916*"/>
+				</Grid.RowDefinitions>
+				<StackPanel Margin="12,0,0,0" Orientation="Horizontal">
+					<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+					<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1">
+					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="statStackPanel_Tap">
+									<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
+									<TextBlock TextWrapping="Wrap" Text="{Binding PreferredUnit.FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" Margin="10,0,0,0"/>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<Grid Height="40" Margin="12,0,0,0" Background="{StaticResource PhoneAccentBrush}">
+						<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
+							<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
+							<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
+							<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
+				
+						</StackPanel>
+				
+					</Grid>
+				
+				</StackPanel>
+			</Grid>
+		</Grid>
+		<Grid x:Name="statDetailGrid" Grid.Row="1" Background="{StaticResource PhoneAccentBrush}" Margin="0" VerticalAlignment="Center" Visibility="Collapsed">
+			<StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="12,0,0,0">
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}}" FontSize="{StaticResource PhoneFontSizeLarge}" />
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedStat.Name}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" />
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedStat.PreferredUnit.FormattedValue}" Margin="10,0,10,10" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" HorizontalAlignment="Right"/>
+				<Border Margin="0,5,10,10" BorderThickness="0,3,0,0" BorderBrush="{StaticResource PhoneBorderBrush}" Padding="0,10,0,0">
+					<TextBlock TextWrapping="Wrap" Text="Conversions" FontSize="42.667" Height="57"/>
+				</Border>
+				<ListBox ItemsSource="{Binding SelectedStat.MeasurementType.Units}" Margin="15,0,0,0">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
 							<StackPanel Orientation="Horizontal">
-								<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" d:LayoutOverrides="Width"/>
-								<TextBlock TextWrapping="Wrap" Text="TextBlock"/>
+								<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+								<TextBlock Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="12,0,0,0"/>
 							</StackPanel>
 						</DataTemplate>
-					</ListBox.ItemTemplate>
+
+					</ListBox.ItemTemplate>					
 				</ListBox>
-				
 			</StackPanel>
 		</Grid>
+		
 	</Grid>
 </phone:PhoneApplicationPage>
