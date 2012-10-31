@@ -152,6 +152,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SplashScreenImage.jpg" />
+    <Resource Include="Images\Save.png" />
   </ItemGroup>
   <ItemGroup>
     <DesignData Include="SampleData\AppViewModelSampleData.xaml">

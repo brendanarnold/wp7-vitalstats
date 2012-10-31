@@ -45,16 +45,15 @@
         		<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
         		<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
         	</shell:ApplicationBar.MenuItems>
-        	<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/icons/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
+        	<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
       	</shell:ApplicationBar>
 
 		<shell:ApplicationBar x:Key="addProfileAppBar" IsVisible="True">
-			<shell:ApplicationBarIconButton x:Name="cancelAddBtn" Text="cancel" IconUri="/icons/appbar.close.png" Click="cancelAddBtn_Click" IsEnabled="True" />
-		    <shell:ApplicationBarIconButton x:Name="confirmAddBtn" Text="add" IconUri="/icons/appbar.check.png" Click="confirmAddBtn_Click" IsEnabled="True" />
+			<shell:ApplicationBarIconButton x:Name="cancelAddBtn" Text="cancel" IconUri="/Images/Close.png" Click="cancelAddBtn_Click" IsEnabled="True" />
+		    <shell:ApplicationBarIconButton x:Name="confirmAddBtn" Text="add" IconUri="/Images/Check.png" Click="confirmAddBtn_Click" IsEnabled="True" />
 		</shell:ApplicationBar>
 
     </phone:PhoneApplicationPage.Resources>
-	
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>

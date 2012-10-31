@@ -30,7 +30,6 @@
 		
 
 	</phone:PhoneApplicationPage.Resources>
-	
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>

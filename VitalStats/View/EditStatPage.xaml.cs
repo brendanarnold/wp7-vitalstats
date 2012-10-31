@@ -24,6 +24,8 @@ namespace VitalStats.View
             InitializeComponent();
 
             this.IsNewStat = false;
+
+            
             
 
         }
@@ -42,6 +44,58 @@ namespace VitalStats.View
                 this.IsNewStat = false;
             }
             
+
+        }
+
+        private void templateListPicker_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            // Convention of Id = -1 defined in Converter.cs
+            Stat st = this.templateListPicker.SelectedItem as Stat;
+            if (st == null) return;
+            if (st.Id != -1)
+            {
+                this.nameTextBox.Text = st.Name;
+                this.measurementTypeListPicker.SelectedItem = st.MeasurementType;
+            }
+        }
+
+        private void measurementTypeListPicker_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            this.preferredUnitListPicker.ItemsSource = (this.measurementTypeListPicker.SelectedItem as MeasurementType).Units;
+        }
+
+        private void saveAppBarBtn_Click(object sender, System.EventArgs e)
+        {
+            if (this.nameTextBox.Text == String.Empty)
+            {
+                MessageBox.Show("Please enter something for the name.");
+                return;
+            }
+            if (this.valueTextBox.Text == String.Empty)
+            {
+                MessageBox.Show("Please enter a value for the stat");
+                return;
+            }
+            if ((this.measurementTypeListPicker.SelectedItem as MeasurementType).Name == "Other")
+            {
+                App.VM.SelectedProfile.Stats.Add(new Stat()
+                {
+                    Name = this.nameTextBox.Text,
+                    Value = this.valueTextBox.Text,
+                    MeasurementType = null,
+                    PreferredUnit = null,
+                });
+            }
+            else
+            {
+                App.VM.SelectedProfile.Stats.Add(new Stat()
+                {
+                    Name = this.nameTextBox.Text,
+                    Value = this.valueTextBox.Text,
+                    MeasurementType = this.measurementTypeListPicker.SelectedItem as MeasurementType,
+                    PreferredUnit = this.preferredUnitListPicker.SelectedItem as Unit,
+                });
+            }
 
         }
 

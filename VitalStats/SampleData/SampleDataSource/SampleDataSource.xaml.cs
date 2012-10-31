@@ -1446,9 +1446,9 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private string _IsConvertible = string.Empty;
+		private bool _IsConvertible = false;
 
-		public string IsConvertible
+		public bool IsConvertible
 		{
 			get
 			{
@@ -1526,21 +1526,21 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private string _FormattedName = string.Empty;
+		private string _FormattedValue = string.Empty;
 
-		public string FormattedName
+		public string FormattedValue
 		{
 			get
 			{
-				return this._FormattedName;
+				return this._FormattedValue;
 			}
 
 			set
 			{
-				if (this._FormattedName != value)
+				if (this._FormattedValue != value)
 				{
-					this._FormattedName = value;
-					this.OnPropertyChanged("FormattedName");
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
 				}
 			}
 		}

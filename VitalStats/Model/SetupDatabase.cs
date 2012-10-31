@@ -21,6 +21,7 @@ namespace VitalStats.Model
         {
             db.CreateDatabase();
             ResetMeasurementTypes(db);
+            db.SubmitChanges();
             ResetStatTemplates(db);
             db.SubmitChanges();
         }

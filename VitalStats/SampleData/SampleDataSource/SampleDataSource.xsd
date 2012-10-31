@@ -98,8 +98,8 @@
     <xs:sequence>
       <xs:element name="Units" type="tns:Units3" />
     </xs:sequence>
-    <xs:attribute name="IsConvertible" type="xs:string" />
-    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="IsConvertible" type="xs:boolean" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Units3">
     <xs:sequence>
@@ -107,12 +107,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="UnitsItem3">
-    <xs:attribute name="Name" type="xs:string" />
-    <xs:attribute name="FormattedValue" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="PreferredUnit2">
-    <xs:attribute name="Name" type="xs:string" />
-    <xs:attribute name="FormattedName" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="SuggestedStatTemplate">
     <xs:sequence>
