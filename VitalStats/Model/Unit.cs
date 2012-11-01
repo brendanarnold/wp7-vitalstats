@@ -97,7 +97,7 @@ namespace VitalStats.Model
 
         [Column]
         internal int _measurementTypeId;
-        private EntityRef<MeasurementType> _measurementType;
+        private EntityRef<MeasurementType> _measurementType = new EntityRef<MeasurementType>();
         [Association(Storage = "_measurementType", ThisKey = "_measurementTypeId", OtherKey = "Id",
             IsForeignKey = true)]
         public MeasurementType MeasurementType

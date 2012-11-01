@@ -74,8 +74,18 @@ namespace VitalStats
 
             using (AppDataContext db = new AppDataContext(dbConnectionString))
             {
-                if (db.DatabaseExists() == false)
+                if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
+                if (db.StatTemplates.Count() == 0)
+                {
+                    SetupDatabase.ResetStatTemplates(db);
+                    db.SubmitChanges();
+                }
+                if (db.MeasurementTypes.Count() == 0)
+                {
+                    SetupDatabase.ResetMeasurementTypes(db);
+                    db.SubmitChanges();
+                }
             }
 
             _vm = new AppViewModel(dbConnectionString);

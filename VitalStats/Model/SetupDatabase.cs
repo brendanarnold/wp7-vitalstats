@@ -74,7 +74,7 @@ namespace VitalStats.Model
         }
 
 
-        private static void ResetMeasurementTypes(AppDataContext db)
+        internal static void ResetMeasurementTypes(AppDataContext db)
         {
             List<MeasurementType> mts = new List<MeasurementType>()
             {

@@ -69,7 +69,7 @@ namespace VitalStats.Model
             }
         }
 
-        private EntitySet<Stat> _stats;
+        private EntitySet<Stat> _stats = new EntitySet<Stat>();
         [Association(Storage = "_stats", OtherKey = "Id", ThisKey = "Id")]
         public EntitySet<Stat> Stats
         {

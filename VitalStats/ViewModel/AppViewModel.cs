@@ -2,6 +2,11 @@
 using VitalStats.Model;
 using System.ComponentModel;
 using System.Linq;
+using System.Collections.Generic;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
+using Microsoft.Phone.Data.Linq;
+using Microsoft.Phone.Data.Linq.Mapping;
 
 namespace VitalStats.ViewModel
 {
@@ -76,6 +81,36 @@ namespace VitalStats.ViewModel
                 this._selectedStat = value;
                 this.NotifyPropertyChanged("SelectedStat");
             }
+        }
+
+        // Following is some code to present a different suggested stat that has not already been
+        // used in the selectedProfile
+        private int _suggestedStatTemplateInd = 0;
+        private Stat _suggestedStatTemplate;
+        public Stat SuggestedStatTemplate
+        {
+            get { return this._suggestedStatTemplate; }
+            set 
+            { 
+                this._suggestedStatTemplate = value;
+                this.NotifyPropertyChanged("SuggestedStatTemplate");
+            }
+        }
+        public void LoadNextSuggestedStat()
+        {
+            this._suggestedStatTemplateInd += 1;
+            List<string> suggNames = (from Stat st in App.VM.StatTemplates select 
+                                          st.Name).Except(from Stat st in this.SelectedProfile.Stats 
+                                          select st.Name).ToList();
+            // Check if any suggested stats left over
+            if (suggNames.Count == 0)
+            {
+                this.SuggestedStatTemplate = null;
+                return;
+            }
+            int ind = this._suggestedStatTemplateInd % suggNames.Count;
+            this.SuggestedStatTemplate = (from Stat st in App.VM.StatTemplates 
+                                           where st.Name == suggNames[ind] select st).First();
         }
 
         #endregion

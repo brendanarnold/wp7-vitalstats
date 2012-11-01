@@ -56,7 +56,7 @@ namespace VitalStats.Model
             }
         }
 
-        private EntitySet<Stat> _stats;
+        private EntitySet<Stat> _stats = new EntitySet<Stat>();
         [Association(Storage = "_stats", OtherKey = "Id", ThisKey = "Id")]
         public EntitySet<Stat> Stats
         {
@@ -64,7 +64,7 @@ namespace VitalStats.Model
             set { this._stats.Assign(value); }
         }
 
-        private EntitySet<Unit> _units;
+        private EntitySet<Unit> _units = new EntitySet<Unit>();
         [Association(Storage = "_units", OtherKey = "Id", ThisKey = "Id")]
         public EntitySet<Unit> Units
         {

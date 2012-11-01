@@ -3,6 +3,8 @@ using System.Windows;
 using System.Globalization;
 using System.Collections.ObjectModel;
 using VitalStats.Model;
+using System.Collections;
+using System.Linq;
 
 
 namespace VitalStats.View
@@ -140,6 +142,81 @@ namespace VitalStats.View
             return null;
         }
     }
+
+    // Converter that returns visibility if an Ienumerable is empty based on paramter
+    public class CountToVisibility : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            string p = (string)parameter;
+            ICollection i = (ICollection)value;
+            if (i.Count == 0)
+            {
+                if (p == "VisibleIfEmpty")
+                {
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    return Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                if (p == "CollapsedIfEmpty")
+                {
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    return Visibility.Collapsed;
+                }
+            }
+            
+        }
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            return null;
+        }        
+    }
+
+    // Converter that returns visibility if value is null based on parameter
+    public class NullToVisibility : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            string p = (string)parameter;
+            if (value == null)
+            {
+                if (p == "VisibleIfNull")
+                {
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    return Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                if (p == "CollapsedIfNull")
+                {
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    return Visibility.Collapsed;
+                }
+            }
+
+        }
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            return null;
+        }
+    }
+
+
 }
 
 

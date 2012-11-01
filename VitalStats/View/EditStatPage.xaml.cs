@@ -36,13 +36,26 @@ namespace VitalStats.View
 
             this.DataContext = App.VM;
 
-            // Update the stat to be edited
-            if (NavigationContext.QueryString.ContainsKey("Id"))
+            if (NavigationContext.QueryString.ContainsKey("Action"))
             {
-                int id = Convert.ToInt32(NavigationContext.QueryString["Id"]);
-                App.VM.SelectedStat = (from Stat s in App.VM.SelectedProfile.Stats where s.Id == id select s).First();
-                this.IsNewStat = false;
+                switch (NavigationContext.QueryString["Action"])
+                {
+                    case EditStatPageActions.Edit:
+                        this.IsNewStat = false;
+                        int id = Convert.ToInt32(NavigationContext.QueryString["Id"]);
+                        App.VM.SelectedStat = (from Stat s in App.VM.SelectedProfile.Stats where s.Id == id select s).First();
+                        break;
+                    case EditStatPageActions.NewFromTemplate:
+                        int templateId = Convert.ToInt32(NavigationContext.QueryString["Id"]);
+                        this.templateListPicker.SelectedItem = (from Stat s in App.VM.StatTemplates where s.Id == templateId select s).First();
+                        break;
+                    case EditStatPageActions.New:
+                    default:
+                        break;
+                }
             }
+
+            
             
 
         }
@@ -52,10 +65,12 @@ namespace VitalStats.View
             // Convention of Id = -1 defined in Converter.cs
             Stat st = this.templateListPicker.SelectedItem as Stat;
             if (st == null) return;
-            if (st.Id != -1)
+            if ((st.Id != -1) && (this.measurementTypeListPicker.Items.Count > 0))
             {
                 this.nameTextBox.Text = st.Name;
                 this.measurementTypeListPicker.SelectedItem = st.MeasurementType;
+                    //(from MeasurementType mt in this.measurementTypeListPicker.Items 
+                    //where st.Id == st.MeasurementType.Id select mt).First();
             }
         }
 
@@ -97,12 +112,32 @@ namespace VitalStats.View
                 });
             }
 
+            this.ClearInput();
+
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+
         }
 
+        // Wipes the form clean
+        // TODO: Do the bound items need resetting in some way? 
+        private void ClearInput()
+        {
+            this.nameTextBox.Text = String.Empty;
+            this.valueTextBox.Text = String.Empty;
+        }
 
-
-		
-		
-		
     }
+
+
+    public static class EditStatPageActions
+    {
+        public const string NewFromTemplate = "NewFromTemplate";
+        public const string New = "New";
+        public const string Edit = "Edit";
+    }
+
+
 }

@@ -14,6 +14,7 @@
 	>
 
 	<phone:PhoneApplicationPage.Resources>
+		<VitalStats_View:NullToVisibility x:Key="NullToVisibility"/>
 		<VitalStats_View:StringToUpper x:Key="StringToUpper"/>
 		<VitalStats_View:StringToLower x:Key="StringToLower"/>
 		<VitalStats_View:BoolToStrings x:Key="BoolToStrings"/>
@@ -97,14 +98,14 @@
 					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
-								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="statStackPanel_Tap">
+								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
 									<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
 									<TextBlock TextWrapping="Wrap" Text="{Binding PreferredUnit.FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" Margin="10,0,0,0"/>
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
-					<Grid Height="40" Margin="12,0,0,0" Background="{StaticResource PhoneAccentBrush}">
+					<Grid Height="40" Margin="12,0,0,0" Background="{StaticResource PhoneAccentBrush}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
 						<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
 							<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
 							<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
@@ -117,7 +118,7 @@
 				</StackPanel>
 			</Grid>
 		</Grid>
-		<Grid x:Name="statDetailGrid" Grid.Row="1" Background="{StaticResource PhoneAccentBrush}" Margin="0" VerticalAlignment="Center" Visibility="Collapsed">
+		<Grid x:Name="statDetailGrid" Grid.Row="1" Background="{StaticResource PhoneAccentBrush}" Margin="0" Tap="statDetailGrid_Tap" Visibility="Collapsed">
 			<StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="12,0,0,0">
 				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}}" FontSize="{StaticResource PhoneFontSizeLarge}" />
 				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedStat.Name}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" />

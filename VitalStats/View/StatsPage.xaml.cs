@@ -36,6 +36,11 @@ namespace VitalStats.View
             // Bind appbar
             this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["defaultAppBar"];
 
+            App.VM.LoadAllFromDB();
+
+            // Load a new suggested app
+            App.VM.LoadNextSuggestedStat();
+
         }
 
 
@@ -47,7 +52,7 @@ namespace VitalStats.View
             if (this.statDetailPopUpStateGroup.CurrentState == this.statDetailPopUpOpen)
             {
                 e.Cancel = true;
-                VisualStateManager.GoToState(this, "addProfilePopUpClosed", true);
+                VisualStateManager.GoToState(this, "statDetailPopUpClosed", true);
             }
         }
 
@@ -71,9 +76,21 @@ namespace VitalStats.View
         {
         }
 
-        private void statStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+
+        private void suggestedStatGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}&Id={1}",
+                EditStatPageActions.NewFromTemplate, App.VM.SuggestedStatTemplate.Id), UriKind.Relative));
+        }
+
+        private void stat_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             VisualStateManager.GoToState(this, "statDetailPopUpOpen", true);
+        }
+
+        private void statDetailGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            VisualStateManager.GoToState(this, "statDetailPopUpClosed", true);
         }
         
 

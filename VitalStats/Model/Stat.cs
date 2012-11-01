@@ -56,8 +56,8 @@ namespace VitalStats.Model
         }
 
         [Column]
-        internal int _preferredUnitId;
-        private EntityRef<Unit> _preferredUnit;
+        internal int? _preferredUnitId;
+        private EntityRef<Unit> _preferredUnit = new EntityRef<Unit>();
         [Association(Storage = "_preferredUnit", ThisKey = "_preferredUnitId", OtherKey = "Id", IsForeignKey = true)]
         public Unit PreferredUnit
         {
@@ -76,8 +76,8 @@ namespace VitalStats.Model
 
 
         [Column]
-        internal int _profileId;
-        private EntityRef<Profile> _profile;
+        internal int? _profileId;
+        private EntityRef<Profile> _profile = new EntityRef<Profile>();
         [Association(Storage = "_profile", ThisKey = "_profileId", OtherKey = "Id", IsForeignKey = true)]
         public Profile Profile
         {
@@ -96,7 +96,7 @@ namespace VitalStats.Model
 
         [Column]
         internal int _measurementTypeId;
-        private EntityRef<MeasurementType> _measurementType;
+        private EntityRef<MeasurementType> _measurementType = new EntityRef<MeasurementType>();
         [Association(Storage="_measurementType", ThisKey="_measurementTypeId", OtherKey="Id", 
             IsForeignKey=true)]
         public MeasurementType MeasurementType
