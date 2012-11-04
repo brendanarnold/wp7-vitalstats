@@ -22,9 +22,14 @@
 		<VitalStats_View:AddCustomStatTemplateOption x:Key="AddCustomStatTemplateOption"/>
 		<VitalStats_View:BoolToStrings x:Key="BoolToStrings"/>
 		<VitalStats_View:StringToUpper x:Key="StringToUpper"/>
-		
-		
-	</phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Name="defaultListPickerTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+        </DataTemplate>
+
+    </phone:PhoneApplicationPage.Resources>
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>
@@ -34,41 +39,34 @@
 		<StackPanel Margin="12,0,0,0">
 			<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
 			<TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding IsNewStat, ConverterParameter=Add new stat|Edit stat, Converter={StaticResource BoolToStrings}, ElementName=textBlock, FallbackValue=Add stat}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
-			
-			<toolkit:ListPicker x:Name="templateListPicker" Header="Type" ItemsSource="{Binding StatTemplates}" SelectionChanged="templateListPicker_SelectionChanged">
-				<toolkit:ListPicker.ItemTemplate>
-					<DataTemplate>
-						<StackPanel>
-							<TextBlock Text="{Binding Name}" />
-						</StackPanel>
-					</DataTemplate>
-				</toolkit:ListPicker.ItemTemplate>
-			</toolkit:ListPicker>
-			
-			<TextBlock TextWrapping="Wrap" Text="Name" Margin="12,5,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
+
+            <toolkit:ListPicker x:Name="templateListPicker" Header="Type" 
+                                ItemsSource="{Binding StatTemplates}" 
+                                SelectionChanged="templateListPicker_SelectionChanged"
+                                FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+                                ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+
+            <TextBlock TextWrapping="Wrap" Text="Name" Margin="12,5,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
 			<TextBox x:Name="nameTextBox" TextWrapping="Wrap"/>
+
+            <toolkit:ListPicker x:Name="measurementTypeListPicker" Header="Measures" 
+                                ItemsSource="{Binding MeasurementTypes}" 
+                                SelectionChanged="measurementTypeListPicker_SelectionChanged" 
+                                FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+                                ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+
+            <toolkit:ListPicker x:Name="preferredUnitListPicker" 
+                                Header="Preferred Unit"
+                                SelectionChanged="preferredUnitListPicker_SelectionChanged"
+                                FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+                                ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+
+            <TextBlock TextWrapping="Wrap" Text="Value" Margin="12,10,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="valueTextBox" TextWrapping="Wrap" Margin="0,0,0,0"/>
+                <TextBox x:Name="secondaryValueTextBox" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
+            </StackPanel>
 			
-			<toolkit:ListPicker x:Name="measurementTypeListPicker" Header="Measures" ItemsSource="{Binding MeasurementTypes}" SelectionChanged="measurementTypeListPicker_SelectionChanged">
-				<toolkit:ListPicker.ItemTemplate>
-					<DataTemplate>
-						<StackPanel>
-							<TextBlock Text="{Binding Name}" />
-						</StackPanel>
-					</DataTemplate>
-				</toolkit:ListPicker.ItemTemplate>
-			</toolkit:ListPicker>
-			
-			<toolkit:ListPicker x:Name="preferredUnitListPicker" Header="Preferred Unit">
-				<toolkit:ListPicker.ItemTemplate>
-					<DataTemplate>
-						<StackPanel>
-							<TextBlock Text="{Binding Name}"/>
-						</StackPanel>
-					</DataTemplate>
-				</toolkit:ListPicker.ItemTemplate>
-			</toolkit:ListPicker>
-			<TextBlock TextWrapping="Wrap" Text="Value" Margin="12,10,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
-			<TextBox x:Name="valueTextBox" TextWrapping="Wrap" Margin="0,0,0,0"/>
 			
 			
 		</StackPanel>

@@ -72,6 +72,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
     <Compile Include="Model\MeasurementType.cs" />
     <Compile Include="Model\Profile.cs" />

@@ -78,14 +78,12 @@ namespace VitalStats
                     SetupDatabase.InitialiseDB(db);
 
                 // For debugging
-                SetupDatabase.EmptyDB(db);
+                //SetupDatabase.EmptyDB(db);
 
     
                 if (db.MeasurementTypes.Count() == 0)
                 {
                     SetupDatabase.ResetMeasurementTypes(db);
-                    db.SubmitChanges();
-                    SetupDatabase.ResetUnits(db);
                     db.SubmitChanges();
                 }
                 if (db.StatTemplates.Count() == 0)

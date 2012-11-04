@@ -1,9 +1,12 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Collections.Generic;
 using System.Linq;
+
+
 
 namespace VitalStats.Model
 {
@@ -134,22 +137,60 @@ namespace VitalStats.Model
             }
         }
 
+        public List<double> GetValuesAsDoubles(string value)
+        {
+            double val, a, b;
+            val = Convert.ToDouble(value);
+            string[] aVals = this.ConversionFactor.Split(AppConstants.VALUE_DELIMITERS);
+            string[] bVals = this.ConversionIntercept.Split(AppConstants.VALUE_DELIMITERS);
+            List<double> convVals = new List<double>();
+            for (int i = 0; i < aVals.Length; i++)
+            {
+                a = Convert.ToDouble(aVals[i]);
+                b = Convert.ToDouble(bVals[i]);
+                if (aVals.Length == 1)
+                {
+                    convVals.Add(a * val + b);
+                }
+                else
+                {
+                    double rem = a * val + b;
+                    convVals.Add(Math.Floor(rem));
+                    val = (rem - convVals.Last()) / a;
+                }
+            }
+            return convVals;
+        }
+
+
         public string GetFormattedValue(string value)
         {
-            string[] vals = value.Split(new char[] { '|' });
-            string[] factors = this.ConversionFactor.Split(new char[] { '|' });
-            string[] intercepts = this.ConversionIntercept.Split(new char[] { '|' });
-            List<double> convVals = new List<double>();
-            for (int i=0; i < vals.Length; i++) {
-                double val, fact, intc;
-                double.TryParse(vals[i], out val);
-                double.TryParse(factors[i], out fact);
-                double.TryParse(intercepts[i], out intc);
-                convVals.Add(val * fact + intc);
-            }
+            List<double> convVals = this.GetValuesAsDoubles(value);
             return String.Format(this.Format, convVals.Cast<object>().ToArray());
         }
 
+        // Takes input from text and converts it to the database normalised string value
+        // If multiple values (e.g. ft. inches.) then are delimited by pipe.
+        public string GetDBValue(string value)
+        {
+            double a, b, val = 0.0;
+            string[] vals = value.Split(AppConstants.VALUE_DELIMITERS);
+            string[] aVals = this.ConversionFactor.Split(AppConstants.VALUE_DELIMITERS);
+            string[] bVals = this.ConversionIntercept.Split(AppConstants.VALUE_DELIMITERS);
+            for (int i = 0; i < vals.Length; i++)
+            {
+                a = Convert.ToDouble(aVals[i]);
+                b = Convert.ToDouble(bVals[i]);
+                val += (Convert.ToDouble(vals[i]) - b) / a;
+            }
+            return String.Format("{0}", val);
+        }
+
+
+        public int GetNumberInputs() 
+        {
+            return this.ConversionFactor.Split(AppConstants.VALUE_DELIMITERS).Count();
+        }
 
         #region INotifyPropertyChanged members
 

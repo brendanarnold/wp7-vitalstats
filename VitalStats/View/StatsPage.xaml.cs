@@ -103,6 +103,7 @@ namespace VitalStats.View
 
         private void stat_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            App.VM.SelectedStat = ((sender as StackPanel).DataContext as Stat);
             VisualStateManager.GoToState(this, "statDetailPopUpOpen", true);
         }
 

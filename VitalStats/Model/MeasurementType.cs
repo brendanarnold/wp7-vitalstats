@@ -11,10 +11,29 @@ namespace VitalStats.Model
     {
         public MeasurementType()
         {
+            #region EntitySet bookkeeping
+
             this._stats = new EntitySet<Stat>(
-                new Action<Stat>(this._attachStat), new Action<Stat>(this._detachStat));
+                delegate(Stat entity) {
+                    this.NotifyPropertyChanging("Stats");
+                    entity.MeasurementType = this;
+                },
+                delegate(Stat entity) {
+                    this.NotifyPropertyChanging("Stats");
+                    entity.MeasurementType = null;
+                });
             this._units = new EntitySet<Unit>(
-                new Action<Unit>(this._attachUnit), new Action<Unit>(this._detachUnit));
+                delegate(Unit entity)
+                {
+                    this.NotifyPropertyChanging("Units");
+                    entity.MeasurementType = this;
+                },
+                delegate(Unit entity) {
+                    this.NotifyPropertyChanging("Units");
+                    entity.MeasurementType = null;
+                });
+
+            #endregion
         }
 
         // This helps with updaing the schema
@@ -145,32 +164,5 @@ namespace VitalStats.Model
         #endregion
 
 
-        private void _attachUnit(Unit unit) 
-        {
-            this.NotifyPropertyChanging("Units");
-            unit.MeasurementType = this;
-            this.NotifyPropertyChanged("Units");
-        }
-
-        private void _detachUnit(Unit unit) 
-        {
-            this.NotifyPropertyChanging("Units");
-            unit.MeasurementType = null;
-            this.NotifyPropertyChanged("Units");
-        }
-
-        private void _attachStat(Stat stat) 
-        {
-            NotifyPropertyChanging("Stats");
-            stat.MeasurementType = this;
-            this.NotifyPropertyChanged("Stats");
-        }
-
-        private void _detachStat(Stat stat)
-        {
-            NotifyPropertyChanging("Stats");
-            stat.MeasurementType = null;
-            this.NotifyPropertyChanged("Stats");
-        }
     }
 }

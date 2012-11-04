@@ -10,10 +10,21 @@ namespace VitalStats.Model
     {
         public Profile()
         {
+            #region EntitySet bookkeeping
+
             this._stats = new EntitySet<Stat>(
-                new Action<Stat>(this._attachStat), 
-                new Action<Stat>(this._detatchStat)
-                );
+                delegate(Stat entity)
+                {
+                    this.NotifyPropertyChanging("Stats");
+                    entity.Profile = this;
+                },
+                delegate(Stat entity)
+                {
+                    this.NotifyPropertyChanging("Stats");
+                    entity.Profile = null;
+                });
+
+            #endregion
         }
 
         // This helps with updaing the schema
@@ -107,19 +118,6 @@ namespace VitalStats.Model
         #endregion
 
 
-        private void _attachStat(Stat stat)
-        {
-            this.NotifyPropertyChanging("Stat");
-            stat.Profile = this;
-            this.NotifyPropertyChanged("Stat");
-        }
-
-        private void _detatchStat(Stat stat)
-        {
-            this.NotifyPropertyChanging("Stat");
-            stat.Profile = null;
-            this.NotifyPropertyChanged("Stat");
-        }
 
  
         

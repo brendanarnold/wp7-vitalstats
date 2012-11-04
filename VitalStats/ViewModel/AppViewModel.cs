@@ -13,7 +13,7 @@ namespace VitalStats.ViewModel
     public class AppViewModel : INotifyPropertyChanged
     {
 
-        private AppDataContext appDB;
+        public AppDataContext appDB;
 
         // Empty constructor needed for design-time data created in XAML
         public AppViewModel() { }

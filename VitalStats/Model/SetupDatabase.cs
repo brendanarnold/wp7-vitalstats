@@ -22,8 +22,6 @@ namespace VitalStats.Model
             db.CreateDatabase();
             ResetMeasurementTypes(db);
             db.SubmitChanges();
-            ResetUnits(db);
-            db.SubmitChanges();
             ResetStatTemplates(db);
             db.SubmitChanges();
         }
@@ -85,85 +83,6 @@ namespace VitalStats.Model
             
         }
 
-        // This has to be run when measurementtypes are already in the db
-        public static void ResetUnits(AppDataContext db)
-        {
-            MeasurementType lengthMt = (from MeasurementType mt in db.MeasurementTypes 
-                                        where mt.Name == "Length" select mt).First(); 
-            MeasurementType weightMt = (from MeasurementType mt in db.MeasurementTypes 
-                                        where mt.Name == "Weight" select mt).First();
-
-            lengthMt.Units.AddRange(
-             new List<Unit>() { 
-                new Unit() {
-                    Name = "Centimetres",
-                    ConversionFactor = "100.0",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} cm.",
-                },
-                new Unit() {
-                    Name = "Inches",
-                    ConversionFactor = "39.3701",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} in.",
-                },
-                new Unit() {
-                    Name = "Hands",
-                    ConversionFactor = "9.84252",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} hands",
-                },
-                new Unit {
-                    Name = "Feet/Inches",
-                    ConversionFactor = "3.2808|39.3701",
-                    ConversionIntercept = "0.0|0.0",
-                    Format = "{0} ft. {1} in.",
-                },
-                new Unit {
-                    Name = "Feet",
-                    ConversionFactor = "3.2808",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} ft.",
-                },
-                new Unit() {
-                    Name = "Metres",
-                    ConversionFactor = "1.0",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} m.",
-                }
-             });
-
-            weightMt.Units.Assign(
-                new EntitySet<Unit>() {
-                new Unit() {
-                    Name = "Ounces",
-                    ConversionFactor = "35.274",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} oz.",
-                },
-                new Unit() {
-                    Name = "Pounds/Ounces",
-                    ConversionFactor = "2.20462|35.274",
-                    ConversionIntercept = "0.0|0.0",
-                    Format = "{0} lbs. {1} oz.",
-                },
-                new Unit() {
-                    Name = "Kilograms",
-                    ConversionFactor = "1.0",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} kg.",
-                }, 
-                new Unit() {
-                    Name = "Stones",
-                    ConversionFactor = "0.157473",
-                    ConversionIntercept = "0.0",
-                    Format = "{0} st.",
-                },
-            });
-
-
-        }
-
 
         public static void ResetMeasurementTypes(AppDataContext db)
         {
@@ -171,12 +90,74 @@ namespace VitalStats.Model
             {
                 new MeasurementType() {
                     Name = "Length",
-                    Units = null,                                 
+                    Units = { 
+                        new Unit() {
+                            Name = "Centimetres",
+                            ConversionFactor = "100.0",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f1} cm.",
+                        },
+                        new Unit() {
+                            Name = "Inches",
+                            ConversionFactor = "39.3701",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:F1} in.",
+                        },
+                        new Unit() {
+                            Name = "Hands",
+                            ConversionFactor = "9.84252",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f1} hands",
+                        },
+                        new Unit {
+                            Name = "Feet/Inches",
+                            ConversionFactor = "3.2808|39.3701",
+                            ConversionIntercept = "0.0|0.0",
+                            Format = "{0:f0} ft. {1:f0} in.",
+                        },
+                        new Unit {
+                            Name = "Feet",
+                            ConversionFactor = "3.2808",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f1} ft.",
+                        },
+                        new Unit() {
+                            Name = "Metres",
+                            ConversionFactor = "1.0",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f2} m.",
+                        }
+                    },                                 
                 },
 
                 new MeasurementType() {
                     Name = "Weight",
-                    Units = null,
+                    Units = {
+                        new Unit() {
+                            Name = "Ounces",
+                            ConversionFactor = "35.274",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f0} oz.",
+                        },
+                        new Unit() {
+                            Name = "Pounds/Ounces",
+                            ConversionFactor = "2.20462|35.274",
+                            ConversionIntercept = "0.0|0.0",
+                            Format = "{0:f0} lbs. {1:f0} oz.",
+                        },
+                        new Unit() {
+                            Name = "Kilograms",
+                            ConversionFactor = "1.0",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f1} kg.",
+                        }, 
+                        new Unit() {
+                            Name = "Stones",
+                            ConversionFactor = "0.157473",
+                            ConversionIntercept = "0.0",
+                            Format = "{0:f1} st.",
+                        },
+                    },
                 },
 
                 new MeasurementType() {
