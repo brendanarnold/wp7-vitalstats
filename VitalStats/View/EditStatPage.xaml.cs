@@ -88,9 +88,11 @@ namespace VitalStats.View
             }
             if (this.valueTextBox.Text == String.Empty)
             {
-                MessageBox.Show("Please enter a value for the stat");
+                MessageBox.Show("Please enter something in the value box");
                 return;
             }
+            
+
             if ((this.measurementTypeListPicker.SelectedItem as MeasurementType).Name == "Other")
             {
                 App.VM.SelectedProfile.Stats.Add(new Stat()
@@ -103,6 +105,12 @@ namespace VitalStats.View
             }
             else
             {
+                double d;
+                if (!double.TryParse(this.valueTextBox.Text, out d))
+                {
+                    MessageBox.Show("Please enter a number as the value.");
+                    return;
+                }
                 App.VM.SelectedProfile.Stats.Add(new Stat()
                 {
                     Name = this.nameTextBox.Text,
@@ -111,6 +119,8 @@ namespace VitalStats.View
                     PreferredUnit = this.preferredUnitListPicker.SelectedItem as Unit,
                 });
             }
+
+            App.VM.SaveChangesToDB();
 
             this.ClearInput();
 

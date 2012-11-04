@@ -16,9 +16,7 @@ namespace VitalStats.ViewModel
         private AppDataContext appDB;
 
         // Empty constructor needed for design-time data created in XAML
-        public AppViewModel()
-        {
-        }
+        public AppViewModel() { }
 
         public AppViewModel(string connectionString)
         {
@@ -48,7 +46,6 @@ namespace VitalStats.ViewModel
                 this.NotifyPropertyChanged("MeasurementTypes");
             }
         }
-
 
         private ObservableCollection<Stat> _statTemplates;
         public ObservableCollection<Stat> StatTemplates
@@ -96,7 +93,7 @@ namespace VitalStats.ViewModel
                 this.NotifyPropertyChanged("SuggestedStatTemplate");
             }
         }
-        public void LoadNextSuggestedStat()
+        public void LoadNextSuggestedStatTemplate()
         {
             this._suggestedStatTemplateInd += 1;
             List<string> suggNames = (from Stat st in App.VM.StatTemplates select 
@@ -112,6 +109,8 @@ namespace VitalStats.ViewModel
             this.SuggestedStatTemplate = (from Stat st in App.VM.StatTemplates 
                                            where st.Name == suggNames[ind] select st).First();
         }
+
+
 
         #endregion
 
@@ -141,6 +140,7 @@ namespace VitalStats.ViewModel
             var stats = from Stat s in this.appDB.StatTemplates select s;
             this.StatTemplates = new ObservableCollection<Stat>(stats);
         }
+
 
         #endregion
 

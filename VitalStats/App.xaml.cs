@@ -76,16 +76,24 @@ namespace VitalStats
             {
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
+
+                // For debugging
+                SetupDatabase.EmptyDB(db);
+
+    
+                if (db.MeasurementTypes.Count() == 0)
+                {
+                    SetupDatabase.ResetMeasurementTypes(db);
+                    db.SubmitChanges();
+                    SetupDatabase.ResetUnits(db);
+                    db.SubmitChanges();
+                }
                 if (db.StatTemplates.Count() == 0)
                 {
                     SetupDatabase.ResetStatTemplates(db);
                     db.SubmitChanges();
                 }
-                if (db.MeasurementTypes.Count() == 0)
-                {
-                    SetupDatabase.ResetMeasurementTypes(db);
-                    db.SubmitChanges();
-                }
+
             }
 
             _vm = new AppViewModel(dbConnectionString);

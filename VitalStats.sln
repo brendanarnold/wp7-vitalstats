@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010 Express for Windows Phone
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalStats", "VitalStats\VitalStats.csproj", "{D32D65B9-9B76-4C72-93DE-35E409A7F54B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalStatsTestApplication", "VitalStatsTestApplication\VitalStatsTestApplication.csproj", "{40B37456-7016-4DE7-A360-170D95786377}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,6 @@ Global
 		{D32D65B9-9B76-4C72-93DE-35E409A7F54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32D65B9-9B76-4C72-93DE-35E409A7F54B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D32D65B9-9B76-4C72-93DE-35E409A7F54B}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{40B37456-7016-4DE7-A360-170D95786377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40B37456-7016-4DE7-A360-170D95786377}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40B37456-7016-4DE7-A360-170D95786377}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{40B37456-7016-4DE7-A360-170D95786377}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40B37456-7016-4DE7-A360-170D95786377}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40B37456-7016-4DE7-A360-170D95786377}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

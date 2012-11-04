@@ -39,8 +39,23 @@ namespace VitalStats.View
             App.VM.LoadAllFromDB();
 
             // Load a new suggested app
-            App.VM.LoadNextSuggestedStat();
+            App.VM.LoadNextSuggestedStatTemplate();
 
+            // Bind an event to switch the application bar
+            this.statDetailPopUpStateGroup.CurrentStateChanging += new EventHandler<VisualStateChangedEventArgs>(statDetailPopUpStateGroup_CurrentStateChanging);
+
+        }
+
+        void statDetailPopUpStateGroup_CurrentStateChanging(object sender, VisualStateChangedEventArgs e)
+        {
+            if (e.NewState == this.statDetailPopUpOpen)
+            {
+                this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["showStatAppBar"];
+            }
+            else
+            {
+                this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"];
+            }
         }
 
 
@@ -64,16 +79,19 @@ namespace VitalStats.View
 
         private void addStatAppBarBtn_Click(Object sender, EventArgs e) 
         {
-            // Launch app editing code
+            NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}", 
+                EditStatPageActions.New), UriKind.Relative));
         }
 
         private void editProfileAppBarBtn_Click(Object sender, EventArgs e)
         {
-            // Launch profile editing code
+            
         }
 
         private void editStatAppBarBtn_Click(Object sender, EventArgs e) 
         {
+            NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}&Id={1}",
+                EditStatPageActions.Edit, App.VM.SelectedStat.Id), UriKind.Relative));
         }
 
 
@@ -92,7 +110,8 @@ namespace VitalStats.View
         {
             VisualStateManager.GoToState(this, "statDetailPopUpClosed", true);
         }
-        
+
+
 
 
     }

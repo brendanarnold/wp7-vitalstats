@@ -12,14 +12,9 @@ namespace VitalStats.Model
         public MeasurementType()
         {
             this._stats = new EntitySet<Stat>(
-                new Action<Stat>(this._attachStat),
-                new Action<Stat>(this._detachStat)
-                );
+                new Action<Stat>(this._attachStat), new Action<Stat>(this._detachStat));
             this._units = new EntitySet<Unit>(
-                new Action<Unit>(this._attachUnit),
-                new Action<Unit>(this._detachUnit)
-                );
-
+                new Action<Unit>(this._attachUnit), new Action<Unit>(this._detachUnit));
         }
 
         // This helps with updaing the schema
@@ -56,16 +51,16 @@ namespace VitalStats.Model
             }
         }
 
-        private EntitySet<Stat> _stats = new EntitySet<Stat>();
-        [Association(Storage = "_stats", OtherKey = "Id", ThisKey = "Id")]
+        private EntitySet<Stat> _stats;
+        [Association(Storage = "_stats", OtherKey = "_measurementTypeId")]
         public EntitySet<Stat> Stats
         {
             get { return this._stats; }
             set { this._stats.Assign(value); }
         }
 
-        private EntitySet<Unit> _units = new EntitySet<Unit>();
-        [Association(Storage = "_units", OtherKey = "Id", ThisKey = "Id")]
+        private EntitySet<Unit> _units;
+        [Association(Storage = "_units", OtherKey="_measurementTypeId")]
         public EntitySet<Unit> Units
         {
             get { return this._units; }
@@ -152,26 +147,30 @@ namespace VitalStats.Model
 
         private void _attachUnit(Unit unit) 
         {
-            this.NotifyPropertyChanging("Unit");
+            this.NotifyPropertyChanging("Units");
             unit.MeasurementType = this;
+            this.NotifyPropertyChanged("Units");
         }
 
         private void _detachUnit(Unit unit) 
         {
-            this.NotifyPropertyChanging("Unit");
+            this.NotifyPropertyChanging("Units");
             unit.MeasurementType = null;
-        }
-
-        private void _detachStat(Stat stat) 
-        {
-            NotifyPropertyChanging("Stat");
-            stat.MeasurementType = this;
+            this.NotifyPropertyChanged("Units");
         }
 
         private void _attachStat(Stat stat) 
         {
-            NotifyPropertyChanging("Stat");
+            NotifyPropertyChanging("Stats");
+            stat.MeasurementType = this;
+            this.NotifyPropertyChanged("Stats");
+        }
+
+        private void _detachStat(Stat stat)
+        {
+            NotifyPropertyChanging("Stats");
             stat.MeasurementType = null;
+            this.NotifyPropertyChanged("Stats");
         }
     }
 }

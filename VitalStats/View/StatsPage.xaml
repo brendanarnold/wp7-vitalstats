@@ -100,7 +100,7 @@
 							<DataTemplate>
 								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
 									<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
-									<TextBlock TextWrapping="Wrap" Text="{Binding PreferredUnit.FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" Margin="10,0,0,0"/>
+									<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" Margin="10,0,0,0"/>
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>

@@ -40,19 +40,6 @@
     		<Setter Property="FontSize" Value="29.333"/>
 	    </Style>
 
-      	<shell:ApplicationBar x:Key="defaultAppBar" IsVisible="True" IsMenuEnabled="True">
-        	<shell:ApplicationBar.MenuItems>
-        		<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
-        		<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
-        	</shell:ApplicationBar.MenuItems>
-        	<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
-      	</shell:ApplicationBar>
-
-		<shell:ApplicationBar x:Key="addProfileAppBar" IsVisible="True">
-			<shell:ApplicationBarIconButton x:Name="cancelAddBtn" Text="cancel" IconUri="/Images/Close.png" Click="cancelAddBtn_Click" IsEnabled="True" />
-		    <shell:ApplicationBarIconButton x:Name="confirmAddBtn" Text="add" IconUri="/Images/Check.png" Click="confirmAddBtn_Click" IsEnabled="True" />
-		</shell:ApplicationBar>
-
     </phone:PhoneApplicationPage.Resources>
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
@@ -78,17 +65,7 @@
 		<VisualStateManager.VisualStateGroups>
 			<VisualStateGroup x:Name="addProfilePopUpStateGroup">
 				<VisualState x:Name="addProfilePopUpClosed"/>
-				<VisualState x:Name="addProfilePopUpOpen">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="addProfileGrid">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Visible</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
+				<VisualState x:Name="addProfilePopUpOpen"/>
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
 
@@ -123,22 +100,20 @@
 			</Grid>
 		</Grid>
 		
-		
-			<Grid x:Name="addProfileGrid" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="80*"></RowDefinition>
-					<RowDefinition Height="20*"></RowDefinition>
-				</Grid.RowDefinitions>
-				<StackPanel Grid.Row="0" Orientation="Vertical">
-					<TextBlock Margin="0,0,0,50" TextWrapping="Wrap" Text="add new profile" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Padding="10,0,0,0" />
-					<TextBlock TextWrapping="Wrap" Text="Name" Padding="10,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-					<TextBox x:Name="nameTextBox" TextWrapping="Wrap"/>
-					<CheckBox x:Name="isProtectedCheckBox" Content="protect with PIN"/>
-				</StackPanel>
-			</Grid>
-		
 	
 	
 	</Grid>
+	
+	
+	<phone:PhoneApplicationPage.ApplicationBar>
+		      	<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+        	<shell:ApplicationBar.MenuItems>
+        		<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
+        		<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
+        	</shell:ApplicationBar.MenuItems>
+        	<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
+      	</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+	
 
 </phone:PhoneApplicationPage>

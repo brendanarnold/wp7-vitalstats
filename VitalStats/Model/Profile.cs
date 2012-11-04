@@ -11,8 +11,8 @@ namespace VitalStats.Model
         public Profile()
         {
             this._stats = new EntitySet<Stat>(
-                new Action<Stat>(this._attachStats),
-                new Action<Stat>(this._detatchStats)
+                new Action<Stat>(this._attachStat), 
+                new Action<Stat>(this._detatchStat)
                 );
         }
 
@@ -69,8 +69,8 @@ namespace VitalStats.Model
             }
         }
 
-        private EntitySet<Stat> _stats = new EntitySet<Stat>();
-        [Association(Storage = "_stats", OtherKey = "Id", ThisKey = "Id")]
+        private EntitySet<Stat> _stats;
+        [Association(Storage = "_stats", OtherKey = "_profileId", ThisKey = "Id")]
         public EntitySet<Stat> Stats
         {
             get { return this._stats; }
@@ -107,16 +107,18 @@ namespace VitalStats.Model
         #endregion
 
 
-        private void _attachStats(Stat stat)
+        private void _attachStat(Stat stat)
         {
             this.NotifyPropertyChanging("Stat");
             stat.Profile = this;
+            this.NotifyPropertyChanged("Stat");
         }
 
-        private void _detatchStats(Stat stat)
+        private void _detatchStat(Stat stat)
         {
             this.NotifyPropertyChanging("Stat");
             stat.Profile = null;
+            this.NotifyPropertyChanged("Stat");
         }
 
  

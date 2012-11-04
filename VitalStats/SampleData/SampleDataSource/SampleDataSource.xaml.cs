@@ -126,6 +126,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
+	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
+	{ 
+	}
+
 	public class ProfilesItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -196,10 +200,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
-	{ 
-	}
-
 	public class SelectedProfile : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -209,6 +209,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			if (this.PropertyChanged != null)
 			{
 				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private Stats _Stats = new Stats();
+
+		public Stats Stats
+		{
+			get
+			{
+				return this._Stats;
 			}
 		}
 
@@ -247,16 +257,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._Name = value;
 					this.OnPropertyChanged("Name");
 				}
-			}
-		}
-
-		private Stats _Stats = new Stats();
-
-		public Stats Stats
-		{
-			get
-			{
-				return this._Stats;
 			}
 		}
 
@@ -280,6 +280,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
+	public class Stats : System.Collections.ObjectModel.ObservableCollection<StatsItem>
+	{ 
+	}
+
 	public class StatsItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -289,63 +293,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			if (this.PropertyChanged != null)
 			{
 				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private double _Id = 0;
-
-		public double Id
-		{
-			get
-			{
-				return this._Id;
-			}
-
-			set
-			{
-				if (this._Id != value)
-				{
-					this._Id = value;
-					this.OnPropertyChanged("Id");
-				}
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private string _Value = string.Empty;
-
-		public string Value
-		{
-			get
-			{
-				return this._Value;
-			}
-
-			set
-			{
-				if (this._Value != value)
-				{
-					this._Value = value;
-					this.OnPropertyChanged("Value");
-				}
 			}
 		}
 
@@ -386,23 +333,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
-	}
-
-	public class Stats : System.Collections.ObjectModel.ObservableCollection<StatsItem>
-	{ 
-	}
-
-	public class MeasurementTypesItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
 
 		private double _Id = 0;
 
@@ -442,28 +372,24 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private bool _IsConvertible = false;
+		private string _FormattedValue = string.Empty;
 
-		public bool IsConvertible
+		public string FormattedValue
 		{
 			get
 			{
-				return this._IsConvertible;
+				return this._FormattedValue;
 			}
 
 			set
 			{
-				if (this._IsConvertible != value)
+				if (this._FormattedValue != value)
 				{
-					this._IsConvertible = value;
-					this.OnPropertyChanged("IsConvertible");
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
 				}
 			}
 		}
-	}
-
-	public class MeasurementTypes : System.Collections.ObjectModel.ObservableCollection<MeasurementTypesItem>
-	{ 
 	}
 
 	public class MeasurementType : System.ComponentModel.INotifyPropertyChanged
@@ -478,6 +404,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
+		private Units _Units = new Units();
+
+		public Units Units
+		{
+			get
+			{
+				return this._Units;
+			}
+		}
+
 		private double _Id = 0;
 
 		public double Id
@@ -534,16 +470,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
 
-		private Units _Units = new Units();
-
-		public Units Units
-		{
-			get
-			{
-				return this._Units;
-			}
-		}
+	public class Units : System.Collections.ObjectModel.ObservableCollection<UnitsItem>
+	{ 
 	}
 
 	public class UnitsItem : System.ComponentModel.INotifyPropertyChanged
@@ -654,10 +584,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Units : System.Collections.ObjectModel.ObservableCollection<UnitsItem>
-	{ 
-	}
-
 	public class PreferredUnit : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -690,189 +616,11 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class StatTemplates : System.Collections.ObjectModel.ObservableCollection<StatTemplatesItem>
+	public class MeasurementTypes : System.Collections.ObjectModel.ObservableCollection<MeasurementTypesItem>
 	{ 
 	}
 
-	public class StatTemplatesItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private double _Id = 0;
-
-		public double Id
-		{
-			get
-			{
-				return this._Id;
-			}
-
-			set
-			{
-				if (this._Id != value)
-				{
-					this._Id = value;
-					this.OnPropertyChanged("Id");
-				}
-			}
-		}
-
-		private MeasurementType3 _MeasurementType = new MeasurementType3();
-
-		public MeasurementType3 MeasurementType
-		{
-			get
-			{
-				return this._MeasurementType;
-			}
-
-			set
-			{
-				if (this._MeasurementType != value)
-				{
-					this._MeasurementType = value;
-					this.OnPropertyChanged("MeasurementType");
-				}
-			}
-		}
-
-		private PreferredUnit2 _PreferredUnit = new PreferredUnit2();
-
-		public PreferredUnit2 PreferredUnit
-		{
-			get
-			{
-				return this._PreferredUnit;
-			}
-
-			set
-			{
-				if (this._PreferredUnit != value)
-				{
-					this._PreferredUnit = value;
-					this.OnPropertyChanged("PreferredUnit");
-				}
-			}
-		}
-	}
-
-	public class SuggestedStatTemplate : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private double _Id = 0;
-
-		public double Id
-		{
-			get
-			{
-				return this._Id;
-			}
-
-			set
-			{
-				if (this._Id != value)
-				{
-					this._Id = value;
-					this.OnPropertyChanged("Id");
-				}
-			}
-		}
-
-		private string _Value = string.Empty;
-
-		public string Value
-		{
-			get
-			{
-				return this._Value;
-			}
-
-			set
-			{
-				if (this._Value != value)
-				{
-					this._Value = value;
-					this.OnPropertyChanged("Value");
-				}
-			}
-		}
-
-		private MeasurementType1 _MeasurementType = new MeasurementType1();
-
-		public MeasurementType1 MeasurementType
-		{
-			get
-			{
-				return this._MeasurementType;
-			}
-
-			set
-			{
-				if (this._MeasurementType != value)
-				{
-					this._MeasurementType = value;
-					this.OnPropertyChanged("MeasurementType");
-				}
-			}
-		}
-	}
-
-	public class MeasurementType1 : System.ComponentModel.INotifyPropertyChanged
+	public class MeasurementTypesItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -940,6 +688,368 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
+
+	public class StatTemplates : System.Collections.ObjectModel.ObservableCollection<StatTemplatesItem>
+	{ 
+	}
+
+	public class StatTemplatesItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private MeasurementType3 _MeasurementType = new MeasurementType3();
+
+		public MeasurementType3 MeasurementType
+		{
+			get
+			{
+				return this._MeasurementType;
+			}
+
+			set
+			{
+				if (this._MeasurementType != value)
+				{
+					this._MeasurementType = value;
+					this.OnPropertyChanged("MeasurementType");
+				}
+			}
+		}
+
+		private PreferredUnit2 _PreferredUnit = new PreferredUnit2();
+
+		public PreferredUnit2 PreferredUnit
+		{
+			get
+			{
+				return this._PreferredUnit;
+			}
+
+			set
+			{
+				if (this._PreferredUnit != value)
+				{
+					this._PreferredUnit = value;
+					this.OnPropertyChanged("PreferredUnit");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private double _Id = 0;
+
+		public double Id
+		{
+			get
+			{
+				return this._Id;
+			}
+
+			set
+			{
+				if (this._Id != value)
+				{
+					this._Id = value;
+					this.OnPropertyChanged("Id");
+				}
+			}
+		}
+	}
+
+	public class MeasurementType3 : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private Units3 _Units = new Units3();
+
+		public Units3 Units
+		{
+			get
+			{
+				return this._Units;
+			}
+		}
+
+		private bool _IsConvertible = false;
+
+		public bool IsConvertible
+		{
+			get
+			{
+				return this._IsConvertible;
+			}
+
+			set
+			{
+				if (this._IsConvertible != value)
+				{
+					this._IsConvertible = value;
+					this.OnPropertyChanged("IsConvertible");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+	}
+
+	public class Units3 : System.Collections.ObjectModel.ObservableCollection<UnitsItem3>
+	{ 
+	}
+
+	public class UnitsItem3 : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private string _FormattedValue = string.Empty;
+
+		public string FormattedValue
+		{
+			get
+			{
+				return this._FormattedValue;
+			}
+
+			set
+			{
+				if (this._FormattedValue != value)
+				{
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
+				}
+			}
+		}
+	}
+
+	public class PreferredUnit2 : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private string _FormattedValue = string.Empty;
+
+		public string FormattedValue
+		{
+			get
+			{
+				return this._FormattedValue;
+			}
+
+			set
+			{
+				if (this._FormattedValue != value)
+				{
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
+				}
+			}
+		}
+	}
+
+	public class SuggestedStatTemplate : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private MeasurementType1 _MeasurementType = new MeasurementType1();
+
+		public MeasurementType1 MeasurementType
+		{
+			get
+			{
+				return this._MeasurementType;
+			}
+
+			set
+			{
+				if (this._MeasurementType != value)
+				{
+					this._MeasurementType = value;
+					this.OnPropertyChanged("MeasurementType");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private double _Id = 0;
+
+		public double Id
+		{
+			get
+			{
+				return this._Id;
+			}
+
+			set
+			{
+				if (this._Id != value)
+				{
+					this._Id = value;
+					this.OnPropertyChanged("Id");
+				}
+			}
+		}
+
+		private string _Value = string.Empty;
+
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+
+			set
+			{
+				if (this._Value != value)
+				{
+					this._Value = value;
+					this.OnPropertyChanged("Value");
+				}
+			}
+		}
+	}
+
+	public class MeasurementType1 : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
 
 		private Units1 _Units = new Units1();
 
@@ -950,6 +1060,67 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				return this._Units;
 			}
 		}
+
+		private double _Id = 0;
+
+		public double Id
+		{
+			get
+			{
+				return this._Id;
+			}
+
+			set
+			{
+				if (this._Id != value)
+				{
+					this._Id = value;
+					this.OnPropertyChanged("Id");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private bool _IsConvertible = false;
+
+		public bool IsConvertible
+		{
+			get
+			{
+				return this._IsConvertible;
+			}
+
+			set
+			{
+				if (this._IsConvertible != value)
+				{
+					this._IsConvertible = value;
+					this.OnPropertyChanged("IsConvertible");
+				}
+			}
+		}
+	}
+
+	public class Units1 : System.Collections.ObjectModel.ObservableCollection<UnitsItem1>
+	{ 
 	}
 
 	public class UnitsItem1 : System.ComponentModel.INotifyPropertyChanged
@@ -1060,10 +1231,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Units1 : System.Collections.ObjectModel.ObservableCollection<UnitsItem1>
-	{ 
-	}
-
 	public class SelectedStat : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1073,6 +1240,44 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			if (this.PropertyChanged != null)
 			{
 				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private MeasurementType2 _MeasurementType = new MeasurementType2();
+
+		public MeasurementType2 MeasurementType
+		{
+			get
+			{
+				return this._MeasurementType;
+			}
+
+			set
+			{
+				if (this._MeasurementType != value)
+				{
+					this._MeasurementType = value;
+					this.OnPropertyChanged("MeasurementType");
+				}
+			}
+		}
+
+		private PreferredUnit1 _PreferredUnit = new PreferredUnit1();
+
+		public PreferredUnit1 PreferredUnit
+		{
+			get
+			{
+				return this._PreferredUnit;
+			}
+
+			set
+			{
+				if (this._PreferredUnit != value)
+				{
+					this._PreferredUnit = value;
+					this.OnPropertyChanged("PreferredUnit");
+				}
 			}
 		}
 
@@ -1132,44 +1337,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
-
-		private MeasurementType2 _MeasurementType = new MeasurementType2();
-
-		public MeasurementType2 MeasurementType
-		{
-			get
-			{
-				return this._MeasurementType;
-			}
-
-			set
-			{
-				if (this._MeasurementType != value)
-				{
-					this._MeasurementType = value;
-					this.OnPropertyChanged("MeasurementType");
-				}
-			}
-		}
-
-		private PreferredUnit1 _PreferredUnit = new PreferredUnit1();
-
-		public PreferredUnit1 PreferredUnit
-		{
-			get
-			{
-				return this._PreferredUnit;
-			}
-
-			set
-			{
-				if (this._PreferredUnit != value)
-				{
-					this._PreferredUnit = value;
-					this.OnPropertyChanged("PreferredUnit");
-				}
-			}
-		}
 	}
 
 	public class MeasurementType2 : System.ComponentModel.INotifyPropertyChanged
@@ -1181,6 +1348,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			if (this.PropertyChanged != null)
 			{
 				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private Units2 _Units = new Units2();
+
+		public Units2 Units
+		{
+			get
+			{
+				return this._Units;
 			}
 		}
 
@@ -1240,16 +1417,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
 
-		private Units2 _Units = new Units2();
-
-		public Units2 Units
-		{
-			get
-			{
-				return this._Units;
-			}
-		}
+	public class Units2 : System.Collections.ObjectModel.ObservableCollection<UnitsItem2>
+	{ 
 	}
 
 	public class UnitsItem2 : System.ComponentModel.INotifyPropertyChanged
@@ -1379,10 +1550,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Units2 : System.Collections.ObjectModel.ObservableCollection<UnitsItem2>
-	{ 
-	}
-
 	public class PreferredUnit1 : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1432,173 +1599,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
-	}
-
-	public class MeasurementType3 : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private bool _IsConvertible = false;
-
-		public bool IsConvertible
-		{
-			get
-			{
-				return this._IsConvertible;
-			}
-
-			set
-			{
-				if (this._IsConvertible != value)
-				{
-					this._IsConvertible = value;
-					this.OnPropertyChanged("IsConvertible");
-				}
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private Units3 _Units = new Units3();
-
-		public Units3 Units
-		{
-			get
-			{
-				return this._Units;
-			}
-		}
-	}
-
-	public class PreferredUnit2 : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private string _FormattedValue = string.Empty;
-
-		public string FormattedValue
-		{
-			get
-			{
-				return this._FormattedValue;
-			}
-
-			set
-			{
-				if (this._FormattedValue != value)
-				{
-					this._FormattedValue = value;
-					this.OnPropertyChanged("FormattedValue");
-				}
-			}
-		}
-	}
-
-	public class UnitsItem3 : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private string _FormattedValue = string.Empty;
-
-		public string FormattedValue
-		{
-			get
-			{
-				return this._FormattedValue;
-			}
-
-			set
-			{
-				if (this._FormattedValue != value)
-				{
-					this._FormattedValue = value;
-					this.OnPropertyChanged("FormattedValue");
-				}
-			}
-		}
-	}
-
-	public class Units3 : System.Collections.ObjectModel.ObservableCollection<UnitsItem3>
-	{ 
 	}
 #endif
 }

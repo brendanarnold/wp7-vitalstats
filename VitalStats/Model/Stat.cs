@@ -9,6 +9,20 @@ namespace VitalStats.Model
     [Table]
     public class Stat : INotifyPropertyChanged, INotifyPropertyChanging
     {
+        public Stat()
+        {
+            this.PropertyChanged += new PropertyChangedEventHandler(Stat_PropertyChanged);
+            this.UpdateValueInUnits();
+        }
+
+        void Stat_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if ((e.PropertyName == "Value") || (e.PropertyName == "MeasurementType"))
+            {
+                this.UpdateValueInUnits();
+            }
+        }
+
         #region Define table columns
 
         // This helps with updaing the schema
@@ -52,67 +66,91 @@ namespace VitalStats.Model
                 NotifyPropertyChanging("Value");
                 _value = value;
                 NotifyPropertyChanged("Value");
+                // Units do not have a reference to the value 
+                // so update the value on each unit
+                this.UpdateValueInUnits();
             }
         }
 
         [Column]
         internal int? _preferredUnitId;
         private EntityRef<Unit> _preferredUnit = new EntityRef<Unit>();
-        [Association(Storage = "_preferredUnit", ThisKey = "_preferredUnitId", OtherKey = "Id", IsForeignKey = true)]
+        [Association(Storage = "_preferredUnit", ThisKey = "_preferredUnitId", IsForeignKey = true)]
         public Unit PreferredUnit
         {
             get { return this._preferredUnit.Entity; }
             set
             {
-                this.NotifyPropertyChanging("PreferredUnit");
-                this._preferredUnit.Entity = value;
-                if (value != null)
+                Unit u = this._preferredUnit.Entity;
+                if (u != value)
                 {
-                    this._preferredUnitId = value.Id;
+                    this.NotifyPropertyChanging("PreferredUnit");
+                    if (u != null)
+                    {
+                        this._preferredUnit.Entity = null;
+                    }
+                    this._preferredUnit.Entity = value;
+                    this.NotifyPropertyChanged("PreferredUnit");
                 }
-                this.NotifyPropertyChanged("PreferredUnit");
             }
         }
-
 
         [Column]
         internal int? _profileId;
         private EntityRef<Profile> _profile = new EntityRef<Profile>();
-        [Association(Storage = "_profile", ThisKey = "_profileId", OtherKey = "Id", IsForeignKey = true)]
+        [Association(Storage = "_profile", ThisKey = "_profileId", OtherKey = "Id", 
+            IsForeignKey= true)]
         public Profile Profile
         {
             get { return this._profile.Entity; }
             set
             {
-                this.NotifyPropertyChanging("Profile");
-                this._profile.Entity = value;
-                if (value != null)
+                Profile p = this._profile.Entity;
+                if (p != value)
                 {
-                    this._profileId = value.Id;
+                    NotifyPropertyChanging("Profile");
+                    if (p != null)
+                    {
+                        this._profile.Entity = null;
+                        p.Stats.Remove(this);
+                    }
+                    this._profile.Entity = value;
+                    if (value != null)
+                    {
+                        value.Stats.Add(this);
+                    }
+                    NotifyPropertyChanged("Profile");
                 }
-                this.NotifyPropertyChanged("Profile");
+
             }
         }
 
         [Column]
         internal int _measurementTypeId;
         private EntityRef<MeasurementType> _measurementType = new EntityRef<MeasurementType>();
-        [Association(Storage="_measurementType", ThisKey="_measurementTypeId", OtherKey="Id", 
-            IsForeignKey=true)]
+        [Association(Storage = "_measurementType", ThisKey = "_measurementTypeId", OtherKey = "Id", 
+            IsForeignKey = true)]
         public MeasurementType MeasurementType
         {
             get { return this._measurementType.Entity; }
             set
             {
-                NotifyPropertyChanging("MeasurementType");
-                this._measurementType.Entity = value;
-
-                if (value != null)
+                MeasurementType mt = this._measurementType.Entity;
+                if (mt != value)
                 {
-                    this._measurementTypeId = value.Id;
+                    NotifyPropertyChanging("MeasurementType");
+                    if (mt != null)
+                    {
+                        this._measurementType.Entity = null;
+                        mt.Stats.Remove(this);
+                    }
+                    this._measurementType.Entity = value;
+                    if (value != null)
+                    {
+                        value.Stats.Add(this);
+                    }
+                    NotifyPropertyChanged("MeasurementType");
                 }
-
-                NotifyPropertyChanging("MeasurementType");
             }
         }
 
@@ -120,11 +158,31 @@ namespace VitalStats.Model
 
         #region Misc methods
 
-        public string GetValueString(string unitString)
+        public string FormattedValue
         {
-            return this.MeasurementType.GetValueString(this.Value, unitString);
+            get
+            {
+                if (this.PreferredUnit == null)
+                {
+                    return this.Value;
+                }
+                else
+                {
+                    return this.PreferredUnit.GetFormattedValue(this.Value);
+                }
+            }
         }
 
+        private void UpdateValueInUnits()
+        {
+            if (this.MeasurementType != null)
+            {
+                foreach (Unit u in this.MeasurementType.Units)
+                {
+                    u._value = this.Value;
+                }
+            }
+        }
 
         #endregion
 

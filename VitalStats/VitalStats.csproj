@@ -83,6 +83,9 @@
     </Compile>
     <Compile Include="ViewModel\ViewModelSettings.cs" />
     <Compile Include="View\Convertors.cs" />
+    <Compile Include="View\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </DesignTimeOnly>
+    <Page Include="View\EditProfilePage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\EditStatPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>

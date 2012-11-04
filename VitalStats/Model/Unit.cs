@@ -2,7 +2,8 @@
 using System.ComponentModel;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace VitalStats.Model
 {
@@ -98,23 +99,55 @@ namespace VitalStats.Model
         [Column]
         internal int _measurementTypeId;
         private EntityRef<MeasurementType> _measurementType = new EntityRef<MeasurementType>();
-        [Association(Storage = "_measurementType", ThisKey = "_measurementTypeId", OtherKey = "Id",
-            IsForeignKey = true)]
+        [Association(Storage = "_measurementType", ThisKey = "_measurementTypeId", IsForeignKey = true)]
         public MeasurementType MeasurementType
         {
             get { return this._measurementType.Entity; }
             set
             {
-                NotifyPropertyChanging("MeasurementType");
-                this._measurementType.Entity = value;
-
-                if (value != null)
+                MeasurementType mt = this._measurementType.Entity;
+                if (mt != value)
                 {
-                    this._measurementTypeId = value.Id;
+                    NotifyPropertyChanging("MeasurementType");
+                    if (mt != null)
+                    {
+                        this._measurementType.Entity = null;
+                        mt.Units.Remove(this);
+                    }
+                    this._measurementType.Entity = value;
+                    if (value != null)
+                    {
+                        value.Units.Add(this);
+                    }
+                    NotifyPropertyChanged("MeasurementType");
                 }
-
-                NotifyPropertyChanging("MeasurementType");
             }
+        }
+
+        internal string _value;
+
+        public string FormattedValue
+        {
+            get
+            {
+                return this.GetFormattedValue(App.VM.SelectedStat.Value);
+            }
+        }
+
+        public string GetFormattedValue(string value)
+        {
+            string[] vals = value.Split(new char[] { '|' });
+            string[] factors = this.ConversionFactor.Split(new char[] { '|' });
+            string[] intercepts = this.ConversionIntercept.Split(new char[] { '|' });
+            List<double> convVals = new List<double>();
+            for (int i=0; i < vals.Length; i++) {
+                double val, fact, intc;
+                double.TryParse(vals[i], out val);
+                double.TryParse(factors[i], out fact);
+                double.TryParse(intercepts[i], out intc);
+                convVals.Add(val * fact + intc);
+            }
+            return String.Format(this.Format, convVals.Cast<object>().ToArray());
         }
 
 

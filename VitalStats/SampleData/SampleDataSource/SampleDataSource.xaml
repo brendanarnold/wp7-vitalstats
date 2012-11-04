@@ -12,7 +12,7 @@
   <SampleData:SampleDataSource.SelectedProfile>
     <SampleData:SelectedProfile Id="44" Name="Andrea" IsProtected="True">
       <SampleData:SelectedProfile.Stats>
-        <SampleData:StatsItem Id="67" Name="Height" Value="1.75">
+        <SampleData:StatsItem Id="67" Name="Height" FormattedValue="6 ft. 0 in.">
           <SampleData:StatsItem.MeasurementType>
             <SampleData:MeasurementType Id="69" Name="Aenean" IsConvertible="True">
               <SampleData:MeasurementType.Units>
@@ -28,7 +28,7 @@
             <SampleData:PreferredUnit FormattedValue="6 ft. 0 in." />
           </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
-        <SampleData:StatsItem Id="14" Name="Weight" Value="70">
+        <SampleData:StatsItem Id="14" Name="Weight" FormattedValue="10.3 st.">
           <SampleData:StatsItem.MeasurementType>
             <SampleData:MeasurementType Id="61" Name="Cras" IsConvertible="False">
               <SampleData:MeasurementType.Units>
@@ -44,7 +44,7 @@
             <SampleData:PreferredUnit FormattedValue="10.3 st." />
           </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
-        <SampleData:StatsItem Id="82" Name="Shoe Size" Value="25.0">
+        <SampleData:StatsItem Id="82" Name="Shoe Size" FormattedValue="9">
           <SampleData:StatsItem.MeasurementType>
             <SampleData:MeasurementType Id="51" Name="Nam" IsConvertible="True">
               <SampleData:MeasurementType.Units>
@@ -60,7 +60,7 @@
             <SampleData:PreferredUnit FormattedValue="7 UK Womens" />
           </SampleData:StatsItem.PreferredUnit>
         </SampleData:StatsItem>
-        <SampleData:StatsItem Id="54" Name="Tennis Grip" Value="4.3">
+        <SampleData:StatsItem Id="54" Name="Tennis Grip" FormattedValue="3.2 in.">
           <SampleData:StatsItem.MeasurementType>
             <SampleData:MeasurementType Id="46" Name="Duis" IsConvertible="False">
               <SampleData:MeasurementType.Units>
