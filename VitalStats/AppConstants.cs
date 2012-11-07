@@ -13,7 +13,8 @@ namespace VitalStats
 {
     public static class AppConstants
     {
-        public static char[] VALUE_DELIMITERS = { '|' };
+        public static string[] VALUE_DELIMITERS = { "|" };
+        public static string NAME_CUSTOM_STAT_TEMPLATE = "Other";
 
     }
 }

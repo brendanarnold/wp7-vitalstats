@@ -47,24 +47,28 @@
                                 ItemTemplate="{StaticResource defaultListPickerTemplate}" />
 
             <TextBlock TextWrapping="Wrap" Text="Name" Margin="12,5,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
-			<TextBox x:Name="nameTextBox" TextWrapping="Wrap"/>
+			<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Text="{Binding SelectedStat.Name}" />
 
             <toolkit:ListPicker x:Name="measurementTypeListPicker" Header="Measures" 
                                 ItemsSource="{Binding MeasurementTypes}" 
+                                SelectedItem="{Binding SelectedStat.MeasurementType}"
                                 SelectionChanged="measurementTypeListPicker_SelectionChanged" 
                                 FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
                                 ItemTemplate="{StaticResource defaultListPickerTemplate}" />
 
             <toolkit:ListPicker x:Name="preferredUnitListPicker" 
                                 Header="Preferred Unit"
+                                SelectedItem="{Binding SelectedStat.PreferredUnit}"
                                 SelectionChanged="preferredUnitListPicker_SelectionChanged"
                                 FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
                                 ItemTemplate="{StaticResource defaultListPickerTemplate}" />
 
             <TextBlock TextWrapping="Wrap" Text="Value" Margin="12,10,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="valueTextBox" TextWrapping="Wrap" Margin="0,0,0,0"/>
-                <TextBox x:Name="secondaryValueTextBox" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
+            <StackPanel x:Name="valueContainer" Orientation="Horizontal">
+                <TextBox x:Name="value1TextBox" Text="{Binding Value1, Mode=TwoWay}" TextWrapping="Wrap" Margin="0,0,0,0"/>
+                <TextBox x:Name="value2TextBox" Text="{Binding Value2, Mode=TwoWay}" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
+                <TextBox x:Name="value3TextBox" Text="{Binding Value3, Mode=TwoWay}" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
+                <TextBox x:Name="value4TextBox" Text="{Binding Value4, Mode=TwoWay}" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
             </StackPanel>
 			
 			

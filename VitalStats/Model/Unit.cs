@@ -137,51 +137,47 @@ namespace VitalStats.Model
             }
         }
 
-        public List<double> GetValuesAsDoubles(string value)
+        public string GetFormattedValue(string value)
         {
-            double val, a, b;
-            val = Convert.ToDouble(value);
-            string[] aVals = this.ConversionFactor.Split(AppConstants.VALUE_DELIMITERS);
-            string[] bVals = this.ConversionIntercept.Split(AppConstants.VALUE_DELIMITERS);
+            List<double> convVals = this.ConvertValuesFromString(value);
+            if (convVals.Count == 0) return String.Empty;
+            return String.Format(this.Format, convVals.Cast<object>().ToArray());
+        }
+
+        public List<double> ConvertValuesFromString(string value)
+        {
+            double val;
+            if (!double.TryParse(value, out val)) return new List<double>();
+            List<double> aVals = ModelHelpers.SplitString(this.ConversionFactor);
+            List<double> bVals = ModelHelpers.SplitString(this.ConversionIntercept);
             List<double> convVals = new List<double>();
-            for (int i = 0; i < aVals.Length; i++)
+            for (int i = 0; i < aVals.Count; i++)
             {
-                a = Convert.ToDouble(aVals[i]);
-                b = Convert.ToDouble(bVals[i]);
-                if (aVals.Length == 1)
+                if (aVals.Count == 1)
                 {
-                    convVals.Add(a * val + b);
+                    convVals.Add(aVals[i] * val + bVals[i]);
                 }
                 else
                 {
-                    double rem = a * val + b;
+                    double rem = aVals[i] * val + bVals[i];
                     convVals.Add(Math.Floor(rem));
-                    val = (rem - convVals.Last()) / a;
+                    val = (rem - convVals.Last()) / aVals[i];
                 }
             }
             return convVals;
         }
 
-
-        public string GetFormattedValue(string value)
-        {
-            List<double> convVals = this.GetValuesAsDoubles(value);
-            return String.Format(this.Format, convVals.Cast<object>().ToArray());
-        }
-
         // Takes input from text and converts it to the database normalised string value
         // If multiple values (e.g. ft. inches.) then are delimited by pipe.
-        public string GetDBValue(string value)
+        public string ConvertValuesToString(string value)
         {
-            double a, b, val = 0.0;
-            string[] vals = value.Split(AppConstants.VALUE_DELIMITERS);
-            string[] aVals = this.ConversionFactor.Split(AppConstants.VALUE_DELIMITERS);
-            string[] bVals = this.ConversionIntercept.Split(AppConstants.VALUE_DELIMITERS);
-            for (int i = 0; i < vals.Length; i++)
+            double val = 0.0;
+            List<double> vals = ModelHelpers.SplitString(value);
+            List<double> aVals = ModelHelpers.SplitString(this.ConversionFactor);
+            List<double> bVals = ModelHelpers.SplitString(this.ConversionIntercept);
+            for (int i = 0; i < vals.Count; i++)
             {
-                a = Convert.ToDouble(aVals[i]);
-                b = Convert.ToDouble(bVals[i]);
-                val += (Convert.ToDouble(vals[i]) - b) / a;
+                val += (vals[i] - bVals[i]) / aVals[i];
             }
             return String.Format("{0}", val);
         }
@@ -189,7 +185,7 @@ namespace VitalStats.Model
 
         public int GetNumberInputs() 
         {
-            return this.ConversionFactor.Split(AppConstants.VALUE_DELIMITERS).Count();
+            return ModelHelpers.SplitString(this.ConversionFactor).Count;
         }
 
         #region INotifyPropertyChanged members

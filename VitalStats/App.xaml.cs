@@ -95,7 +95,7 @@ namespace VitalStats
             }
 
             _vm = new AppViewModel(dbConnectionString);
-            _vm.LoadAllFromDB();
+            _vm.LoadProfilesFromDB();
 
         }
 

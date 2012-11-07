@@ -75,6 +75,7 @@
     <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
     <Compile Include="Model\MeasurementType.cs" />
+    <Compile Include="Model\ModelHelpers.cs" />
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\SetupDatabase.cs" />
     <Compile Include="Model\Stat.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AppViewModelBoilerplate.cs" />
     <Compile Include="ViewModel\ViewModelSettings.cs" />
     <Compile Include="View\Convertors.cs" />
     <Compile Include="View\EditProfilePage.xaml.cs">

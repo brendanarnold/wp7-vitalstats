@@ -36,8 +36,6 @@ namespace VitalStats.View
             // Bind appbar
             this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["defaultAppBar"];
 
-            App.VM.LoadAllFromDB();
-
             // Load a new suggested app
             App.VM.LoadNextSuggestedStatTemplate();
 
