@@ -12,117 +12,122 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using VitalStats.Model;
 using System.Windows.Data;
+using VitalStats.View.Controls;
 
 namespace VitalStats.View
 {
     public partial class EditStatPage : PhoneApplicationPage
     {
         // Determines whether page should render for a new stat or editing an existing stat
-        public bool IsNewStat = true;
+        public bool IsNewStat;
+
+        // A container for comparison when submitting to check if data has been entered
+        EditStatFormSnapshot FormSnapshot;
 
         public EditStatPage()
         {
             InitializeComponent();
-            this.IsNewStat = false;
+
+            this.DataContext = App.VM;
+
+            // Load some of the data types if not done so already
+            if (App.VM.MeasurementTypes == null) App.VM.LoadMeasurementTypesFromDB();
+            if (App.VM.StatTemplates == null) App.VM.LoadStatTemplatesFromDB();
+
+            // Need to bind explicitly for some reason when this particular ListPicker
+            // control is inside a ScrollViewer
+            this.templateListPicker.ItemsSource = App.VM.StatTemplates;
+            this.measurementTypeListPicker.ItemsSource = App.VM.MeasurementTypes;
+
+
+
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            // Load some of the data types if not done so already
-            if (App.VM.MeasurementTypes == null) App.VM.LoadMeasurementTypesFromDB();
-            if (App.VM.StatTemplates == null) App.VM.LoadStatTemplatesFromDB();
-
-            this.DataContext = App.VM;
-
-            // Flush current pending changes so can tell if changes have been made
-            App.VM.SaveChangesToDB();
-
             // Default action is add a new item
+            this.IsNewStat = true;
             string action = EditProfilePageActions.New;
-            if (NavigationContext.QueryString.ContainsKey("Action")) 
-                action = NavigationContext.QueryString["Action"];
-                
+            NavigationContext.QueryString.TryGetValue("Action", out action);
+            int id = 0;
+            if (NavigationContext.QueryString.ContainsKey("Id"))
+            {
+                id = Convert.ToInt32(NavigationContext.QueryString["Id"]);
+            }
+
             // Deal with various actions
             switch (action)
             {
                 case EditStatPageActions.Edit:
                     this.IsNewStat = false;
-                    int id = Convert.ToInt32(NavigationContext.QueryString["Id"]);
+                    VisualStateManager.GoToState(this, "EditState", false);
                     App.VM.SelectedStat = (from Stat s in App.VM.SelectedProfile.Stats where s.Id == id select s).First();
                     this.templateListPicker.ItemsSource = null;
                     this.LoadValueToTextBox();
                     break;
                 case EditStatPageActions.NewFromTemplate:
+                    this.IsNewStat = true;
+                    VisualStateManager.GoToState(this, "AddState", false);
                     App.VM.SelectedStat = new Stat();
-                    int templateId = Convert.ToInt32(NavigationContext.QueryString["Id"]);
-                    this.templateListPicker.SelectedItem = (from Stat s in App.VM.StatTemplates where s.Id == templateId select s).First();
+                    this.templateListPicker.SelectedItem = (from Stat s in App.VM.StatTemplates where s.Id == id select s).First();
                     break;
                 case EditStatPageActions.New:
+                    this.IsNewStat = true;
+                    VisualStateManager.GoToState(this, "AddStat", false);
                     App.VM.SelectedStat = new Stat();
                     break;
                 default:
                     break;
             }
-            
+
+            // Load values into the page
+            this.LoadStatIntoPage();
+            // Take a snapshot to determine if changes have been made
+            this.TakeSnapshotOfForm();
 
         }
 
+        private void LoadStatIntoPage()
+        {
+            if (App.VM.SelectedStat.Name != null) this.nameTitledTextBox.Text = App.VM.SelectedStat.Name;
+            if (App.VM.SelectedStat.MeasurementType != null) this.measurementTypeListPicker.SelectedItem = App.VM.SelectedStat.MeasurementType;
+            if (App.VM.SelectedStat.PreferredUnit != null) this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
+            if (App.VM.SelectedStat.Value != null) this.LoadValueToTextBox();
+        }
 
-        
-        //private void BindSelectedStat()
-        //{
-            //Binding b;
+        private void TakeSnapshotOfForm() 
+        {
+            this.FormSnapshot = new EditStatFormSnapshot() {
+                Name = this.nameTitledTextBox.Text,
+                Value = this.ReadValueFromTextBox(),
+                MeasurementTypeIndex = this.measurementTypeListPicker.SelectedIndex,
+                PreferredUnitIndex = this.preferredUnitListPicker.SelectedIndex,
+            };
+        }
 
-            //b = new Binding("PreferredUnit");
-            //b.Mode = BindingMode.TwoWay;
-            //b.Source = App.VM.SelectedStat;
-            //this.preferredUnitListPicker.SetBinding(ListPicker.SelectedItemProperty, b);
-
-            //b = new Binding("Name");
-            //b.Mode = BindingMode.TwoWay;
-            //b.Source = App.VM.SelectedStat;
-            //this.nameTextBox.SetBinding(TextBox.TextProperty, b);
-
-            //b = new Binding("MeasurementType");
-            //b.Mode = BindingMode.TwoWay;
-            //b.Source = App.VM.SelectedStat;
-            //this.measurementTypeListPicker.SetBinding(ListPicker.SelectedItemProperty, b);
-
-            // TODO deal with multi entry
-            
-        //}
+        public bool IsUnsavedData()
+        {
+            if (this.nameTitledTextBox.Text != this.FormSnapshot.Name) return true;
+            if (this.ReadValueFromTextBox() != this.FormSnapshot.Value) return true;
+            if (this.measurementTypeListPicker.SelectedIndex != this.FormSnapshot.MeasurementTypeIndex) return true;
+            if (this.preferredUnitListPicker.SelectedIndex != this.FormSnapshot.PreferredUnitIndex) return true;
+            return false;
+        }
 
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
-
             if (this.IsUnsavedData())
             {
-                CustomMessageBox mb = new CustomMessageBox()
+                MessageBoxResult res = MessageBox.Show("You have entered some data which has not been saved. Are you sure you want to return to the previous page?",
+                    "Discard unsaved changes?", MessageBoxButton.OKCancel);
+                if (res == MessageBoxResult.Cancel)
                 {
-                    Caption = "Discard unsaved changes?",
-                    Message = "Some details have been changed on this statistic, If you leave they will not be saved. Do you want to continue?",
-                    LeftButtonContent = "Yes",
-                    RightButtonContent = "No"
-                };
-                mb.Dismissed += (s1, e1) =>
-                {
-                    switch (e1.Result)
-                    {
-                        case CustomMessageBoxResult.LeftButton:
-                            App.VM.RecreateDataContext();
-                            break;
-                        case CustomMessageBoxResult.RightButton:
-                            e.Cancel = true;
-                            break;
-                        default:
-                            break;
-                    }
-                };
-                mb.Show();
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -130,58 +135,64 @@ namespace VitalStats.View
         // Allows non-numeric values when the stat type is custom i.e. does not allow for conversions
         public bool AllowNonNumericValue()
         {
-            return (this.measurementTypeListPicker.SelectedItem as MeasurementType).Name 
-                == AppConstants.NAME_CUSTOM_STAT_TEMPLATE;
-        }
-
-
-        public bool IsUnsavedData()
-        {
-            // Deal with the edited case first
-            if (App.VM.IsPendingChangesForDB()) return true;
-            if (!this.IsNewStat) return false;
-            // Must be a new stat
-            if (this.value1TextBox.Text != String.Empty) return true;
-            if (this.value2TextBox.Text != String.Empty) return true;
-            if (this.value3TextBox.Text != String.Empty) return true;
-            if (this.value4TextBox.Text != String.Empty) return true;
-            if (this.templateListPicker.SelectedItem == null)
+            if (this.measurementTypeListPicker.SelectedItem != null)
             {
-                if (this.nameTextBox.Text != String.Empty) return true;
+                return !(this.measurementTypeListPicker.SelectedItem as MeasurementType).IsConvertible();
             }
             else
             {
-                if (this.nameTextBox.Text != (templateListPicker.SelectedItem as Stat).Name) return true;
+                return true;
             }
-            return false;
         }
 
+
+        // Returns false if input is invalid, true otherwise. 
+        // Also raises error to the user via messageboxes
+        public bool ValidateInput()
+        {
+            if (this.nameTitledTextBox.Text == String.Empty)
+            {
+                MessageBox.Show("Please enter something for the name.");
+                return false;
+            }
+
+            if (this.ReadValueFromTextBox() == String.Empty)
+            {
+                MessageBox.Show("Please enter valid values");
+                return false;
+            }
+            return true;
+        }
 
 
         private void saveAppBarBtn_Click(object sender, System.EventArgs e)
         {
+            if (!this.ValidateInput()) return;
 
-            if (this.nameTextBox.Text == String.Empty)
-            {
-                MessageBox.Show("Please enter something for the name.");
-                return;
-            }
-
+            // Read values into the Stat object to be saved
             string valStr = this.ReadValueFromTextBox();
-            if (valStr == String.Empty)
-            {
-                MessageBox.Show("Please enter valid values");
-            }
-
+            App.VM.SelectedStat.Name = this.nameTitledTextBox.Text;
             if (this.AllowNonNumericValue())
             {
+                App.VM.SelectedStat.Value = valStr;
                 App.VM.SelectedStat.PreferredUnit = null;
                 App.VM.SelectedStat.MeasurementType = null;
             }
-            App.VM.SelectedStat.Value = valStr;
-            App.VM.SelectedProfile.Stats.Add(App.VM.SelectedStat);
-
-            App.VM.SaveChangesToDB();
+            else
+            {
+                App.VM.SelectedStat.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as Unit);
+                App.VM.SelectedStat.Value = App.VM.SelectedStat.PreferredUnit.ConvertValuesToString(valStr);
+                App.VM.SelectedStat.MeasurementType = (this.measurementTypeListPicker.SelectedItem as MeasurementType);
+            }
+            if (this.IsNewStat) {
+                App.VM.SelectedStat.Profile = App.VM.SelectedProfile;
+                App.VM.SelectedProfile.Stats.Add(App.VM.SelectedStat);
+                App.VM.AddStat(App.VM.SelectedStat);
+            }
+            else
+            {
+                App.VM.SaveChangesToDB();
+            }
 
             this.ClearInput();
 
@@ -193,27 +204,30 @@ namespace VitalStats.View
         }
 
 
-        // Reads value from the object and splits it into necessary parts in each text box
+        /// <summary>
+        /// Reads value from the object and splits it into necessary parts in each text box
+        /// </summary>
         private void LoadValueToTextBox()
         {
-            if (App.VM.SelectedStat.PreferredUnit != null)
+            if (this.preferredUnitListPicker.SelectedItem != null)
             {
-                List<double> vals = App.VM.SelectedStat.PreferredUnit.ConvertValuesFromString(App.VM.SelectedStat.Value);
+                Unit pu = this.preferredUnitListPicker.SelectedItem as Unit;
+                List<double> vals = pu.ConvertValuesFromString(App.VM.SelectedStat.Value);
                 for (int i = 0; i < this.valueContainer.Children.Count; i++)
                 {
                     if (i < vals.Count)
                     {
-                        (this.valueContainer.Children[i] as TextBox).Text = String.Format("{0:F3}", vals[i]);
+                        (this.valueContainer.Children[i] as TitledTextBox).Text = String.Format("{0:F3}", vals[i]);
                     }
                     else
                     {
-                        (this.valueContainer.Children[i] as TextBox).Text = String.Empty;
+                        (this.valueContainer.Children[i] as TitledTextBox).Text = String.Empty;
                     }
                 }
             }
             else
             {
-                this.value1TextBox.Text = App.VM.SelectedStat.Value;
+                this.value1TitledTextBox.Text = App.VM.SelectedStat.Value;
             }
         }
 
@@ -225,10 +239,10 @@ namespace VitalStats.View
             List<string> sVals = new List<string>();
             if (this.AllowNonNumericValue())
             {
-                return this.value1TextBox.Text;
+                return this.value1TitledTextBox.Text;
             }
             List<double> vals = new List<double>();
-            foreach (TextBox tb in this.valueContainer.Children) 
+            foreach (TitledTextBox tb in this.valueContainer.Children) 
             {
                 if (tb.Visibility == Visibility.Visible)
                 {
@@ -240,15 +254,17 @@ namespace VitalStats.View
                     vals.Add(d);    
                 }
             }
-            return ModelHelpers.JoinList(vals);
+            return ModelHelpers.PickleDoubles(vals);
         }
 
         // Wipes the form clean
         // TODO: Do the bound items need resetting in some way? 
         private void ClearInput()
         {
-            this.nameTextBox.Text = String.Empty;
-            foreach (TextBox tb in this.valueContainer.Children) tb.Text = String.Empty;
+            this.nameTitledTextBox.Text = String.Empty;
+            foreach (TitledTextBox tb in this.valueContainer.Children) tb.Text = String.Empty;
+            this.measurementTypeListPicker.SelectedIndex = 0;
+            this.preferredUnitListPicker.SelectedIndex = 0;
         }
 
 
@@ -257,14 +273,17 @@ namespace VitalStats.View
         // Hide or show the secondary value text boxes if needed
         private void preferredUnitListPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int i=0;
+            
             if (this.preferredUnitListPicker.SelectedItem != null)
             {
-                int nVisible = (this.preferredUnitListPicker.SelectedItem as Unit).GetNumberInputs();
-                foreach (TextBox tb in this.valueContainer.Children)
+                Unit pu = this.preferredUnitListPicker.SelectedItem as Unit;
+                int nVisible = pu.GetNumberInputs();
+                int i = 0;
+                foreach (TitledTextBox tb in this.valueContainer.Children)
                 {
                     if (i < nVisible)
                     {
+                        tb.Title = pu.Names[i];
                         tb.Visibility = Visibility.Visible;
                     }
                     else
@@ -284,7 +303,7 @@ namespace VitalStats.View
             if (st == null) return;
             if ((st.Id != -1) && (this.measurementTypeListPicker.Items.Count > 0))
             {
-                this.nameTextBox.Text = st.Name;
+                this.nameTitledTextBox.Text = st.Name;
                 this.measurementTypeListPicker.SelectedItem = st.MeasurementType;
             }
         }
@@ -292,13 +311,27 @@ namespace VitalStats.View
 
         private void measurementTypeListPicker_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            this.preferredUnitListPicker.ItemsSource
-                = (this.measurementTypeListPicker.SelectedItem as MeasurementType).Units;
+            if (this.measurementTypeListPicker.SelectedItem != null)
+            {
+                this.preferredUnitListPicker.ItemsSource
+                    = (this.measurementTypeListPicker.SelectedItem as MeasurementType).Units;
+            }
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            //this.TakeSnapshotOfForm();
         }
 
 
         #endregion
 
+    }
+
+    public struct EditStatFormSnapshot 
+    {
+        public string Name, Value;
+        public int? MeasurementTypeIndex, PreferredUnitIndex;
     }
 
 

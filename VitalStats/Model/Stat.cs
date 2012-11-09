@@ -184,6 +184,11 @@ namespace VitalStats.Model
             }
         }
 
+        public Stat GetCopy()
+        {
+            return this.MemberwiseClone() as Stat;
+        }
+
         #endregion
 
         #region INotifyPropertyChanged members

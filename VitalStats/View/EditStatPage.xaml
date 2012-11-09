@@ -9,13 +9,12 @@
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 	xmlns:VitalStats_View="clr-namespace:VitalStats.View"
-	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+	xmlns:VitalStats_View_Controls="clr-namespace:VitalStats.View.Controls"
+	xmlns:VitalStats="clr-namespace:VitalStats"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
 	x:Class="VitalStats.View.EditStatPage"
-	FontFamily="{StaticResource PhoneFontFamilyNormal}"
-	FontSize="{StaticResource PhoneFontSizeNormal}"
-	Foreground="{StaticResource PhoneForegroundBrush}"
 	Orientation="Portrait"
-	shell:SystemTray.IsVisible="True"
+	shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded"
 	>
 
 	<phone:PhoneApplicationPage.Resources>
@@ -25,63 +24,100 @@
 
         <DataTemplate x:Name="defaultListPickerTemplate">
             <StackPanel>
-                <TextBlock Text="{Binding Name}"/>
+                <TextBlock FontSize="24" Margin="0,0,0,10" Text="{Binding Name}"/>
             </StackPanel>
-        </DataTemplate>
+        </DataTemplate>	
 
     </phone:PhoneApplicationPage.Resources>
+
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
 	<d:DataContext>
-		<Binding Source="{StaticResource SampleDataSource}"/>
+		<StaticResource ResourceKey="SampleDataSource"/>
 	</d:DataContext>
-
-
-	<Grid x:Name="LayoutRoot" Background="{StaticResource PhoneAccentBrush}">
-		<StackPanel Margin="12,0,0,0">
-			<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-			<TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding IsNewStat, ConverterParameter=Add new stat|Edit stat, Converter={StaticResource BoolToStrings}, ElementName=textBlock, FallbackValue=Add stat}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
-
-            <toolkit:ListPicker x:Name="templateListPicker" Header="Type" 
-                                ItemsSource="{Binding StatTemplates}" 
-                                SelectionChanged="templateListPicker_SelectionChanged"
-                                FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
-                                ItemTemplate="{StaticResource defaultListPickerTemplate}" />
-
-            <TextBlock TextWrapping="Wrap" Text="Name" Margin="12,5,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
-			<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Text="{Binding SelectedStat.Name}" />
-
-            <toolkit:ListPicker x:Name="measurementTypeListPicker" Header="Measures" 
-                                ItemsSource="{Binding MeasurementTypes}" 
-                                SelectedItem="{Binding SelectedStat.MeasurementType}"
-                                SelectionChanged="measurementTypeListPicker_SelectionChanged" 
-                                FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
-                                ItemTemplate="{StaticResource defaultListPickerTemplate}" />
-
-            <toolkit:ListPicker x:Name="preferredUnitListPicker" 
-                                Header="Preferred Unit"
-                                SelectedItem="{Binding SelectedStat.PreferredUnit}"
-                                SelectionChanged="preferredUnitListPicker_SelectionChanged"
-                                FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
-                                ItemTemplate="{StaticResource defaultListPickerTemplate}" />
-
-            <TextBlock TextWrapping="Wrap" Text="Value" Margin="12,10,0,-5" Foreground="{StaticResource PhoneSubtleBrush}"/>
-            <StackPanel x:Name="valueContainer" Orientation="Horizontal">
-                <TextBox x:Name="value1TextBox" Text="{Binding Value1, Mode=TwoWay}" TextWrapping="Wrap" Margin="0,0,0,0"/>
-                <TextBox x:Name="value2TextBox" Text="{Binding Value2, Mode=TwoWay}" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
-                <TextBox x:Name="value3TextBox" Text="{Binding Value3, Mode=TwoWay}" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
-                <TextBox x:Name="value4TextBox" Text="{Binding Value4, Mode=TwoWay}" TextWrapping="Wrap" Visibility="Collapsed" Margin="0,0,0,0"/>
-            </StackPanel>
-			
-			
-			
-		</StackPanel>
-
-
-		</Grid>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True">
         	<shell:ApplicationBarIconButton x:Name="saveAppBarBtn" IconUri="/Images/Save.png" Text="save stat" IsEnabled="True" Click="saveAppBarBtn_Click"/>
       	</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
+
+	<Grid x:Name="LayoutRoot" Background="{StaticResource PhoneAccentBrush}">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="EditOrNewVisualGroup">
+				<VisualState x:Name="EditState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="edit stat"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="templateListPicker">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="AddState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="new stat"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		
+		<ScrollViewer x:Name="containerScrollViewer">
+		<StackPanel x:Name="containerStackPanel">
+			<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}, FallbackValue=PROFILENAME}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="12,0,0,0"/>
+			<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Text="new stat" Margin="12,0,0,0"/>
+
+			<toolkit:ListPicker x:Name="templateListPicker" 
+                Header="Stat Type" 
+				SelectionChanged="templateListPicker_SelectionChanged"
+				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+				ItemTemplate="{StaticResource defaultListPickerTemplate}" 
+				ItemsSource="{Binding StatTemplates}" />
+								
+			<VitalStats_View_Controls:TitledTextBox x:Name="nameTitledTextBox" Title="Label"/>
+
+			<toolkit:ListPicker x:Name="measurementTypeListPicker" 
+                Header="Measurement Type" 
+				ItemsSource="{Binding MeasurementTypes}"
+				SelectionChanged="measurementTypeListPicker_SelectionChanged" 
+				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+				ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+
+			<toolkit:ListPicker x:Name="preferredUnitListPicker" 
+				Header="Units"
+				SelectionChanged="preferredUnitListPicker_SelectionChanged"
+				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+				ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+
+			<StackPanel x:Name="valueContainer" Margin="25,0,0,0">
+				<VitalStats_View_Controls:TitledTextBox x:Name="value1TitledTextBox"/>
+				<VitalStats_View_Controls:TitledTextBox x:Name="value2TitledTextBox" Visibility="Collapsed"/>
+				<VitalStats_View_Controls:TitledTextBox x:Name="value3TitledTextBox" Visibility="Collapsed"/>
+				<VitalStats_View_Controls:TitledTextBox x:Name="value4TitledTextBox" Visibility="Collapsed"/>
+			</StackPanel>
+            
+
+
+
+		</StackPanel>
+		</ScrollViewer>
+		
+
+		</Grid>
 	
 </phone:PhoneApplicationPage>

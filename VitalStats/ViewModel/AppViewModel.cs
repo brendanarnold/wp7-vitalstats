@@ -54,6 +54,12 @@ namespace VitalStats.ViewModel
 
         #endregion
 
+        public void AddStat(Stat stat)
+        {
+            this.appDB.Stats.InsertOnSubmit(stat);
+            this.appDB.SubmitChanges();
+        }
+
         #region SelectedProfile methods/properties
 
         private Profile _selectedProfile;
@@ -213,6 +219,7 @@ namespace VitalStats.ViewModel
         }
 
         #endregion
+
 
 
     }

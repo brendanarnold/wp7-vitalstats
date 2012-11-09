@@ -85,6 +85,9 @@
     </Compile>
     <Compile Include="ViewModel\AppViewModelBoilerplate.cs" />
     <Compile Include="ViewModel\ViewModelSettings.cs" />
+    <Compile Include="View\Controls\TitledTextBox.xaml.cs">
+      <DependentUpon>TitledTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Convertors.cs" />
     <Compile Include="View\EditProfilePage.xaml.cs">
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </DesignTimeOnly>
+    <Page Include="View\Controls\TitledTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EditProfilePage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
@@ -165,11 +172,6 @@
     <Content Include="Images\Save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <DesignData Include="SampleData\AppViewModelSampleData.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-    </DesignData>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

@@ -16,11 +16,11 @@
           <SampleData:StatsItem.MeasurementType>
             <SampleData:MeasurementType Id="69" Name="Aenean" IsConvertible="True">
               <SampleData:MeasurementType.Units>
-                <SampleData:UnitsItem Id="33" Name="Metre" ConversionFactor="1.0" ConversionIntercept="0.0" Format="{}{0} m." />
-                <SampleData:UnitsItem Id="87" Name="Centimetre" ConversionFactor="100.0" ConversionIntercept="0.0" Format="(0) cm." />
-                <SampleData:UnitsItem Id="58" Name="Feet" ConversionFactor="3.2" ConversionIntercept="0.0" Format="{}{0} ft." />
-                <SampleData:UnitsItem Id="71" Name="Feet/Inches" ConversionFactor="3.2|32" ConversionIntercept="0.0" Format="{}{0} ft. {1} in." />
-                <SampleData:UnitsItem Id="13" Name="Inches" ConversionFactor="32" ConversionIntercept="0.0" Format="{}{32} in." />
+                <SampleData:UnitsItem Id="33" Name="Metre" Format="{}{0} m." />
+                <SampleData:UnitsItem Id="87" Name="Centimetre" Format="(0) cm." />
+                <SampleData:UnitsItem Id="58" Name="Feet" Format="{}{0} ft." />
+                <SampleData:UnitsItem Id="71" Name="Feet/Inches" Format="{}{0} ft. {1} in." />
+                <SampleData:UnitsItem Id="13" Name="Inches" Format="{}{32} in." />
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
           </SampleData:StatsItem.MeasurementType>

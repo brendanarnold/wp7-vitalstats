@@ -35,20 +35,29 @@ namespace VitalStats.Model
             }
         }
 
-        private string _name;
+        private string _nameString;
         [Column]
-        public string Name
+        public string NameString
         {
-            get { return this._name; }
+            get { return this._nameString; }
             set
             {
-                if (this._name != value)
+                if (this._nameString != value)
                 {
                     this.NotifyPropertyChanging("Name");
-                    this._name = value;
+                    this._nameString = value;
                     this.NotifyPropertyChanged("Name");
                 }
             }
+        }
+        public List<string> Names
+        {
+            get { return ModelHelpers.UnpickleStrings(this.NameString); }
+            set { this.NameString = ModelHelpers.PickleStrings(value); }
+        }
+        public string Name
+        {
+            get { return String.Join(AppConstants.FORMATTED_NAME_SEPARATOR, this.Names.ToArray()); }
         }
 
         private string _format;
@@ -67,36 +76,46 @@ namespace VitalStats.Model
             }
         }
 
-        private string _conversionFactor;
+        private string _conversionFactorString;
         [Column]
-        public string ConversionFactor
+        public string ConversionFactorString
         {
-            get { return this._conversionFactor; }
+            get { return this._conversionFactorString; }
             set
             {
-                if (this._conversionFactor != value)
+                if (this._conversionFactorString != value)
                 {
                     this.NotifyPropertyChanging("ConversionFactor");
-                    this._conversionFactor = value;
+                    this._conversionFactorString = value;
                     this.NotifyPropertyChanged("ConversionFactor");
                 }
             }
         }
-
-        private string _conversionIntercept;
-        [Column]
-        public string ConversionIntercept
+        public List<double> ConversionFactors
         {
-            get { return this._conversionIntercept; }
+            get { return ModelHelpers.UnpickleDoubles(this.ConversionFactorString);  }
+            set { this.ConversionFactorString = ModelHelpers.PickleDoubles(value); }
+        }
+
+        private string _conversionInterceptString;
+        [Column]
+        public string ConversionInterceptString
+        {
+            get { return this._conversionInterceptString; }
             set
             {
-                if (this._conversionIntercept != value)
+                if (this._conversionInterceptString != value)
                 {
                     this.NotifyPropertyChanging("ConversionIntercept");
-                    this._conversionIntercept = value;
+                    this._conversionInterceptString = value;
                     this.NotifyPropertyChanged("ConversionIntercept");
                 }
             }
+        }
+        public List<double> ConversionIntercepts
+        {
+            get { return ModelHelpers.UnpickleDoubles(this.ConversionInterceptString); }
+            set { this.ConversionInterceptString = ModelHelpers.PickleDoubles(value); }
         }
 
         [Column]
@@ -148,20 +167,18 @@ namespace VitalStats.Model
         {
             double val;
             if (!double.TryParse(value, out val)) return new List<double>();
-            List<double> aVals = ModelHelpers.SplitString(this.ConversionFactor);
-            List<double> bVals = ModelHelpers.SplitString(this.ConversionIntercept);
             List<double> convVals = new List<double>();
-            for (int i = 0; i < aVals.Count; i++)
+            for (int i = 0; i < this.ConversionFactors.Count; i++)
             {
-                if (aVals.Count == 1)
+                if (this.ConversionFactors.Count == 1)
                 {
-                    convVals.Add(aVals[i] * val + bVals[i]);
+                    convVals.Add(this.ConversionFactors[i] * val + this.ConversionIntercepts[i]);
                 }
                 else
                 {
-                    double rem = aVals[i] * val + bVals[i];
+                    double rem = this.ConversionFactors[i] * val + this.ConversionIntercepts[i];
                     convVals.Add(Math.Floor(rem));
-                    val = (rem - convVals.Last()) / aVals[i];
+                    val = (rem - convVals.Last()) / this.ConversionFactors[i];
                 }
             }
             return convVals;
@@ -172,12 +189,10 @@ namespace VitalStats.Model
         public string ConvertValuesToString(string value)
         {
             double val = 0.0;
-            List<double> vals = ModelHelpers.SplitString(value);
-            List<double> aVals = ModelHelpers.SplitString(this.ConversionFactor);
-            List<double> bVals = ModelHelpers.SplitString(this.ConversionIntercept);
+            List<double> vals = ModelHelpers.UnpickleDoubles(value);
             for (int i = 0; i < vals.Count; i++)
             {
-                val += (vals[i] - bVals[i]) / aVals[i];
+                val += (vals[i] - this.ConversionIntercepts[i]) / this.ConversionFactors[i];
             }
             return String.Format("{0}", val);
         }
@@ -185,7 +200,7 @@ namespace VitalStats.Model
 
         public int GetNumberInputs() 
         {
-            return ModelHelpers.SplitString(this.ConversionFactor).Count;
+            return this.ConversionFactors.Count;
         }
 
         #region INotifyPropertyChanged members
