@@ -54,9 +54,18 @@ namespace VitalStats.ViewModel
 
         #endregion
 
-        public void AddStat(Stat stat)
+        public void AddStatToProfile(Stat stat, Profile profile)
         {
+            stat.Profile = profile;
+            profile.Stats.Add(stat);
             this.appDB.Stats.InsertOnSubmit(stat);
+            this.appDB.SubmitChanges();
+        }
+
+        public void DeleteStatFromProfile(Stat stat, Profile profile)
+        {
+            profile.Stats.Remove(stat);
+            this.appDB.Stats.DeleteOnSubmit(stat);
             this.appDB.SubmitChanges();
         }
 
@@ -145,9 +154,16 @@ namespace VitalStats.ViewModel
             }
         }
 
+        // Inject an 'Other' measurement type at the start
         public void LoadMeasurementTypesFromDB()
         {
-            var mts = from MeasurementType mt in this.appDB.MeasurementTypes select mt;
+            List<MeasurementType> mts = (from MeasurementType mt in this.appDB.MeasurementTypes select mt).ToList();
+            MeasurementType customMt = new MeasurementType()
+            {
+                Name = AppConstants.NAME_CUSTOM_MEASUREMENT_TYPE,
+                Units = null,
+            };
+            mts.Insert(0, customMt);
             this.MeasurementTypes = new ObservableCollection<MeasurementType>(mts);
         }
 
@@ -166,60 +182,21 @@ namespace VitalStats.ViewModel
             }
         }
 
+        // Inject 'Other' template at the start of the list
         public void LoadStatTemplatesFromDB()
         {
-            var stats = from Stat s in this.appDB.StatTemplates select s;
+            List<Stat> stats = (from Stat s in this.appDB.StatTemplates select s).ToList();
+            Stat customStat = new Stat()
+            {
+                Name = AppConstants.NAME_CUSTOM_STAT_TEMPLATE
+            };
+            stats.Insert(0, customStat);
             this.StatTemplates = new ObservableCollection<Stat>(stats);
         }
 
         #endregion
 
-        #region Values (for EditStatPage) methods/properties
-
-        // Following is used in the edit stat page
-        private string _value1 = string.Empty;
-        public string Value1
-        {
-            get { return this._value1; }
-            set
-            {
-                this._value1 = value;
-                this.NotifyPropertyChanged("Value1");
-            }
-        }
-        private string _value2 = string.Empty;
-        public string Value2
-        {
-            get { return this._value2; }
-            set
-            {
-                this._value2 = value;
-                this.NotifyPropertyChanged("Value2");
-            }
-        }
-        private string _value3 = string.Empty;
-        public string Value3
-        {
-            get { return this._value3; }
-            set
-            {
-                this._value3 = value;
-                this.NotifyPropertyChanged("Value3");
-            }
-        }
-        private string _value4 = string.Empty;
-        public string Value4
-        {
-            get { return this._value4; }
-            set
-            {
-                this._value4 = value;
-                this.NotifyPropertyChanged("Value4");
-            }
-        }
-
-        #endregion
-
+        
 
 
     }

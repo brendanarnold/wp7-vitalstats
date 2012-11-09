@@ -18,7 +18,6 @@
 	>
 
 	<phone:PhoneApplicationPage.Resources>
-		<VitalStats_View:AddCustomStatTemplateOption x:Key="AddCustomStatTemplateOption"/>
 		<VitalStats_View:BoolToStrings x:Key="BoolToStrings"/>
 		<VitalStats_View:StringToUpper x:Key="StringToUpper"/>
 

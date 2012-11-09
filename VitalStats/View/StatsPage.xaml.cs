@@ -18,6 +18,8 @@ namespace VitalStats.View
     public partial class StatsPage : PhoneApplicationPage
     {
 
+        #region Initialise page
+
         public StatsPage()
         {
             InitializeComponent();
@@ -34,8 +36,8 @@ namespace VitalStats.View
             App.VM.SelectedProfile = (from Profile p in App.VM.Profiles where p.Id == id select p).First();
  
             // Bind appbar
-            this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["defaultAppBar"];
-
+            this.ApplyApplicationBar(statDetailPopUpStateGroup.CurrentState);
+            
             // Load a new suggested app
             App.VM.LoadNextSuggestedStatTemplate();
 
@@ -44,36 +46,39 @@ namespace VitalStats.View
 
         }
 
-        void statDetailPopUpStateGroup_CurrentStateChanging(object sender, VisualStateChangedEventArgs e)
+        #endregion
+
+
+        #region Misc methods
+
+        private void ConfirmAndDeleteStat(Stat s)
         {
-            if (e.NewState == this.statDetailPopUpOpen)
+            MessageBoxResult res = MessageBox.Show(String.Format("Are you sure you want to delete the statistic '{0}'?", s.Name), "Delete stat?", MessageBoxButton.OKCancel);
+            if (res == MessageBoxResult.OK)
+            {
+                App.VM.DeleteStatFromProfile(s, App.VM.SelectedProfile);
+            }
+        }
+
+
+        private void ApplyApplicationBar(VisualState vs)
+        {
+            if ((vs == this.statDetailPopUpOpen) &&
+                (this.ApplicationBar != (Microsoft.Phone.Shell.ApplicationBar)this.Resources["showStatAppBar"]))
             {
                 this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["showStatAppBar"];
             }
-            else
+            else if (((vs == this.statDetailPopUpClosed) || (vs == null)) &&
+                (this.ApplicationBar != (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"]))
             {
                 this.ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)this.Resources["defaultAppBar"];
             }
         }
 
-
-        #region Show stat detail pop-up
-
-        // Simulate page back behaviour using the Back button for the pop up
-        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
-        {
-            if (this.statDetailPopUpStateGroup.CurrentState == this.statDetailPopUpOpen)
-            {
-                e.Cancel = true;
-                VisualStateManager.GoToState(this, "statDetailPopUpClosed", true);
-            }
-        }
-
-
-
         #endregion
 
 
+        #region Page behaviours
 
         private void addStatAppBarBtn_Click(Object sender, EventArgs e) 
         {
@@ -99,6 +104,35 @@ namespace VitalStats.View
                 EditStatPageActions.NewFromTemplate, App.VM.SuggestedStatTemplate.Id), UriKind.Relative));
         }
 
+        private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (sender != null)
+            {
+                Stat s = (sender as MenuItem).DataContext as Stat;
+                this.ConfirmAndDeleteStat(s);
+            }
+        }
+
+        #endregion
+
+
+        #region Pop-up behaviours
+
+        void statDetailPopUpStateGroup_CurrentStateChanging(object sender, VisualStateChangedEventArgs e)
+        {
+            this.ApplyApplicationBar(e.NewState);
+        }
+
+        // Simulate page back behaviour using the Back button for the pop up
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (this.statDetailPopUpStateGroup.CurrentState == this.statDetailPopUpOpen)
+            {
+                e.Cancel = true;
+                VisualStateManager.GoToState(this, "statDetailPopUpClosed", true);
+            }
+        }
+
         private void stat_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.SelectedStat = ((sender as StackPanel).DataContext as Stat);
@@ -110,6 +144,7 @@ namespace VitalStats.View
             VisualStateManager.GoToState(this, "statDetailPopUpClosed", true);
         }
 
+        #endregion
 
 
 

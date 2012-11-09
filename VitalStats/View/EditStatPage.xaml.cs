@@ -19,7 +19,7 @@ namespace VitalStats.View
     public partial class EditStatPage : PhoneApplicationPage
     {
         // Determines whether page should render for a new stat or editing an existing stat
-        public bool IsNewStat;
+        public string PageAction;
 
         // A container for comparison when submitting to check if data has been entered
         EditStatFormSnapshot FormSnapshot;
@@ -48,9 +48,8 @@ namespace VitalStats.View
             base.OnNavigatedTo(e);
 
             // Default action is add a new item
-            this.IsNewStat = true;
-            string action = EditProfilePageActions.New;
-            NavigationContext.QueryString.TryGetValue("Action", out action);
+            this.PageAction = EditStatPageActions.New;
+            NavigationContext.QueryString.TryGetValue("Action", out this.PageAction);
             int id = 0;
             if (NavigationContext.QueryString.ContainsKey("Id"))
             {
@@ -58,23 +57,20 @@ namespace VitalStats.View
             }
 
             // Deal with various actions
-            switch (action)
+            switch (this.PageAction)
             {
                 case EditStatPageActions.Edit:
-                    this.IsNewStat = false;
                     VisualStateManager.GoToState(this, "EditState", false);
                     App.VM.SelectedStat = (from Stat s in App.VM.SelectedProfile.Stats where s.Id == id select s).First();
                     this.templateListPicker.ItemsSource = null;
                     this.LoadValueToTextBox();
                     break;
                 case EditStatPageActions.NewFromTemplate:
-                    this.IsNewStat = true;
                     VisualStateManager.GoToState(this, "AddState", false);
                     App.VM.SelectedStat = new Stat();
                     this.templateListPicker.SelectedItem = (from Stat s in App.VM.StatTemplates where s.Id == id select s).First();
                     break;
                 case EditStatPageActions.New:
-                    this.IsNewStat = true;
                     VisualStateManager.GoToState(this, "AddStat", false);
                     App.VM.SelectedStat = new Stat();
                     break;
@@ -152,13 +148,13 @@ namespace VitalStats.View
         {
             if (this.nameTitledTextBox.Text == String.Empty)
             {
-                MessageBox.Show("Please enter something for the name.");
+                MessageBox.Show("The statistic label cannot be empty. Please enter a value.", "Label missing", MessageBoxButton.OK);
                 return false;
             }
 
             if (this.ReadValueFromTextBox() == String.Empty)
             {
-                MessageBox.Show("Please enter valid values");
+                MessageBox.Show("The statistic value must be number unless a custom measurement type is selected. It also cannot be empty. Please enter a valid value.", "Value empty or invalid", MessageBoxButton.OK);
                 return false;
             }
             return true;
@@ -184,14 +180,12 @@ namespace VitalStats.View
                 App.VM.SelectedStat.Value = App.VM.SelectedStat.PreferredUnit.ConvertValuesToString(valStr);
                 App.VM.SelectedStat.MeasurementType = (this.measurementTypeListPicker.SelectedItem as MeasurementType);
             }
-            if (this.IsNewStat) {
-                App.VM.SelectedStat.Profile = App.VM.SelectedProfile;
-                App.VM.SelectedProfile.Stats.Add(App.VM.SelectedStat);
-                App.VM.AddStat(App.VM.SelectedStat);
+            if (this.PageAction == EditStatPageActions.Edit) {
+                App.VM.SaveChangesToDB();
             }
             else
             {
-                App.VM.SaveChangesToDB();
+                App.VM.AddStatToProfile(App.VM.SelectedStat, App.VM.SelectedProfile);
             }
 
             this.ClearInput();
@@ -263,8 +257,6 @@ namespace VitalStats.View
         {
             this.nameTitledTextBox.Text = String.Empty;
             foreach (TitledTextBox tb in this.valueContainer.Children) tb.Text = String.Empty;
-            this.measurementTypeListPicker.SelectedIndex = 0;
-            this.preferredUnitListPicker.SelectedIndex = 0;
         }
 
 
@@ -298,10 +290,9 @@ namespace VitalStats.View
         // Updates rest of fields when template is changed
         private void templateListPicker_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            // Convention of Id = -1 defined in Converter.cs
             Stat st = this.templateListPicker.SelectedItem as Stat;
             if (st == null) return;
-            if ((st.Id != -1) && (this.measurementTypeListPicker.Items.Count > 0))
+            if ((st.Name != AppConstants.NAME_CUSTOM_STAT_TEMPLATE) && (this.measurementTypeListPicker.Items.Count > 0))
             {
                 this.nameTitledTextBox.Text = st.Name;
                 this.measurementTypeListPicker.SelectedItem = st.MeasurementType;
