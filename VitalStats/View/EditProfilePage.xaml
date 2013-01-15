@@ -27,8 +27,7 @@
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True">
-			<shell:ApplicationBarIconButton x:Name="cancelAddBtn" Text="cancel" IconUri="/Images/Close.png" Click="cancelAddBtn_Click" IsEnabled="True" />
-		    <shell:ApplicationBarIconButton x:Name="confirmAddBtn" Text="add" IconUri="/Images/Check.png" Click="confirmAddBtn_Click" IsEnabled="True" />
+		    <shell:ApplicationBarIconButton x:Name="saveBtn" Text="save" IconUri="/Images/Save.png" Click="saveBtn_Click" IsEnabled="True" />
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 	

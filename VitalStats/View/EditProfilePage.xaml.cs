@@ -43,7 +43,7 @@ namespace VitalStats
         }
 
 
-        private void confirmAddBtn_Click(object sender, System.EventArgs e)
+        private void saveBtn_Click(object sender, System.EventArgs e)
         {
             if (this.IsNewProfile)
             {

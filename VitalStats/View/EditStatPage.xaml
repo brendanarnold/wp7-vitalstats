@@ -44,8 +44,9 @@
 	</d:DataContext>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True">
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
         	<shell:ApplicationBarIconButton x:Name="saveAppBarBtn" IconUri="/Images/Save.png" Text="save stat" IsEnabled="True" Click="saveAppBarBtn_Click"/>
+        	<shell:ApplicationBarIconButton x:Name="helpAppBarBtn" IconUri="/Assets/AppBar/appbar.questionmark.rest.png" Text="help" Click="helpAppBarBtn_Click"/>
       	</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
@@ -56,13 +57,6 @@
 					<Storyboard>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
 							<DiscreteObjectKeyFrame KeyTime="0" Value="edit stat"/>
-						</ObjectAnimationUsingKeyFrames>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="templateListPicker">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Collapsed</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
 						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
@@ -80,22 +74,8 @@
 		<StackPanel x:Name="containerStackPanel">
 			<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}, FallbackValue=PROFILENAME}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="12,0,0,0"/>
 			<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Text="new stat" Margin="12,0,0,0"/>
-
-			<toolkit:ListPicker x:Name="templateListPicker" 
-                Header="Stat Type" 
-				SelectionChanged="templateListPicker_SelectionChanged"
-				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
-				ItemTemplate="{StaticResource defaultListPickerTemplate}" 
-				ItemsSource="{Binding StatTemplates}" />
 								
 			<VitalStats_View_Controls:TitledTextBox x:Name="nameTitledTextBox" Title="Label"/>
-
-			<toolkit:ListPicker x:Name="measurementTypeListPicker" 
-                Header="Measurement Type" 
-				ItemsSource="{Binding MeasurementTypes}"
-				SelectionChanged="measurementTypeListPicker_SelectionChanged" 
-				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
-				ItemTemplate="{StaticResource defaultListPickerTemplate}" />
 
 			<toolkit:ListPicker x:Name="preferredUnitListPicker" 
 				Header="Units"

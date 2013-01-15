@@ -10,6 +10,8 @@
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
     xmlns:System="clr-namespace:System;assembly=mscorlib" 
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:ViewModel="clr-namespace:VitalStats.ViewModel"
     x:Class="VitalStats.View.MainPage"
@@ -30,7 +32,7 @@
     		<Setter Property="Template">
     			<Setter.Value>
     				<ControlTemplate TargetType="Button">
-    					<Canvas x:Name="profileCanvas" Background="{StaticResource PhoneAccentBrush}" Width="150" Height="150">
+    					<Canvas x:Name="profileCanvas" Background="{StaticResource PhoneAccentBrush}" Width="150" Height="150" Margin="0">
     						<Image x:Name="isProtectedImg" Height="60" Canvas.Left="96" Canvas.Top="97" Width="60" Source="/Images/Lock.png" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}"/>
     						<ContentPresenter Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}"/>
     					</Canvas>
@@ -39,6 +41,20 @@
     		</Setter>
     		<Setter Property="FontSize" Value="29.333"/>
 	    </Style>
+		<DataTemplate x:Key="MeasurementTypesItemTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding Id}"/>
+				<CheckBox IsChecked="{Binding IsConvertible, Mode=TwoWay}"/>
+				<TextBlock Text="{Binding Name}"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="StatTemplatesItemTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding Id}"/>
+				<TextBlock Text="{Binding Name}"/>
+			</StackPanel>
+		</DataTemplate>
+		
 
     </phone:PhoneApplicationPage.Resources>
 	
@@ -60,6 +76,7 @@
     
     
 	<Grid x:Name="LayoutRoot">
+		
 		<VisualStateManager.CustomVisualStateManager>
 			<ec:ExtendedVisualStateManager/>
 		</VisualStateManager.CustomVisualStateManager>
@@ -70,41 +87,78 @@
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
 
-		<Grid x:Name="Layout" Background="Transparent">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="*"/>
-			</Grid.RowDefinitions>
+		
 
-			<!--TitlePanel contains the name of the application and page title-->
-			<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-				<TextBlock x:Name="ApplicationTitle" Text="VITAL STATISTICS" Style="{StaticResource PhoneTextNormalStyle}"/>
-				<TextBlock x:Name="PageTitle" Text="profiles" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-			</StackPanel>
+		<controls:Pivot Title="VITAL STATISTICS">
+            <!--Pivot item one-->
+            <controls:PivotItem x:Name="profilesPivotItem" Header="profiles">
 
-			<!--ContentPanel - place additional content here-->
-			<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" >
-				<ListBox x:Name="profileListBox" ItemsSource="{Binding Profiles}">
+
+			<Grid x:Name="Layout" Background="Transparent">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<!--TitlePanel contains the name of the application and page title-->
+
+				<!--ContentPanel - place additional content here-->
+				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,0,12,0" >
+					<ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding Profiles}" >
+						<ItemsControl.ItemsPanel>
+							<ItemsPanelTemplate>
+								<toolkit:WrapPanel Orientation="Horizontal" />								
+							</ItemsPanelTemplate>
+						</ItemsControl.ItemsPanel>
+    					<ItemsControl.ItemTemplate>
+    						<DataTemplate>
+    							<!--
+								<Border>
+    							<TextBlock Text="{Binding Name}" Width="200" />
+								</Border>
+    							-->
+    							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="150" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="150" Tap="Button_Tap">
+									<toolkit:ContextMenuService.ContextMenu>
+										<toolkit:ContextMenu>
+											<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
+											<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
+										</toolkit:ContextMenu>
+									</toolkit:ContextMenuService.ContextMenu>
+									
+    							</Button>
+								
+    						</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+				</Grid>
+		
+			</Grid>
+		
+		</controls:PivotItem>
+	            
+        <controls:PivotItem x:Name="howtoPivotItem" Header="howto">
+			<Grid Margin="24,0,12,0" >
+				<ListBox x:Name="howtoListBox" ItemsSource="{Binding StatTemplates}" Padding="0,0,12,0">
+					<ListBox.ItemContainerStyle>
+						<Style TargetType="ListBoxItem">
+							<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+							
+						</Style>
+					</ListBox.ItemContainerStyle>
 					<ListBox.ItemTemplate>
-    				<DataTemplate>
-    					<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="150" Margin="12,0,0,25" Style="{StaticResource profileButtonStyle}" Width="150" Tap="Button_Tap">
-								<toolkit:ContextMenuService.ContextMenu>
-									<toolkit:ContextMenu>
-										<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
-										<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
-									</toolkit:ContextMenu>
-								</toolkit:ContextMenuService.ContextMenu>
-    					</Button>
-    				</DataTemplate>
+						<DataTemplate>
+							<Border Margin="0,0,0,5" Background="{StaticResource PhoneAccentBrush}" >
+								<TextBox x:Name="howtoBtn" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}"  BorderThickness="0" Padding="0" Height="66" Width="420" Background="Transparent" BorderBrush="Transparent" Foreground="White" SelectionBackground="Transparent" SelectionForeground="White" Tap="howtoBtn_Tap" />
+							</Border>
+						</DataTemplate>
 					</ListBox.ItemTemplate>
 				</ListBox>
 			</Grid>
-		</Grid>
-		
+		</controls:PivotItem>
+    </controls:Pivot>
 	
-	
-	</Grid>
-	
+</Grid>
+
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
 		      	<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">

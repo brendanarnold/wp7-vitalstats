@@ -81,7 +81,7 @@ namespace VitalStats.Model
         }
 
         private EntitySet<Stat> _stats;
-        [Association(Storage = "_stats", OtherKey = "_profileId", ThisKey = "Id")]
+        [Association(Storage = "_stats", OtherKey = "_profileId", ThisKey = "Id", DeleteRule="CASCADE")]
         public EntitySet<Stat> Stats
         {
             get { return this._stats; }

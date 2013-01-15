@@ -21,6 +21,9 @@ namespace VitalStats.View
         // Determines whether page should render for a new stat or editing an existing stat
         public string PageAction;
 
+        // Long list selector triggers the OnNavigatedToEvent again, use a flag to avoid triggering the reinitialisation of the stat
+        public bool StatInitialised = false;
+
         // A container for comparison when submitting to check if data has been entered
         EditStatFormSnapshot FormSnapshot;
 
@@ -34,12 +37,6 @@ namespace VitalStats.View
             if (App.VM.MeasurementTypes == null) App.VM.LoadMeasurementTypesFromDB();
             if (App.VM.StatTemplates == null) App.VM.LoadStatTemplatesFromDB();
 
-            // Need to bind explicitly for some reason when this particular ListPicker
-            // control is inside a ScrollViewer
-            this.templateListPicker.ItemsSource = App.VM.StatTemplates;
-            this.measurementTypeListPicker.ItemsSource = App.VM.MeasurementTypes;
-
-
 
         }
 
@@ -47,32 +44,19 @@ namespace VitalStats.View
         {
             base.OnNavigatedTo(e);
 
+            if (this.StatInitialised) return;
+
             // Default action is add a new item
-            this.PageAction = EditStatPageActions.New;
-            NavigationContext.QueryString.TryGetValue("Action", out this.PageAction);
-            int id = 0;
-            if (NavigationContext.QueryString.ContainsKey("Id"))
-            {
-                id = Convert.ToInt32(NavigationContext.QueryString["Id"]);
-            }
+            if (this.PageAction == null) this.PageAction = EditStatPageActions.New;
 
             // Deal with various actions
             switch (this.PageAction)
             {
                 case EditStatPageActions.Edit:
                     VisualStateManager.GoToState(this, "EditState", false);
-                    App.VM.SelectedStat = (from Stat s in App.VM.SelectedProfile.Stats where s.Id == id select s).First();
-                    this.templateListPicker.ItemsSource = null;
-                    this.LoadValueToTextBox();
-                    break;
-                case EditStatPageActions.NewFromTemplate:
-                    VisualStateManager.GoToState(this, "AddState", false);
-                    App.VM.SelectedStat = new Stat();
-                    this.templateListPicker.SelectedItem = (from Stat s in App.VM.StatTemplates where s.Id == id select s).First();
                     break;
                 case EditStatPageActions.New:
-                    VisualStateManager.GoToState(this, "AddStat", false);
-                    App.VM.SelectedStat = new Stat();
+                    VisualStateManager.GoToState(this, "AddState", false);
                     break;
                 default:
                     break;
@@ -83,12 +67,13 @@ namespace VitalStats.View
             // Take a snapshot to determine if changes have been made
             this.TakeSnapshotOfForm();
 
+            this.StatInitialised = true;
+
         }
 
         private void LoadStatIntoPage()
         {
             if (App.VM.SelectedStat.Name != null) this.nameTitledTextBox.Text = App.VM.SelectedStat.Name;
-            if (App.VM.SelectedStat.MeasurementType != null) this.measurementTypeListPicker.SelectedItem = App.VM.SelectedStat.MeasurementType;
             if (App.VM.SelectedStat.PreferredUnit != null) this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
             if (App.VM.SelectedStat.Value != null) this.LoadValueToTextBox();
         }
@@ -98,7 +83,6 @@ namespace VitalStats.View
             this.FormSnapshot = new EditStatFormSnapshot() {
                 Name = this.nameTitledTextBox.Text,
                 Value = this.ReadValueFromTextBox(),
-                MeasurementTypeIndex = this.measurementTypeListPicker.SelectedIndex,
                 PreferredUnitIndex = this.preferredUnitListPicker.SelectedIndex,
             };
         }
@@ -107,7 +91,6 @@ namespace VitalStats.View
         {
             if (this.nameTitledTextBox.Text != this.FormSnapshot.Name) return true;
             if (this.ReadValueFromTextBox() != this.FormSnapshot.Value) return true;
-            if (this.measurementTypeListPicker.SelectedIndex != this.FormSnapshot.MeasurementTypeIndex) return true;
             if (this.preferredUnitListPicker.SelectedIndex != this.FormSnapshot.PreferredUnitIndex) return true;
             return false;
         }
@@ -131,9 +114,9 @@ namespace VitalStats.View
         // Allows non-numeric values when the stat type is custom i.e. does not allow for conversions
         public bool AllowNonNumericValue()
         {
-            if (this.measurementTypeListPicker.SelectedItem != null)
+            if (App.VM.SelectedStat.MeasurementType != null)
             {
-                return !(this.measurementTypeListPicker.SelectedItem as MeasurementType).IsConvertible();
+                return !App.VM.SelectedStat.MeasurementType.IsConvertible();
             }
             else
             {
@@ -178,7 +161,6 @@ namespace VitalStats.View
             {
                 App.VM.SelectedStat.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as Unit);
                 App.VM.SelectedStat.Value = App.VM.SelectedStat.PreferredUnit.ConvertValuesToString(valStr);
-                App.VM.SelectedStat.MeasurementType = (this.measurementTypeListPicker.SelectedItem as MeasurementType);
             }
             if (this.PageAction == EditStatPageActions.Edit) {
                 App.VM.SaveChangesToDB();
@@ -287,31 +269,14 @@ namespace VitalStats.View
             }
         }
 
-        // Updates rest of fields when template is changed
-        private void templateListPicker_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            Stat st = this.templateListPicker.SelectedItem as Stat;
-            if (st == null) return;
-            if ((st.Name != AppConstants.NAME_CUSTOM_STAT_TEMPLATE) && (this.measurementTypeListPicker.Items.Count > 0))
-            {
-                this.nameTitledTextBox.Text = st.Name;
-                this.measurementTypeListPicker.SelectedItem = st.MeasurementType;
-            }
-        }
-
-
-        private void measurementTypeListPicker_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            if (this.measurementTypeListPicker.SelectedItem != null)
-            {
-                this.preferredUnitListPicker.ItemsSource
-                    = (this.measurementTypeListPicker.SelectedItem as MeasurementType).Units;
-            }
-        }
-
         private void PhoneApplicationPage_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             //this.TakeSnapshotOfForm();
+        }
+
+        private void helpAppBarBtn_Click(object sender, System.EventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
         }
 
 
@@ -322,13 +287,12 @@ namespace VitalStats.View
     public struct EditStatFormSnapshot 
     {
         public string Name, Value;
-        public int? MeasurementTypeIndex, PreferredUnitIndex;
+        public int? PreferredUnitIndex;
     }
 
 
     public static class EditStatPageActions
     {
-        public const string NewFromTemplate = "NewFromTemplate";
         public const string New = "New";
         public const string Edit = "Edit";
     }

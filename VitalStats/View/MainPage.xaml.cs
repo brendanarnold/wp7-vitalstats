@@ -68,6 +68,11 @@ namespace VitalStats.View
             NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
         }
 
+        private void howtoBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
 
 
     }
