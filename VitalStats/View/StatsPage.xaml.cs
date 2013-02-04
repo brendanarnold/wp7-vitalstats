@@ -104,6 +104,18 @@ namespace VitalStats.View
         	// TODO: Add event handler implementation here.
         }
 
+        private void selectStatTemplateStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+			// Open up the edit new stat page
+        }
+
+        private void customStatTextBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+			// Open up pop-up to select measurement type
+        }
+
+
+
 
 
 

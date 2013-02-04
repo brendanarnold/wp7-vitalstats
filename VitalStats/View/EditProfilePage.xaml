@@ -17,10 +17,10 @@
 	<Grid x:Name="LayoutRoot" Background="{StaticResource PhoneAccentBrush}">
 		
 		<StackPanel Orientation="Vertical">
-			<TextBlock Margin="0,0,0,50" TextWrapping="Wrap" Text="add new profile" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Padding="10,0,0,0" />
-			<TextBlock TextWrapping="Wrap" Text="Name" Padding="10,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-			<TextBox x:Name="nameTextBox" TextWrapping="Wrap"/>
-			<CheckBox x:Name="isProtectedCheckBox" Content="protect with PIN"/>
+			<TextBlock Margin="10,5,0,50" TextWrapping="Wrap" Text="add new profile" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Padding="0" />
+			<TextBlock TextWrapping="Wrap" Text="Name" Padding="0" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0,0,0"/>
+			<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Padding="2"/>
+			<CheckBox x:Name="isProtectedCheckBox" Content="protect with PIN" BorderThickness="3"/>
 		</StackPanel>
 		
 	</Grid>

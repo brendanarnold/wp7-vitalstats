@@ -1,0 +1,20 @@
+
+Default:
+    Font Size Page Title: 54pt
+    App title: All caps size 15pt
+    Normal Text: PhoneFontSizeMediumLarge 19pt
+    Gutter left: 12px
+
+ListBox:
+    Font Size: 24pt PhoneFontSizeLarge
+    Margin: 12 left 5 bottom
+
+Edit Pages
+    Title: PhoneFontSizeExtraExtraLarge 54pt
+    Lable Text: 17pt PhoenFontSizeMedium
+
+Pop-up pages:
+    Background: Accent
+    Font Face: Segoe WP
+    Font Size Title: 48pt
+    Font Size Text: 17pt
