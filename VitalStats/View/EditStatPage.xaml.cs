@@ -82,6 +82,7 @@ namespace VitalStats.View
             } 
             else 
             {
+                this.preferredUnitListPicker.ItemsSource = App.VM.SelectedStat.MeasurementType.Units;
                 if (App.VM.SelectedStat.PreferredUnit != null) this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
             }
             // Load up the value
@@ -191,16 +192,11 @@ namespace VitalStats.View
             {
                 Unit pu = this.preferredUnitListPicker.SelectedItem as Unit;
                 List<double> vals = pu.ConvertValuesFromString(App.VM.SelectedStat.Value);
-                for (int i = 0; i < this.valueContainer.Children.Count; i++)
+                for (int i = 0; i < pu.Names.Count; i++)
                 {
-                    if (i < vals.Count)
-                    {
-                        (this.valueContainer.Children[i] as TitledTextBox).Text = String.Format("{0:F3}", vals[i]);
-                    }
-                    else
-                    {
-                        (this.valueContainer.Children[i] as TitledTextBox).Text = String.Empty;
-                    }
+                    TitledTextBox ttb = (this.valueContainer.Children[i] as TitledTextBox);
+                    ttb.Title = pu.Names[i];
+                    ttb.Text = (i < vals.Count) ? String.Format("{0:F3}", vals[i]) : String.Empty;
                 }
             }
             else

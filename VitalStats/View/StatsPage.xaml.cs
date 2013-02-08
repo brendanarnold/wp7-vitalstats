@@ -45,7 +45,13 @@ namespace VitalStats.View
                 VisualStateManager.GoToState(this, "VSDefault", false);
                 this.ApplicationBar.IsVisible = true; // For some reason the CurrentStatChanged event is not fired
             }
-            
+
+
+            // Load some of the data types if not done so already
+            if (App.VM.MeasurementTypes == null) App.VM.LoadMeasurementTypesFromDB();
+            if (App.VM.StatTemplates == null) App.VM.LoadStatTemplatesFromDB();
+
+
             // Load a new suggested app
             App.VM.LoadNextSuggestedStatTemplate();
 

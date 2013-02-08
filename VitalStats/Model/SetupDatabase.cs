@@ -160,10 +160,6 @@ namespace VitalStats.Model
                     },
                 },
 
-                new MeasurementType() {
-                    Name = "Other",
-                    Units = null,
-                }
 
             };
 
