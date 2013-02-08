@@ -20,11 +20,42 @@
 		<VitalStats_View:StringToLower x:Key="StringToLower"/>
 		<VitalStats_View:BoolToStrings x:Key="BoolToStrings"/>
 		<VitalStats_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
-		<DataTemplate x:Key="StatTemplatesItemTemplate">
-			<StackPanel x:Name="selectStatTemplateStackPanel" Margin="12,0,0,8" Tap="selectStatTemplateStackPanel_Tap">
-				<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5"/>
-			</StackPanel>
-		</DataTemplate>
+		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBoxItem">
+						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="LayoutRoot">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentContainer"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Unselected"/>
+									<VisualState x:Name="Selected"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates"/>
+							</VisualStateManager.VisualStateGroups>
+							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
 	</phone:PhoneApplicationPage.Resources>
 
 	<d:DataContext>
@@ -57,7 +88,7 @@
 				<VisualStateGroup.Transitions>
 					<VisualTransition GeneratedDuration="0"/>
 				</VisualStateGroup.Transitions>
-				<VisualState x:Name="selectStatPopUpOpenVisualState">
+				<VisualState x:Name="VSSelectStatType">
 					<Storyboard>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectStatTypePopUpGrid">
 							<DiscreteObjectKeyFrame KeyTime="0">
@@ -68,7 +99,7 @@
 						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
-				<VisualState x:Name="selectMeasurementTypePopUpOpenVisualState">
+				<VisualState x:Name="VSSelectMeasurementType">
 					<Storyboard>
 						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectMeasurementTypePopUpGrid">
 							<DiscreteObjectKeyFrame KeyTime="0">
@@ -79,6 +110,7 @@
 						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
+				<VisualState x:Name="VSDefault"/>
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
 		
@@ -117,39 +149,53 @@
 							<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
 							<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
 							<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
-				
 						</StackPanel>
-				
 					</Grid>
 				
 				</StackPanel>
 			</Grid>
 
-			<Grid x:Name="selectMeasurementTypePopUpGrid" Background="{StaticResource PhoneAccentBrush}" Margin="0" Visibility="Collapsed">
-
-					<StackPanel>
-						<TextBlock x:Name="TitleTextBlock" TextWrapping="Wrap" Text="select measurement type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
-				<Border BorderBrush="White" BorderThickness="0,2,0,0" Margin="12,0" Padding="0,24,0,0">
-					<Border.Background>
-						<ImageBrush Stretch="Fill"/>
-					</Border.Background>
-						<ListBox ItemTemplate="{StaticResource StatTemplatesItemTemplate}" ItemsSource="{Binding MeasurementTypes}" Padding="0"/>
-				</Border>
-					</StackPanel>
-				
+			<Grid x:Name="selectMeasurementTypePopUpGrid" Background="{StaticResource PhoneAccentBrush}" Margin="2,0,-2,0" Visibility="Collapsed">
+				<StackPanel>
+					<TextBlock x:Name="TitleTextBlock" TextWrapping="Wrap" Text="select measurement type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
+					<TextBlock x:Name="customMeasurementTypeTextBox" TextWrapping="Wrap"  FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5" Text="Custom" Tap="customMeasurementTypeTextBox_Tap"/>
+					<Grid x:Name="OrDividerGrid2" Margin="0,0,0,5">
+						<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />
+						<Border Background="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Center" Padding="5,0" >
+							<TextBlock TextWrapping="Wrap" Text="or" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+						</Border>
+					</Grid>
+					<ListBox ItemsSource="{Binding MeasurementTypes}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}" Padding="0" Margin="0,0,0,0">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="selectMeasurementTypeStackPanel" Margin="24,0,0,8" Tap="selectMeasurementTypeStackPanel_Tap">
+									<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5" />
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
 			</Grid>
 		
 			<Grid x:Name="selectStatTypePopUpGrid" Background="{StaticResource PhoneAccentBrush}" Margin="0" Visibility="Collapsed">
 				<StackPanel>
 					<TextBlock x:Name="TitleTextBlock1" TextWrapping="Wrap" Text="select stat type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
-					<TextBlock TextWrapping="Wrap" Text="Custom stat ..." FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5"/>
+					<TextBlock x:Name="customStatTextBox" TextWrapping="Wrap" Text="Custom stat ..." FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5" Tap="customStatTextBox_Tap"/>
 					<Grid x:Name="OrDividerGrid1" Margin="0,0,0,5">
 						<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />
 						<Border Background="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Center" Padding="5,0" >
 							<TextBlock TextWrapping="Wrap" Text="or" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 						</Border>
 					</Grid>
-					<ListBox ItemTemplate="{StaticResource StatTemplatesItemTemplate}" ItemsSource="{Binding StatTemplates}" Margin="12,0,0,0"/>
+					<ListBox ItemsSource="{Binding StatTemplates}" Margin="12,0,0,0" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="selectStatTemplateStackPanel" Margin="12,0,0,8" Tap="selectStatTemplateStackPanel_Tap">
+									<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5" />
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
 				</StackPanel>
 			</Grid>
 			<!--ContentPanel - place additional content here-->

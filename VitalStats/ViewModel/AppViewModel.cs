@@ -139,6 +139,19 @@ namespace VitalStats.ViewModel
             }
         }
 
+        // Allows non-numeric values when the stat type is custom i.e. does not allow for conversions
+        public bool AllowNonNumericValue()
+        {
+            if (this.SelectedStat.MeasurementType != null)
+            {
+                return !this.SelectedStat.MeasurementType.IsConvertible();
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         #endregion
 
         #region MeasurementTypes methods/properties
@@ -158,12 +171,12 @@ namespace VitalStats.ViewModel
         public void LoadMeasurementTypesFromDB()
         {
             List<MeasurementType> mts = (from MeasurementType mt in this.appDB.MeasurementTypes select mt).ToList();
-            MeasurementType customMt = new MeasurementType()
-            {
-                Name = AppConstants.NAME_CUSTOM_MEASUREMENT_TYPE,
-                Units = null,
-            };
-            mts.Insert(0, customMt);
+            //MeasurementType customMt = new MeasurementType()
+            //{
+            //    Name = AppConstants.NAME_CUSTOM_MEASUREMENT_TYPE,
+            //    Units = null,
+            //};
+            //mts.Insert(0, customMt);
             this.MeasurementTypes = new ObservableCollection<MeasurementType>(mts);
         }
 
@@ -186,11 +199,11 @@ namespace VitalStats.ViewModel
         public void LoadStatTemplatesFromDB()
         {
             List<Stat> stats = (from Stat s in this.appDB.StatTemplates select s).ToList();
-            Stat customStat = new Stat()
-            {
-                Name = AppConstants.NAME_CUSTOM_STAT_TEMPLATE
-            };
-            stats.Insert(0, customStat);
+            //Stat customStat = new Stat()
+            //{
+            //    Name = AppConstants.NAME_CUSTOM_STAT_TEMPLATE
+            //};
+            //stats.Insert(0, customStat);
             this.StatTemplates = new ObservableCollection<Stat>(stats);
         }
 

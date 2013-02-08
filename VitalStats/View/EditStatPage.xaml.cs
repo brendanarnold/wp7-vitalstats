@@ -73,11 +73,22 @@ namespace VitalStats.View
 
         private void LoadStatIntoPage()
         {
-            if (App.VM.SelectedStat.Name != null) this.nameTitledTextBox.Text = App.VM.SelectedStat.Name;
-            if (App.VM.SelectedStat.PreferredUnit != null) this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
+            // Set the unit name from the selected stat
+            this.nameTitledTextBox.Text = (App.VM.SelectedStat.Name == null) ? String.Empty : App.VM.SelectedStat.Name;
+            // Hide the unit selection if the unit type is custom
+            if (App.VM.SelectedStat.MeasurementType == null)
+            {
+                this.preferredUnitListPicker.Visibility = Visibility.Collapsed;
+            } 
+            else 
+            {
+                if (App.VM.SelectedStat.PreferredUnit != null) this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
+            }
+            // Load up the value
             if (App.VM.SelectedStat.Value != null) this.LoadValueToTextBox();
         }
 
+        // Save a snapshot of the form into FormSnapshot
         private void TakeSnapshotOfForm() 
         {
             this.FormSnapshot = new EditStatFormSnapshot() {
@@ -87,6 +98,7 @@ namespace VitalStats.View
             };
         }
 
+        // Use the FormSnaptshot to determine if there is unsaved data entered
         public bool IsUnsavedData()
         {
             if (this.nameTitledTextBox.Text != this.FormSnapshot.Name) return true;
@@ -111,18 +123,7 @@ namespace VitalStats.View
         }
 
 
-        // Allows non-numeric values when the stat type is custom i.e. does not allow for conversions
-        public bool AllowNonNumericValue()
-        {
-            if (App.VM.SelectedStat.MeasurementType != null)
-            {
-                return !App.VM.SelectedStat.MeasurementType.IsConvertible();
-            }
-            else
-            {
-                return true;
-            }
-        }
+
 
 
         // Returns false if input is invalid, true otherwise. 
@@ -151,7 +152,7 @@ namespace VitalStats.View
             // Read values into the Stat object to be saved
             string valStr = this.ReadValueFromTextBox();
             App.VM.SelectedStat.Name = this.nameTitledTextBox.Text;
-            if (this.AllowNonNumericValue())
+            if (App.VM.AllowNonNumericValue())
             {
                 App.VM.SelectedStat.Value = valStr;
                 App.VM.SelectedStat.PreferredUnit = null;
@@ -162,7 +163,8 @@ namespace VitalStats.View
                 App.VM.SelectedStat.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as Unit);
                 App.VM.SelectedStat.Value = App.VM.SelectedStat.PreferredUnit.ConvertValuesToString(valStr);
             }
-            if (this.PageAction == EditStatPageActions.Edit) {
+            if (this.PageAction == EditStatPageActions.Edit) 
+            {
                 App.VM.SaveChangesToDB();
             }
             else
@@ -213,7 +215,7 @@ namespace VitalStats.View
         private string ReadValueFromTextBox()
         {
             List<string> sVals = new List<string>();
-            if (this.AllowNonNumericValue())
+            if (App.VM.AllowNonNumericValue())
             {
                 return this.value1TitledTextBox.Text;
             }
