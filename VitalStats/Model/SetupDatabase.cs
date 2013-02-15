@@ -70,14 +70,157 @@ namespace VitalStats.Model
                                        where mt.Name == "Length" select mt).First(),
                 },
                 new Stat() {
-                    Name = "Collar Size",
+                    Name = "Collar",
                     Value = null,
                     PreferredUnit = null,
                     MeasurementType = (from MeasurementType mt in db.MeasurementTypes 
                                        where mt.Name == "Length" select mt).First(),
                 },
-            };
+                new Stat() {
+                    Name = "Inside leg",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Hat size",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Waist/Stomach",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Shoulder width",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
 
+                new Stat() {
+                    Name = "Chest",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Chest (front)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Chest (back)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Front jacket length",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Half shoulder width",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+
+                new Stat() {
+                    Name = "Shoulder width",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Bicep",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Wrist",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+
+                new Stat() {
+                    Name = "Sleeve",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Bustline",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Below bustline",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Ring size (thumb)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Ring size (index finger)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Ring size (middle finger)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Ring size (ring finger)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+                new Stat() {
+                    Name = "Ring size (little finger)",
+                    Value = null,
+                    PreferredUnit = null,
+                    MeasurementType = (from MeasurementType mt in db.MeasurementTypes
+                                       where mt.Name == "Length" select mt).First(),
+                },
+           };
+            
             //db.StatTemplates.DeleteAllOnSubmit(db.StatTemplates);
             db.StatTemplates.InsertAllOnSubmit(sts);
             

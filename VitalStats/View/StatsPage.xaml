@@ -146,7 +146,11 @@
 						</ObjectAnimationUsingKeyFrames>
 					</Storyboard>
 				</VisualState>
-				<VisualState x:Name="VSDefault"/>
+				<VisualState x:Name="VSDefault">
+					<Storyboard>
+						<DoubleAnimation Duration="0" To="1.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="statsListBox" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
 		
@@ -165,7 +169,10 @@
 					<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 				</StackPanel>
 				<StackPanel Grid.Row="1">
-					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}">
+					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5">
+						<ListBox.RenderTransform>
+							<CompositeTransform/>
+						</ListBox.RenderTransform>
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">

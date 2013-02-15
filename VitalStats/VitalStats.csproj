@@ -96,6 +96,9 @@
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Help\Height.xaml.cs">
+      <DependentUpon>Height.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\StatDetailPage.xaml.cs">
       <DependentUpon>StatDetailPage.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Help\Height.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\StatsPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\VitalStatsResourceDictionary.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -184,6 +195,9 @@
     </Content>
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\Save.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Lobster14.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

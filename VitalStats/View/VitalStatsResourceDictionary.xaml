@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- Resource dictionary entries should be defined here. -->
+
+	<SolidColorBrush x:Key="PageBGColor">#F3F1ED</SolidColorBrush>
+	<SolidColorBrush x:Key="PageTxtColor">#284E36</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightTxtColor">#FFFFFF</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightBGColor">#666563</SolidColorBrush>
+	<SolidColorBrush x:Key="AccentColor">#8ABE2D</SolidColorBrush>
+
+	<FontFamily x:Key="ScriptFont">.\Fonts\Lobster14.otf#Lobster 1.4</FontFamily>	
+	
+
+</ResourceDictionary>

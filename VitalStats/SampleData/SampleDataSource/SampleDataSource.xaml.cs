@@ -198,6 +198,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private string _Gender = string.Empty;
+
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+
+			set
+			{
+				if (this._Gender != value)
+				{
+					this._Gender = value;
+					this.OnPropertyChanged("Gender");
+				}
+			}
+		}
 	}
 
 	public class SelectedProfile : System.ComponentModel.INotifyPropertyChanged

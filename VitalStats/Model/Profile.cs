@@ -87,7 +87,22 @@ namespace VitalStats.Model
             get { return this._stats; }
             set { this._stats.Assign(value); }
         }
-     
+
+        private Model.Gender _gender = Model.Gender.Unspecified;
+        [Column]
+        public Model.Gender Gender
+        {
+            get { return this._gender; }
+            set
+            {
+                if (this._gender != value)
+                {
+                    this.NotifyPropertyChanging("Gender");
+                    this._gender = value;
+                    this.NotifyPropertyChanged("Gender");
+                }
+            }
+        }
 
         #region INotifyPropertyChanged members
 
@@ -121,6 +136,14 @@ namespace VitalStats.Model
 
  
         
+    }
+
+    
+    public enum Gender
+    {
+        Unspecified,
+        Female,
+        Male
     }
 
 }

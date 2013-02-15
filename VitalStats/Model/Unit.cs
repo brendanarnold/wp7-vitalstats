@@ -142,11 +142,10 @@ namespace VitalStats.Model
                         value.Units.Add(this);
                     }
                     NotifyPropertyChanged("MeasurementType");
+                    NotifyPropertyChanged("Formattedvalue");
                 }
             }
         }
-
-        internal string _value;
 
         public string FormattedValue
         {
@@ -207,7 +206,7 @@ namespace VitalStats.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(string propertyName)
+        internal void NotifyPropertyChanged(string propertyName)
         {
             if (this.PropertyChanged != null)
             {

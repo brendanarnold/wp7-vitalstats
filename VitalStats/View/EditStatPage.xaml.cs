@@ -46,8 +46,11 @@ namespace VitalStats.View
 
             if (this.StatInitialised) return;
 
-            // Default action is add a new item
-            if (this.PageAction == null) this.PageAction = EditStatPageActions.New;
+            if (!NavigationContext.QueryString.TryGetValue("Action", out this.PageAction))
+            {
+                // Default action is add a new item
+                this.PageAction = EditStatPageActions.New;
+            }
 
             // Deal with various actions
             switch (this.PageAction)

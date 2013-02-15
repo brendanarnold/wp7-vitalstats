@@ -18,24 +18,32 @@
     <Application.Resources>
     	
     	
-    	<SampleData1:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="View/VitalStatsResourceDictionary.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
     	
     	
-		<VitalStats_View:WordsOnNewlines x:Key="WordsOnNewlines"/>
-    	<VitalStats_View:BoolToVisibility x:Key="BoolToVisibility" />
+    		<SampleData1:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+    	
+    	
+    		<VitalStats_View:WordsOnNewlines x:Key="WordsOnNewlines"/>
+    		<VitalStats_View:BoolToVisibility x:Key="BoolToVisibility" />
 		
-    	<Style x:Key="popUpBtnStyle" TargetType="Button">
-    		<Setter Property="Template">
-    			<Setter.Value>
-    				<ControlTemplate TargetType="Button">
-    					<Grid Margin="30,10">
-    						<ContentPresenter Margin="0,0,32,0"/>
-    					</Grid>
-    				</ControlTemplate>
-    			</Setter.Value>
-    		</Setter>
-    		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-    	</Style>
+    		<Style x:Key="popUpBtnStyle" TargetType="Button">
+    			<Setter Property="Template">
+    				<Setter.Value>
+    					<ControlTemplate TargetType="Button">
+    						<Grid Margin="30,10">
+    							<ContentPresenter Margin="0,0,32,0"/>
+    						</Grid>
+    					</ControlTemplate>
+    				</Setter.Value>
+    			</Setter>
+    			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+    		</Style>
+    	
+    	</ResourceDictionary>
     	
     </Application.Resources>
 

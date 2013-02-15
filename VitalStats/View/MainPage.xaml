@@ -14,6 +14,7 @@
 
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:ViewModel="clr-namespace:VitalStats.ViewModel"
+    xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls"
     x:Class="VitalStats.View.MainPage"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     SupportedOrientations="Portrait" Orientation="Portrait"
@@ -32,10 +33,10 @@
     		<Setter Property="Template">
     			<Setter.Value>
     				<ControlTemplate TargetType="Button">
-    					<Canvas x:Name="profileCanvas" Background="{StaticResource PhoneAccentBrush}" Width="150" Height="150" Margin="0">
+    					<Canvas x:Name="profileCanvas" Background="{StaticResource HighlightBGColor}" Width="150" Height="150" Margin="0">
     						<Image x:Name="isProtectedImg" Height="60" Canvas.Left="96" Canvas.Top="97" Width="60" Source="/Images/Lock.png" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}"/>
-    						<ContentPresenter Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}"/>
-    					</Canvas>
+    						<TextBlock Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Text="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Foreground="{StaticResource PageBGColor}" FontFamily="Segoe WP"/>
+						</Canvas>
     				</ControlTemplate>
     			</Setter.Value>
     		</Setter>
@@ -56,6 +57,38 @@
 		</DataTemplate>
 		
 
+    	<Style x:Key="PivotStyle1" TargetType="controls:Pivot">
+    		<Setter Property="Margin" Value="0"/>
+    		<Setter Property="Padding" Value="0"/>
+    		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+    		<Setter Property="Background" Value="Transparent"/>
+    		<Setter Property="ItemsPanel">
+    			<Setter.Value>
+    				<ItemsPanelTemplate>
+    					<Grid/>
+    				</ItemsPanelTemplate>
+    			</Setter.Value>
+    		</Setter>
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="controls:Pivot">
+    					<Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+    						<Grid.RowDefinitions>
+    							<RowDefinition Height="Auto"/>
+    							<RowDefinition Height="Auto"/>
+    							<RowDefinition Height="*"/>
+    						</Grid.RowDefinitions>
+    						<Grid Background="{TemplateBinding Background}" CacheMode="BitmapCache" Grid.RowSpan="3"/>
+    						<ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="24,17,0,-7"/>
+    						<controlsPrimitives:PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1"/>
+    						<ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="2"/>
+    					</Grid>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+		
+
     </phone:PhoneApplicationPage.Resources>
 	
 	<d:DataContext>
@@ -68,14 +101,24 @@
 	<phone:PhoneApplicationPage.FontSize>
 		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
 	</phone:PhoneApplicationPage.FontSize>
-	<phone:PhoneApplicationPage.Foreground>
-		<StaticResource ResourceKey="PhoneForegroundBrush"/>
-	</phone:PhoneApplicationPage.Foreground>
+
+	
+	<phone:PhoneApplicationPage.ApplicationBar>
+		      	<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+        	<shell:ApplicationBar.MenuItems>
+        		<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
+        		<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
+        	</shell:ApplicationBar.MenuItems>
+        	<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
+      	</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+	
+
 <!--Sample code showing usage of ApplicationBar-->
  
     
     
-	<Grid x:Name="LayoutRoot">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource HighlightTxtColor}">
 		
 		<VisualStateManager.CustomVisualStateManager>
 			<ec:ExtendedVisualStateManager/>
@@ -89,9 +132,15 @@
 
 		
 
-		<controls:Pivot Title="VITAL STATISTICS">
+		<controls:Pivot Title="VITAL STATISTICS" Style="{StaticResource PivotStyle1}" Foreground="{StaticResource AccentColor}">
             <!--Pivot item one-->
-            <controls:PivotItem x:Name="profilesPivotItem" Header="profiles">
+            <controls:PivotItem x:Name="peoplePivotItem">
+				<controls:PivotItem.Header>
+					<Grid>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>
+					</Grid>
+				</controls:PivotItem.Header>
+			
 
 
 			<Grid x:Name="Layout" Background="Transparent">
@@ -135,8 +184,24 @@
 			</Grid>
 		
 		</controls:PivotItem>
+
+		<controls:PivotItem x:Name="groupsPivotItem">
+				<controls:PivotItem.Header>
+					<Grid>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="groups"></TextBlock>
+					</Grid>
+				</controls:PivotItem.Header>
+		</controls:PivotItem>
 	            
-        <controls:PivotItem x:Name="howtoPivotItem" Header="howto">
+        <controls:PivotItem x:Name="guidesPivotItem">
+			
+				<controls:PivotItem.Header>
+					<Grid>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="guides"></TextBlock>
+					</Grid>
+				</controls:PivotItem.Header>
+
+
 			<Grid Margin="24,0,12,0" >
 				<ListBox x:Name="howtoListBox" ItemsSource="{Binding StatTemplates}" Padding="0,0,12,0">
 					<ListBox.ItemContainerStyle>
@@ -148,7 +213,7 @@
 					<ListBox.ItemTemplate>
 						<DataTemplate>
 							<Border Margin="0,0,0,5" Background="{StaticResource PhoneAccentBrush}" >
-								<TextBox x:Name="howtoBtn" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}"  BorderThickness="0" Padding="0" Height="66" Width="420" Background="Transparent" BorderBrush="Transparent" Foreground="White" SelectionBackground="Transparent" SelectionForeground="White" Tap="howtoBtn_Tap" />
+								<TextBlock x:Name="howtoBtn" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}"  Padding="10" Width="420"  Foreground="White" Tap="howtoBtn_Tap" />
 							</Border>
 						</DataTemplate>
 					</ListBox.ItemTemplate>
@@ -158,17 +223,6 @@
     </controls:Pivot>
 	
 </Grid>
-
-	
-	<phone:PhoneApplicationPage.ApplicationBar>
-		      	<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-        	<shell:ApplicationBar.MenuItems>
-        		<shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="About"/>
-        		<shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings"/>
-        	</shell:ApplicationBar.MenuItems>
-        	<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
-      	</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
 	
 
 </phone:PhoneApplicationPage>

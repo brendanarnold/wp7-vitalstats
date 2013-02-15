@@ -20,6 +20,8 @@ namespace VitalStats.View
 
         }
 
+
+
         private void statDetailGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (NavigationService.CanGoBack) NavigationService.GoBack();

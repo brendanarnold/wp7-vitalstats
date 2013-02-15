@@ -139,6 +139,9 @@ namespace VitalStats.ViewModel
             }
         }
 
+        
+
+
         // Allows non-numeric values when the stat type is custom i.e. does not allow for conversions
         public bool AllowNonNumericValue()
         {
@@ -179,6 +182,7 @@ namespace VitalStats.ViewModel
             //mts.Insert(0, customMt);
             this.MeasurementTypes = new ObservableCollection<MeasurementType>(mts);
         }
+
 
         #endregion
 

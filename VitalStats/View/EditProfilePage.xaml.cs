@@ -38,8 +38,16 @@ namespace VitalStats
                     this.nameTextBox.Text = App.VM.SelectedProfile.Name;
                     this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
                     this.IsNewProfile = false;
+                    this.SetSelectedGender(App.VM.SelectedProfile.Gender);
                 }
             }
+        }
+
+        private void SetSelectedGender(Model.Gender gender)
+        {
+            if (gender == Model.Gender.Unspecified) this.unspecifiedRadioBtn.IsChecked = true;
+            if (gender == Model.Gender.Female) this.femaleRadioBtn.IsChecked = true;
+            if (gender == Model.Gender.Male) this.maleRadioBtn.IsChecked = true;
         }
 
 
@@ -47,12 +55,13 @@ namespace VitalStats
         {
             if (this.IsNewProfile)
             {
-                App.VM.AddProfile(new Profile() { Name = this.nameTextBox.Text, IsProtected = (bool)this.isProtectedCheckBox.IsChecked });
+                App.VM.AddProfile(new Profile() { Name = this.nameTextBox.Text, IsProtected = (bool)this.isProtectedCheckBox.IsChecked, Gender = this.GetSelectedGender() });
             }
             else
             {
                 App.VM.SelectedProfile.Name = this.nameTextBox.Text;
                 App.VM.SelectedProfile.IsProtected = (bool)this.isProtectedCheckBox.IsChecked;
+                App.VM.SelectedProfile.Gender = this.GetSelectedGender();
             }
             App.VM.SaveChangesToDB();
             this.ClearAddPopUp();
@@ -101,6 +110,8 @@ namespace VitalStats
                     return true;
                 if ((bool)this.isProtectedCheckBox.IsChecked)
                     return true;
+                if (this.GetSelectedGender() != Model.Gender.Unspecified)
+                    return true;
                 return false;
             }
             else
@@ -110,6 +121,8 @@ namespace VitalStats
                     return true;
                 if ((bool)this.isProtectedCheckBox.IsChecked != App.VM.SelectedProfile.IsProtected)
                     return true;
+                if (this.GetSelectedGender() != App.VM.SelectedProfile.Gender)
+                    return true;
                 return false;
             }
         }
@@ -118,7 +131,19 @@ namespace VitalStats
         {
             this.nameTextBox.Text = String.Empty;
             this.isProtectedCheckBox.IsChecked = false;
+            this.unspecifiedRadioBtn.IsChecked = true;
         }
+
+
+        private Model.Gender GetSelectedGender()
+        {
+            // n.b. have to use verbose form of conditional since IsChecked is nullable
+            if (this.unspecifiedRadioBtn.IsChecked == true) return Model.Gender.Unspecified;
+            if (this.femaleRadioBtn.IsChecked == true) return Model.Gender.Female;
+            if (this.maleRadioBtn.IsChecked == true) return Model.Gender.Male;
+            return Model.Gender.Unspecified;
+        }
+
 
     }
 

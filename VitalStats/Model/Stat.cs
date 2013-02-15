@@ -11,16 +11,6 @@ namespace VitalStats.Model
     {
         public Stat()
         {
-            this.PropertyChanged += new PropertyChangedEventHandler(Stat_PropertyChanged);
-            this.UpdateValueInUnits();
-        }
-
-        void Stat_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if ((e.PropertyName == "Value") || (e.PropertyName == "MeasurementType"))
-            {
-                this.UpdateValueInUnits();
-            }
         }
 
         #region Define table columns
@@ -66,9 +56,14 @@ namespace VitalStats.Model
                 NotifyPropertyChanging("Value");
                 _value = value;
                 NotifyPropertyChanged("Value");
-                // Units do not have a reference to the value 
-                // so update the value on each unit
-                this.UpdateValueInUnits();
+                // Changing this changes the formatted value so need to notify UI
+                NotifyPropertyChanged("FormattedValue");
+                // Also need to notify units attached to this stat
+                if (this.MeasurementType != null)
+                {
+                    foreach (Unit u in this.MeasurementType.Units) 
+                        u.NotifyPropertyChanged("FormattedValue");
+                }
             }
         }
 
@@ -91,9 +86,13 @@ namespace VitalStats.Model
                     }
                     this._preferredUnit.Entity = value;
                     this.NotifyPropertyChanged("PreferredUnit");
+                    // This also affects the formatted value on the stat
+                    this.NotifyPropertyChanged("FormattedValue");
                 }
             }
         }
+
+
 
         [Column]
         internal int? _profileId;
@@ -173,16 +172,6 @@ namespace VitalStats.Model
             }
         }
 
-        private void UpdateValueInUnits()
-        {
-            if (this.MeasurementType != null)
-            {
-                foreach (Unit u in this.MeasurementType.Units)
-                {
-                    u._value = this.Value;
-                }
-            }
-        }
 
         public Stat GetCopy()
         {
@@ -222,6 +211,8 @@ namespace VitalStats.Model
     }
 
 
+
+    
 
 
 }

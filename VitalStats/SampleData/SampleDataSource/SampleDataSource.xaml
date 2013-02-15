@@ -5,9 +5,9 @@
 -->
 <SampleData:SampleDataSource xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
   <SampleData:SampleDataSource.Profiles>
-    <SampleData:ProfilesItem Id="81" Name="Aaberg, Jesper" IsProtected="True" />
-    <SampleData:ProfilesItem Id="70" Name="Adams, Ellen" IsProtected="False" />
-    <SampleData:ProfilesItem Id="84" Name="Adams, Terry" IsProtected="True" />
+    <SampleData:ProfilesItem Id="81" Name="Aaberg, Jesper" IsProtected="True" Gender="Male" />
+    <SampleData:ProfilesItem Id="70" Name="Adams, Ellen" IsProtected="False" Gender="Female" />
+    <SampleData:ProfilesItem Id="84" Name="Adams, Terry" IsProtected="True" Gender="Unspecified" />
   </SampleData:SampleDataSource.Profiles>
   <SampleData:SampleDataSource.SelectedProfile>
     <SampleData:SelectedProfile Id="44" Name="Andrea" IsProtected="True">

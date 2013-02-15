@@ -150,6 +150,7 @@ namespace VitalStats.View
         private void stat_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.SelectedStat = ((sender as StackPanel).DataContext as Stat);
+            NavigationService.Navigate(new Uri("/View/StatDetailPage.xaml", UriKind.Relative));
         }
 
         // navigate to the edit profile page
