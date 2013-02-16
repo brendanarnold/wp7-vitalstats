@@ -5,11 +5,11 @@
 
 	<SolidColorBrush x:Key="PageBGColor">#F3F1ED</SolidColorBrush>
 	<SolidColorBrush x:Key="PageTxtColor">#284E36</SolidColorBrush>
-	<SolidColorBrush x:Key="HighlightTxtColor">#FFFFFF</SolidColorBrush>
-	<SolidColorBrush x:Key="HighlightBGColor">#666563</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightTxtColor">#666563</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightBGColor">#555555</SolidColorBrush>
 	<SolidColorBrush x:Key="AccentColor">#8ABE2D</SolidColorBrush>
 
-	<FontFamily x:Key="ScriptFont">.\Fonts\Lobster14.otf#Lobster 1.4</FontFamily>	
+	<FontFamily x:Key="ScriptFont">.\Fonts\Lobster.ttf#Lobster</FontFamily>	
 	
 
 </ResourceDictionary>

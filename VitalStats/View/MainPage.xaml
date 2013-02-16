@@ -33,9 +33,9 @@
     		<Setter Property="Template">
     			<Setter.Value>
     				<ControlTemplate TargetType="Button">
-    					<Canvas x:Name="profileCanvas" Background="{StaticResource HighlightBGColor}" Width="150" Height="150" Margin="0">
+    					<Canvas x:Name="profileCanvas" Background="#FFCDCDCD" Width="150" Height="150" Margin="0">
     						<Image x:Name="isProtectedImg" Height="60" Canvas.Left="96" Canvas.Top="97" Width="60" Source="/Images/Lock.png" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}"/>
-    						<TextBlock Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Text="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Foreground="{StaticResource PageBGColor}" FontFamily="Segoe WP"/>
+    						<TextBlock Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Text="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Foreground="{StaticResource HighlightBGColor}" FontFamily="Segoe WP"/>
 						</Canvas>
     				</ControlTemplate>
     			</Setter.Value>
@@ -118,7 +118,7 @@
  
     
     
-	<Grid x:Name="LayoutRoot" Background="{StaticResource HighlightTxtColor}">
+	<Grid x:Name="LayoutRoot" Background="White">
 		
 		<VisualStateManager.CustomVisualStateManager>
 			<ec:ExtendedVisualStateManager/>
@@ -137,7 +137,8 @@
             <controls:PivotItem x:Name="peoplePivotItem">
 				<controls:PivotItem.Header>
 					<Grid>
-						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>
+						<Image Source="/Images/people.png" Margin="0,20,0,0" RenderTransformOrigin="0.5,0.5"/>
+						<!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
 					</Grid>
 				</controls:PivotItem.Header>
 			
@@ -188,7 +189,8 @@
 		<controls:PivotItem x:Name="groupsPivotItem">
 				<controls:PivotItem.Header>
 					<Grid>
-						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="groups"></TextBlock>
+						<Image Source="/Images/groups.png" Margin="0,33,0,0" RenderTransformOrigin="0.5,0.5"/>
+<!--						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="groups"></TextBlock>-->
 					</Grid>
 				</controls:PivotItem.Header>
 		</controls:PivotItem>
@@ -197,7 +199,8 @@
 			
 				<controls:PivotItem.Header>
 					<Grid>
-						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="guides"></TextBlock>
+						<Image Source="/Images/guides.png" Margin="0,20,0,0" RenderTransformOrigin="0.5,0.5"/>
+						<!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="guides"></TextBlock>-->
 					</Grid>
 				</controls:PivotItem.Header>
 

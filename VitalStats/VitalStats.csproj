@@ -156,6 +156,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fonts\Lobster.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Includes\WindowsPhoneToolkit\Microsoft.Phone.Controls.Toolkit.dll" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
@@ -181,6 +184,12 @@
     <Content Include="Images\Close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\groups.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\guides.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -193,11 +202,11 @@
     <Content Include="Images\Edit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SplashScreenImage.jpg" />
-    <Content Include="Images\Save.png">
+    <Content Include="Images\people.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Fonts\Lobster14.otf">
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="Images\Save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
