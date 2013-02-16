@@ -124,6 +124,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private QuickProfiles _QuickProfiles = new QuickProfiles();
+
+		public QuickProfiles QuickProfiles
+		{
+			get
+			{
+				return this._QuickProfiles;
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
@@ -1618,6 +1628,99 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
+
+	public class QuickProfilesItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Gender = string.Empty;
+
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+
+			set
+			{
+				if (this._Gender != value)
+				{
+					this._Gender = value;
+					this.OnPropertyChanged("Gender");
+				}
+			}
+		}
+
+		private double _Id = 0;
+
+		public double Id
+		{
+			get
+			{
+				return this._Id;
+			}
+
+			set
+			{
+				if (this._Id != value)
+				{
+					this._Id = value;
+					this.OnPropertyChanged("Id");
+				}
+			}
+		}
+
+		private bool _IsProtected = false;
+
+		public bool IsProtected
+		{
+			get
+			{
+				return this._IsProtected;
+			}
+
+			set
+			{
+				if (this._IsProtected != value)
+				{
+					this._IsProtected = value;
+					this.OnPropertyChanged("IsProtected");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+	}
+
+	public class QuickProfiles : System.Collections.ObjectModel.ObservableCollection<QuickProfilesItem>
+	{ 
 	}
 #endif
 }

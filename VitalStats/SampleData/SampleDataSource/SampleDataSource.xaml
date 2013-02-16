@@ -284,4 +284,9 @@
       </SampleData:SelectedStat.PreferredUnit>
     </SampleData:SelectedStat>
   </SampleData:SampleDataSource.SelectedStat>
+  <SampleData:SampleDataSource.QuickProfiles>
+    <SampleData:QuickProfilesItem Gender="Male" Id="43" IsProtected="True" Name="Me" />
+    <SampleData:QuickProfilesItem Gender="Unspecified" Id="78" IsProtected="False" Name="Andrea" />
+    <SampleData:QuickProfilesItem Gender="Female" Id="92" IsProtected="True" Name="Mum" />
+  </SampleData:SampleDataSource.QuickProfiles>
 </SampleData:SampleDataSource>

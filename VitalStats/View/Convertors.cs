@@ -10,6 +10,36 @@ using System.Linq;
 namespace VitalStats.View
 {
 
+    // Sets the vsibility depending on whether the collection is empty or not depnding if parameter is "VisibleOnEmpty" or "CollapsedOnEmpty"
+    public class CollectionLengthToVisibility : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            // From http://stackoverflow.com/questions/4592644/how-to-access-generic-property-without-knowing-the-closed-generic-type
+            var p = value.GetType().GetProperty("Length");
+            int? length = p.GetValue(value, new object[] { }) as int?;
+            
+
+            string s = (string)parameter;
+            if ( ((length == 0) && (s == "VisibleOnEmpty")) 
+                || ((length != 0) && (s == "CollapsedOnEmpty")) )
+            {
+                return Visibility.Visible;
+            }
+            else
+            {
+                return Visibility.Collapsed;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            return null;
+        }
+
+
+    }
+
     // Converters a boolean to a visibility enum
     public class BoolToVisibility : System.Windows.Data.IValueConverter
     {

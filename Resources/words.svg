@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="words.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="198.26366"
-     inkscape:cy="669.06936"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="221.83233"
+     inkscape:cy="288.58683"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1388"
-     inkscape:window-height="676"
-     inkscape:window-x="44"
-     inkscape:window-y="62"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -65,7 +65,7 @@
          id="tspan2987"
          x="83.043045"
          y="323.12253"
-         style="font-size:24px;fill:#8abe2d;fill-opacity:1">guides</tspan></text>
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">guides</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:73.68756866px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
@@ -80,7 +80,7 @@
          id="tspan3759"
          x="71.872963"
          y="417.51181"
-         style="fill:#8abe2d;fill-opacity:1;font-size:24px">groups</tspan></text>
+         style="fill:#ffffff;fill-opacity:1;font-size:24px">groups</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:70.1px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
@@ -95,6 +95,126 @@
          id="tspan3763"
          x="105"
          y="488.07648"
-         style="fill:#8abe2d;fill-opacity:1;font-size:24px">people</tspan></text>
+         style="fill:#ffffff;fill-opacity:1;font-size:24px">people</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="318.57144"
+       y="440.21933"
+       id="text3765"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3767"
+         x="318.57144"
+         y="440.21933">tailored</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="315.71426"
+       y="493.79074"
+       id="text3769"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3771"
+         x="315.71426"
+         y="493.79074">pocketailor</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="323.57144"
+       y="555.2193"
+       id="text3773"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3775"
+         x="323.57144"
+         y="555.2193">tailrd</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="340"
+       y="610.2193"
+       id="text3777"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3779"
+         x="340"
+         y="610.2193">tayld</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="282.14285"
+       y="658.07648"
+       id="text3781"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3783"
+         x="282.14285"
+         y="658.07648">PocketTailor</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:29.12968636px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="256.96341"
+       y="726.32697"
+       id="text3785"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3787"
+         x="256.96341"
+         y="726.32697">POCKETAILOR</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.40206134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 253.41881,730.31286 0,-29.48446"
+       id="path2999-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#666666;stroke:#ffffff;stroke-width:1.40900004;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3846"
+       width="101.89914"
+       height="52.275394"
+       x="184.35284"
+       y="743.63434"
+       ry="26.137697" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#ffffff;stroke-width:1.74266648;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path3822"
+       sodipodi:cx="218.69803"
+       sodipodi:cy="714.71869"
+       sodipodi:rx="40.911179"
+       sodipodi:ry="30.052038"
+       d="m 259.60921,714.71869 a 40.911179,30.052038 0 1 1 -81.82236,0 40.911179,30.052038 0 1 1 81.82236,0 z"
+       transform="matrix(0.36776668,0,0,0.26959943,149.53195,574.8114)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\VitalStats\VitalStats\Images\SmallLogo.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g3816"
+       transform="matrix(0.1565818,0,0,0.1565818,188.29636,626.85948)"
+       style="fill:#ffffff;stroke:none">
+      <g
+         transform="translate(116.05082,400.53572)"
+         id="text3112"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'">
+        <path
+           sodipodi:nodetypes="ccsccscccccc"
+           inkscape:connector-curvature="0"
+           id="path3121"
+           d="m 209.00289,471.38278 c -0.82135,-0.0746 -1.67467,-0.11729 -2.55997,-0.128 -3.64205,0.0479 -7.43895,0.0931 -10.94121,0.72686 -3.01768,0.54605 -8.58471,1.26341 -10.80453,3.77632 1.23622,3.36237 6.09758,5.3179 8.39412,5.26608 2.96445,-7.72109 4.86549,-7.35654 6.23654,-6.17783 4.32055,3.71445 0.65116,37.59292 0.65116,44.40795 l 9.72788,0 17.79177,-47.67939 -4.47994,0 -13.43983,39.1675 z"
+           style="fill:#ffffff;stroke:none" />
+      </g>
+      <text
+         sodipodi:linespacing="100%"
+         id="text3082"
+         y="920.48822"
+         x="186.69893"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         xml:space="preserve"><tspan
+           y="920.48822"
+           x="186.69893"
+           id="tspan3084"
+           sodipodi:role="line">Lassi</tspan></text>
+    </g>
   </g>
 </svg>

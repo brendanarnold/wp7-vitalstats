@@ -14,6 +14,7 @@
       <xs:element name="StatTemplates" type="tns:StatTemplates" />
       <xs:element name="SuggestedStatTemplate" type="tns:SuggestedStatTemplate" />
       <xs:element name="SelectedStat" type="tns:SelectedStat" />
+      <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Profiles">
@@ -176,5 +177,16 @@
   <xs:complexType name="PreferredUnit1">
     <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
     <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="QuickProfiles">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="QuickProfilesItem" type="tns:QuickProfilesItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuickProfilesItem">
+    <xs:attribute name="Gender" type="xs:string" />
+    <xs:attribute blend:FormatParameters="2" name="Id" type="xs:double" />
+    <xs:attribute name="IsProtected" type="xs:boolean" />
+    <xs:attribute name="Name" type="xs:string" />
   </xs:complexType>
 </xs:schema>

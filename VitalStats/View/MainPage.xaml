@@ -24,6 +24,9 @@
     <phone:PhoneApplicationPage.Resources>
     	
 			
+    	<views:CollectionLengthToVisibility x:Key="CollectionLengthToVisibility"/>
+    	
+			
     	<!--ViewModel:AppViewModel x:Key="AppViewModelSampleData" d:IsDataSource="True"/-->
 		
     	<views:WordsOnNewlines x:Key="WordsOnNewlines"/>
@@ -33,10 +36,10 @@
     		<Setter Property="Template">
     			<Setter.Value>
     				<ControlTemplate TargetType="Button">
-    					<Canvas x:Name="profileCanvas" Background="#FFCDCDCD" Width="150" Height="150" Margin="0">
-    						<Image x:Name="isProtectedImg" Height="60" Canvas.Left="96" Canvas.Top="97" Width="60" Source="/Images/Lock.png" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}"/>
-    						<TextBlock Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Text="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Foreground="{StaticResource HighlightBGColor}" FontFamily="Segoe WP"/>
-						</Canvas>
+    					<Canvas x:Name="profileCanvas" Background="{StaticResource TileBGColor}" Width="200" Height="130" Margin="0">
+    						<Image x:Name="isProtectedImg" Height="60" Canvas.Left="150" Canvas.Top="77" Width="60" Source="/Images/Lock.png" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}"/>
+    						<TextBlock Height="91" Canvas.Left="6" Canvas.Top="6" Width="144" Text="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Foreground="{StaticResource TileTxtColor}" FontFamily="Segoe WP"/>
+    					</Canvas>
     				</ControlTemplate>
     			</Setter.Value>
     		</Setter>
@@ -88,7 +91,6 @@
     		</Setter>
     	</Style>
 		
-
     </phone:PhoneApplicationPage.Resources>
 	
 	<d:DataContext>
@@ -118,7 +120,7 @@
  
     
     
-	<Grid x:Name="LayoutRoot" Background="White">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}">
 		
 		<VisualStateManager.CustomVisualStateManager>
 			<ec:ExtendedVisualStateManager/>
@@ -132,12 +134,23 @@
 
 		
 
-		<controls:Pivot Title="VITAL STATISTICS" Style="{StaticResource PivotStyle1}" Foreground="{StaticResource AccentColor}">
-            <!--Pivot item one-->
+		<controls:Pivot Style="{StaticResource PivotStyle1}" Margin="0">
+            
+			<controls:Pivot.TitleTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
+						<TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
+					</StackPanel>
+				</DataTemplate>
+			</controls:Pivot.TitleTemplate>
+			
+			
+			<!--Pivot item one-->
             <controls:PivotItem x:Name="peoplePivotItem">
 				<controls:PivotItem.Header>
 					<Grid>
-						<Image Source="/Images/people.png" Margin="0,20,0,0" RenderTransformOrigin="0.5,0.5"/>
+						<Image Source="/Images/people.png" Margin="0,20,0,0" />
 						<!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
 					</Grid>
 				</controls:PivotItem.Header>
@@ -153,8 +166,13 @@
 				<!--TitlePanel contains the name of the application and page title-->
 
 				<!--ContentPanel - place additional content here-->
-				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,0,12,0" >
-					<ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding Profiles}" >
+				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0" >
+					<ScrollViewer>
+					<StackPanel Orientation="Vertical">
+					
+					<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, ConverterParameter=CollapsedOnEmpty, Converter={StaticResource CollectionLengthToVisibility}}">QUICKLIST</TextBlock>
+
+					<ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" >
 						<ItemsControl.ItemsPanel>
 							<ItemsPanelTemplate>
 								<toolkit:WrapPanel Orientation="Horizontal" />								
@@ -162,24 +180,43 @@
 						</ItemsControl.ItemsPanel>
     					<ItemsControl.ItemTemplate>
     						<DataTemplate>
-    							<!--
-								<Border>
-    							<TextBlock Text="{Binding Name}" Width="200" />
-								</Border>
-    							-->
-    							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="150" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="150" Tap="Button_Tap">
+    							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="200" Tap="Button_Tap">
 									<toolkit:ContextMenuService.ContextMenu>
 										<toolkit:ContextMenu>
 											<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
 											<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
 										</toolkit:ContextMenu>
 									</toolkit:ContextMenuService.ContextMenu>
-									
     							</Button>
-								
     						</DataTemplate>
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>
+
+					<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">OTHER</TextBlock>
+
+					<ItemsControl x:Name="mainProfileWrapPanel" ItemsSource="{Binding Profiles}" >
+						<ItemsControl.ItemsPanel>
+							<ItemsPanelTemplate>
+								<toolkit:WrapPanel Orientation="Horizontal" />								
+							</ItemsPanelTemplate>
+						</ItemsControl.ItemsPanel>
+    					<ItemsControl.ItemTemplate>
+    						<DataTemplate>
+    							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="200" Tap="Button_Tap">
+									<toolkit:ContextMenuService.ContextMenu>
+										<toolkit:ContextMenu>
+											<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
+											<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
+										</toolkit:ContextMenu>
+									</toolkit:ContextMenuService.ContextMenu>
+    							</Button>
+    						</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+
+
+					</StackPanel>
+					</ScrollViewer>
 				</Grid>
 		
 			</Grid>
@@ -215,7 +252,7 @@
 					</ListBox.ItemContainerStyle>
 					<ListBox.ItemTemplate>
 						<DataTemplate>
-							<Border Margin="0,0,0,5" Background="{StaticResource PhoneAccentBrush}" >
+							<Border Margin="0,0,0,5" Background="{StaticResource TileBGColor}" >
 								<TextBlock x:Name="howtoBtn" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}"  Padding="10" Width="420"  Foreground="White" Tap="howtoBtn_Tap" />
 							</Border>
 						</DataTemplate>

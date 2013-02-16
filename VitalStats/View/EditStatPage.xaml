@@ -50,7 +50,7 @@
       	</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
-	<Grid x:Name="LayoutRoot" Background="{StaticResource PhoneAccentBrush}">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
 		<VisualStateManager.VisualStateGroups>
 			<VisualStateGroup x:Name="EditOrNewVisualGroup">
 				<VisualState x:Name="EditState">
@@ -75,10 +75,10 @@
 			<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}, FallbackValue=PROFILENAME}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="12,0,0,0"/>
 			<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Text="new stat" Margin="12,0,0,0"/>
 								
-			<VitalStats_View_Controls:TitledTextBox x:Name="nameTitledTextBox" Title="Label"/>
+			<VitalStats_View_Controls:TitledTextBox x:Name="nameTitledTextBox" Title="LABEL"/>
 
 			<toolkit:ListPicker x:Name="preferredUnitListPicker" 
-				Header="Units"
+				Header="UNITS"
 				SelectionChanged="preferredUnitListPicker_SelectionChanged"
 				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
 				ItemTemplate="{StaticResource defaultListPickerTemplate}" />
