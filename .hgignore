@@ -1,7 +1,7 @@
 glob:*.swp
 glob:*.suo
 glob:*.orig
-glob:VitalStats/Bin/*
-glob:VitalStats/obj/*
+glob:Pocketailor/Bin/*
+glob:Pocketailor/obj/*
 glob:VitalStatsTestApplication/*
 glob:Testing/*

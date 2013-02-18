@@ -22,11 +22,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="221.83233"
-     inkscape:cy="288.58683"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="-10.209324"
+     inkscape:cy="802.45245"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -173,26 +173,29 @@
        id="rect3846"
        width="101.89914"
        height="52.275394"
-       x="184.35284"
-       y="743.63434"
+       x="172.16666"
+       y="744.07629"
        ry="26.137697" />
     <path
        sodipodi:type="arc"
-       style="fill:none;stroke:#ffffff;stroke-width:1.74266648;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#ffffff;stroke-width:2.89059099;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="path3822"
        sodipodi:cx="218.69803"
        sodipodi:cy="714.71869"
        sodipodi:rx="40.911179"
        sodipodi:ry="30.052038"
        d="m 259.60921,714.71869 a 40.911179,30.052038 0 1 1 -81.82236,0 40.911179,30.052038 0 1 1 81.82236,0 z"
-       transform="matrix(0.36776668,0,0,0.26959943,149.53195,574.8114)"
+       transform="matrix(0.10141771,0,0,0.07434647,196.69212,708.30142)"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\VitalStats\VitalStats\Images\SmallLogo.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
+       inkscape:export-xdpi="502.32156"
+       inkscape:export-ydpi="502.32156" />
     <g
        id="g3816"
-       transform="matrix(0.1565818,0,0,0.1565818,188.29636,626.85948)"
-       style="fill:#ffffff;stroke:none">
+       transform="matrix(0.04318,0,0,0.04318,207.38205,722.65454)"
+       style="fill:#ffffff;stroke:none"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\VitalStats\VitalStats\Images\SmallLogo.png"
+       inkscape:export-xdpi="502.32156"
+       inkscape:export-ydpi="502.32156">
       <g
          transform="translate(116.05082,400.53572)"
          id="text3112"
@@ -216,5 +219,55 @@
            id="tspan3084"
            sodipodi:role="line">Lassi</tspan></text>
     </g>
+    <g
+       id="g3816-7"
+       transform="matrix(0.05976931,0,0,0.05976931,188.92067,706.86633)"
+       style="fill:#ffffff;stroke:none"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\VitalStats\VitalStats\Images\SmallLogo.png"
+       inkscape:export-xdpi="502.32156"
+       inkscape:export-ydpi="502.32156">
+      <g
+         transform="translate(116.05082,400.53572)"
+         id="text3112-2"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'">
+        <path
+           sodipodi:nodetypes="ccsccscccccc"
+           inkscape:connector-curvature="0"
+           id="path3121-2"
+           d="m 209.00289,471.38278 c -0.82135,-0.0746 -1.67467,-0.11729 -2.55997,-0.128 -3.64205,0.0479 -7.43895,0.0931 -10.94121,0.72686 -3.01768,0.54605 -8.58471,1.26341 -10.80453,3.77632 1.23622,3.36237 6.09758,5.3179 8.39412,5.26608 2.96445,-7.72109 4.86549,-7.35654 6.23654,-6.17783 4.32055,3.71445 0.65116,37.59292 0.65116,44.40795 l 9.72788,0 17.79177,-47.67939 -4.47994,0 -13.43983,39.1675 z"
+           style="fill:#ffffff;stroke:none" />
+      </g>
+      <text
+         sodipodi:linespacing="100%"
+         id="text3082-8"
+         y="920.48822"
+         x="186.69893"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         xml:space="preserve"><tspan
+           y="920.48822"
+           x="186.69893"
+           id="tspan3084-2"
+           sodipodi:role="line">Lassi</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:0.30000000999999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 209.98547,762.51153 c 0,-4.00904 0,-4.00904 0,-4.00904"
+       id="path3887"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\VitalStats\VitalStats\Images\SmallLogo.png"
+       inkscape:export-xdpi="502.32156"
+       inkscape:export-ydpi="502.32156" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="143.44167"
+       y="260.40259"
+       id="text3889"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3891"
+         x="143.44167"
+         y="260.40259"
+         style="-inkscape-font-specification:Lobster;font-family:Lobster;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">add new profile</tspan></text>
   </g>
 </svg>

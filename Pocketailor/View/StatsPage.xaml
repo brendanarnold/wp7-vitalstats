@@ -1,0 +1,247 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+	xmlns:local="clr-namespace:Pocketailor"
+	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+	x:Class="Pocketailor.View.StatsPage"
+	Orientation="Portrait"
+	shell:SystemTray.IsVisible="True"
+	>
+
+	<phone:PhoneApplicationPage.Resources>
+		<Pocketailor_View:NullToVisibility x:Key="NullToVisibility"/>
+		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
+		<Pocketailor_View:StringToLower x:Key="StringToLower"/>
+		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
+		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
+		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBoxItem">
+						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="LayoutRoot">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentContainer"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Unselected"/>
+									<VisualState x:Name="Selected"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates"/>
+							</VisualStateManager.VisualStateGroups>
+							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ListBoxItemStyle2" TargetType="ListBoxItem">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBoxItem">
+						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="LayoutRoot">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentContainer"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Unselected"/>
+									<VisualState x:Name="Selected" />
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates"/>
+							</VisualStateManager.VisualStateGroups>
+							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</phone:PhoneApplicationPage.Resources>
+
+	<d:DataContext>
+		<Binding Source="{StaticResource SampleDataSource}"/>
+	</d:DataContext>
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem x:Name="editProfileAppBarMenuItem" Text="menu item" Click="editProfileAppBarMenuItem_Click"/>
+			</shell:ApplicationBar.MenuItems>
+			<shell:ApplicationBarIconButton x:Name="addStatAppBarBtn" IconUri="/Assets/AppBar/appbar.add.rest.png" Text="add stat" Click="addStatAppBarBtn_Click"/>
+        </shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+	
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="newStatWizardStateGroup">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0"/>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="VSSelectStatType">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectStatTypePopUpGrid">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="VSSelectMeasurementType">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectMeasurementTypePopUpGrid">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="VSDefault">
+					<Storyboard>
+						<DoubleAnimation Duration="0" To="1.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="statsListBox" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		
+		
+		<Grid x:Name="Layout" Margin="8,17,0,8"/><StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="4,0,0,0" Height="116" VerticalAlignment="Top">
+				<TextBlock x:Name="ApplicationTitle" Text="VITAL STATISTICS" Style="{StaticResource PhoneTextNormalStyle}"/>
+				<TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding SelectedProfile.Name, ConverterParameter=&lt;No Name&gt;, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
+			</StackPanel>
+			<Grid x:Name="ContentPanel" Margin="0,136,16,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.084*"/>
+					<RowDefinition Height="0.916*"/>
+				</Grid.RowDefinitions>
+				<StackPanel Margin="12,0,0,0" Orientation="Horizontal">
+					<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+					<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1">
+					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5">
+						<ListBox.RenderTransform>
+							<CompositeTransform/>
+						</ListBox.RenderTransform>
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
+									<toolkit:ContextMenuService.ContextMenu>
+										<toolkit:ContextMenu>
+											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap"     />
+										</toolkit:ContextMenu>
+									</toolkit:ContextMenuService.ContextMenu>
+									<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
+									<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" Margin="10,0,0,0"/>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<Grid Height="40" Margin="12,0,0,0" Background="{StaticResource PhoneAccentBrush}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
+						<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
+							<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
+							<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
+							<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
+						</StackPanel>
+					</Grid>
+				
+				</StackPanel>
+			</Grid>
+
+			<Grid x:Name="selectMeasurementTypePopUpGrid" Background="{StaticResource PhoneAccentBrush}" Margin="2,0,-2,0" Visibility="Collapsed">
+				<StackPanel>
+					<TextBlock x:Name="TitleTextBlock" TextWrapping="Wrap" Text="select measurement type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
+					<TextBlock x:Name="customMeasurementTypeTextBox" TextWrapping="Wrap"  FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5" Text="Custom" Tap="customMeasurementTypeTextBox_Tap"/>
+					<Grid x:Name="OrDividerGrid2" Margin="0,0,0,5">
+						<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />
+						<Border Background="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Center" Padding="5,0" >
+							<TextBlock TextWrapping="Wrap" Text="or" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+						</Border>
+					</Grid>
+					<ListBox ItemsSource="{Binding MeasurementTypes}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}" Padding="0" Margin="0,0,0,0">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="selectMeasurementTypeStackPanel" Margin="24,0,0,8" Tap="selectMeasurementTypeStackPanel_Tap">
+									<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5" />
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+			</Grid>
+		
+			<Grid x:Name="selectStatTypePopUpGrid" Background="{StaticResource PhoneAccentBrush}" Margin="0" Visibility="Collapsed">
+				<StackPanel>
+					<TextBlock x:Name="TitleTextBlock1" TextWrapping="Wrap" Text="select stat type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
+					<TextBlock x:Name="customStatTextBox" TextWrapping="Wrap" Text="Custom stat ..." FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5" Tap="customStatTextBox_Tap"/>
+					<Grid x:Name="OrDividerGrid1" Margin="0,0,0,5">
+						<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />
+						<Border Background="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Center" Padding="5,0" >
+							<TextBlock TextWrapping="Wrap" Text="or" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+						</Border>
+					</Grid>
+					<ListBox ItemsSource="{Binding StatTemplates}" Margin="12,0,0,0" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="selectStatTemplateStackPanel" Margin="12,0,0,8" Tap="selectStatTemplateStackPanel_Tap">
+									<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5" />
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+			</Grid>
+			<!--ContentPanel - place additional content here-->
+		
+	</Grid>
+</phone:PhoneApplicationPage>

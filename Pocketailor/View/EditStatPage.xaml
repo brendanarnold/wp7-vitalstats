@@ -1,0 +1,102 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
+	xmlns:Pocketailor_View_Controls="clr-namespace:Pocketailor.View.Controls"
+	xmlns:Pocketailor="clr-namespace:Pocketailor"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+	x:Class="Pocketailor.View.EditStatPage"
+	Orientation="Portrait"
+	shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded"
+	>
+
+	<phone:PhoneApplicationPage.Resources>
+		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
+		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
+
+        <DataTemplate x:Name="defaultListPickerTemplate">
+            <StackPanel>
+                <TextBlock FontSize="24" Margin="0,0,0,10" Text="{Binding Name}"/>
+            </StackPanel>
+        </DataTemplate>	
+
+    </phone:PhoneApplicationPage.Resources>
+
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+	<d:DataContext>
+		<StaticResource ResourceKey="SampleDataSource"/>
+	</d:DataContext>
+	
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
+        	<shell:ApplicationBarIconButton x:Name="saveAppBarBtn" IconUri="/Images/Save.png" Text="save stat" IsEnabled="True" Click="saveAppBarBtn_Click"/>
+        	<shell:ApplicationBarIconButton x:Name="helpAppBarBtn" IconUri="/Assets/AppBar/appbar.questionmark.rest.png" Text="help" Click="helpAppBarBtn_Click"/>
+      	</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
+	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="EditOrNewVisualGroup">
+				<VisualState x:Name="EditState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="edit stat"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="AddState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="new stat"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		
+		<ScrollViewer x:Name="containerScrollViewer">
+		<StackPanel x:Name="containerStackPanel">
+			<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}, FallbackValue=PROFILENAME}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="12,0,0,0"/>
+			<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Text="new stat" Margin="12,0,0,0"/>
+								
+			<Pocketailor_View_Controls:TitledTextBox x:Name="nameTitledTextBox" Title="LABEL"/>
+
+			<toolkit:ListPicker x:Name="preferredUnitListPicker" 
+				Header="UNITS"
+				SelectionChanged="preferredUnitListPicker_SelectionChanged"
+				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
+				ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+
+			<StackPanel x:Name="valueContainer" Margin="25,0,0,0">
+				<Pocketailor_View_Controls:TitledTextBox x:Name="value1TitledTextBox"/>
+				<Pocketailor_View_Controls:TitledTextBox x:Name="value2TitledTextBox" Visibility="Collapsed"/>
+				<Pocketailor_View_Controls:TitledTextBox x:Name="value3TitledTextBox" Visibility="Collapsed"/>
+				<Pocketailor_View_Controls:TitledTextBox x:Name="value4TitledTextBox" Visibility="Collapsed"/>
+			</StackPanel>
+            
+
+
+
+		</StackPanel>
+		</ScrollViewer>
+		
+
+		</Grid>
+	
+</phone:PhoneApplicationPage>
