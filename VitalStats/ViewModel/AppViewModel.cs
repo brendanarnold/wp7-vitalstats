@@ -20,6 +20,8 @@ namespace VitalStats.ViewModel
     {
 
 
+
+
         private ObservableCollection<Profile> _quickProfiles;
         public ObservableCollection<Profile> QuickProfiles
         {
@@ -33,16 +35,10 @@ namespace VitalStats.ViewModel
 
         public void ToggleQuickProfile(Profile p)
         {
-            if (p.IsQuickProfile)
-            {
-                this.QuickProfiles.Remove(p);
-            }
-            else
-            {
-                this.QuickProfiles.Add(p);
-            }
             p.IsQuickProfile = !p.IsQuickProfile;
+            this.LoadQuickProfilesFromDB();
             this.NotifyPropertyChanged("QuickProfiles");
+            
         }
 
         public void LoadQuickProfilesFromDB()
@@ -88,6 +84,11 @@ namespace VitalStats.ViewModel
         public void DeleteProfile(Profile profile)
         {
             this.Profiles.Remove(profile);
+            if (this.QuickProfiles.Contains(profile))
+            {
+                this.QuickProfiles.Remove(profile);
+                this.NotifyPropertyChanged("QuickProfiles");
+            }
             this.appDB.Profiles.DeleteOnSubmit(profile);
             this.appDB.SubmitChanges();
         }
