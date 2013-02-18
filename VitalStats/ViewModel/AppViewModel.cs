@@ -37,8 +37,6 @@ namespace VitalStats.ViewModel
         {
             p.IsQuickProfile = !p.IsQuickProfile;
             this.LoadQuickProfilesFromDB();
-            this.NotifyPropertyChanged("QuickProfiles");
-            
         }
 
         public void LoadQuickProfilesFromDB()
@@ -79,16 +77,21 @@ namespace VitalStats.ViewModel
             this.appDB.Profiles.InsertOnSubmit(profile);
             this.appDB.SubmitChanges();
             this.Profiles.Add(profile);
+            if (profile.IsQuickProfile) this.QuickProfiles.Add(profile); 
+        }
+
+        public void UpdateProfile(Profile profile)
+        {
+            if (profile.IsQuickProfile && !this.QuickProfiles.Contains(profile)) this.QuickProfiles.Add(profile);
+            if (!profile.IsQuickProfile && this.QuickProfiles.Contains(profile)) this.QuickProfiles.Remove(profile);
+            App.VM.SaveChangesToDB();
         }
 
         public void DeleteProfile(Profile profile)
         {
             this.Profiles.Remove(profile);
             if (this.QuickProfiles.Contains(profile))
-            {
                 this.QuickProfiles.Remove(profile);
-                this.NotifyPropertyChanged("QuickProfiles");
-            }
             this.appDB.Profiles.DeleteOnSubmit(profile);
             this.appDB.SubmitChanges();
         }

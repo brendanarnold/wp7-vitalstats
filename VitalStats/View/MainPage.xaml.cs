@@ -71,6 +71,13 @@ namespace VitalStats.View
             
         }
 
+        private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Profile p = (sender as MenuItem).DataContext as Profile;
+            App.VM.SelectedProfile = p;
+            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
+        }
+
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
             NavigationService.Navigate(new Uri("/View/EditProfilePage.xaml", UriKind.Relative));

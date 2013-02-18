@@ -17,7 +17,7 @@ namespace VitalStats
     public partial class EditProfilePage : PhoneApplicationPage
     {
 
-        public bool IsNewProfile = true;
+        public string Action;
 
         public EditProfilePage()
         {
@@ -29,18 +29,19 @@ namespace VitalStats
             base.OnNavigatedTo(e);
 
             if (NavigationContext.QueryString.ContainsKey("Action"))
+                this.Action = NavigationContext.QueryString["Action"];
+            else
+                this.Action = EditProfilePageActions.New;
+
+            if (this.Action != EditProfilePageActions.Edit)
             {
-                if (NavigationContext.QueryString["Action"] == EditProfilePageActions.Edit)
-                {
-                    int id;
-                    int.TryParse(NavigationContext.QueryString["Id"], out id);
-                    App.VM.SelectedProfile = (from Profile p in App.VM.Profiles where p.Id == id select p).First();
-                    this.nameTextBox.Text = App.VM.SelectedProfile.Name;
-                    this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
-                    this.IsNewProfile = false;
-                    this.SetSelectedGender(App.VM.SelectedProfile.Gender);
-                }
+                App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = Gender.Unspecified, IsProtected = false, IsQuickProfile = false };
             }
+            this.nameTextBox.Text = App.VM.SelectedProfile.Name;
+            this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
+            this.IsQuickListCheckBox.IsChecked = App.VM.SelectedProfile.IsQuickProfile;
+            this.SetSelectedGender(App.VM.SelectedProfile.Gender);
+                
         }
 
         private void SetSelectedGender(Model.Gender gender)
@@ -53,17 +54,19 @@ namespace VitalStats
 
         private void saveBtn_Click(object sender, System.EventArgs e)
         {
-            if (this.IsNewProfile)
+            App.VM.SelectedProfile.Name = this.nameTextBox.Text;
+            App.VM.SelectedProfile.IsProtected = (bool)this.isProtectedCheckBox.IsChecked;
+            App.VM.SelectedProfile.IsQuickProfile = (bool)this.IsQuickListCheckBox.IsChecked;
+            App.VM.SelectedProfile.Gender = this.GetSelectedGender();
+
+            if (this.Action == EditProfilePageActions.New)
             {
-                App.VM.AddProfile(new Profile() { Name = this.nameTextBox.Text, IsProtected = (bool)this.isProtectedCheckBox.IsChecked, Gender = this.GetSelectedGender() });
+                App.VM.AddProfile(App.VM.SelectedProfile);
             }
             else
             {
-                App.VM.SelectedProfile.Name = this.nameTextBox.Text;
-                App.VM.SelectedProfile.IsProtected = (bool)this.isProtectedCheckBox.IsChecked;
-                App.VM.SelectedProfile.Gender = this.GetSelectedGender();
+                App.VM.UpdateProfile(App.VM.SelectedProfile);
             }
-            App.VM.SaveChangesToDB();
             this.ClearAddPopUp();
             if (NavigationService.CanGoBack)
             {
@@ -103,34 +106,24 @@ namespace VitalStats
 
         private bool DataChanged()
         {
-            if (this.IsNewProfile)
-            {
-                // Returns true if data on page that will need to be saved
-                if (this.nameTextBox.Text != String.Empty)
-                    return true;
-                if ((bool)this.isProtectedCheckBox.IsChecked)
-                    return true;
-                if (this.GetSelectedGender() != Model.Gender.Unspecified)
-                    return true;
-                return false;
-            }
-            else
-            {
-                // Returns true if data has been changed from the existing profile
-                if (this.nameTextBox.Text != App.VM.SelectedProfile.Name)
-                    return true;
-                if ((bool)this.isProtectedCheckBox.IsChecked != App.VM.SelectedProfile.IsProtected)
-                    return true;
-                if (this.GetSelectedGender() != App.VM.SelectedProfile.Gender)
-                    return true;
-                return false;
-            }
+
+            // Returns true if data has been changed
+            if (this.nameTextBox.Text != App.VM.SelectedProfile.Name)
+                return true;
+            if ((bool)this.isProtectedCheckBox.IsChecked != App.VM.SelectedProfile.IsProtected)
+                return true;
+            if (this.GetSelectedGender() != App.VM.SelectedProfile.Gender)
+                return true;
+            if ((bool)this.IsQuickListCheckBox.IsChecked != App.VM.SelectedProfile.IsQuickProfile)
+                return true;
+            return false;
         }
 
         private void ClearAddPopUp()
         {
             this.nameTextBox.Text = String.Empty;
             this.isProtectedCheckBox.IsChecked = false;
+            this.IsQuickListCheckBox.IsChecked = false;
             this.unspecifiedRadioBtn.IsChecked = true;
         }
 

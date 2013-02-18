@@ -184,9 +184,10 @@
     							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="200" Tap="Button_Tap">
 									<toolkit:ContextMenuService.ContextMenu>
 										<toolkit:ContextMenu>
-											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
 											<toolkit:MenuItem Header="{Binding IsProtected, Converter={StaticResource BoolToStrings}, ConverterParameter='remove PIN protection|add PIN protection'}" Tap="toggleProtectionContextMenuItem_Tap" />
 											<toolkit:MenuItem Header="{Binding IsQuickProfile, Converter={StaticResource BoolToStrings}, ConverterParameter='remove from quicklist|add to quicklist'}" Tap="toggleQuickListContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
 										</toolkit:ContextMenu>
 									</toolkit:ContextMenuService.ContextMenu>
     							</Button>
@@ -207,9 +208,10 @@
     							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="200" Tap="Button_Tap">
 									<toolkit:ContextMenuService.ContextMenu>
 										<toolkit:ContextMenu>
-											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
 											<toolkit:MenuItem Header="{Binding IsProtected, Converter={StaticResource BoolToStrings}, ConverterParameter='remove PIN protection|add PIN protection'}" Tap="toggleProtectionContextMenuItem_Tap" />
 											<toolkit:MenuItem Header="{Binding IsQuickProfile, Converter={StaticResource BoolToStrings}, ConverterParameter='remove from quicklist|add to quicklist'}" Tap="toggleQuickListContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
 										</toolkit:ContextMenu>
 									</toolkit:ContextMenuService.ContextMenu>
     							</Button>

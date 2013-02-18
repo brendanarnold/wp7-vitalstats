@@ -105,6 +105,9 @@
     <Compile Include="View\StatsPage.xaml.cs">
       <DependentUpon>StatsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UnlockPage.xaml.cs">
+      <DependentUpon>UnlockPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewSettings.cs" />
     <Compile Include="View\ViewState.cs" />
     <Compile Include="ViewModel\AppViewModel.cs" />
@@ -149,6 +152,10 @@
     <Page Include="View\StatsPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UnlockPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\VitalStatsResourceDictionary.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
