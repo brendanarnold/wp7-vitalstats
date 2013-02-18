@@ -19,6 +19,46 @@ namespace VitalStats.ViewModel
     public partial class AppViewModel : INotifyPropertyChanged
     {
 
+
+        private ObservableCollection<Profile> _quickProfiles;
+        public ObservableCollection<Profile> QuickProfiles
+        {
+            get { return this._quickProfiles; }
+            set
+            {
+                this._quickProfiles = value;
+                this.NotifyPropertyChanged("QuickProfiles");
+            }
+        }
+
+        public void ToggleQuickProfile(Profile p)
+        {
+            if (p.IsQuickProfile)
+            {
+                this.QuickProfiles.Remove(p);
+            }
+            else
+            {
+                this.QuickProfiles.Add(p);
+            }
+            p.IsQuickProfile = !p.IsQuickProfile;
+            this.NotifyPropertyChanged("QuickProfiles");
+        }
+
+        public void LoadQuickProfilesFromDB()
+        {
+            IEnumerable<Profile> profiles;
+            if (this.Profiles.Any())
+            {
+                profiles = from Profile p in this.Profiles where p.IsQuickProfile == true select p;
+            }
+            else
+            {
+                profiles = from Profile p in this.appDB.Profiles where p.IsQuickProfile == true select p;
+            }
+            this.QuickProfiles = new ObservableCollection<Profile>(profiles);
+        }
+
         #region Profiles collection methods/properties
 
         private ObservableCollection<Profile> _profiles;
@@ -50,6 +90,11 @@ namespace VitalStats.ViewModel
             this.Profiles.Remove(profile);
             this.appDB.Profiles.DeleteOnSubmit(profile);
             this.appDB.SubmitChanges();
+        }
+
+        public void ToggleIsProtected(Profile profile)
+        {
+            profile.IsProtected = !profile.IsProtected; 
         }
 
         #endregion

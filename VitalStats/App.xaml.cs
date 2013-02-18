@@ -96,6 +96,7 @@ namespace VitalStats
 
             _vm = new AppViewModel(dbConnectionString);
             _vm.LoadProfilesFromDB();
+            _vm.LoadQuickProfilesFromDB();
 
         }
 

@@ -64,6 +64,23 @@ namespace VitalStats.Model
             }
         }
 
+        private bool _isQuickProfile = false;
+        [Column]
+        public bool IsQuickProfile
+        {
+            get { return this._isQuickProfile; }
+            set
+            {
+                if (this._isQuickProfile != value)
+                {
+                    this.NotifyPropertyChanging("IsQuickProfile");
+                    this._isQuickProfile = value;
+                    this.NotifyPropertyChanged("IsQuickProfile");
+                }
+            }
+        }
+
+
         private bool _isProtected;
         [Column]
         public bool IsProtected

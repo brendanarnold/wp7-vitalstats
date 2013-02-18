@@ -24,8 +24,9 @@
     <phone:PhoneApplicationPage.Resources>
     	
 			
-    	<views:CollectionLengthToVisibility x:Key="CollectionLengthToVisibility"/>
-    	
+    	<views:EmptyCollectionToVisible x:Key="EmptyCollectionToVisible"/>
+    	<views:EmptyCollectionToCollapsed x:Key="EmptyCollectionToCollapsed"/>
+		<views:BoolToStrings x:Key="BoolToStrings"/>
 			
     	<!--ViewModel:AppViewModel x:Key="AppViewModelSampleData" d:IsDataSource="True"/-->
 		
@@ -170,9 +171,9 @@
 					<ScrollViewer>
 					<StackPanel Orientation="Vertical">
 					
-					<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, ConverterParameter=CollapsedOnEmpty, Converter={StaticResource CollectionLengthToVisibility}}">QUICKLIST</TextBlock>
+					<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">QUICKLIST</TextBlock>
 
-					<ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" >
+					<ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
 						<ItemsControl.ItemsPanel>
 							<ItemsPanelTemplate>
 								<toolkit:WrapPanel Orientation="Horizontal" />								
@@ -183,8 +184,9 @@
     							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="200" Tap="Button_Tap">
 									<toolkit:ContextMenuService.ContextMenu>
 										<toolkit:ContextMenu>
-											<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
-											<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
+											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="{Binding IsProtected, Converter={StaticResource BoolToStrings}, ConverterParameter='remove PIN protection|add PIN protection'}" Tap="toggleProtectionContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="{Binding IsQuickProfile, Converter={StaticResource BoolToStrings}, ConverterParameter='remove from quicklist|add to quicklist'}" Tap="toggleQuickListContextMenuItem_Tap" />
 										</toolkit:ContextMenu>
 									</toolkit:ContextMenuService.ContextMenu>
     							</Button>
@@ -192,7 +194,7 @@
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>
 
-					<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">OTHER</TextBlock>
+					<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">ALL</TextBlock>
 
 					<ItemsControl x:Name="mainProfileWrapPanel" ItemsSource="{Binding Profiles}" >
 						<ItemsControl.ItemsPanel>
@@ -205,8 +207,9 @@
     							<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource profileButtonStyle}" Width="200" Tap="Button_Tap">
 									<toolkit:ContextMenuService.ContextMenu>
 										<toolkit:ContextMenu>
-											<toolkit:MenuItem Header="delete" Tag="{Binding Id}" Tap="deleteContextMenuItem_Tap"     />
-											<toolkit:MenuItem Header="remove protection" Tag="{Binding Id}" />
+											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="{Binding IsProtected, Converter={StaticResource BoolToStrings}, ConverterParameter='remove PIN protection|add PIN protection'}" Tap="toggleProtectionContextMenuItem_Tap" />
+											<toolkit:MenuItem Header="{Binding IsQuickProfile, Converter={StaticResource BoolToStrings}, ConverterParameter='remove from quicklist|add to quicklist'}" Tap="toggleQuickListContextMenuItem_Tap" />
 										</toolkit:ContextMenu>
 									</toolkit:ContextMenuService.ContextMenu>
     							</Button>

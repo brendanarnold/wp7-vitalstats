@@ -57,6 +57,20 @@ namespace VitalStats.View
             messageBox.Show();
         }
 
+        private void toggleProtectionContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Profile p = (sender as MenuItem).DataContext as Profile;
+            App.VM.ToggleIsProtected(p);
+        }
+
+
+        private void toggleQuickListContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Profile p = (sender as MenuItem).DataContext as Profile;
+            App.VM.ToggleQuickProfile(p);
+            
+        }
+
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
             NavigationService.Navigate(new Uri("/View/EditProfilePage.xaml", UriKind.Relative));
