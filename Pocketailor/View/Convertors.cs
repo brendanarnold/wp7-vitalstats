@@ -5,13 +5,29 @@ using System.Collections.ObjectModel;
 using Pocketailor.Model;
 using System.Collections;
 using System.Linq;
+using System.Windows.Media.Imaging;
+using System.Windows.Controls;
 
 
 namespace Pocketailor.View
 {
 
+    // Generates an Image Source binding from a bool. Parameter gives two possible images separated by '|'
+    public class BoolToImage : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            //int i = ((bool)value) ? 0 : 1;
+            //string s = ((string)parameter).Split(new char[] { '|' })[i];
+            return new BitmapImage(new Uri("/Images/Lock.png", UriKind.Relative));
+            
+        }
 
-    
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     public class EmptyCollectionToVisible : System.Windows.Data.IValueConverter
     {

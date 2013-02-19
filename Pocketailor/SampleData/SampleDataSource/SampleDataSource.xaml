@@ -289,4 +289,7 @@
     <SampleData:QuickProfilesItem Gender="Unspecified" Id="78" IsProtected="False" Name="Andrea" />
     <SampleData:QuickProfilesItem Gender="Female" Id="92" IsProtected="True" Name="Mum" />
   </SampleData:SampleDataSource.QuickProfiles>
+  <SampleData:SampleDataSource.VM>
+    <SampleData:VM IsLocked="True" />
+  </SampleData:SampleDataSource.VM>
 </SampleData:SampleDataSource>

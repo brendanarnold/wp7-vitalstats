@@ -19,6 +19,20 @@ namespace Pocketailor.ViewModel
     public partial class AppViewModel : INotifyPropertyChanged
     {
 
+        private bool _isLocked = true;
+        public bool IsLocked
+        {
+            get { return this._isLocked; }
+            set
+            {
+                if (this._isLocked != value)
+                {
+                    this._isLocked = value;
+                    this.NotifyPropertyChanged("IsLocked");
+                }
+            }
+        }
+
 
         #region QuickProfile methods
 

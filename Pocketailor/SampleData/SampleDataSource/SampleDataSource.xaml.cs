@@ -134,6 +134,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				return this._QuickProfiles;
 			}
 		}
+
+		private VM _VM = new VM();
+
+		public VM VM
+		{
+			get
+			{
+				return this._VM;
+			}
+
+			set
+			{
+				if (this._VM != value)
+				{
+					this._VM = value;
+					this.OnPropertyChanged("VM");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
@@ -1630,6 +1649,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
+	public class QuickProfiles : System.Collections.ObjectModel.ObservableCollection<QuickProfilesItem>
+	{ 
+	}
+
 	public class QuickProfilesItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1719,8 +1742,36 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class QuickProfiles : System.Collections.ObjectModel.ObservableCollection<QuickProfilesItem>
-	{ 
+	public class VM : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private bool _IsLocked = false;
+
+		public bool IsLocked
+		{
+			get
+			{
+				return this._IsLocked;
+			}
+
+			set
+			{
+				if (this._IsLocked != value)
+				{
+					this._IsLocked = value;
+					this.OnPropertyChanged("IsLocked");
+				}
+			}
+		}
 	}
 #endif
 }
