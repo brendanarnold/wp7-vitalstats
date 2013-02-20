@@ -135,21 +135,21 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private VM _VM = new VM();
+		private bool _IsLocked = false;
 
-		public VM VM
+		public bool IsLocked
 		{
 			get
 			{
-				return this._VM;
+				return this._IsLocked;
 			}
 
 			set
 			{
-				if (this._VM != value)
+				if (this._IsLocked != value)
 				{
-					this._VM = value;
-					this.OnPropertyChanged("VM");
+					this._IsLocked = value;
+					this.OnPropertyChanged("IsLocked");
 				}
 			}
 		}
@@ -1737,38 +1737,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				{
 					this._Name = value;
 					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-	}
-
-	public class VM : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private bool _IsLocked = false;
-
-		public bool IsLocked
-		{
-			get
-			{
-				return this._IsLocked;
-			}
-
-			set
-			{
-				if (this._IsLocked != value)
-				{
-					this._IsLocked = value;
-					this.OnPropertyChanged("IsLocked");
 				}
 			}
 		}

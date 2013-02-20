@@ -15,8 +15,8 @@
       <xs:element name="SuggestedStatTemplate" type="tns:SuggestedStatTemplate" />
       <xs:element name="SelectedStat" type="tns:SelectedStat" />
       <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
-      <xs:element name="VM" type="tns:VM" />
     </xs:sequence>
+    <xs:attribute name="IsLocked" type="xs:boolean" />
   </xs:complexType>
   <xs:complexType name="Profiles">
     <xs:sequence>
@@ -189,8 +189,5 @@
     <xs:attribute name="Id" type="xs:double" />
     <xs:attribute name="IsProtected" type="xs:boolean" />
     <xs:attribute name="Name" type="xs:string" />
-  </xs:complexType>
-  <xs:complexType name="VM">
-    <xs:attribute name="IsLocked" type="xs:boolean" />
   </xs:complexType>
 </xs:schema>
