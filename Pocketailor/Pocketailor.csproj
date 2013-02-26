@@ -86,6 +86,9 @@
     </Compile>
     <Compile Include="ViewModel\AppViewModelBoilerplate.cs" />
     <Compile Include="ViewModel\ViewModelSettings.cs" />
+    <Compile Include="View\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Controls\TitledTextBox.xaml.cs">
       <DependentUpon>TitledTextBox.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </DesignTimeOnly>
+    <Page Include="View\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\TitledTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -193,6 +200,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Data\MeasurementTypes.xml" />
+    <Content Include="Images\appbar.unlock.keyhole.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\appbar.unlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -226,6 +236,25 @@
     <Content Include="Images\SmallLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Unlock.png" />
+    <Content Include="Images\UnlockIcons\Angry.png" />
+    <Content Include="Images\UnlockIcons\Cheeky.png" />
+    <Content Include="Images\UnlockIcons\Chicago.png" />
+    <Content Include="Images\UnlockIcons\Confused.png" />
+    <Content Include="Images\UnlockIcons\Drinking.png" />
+    <Content Include="Images\UnlockIcons\Happy.png" />
+    <Content Include="Images\UnlockIcons\Hiking.png" />
+    <Content Include="Images\UnlockIcons\Nightime.png" />
+    <Content Include="Images\UnlockIcons\PlayingJigsaw.png" />
+    <Content Include="Images\UnlockIcons\PlayingVideoGames.png" />
+    <Content Include="Images\UnlockIcons\Rainy.png" />
+    <Content Include="Images\UnlockIcons\Sad.png" />
+    <Content Include="Images\UnlockIcons\SanFranscisco.png" />
+    <Content Include="Images\UnlockIcons\Seattle.png" />
+    <Content Include="Images\UnlockIcons\Snowy.png" />
+    <Content Include="Images\UnlockIcons\Stormy.png" />
+    <Content Include="Images\UnlockIcons\Sunny.png" />
+    <Content Include="Images\UnlockIcons\Writing.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\Save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

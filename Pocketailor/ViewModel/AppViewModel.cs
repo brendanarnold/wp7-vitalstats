@@ -8,6 +8,8 @@ using System.Data.Linq.Mapping;
 using Microsoft.Phone.Data.Linq;
 using Microsoft.Phone.Data.Linq.Mapping;
 using System.Collections;
+using System.IO.IsolatedStorage;
+using System;
 
 namespace Pocketailor.ViewModel
 {
@@ -19,7 +21,9 @@ namespace Pocketailor.ViewModel
     public partial class AppViewModel : INotifyPropertyChanged
     {
 
-        private bool _isLocked = true;
+        public IsolatedStorageSettings stngs = IsolatedStorageSettings.ApplicationSettings;
+
+        private bool _isLocked = false;
         public bool IsLocked
         {
             get { return this._isLocked; }
@@ -31,6 +35,52 @@ namespace Pocketailor.ViewModel
                     this.NotifyPropertyChanged("IsLocked");
                 }
             }
+        }
+
+        public bool SetPin(string pin)
+        {
+            if (this.IsLocked) return false;
+            if (this.stngs.Contains("pin"))
+            {
+                this.stngs["pin"] = pin;
+            }
+            else
+            {
+                this.stngs.Add("pin", pin);
+            }
+            return true;
+        }
+
+        public bool TryUnlock(string pin)
+        {
+            string actPin;
+            try
+            {
+                actPin = (string)this.stngs["pin"];
+            }
+            catch (System.Collections.Generic.KeyNotFoundException)
+            {
+                this.IsLocked = false;
+                this.SetPin("----");
+                return true;
+            }
+
+            if ((actPin == "----") || (actPin == pin))
+            {
+                this.IsLocked = false;
+                return true;
+            }
+            else
+            {
+                this.IsLocked = true;
+                return false;
+            }
+
+        }
+
+        public void Lock()
+        {
+            this.IsLocked = true;
         }
 
 
@@ -277,4 +327,14 @@ namespace Pocketailor.ViewModel
 
 
     }
+
+    public partial class ViewModelLocator
+    {
+        public AppViewModel AppViewModel
+        {
+            get { return App.VM; }
+        }
+    }
+
+
 }

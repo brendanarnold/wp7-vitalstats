@@ -17,6 +17,7 @@ namespace Pocketailor.View
         public MainPage()
         {
             InitializeComponent();
+            this.lockedStateGroup.CurrentStateChanged += lockedStateGroup_StateChanged;
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -60,6 +61,7 @@ namespace Pocketailor.View
         private void toggleProtectionContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as MenuItem).DataContext as Profile;
+            if (p.IsProtected && App.VM.IsLocked) return;
             App.VM.ToggleIsProtected(p);
         }
 
@@ -74,6 +76,7 @@ namespace Pocketailor.View
         private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as MenuItem).DataContext as Profile;
+            if (p.IsProtected && App.VM.IsLocked) return;
             App.VM.SelectedProfile = p;
             NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
         }
@@ -85,7 +88,12 @@ namespace Pocketailor.View
 
         private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Profile p = (sender as Button).DataContext as Profile;
+            Profile p = (sender as Canvas).DataContext as Profile;
+            if (p.IsProtected && App.VM.IsLocked)
+            {
+                MessageBox.Show("To unlock the app select the unlock icon in the navbar at the foot of the page", "This profile is PIN protected", MessageBoxButton.OK);
+                return;
+            }
             NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
         }
 
@@ -94,6 +102,29 @@ namespace Pocketailor.View
         	// TODO: Add event handler implementation here.
         }
 
+        private void unlockAppBarMenuItem_Click(object sender, System.EventArgs e)
+        {
+            App.VM.IsLocked = !App.VM.IsLocked;
+            //NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
+        }
+
+        private void aboutAppBarMenuItem_Click(object sender, System.EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/View/About.xaml", UriKind.Relative));
+        }
+
+        private void settingsAppBarMenuItem_Click(object sender, System.EventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+
+
+
+        public void lockedStateGroup_StateChanged(object sender, VisualStateChangedEventArgs e)
+        {
+            //for (Image im in this.profileWrapPanel.ItemTemplate
+        }
 
 
     }

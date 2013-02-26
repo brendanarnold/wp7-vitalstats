@@ -17,9 +17,9 @@ namespace Pocketailor.View
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
         {
-            //int i = ((bool)value) ? 0 : 1;
-            //string s = ((string)parameter).Split(new char[] { '|' })[i];
-            return new BitmapImage(new Uri("/Images/Lock.png", UriKind.Relative));
+            int i = ((bool)value) ? 0 : 1;
+            string s = ((string)parameter).Split(new char[] { '|' })[i];
+            return new BitmapImage(new Uri(s, UriKind.Relative));
             
         }
 
