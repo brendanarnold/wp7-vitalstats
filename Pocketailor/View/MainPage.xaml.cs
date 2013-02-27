@@ -24,6 +24,13 @@ namespace Pocketailor.View
         {
             base.OnNavigatedTo(e);
             this.DataContext = App.VM;
+            this.UpdateUILockState();
+            
+        }
+
+        private void UpdateUILockState()
+        {
+            (this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = (App.VM.IsLocked) ? "unlock" : "lock";
         }
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
@@ -110,8 +117,15 @@ namespace Pocketailor.View
 
         private void unlockAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            //App.VM.IsLocked = !App.VM.IsLocked;
-            NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
+            if (App.VM.IsLocked)
+            {
+                NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                App.VM.IsLocked = true;
+                this.UpdateUILockState();
+            }
         }
 
         private void aboutAppBarMenuItem_Click(object sender, System.EventArgs e)
