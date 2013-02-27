@@ -13,6 +13,18 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="ListPickerItemsTemplate">
+			<StackPanel>
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="FullModeDataTemplate">
+			<StackPanel Margin="0,0,0,15">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top" FontSize="29.333"/>
+			</StackPanel>
+		</DataTemplate>
+	</phone:PhoneApplicationPage.Resources>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True">
@@ -32,62 +44,69 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
     	<ScrollViewer Grid.RowSpan="2">
-    		<StackPanel Orientation="Vertical" Height="696" Width="480">
+    		<StackPanel Orientation="Vertical" >
     			<TextBlock TextWrapping="Wrap" Text="Choose a narrative password" FontSize="48" Margin="12,50,12,30"/>
     			<StackPanel>
     				<TextBlock TextWrapping="Wrap" Text="My ..." Margin="12,0,12,0" FontSize="26.667" />
-    				<toolkit:ListPicker x:Name="nounListPicker" SelectionChanged="nounListPicker_SelectionChanged">
-    				
-    					<ListBoxItem Content="[noun]"/>
-    					<ListBoxItem Content="goldfish"/>
-    					<ListBoxItem Content="cat"/>
-    					<ListBoxItem Content="dog"/>
-    					<ListBoxItem Content="sock"/>
-    					<ListBoxItem Content="boss"/>
-    					<ListBoxItem Content="first love"/>
-    					<ListBoxItem Content="towel"/>
-    					<ListBoxItem Content="high-school teacher"/>
-						<ListBoxItem Content="doctor" />
-						<ListBoxItem Content="mouse" />
+    				<toolkit:ListPicker x:Name="nounListPicker" SelectionChanged="nounListPicker_SelectionChanged" ItemTemplate="{StaticResource ListPickerItemsTemplate}" FullModeItemTemplate="{StaticResource FullModeDataTemplate}">
+    				<!--
+    					<toolkit:ListPickerItem Content="[noun]"/>
+    					<toolkit:ListPickerItem Content="goldfish"/>
+    					<toolkit:ListPickerItem Content="cat"/>
+    					<toolkit:ListPickerItem Content="dog"/>
+    					<toolkit:ListPickerItem Content="sock"/>
+    					<toolkit:ListPickerItem Content="boss"/>
+    					<toolkit:ListPickerItem Content="first love"/>
+    					<toolkit:ListPickerItem Content="towel"/>
+    					<toolkit:ListPickerItem Content="high-school teacher"/>
+						<toolkit:ListPickerItem Content="doctor" />
+						<toolkit:ListPickerItem Content="mouse" />
+						-->
     				</toolkit:ListPicker>
-    				<toolkit:ListPicker x:Name="adverbListPicker" SelectionChanged="adverbListPicker_SelectionChanged">
-    					<ListBoxItem Content="[adverb]" />
-    					<ListBoxItem Content="happily"/>
-    					<ListBoxItem Content="sadly"/>
-    					<ListBoxItem Content="quickly"/>
-    					<ListBoxItem Content="slowly"/>
-    					<ListBoxItem Content="angrily"/>
-						<ListBoxItem Content="peacefully"/>
-    					<ListBoxItem Content="hopefully"/>
-    					<ListBoxItem Content="dissapointedly"/>
-						<ListBoxItem Content="recklessly" />
-						<ListBoxItem Content="drunkedly" />
+    				<toolkit:ListPicker x:Name="adverbListPicker" SelectionChanged="adverbListPicker_SelectionChanged" FullModeItemTemplate="{StaticResource FullModeDataTemplate}" ItemTemplate="{StaticResource ListPickerItemsTemplate}">
+    					<!--
+    					<toolkit:ListPickerItem Content="[adverb]" />
+    					<toolkit:ListPickerItem Content="happily"/>
+    					<toolkit:ListPickerItem Content="sadly"/>
+    					<toolkit:ListPickerItem Content="quickly"/>
+    					<toolkit:ListPickerItem Content="slowly"/>
+    					<toolkit:ListPickerItem Content="angrily"/>
+						<toolkit:ListPickerItem Content="peacefully"/>
+    					<toolkit:ListPickerItem Content="hopefully"/>
+    					<toolkit:ListPickerItem Content="dissapointedly"/>
+						<toolkit:ListPickerItem Content="recklessly" />
+						<toolkit:ListPickerItem Content="drunkedly" />
+						-->
     				</toolkit:ListPicker>
-    				<toolkit:ListPicker x:Name="actionListPicker" SizeChanged="actionListPicker_SizeChanged">
-    					<ListBoxItem Content="[action]" />
-    					<ListBoxItem Content="rents a boat"/>
-    					<ListBoxItem Content="pays taxes"/>
-    					<ListBoxItem Content="watches television"/>
-    					<ListBoxItem Content="applies makeup"/>
-    					<ListBoxItem Content="makes the bed"/>
-    					<ListBoxItem Content="mows the lawn"/>
-						<ListBoxItem Content="milks the cow" />
-						<ListBoxItem Content="throws the discus" />
-						<ListBoxItem Content="follows the tour guide" />
-						<ListBoxItem Content="gives to charity" />
+    				<toolkit:ListPicker x:Name="actionListPicker" SizeChanged="actionListPicker_SizeChanged" ItemTemplate="{StaticResource ListPickerItemsTemplate}" FullModeItemTemplate="{StaticResource FullModeDataTemplate}">
+    					<!--
+    					<toolkit:ListPickerItem Content="[action]" />
+    					<toolkit:ListPickerItem Content="rents a boat"/>
+    					<toolkit:ListPickerItem Content="pays taxes"/>
+    					<toolkit:ListPickerItem Content="watches television"/>
+    					<toolkit:ListPickerItem Content="applies makeup"/>
+    					<toolkit:ListPickerItem Content="makes the bed"/>
+    					<toolkit:ListPickerItem Content="mows the lawn"/>
+						<toolkit:ListPickerItem Content="milks the cow" />
+						<toolkit:ListPickerItem Content="throws the discus" />
+						<toolkit:ListPickerItem Content="follows the tour guide" />
+						<toolkit:ListPickerItem Content="gives to charity" />
+						-->
     				</toolkit:ListPicker>
-    				<toolkit:ListPicker x:Name="placeListPicker" SelectionChanged="placeListPicker_SelectionChanged">
-    					<ListBoxItem Content="[place]" />
-						<ListBoxItem Content="in Hong Kong" />
-						<ListBoxItem Content="on prehistoric Earth" />
-    					<ListBoxItem Content="on the moon"/>
-    					<ListBoxItem Content="under the sea"/>
-    					<ListBoxItem Content="at the north pole"/>
-    					<ListBoxItem Content="in Kindergarten"/>
-    					<ListBoxItem Content="in the cinema"/>
-    					<ListBoxItem Content="in the garden shed"/>
-						<ListBoxItem Content="at a Beatles concert" />
-						<ListBoxItem Content="up the Eiffel tower" />
+    				<toolkit:ListPicker x:Name="placeListPicker" SelectionChanged="placeListPicker_SelectionChanged" FullModeItemTemplate="{StaticResource FullModeDataTemplate}" ItemTemplate="{StaticResource ListPickerItemsTemplate}">
+    					<!--
+    					<toolkit:ListPickerItem Content="[place]" />
+						<toolkit:ListPickerItem Content="in Hong Kong" />
+						<toolkit:ListPickerItem Content="on prehistoric Earth" />
+    					<toolkit:ListPickerItem Content="on the moon"/>
+    					<toolkit:ListPickerItem Content="under the sea"/>
+    					<toolkit:ListPickerItem Content="at the north pole"/>
+    					<toolkit:ListPickerItem Content="in Kindergarten"/>
+    					<toolkit:ListPickerItem Content="in the cinema"/>
+    					<toolkit:ListPickerItem Content="in the garden shed"/>
+						<toolkit:ListPickerItem Content="at a Beatles concert" />
+						<toolkit:ListPickerItem Content="up the Eiffel tower" />
+						-->
     				</toolkit:ListPicker>
     				<Grid x:Name="OrDividerGrid" Margin="0,0,0,5">
     					<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />

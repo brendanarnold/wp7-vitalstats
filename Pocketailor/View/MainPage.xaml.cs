@@ -86,15 +86,21 @@ namespace Pocketailor.View
             NavigationService.Navigate(new Uri("/View/EditProfilePage.xaml", UriKind.Relative));
         }
 
+        // Select a profile button
         private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as Canvas).DataContext as Profile;
             if (p.IsProtected && App.VM.IsLocked)
             {
-                MessageBox.Show("To unlock the app select the unlock icon in the navbar at the foot of the page", "This profile is PIN protected", MessageBoxButton.OK);
-                return;
+                MessageBoxResult res = MessageBox.Show(String.Format("Profile '{0}' is locked. Do you want to unlock the profile?", p.Name),
+                    "Profile locked", MessageBoxButton.OKCancel);
+                if (res == MessageBoxResult.OK)
+                    NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
             }
-            NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
+            else
+            {
+                NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
+            }
         }
 
         private void howtoBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -104,8 +110,8 @@ namespace Pocketailor.View
 
         private void unlockAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            App.VM.IsLocked = !App.VM.IsLocked;
-            //NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
+            //App.VM.IsLocked = !App.VM.IsLocked;
+            NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
         }
 
         private void aboutAppBarMenuItem_Click(object sender, System.EventArgs e)

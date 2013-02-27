@@ -23,7 +23,7 @@ namespace Pocketailor.ViewModel
 
         public IsolatedStorageSettings stngs = IsolatedStorageSettings.ApplicationSettings;
 
-        private bool _isLocked = false;
+        private bool _isLocked = true;
         public bool IsLocked
         {
             get { return this._isLocked; }
@@ -35,6 +35,16 @@ namespace Pocketailor.ViewModel
                     this.NotifyPropertyChanged("IsLocked");
                 }
             }
+        }
+
+        public bool IsValidPin(string pin)
+        {
+            if (pin.Length != 4) return false;
+            for (int i = 0; i < 4; i++)
+            {
+                if (!char.IsDigit(pin[i])) return false;
+            }
+            return true;
         }
 
         public bool SetPin(string pin)
@@ -51,21 +61,33 @@ namespace Pocketailor.ViewModel
             return true;
         }
 
-        public bool TryUnlock(string pin)
+        public string GetPin()
         {
-            string actPin;
+            string pin;
             try
             {
-                actPin = (string)this.stngs["pin"];
+                pin = (string)this.stngs["pin"];
             }
             catch (System.Collections.Generic.KeyNotFoundException)
             {
-                this.IsLocked = false;
-                this.SetPin("----");
-                return true;
+                pin = null;
+                this.SetPin(null);
             }
+            return pin;
+        }
 
-            if ((actPin == "----") || (actPin == pin))
+        public bool TryUnlock(string pin)
+        {
+            string appPin;
+
+            appPin = this.GetPin();
+            if (appPin == null) 
+            {
+                this.IsLocked = false;
+                if (this.IsValidPin(pin)) this.SetPin(pin);
+                return true;
+            } 
+            else if (appPin == pin)
             {
                 this.IsLocked = false;
                 return true;
@@ -77,6 +99,10 @@ namespace Pocketailor.ViewModel
             }
 
         }
+
+        
+
+
 
         public void Lock()
         {
@@ -323,7 +349,9 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
-        
+
+
+
 
 
     }
