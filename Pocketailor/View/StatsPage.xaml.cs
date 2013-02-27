@@ -156,7 +156,7 @@ namespace Pocketailor.View
         // navigate to the edit profile page
         private void editProfileAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            // TODO: Add event handler implementation here.
+            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
         }
 
 
