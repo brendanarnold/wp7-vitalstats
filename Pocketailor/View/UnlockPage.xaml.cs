@@ -20,60 +20,62 @@ namespace Pocketailor.View
             InitializeComponent();
 
 
-            this.nounListPicker.ItemsSource = new List<StringHolder>() 
+
+            this.nounListPicker.ItemsSource = new List<string>() 
             {
-                new StringHolder(){ Name="[noun]"},
-                new StringHolder(){ Name="goldfish"},
-                new StringHolder(){ Name="cat"},
-                new StringHolder(){ Name="dog"},
-                new StringHolder(){ Name="boss"},
-                new StringHolder(){ Name="first love"},
-                new StringHolder(){ Name="towel"},
-                new StringHolder(){ Name="high-school teacher"},
-                new StringHolder(){ Name="doctor"},
-                new StringHolder(){ Name="mouse"}
+                "[noun]",
+                "goldfish",
+                "cat",
+                "dog",
+                "boss",
+                "first love",
+                "towel",
+                "high-school teacher",
+                "doctor",
+                "mouse"
             };
-            this.adverbListPicker.ItemsSource = new List<StringHolder>()
+
+            this.adverbListPicker.ItemsSource = new List<string>()
             {
-                new StringHolder(){ Name="[adverb]"},
-                new StringHolder(){ Name="happily"},
-                new StringHolder(){ Name="sadly"},
-                new StringHolder(){ Name="quickly"},
-                new StringHolder(){ Name="slowly"},
-                new StringHolder(){ Name="angrily"},
-                new StringHolder(){ Name="peacefully"},
-                new StringHolder(){ Name="hopefully"},
-                new StringHolder(){ Name="recklessly"},
-                new StringHolder(){ Name="disappointedly"},
-                new StringHolder(){ Name="drunkenly"}
+                "[adverb]",
+                "happily",
+                "sadly",
+                "quickly",
+                "slowly",
+                "angrily",
+                "peacefully",
+                "hopefully",
+                "recklessly",
+                "disappointedly",
+                "drunkenly"
             };
-            this.actionListPicker.ItemsSource = new List<StringHolder>()
+            this.actionListPicker.ItemsSource = new List<string>()
             {
-                new StringHolder(){ Name="[action]"},
-                new StringHolder(){ Name="rents a boat"},
-                new StringHolder(){ Name="pays taxes"},
-                new StringHolder(){ Name="watches television"},
-                new StringHolder(){ Name="applies makeup"},
-                new StringHolder(){ Name="makes the bed"},
-                new StringHolder(){ Name="mows the lawn"},
-                new StringHolder(){ Name="milks the cow"},
-                new StringHolder(){ Name="throws the discus"},
-                new StringHolder(){ Name="follows the tour guide"},
-                new StringHolder(){ Name="gives to charity"}
+                "[action]",
+                "rents a boat",
+                "pays taxes",
+                "watches television",
+                "applies makeup",
+                "makes the bed",
+                "mows the lawn",
+                "milks the cow",
+                "throws the discus",
+                "follows the tour guide",
+                "gives to charity"
             };
-            this.placeListPicker.ItemsSource = new List<StringHolder>()
+            this.placeListPicker.ItemsSource = new List<string>()
             {
-                new StringHolder(){ Name="[place]"},
-                new StringHolder(){ Name="in Hong Kong"},
-                new StringHolder(){ Name="on prehistoric Earth"},
-                new StringHolder(){ Name="on the moon"},
-                new StringHolder(){ Name="under the sea"},
-                new StringHolder(){ Name="at the North Pole"},
-                new StringHolder(){ Name="in Kindergarten"},
-                new StringHolder(){ Name="in the cinema"},
-                new StringHolder(){ Name="in the garden shed"},
-                new StringHolder(){ Name="at a Beatles concert"},
-                new StringHolder(){ Name="up the Eiffel tower"}
+                "[place]",
+                "in Hong Kong",
+                "on prehistoric Earth",
+                "on the moon",
+                "under the sea",
+                "at the North Pole",
+                "in Kindergarten",
+                "in the cinema",
+                "in the garden shed",
+                "at a Beatles concert",
+                "up the Eiffel tower"
             };
 
             this.Loaded +=UnlockPage_Loaded;
@@ -168,11 +170,6 @@ namespace Pocketailor.View
     }
 
 
-    // A class to bind a simple string to a ListPicker
-    public class StringHolder
-    {
-        public string Name { get; set; }
-    }
 
 
 }

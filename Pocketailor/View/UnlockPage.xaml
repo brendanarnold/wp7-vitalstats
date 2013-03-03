@@ -16,12 +16,12 @@
 	<phone:PhoneApplicationPage.Resources>
 		<DataTemplate x:Key="ListPickerItemsTemplate">
 			<StackPanel>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top"/>
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top"/>
 			</StackPanel>
 		</DataTemplate>
 		<DataTemplate x:Key="FullModeDataTemplate">
 			<StackPanel Margin="0,0,0,15">
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top" FontSize="29.333"/>
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" FontSize="29.333"/>
 			</StackPanel>
 		</DataTemplate>
 	</phone:PhoneApplicationPage.Resources>
