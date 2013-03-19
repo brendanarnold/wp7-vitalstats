@@ -156,14 +156,12 @@
 
         <controls:Pivot Style="{StaticResource PivotStyle1}" Margin="0">
 
-            <controls:Pivot.TitleTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
-                        <TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </controls:Pivot.TitleTemplate>
+            <controls:Pivot.Title>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
+                    <TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
+                </StackPanel>
+            </controls:Pivot.Title>
 
 
             <!--Pivot item one-->

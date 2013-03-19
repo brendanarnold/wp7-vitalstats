@@ -8,6 +8,8 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 	xmlns:local="clr-namespace:Pocketailor"
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="Pocketailor.View.StatsPage"
 	Orientation="Portrait"
@@ -155,52 +157,98 @@
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
 		
-		
-		<Grid x:Name="Layout" Margin="0"/>
 
-			<StackPanel Grid.Row="0" Margin="24,17,24,0">
-				
-			    <StackPanel Orientation="Horizontal">
-					<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
-                    <TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
-                </StackPanel>
-
-				<TextBlock x:Name="PageTitle" Margin="0,0,0,12" Style="{StaticResource PhoneTextTitle1Style}" Text="{Binding SelectedProfile.Name, ConverterParameter=&lt;No Name&gt;, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
-
-				<StackPanel Margin="0,0,0,12" Orientation="Horizontal">
-					<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-					<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+		<controls:Pivot Margin="0" >
+			
+			<controls:Pivot.Title>
+                
+				<StackPanel Orientation="Vertical">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="5*"></ColumnDefinition>
+							<ColumnDefinition Width="5*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0">
+							<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
+							<TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
+						</StackPanel>
+						<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
+					</Grid>
 				</StackPanel>
+          
+            </controls:Pivot.Title>
+		
+		
+		
+		    <!--Pivot item one-->
+            <controls:PivotItem x:Name="conversionsPivotItem">
+				
+                <controls:PivotItem.Header>
+                    <Grid>
+                        <Image Source="/Images/convert.png" Margin="0,20,0,0" />
+                        <!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
+                    </Grid>
+                </controls:PivotItem.Header>
 
-				<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5">
-					<ListBox.RenderTransform>
-						<CompositeTransform/>
-					</ListBox.RenderTransform>
-					<ListBox.ItemTemplate>
-						<DataTemplate>
-							<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
-								<toolkit:ContextMenuService.ContextMenu>
-									<toolkit:ContextMenu>
-										<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap"     />
-									</toolkit:ContextMenu>
-								</toolkit:ContextMenuService.ContextMenu>
-								<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
-								<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource HighlightTxtColor}" Margin="10,0,0,0"/>
-							</StackPanel>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
-				</ListBox>
-				<Grid Height="40" Margin="0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
-					<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
-						<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
-						<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
-						<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
+
+
+
+
+
+				
+
+			</controls:PivotItem>
+
+
+			<controls:PivotItem x:Name="measurementsPivotItem">
+				
+                <controls:PivotItem.Header>
+                    <Grid>
+                        <Image Source="/Images/measure.png" Margin="0,30,0,0" />
+                        <!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
+                    </Grid>
+                </controls:PivotItem.Header>
+
+				<StackPanel Grid.Row="0" Margin="24,17,24,0">
+				
+					
+					<StackPanel Margin="0,0,0,12" Orientation="Horizontal">
+						<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+						<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 					</StackPanel>
-				</Grid>
 
-			</StackPanel>
+					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5">
+						<ListBox.RenderTransform>
+							<CompositeTransform/>
+						</ListBox.RenderTransform>
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
+									<toolkit:ContextMenuService.ContextMenu>
+										<toolkit:ContextMenu>
+											<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap"     />
+										</toolkit:ContextMenu>
+									</toolkit:ContextMenuService.ContextMenu>
+									<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
+									<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource HighlightTxtColor}" Margin="10,0,0,0"/>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<Grid Height="40" Margin="0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
+						<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
+							<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
+							<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
+							<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
+						</StackPanel>
+					</Grid>
 
+				</StackPanel>
+			</controls:PivotItem>
 
+		</controls:Pivot>
+
+			<!--
 			<Grid x:Name="selectMeasurementTypePopUpGrid" Background="{StaticResource DialogBGColor}" Margin="2,0,-2,0" Visibility="Collapsed">
 				<StackPanel>
 					<TextBlock x:Name="TitleTextBlock" TextWrapping="Wrap" Text="select measurement type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
@@ -244,7 +292,7 @@
 					</ListBox>
 				</StackPanel>
 			</Grid>
-			<!--ContentPanel - place additional content here-->
+		    -->
 		
 	</Grid>
 </phone:PhoneApplicationPage>

@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-10.209324"
-     inkscape:cy="802.45245"
+     inkscape:zoom="1.979899"
+     inkscape:cx="216.30678"
+     inkscape:cy="673.12422"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -51,6 +51,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3016"
+       width="165.71428"
+       height="258.57144"
+       x="193.2832"
+       y="286.30127"
+       ry="2.6475046" />
     <text
        xml:space="preserve"
        style="font-size:50.0724411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
@@ -269,5 +277,35 @@
          x="143.44167"
          y="260.40259"
          style="-inkscape-font-specification:Lobster;font-family:Lobster;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">add new profile</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="63.134537"
+       y="359.90262"
+       id="text3018"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\convert.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3020"
+         x="63.134537"
+         y="359.90262"
+         style="font-size:24px">convert</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="55.05331"
+       y="386.16656"
+       id="text3022"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\measure.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3024"
+         x="55.05331"
+         y="386.16656"
+         style="fill:#ffffff">measure</tspan></text>
   </g>
 </svg>
