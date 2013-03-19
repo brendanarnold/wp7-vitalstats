@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Pocketailor.Model
 {
-    class SingleValueUnit : IUnit
+    public class SingleValueUnit : IUnit
     {
 
         public UnitId _id { get; set; }

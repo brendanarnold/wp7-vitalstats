@@ -98,7 +98,7 @@ namespace Pocketailor.View
         // User has selected a stat template from the popup, can go to new stat page
         private void selectStatTemplateStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Stat s = (sender as StackPanel).DataContext as Stat;
+            StatTemplate s = (sender as StackPanel).DataContext as StatTemplate;
             App.VM.SelectedStat.Name = s.Name;
             App.VM.SelectedStat.MeasurementType = s.MeasurementType;
             NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}",

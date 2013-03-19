@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Pocketailor.Model
 {
-    class DoubleValueUnit : IUnit
+    public class DoubleValueUnit : IUnit
     {
 
         public UnitId _id { get; set; }
@@ -76,7 +76,7 @@ namespace Pocketailor.Model
                 double whole;
                 double result = this._conversionFactors[i] * remaining + this._conversionIntercepts[i];
                 whole = Math.Floor(result);
-                remaining = (remaining - whole) / this._conversionFactors[i];
+                remaining = (result - whole) / this._conversionFactors[i];
                 outVals.Add(String.Format(this._valueFormats[i], whole));
             }
             return outVals;

@@ -81,7 +81,14 @@ namespace Pocketailor.View
             else 
             {
                 this.preferredUnitListPicker.ItemsSource = App.VM.SelectedStat.MeasurementType.Units;
-                if (App.VM.SelectedStat.PreferredUnit != null) this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
+                if (App.VM.SelectedStat.PreferredUnit != null)
+                {
+                    this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.PreferredUnit;
+                }
+                else
+                {
+                    this.preferredUnitListPicker.SelectedItem = App.VM.SelectedStat.MeasurementType.DefaultUnit;
+                }
             }
             // Load up the value
             if (App.VM.SelectedStat.Value != null) this.LoadValueToTextBox();
@@ -194,7 +201,10 @@ namespace Pocketailor.View
                 {
                     TitledTextBox ttb = (this.valueContainer.Children[i] as TitledTextBox);
                     ttb.Title = pu.ShortUnitNames[i];
-                    ttb.Text = (i < vals.Count) ? String.Format("{0:F3}", vals[i]) : String.Empty;
+                    if (vals != null)
+                    {
+                        ttb.Text = (i < vals.Count) ? String.Format("{0:F3}", vals[i]) : String.Empty;
+                    }
                 }
             }
             else

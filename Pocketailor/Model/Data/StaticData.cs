@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pocketailor.Model
 {
-    static class Static
+    public class Static
     {
         static public List<StatTemplate> StatTemplates = new List<StatTemplate>() 
         {
@@ -41,7 +41,7 @@ namespace Pocketailor.Model
                         _name = "Metres", 
                         _conversionFactor = 1.0,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "m.",
+                        _shortUnitName = "m",
                         _valueFormat = "{0:f2}",
                     },
                     new SingleValueUnit() {
@@ -49,7 +49,7 @@ namespace Pocketailor.Model
                         _name = "Centimetres",
                         _conversionFactor = 100.0,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "cm.",
+                        _shortUnitName = "cm",
                         _valueFormat = "{0:f1}",
                     },
                     new SingleValueUnit() {
@@ -57,7 +57,7 @@ namespace Pocketailor.Model
                         _name = "Feet",
                         _conversionFactor = 3.2808,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "ft.",
+                        _shortUnitName = "ft",
                         _valueFormat = "{0:f1}",
                     },
                     new SingleValueUnit() {
@@ -65,7 +65,7 @@ namespace Pocketailor.Model
                         _name = "Inches",
                         _conversionFactor = 39.3701,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "cm.",
+                        _shortUnitName = "in",
                         _valueFormat = "{0:f1}",
                     },
                     new DoubleValueUnit() {
@@ -73,8 +73,8 @@ namespace Pocketailor.Model
                         _names = new List<string>() { "Feet", "Inches" },
                         _conversionFactors = new List<double>() { 3.2808, 39.3701 },
                         _conversionIntercepts = new List<double>() { 0.0, 0.0 },
-                        _shortUnitNames = new List<string>() { "ft.", "in." },
-                        _valueFormats = new List<string>() { "{0:f0}", "{1:f0}" },
+                        _shortUnitNames = new List<string>() { "ft", "in" },
+                        _valueFormats = new List<string>() { "{0:f0}", "{0:f0}" },
                     },
                 },
             },
@@ -90,7 +90,7 @@ namespace Pocketailor.Model
                         _name = "Kilograms",
                         _conversionFactor = 1.0,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "kg.",
+                        _shortUnitName = "kg",
                         _valueFormat = "{0:f1}",
 
                     },
@@ -99,7 +99,7 @@ namespace Pocketailor.Model
                         _name = "Stones",
                         _conversionFactor = 0.157473,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "st.",
+                        _shortUnitName = "st",
                         _valueFormat = "{0:f1}",
                     },
                     new SingleValueUnit() {
@@ -107,7 +107,7 @@ namespace Pocketailor.Model
                         _name = "Pounds",
                         _conversionFactor = 2.20462,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "lb.",
+                        _shortUnitName = "lb",
                         _valueFormat = "{0:f1}",
                     },
                     new SingleValueUnit() {
@@ -115,7 +115,7 @@ namespace Pocketailor.Model
                         _name = "Ounces",
                         _conversionFactor = 35.274,
                         _conversionIntercept = 0.0,
-                        _shortUnitName = "oz.",
+                        _shortUnitName = "oz",
                         _valueFormat = "{0:f1}",
                     },
                     new DoubleValueUnit() {
@@ -123,8 +123,8 @@ namespace Pocketailor.Model
                         _names = new List<string>() { "Pounds", "Ounces" },
                         _conversionFactors = new List<double>() { 2.20462, 35.274 },
                         _conversionIntercepts = new List<double>() { 0.0, 0.0 },
-                        _shortUnitNames = new List<string>() { "lb.", "oz." },
-                        _valueFormats = new List<string>() { "{0:f0}", "{1:f0}" },
+                        _shortUnitNames = new List<string>() { "lb", "oz" },
+                        _valueFormats = new List<string>() { "{0:f0}", "{0:f0}" },
                     },
                 },
             },
@@ -138,8 +138,8 @@ namespace Pocketailor.Model
 
     public class StatTemplate
     {
-        public MeasurementId Id;
-        public string Name;
+        public MeasurementId Id { get; set; }
+        public string Name {get; set;}
         public MeasurementTypeId? _measurementTypeId { get; set; }
         public MeasurementType MeasurementType
         {
