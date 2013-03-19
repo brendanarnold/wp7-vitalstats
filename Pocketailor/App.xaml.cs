@@ -81,14 +81,9 @@ namespace Pocketailor
                 //SetupDatabase.EmptyDB(db);
 
     
-                if (db.MeasurementTypes.Count() == 0)
+                if (db.DressSizes.Count() == 0)
                 {
-                    SetupDatabase.ResetMeasurementTypes(db);
-                    db.SubmitChanges();
-                }
-                if (db.StatTemplates.Count() == 0)
-                {
-                    SetupDatabase.ResetStatTemplates(db);
+                    SetupDatabase.LoadConversions(db);
                     db.SubmitChanges();
                 }
 

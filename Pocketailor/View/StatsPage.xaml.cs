@@ -47,11 +47,6 @@ namespace Pocketailor.View
             }
 
 
-            // Load some of the data types if not done so already
-            if (App.VM.MeasurementTypes == null) App.VM.LoadMeasurementTypesFromDB();
-            if (App.VM.StatTemplates == null) App.VM.LoadStatTemplatesFromDB();
-
-
             // Load a new suggested app
             App.VM.LoadNextSuggestedStatTemplate();
 
@@ -80,7 +75,7 @@ namespace Pocketailor.View
             {
                 Name = App.VM.SuggestedStatTemplate.Name,
                 MeasurementType = App.VM.SuggestedStatTemplate.MeasurementType,
-                PreferredUnit = App.VM.SuggestedStatTemplate.PreferredUnit,
+                PreferredUnit = App.VM.SuggestedStatTemplate.MeasurementType.DefaultUnit,
                 Value = String.Empty,
             };
             NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}",

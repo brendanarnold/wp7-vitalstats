@@ -33,11 +33,6 @@ namespace Pocketailor.View
 
             this.DataContext = App.VM;
 
-            // Load some of the data types if not done so already
-            if (App.VM.MeasurementTypes == null) App.VM.LoadMeasurementTypesFromDB();
-            if (App.VM.StatTemplates == null) App.VM.LoadStatTemplatesFromDB();
-
-
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -140,7 +135,7 @@ namespace Pocketailor.View
                 return false;
             }
 
-            if (this.ReadValueFromTextBox() == String.Empty)
+            if (this.ReadValueFromTextBox() == null)
             {
                 MessageBox.Show("The statistic value must be number unless a custom measurement type is selected. It also cannot be empty. Please enter a valid value.", "Value empty or invalid", MessageBoxButton.OK);
                 return false;
@@ -154,18 +149,18 @@ namespace Pocketailor.View
             if (!this.ValidateInput()) return;
 
             // Read values into the Stat object to be saved
-            string valStr = this.ReadValueFromTextBox();
+            List<string> valStr = this.ReadValueFromTextBox();
             App.VM.SelectedStat.Name = this.nameTitledTextBox.Text;
             if (App.VM.AllowNonNumericValue())
             {
-                App.VM.SelectedStat.Value = valStr;
+                App.VM.SelectedStat.Value = valStr[0];
                 App.VM.SelectedStat.PreferredUnit = null;
                 App.VM.SelectedStat.MeasurementType = null;
             }
             else
             {
-                App.VM.SelectedStat.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as Unit);
-                App.VM.SelectedStat.Value = App.VM.SelectedStat.PreferredUnit.ConvertValuesToString(valStr);
+                App.VM.SelectedStat.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as IUnit);
+                App.VM.SelectedStat.Value = App.VM.SelectedStat.PreferredUnit.ConvertToDBString(valStr);
             }
             if (this.PageAction == EditStatPageActions.Edit) 
             {
@@ -193,12 +188,12 @@ namespace Pocketailor.View
         {
             if (this.preferredUnitListPicker.SelectedItem != null)
             {
-                Unit pu = this.preferredUnitListPicker.SelectedItem as Unit;
-                List<double> vals = pu.ConvertValuesFromString(App.VM.SelectedStat.Value);
-                for (int i = 0; i < pu.Names.Count; i++)
+                IUnit pu = this.preferredUnitListPicker.SelectedItem as IUnit;
+                List<string> vals = pu.ConvertFromDBString(App.VM.SelectedStat.Value);
+                for (int i = 0; i < pu.ShortUnitNames.Count; i++)
                 {
                     TitledTextBox ttb = (this.valueContainer.Children[i] as TitledTextBox);
-                    ttb.Title = pu.Names[i];
+                    ttb.Title = pu.ShortUnitNames[i];
                     ttb.Text = (i < vals.Count) ? String.Format("{0:F3}", vals[i]) : String.Empty;
                 }
             }
@@ -211,14 +206,14 @@ namespace Pocketailor.View
         // Combines text from the value textboxes depending on whether there are more than one value asked for
         // May have many texboxes for multiple inputs or may have non-numerical input
         // Returns String.Empty if all are empty or error encountered
-        private string ReadValueFromTextBox()
+        private List<string> ReadValueFromTextBox()
         {
             List<string> sVals = new List<string>();
             if (App.VM.AllowNonNumericValue())
             {
-                return this.value1TitledTextBox.Text;
+                sVals.Add(this.value1TitledTextBox.Text);
+                return sVals;
             }
-            List<double> vals = new List<double>();
             foreach (TitledTextBox tb in this.valueContainer.Children) 
             {
                 if (tb.Visibility == Visibility.Visible)
@@ -226,12 +221,12 @@ namespace Pocketailor.View
                     double d;
                     if (!double.TryParse(tb.Text, out d))
                     {
-                        return String.Empty;
+                        return null;
                     }
-                    vals.Add(d);    
+                    sVals.Add(tb.Text);    
                 }
             }
-            return ModelHelpers.PickleDoubles(vals);
+            return sVals;
         }
 
         // Wipes the form clean
@@ -251,14 +246,14 @@ namespace Pocketailor.View
             
             if (this.preferredUnitListPicker.SelectedItem != null)
             {
-                Unit pu = this.preferredUnitListPicker.SelectedItem as Unit;
-                int nVisible = pu.GetNumberInputs();
+                IUnit pu = this.preferredUnitListPicker.SelectedItem as IUnit;
+                int nVisible = pu.ShortUnitNames.Count;
                 int i = 0;
                 foreach (TitledTextBox tb in this.valueContainer.Children)
                 {
                     if (i < nVisible)
                     {
-                        tb.Title = pu.Names[i];
+                        tb.Title = pu.ShortUnitNames[i];
                         tb.Visibility = Visibility.Visible;
                     }
                     else
@@ -287,7 +282,8 @@ namespace Pocketailor.View
 
     public struct EditStatFormSnapshot 
     {
-        public string Name, Value;
+        public string Name;
+        public List<string> Value;
         public int? PreferredUnitIndex;
     }
 

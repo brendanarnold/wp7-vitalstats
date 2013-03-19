@@ -12,16 +12,8 @@ namespace Pocketailor.Model
         }
 
         public Table<Profile> Profiles;
-
         public Table<Stat> Stats;
-
-        public Table<Stat> StatTemplates;
-
-        public Table<MeasurementType> MeasurementTypes;
-
-        public Table<Unit> Units;
-
-    
+        public Table<Conversions.DressSize> DressSizes;
     
     
     }

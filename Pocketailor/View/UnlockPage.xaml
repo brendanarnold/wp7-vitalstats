@@ -115,7 +115,7 @@
     					</Border>
     				</Grid>
     				<TextBlock Text="Enter Numerical PIN" Margin="12,0,0,0" FontSize="26.667" />
-    				<TextBox x:Name="pinTextBox" Width="200" HorizontalAlignment="Left" InputScope="Number" />	
+    				<TextBox x:Name="pinTextBox" Width="200" HorizontalAlignment="Left" InputScope="Number" GotFocus="pinTextBox_GotFocus" />	
     			</StackPanel>
     		</StackPanel>
 

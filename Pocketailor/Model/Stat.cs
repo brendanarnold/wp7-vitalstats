@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.Linq;
 
 
 namespace Pocketailor.Model
@@ -46,6 +47,19 @@ namespace Pocketailor.Model
             }
         }
 
+        private MeasurementId _measurementId;
+        [Column]
+        public MeasurementId MeasurementId
+        {
+            get { return this._measurementId; }
+            set
+            {
+                this.NotifyPropertyChanging("MeasurementId");
+                this._measurementId = value;
+                NotifyPropertyChanged("MeasurementId");
+            }
+        }
+
         private string _value;
         [Column]
         public string Value
@@ -61,33 +75,55 @@ namespace Pocketailor.Model
                 // Also need to notify units attached to this stat
                 if (this.MeasurementType != null)
                 {
-                    foreach (Unit u in this.MeasurementType.Units) 
+                    foreach (IUnit u in this.MeasurementType.Units) 
                         u.NotifyPropertyChanged("FormattedValue");
                 }
             }
         }
 
         [Column]
-        internal int? _preferredUnitId;
-        private EntityRef<Unit> _preferredUnit = new EntityRef<Unit>();
-        [Association(Storage = "_preferredUnit", ThisKey = "_preferredUnitId", IsForeignKey = true)]
-        public Unit PreferredUnit
+        internal UnitId? _preferredUnitId { get; set; }
+        
+        public IUnit PreferredUnit
         {
-            get { return this._preferredUnit.Entity; }
+            get 
+            {
+                if (this._preferredUnitId == null) return null;
+                return (from IUnit u in this.MeasurementType.Units where u.Id == this._preferredUnitId select u).First(); 
+            }
             set
             {
-                Unit u = this._preferredUnit.Entity;
+                IUnit u = this.PreferredUnit;
                 if (u != value)
                 {
                     this.NotifyPropertyChanging("PreferredUnit");
-                    if (u != null)
-                    {
-                        this._preferredUnit.Entity = null;
-                    }
-                    this._preferredUnit.Entity = value;
+                    this._preferredUnitId = value.Id;
                     this.NotifyPropertyChanged("PreferredUnit");
                     // This also affects the formatted value on the stat
                     this.NotifyPropertyChanged("FormattedValue");
+                }
+            }
+        }
+
+
+        [Column]
+        internal MeasurementTypeId? _measurementTypeId { get; set; }
+
+        public MeasurementType MeasurementType
+        {
+            get 
+            {
+                if (this._measurementTypeId == null) return null;
+                return (from MeasurementType mt in App.VM.MeasurementTypes where mt.Id == this._measurementTypeId select mt).First(); 
+            }
+            set
+            {
+                MeasurementType mt = this.MeasurementType;
+                if (mt != value)
+                {
+                    NotifyPropertyChanging("MeasurementType");
+                    this._measurementTypeId = value.Id;
+                    NotifyPropertyChanged("MeasurementType");
                 }
             }
         }
@@ -124,34 +160,7 @@ namespace Pocketailor.Model
             }
         }
 
-        [Column]
-        internal int _measurementTypeId;
-        private EntityRef<MeasurementType> _measurementType = new EntityRef<MeasurementType>();
-        [Association(Storage = "_measurementType", ThisKey = "_measurementTypeId", OtherKey = "Id", 
-            IsForeignKey = true)]
-        public MeasurementType MeasurementType
-        {
-            get { return this._measurementType.Entity; }
-            set
-            {
-                MeasurementType mt = this._measurementType.Entity;
-                if (mt != value)
-                {
-                    NotifyPropertyChanging("MeasurementType");
-                    if (mt != null)
-                    {
-                        this._measurementType.Entity = null;
-                        mt.Stats.Remove(this);
-                    }
-                    this._measurementType.Entity = value;
-                    if (value != null)
-                    {
-                        value.Stats.Add(this);
-                    }
-                    NotifyPropertyChanged("MeasurementType");
-                }
-            }
-        }
+
 
         #endregion
 

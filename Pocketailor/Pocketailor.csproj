@@ -75,12 +75,18 @@
     </Compile>
     <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
+    <Compile Include="Model\Conversions\DressSize.cs" />
+    <Compile Include="Model\Ids.cs" />
     <Compile Include="Model\MeasurementType.cs" />
-    <Compile Include="Model\ModelHelpers.cs" />
+    <Compile Include="Model\Data\StaticData.cs" />
+    <Compile Include="Model\Tags.cs" />
+    <Compile Include="Model\UnitTypes\SingleValueUnit.cs" />
+    <Compile Include="Model\UnitTypes\IUnit.cs" />
+    <Compile Include="Model\UnitTypes\DoubleValueUnit.cs" />
+    <Compile Include="Model\Helpers.cs" />
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\SetupDatabase.cs" />
     <Compile Include="Model\Stat.cs" />
-    <Compile Include="Model\Unit.cs" />
     <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
@@ -177,6 +183,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Includes\WindowsPhoneToolkit\Microsoft.Phone.Controls.Toolkit.dll" />
+    <Content Include="Model\Data\DressSizes.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -199,7 +208,6 @@
     <Content Include="Assets\AppBar\appbar.unlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Data\MeasurementTypes.xml" />
     <Content Include="Images\appbar.unlock.keyhole.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -260,6 +268,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

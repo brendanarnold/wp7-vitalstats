@@ -23,6 +23,8 @@ namespace Pocketailor.ViewModel
 
         public IsolatedStorageSettings stngs = IsolatedStorageSettings.ApplicationSettings;
 
+        #region PIN locking methods
+
         private bool _isLocked = true;
         public bool IsLocked
         {
@@ -100,15 +102,12 @@ namespace Pocketailor.ViewModel
 
         }
 
-        
-
-
-
         public void Lock()
         {
             this.IsLocked = true;
         }
 
+        #endregion
 
         #region QuickProfile methods
 
@@ -196,6 +195,8 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
+
+
         public void AddStatToProfile(Stat stat, Profile profile)
         {
             stat.Profile = profile;
@@ -228,8 +229,8 @@ namespace Pocketailor.ViewModel
 
         #region SuggestedStat methods/proprties
 
-        private Stat _suggestedStatTemplate;
-        public Stat SuggestedStatTemplate
+        private StatTemplate _suggestedStatTemplate;
+        public StatTemplate SuggestedStatTemplate
         {
             get { return this._suggestedStatTemplate; }
             set
@@ -244,24 +245,21 @@ namespace Pocketailor.ViewModel
         private int _suggestedStatTemplateInd = 0;
         public void LoadNextSuggestedStatTemplate()
         {
+
             this._suggestedStatTemplateInd += 1;
-            if (this.StatTemplates == null) 
-            { 
-                this.LoadStatTemplatesFromDB(); 
-            }
-            List<string> suggNames = (from Stat st in this.StatTemplates
+            List<MeasurementId> suggIds = (from StatTemplate st in this.StatTemplates
                                       select
-                                          st.Name).Except(from Stat st in this.SelectedProfile.Stats
-                                                          select st.Name).ToList();
+                                          st.Id).Except(from Stat st in this.SelectedProfile.Stats
+                                                          select st.MeasurementId).ToList();
             // Check if any suggested stats left over
-            if (suggNames.Count == 0)
+            if (suggIds.Count == 0)
             {
                 this.SuggestedStatTemplate = null;
                 return;
             }
-            int ind = this._suggestedStatTemplateInd % suggNames.Count;
-            this.SuggestedStatTemplate = (from Stat st in this.StatTemplates
-                                          where st.Name == suggNames[ind]
+            int ind = this._suggestedStatTemplateInd % suggIds.Count;
+            this.SuggestedStatTemplate = (from StatTemplate st in this.StatTemplates
+                                          where st.Id == suggIds[ind]
                                           select st).First();
         }
 
@@ -289,7 +287,7 @@ namespace Pocketailor.ViewModel
         {
             if (this.SelectedStat.MeasurementType != null)
             {
-                return !this.SelectedStat.MeasurementType.IsConvertible();
+                return false;
             }
             else
             {
@@ -301,7 +299,7 @@ namespace Pocketailor.ViewModel
 
         #region MeasurementTypes methods/properties
 
-        private ObservableCollection<MeasurementType> _measurementTypes;
+        private ObservableCollection<MeasurementType> _measurementTypes = new ObservableCollection<MeasurementType>(Static.MeasurementTypes);
         public ObservableCollection<MeasurementType> MeasurementTypes
         {
             get { return this._measurementTypes; }
@@ -312,26 +310,14 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        // Inject an 'Other' measurement type at the start
-        public void LoadMeasurementTypesFromDB()
-        {
-            List<MeasurementType> mts = (from MeasurementType mt in this.appDB.MeasurementTypes select mt).ToList();
-            //MeasurementType customMt = new MeasurementType()
-            //{
-            //    Name = AppConstants.NAME_CUSTOM_MEASUREMENT_TYPE,
-            //    Units = null,
-            //};
-            //mts.Insert(0, customMt);
-            this.MeasurementTypes = new ObservableCollection<MeasurementType>(mts);
-        }
-
 
         #endregion
 
         #region StatTemplates methods/properties
 
-        private ObservableCollection<Stat> _statTemplates;
-        public ObservableCollection<Stat> StatTemplates
+        private ObservableCollection<StatTemplate> _statTemplates 
+            = new ObservableCollection<StatTemplate>(Model.Static.StatTemplates);
+        public ObservableCollection<StatTemplate> StatTemplates
         {
             get { return this._statTemplates; }
             set
@@ -339,12 +325,6 @@ namespace Pocketailor.ViewModel
                 this._statTemplates = value;
                 this.NotifyPropertyChanged("StatTemplates");
             }
-        }
-
-        public void LoadStatTemplatesFromDB()
-        {
-            List<Stat> stats = (from Stat s in this.appDB.StatTemplates select s).ToList();
-            this.StatTemplates = new ObservableCollection<Stat>(stats);
         }
 
         #endregion

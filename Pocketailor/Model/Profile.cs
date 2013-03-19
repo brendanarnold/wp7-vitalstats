@@ -27,6 +27,8 @@ namespace Pocketailor.Model
             #endregion
         }
 
+        
+
         // This helps with updaing the schema
         [Column(IsVersion = true)]
         private Binary _version;

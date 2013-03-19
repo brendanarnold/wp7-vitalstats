@@ -167,6 +167,11 @@ namespace Pocketailor.View
             
         }
 
+        private void pinTextBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.pinTextBox.Text = String.Empty;
+        }
+
     }
 
 

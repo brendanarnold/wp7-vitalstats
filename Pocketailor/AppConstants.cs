@@ -17,6 +17,7 @@ namespace Pocketailor
         //public static string NAME_CUSTOM_STAT_TEMPLATE = "Other";
         //public static string NAME_CUSTOM_MEASUREMENT_TYPE = "Other";
         public static string FORMATTED_NAME_SEPARATOR = "/";
+        public static int CSV_HEADER_LINES = 1;
 
     }
 }

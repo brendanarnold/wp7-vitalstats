@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace Pocketailor.Model
 {
-    public static class ModelHelpers
+    public static class Helpers
     {
         public static List<string> UnpickleStrings(string str)
         {
