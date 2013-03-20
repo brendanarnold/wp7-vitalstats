@@ -186,6 +186,7 @@
     <Content Include="Images\convert.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\dress.jpg" />
     <Content Include="Images\measure.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

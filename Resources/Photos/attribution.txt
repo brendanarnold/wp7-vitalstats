@@ -1,1 +1,2 @@
-shirt1-orig http://www.flickr.com/photos/sporkist/4556364523/
+shirts1 http://www.flickr.com/photos/sporkist/4556364523/
+dress1  http://www.flickr.com/photos/koeltje/
