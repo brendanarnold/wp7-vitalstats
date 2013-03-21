@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Globalization;
 using Pocketailor.Model;
+using Microsoft.Phone.Shell;
 
 namespace Pocketailor.View
 {
@@ -42,8 +43,9 @@ namespace Pocketailor.View
             // Remove popups
             if (e.IsNavigationInitiator)
             {
-                VisualStateManager.GoToState(this, "VSDefault", false);
-                this.ApplicationBar.IsVisible = true; // For some reason the CurrentStatChanged event is not fired
+                //VisualStateManager.GoToState(this, "VSDefault", false);
+                
+                //this.ApplicationBar.IsVisible = true; // For some reason the CurrentStatChanged event is not fired
             }
 
 
@@ -94,7 +96,12 @@ namespace Pocketailor.View
             };
             VisualStateManager.GoToState(this, "VSSelectStatType", false);
         }
+        
 
+        private void changeRegionsAppBarBtn_Click(Object sender, EventArgs e) 
+        {
+            throw new NotImplementedException();
+        }
         // User has selected a stat template from the popup, can go to new stat page
         private void selectStatTemplateStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -175,6 +182,21 @@ namespace Pocketailor.View
         void newStatWizardStateGroup_CurrentStateChanged(object sender, VisualStateChangedEventArgs e)
         {
             //this.ApplicationBar.IsVisible = (e.NewState == this.VSDefault);
+        }
+
+        private void Pivot_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            switch ((sender as Pivot).SelectedIndex)
+            {
+                case 0:
+                    this.ApplicationBar = this.Resources["conversionsAppBar"] as ApplicationBar;
+                    break;
+                case 1:
+                    this.ApplicationBar = this.Resources["measurementsAppBar"] as ApplicationBar;
+                    break;
+                default:
+                    break;
+            }
         }
 
 
