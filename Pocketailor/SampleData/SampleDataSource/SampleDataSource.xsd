@@ -36,6 +36,7 @@
     <xs:attribute name="Id" type="xs:double" />
     <xs:attribute blend:Format="Name" name="Name" type="xs:string" />
     <xs:attribute name="IsProtected" type="xs:boolean" />
+    <xs:attribute blend:FormatParameters="1,8" name="Gender" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Stats">
     <xs:sequence>

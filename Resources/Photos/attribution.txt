@@ -1,2 +1,4 @@
 shirts1 http://www.flickr.com/photos/sporkist/4556364523/
 dress1  http://www.flickr.com/photos/koeltje/
+wetsuit1 http://www.flickr.com/people/38981217@N06/
+suits1 http://www.flickr.com/photos/broogland/6727465437/sizes/z/in/photostream/

@@ -142,14 +142,10 @@
     <Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}">
 
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="addProfilePopUpStateGroup">
-                <VisualState x:Name="addProfilePopUpClosed"/>
-                <VisualState x:Name="addProfilePopUpOpen"/>
-            </VisualStateGroup>
             <VisualStateGroup x:Name="lockedStateGroup">
-                <VisualState x:Name="Locked"/>
-                <VisualState x:Name="Unlocked"/>
-            </VisualStateGroup>
+        		<VisualState x:Name="Locked"/>
+        		<VisualState x:Name="Unlocked"/>
+        	</VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
 

@@ -10,6 +10,8 @@
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
 	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
 
+	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+	xmlns:iv="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="Pocketailor.View.StatsPage"
 	Orientation="Portrait"
@@ -22,6 +24,7 @@
 		<Pocketailor_View:StringToLower x:Key="StringToLower"/>
 		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
 		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
+		<Pocketailor_View:GenderToVisibility x:Key="GenderToVisibility"/>
 		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="BorderThickness" Value="0"/>
@@ -118,91 +121,64 @@
 	<phone:PhoneApplicationPage.Foreground>
 		<StaticResource ResourceKey="PhoneForegroundBrush"/>
 	</phone:PhoneApplicationPage.Foreground>
-
-	<!--LayoutRoot is the root grid where all page content is placed-->
+	
 	<Grid x:Name="LayoutRoot" Background="Transparent" Margin="0">
-		
-		<VisualStateManager.VisualStateGroups>
-			<VisualStateGroup x:Name="newStatWizardStateGroup">
-				<VisualStateGroup.Transitions>
-					<VisualTransition GeneratedDuration="0"/>
-				</VisualStateGroup.Transitions>
-				<VisualState x:Name="VSSelectStatType">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectStatTypePopUpGrid">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Visible</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="VSSelectMeasurementType">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectMeasurementTypePopUpGrid">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Visible</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="VSDefault">
-					<Storyboard>
-						<DoubleAnimation Duration="0" To="1.5" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="statsListBox" d:IsOptimized="True"/>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
-		</VisualStateManager.VisualStateGroups>
-		
 
-		<controls:Pivot Margin="0" >
+		
+		
+		<controls:Pivot Margin="0">
 			
 			<controls:Pivot.Title>
                 
 				<StackPanel Orientation="Vertical">
 					<Grid>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="5*"></ColumnDefinition>
-							<ColumnDefinition Width="5*"></ColumnDefinition>
+							<ColumnDefinition Width="5*"/>
+							<ColumnDefinition Width="5*"/>
 						</Grid.ColumnDefinitions>
 						<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0">
-							<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
-							<TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
+							<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"/>
+							<TextBlock Foreground="{StaticResource PivotTitleColor}">
+								<Run Text="POCKETAILOR"/>
+							</TextBlock>
 						</StackPanel>
 						<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 					</Grid>
 				</StackPanel>
           
-            </controls:Pivot.Title>
+			</controls:Pivot.Title>
 		
 		
 		
-		    <!--Pivot item one-->
-            <controls:PivotItem x:Name="conversionsPivotItem" Margin="10,28,14,0">
+			<!--Pivot item one-->
+			<controls:PivotItem x:Name="conversionsPivotItem" Margin="10,28,14,0">
+
+
+				<controls:PivotItem.Header>
+					<Grid>
+						<Image Source="/Images/convert.png" Margin="0,20,0,0" />
+						<!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
+	
+					</Grid>
+				</controls:PivotItem.Header>
+
 				
-                <controls:PivotItem.Header>
-                    <Grid>
-                        <Image Source="/Images/convert.png" Margin="0,20,0,0" />
-                        <!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
-                    </Grid>
-                </controls:PivotItem.Header>
 
 				<ScrollViewer>
 					<StackPanel Orientation="Vertical" Margin="12,0,10,0">
+						
+						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">
+							<Run Text="CLOTHING"/>
+						</TextBlock>
+
 						<Grid>
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="6*"></ColumnDefinition>
-								<ColumnDefinition Width="3*"></ColumnDefinition>
+								<ColumnDefinition Width="6*"/>
+								<ColumnDefinition Width="3*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0">
-								<Canvas.Background>
-									<ImageBrush Stretch="Fill" ImageSource="/Images/dress.jpg"/>
-								</Canvas.Background>
+							<Canvas HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0" Background="{StaticResource TileBGColor}">
 								<Border Width="279" Background="#97000000">
-									<TextBlock TextWrapping="Wrap" Text="Dress Size" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
+									<TextBlock TextWrapping="Wrap" Text="Trousers" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
 								</Border>
 							</Canvas>
 							<Canvas HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1">
@@ -210,39 +186,117 @@
 									<ImageBrush Stretch="Fill" ImageSource="shirts.jpg"/>
 								</Canvas.Background>
 								<Border Width="145" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Shirt Size" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
+									<TextBlock TextWrapping="Wrap" Text="Shirts" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
 								</Border>
 							</Canvas>
 						</Grid>
 						<Grid>
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="3*"></ColumnDefinition>
-								<ColumnDefinition Width="6*"></ColumnDefinition>
+								<ColumnDefinition Width="3*"/>
+								<ColumnDefinition Width="6*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas Background="AliceBlue" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0">
+							<Canvas HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0">
+								<Canvas.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/wetsuit.jpg"/>
+								</Canvas.Background>
+								<Border Width="135" Background="#99000000" Canvas.Top="73">
+									<TextBlock TextWrapping="Wrap" Text="Hats" Height="27" Width="83" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
 							</Canvas>
-							<Canvas Background="AliceBlue" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1">
+							<Canvas HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1">
+								<Canvas.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/suits.jpg"/>
+								</Canvas.Background>
+								<Border Width="289" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Suits" Height="27" Width="83" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
+							</Canvas>
+						</Grid>
+						<Grid  Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
+							<Canvas x:Name="canvas" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0">
+								<Canvas.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/dress.jpg"/>
+								</Canvas.Background>
+								<Border Width="434" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Dress Sizes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
+							</Canvas>
+						</Grid>
+						<Grid Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="5*"/>
+								<ColumnDefinition Width="5*"/>
+							</Grid.ColumnDefinitions>
+							<Canvas Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10">
+								<Border Width="207" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Bra Sizes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
+							</Canvas>
+							<Canvas Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10">
+								<Border Width="217" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Hosiery" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
 							</Canvas>
 						</Grid>
 						<Grid>
-							<Canvas Background="AliceBlue" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="5*"/>
+							</Grid.ColumnDefinitions>
+							<Canvas Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10">
+								<Border Background="#99000000" Width="434">
+									<TextBlock TextWrapping="Wrap" Text="Shoes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
+							</Canvas>	
+						</Grid>
+
+						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">
+							<Run Text="SPORTS"/>
+						</TextBlock>
+
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="5*"/>
+								<ColumnDefinition Width="5*"/>
+							</Grid.ColumnDefinitions>
+							<Canvas Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10">
+								<Border Width="207" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Ski Boots" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
+							</Canvas>
+							<Canvas Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10">
+								<Border Width="217" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Tennis Grip" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
 							</Canvas>
 						</Grid>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="5*"/>
+							</Grid.ColumnDefinitions>
+							<Canvas Grid.Column="0" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10">
+								<Border Width="434" Background="#99000000">
+									<TextBlock TextWrapping="Wrap" Text="Wetsuits" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+								</Border>
+							</Canvas>
+						</Grid>
+
+
 					</StackPanel>			
 				</ScrollViewer>
 
 			</controls:PivotItem>
 
-
 			<controls:PivotItem x:Name="measurementsPivotItem">
 				
-                <controls:PivotItem.Header>
-                    <Grid>
-                        <Image Source="/Images/measure.png" Margin="0,30,0,0" />
-                        <!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
-                    </Grid>
-                </controls:PivotItem.Header>
-
+				
+				<controls:PivotItem.Header>
+					<Grid>
+						<Image Source="/Images/measure.png" Margin="0,30,0,0" />
+						<!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
+	
+					</Grid>
+				</controls:PivotItem.Header>
+				
 				<StackPanel Grid.Row="0" Margin="24,17,24,0">
 				
 					
@@ -278,11 +332,13 @@
 					</Grid>
 
 				</StackPanel>
+				
 			</controls:PivotItem>
 
+			
 		</controls:Pivot>
 
-			<!--
+		<!--
 			<Grid x:Name="selectMeasurementTypePopUpGrid" Background="{StaticResource DialogBGColor}" Margin="2,0,-2,0" Visibility="Collapsed">
 				<StackPanel>
 					<TextBlock x:Name="TitleTextBlock" TextWrapping="Wrap" Text="select measurement type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
@@ -327,6 +383,7 @@
 				</StackPanel>
 			</Grid>
 		    -->
-		
+	
 	</Grid>
+	
 </phone:PhoneApplicationPage>

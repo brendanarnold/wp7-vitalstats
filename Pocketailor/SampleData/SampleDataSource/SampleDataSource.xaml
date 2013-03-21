@@ -10,7 +10,7 @@
     <SampleData:ProfilesItem Id="84" Name="Adams, Terry" IsProtected="True" Gender="Unspecified" />
   </SampleData:SampleDataSource.Profiles>
   <SampleData:SampleDataSource.SelectedProfile>
-    <SampleData:SelectedProfile Id="44" Name="Andrea" IsProtected="True">
+    <SampleData:SelectedProfile Id="44" Name="Andrea" IsProtected="True" Gender="Male">
       <SampleData:SelectedProfile.Stats>
         <SampleData:StatsItem Id="67" Name="Height" FormattedValue="6 ft. 0 in.">
           <SampleData:StatsItem.MeasurementType>

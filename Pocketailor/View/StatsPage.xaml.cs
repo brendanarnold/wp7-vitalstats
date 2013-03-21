@@ -24,7 +24,7 @@ namespace Pocketailor.View
         {
             InitializeComponent();
 
-            this.newStatWizardStateGroup.CurrentStateChanged += newStatWizardStateGroup_CurrentStateChanged;
+            //this.newStatWizardStateGroup.CurrentStateChanged += newStatWizardStateGroup_CurrentStateChanged;
         }
 
         
@@ -159,22 +159,22 @@ namespace Pocketailor.View
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
-            if (this.newStatWizardStateGroup.CurrentState == this.VSSelectMeasurementType)
-            {
-                VisualStateManager.GoToState(this, "VSSelectStatType", false);
-                e.Cancel = true;
-            }
-            else if (this.newStatWizardStateGroup.CurrentState == this.VSSelectStatType)
-            {
-                VisualStateManager.GoToState(this, "VSDefault", false);
-                e.Cancel = true;
-            }
+            //if (this.newStatWizardStateGroup.CurrentState == this.VSSelectMeasurementType)
+            //{
+            //    VisualStateManager.GoToState(this, "VSSelectStatType", false);
+            //    e.Cancel = true;
+            //}
+            //else if (this.newStatWizardStateGroup.CurrentState == this.VSSelectStatType)
+            //{
+            //    VisualStateManager.GoToState(this, "VSDefault", false);
+            //    e.Cancel = true;
+            //}
         }
 
         // Update the menubar buttons when the new stat popup menus are shown/hidden
         void newStatWizardStateGroup_CurrentStateChanged(object sender, VisualStateChangedEventArgs e)
         {
-            this.ApplicationBar.IsVisible = (e.NewState == this.VSDefault);
+            //this.ApplicationBar.IsVisible = (e.NewState == this.VSDefault);
         }
 
 

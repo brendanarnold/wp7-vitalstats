@@ -192,6 +192,26 @@ namespace Pocketailor.View
         }
     }
 
+    // Current possible values:
+    //    HideIfMale
+    public class GenderToVisibility : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            Model.Gender? g = value as Model.Gender?;
+            string p = parameter as string;
+            if (g == null) return null; // Is this the right thing to do?
+            if ((p == "HideIfMale") && (g == Model.Gender.Male)) return Visibility.Collapsed;
+            return Visibility.Visible;
+        }
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
+
     // Converter to add extra item to databound listpicker on EditStats page
     //public class AddCustomStatTemplateOption : System.Windows.Data.IValueConverter
     //{
