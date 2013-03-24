@@ -30,6 +30,8 @@ namespace Pocketailor.ViewModel
             this.RecreateDataContext();
         }
 
+        
+
         /// <summary>
         /// Checks for uncommitted changes in the ORM
         /// </summary>
@@ -61,7 +63,7 @@ namespace Pocketailor.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(string propertyName)
+        internal void NotifyPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {

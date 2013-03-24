@@ -15,6 +15,7 @@
       <xs:element name="SuggestedStatTemplate" type="tns:SuggestedStatTemplate" />
       <xs:element name="SelectedStat" type="tns:SelectedStat" />
       <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
+      <xs:element name="DressTypeConversionsByRegion" type="tns:DressTypeConversionsByRegion" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
   </xs:complexType>
@@ -190,5 +191,25 @@
     <xs:attribute name="Id" type="xs:double" />
     <xs:attribute name="IsProtected" type="xs:boolean" />
     <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="DressTypeConversionsByRegion">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="DressTypeConversionsByRegionItem" type="tns:DressTypeConversionsByRegionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DressTypeConversionsByRegionItem">
+    <xs:sequence>
+      <xs:element name="Conversions" type="tns:Conversions" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Conversions">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="ConversionsItem" type="tns:ConversionsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConversionsItem">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="FormattedValue" type="xs:string" />
   </xs:complexType>
 </xs:schema>

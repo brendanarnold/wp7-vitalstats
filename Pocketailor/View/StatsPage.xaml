@@ -25,6 +25,7 @@
 		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
 		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
 		<Pocketailor_View:GenderToVisibility x:Key="GenderToVisibility"/>
+		<Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
 		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="BorderThickness" Value="0"/>
@@ -100,14 +101,18 @@
 
 		<shell:ApplicationBar x:Key="measurementsAppBar" IsVisible="True" IsMenuEnabled="True">
 			<shell:ApplicationBar.MenuItems>
-				<shell:ApplicationBarMenuItem x:Name="editProfileAppBarMenuItem" Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
+				<shell:ApplicationBarMenuItem Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
 			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton x:Name="addStatAppBarBtn" IconUri="/Assets/AppBar/appbar.add.rest.png" Text="add stat" Click="addStatAppBarBtn_Click"/>
         </shell:ApplicationBar>
 		<shell:ApplicationBar x:Key="conversionsAppBar" IsVisible="True" IsMenuEnabled="True">
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
+			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton x:Name="changeRegionsAppBarBtn" IconUri="/Images/appbar.globe.png" Text="set regions" Click="changeRegionsAppBarBtn_Click"/>
 		</shell:ApplicationBar>
 	
+		
 
 	</phone:PhoneApplicationPage.Resources>
 
@@ -188,7 +193,7 @@
 							</Canvas>
 							<Canvas HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1">
 								<Canvas.Background>
-									<ImageBrush Stretch="Fill" ImageSource="shirts.jpg"/>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/shirts.jpg"/>
 								</Canvas.Background>
 								<Border Width="145" Background="#99000000">
 									<TextBlock TextWrapping="Wrap" Text="Shirts" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
@@ -218,7 +223,7 @@
 							</Canvas>
 						</Grid>
 						<Grid  Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
-							<Canvas x:Name="canvas" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0">
+							<Canvas x:Name="dressConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0" Tap="dressConversionBtn_Tap" Opacity="{Binding HasDressSizeMeasurements, Converter={StaticResource BoolToOpacity}}">
 								<Canvas.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/dress.jpg"/>
 								</Canvas.Background>
@@ -310,7 +315,7 @@
 						<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 					</StackPanel>
 
-					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5">
+					<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5" SizeChanged="statsListBox_SizeChanged">
 						<ListBox.RenderTransform>
 							<CompositeTransform/>
 						</ListBox.RenderTransform>

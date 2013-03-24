@@ -53,9 +53,10 @@ namespace Pocketailor.Model
                 string[] els = line.Split(new char[] { '\t' });
                 RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
                 RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
-                double chest = double.Parse(els[2]);
-                double waist = double.Parse(els[3]);
-                double hips = double.Parse(els[4]);
+                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
+                double chest = 100 * double.Parse(els[2]);
+                double waist = 100 * double.Parse(els[3]);
+                double hips = 100 * double.Parse(els[4]);
                 string sizeLetter = els[5];
                 string sizeNumber = els[6].TrimEnd();
                 db.DressSizes.InsertOnSubmit(new DressSize() {

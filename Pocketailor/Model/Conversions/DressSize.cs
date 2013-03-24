@@ -38,5 +38,14 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public RetailId Retailer { get; set; }
 
+        public string FormattedValue {
+            get
+            {
+                return String.Format("{0} ({1})", this.SizeNumber, this.SizeLetter);
+            }
+        }
+
+
+
     }
 }

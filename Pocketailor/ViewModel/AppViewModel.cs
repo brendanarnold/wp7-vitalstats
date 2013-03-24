@@ -20,8 +20,144 @@ namespace Pocketailor.ViewModel
     // other parts of this class
     public partial class AppViewModel : INotifyPropertyChanged
     {
-
+ 
         public IsolatedStorageSettings stngs = IsolatedStorageSettings.ApplicationSettings;
+
+
+        #region Region methods/properties
+
+        public void SetRegions(List<RegionTag> regionTags)
+        {
+            if (this.stngs.Contains("SelectedRegions"))
+            {
+                this.stngs["SelectedRegions"] = regionTags;
+            }
+            else
+            {
+                this.stngs.Add("SelectedRegions", regionTags);
+            }
+        }
+
+        public List<RegionTag> GetRegions()
+        {
+            // TODO: uncomment this!
+            //if (this.stngs.Contains("SelectedRegions"))
+            //    return this.stngs["SelectedRegions"] as List<RegionTag>;
+            //return null;
+            return new List<RegionTag>() { RegionTag.UK, RegionTag.Europe };
+        }
+
+        #endregion
+
+
+        #region Conversion methods/properties
+
+
+        public bool HasDressSizeMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_DRESS_SIZE);
+            }
+        }
+
+        public bool HasSuitMeasurements
+        {
+            get
+            {
+                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                {
+                    return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_MENS);
+                }
+                else
+                {
+                    return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_WOMENS);
+                }
+            }
+        }
+
+        public ObservableCollection<ConversionRegion> ConversionRegions;
+
+        public void LoadConversionRegions(Model.ConversionId conversionId)
+        {
+            switch (conversionId)
+            {
+                case ConversionId.DressSize:
+                    // First check we have the necessary measurements on the profile as well as some regions selected
+                    Stat chest = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Chest);
+                    Stat waist = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Waist);
+                    Stat hips = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Hips);
+                    if (chest == null || waist == null || hips == null 
+                        || this.GetRegions() == null)
+                    {
+                        this.ConversionRegions = new ObservableCollection<ConversionRegion>();
+                        return;
+                    }
+                    foreach (RegionTag region in this.GetRegions())
+                    {
+                        ConversionRegion cr = new ConversionRegion();
+                        cr.Name = region.ToString(); // TODO: Wll need to include some kind of lookup for the actual string
+                        cr.Conversions = new ObservableCollection<NameValuePair>();
+                        var regionalDressSizes = appDB.DressSizes.Where(ds => ds.Region == region);
+                        foreach (RetailId retailId in regionalDressSizes.Select(ds => ds.Retailer).Distinct())
+                        {
+                            NameValuePair nvp = new NameValuePair();
+                            nvp.Name = retailId.ToString(); // TODO: Will need to include some kind of lookup for actual string
+                            var conversionData = regionalDressSizes.Where(ds => ds.Retailer == retailId);
+                            // Do a least squares 'fit' to find best size
+                            double lowestChisq = double.MaxValue;
+                            Model.Conversions.DressSize bestFitDressSize = null;
+                            foreach (Model.Conversions.DressSize ds in conversionData)
+                            {
+                                double chisq = Math.Pow(ds.Chest - double.Parse(chest.Value), 2)
+                                    + Math.Pow(ds.Waist - double.Parse(waist.Value), 2)
+                                    + Math.Pow(ds.Hips - double.Parse(hips.Value), 2);
+                                if (chisq < lowestChisq)
+                                {
+                                    lowestChisq = chisq;
+                                    bestFitDressSize = ds;
+                                }
+                            }
+                            nvp.FormattedValue = bestFitDressSize.FormattedValue;
+                            cr.Conversions.Add(nvp);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public bool HasRequiredMeasurements(List<MeasurementId> requiredIds)
+        {
+            IEnumerable<MeasurementId>  statIds = from Stat s in this.SelectedProfile.Stats select s.MeasurementId;
+            foreach (MeasurementId id in requiredIds)
+                if (!statIds.Contains(id)) return false;
+            return true;
+        }
+
+
+        internal List<MeasurementId> GetMissingMeasurements(List<MeasurementId> requiredIds)
+        {
+            return requiredIds.Except(this.SelectedProfile.Stats.Select(s => s.MeasurementId)).ToList();
+        }
+
+        public class ConversionRegion
+        {
+            public string Name { get; set; }
+            public ObservableCollection<NameValuePair> Conversions { get; set; }
+        }
+
+        public class NameValuePair
+        {
+            public string Name { get; set; }
+            public string FormattedValue { get; set; }
+        }
+
+        #endregion
+
+
+
 
         #region PIN locking methods
 
@@ -108,6 +244,7 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
+
 
         #region QuickProfile methods
 
@@ -334,6 +471,22 @@ namespace Pocketailor.ViewModel
 
 
 
+
+        // Notify the View of possible updates to the conversion availabilities
+        internal void RefreshRequiredMeasurement()
+        {
+            this.NotifyPropertyChanged("HasDressSizeMeasurements");
+            this.NotifyPropertyChanged("HasSuitMeasurements");
+            this.NotifyPropertyChanged("HasTrouserMeasurements");
+            this.NotifyPropertyChanged("HasShirtMeasurements");
+            this.NotifyPropertyChanged("HasHatMeasurements");
+            this.NotifyPropertyChanged("HasBraMeasurements");
+            this.NotifyPropertyChanged("HasHosieryMeasurements");
+            this.NotifyPropertyChanged("HasShoeMeasurements");
+            this.NotifyPropertyChanged("HasSkiBootMeasurements");
+            this.NotifyPropertyChanged("HasWetsuitMeasurements");
+            this.NotifyPropertyChanged("HasTennisGripMeasurements");
+        }
     }
 
     public partial class ViewModelLocator

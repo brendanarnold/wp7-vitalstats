@@ -106,10 +106,7 @@ namespace Pocketailor.View
         private void selectStatTemplateStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             StatTemplate s = (sender as StackPanel).DataContext as StatTemplate;
-            App.VM.SelectedStat.Name = s.Name;
-            App.VM.SelectedStat.MeasurementType = s.MeasurementType;
-            NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}",
-                EditStatPageActions.New), UriKind.Relative));
+            this.EditStatFromTemplate(s.Id);
         }
 
         // User has declined a stat template and instead selected a custom stat, need to select the measurement type
@@ -198,6 +195,58 @@ namespace Pocketailor.View
                     break;
             }
         }
+
+        private void dressConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            List<MeasurementId> requiredMeasurements = new List<MeasurementId>() { MeasurementId.Chest, MeasurementId.Waist, MeasurementId.Hips };
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(requiredMeasurements);
+            if (missingMeasurements.Count == 0)
+            {
+                NavigationService.Navigate(new Uri("/View/ConversionPages/DressConversionPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "dress size");
+            }
+        }
+
+        private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
+        {
+            string s = String.Empty;
+            foreach (MeasurementId id in missingIds)
+            {
+                // TODO: Include a proper lookup for this
+                s += Environment.NewLine + "  " + id.ToString();
+            }
+            MessageBoxResult result = MessageBox.Show("To calculate " + conversionName 
+                + " the following measurements need to be entered," + s + Environment.NewLine 
+                + "Do you want to begin by adding " + missingIds[0].ToString() + "?",
+                "Add " + conversionName + "?", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                this.EditStatFromTemplate(missingIds[0]);
+            }
+        }
+
+        private void EditStatFromTemplate(MeasurementId id)
+        {
+            StatTemplate st = App.VM.StatTemplates.Where(x => x.Id == id).First();
+            App.VM.SelectedStat = new Stat()
+            {
+                Name = st.Name,
+                MeasurementType = st.MeasurementType,
+                MeasurementId = st.Id,
+            };
+            NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}",
+                EditStatPageActions.New), UriKind.Relative));
+        }
+
+        private void statsListBox_SizeChanged(object sender, System.Windows.SizeChangedEventArgs e)
+        {
+        	// Bit if a hack to get the conversion buttons to update when a stat is added/removed
+            App.VM.RefreshRequiredMeasurement();
+        }
+
 
 
         #endregion

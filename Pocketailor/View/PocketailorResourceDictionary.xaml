@@ -8,7 +8,7 @@
 	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
 	<SolidColorBrush x:Key="TileBGColor">#313131</SolidColorBrush>
 	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
-	<SolidColorBrush x:Key="PageTxtColor">#284E36</SolidColorBrush>
+	<SolidColorBrush x:Key="PageTxtColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="SubTitleColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogBGColor">#313131</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>

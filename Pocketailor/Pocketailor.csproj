@@ -98,6 +98,9 @@
     <Compile Include="View\Controls\TitledTextBox.xaml.cs">
       <DependentUpon>TitledTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ConversionPages\DressConversionPage.xaml.cs">
+      <DependentUpon>DressConversionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Convertors.cs" />
     <Compile Include="View\EditProfilePage.xaml.cs">
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Controls\TitledTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConversionPages\DressConversionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +194,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\convert.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\dress-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\dress.jpg" />
@@ -285,7 +295,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\shirts.jpg" />
+    <Resource Include="Images\shirts.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

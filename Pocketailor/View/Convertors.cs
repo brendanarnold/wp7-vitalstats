@@ -211,6 +211,19 @@ namespace Pocketailor.View
 
     }
 
+    // At moment sets opacity to 50% if false, full if true
+    public class BoolToOpacity : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return b ? 1.0 : 0.5;
+        }
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     // Converter to add extra item to databound listpicker on EditStats page
     //public class AddCustomStatTemplateOption : System.Windows.Data.IValueConverter
