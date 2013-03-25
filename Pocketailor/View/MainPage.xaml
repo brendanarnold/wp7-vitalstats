@@ -164,8 +164,7 @@
             <controls:PivotItem x:Name="peoplePivotItem">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <Image Source="/Images/people.png" Margin="0,20,0,0" />
-                        <!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>-->
+                        <TextBlock FontFamily="{StaticResource ScriptFont}" Text="people"></TextBlock>
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -248,8 +247,7 @@
             <controls:PivotItem x:Name="groupsPivotItem">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <Image Source="/Images/groups.png" Margin="0,33,0,0" RenderTransformOrigin="0.5,0.5"/>
-                        <!--						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="groups"></TextBlock>-->
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="groups"></TextBlock>
                     </Grid>
                 </controls:PivotItem.Header>
             </controls:PivotItem>
@@ -258,8 +256,7 @@
 
                 <controls:PivotItem.Header>
                     <Grid>
-                        <Image Source="/Images/guides.png" Margin="0,20,0,0" RenderTransformOrigin="0.5,0.5"/>
-                        <!--<TextBlock FontFamily="{StaticResource ScriptFont}" Text="guides"></TextBlock>-->
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="guides"></TextBlock>
                     </Grid>
                 </controls:PivotItem.Header>
 

@@ -25,6 +25,8 @@ namespace Pocketailor.Model
             new StatTemplate() { Id = MeasurementId.Waist, _measurementTypeId = MeasurementTypeId.Length, Name = "Waist" },
             new StatTemplate() { Id = MeasurementId.Weight, _measurementTypeId = MeasurementTypeId.Weight, Name = "Weight" },
             new StatTemplate() { Id = MeasurementId.Wrist, _measurementTypeId = MeasurementTypeId.Length, Name = "Wrist" },
+            new StatTemplate() { Id = MeasurementId.Head, _measurementTypeId = MeasurementTypeId.Length, Name = "Head" },
+            new StatTemplate() { Id = MeasurementId.TennisGrip, _measurementTypeId = MeasurementTypeId.Length, Name = "Tennis Grip" },
         };
 
         static public List<MeasurementType> MeasurementTypes = new List<MeasurementType>()

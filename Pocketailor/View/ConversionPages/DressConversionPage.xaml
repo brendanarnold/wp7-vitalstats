@@ -87,7 +87,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-    	<Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Images/dress-bg.jpg" Opacity="0.5" Margin="0,0,0,0"/>
+    	<Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Images/dress-bg.jpg" Opacity="0.6" Margin="0,0,0,0"/>
     	<StackPanel Margin="0" Orientation="Vertical">
     		<StackPanel x:Name="headerStackPanel" Margin="0" Orientation="Vertical" Height="319" VerticalAlignment="Top">
     		
@@ -104,7 +104,7 @@
     				</StackPanel>
     				<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
     			</Grid>
-    			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="dress size" VerticalAlignment="Top" FontSize="64" Margin="24,5,0,0" FontFamily="Segoe WP Light"/>
+    			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="dress size" VerticalAlignment="Top" FontSize="74.667" Margin="24,5,0,0" FontFamily="{StaticResource ScriptFont}"/>
 
     		</StackPanel>
     		<StackPanel >

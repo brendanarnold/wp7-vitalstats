@@ -47,5 +47,52 @@ namespace Pocketailor
             MeasurementId.Neck, 
             MeasurementId.Wrist, 
             MeasurementId.Hips };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_TROUSER = new List<MeasurementId>()
+        {
+            MeasurementId.Waist,
+            MeasurementId.InsideLeg,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SHIRT = new List<MeasurementId>()
+        {
+            MeasurementId.Neck,
+            MeasurementId.Sleeve,
+            MeasurementId.Chest,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_HAT = new List<MeasurementId>()
+        {
+            MeasurementId.Head,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_BRA = new List<MeasurementId>()
+        {
+            MeasurementId.Overbust,
+            MeasurementId.Chest,
+            MeasurementId.Underbust,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_HOSIERY = new List<MeasurementId>()
+        {
+            // TODO: refine necessary measurements for hosiery
+            MeasurementId.Height,
+            MeasurementId.Hips,
+            MeasurementId.InsideLeg,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SHOES = new List<MeasurementId>() 
+        {
+            MeasurementId.FootLength,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SKIBOOTS = new List<MeasurementId>()
+        {
+            MeasurementId.FootLength,
+            MeasurementId.FootWidth,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_TENNISGRIP = new List<MeasurementId>()
+        {
+            MeasurementId.TennisGrip,
+        };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_WETSUIT = new List<MeasurementId>()
+        {
+            // TODO: refine necessary measurements for wetsuit
+            MeasurementId.Height,
+        };
+
     }
 }

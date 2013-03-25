@@ -89,15 +89,29 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
+        #region HasMeasurement properties
 
-        #region Conversion methods/properties
-
-
-        public bool HasDressSizeMeasurements
+        public bool HasTrouserMeasurements
         {
             get
             {
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_DRESS_SIZE);
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TROUSER);
+            }
+        }
+
+        public bool HasShirtMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHIRT);
+            }
+        }
+
+        public bool HasHatMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HAT);
             }
         }
 
@@ -116,6 +130,67 @@ namespace Pocketailor.ViewModel
             }
         }
 
+        public bool HasDressSizeMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_DRESS_SIZE);
+            }
+        }
+
+        public bool HasBraMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_BRA);
+            }
+        }
+
+        public bool HasHosieryMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HOSIERY);
+            }
+        }
+
+        public bool HasShoeMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHOES);
+            }
+        }
+
+        public bool HasSkiBootMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SKIBOOTS);
+            }
+        }
+
+        public bool HasTennisGripMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TENNISGRIP);
+            }
+        }
+
+        public bool HasWetsuitMeasurements
+        {
+            get
+            {
+                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_WETSUIT);
+            }
+        }
+
+        #endregion
+
+        #region Conversion methods/properties
+
+        
         private ObservableCollection<ConversionRegion> _conversionByRegion;
         public ObservableCollection<ConversionRegion> ConversionsByRegion
         {

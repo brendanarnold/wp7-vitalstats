@@ -216,12 +216,12 @@ namespace Pocketailor.View
             foreach (MeasurementId id in missingIds)
             {
                 // TODO: Include a proper lookup for this
-                s += Environment.NewLine + "  " + id.ToString();
+                s += Environment.NewLine + "  \u2022 " + id.ToString();
             }
             string measurementName = missingIds[0].ToString();
-            string msg = String.Format("To calculate {0} the following measurements need to be entered,\n{1}\n\nDo you want to begin by adding {2}?",
-                conversionName, s, measurementName);
-            string title = String.Format("Add {0} measurment?", measurementName.ToLower());
+            string msg = String.Format("To calculate {0} the following measurements need to be entered,{1}",
+                conversionName, s);
+            string title = String.Format("Add {0} measurement?", measurementName.ToLower());
             MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
@@ -246,6 +246,56 @@ namespace Pocketailor.View
         {
         	// Bit if a hack to get the conversion buttons to update when a stat is added/removed
             App.VM.RefreshRequiredMeasurement();
+        }
+
+        private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void shirtConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void hatConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void suitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void braConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void hosieryConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void shoeConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void skiBootConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void tennisGripBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void wetsuitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
         }
 
 

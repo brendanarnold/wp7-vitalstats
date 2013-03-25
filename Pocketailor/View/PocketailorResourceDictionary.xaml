@@ -12,10 +12,9 @@
 	<SolidColorBrush x:Key="SubTitleColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogBGColor">#313131</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
-
-
-
 	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
+
+	<FontFamily x:Key="ScriptFont">/Pocketailor;component/Fonts/Fonts.zip#Lobster</FontFamily>	
 
 
 <!--
@@ -37,8 +36,6 @@
 -->
 
 
-
-	<FontFamily x:Key="ScriptFont">.\Fonts\Lobster.ttf#Lobster</FontFamily>	
 	
 
 </ResourceDictionary>
