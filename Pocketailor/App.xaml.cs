@@ -15,6 +15,7 @@ using Microsoft.Phone.Shell;
 using Pocketailor.View;
 using Pocketailor.ViewModel;
 using Pocketailor.Model;
+using System.IO.IsolatedStorage;
 
 namespace Pocketailor
 {
@@ -76,6 +77,13 @@ namespace Pocketailor
             {
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
+
+                int dataVersion = 0;
+                if (IsolatedStorageSettings.ApplicationSettings.Contains("ConversionDataVersion")) dataVersion = (int)IsolatedStorageSettings.ApplicationSettings["ConversionDataVersion"];
+                if (AppConstants.CONVERSION_DATA_VERSION > dataVersion)
+                {
+                    SetupDatabase.LoadConversions(db);
+                }
 
                 // For debugging
                 //SetupDatabase.EmptyDB(db);

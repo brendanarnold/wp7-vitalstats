@@ -26,7 +26,7 @@ namespace Pocketailor.ViewModel
 
         #region Region methods/properties
 
-        public void SetRegions(List<RegionTag> regionTags)
+        public void SetSelectedRegions(List<RegionTag> regionTags)
         {
             if (this.stngs.Contains("SelectedRegions"))
             {
@@ -36,16 +36,56 @@ namespace Pocketailor.ViewModel
             {
                 this.stngs.Add("SelectedRegions", regionTags);
             }
+            this.stngs.Save();
         }
 
-        public List<RegionTag> GetRegions()
+
+
+
+        public List<RegionTag> GetSelectedRegions()
         {
-            // TODO: uncomment this!
-            //if (this.stngs.Contains("SelectedRegions"))
-            //    return this.stngs["SelectedRegions"] as List<RegionTag>;
-            //return null;
-            return new List<RegionTag>() { RegionTag.UK, RegionTag.Europe };
+            if (this.stngs.Contains("SelectedRegions"))
+                return this.stngs["SelectedRegions"] as List<RegionTag>;
+            return AppConstants.DEFAULT_REGIONS;
+            //return new List<RegionTag>() { RegionTag.UK, RegionTag.Europe };
         }
+
+        private ObservableCollection<RegionContainer> _regions;
+        public ObservableCollection<RegionContainer> Regions
+        {
+            get
+            {
+                if (this._regions == null) this.LoadRegions();
+                return this._regions;
+            }
+            set
+            {
+                if (this._regions != value)
+                {
+                    this._regions = value;
+                    this.NotifyPropertyChanged("Regions");
+                }
+
+            }
+        }
+
+        public void LoadRegions()
+        {
+            this._regions = new ObservableCollection<RegionContainer>();
+            List<RegionTag> selectedRegions = this.GetSelectedRegions();
+            foreach (RegionTag r in typeof(RegionTag).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionTag))).Cast<RegionTag>())
+            {
+                this._regions.Add(new RegionContainer { Name = r.ToString(), Id = r, Selected = selectedRegions.Contains(r) });
+            }
+        }
+
+        public class RegionContainer
+        {
+            public string Name { get; set; }
+            public RegionTag Id { get; set; }
+            public bool Selected { get; set; }
+        }
+
 
         #endregion
 
@@ -76,10 +116,23 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        public ObservableCollection<ConversionRegion> ConversionRegions;
+        private ObservableCollection<ConversionRegion> _conversionByRegion;
+        public ObservableCollection<ConversionRegion> ConversionsByRegion
+        {
+            get { return this._conversionByRegion; }
+            set 
+            {
+                if (this._conversionByRegion != value)
+                {
+                    this._conversionByRegion = value;
+                    this.NotifyPropertyChanged("ConversionRegions");
+                }
+            }
+        }
 
         public void LoadConversionRegions(Model.ConversionId conversionId)
         {
+            this.ConversionsByRegion = new ObservableCollection<ConversionRegion>();
             switch (conversionId)
             {
                 case ConversionId.DressSize:
@@ -88,12 +141,11 @@ namespace Pocketailor.ViewModel
                     Stat waist = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Waist);
                     Stat hips = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Hips);
                     if (chest == null || waist == null || hips == null 
-                        || this.GetRegions() == null)
+                        || this.GetSelectedRegions() == null)
                     {
-                        this.ConversionRegions = new ObservableCollection<ConversionRegion>();
                         return;
                     }
-                    foreach (RegionTag region in this.GetRegions())
+                    foreach (RegionTag region in this.GetSelectedRegions())
                     {
                         ConversionRegion cr = new ConversionRegion();
                         cr.Name = region.ToString(); // TODO: Wll need to include some kind of lookup for the actual string
@@ -109,9 +161,17 @@ namespace Pocketailor.ViewModel
                             Model.Conversions.DressSize bestFitDressSize = null;
                             foreach (Model.Conversions.DressSize ds in conversionData)
                             {
-                                double chisq = Math.Pow(ds.Chest - double.Parse(chest.Value), 2)
-                                    + Math.Pow(ds.Waist - double.Parse(waist.Value), 2)
-                                    + Math.Pow(ds.Hips - double.Parse(hips.Value), 2);
+                                // If at this stage should always be measured values, however some retailers do no provide measurements for
+                                // chest, hips and waist in their tables. Ignore these value in the least square fits.
+                                double measuredChest = double.Parse(chest.Value);
+                                double measuredWaist = double.Parse(waist.Value);
+                                double measuredHips = double.Parse(hips.Value);
+                                double numChest = (ds.Chest.HasValue) ? (double)ds.Chest : measuredChest;
+                                double numWaist = (ds.Waist.HasValue) ? (double)ds.Waist : measuredWaist;
+                                double numHips = (ds.Hips.HasValue) ? (double)ds.Hips : measuredHips;
+                                double chisq = Math.Pow(measuredChest - numChest, 2)
+                                    + Math.Pow(measuredWaist - numWaist, 2)
+                                    + Math.Pow(measuredHips - numHips, 2);
                                 if (chisq < lowestChisq)
                                 {
                                     lowestChisq = chisq;
@@ -121,6 +181,7 @@ namespace Pocketailor.ViewModel
                             nvp.FormattedValue = bestFitDressSize.FormattedValue;
                             cr.Conversions.Add(nvp);
                         }
+                        this.ConversionsByRegion.Add(cr);
                     }
                     break;
                 default:

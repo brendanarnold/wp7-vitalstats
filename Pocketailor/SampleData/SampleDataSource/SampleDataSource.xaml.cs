@@ -135,6 +135,26 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
+		private ConversionsByRegion _ConversionsByRegion = new ConversionsByRegion();
+
+		public ConversionsByRegion ConversionsByRegion
+		{
+			get
+			{
+				return this._ConversionsByRegion;
+			}
+		}
+
+		private Regions _Regions = new Regions();
+
+		public Regions Regions
+		{
+			get
+			{
+				return this._Regions;
+			}
+		}
+
 		private bool _IsLocked = false;
 
 		public bool IsLocked
@@ -151,16 +171,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._IsLocked = value;
 					this.OnPropertyChanged("IsLocked");
 				}
-			}
-		}
-
-		private DressTypeConversionsByRegion _DressTypeConversionsByRegion = new DressTypeConversionsByRegion();
-
-		public DressTypeConversionsByRegion DressTypeConversionsByRegion
-		{
-			get
-			{
-				return this._DressTypeConversionsByRegion;
 			}
 		}
 	}
@@ -1771,7 +1781,11 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class DressTypeConversionsByRegionItem : System.ComponentModel.INotifyPropertyChanged
+	public class ConversionsByRegion : System.Collections.ObjectModel.ObservableCollection<ConversionsByRegionItem>
+	{ 
+	}
+
+	public class ConversionsByRegionItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -1813,7 +1827,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class DressTypeConversionsByRegion : System.Collections.ObjectModel.ObservableCollection<DressTypeConversionsByRegionItem>
+	public class Conversions : System.Collections.ObjectModel.ObservableCollection<ConversionsItem>
 	{ 
 	}
 
@@ -1868,8 +1882,40 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Conversions : System.Collections.ObjectModel.ObservableCollection<ConversionsItem>
+	public class Regions : System.Collections.ObjectModel.ObservableCollection<RegionsItem>
 	{ 
+	}
+
+	public class RegionsItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
 	}
 #endif
 }

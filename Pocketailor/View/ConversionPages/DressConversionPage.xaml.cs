@@ -16,8 +16,9 @@ namespace Pocketailor.View.ConversionPages
         {
             InitializeComponent();
 
-            this.DataContext = App.VM;
             App.VM.LoadConversionRegions(Model.ConversionId.DressSize);
+            this.DataContext = App.VM;
+
 
 
         }

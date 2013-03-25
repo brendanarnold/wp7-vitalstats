@@ -289,9 +289,9 @@
     <SampleData:QuickProfilesItem Gender="Unspecified" Id="78" IsProtected="False" Name="Andrea" />
     <SampleData:QuickProfilesItem Gender="Female" Id="92" IsProtected="True" Name="Mum" />
   </SampleData:SampleDataSource.QuickProfiles>
-  <SampleData:SampleDataSource.DressTypeConversionsByRegion>
-    <SampleData:DressTypeConversionsByRegionItem Name="UK">
-      <SampleData:DressTypeConversionsByRegionItem.Conversions>
+  <SampleData:SampleDataSource.ConversionsByRegion>
+    <SampleData:ConversionsByRegionItem Name="UK">
+      <SampleData:ConversionsByRegionItem.Conversions>
         <SampleData:ConversionsItem Name="Primark" FormattedValue="8 (S)" />
         <SampleData:ConversionsItem Name="Marks &amp; Spencer" FormattedValue="8 (S)" />
         <SampleData:ConversionsItem Name="Debehams" FormattedValue="8 (S)" />
@@ -304,10 +304,10 @@
         <SampleData:ConversionsItem Name="House Of Fraser" FormattedValue="8 (S)" />
         <SampleData:ConversionsItem Name="Next" FormattedValue="8 (S)" />
         <SampleData:ConversionsItem Name="ASOS" FormattedValue="8 (S)" />
-      </SampleData:DressTypeConversionsByRegionItem.Conversions>
-    </SampleData:DressTypeConversionsByRegionItem>
-    <SampleData:DressTypeConversionsByRegionItem Name="EUROPE">
-      <SampleData:DressTypeConversionsByRegionItem.Conversions>
+      </SampleData:ConversionsByRegionItem.Conversions>
+    </SampleData:ConversionsByRegionItem>
+    <SampleData:ConversionsByRegionItem Name="EUROPE">
+      <SampleData:ConversionsByRegionItem.Conversions>
         <SampleData:ConversionsItem Name="Nunc aptent" FormattedValue="Aliquet hac aptent" />
         <SampleData:ConversionsItem Name="Bibendum hac etiam" FormattedValue="Amet blandit" />
         <SampleData:ConversionsItem Name="Dictumst eleifend facilisi" FormattedValue="Curae ante donec etiam" />
@@ -320,10 +320,10 @@
         <SampleData:ConversionsItem Name="Nibh mus nec libero" FormattedValue="Ligula litora egestas" />
         <SampleData:ConversionsItem Name="Non placerat nisi" FormattedValue="Nisl per" />
         <SampleData:ConversionsItem Name="Luctus proin euismod sed" FormattedValue="Nunc feugiat" />
-      </SampleData:DressTypeConversionsByRegionItem.Conversions>
-    </SampleData:DressTypeConversionsByRegionItem>
-    <SampleData:DressTypeConversionsByRegionItem Name="WORLDWIDE">
-      <SampleData:DressTypeConversionsByRegionItem.Conversions>
+      </SampleData:ConversionsByRegionItem.Conversions>
+    </SampleData:ConversionsByRegionItem>
+    <SampleData:ConversionsByRegionItem Name="WORLDWIDE">
+      <SampleData:ConversionsByRegionItem.Conversions>
         <SampleData:ConversionsItem Name="Inceptos quisque" FormattedValue="Praesent arcu" />
         <SampleData:ConversionsItem Name="Fusce lorem morbi" FormattedValue="Mus commodo conubia cubilia" />
         <SampleData:ConversionsItem Name="Nulla vivamus interdum" FormattedValue="Accumsan nec" />
@@ -336,7 +336,19 @@
         <SampleData:ConversionsItem Name="Platea dis pulvinar primis" FormattedValue="Justo laoreet lacus rutrum" />
         <SampleData:ConversionsItem Name="Est quam natoque" FormattedValue="Sapien quis lorem semper" />
         <SampleData:ConversionsItem Name="Urna magna" FormattedValue="Hac cras duis leo" />
-      </SampleData:DressTypeConversionsByRegionItem.Conversions>
-    </SampleData:DressTypeConversionsByRegionItem>
-  </SampleData:SampleDataSource.DressTypeConversionsByRegion>
+      </SampleData:ConversionsByRegionItem.Conversions>
+    </SampleData:ConversionsByRegionItem>
+  </SampleData:SampleDataSource.ConversionsByRegion>
+  <SampleData:SampleDataSource.Regions>
+    <SampleData:RegionsItem Name="UK" />
+    <SampleData:RegionsItem Name="Europe" />
+    <SampleData:RegionsItem Name="USA" />
+    <SampleData:RegionsItem Name="France" />
+    <SampleData:RegionsItem Name="Australia" />
+    <SampleData:RegionsItem Name="Canada" />
+    <SampleData:RegionsItem Name="New Zealand" />
+    <SampleData:RegionsItem Name="Aptent auctor" />
+    <SampleData:RegionsItem Name="Germany" />
+    <SampleData:RegionsItem Name="Italy" />
+  </SampleData:SampleDataSource.Regions>
 </SampleData:SampleDataSource>

@@ -105,6 +105,9 @@
     <Compile Include="View\EditProfilePage.xaml.cs">
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditRegionPage.xaml.cs">
+      <DependentUpon>EditRegionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
     <Page Include="View\EditProfilePage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditRegionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EditStatPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
@@ -209,7 +216,7 @@
     <Content Include="Images\wetsuit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Model\Data\DressSizes.csv">
+    <Content Include="Model\Data\DressSizes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\AppManifest.xml" />
@@ -295,9 +302,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\shirts.jpg">
+    <Content Include="Images\shirts.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

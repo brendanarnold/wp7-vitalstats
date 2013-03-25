@@ -18,13 +18,13 @@ namespace Pocketailor.Model.Conversions
         public int Id { get; set; }
 
         [Column]
-        public double Waist { get; set; }
+        public double? Waist { get; set; }
 
         [Column]
-        public double Chest { get; set; }
+        public double? Chest { get; set; }
 
         [Column]
-        public double Hips { get; set; }
+        public double? Hips { get; set; }
 
         [Column]
         public string SizeLetter { get; set; }

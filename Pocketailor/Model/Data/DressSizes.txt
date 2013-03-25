@@ -1,0 +1,84 @@
+Retailer	Regions	Chest	Waist	Hips	SizeLetter	SizeNumber
+ASOS	UK	73.5	55.5	81	XXS	2
+ASOS	UK	76	58	83.5	XS	4
+ASOS	UK	78.5	60.5	86	XS	6
+ASOS	UK	81	63	88.5	S	8
+ASOS	UK	86	68	93.5	S	10
+ASOS	UK	91	73	98.5	M	12
+ASOS	UK	96	78	103.5	M	14
+ASOS	UK	101	83	108.5	L	16
+ASOS	UK	108.5	90.5	116	L	18
+ASOS	UK	116	98	123.5	XL	20
+ASOS	UK	122	104	129.5	XL	22
+ASOS	UK	128	110	135.5	XXL	24
+ASOS	UK	134	116	141.5	XXL	26
+ASOS	UK	140	122	147.5	XXXL	28
+ASOS	Europe	73.5	55.5	81	XXS	30
+ASOS	Europe	76	58	83.5	XS	32
+ASOS	Europe	78.5	60.5	86	XS	34
+ASOS	Europe	81	63	88.5	S	36
+ASOS	Europe	86	68	93.5	S	38
+ASOS	Europe	91	73	98.5	M	40
+ASOS	Europe	96	78	103.5	M	42
+ASOS	Europe	101	83	108.5	L	44
+ASOS	Europe	108.5	90.5	116	L	46
+ASOS	Europe	116	98	123.5	XL	48
+ASOS	Europe	122	104	129.5	XL	50
+ASOS	Europe	128	110	135.5	XXL	52
+ASOS	Europe	134	116	141.5	XXL	54
+ASOS	Europe	140	122	147.5	XXXL	56
+ASOS	US	73.5	55.5	81	XXXS	0
+ASOS	US	76	58	83.5	XXS	1
+ASOS	US	78.5	60.5	86	XXS	2
+ASOS	US	81	63	88.5	XS	4
+ASOS	US	86	68	93.5	XS	6
+ASOS	US	91	73	98.5	S	8
+ASOS	US	96	78	103.5	S	10
+ASOS	US	101	83	108.5	M	12
+ASOS	US	108.5	90.5	116	M	14
+ASOS	US	116	98	123.5	L	16
+ASOS	US	122	104	129.5	L	18
+ASOS	US	128	110	135.5	XL	20
+ASOS	US	134	116	141.5	XL	22
+ASOS	US	140	122	147.5	XXL	24
+ASOS	Australia	73.5	55.5	81	XXS	2
+ASOS	Australia	76	58	83.5	XS	4
+ASOS	Australia	78.5	60.5	86	XS	6
+ASOS	Australia	81	63	88.5	S	8
+ASOS	Australia	86	68	93.5	S	10
+ASOS	Australia	91	73	98.5	M	12
+ASOS	Australia	96	78	103.5	M	14
+ASOS	Australia	101	83	108.5	L	16
+ASOS	Australia	108.5	90.5	116	L	18
+ASOS	Australia	116	98	123.5	XL	20
+ASOS	Australia	122	104	129.5	XL	22
+ASOS	Australia	128	110	135.5	XXL	24
+ASOS	Australia	134	116	141.5	XXL	26
+ASOS	Australia	140	122	147.5	XXXL	28						
+BananaRepublic	UK	81	64		XS	4
+BananaRepublic	UK	84	66		XS	6
+BananaRepublic	UK	86	69		S	8
+BananaRepublic	UK	89	71		S	10
+BananaRepublic	UK	91	74		M	12
+BananaRepublic	UK	94	76		M	14
+BananaRepublic	UK	98	80		L	16
+BananaRepublic	UK	102	84		L	18
+BananaRepublic	UK	105	88		XL	20
+BananaRepublic	Europe	81	64		XS	32
+BananaRepublic	Europe	84	66		XS	34
+BananaRepublic	Europe	86	69		S	36
+BananaRepublic	Europe	89	71		S	38
+BananaRepublic	Europe	91	74		M	40
+BananaRepublic	Europe	94	76		M	42
+BananaRepublic	Europe	98	80		L	44
+BananaRepublic	Europe	102	84		L	46
+BananaRepublic	Europe	105	88		XL	48
+BananaRepublic	US	81	64		XS	0
+BananaRepublic	US	84	66		XS	2
+BananaRepublic	US	86	69		S	4
+BananaRepublic	US	89	71		S	6
+BananaRepublic	US	91	74		M	8
+BananaRepublic	US	94	76		M	10
+BananaRepublic	US	98	80		L	12
+BananaRepublic	US	102	84		L	14
+BananaRepublic	US	105	88		XL	16

@@ -59,6 +59,7 @@ namespace Pocketailor.Model
     public enum RetailId
     {
         ASOS,
+        BananaRepublic,
         MarksSpencer,
         Jaeger,
     }

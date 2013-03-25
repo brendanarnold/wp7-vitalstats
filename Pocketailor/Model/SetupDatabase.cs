@@ -37,8 +37,10 @@ namespace Pocketailor.Model
 
         public static void LoadConversions(AppDataContext db)
         {
+            db.DressSizes.DeleteAllOnSubmit(db.DressSizes);
+            db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\DressSizes.csv", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\DressSizes.txt", UriKind.Relative));
             StreamReader fh = new StreamReader(res.Stream);
 
             int count = 0;
@@ -54,9 +56,12 @@ namespace Pocketailor.Model
                 RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
                 RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double chest = 100 * double.Parse(els[2]);
-                double waist = 100 * double.Parse(els[3]);
-                double hips = 100 * double.Parse(els[4]);
+                double? chest = null;
+                if (els[2] != String.Empty) chest = 0.01 * double.Parse(els[2]);
+                double? waist = null;
+                if (els[3] != String.Empty) waist = 0.01 * double.Parse(els[3]);
+                double? hips = null;
+                if (els[4] != String.Empty) hips = 0.01 * double.Parse(els[4]);
                 string sizeLetter = els[5];
                 string sizeNumber = els[6].TrimEnd();
                 db.DressSizes.InsertOnSubmit(new DressSize() {
@@ -76,6 +81,7 @@ namespace Pocketailor.Model
             }
             db.SubmitChanges();
         }
+
 
     }
 }

@@ -100,7 +100,7 @@ namespace Pocketailor.View
 
         private void changeRegionsAppBarBtn_Click(Object sender, EventArgs e) 
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new Uri("/View/EditRegionPage.xaml", UriKind.Relative));
         }
         // User has selected a stat template from the popup, can go to new stat page
         private void selectStatTemplateStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -218,10 +218,11 @@ namespace Pocketailor.View
                 // TODO: Include a proper lookup for this
                 s += Environment.NewLine + "  " + id.ToString();
             }
-            MessageBoxResult result = MessageBox.Show("To calculate " + conversionName 
-                + " the following measurements need to be entered," + s + Environment.NewLine 
-                + "Do you want to begin by adding " + missingIds[0].ToString() + "?",
-                "Add " + conversionName + "?", MessageBoxButton.OKCancel);
+            string measurementName = missingIds[0].ToString();
+            string msg = String.Format("To calculate {0} the following measurements need to be entered,\n{1}\n\nDo you want to begin by adding {2}?",
+                conversionName, s, measurementName);
+            string title = String.Format("Add {0} measurment?", measurementName.ToLower());
+            MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
                 this.EditStatFromTemplate(missingIds[0]);
