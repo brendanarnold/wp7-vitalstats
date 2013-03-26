@@ -88,11 +88,22 @@ namespace Pocketailor
         {
             MeasurementId.TennisGrip,
         };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_WETSUIT = new List<MeasurementId>()
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_WETSUIT_MENS = new List<MeasurementId>()
         {
-            // TODO: refine necessary measurements for wetsuit
             MeasurementId.Height,
+            MeasurementId.Chest,
+            MeasurementId.Waist,
+            MeasurementId.Weight,
         };
+        public static List<MeasurementId> REQUIRED_MEASUREMENTS_WETSUIT_WOMENS = new List<MeasurementId>()
+        {
+            MeasurementId.Height,
+            MeasurementId.Chest,
+            MeasurementId.Waist,
+            MeasurementId.Hips,
+            MeasurementId.Weight,
+        };
+
 
     }
 }

@@ -76,6 +76,7 @@
     <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
     <Compile Include="Model\Conversions\DressSize.cs" />
+    <Compile Include="Model\Conversions\Wetsuit.cs" />
     <Compile Include="Model\Ids.cs" />
     <Compile Include="Model\MeasurementType.cs" />
     <Compile Include="Model\Data\StaticData.cs" />
@@ -98,8 +99,8 @@
     <Compile Include="View\Controls\TitledTextBox.xaml.cs">
       <DependentUpon>TitledTextBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ConversionPages\DressConversionPage.xaml.cs">
-      <DependentUpon>DressConversionPage.xaml</DependentUpon>
+    <Compile Include="View\ConversionPages\ConversionsPage.xaml.cs">
+      <DependentUpon>ConversionsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Convertors.cs" />
     <Compile Include="View\EditProfilePage.xaml.cs">
@@ -148,7 +149,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ConversionPages\DressConversionPage.xaml">
+    <Page Include="View\ConversionPages\ConversionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,16 +207,10 @@
     <Content Include="Images\appbar.globe.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\convert.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\dress-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\dress.jpg" />
-    <Content Include="Images\measure.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\suits.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -259,12 +254,6 @@
     <Content Include="Images\Close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\groups.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\guides.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\Key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -275,9 +264,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Edit.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\people.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\SmallLogo.png">
@@ -311,6 +297,16 @@
     <Content Include="Images\shirts.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image01.png" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image02.png" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image03.png" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image04.png" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\Add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

@@ -173,6 +173,44 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private System.Windows.Media.ImageSource _ConversionsByRegionPageBGImage = null;
+
+		public System.Windows.Media.ImageSource ConversionsByRegionPageBGImage
+		{
+			get
+			{
+				return this._ConversionsByRegionPageBGImage;
+			}
+
+			set
+			{
+				if (this._ConversionsByRegionPageBGImage != value)
+				{
+					this._ConversionsByRegionPageBGImage = value;
+					this.OnPropertyChanged("ConversionsByRegionPageBGImage");
+				}
+			}
+		}
+
+		private string _ConversionsByRegionPageTitle = string.Empty;
+
+		public string ConversionsByRegionPageTitle
+		{
+			get
+			{
+				return this._ConversionsByRegionPageTitle;
+			}
+
+			set
+			{
+				if (this._ConversionsByRegionPageTitle != value)
+				{
+					this._ConversionsByRegionPageTitle = value;
+					this.OnPropertyChanged("ConversionsByRegionPageTitle");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>

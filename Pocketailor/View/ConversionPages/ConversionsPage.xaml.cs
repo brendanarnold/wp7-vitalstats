@@ -10,13 +10,13 @@ using Microsoft.Phone.Shell;
 
 namespace Pocketailor.View.ConversionPages
 {
-    public partial class DressConversionPage : PhoneApplicationPage
+    public partial class ConversionsPage : PhoneApplicationPage
     {
-        public DressConversionPage()
+        public ConversionsPage()
         {
             InitializeComponent();
 
-            App.VM.LoadConversionRegions(Model.ConversionId.DressSize);
+            App.VM.LoadConversionsPageData();
             this.DataContext = App.VM;
 
 

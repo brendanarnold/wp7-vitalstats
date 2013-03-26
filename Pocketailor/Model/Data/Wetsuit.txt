@@ -1,0 +1,1 @@
+Retailer	Regions	Chest	Waist	Hips	Height	Weight	Gender	SizeLetter	SizeNumber

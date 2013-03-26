@@ -196,38 +196,9 @@ namespace Pocketailor.View
             }
         }
 
-        private void dressConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            List<MeasurementId> requiredMeasurements = new List<MeasurementId>() { MeasurementId.Chest, MeasurementId.Waist, MeasurementId.Hips };
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(requiredMeasurements);
-            if (missingMeasurements.Count == 0)
-            {
-                NavigationService.Navigate(new Uri("/View/ConversionPages/DressConversionPage.xaml", UriKind.Relative));
-            }
-            else
-            {
-                this.PromptForMissingMeasurements(missingMeasurements, "dress size");
-            }
-        }
 
-        private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
-        {
-            string s = String.Empty;
-            foreach (MeasurementId id in missingIds)
-            {
-                // TODO: Include a proper lookup for this
-                s += Environment.NewLine + "  \u2022 " + id.ToString();
-            }
-            string measurementName = missingIds[0].ToString();
-            string msg = String.Format("To calculate {0} the following measurements need to be entered,{1}",
-                conversionName, s);
-            string title = String.Format("Add {0} measurement?", measurementName.ToLower());
-            MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
-            if (result == MessageBoxResult.OK)
-            {
-                this.EditStatFromTemplate(missingIds[0]);
-            }
-        }
+
+
 
         private void EditStatFromTemplate(MeasurementId id)
         {
@@ -248,54 +219,195 @@ namespace Pocketailor.View
             App.VM.RefreshRequiredMeasurement();
         }
 
+
+        private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
+        {
+            string s = String.Empty;
+            foreach (MeasurementId id in missingIds)
+            {
+                // TODO: Include a proper lookup for this
+                s += Environment.NewLine + "  \u2022 " + id.ToString();
+            }
+            string measurementName = missingIds[0].ToString();
+            string msg = String.Format("To calculate {0} conversions the following measurements need to be entered,{1}",
+                conversionName, s);
+            string title = String.Format("Add {0} measurement?", measurementName.ToLower());
+            MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                this.EditStatFromTemplate(missingIds[0]);
+            }
+        }
+
+
         private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TROUSER);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.TrouserSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "trouser");
+            }
         }
 
         private void shirtConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHIRT);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.ShirtSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "shirt");
+            }
         }
 
         private void hatConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HAT);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.HatSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "hat");
+            }
         }
 
         private void suitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements;
+            if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
+            {
+                missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_MENS);
+            }
+            else
+            {
+                missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_WOMENS);
+            }
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.SuitSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "suit");
+            }
+        }
+
+        private void dressConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_DRESS_SIZE);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.DressSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "dress size");
+            }
         }
 
         private void braConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_BRA);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.BraSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "bra");
+            }
         }
 
         private void hosieryConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HOSIERY);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.HosierySize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "hosiery");
+            }
         }
 
         private void shoeConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHOES);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.ShoeSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "shoe");
+            }
         }
 
         private void skiBootConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SKIBOOTS);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.SkiBootSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "ski boot");
+            }
         }
 
         private void tennisGripBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TENNISGRIP);
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.TennisGripSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "tennis grip");
+            }
         }
 
         private void wetsuitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            List<MeasurementId> missingMeasurements;
+            if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
+            {
+                missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_WETSUIT_MENS);
+            }
+            else
+            {
+                missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_WETSUIT_WOMENS);
+            }
+            if (missingMeasurements.Count == 0)
+            {
+                App.VM.SelectedConversionType = ConversionId.WetsuitSize;
+                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                this.PromptForMissingMeasurements(missingMeasurements, "wetsuit");
+            }
         }
 
 

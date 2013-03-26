@@ -7,10 +7,17 @@ namespace Pocketailor.Model
 {
     public enum ConversionId
     {
-        DressSize,
-        ShoeSize,
-        SuitSize,
         TrouserSize,
+        ShirtSize,
+        HatSize,
+        SuitSize,
+        DressSize,
+        BraSize,
+        HosierySize,
+        ShoeSize,
+        SkiBootSize,
+        TennisGripSize,
+        WetsuitSize,
     }
 
     public enum MeasurementTypeId

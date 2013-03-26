@@ -19,6 +19,8 @@
       <xs:element name="Regions" type="tns:Regions" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
+    <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
+    <xs:attribute name="ConversionsByRegionPageTitle" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Profiles">
     <xs:sequence>
@@ -221,4 +223,7 @@
   <xs:complexType name="RegionsItem">
     <xs:attribute name="Name" type="xs:string" />
   </xs:complexType>
+  <xs:simpleType name="Basic-Image">
+    <xs:restriction base="xs:anyURI" />
+  </xs:simpleType>
 </xs:schema>

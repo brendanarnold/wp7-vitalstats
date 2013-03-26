@@ -10,6 +10,7 @@ using Microsoft.Phone.Data.Linq.Mapping;
 using System.Collections;
 using System.IO.IsolatedStorage;
 using System;
+using System.Windows.Media.Imaging;
 
 namespace Pocketailor.ViewModel
 {
@@ -22,6 +23,9 @@ namespace Pocketailor.ViewModel
     {
  
         public IsolatedStorageSettings stngs = IsolatedStorageSettings.ApplicationSettings;
+
+
+
 
 
         #region Region methods/properties
@@ -38,9 +42,6 @@ namespace Pocketailor.ViewModel
             }
             this.stngs.Save();
         }
-
-
-
 
         public List<RegionTag> GetSelectedRegions()
         {
@@ -65,7 +66,6 @@ namespace Pocketailor.ViewModel
                     this._regions = value;
                     this.NotifyPropertyChanged("Regions");
                 }
-
             }
         }
 
@@ -86,10 +86,18 @@ namespace Pocketailor.ViewModel
             public bool Selected { get; set; }
         }
 
-
         #endregion
 
         #region HasMeasurement properties
+
+
+        public bool HasRequiredMeasurements(List<MeasurementId> requiredIds)
+        {
+            IEnumerable<MeasurementId> statIds = from Stat s in this.SelectedProfile.Stats select s.MeasurementId;
+            foreach (MeasurementId id in requiredIds)
+                if (!statIds.Contains(id)) return false;
+            return true;
+        }
 
         public bool HasTrouserMeasurements
         {
@@ -188,8 +196,58 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
-        #region Conversion methods/properties
+        #region ConversionsPage methods/properties
 
+        private ConversionId _selectedConversionType;
+        public ConversionId SelectedConversionType
+        {
+            get
+            {
+                return this._selectedConversionType;
+            }
+            set
+            {
+                if (this._selectedConversionType != value)
+                {
+                    this._selectedConversionType = value;
+                    this.NotifyPropertyChanged("SelectedConversionType");
+                }
+            }
+        }
+
+        private string _conversionsByRegionPageTitle;
+        public string ConversionsByRegionPageTitle {
+            get
+            {
+                return this._conversionsByRegionPageTitle;
+            }
+            set
+            {
+                if (this._conversionsByRegionPageTitle != value)
+                {
+                    this._conversionsByRegionPageTitle = value;
+                    this.NotifyPropertyChanged("ConversionsByRegionPageTitle");
+                }
+            }
+        }
+
+        private BitmapImage _conversionsByRegionPageBGImage;
+        public BitmapImage ConversionsByRegionPageBGImage
+        { 
+            get 
+            {
+                return this._conversionsByRegionPageBGImage;
+            }
+            set
+            {
+                if (this._conversionsByRegionPageBGImage != value)
+                {
+                    this._conversionsByRegionPageBGImage = value;
+                    this.NotifyPropertyChanged("ConversionsByRegionPageBGImage");
+                }
+                
+            }
+        }
         
         private ObservableCollection<ConversionRegion> _conversionByRegion;
         public ObservableCollection<ConversionRegion> ConversionsByRegion
@@ -205,12 +263,15 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        public void LoadConversionRegions(Model.ConversionId conversionId)
+        public void LoadConversionsPageData()
         {
             this.ConversionsByRegion = new ObservableCollection<ConversionRegion>();
-            switch (conversionId)
+            switch (this.SelectedConversionType)
             {
                 case ConversionId.DressSize:
+                    this.ConversionsByRegionPageTitle = "dress size";
+                    // TODO: Needs fixing
+                    this.ConversionsByRegionPageBGImage = new BitmapImage(new Uri("/Images/dress-bg.jpg", UriKind.Relative));
                     // First check we have the necessary measurements on the profile as well as some regions selected
                     Stat chest = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Chest);
                     Stat waist = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Waist);
@@ -263,15 +324,6 @@ namespace Pocketailor.ViewModel
                     break;
             }
         }
-
-        public bool HasRequiredMeasurements(List<MeasurementId> requiredIds)
-        {
-            IEnumerable<MeasurementId>  statIds = from Stat s in this.SelectedProfile.Stats select s.MeasurementId;
-            foreach (MeasurementId id in requiredIds)
-                if (!statIds.Contains(id)) return false;
-            return true;
-        }
-
 
         internal List<MeasurementId> GetMissingMeasurements(List<MeasurementId> requiredIds)
         {

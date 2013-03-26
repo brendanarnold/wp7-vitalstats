@@ -8,7 +8,7 @@ using System.Data.Linq.Mapping;
 namespace Pocketailor.Model.Conversions
 {
     [Table]
-    public class DressSize
+    public class Wetsuit
     {
         [Column(IsVersion = true)]
         private Binary _version;
@@ -27,6 +27,12 @@ namespace Pocketailor.Model.Conversions
         public double? Hips { get; set; }
 
         [Column]
+        public double? Height { get; set; }
+
+        [Column]
+        public double? Weight { get; set; }
+
+        [Column]
         public string SizeLetter { get; set; }
 
         [Column]
@@ -38,7 +44,8 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public RetailId Retailer { get; set; }
 
-        public string FormattedValue {
+        public string FormattedValue
+        {
             get
             {
                 if (this.SizeLetter == String.Empty) return String.Format("{0}", this.SizeNumber);
@@ -46,7 +53,6 @@ namespace Pocketailor.Model.Conversions
                 return String.Format("{0} ({1})", this.SizeNumber, this.SizeLetter);
             }
         }
-
 
 
     }

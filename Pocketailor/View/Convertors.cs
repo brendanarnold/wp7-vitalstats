@@ -12,6 +12,85 @@ using System.Windows.Controls;
 namespace Pocketailor.View
 {
 
+    public class SelectedConversionToBGImage : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            ConversionId conversionId = (ConversionId)value;
+            switch (conversionId)
+            {
+                case ConversionId.TrouserSize:
+                    return new BitmapImage(new Uri("/Images/trouser-bg.jpg", UriKind.Relative));
+                case ConversionId.ShirtSize:
+                    return new BitmapImage(new Uri("/Images/shirt-bg.jpg", UriKind.Relative));
+                case ConversionId.HatSize:
+                    return new BitmapImage(new Uri("/Images/hat-bg.jpg", UriKind.Relative));
+                case ConversionId.SuitSize:
+                    return new BitmapImage(new Uri("/Images/suit-bg.jpg", UriKind.Relative));
+                case ConversionId.DressSize:
+                    return new BitmapImage(new Uri("/Images/dress-bg.jpg", UriKind.Relative));
+                case ConversionId.BraSize:
+                    return new BitmapImage(new Uri("/Images/bra-bg.jpg", UriKind.Relative));
+                case ConversionId.HosierySize:
+                    return new BitmapImage(new Uri("/Images/hosiery-bg.jpg", UriKind.Relative));
+                case ConversionId.ShoeSize:
+                    return new BitmapImage(new Uri("/Images/shoe-bg.jpg", UriKind.Relative));
+                case ConversionId.SkiBootSize:
+                    return new BitmapImage(new Uri("/Images/skiboot-bg.jpg", UriKind.Relative));
+                case ConversionId.TennisGripSize:
+                    return new BitmapImage(new Uri("/Images/tennisgrip-bg.jpg", UriKind.Relative));
+                case ConversionId.WetsuitSize:
+                    return new BitmapImage(new Uri("/Images/wetsuit-bg.jpg", UriKind.Relative));
+                default:
+                    return null;
+            }
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class SelectedConversionToPageTitleString : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            ConversionId conversionId = (ConversionId)value;
+            switch (conversionId)
+            {
+                case ConversionId.TrouserSize:
+                    return "trousers";
+                case ConversionId.ShirtSize:
+                    return "shirts";
+                case ConversionId.HatSize:
+                    return "hats";
+                case ConversionId.SuitSize:
+                    return "suits";
+                case ConversionId.DressSize:
+                    return "dress size";
+                case ConversionId.BraSize:
+                    return "bra";
+                case ConversionId.HosierySize:
+                    return "hosiery";
+                case ConversionId.ShoeSize:
+                    return "shoes";
+                case ConversionId.SkiBootSize:
+                    return "ski boots";
+                case ConversionId.TennisGripSize:
+                    return "tennis grip";
+                case ConversionId.WetsuitSize:
+                    return "wetsuits";
+                default:
+                    return null;
+            }
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
     // Generates an Image Source binding from a bool. Parameter gives two possible images separated by '|'
     public class BoolToImage : System.Windows.Data.IValueConverter
     {
