@@ -7,8 +7,29 @@ using System.Data.Linq.Mapping;
 
 namespace Pocketailor.Model.Conversions
 {
+    public static class WetsuitUtils
+    {
+        public static List<MeasurementId> RequiredMeasurementsMens = new List<MeasurementId>()
+        {
+            MeasurementId.Height,
+            MeasurementId.Chest,
+            MeasurementId.Waist,
+            MeasurementId.Weight,
+        };
+        public static List<MeasurementId> RequiredMeasurementsWomens = new List<MeasurementId>()
+        {
+            MeasurementId.Height,
+            MeasurementId.Chest,
+            MeasurementId.Waist,
+            MeasurementId.Weight,
+            MeasurementId.Hips,
+        };
+
+    }
+
+
     [Table]
-    public class Wetsuit
+    public class Wetsuit : IConversionData
     {
         [Column(IsVersion = true)]
         private Binary _version;
@@ -38,6 +59,8 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public string SizeNumber { get; set; }
 
+        #region IConversionData methods/properties
+
         [Column]
         public RegionTag Region { get; set; }
 
@@ -54,6 +77,27 @@ namespace Pocketailor.Model.Conversions
             }
         }
 
+        public double GetChiSq(List<double> measuredVals)
+        {
+            // By convention, the order is determined by WetsuitUtils
+
+            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
+            double dHeight = (this.Height.HasValue) ? (double)this.Height - measuredVals[0] : 0.0;           
+            double dChest =  (this.Chest.HasValue)  ? (double)this.Chest  - measuredVals[1] : 0.0;
+            double dWaist =  (this.Waist.HasValue)  ? (double)this.Waist  - measuredVals[2] : 0.0;
+            double dWeight = (this.Weight.HasValue) ? (double)this.Weight - measuredVals[3] : 0.0;
+
+            double chiSq = dHeight * dHeight + dChest * dChest + dWaist * dWaist + dWeight * dWeight;
+            // Extra bit because womens sizes also consider the hips
+            if (measuredVals.Count == 5)
+            {
+                double dHips = (this.Hips.HasValue) ? (double)this.Hips - measuredVals[4] : 0.0;
+                chiSq += dHips * dHips;
+            }
+            return chiSq;
+        }
+
+        #endregion
 
     }
 }

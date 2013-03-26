@@ -103,6 +103,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TROUSER);
             }
         }
@@ -111,6 +112,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHIRT);
             }
         }
@@ -127,6 +129,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 if (App.VM.SelectedProfile.Gender == Gender.Male)
                 {
                     return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_MENS);
@@ -142,7 +145,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_DRESS_SIZE);
+                return this.HasRequiredMeasurements(Model.Conversions.DressSizeUtils.RequiredMeasurements);
             }
         }
 
@@ -150,6 +153,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_BRA);
             }
         }
@@ -158,6 +162,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HOSIERY);
             }
         }
@@ -174,6 +179,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SKIBOOTS);
             }
         }
@@ -182,6 +188,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
+                // TODO: Change to ConversionsUtils defintions
                 return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TENNISGRIP);
             }
         }
@@ -190,7 +197,14 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_WETSUIT);
+                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                {
+                    return this.HasRequiredMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
+                }
+                else
+                {
+                    return this.HasRequiredMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
+                }
             }
         }
 
@@ -265,64 +279,116 @@ namespace Pocketailor.ViewModel
 
         public void LoadConversionsPageData()
         {
+            // Reset the list
             this.ConversionsByRegion = new ObservableCollection<ConversionRegion>();
+            // Declare vars in the top scope
+            List<double> measuredVals = new List<double>();
+            IEnumerable<Model.Conversions.IConversionData> dataQuery;
+            // Make sure we have region data
+            if (this.GetSelectedRegions() == null) return;
+
+            // Get the conversion specific data
             switch (this.SelectedConversionType)
             {
+                case ConversionId.TrouserSize:
+                    // TODO: Trouser
+                    break;
+                case ConversionId.ShirtSize:
+                    // TODO: Shirts
+                    break;
+                case ConversionId.HatSize:
+                    // TOD: Hats
+                    break;
+                case ConversionId.SuitSize:
+                    // TODO: Suits
+                    break;
                 case ConversionId.DressSize:
-                    this.ConversionsByRegionPageTitle = "dress size";
-                    // TODO: Needs fixing
-                    this.ConversionsByRegionPageBGImage = new BitmapImage(new Uri("/Images/dress-bg.jpg", UriKind.Relative));
-                    // First check we have the necessary measurements on the profile as well as some regions selected
-                    Stat chest = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Chest);
-                    Stat waist = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Waist);
-                    Stat hips = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == MeasurementId.Hips);
-                    if (chest == null || waist == null || hips == null 
-                        || this.GetSelectedRegions() == null)
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.DressSizeUtils.RequiredMeasurements);
+                    dataQuery = appDB.DressSizes.Cast<Model.Conversions.IConversionData>();
+                    break;
+                case ConversionId.BraSize:
+                    // TODO: Bras
+                    break;
+                case ConversionId.HosierySize:
+                    // TODO: Hosiery
+                    break;
+                case ConversionId.ShoeSize:
+                    // TODO: Shoes
+                    break;
+                case ConversionId.SkiBootSize:
+                    // TODO: Ski boots
+                    break;
+                case ConversionId.TennisGripSize:
+                    // TODO: Tennid grip
+                    break;
+                case ConversionId.WetsuitSize:
+                    if (this.SelectedProfile.Gender == Gender.Male)
                     {
-                        return;
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
                     }
-                    foreach (RegionTag region in this.GetSelectedRegions())
+                    else
                     {
-                        ConversionRegion cr = new ConversionRegion();
-                        cr.Name = region.ToString(); // TODO: Wll need to include some kind of lookup for the actual string
-                        cr.Conversions = new ObservableCollection<NameValuePair>();
-                        var regionalDressSizes = appDB.DressSizes.Where(ds => ds.Region == region);
-                        foreach (RetailId retailId in regionalDressSizes.Select(ds => ds.Retailer).Distinct())
-                        {
-                            NameValuePair nvp = new NameValuePair();
-                            nvp.Name = retailId.ToString(); // TODO: Will need to include some kind of lookup for actual string
-                            var conversionData = regionalDressSizes.Where(ds => ds.Retailer == retailId);
-                            // Do a least squares 'fit' to find best size
-                            double lowestChisq = double.MaxValue;
-                            Model.Conversions.DressSize bestFitDressSize = null;
-                            foreach (Model.Conversions.DressSize ds in conversionData)
-                            {
-                                // If at this stage should always be measured values, however some retailers do no provide measurements for
-                                // chest, hips and waist in their tables. Ignore these value in the least square fits.
-                                double measuredChest = double.Parse(chest.Value);
-                                double measuredWaist = double.Parse(waist.Value);
-                                double measuredHips = double.Parse(hips.Value);
-                                double numChest = (ds.Chest.HasValue) ? (double)ds.Chest : measuredChest;
-                                double numWaist = (ds.Waist.HasValue) ? (double)ds.Waist : measuredWaist;
-                                double numHips = (ds.Hips.HasValue) ? (double)ds.Hips : measuredHips;
-                                double chisq = Math.Pow(measuredChest - numChest, 2)
-                                    + Math.Pow(measuredWaist - numWaist, 2)
-                                    + Math.Pow(measuredHips - numHips, 2);
-                                if (chisq < lowestChisq)
-                                {
-                                    lowestChisq = chisq;
-                                    bestFitDressSize = ds;
-                                }
-                            }
-                            nvp.FormattedValue = bestFitDressSize.FormattedValue;
-                            cr.Conversions.Add(nvp);
-                        }
-                        this.ConversionsByRegion.Add(cr);
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
                     }
+                    dataQuery = appDB.Wetsuits.Cast<Model.Conversions.IConversionData>();
                     break;
                 default:
-                    break;
+                    return;
             }
+            // Check we have all the necessary measurements
+            if (measuredVals == null) return;
+            // Build up by regions
+            foreach (RegionTag region in this.GetSelectedRegions())
+            {
+                ConversionRegion cr = new ConversionRegion();
+                cr.Name = region.ToString(); // TODO: Wll need to include some kind of lookup for the actual string
+                cr.Conversions = new ObservableCollection<NameValuePair>();
+                var dataByRegion = dataQuery.Where(ds => ds.Region == region);
+                foreach (RetailId retailId in dataByRegion.Select(ds => ds.Retailer).Distinct())
+                {
+                    var conversionData = dataByRegion.Where(ds => ds.Retailer == retailId);
+                    double lowestChisq = double.MaxValue;
+                    Model.Conversions.IConversionData bestFit = null;
+                    foreach (Model.Conversions.IConversionData candidateConversion in conversionData)
+                    {
+                        double chiSq = candidateConversion.GetChiSq(measuredVals);
+                        if (chiSq < lowestChisq)
+                        {
+                            lowestChisq = chiSq;
+                            bestFit = candidateConversion;
+                        }
+                    }
+                    cr.Conversions.Add(new NameValuePair()
+                    {
+                        // TODO: Will need to include some kind of lookup for actual string
+                        Name = retailId.ToString(),
+                        FormattedValue = bestFit.FormattedValue,
+                    });
+                }
+                this.ConversionsByRegion.Add(cr);
+            }
+        }
+
+
+        // Already been checked that these values have been taken
+        public List<double> GetRequiredMeasuredValues(List<MeasurementId> requiredIds)
+        {
+            List<double> requiredValues = new List<double>();
+            foreach (MeasurementId mID in requiredIds)
+            {
+                Stat s = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == mID);
+                if (s == null) return null;
+                double d;
+                if (double.TryParse(s.Value, out d))
+                {
+                    requiredValues.Add(d);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return requiredValues;
         }
 
         internal List<MeasurementId> GetMissingMeasurements(List<MeasurementId> requiredIds)

@@ -76,6 +76,7 @@
     <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
     <Compile Include="Model\Conversions\DressSize.cs" />
+    <Compile Include="Model\Conversions\IConversionData.cs" />
     <Compile Include="Model\Conversions\Wetsuit.cs" />
     <Compile Include="Model\Ids.cs" />
     <Compile Include="Model\MeasurementType.cs" />

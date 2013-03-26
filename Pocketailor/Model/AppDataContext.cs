@@ -14,6 +14,7 @@ namespace Pocketailor.Model
         public Table<Profile> Profiles;
         public Table<Stat> Stats;
         public Table<Conversions.DressSize> DressSizes;
+        public Table<Conversions.Wetsuit> Wetsuits;
     
     
     }

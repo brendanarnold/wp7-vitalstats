@@ -7,8 +7,22 @@ using System.Data.Linq.Mapping;
 
 namespace Pocketailor.Model.Conversions
 {
+
+    public static class DressSizeUtils
+    {
+        public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
+        {
+            // This order is used in the GetChiSq method below
+            MeasurementId.Chest,
+            MeasurementId.Waist,
+            MeasurementId.Hips,
+        };
+
+    }
+
+
     [Table]
-    public class DressSize
+    public class DressSize : IConversionData
     {
         [Column(IsVersion = true)]
         private Binary _version;
@@ -32,6 +46,9 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public string SizeNumber { get; set; }
 
+
+        #region IConversionData methods/properties
+
         [Column]
         public RegionTag Region { get; set; }
 
@@ -47,7 +64,19 @@ namespace Pocketailor.Model.Conversions
             }
         }
 
+        public double GetChiSq(List<double> measuredVals)
+        {
+            // By convention, the order is determined by DressSizeUtils
 
+            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
+            double dChest = (this.Chest.HasValue) ? (double)this.Chest - measuredVals[0] : 0.0;
+            double dWaist = (this.Waist.HasValue) ? (double)this.Waist - measuredVals[1] : 0.0;
+            double dHips  = (this.Hips.HasValue)  ? (double)this.Hips  - measuredVals[2] : 0.0;
+
+            return dChest * dChest + dWaist * dWaist + dHips * dHips;
+        }
+
+        #endregion
 
     }
 }
