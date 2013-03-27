@@ -211,6 +211,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private string _SelectedConversionType = string.Empty;
+
+		public string SelectedConversionType
+		{
+			get
+			{
+				return this._SelectedConversionType;
+			}
+
+			set
+			{
+				if (this._SelectedConversionType != value)
+				{
+					this._SelectedConversionType = value;
+					this.OnPropertyChanged("SelectedConversionType");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>

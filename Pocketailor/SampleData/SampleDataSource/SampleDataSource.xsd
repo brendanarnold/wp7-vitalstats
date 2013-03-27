@@ -21,6 +21,7 @@
     <xs:attribute name="IsLocked" type="xs:boolean" />
     <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
     <xs:attribute name="ConversionsByRegionPageTitle" type="xs:string" />
+    <xs:attribute blend:Format="Lorem ipsum" blend:FormatParameters="4,8" name="SelectedConversionType" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Profiles">
     <xs:sequence>

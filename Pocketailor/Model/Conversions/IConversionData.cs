@@ -10,6 +10,7 @@ namespace Pocketailor.Model.Conversions
         double GetChiSq(List<double> measuredVals);
         RegionTag Region { get; }
         RetailId Retailer { get; }
+        Gender Gender { get; }
         string FormattedValue { get; }
     }
 }

@@ -16,7 +16,16 @@ namespace Pocketailor.View
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
         {
-            ConversionId conversionId = (ConversionId)value;
+            // Stoopid hack to get this to work at designtime too
+            ConversionId conversionId;
+            if (value.GetType() == typeof(string))
+            {
+                conversionId = (ConversionId)Enum.Parse(typeof(ConversionId), (string)value, true);
+            }
+            else
+            {
+                conversionId = (ConversionId)value;
+            }
             switch (conversionId)
             {
                 case ConversionId.TrouserSize:
@@ -55,7 +64,16 @@ namespace Pocketailor.View
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
         {
-            ConversionId conversionId = (ConversionId)value;
+            // Stoopid hack to get this to work at designtime too
+            ConversionId conversionId;
+            if (value.GetType() == typeof(string))
+            {
+                conversionId = (ConversionId)Enum.Parse(typeof(ConversionId), (string)value, true);
+            }
+            else
+            {
+                conversionId = (ConversionId)value;
+            }
             switch (conversionId)
             {
                 case ConversionId.TrouserSize:

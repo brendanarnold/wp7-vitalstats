@@ -393,11 +393,11 @@ namespace Pocketailor.View
             List<MeasurementId> missingMeasurements;
             if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_WETSUIT_MENS);
+                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
             }
             else
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(AppConstants.REQUIRED_MEASUREMENTS_WETSUIT_WOMENS);
+                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
             }
             if (missingMeasurements.Count == 0)
             {

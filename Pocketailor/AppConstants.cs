@@ -17,7 +17,8 @@ namespace Pocketailor
     {
         // Increment this when new data added to DB
         public static int CONVERSION_DATA_VERSION = 1;
-
+        // Number of objects that are buffered before calling SubmitChanges() on DB
+        public static int DB_OBJECT_BUFFER_BEFORE_WRITE = 50;
         public static string[] VALUE_DELIMITERS = { "|" };
         //public static string NAME_CUSTOM_STAT_TEMPLATE = "Other";
         //public static string NAME_CUSTOM_MEASUREMENT_TYPE = "Other";
@@ -88,22 +89,9 @@ namespace Pocketailor
         {
             MeasurementId.TennisGrip,
         };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_WETSUIT_MENS = new List<MeasurementId>()
-        {
-            MeasurementId.Height,
-            MeasurementId.Chest,
-            MeasurementId.Waist,
-            MeasurementId.Weight,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_WETSUIT_WOMENS = new List<MeasurementId>()
-        {
-            MeasurementId.Height,
-            MeasurementId.Chest,
-            MeasurementId.Waist,
-            MeasurementId.Hips,
-            MeasurementId.Weight,
-        };
 
 
+
+       
     }
 }

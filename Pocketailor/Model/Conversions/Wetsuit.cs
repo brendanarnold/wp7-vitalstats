@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.IO;
 
 namespace Pocketailor.Model.Conversions
 {
@@ -24,6 +25,64 @@ namespace Pocketailor.Model.Conversions
             MeasurementId.Weight,
             MeasurementId.Hips,
         };
+
+        public static void ReloadCsvToDB(AppDataContext db)
+        {
+            db.DressSizes.DeleteAllOnSubmit(db.DressSizes);
+            db.SubmitChanges();
+            // Load in dress sizes
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Wetsuit.txt", UriKind.Relative));
+            StreamReader fh = new StreamReader(res.Stream);
+
+            int count = 0;
+            while (!fh.EndOfStream)
+            {
+                count++;
+                string line = fh.ReadLine();
+                // Skip headers
+                if (count <= AppConstants.CSV_HEADER_LINES) continue;
+                // Skip commented lines
+                if (line.StartsWith("#")) continue;
+                string[] els = line.Split(new char[] { '\t' });
+                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
+                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
+                Gender gender = (Gender)Enum.Parse(typeof(Gender), els[2], true);
+                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
+                double? height = null;
+                if (els[3] != String.Empty) height = 0.01 * double.Parse(els[3]);
+                double? chest = null;
+                if (els[4] != String.Empty) chest = 0.01 * double.Parse(els[4]);
+                double? waist = null;
+                if (els[5] != String.Empty) waist = 0.01 * double.Parse(els[5]);
+                double? hips = null;
+                if (els[6] != String.Empty) hips = 0.01 * double.Parse(els[6]);
+                double? weight = null;
+                if (els[7] != String.Empty) weight = double.Parse(els[7]);
+                string sizeLetter = els[8];
+                string sizeNumber = els[9].TrimEnd();
+                db.Wetsuits.InsertOnSubmit(new Wetsuit()
+                {
+                    Retailer = retailer,
+                    Region = region,
+                    Gender = gender,
+                    Height = height,
+                    Chest = chest,
+                    Waist = waist,
+                    Hips = hips,
+                    Weight = weight,
+                    SizeLetter = sizeLetter,
+                    SizeNumber = sizeNumber,
+                });
+                if (count > AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE)
+                {
+                    count = 0;
+                    db.SubmitChanges();
+                }
+            }
+            db.SubmitChanges();
+        }
+
+
 
     }
 
@@ -59,6 +118,7 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public string SizeNumber { get; set; }
 
+        
         #region IConversionData methods/properties
 
         [Column]
@@ -66,6 +126,9 @@ namespace Pocketailor.Model.Conversions
 
         [Column]
         public RetailId Retailer { get; set; }
+
+        [Column]
+        public Gender Gender { get; set; }
 
         public string FormattedValue
         {

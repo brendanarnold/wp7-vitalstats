@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.IO;
 
 namespace Pocketailor.Model.Conversions
 {
@@ -17,6 +18,55 @@ namespace Pocketailor.Model.Conversions
             MeasurementId.Waist,
             MeasurementId.Hips,
         };
+
+        public static void ReloadCsvToDB(AppDataContext db)
+        {
+            db.DressSizes.DeleteAllOnSubmit(db.DressSizes);
+            db.SubmitChanges();
+            // Load in dress sizes
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\DressSizes.txt", UriKind.Relative));
+            StreamReader fh = new StreamReader(res.Stream);
+
+            int count = 0;
+            while (!fh.EndOfStream)
+            {
+                count++;
+                string line = fh.ReadLine();
+                // Skip headers
+                if (count <= AppConstants.CSV_HEADER_LINES) continue;
+                // Skip commented lines
+                if (line.StartsWith("#")) continue;
+                string[] els = line.Split(new char[] { '\t' });
+                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
+                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
+                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
+                double? chest = null;
+                if (els[2] != String.Empty) chest = 0.01 * double.Parse(els[2]);
+                double? waist = null;
+                if (els[3] != String.Empty) waist = 0.01 * double.Parse(els[3]);
+                double? hips = null;
+                if (els[4] != String.Empty) hips = 0.01 * double.Parse(els[4]);
+                string sizeLetter = els[5];
+                string sizeNumber = els[6].TrimEnd();
+                db.DressSizes.InsertOnSubmit(new DressSize()
+                {
+                    Retailer = retailer,
+                    Region = region,
+                    Chest = chest,
+                    Waist = waist,
+                    Hips = hips,
+                    SizeLetter = sizeLetter,
+                    SizeNumber = sizeNumber,
+                });
+                if (count > 50)
+                {
+                    count = 0;
+                    db.SubmitChanges();
+                }
+            }
+            db.SubmitChanges();
+        }
+
 
     }
 
@@ -54,6 +104,14 @@ namespace Pocketailor.Model.Conversions
 
         [Column]
         public RetailId Retailer { get; set; }
+
+        public Gender Gender
+        {
+            get
+            {
+                return Gender.Female;
+            }
+        }
 
         public string FormattedValue {
             get
