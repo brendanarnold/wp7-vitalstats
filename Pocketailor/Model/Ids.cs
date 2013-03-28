@@ -45,7 +45,8 @@ namespace Pocketailor.Model
         FootWidth,
         Crotch,
         Head,
-        TennisGrip
+        TennisGrip,
+        TorsoLength,
     }
 
     public enum UnitId
