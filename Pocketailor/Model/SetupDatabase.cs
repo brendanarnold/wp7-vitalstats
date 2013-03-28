@@ -37,10 +37,18 @@ namespace Pocketailor.Model
 
         public static void LoadConversions(AppDataContext db)
         {
-            Model.Conversions.DressSizeUtils.ReloadCsvToDB(db);
-            Model.Conversions.WetsuitUtils.ReloadCsvToDB(db);
             Model.Conversions.TrousersUtils.ReloadCsvToDB(db);
             Model.Conversions.ShirtUtils.ReloadCsvToDB(db);
+            Model.Conversions.HatUtils.ReloadCsvToDB(db);
+            Model.Conversions.SuitUtils.ReloadCsvToDB(db);
+            Model.Conversions.DressSizeUtils.ReloadCsvToDB(db);
+            Model.Conversions.BraUtils.ReloadCsvToDB(db);
+            Model.Conversions.HosieryUtils.ReloadCsvToDB(db);
+            Model.Conversions.ShoesUtils.ReloadCsvToDB(db);
+            Model.Conversions.SkiBootsUtils.ReloadCsvToDB(db);
+            Model.Conversions.TennisGripUtils.ReloadCsvToDB(db);
+            Model.Conversions.WetsuitUtils.ReloadCsvToDB(db);
+            
         }
 
 

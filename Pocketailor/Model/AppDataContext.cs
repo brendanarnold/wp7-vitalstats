@@ -15,7 +15,14 @@ namespace Pocketailor.Model
         public Table<Stat> Stats;
         public Table<Conversions.Trousers> Trousers;
         public Table<Conversions.Shirt> Shirts;
+        public Table<Conversions.Hat> Hats;
+        public Table<Conversions.Suit> Suits;
         public Table<Conversions.DressSize> DressSizes;
+        public Table<Conversions.Bra> Bras;
+        public Table<Conversions.Hosiery> Hosiery;
+        public Table<Conversions.Shoes> Shoes;
+        public Table<Conversions.SkiBoots> SkiBoots;
+        public Table<Conversions.TennisGrip> TennisGrips;
         public Table<Conversions.Wetsuit> Wetsuits;
     
     

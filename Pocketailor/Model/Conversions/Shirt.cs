@@ -158,7 +158,7 @@ namespace Pocketailor.Model.Conversions
 
             double chiSq = dWaist * dWaist + dChest * dChest + dNeck * dNeck + dSleeve * dSleeve + dTorsoLength * dTorsoLength;
             // Extra bit because womens sizes also consider the hips
-            if (measuredVals.Count == 5)
+            if (measuredVals.Count == 6)
             {
                 double dHips = (this.Hips.HasValue) ? (double)this.Hips - measuredVals[5] : 0.0;
                 chiSq += dHips * dHips;
