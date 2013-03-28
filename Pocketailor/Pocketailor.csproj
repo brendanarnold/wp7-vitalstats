@@ -77,6 +77,7 @@
     <Compile Include="Model\AppDataContext.cs" />
     <Compile Include="Model\Conversions\DressSize.cs" />
     <Compile Include="Model\Conversions\IConversionData.cs" />
+    <Compile Include="Model\Conversions\Trousers.cs" />
     <Compile Include="Model\Conversions\Wetsuit.cs" />
     <Compile Include="Model\Ids.cs" />
     <Compile Include="Model\MeasurementType.cs" />
@@ -289,6 +290,7 @@
     <Content Include="Images\UnlockIcons\Stormy.png" />
     <Content Include="Images\UnlockIcons\Sunny.png" />
     <Content Include="Images\UnlockIcons\Writing.png" />
+    <Content Include="Model\Data\Trousers.txt" />
     <Content Include="Model\Data\Wetsuit.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\Save.png">

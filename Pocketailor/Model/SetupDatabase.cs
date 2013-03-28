@@ -39,6 +39,7 @@ namespace Pocketailor.Model
         {
             Model.Conversions.DressSizeUtils.ReloadCsvToDB(db);
             Model.Conversions.WetsuitUtils.ReloadCsvToDB(db);
+            Model.Conversions.TrousersUtils.ReloadCsvToDB(db);
         }
 
 
