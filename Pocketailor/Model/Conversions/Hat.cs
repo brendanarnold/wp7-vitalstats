@@ -30,14 +30,19 @@ namespace Pocketailor.Model.Conversions
                 if (count <= AppConstants.CSV_HEADER_LINES) continue;
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
-                string[] els = line.Split(new char[] { '\t' });
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
-                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
+                var els = line.Split(new char[] { '\t' }).Cast<string>().GetEnumerator();
+                els.MoveNext();
+                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
+                els.MoveNext();
+                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els.Current, true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
                 double? head = null;
-                if (els[2] != String.Empty) head = 0.01 * double.Parse(els[2]);
-                string sizeLetter = els[3];
-                string sizeNumber = els[4].TrimEnd();
+                els.MoveNext();
+                if (els.Current != String.Empty) head = 0.01 * double.Parse(els.Current);
+                els.MoveNext();
+                string sizeLetter = els.Current;
+                els.MoveNext();
+                string sizeNumber = els.Current.TrimEnd();
                 db.Hats.InsertOnSubmit(new Hat()
                 {
                     Retailer = retailer,
@@ -108,9 +113,10 @@ namespace Pocketailor.Model.Conversions
         public double GetChiSq(List<double> measuredVals)
         {
             // By convention, the order is determined by WetsuitUtils
-
+            var enumerator = measuredVals.GetEnumerator();
+            enumerator.MoveNext();
             // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
-            double dHead = (this.Head.HasValue) ? (double)this.Head - measuredVals[0] : 0.0;
+            double dHead = (this.Head.HasValue) ? (double)this.Head - enumerator.Current : 0.0;
 
             double chiSq = dHead * dHead;
             // Extra bit because womens sizes also consider the hips

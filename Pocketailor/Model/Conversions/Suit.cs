@@ -43,7 +43,7 @@ namespace Pocketailor.Model.Conversions
             db.Shirts.DeleteAllOnSubmit(db.Shirts);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Shirts.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Suits.txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
@@ -55,33 +55,48 @@ namespace Pocketailor.Model.Conversions
                 if (count <= AppConstants.CSV_HEADER_LINES) continue;
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
-                string[] els = line.Split(new char[] { '\t' });
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
-                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
-                Gender gender = (Gender)Enum.Parse(typeof(Gender), els[2], true);
+                var els = line.Split(new char[] { '\t' }).Cast<string>().GetEnumerator();
+                els.MoveNext();
+                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
+                els.MoveNext();
+                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els.Current, true);
+                els.MoveNext();
+                Gender gender = (Gender)Enum.Parse(typeof(Gender), els.Current, true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
                 double? waist = null;
-                if (els[3] != String.Empty) waist = 0.01 * double.Parse(els[3]);
+                els.MoveNext();
+                if (els.Current != String.Empty) waist = 0.01 * double.Parse(els.Current);
                 double? shoulder = null;
-                if (els[4] != String.Empty) shoulder = 0.01 * double.Parse(els[4]);
+                els.MoveNext();
+                if (els.Current != String.Empty) shoulder = 0.01 * double.Parse(els.Current);
                 double? sleeve = null;
-                if (els[5] != String.Empty) sleeve = 0.01 * double.Parse(els[5]);
+                els.MoveNext();
+                if (els.Current != String.Empty) sleeve = 0.01 * double.Parse(els.Current);
                 double? chest = null;
-                if (els[6] != String.Empty) chest = 0.01 * double.Parse(els[6]);
+                els.MoveNext();
+                if (els.Current != String.Empty) chest = 0.01 * double.Parse(els.Current);
                 double? insideLeg = null;
-                if (els[7] != String.Empty) insideLeg = 0.01 * double.Parse(els[7]);
+                els.MoveNext();
+                if (els.Current != String.Empty) insideLeg = 0.01 * double.Parse(els.Current);
                 double? neck = null;
-                if (els[8] != String.Empty) neck = 0.01 * double.Parse(els[8]);
+                els.MoveNext();
+                if (els.Current != String.Empty) neck = 0.01 * double.Parse(els.Current);
                 double? crotch = null;
-                if (els[9] != String.Empty) crotch = 0.01 * double.Parse(els[9]);
+                els.MoveNext();
+                if (els.Current != String.Empty) crotch = 0.01 * double.Parse(els.Current);
                 double? torsoLength = null;
-                if (els[10] != String.Empty) torsoLength = 0.01 * double.Parse(els[10]);
+                els.MoveNext();
+                if (els.Current != String.Empty) torsoLength = 0.01 * double.Parse(els.Current);
                 double? height = null;
-                if (els[11] != String.Empty) height = 0.01 * double.Parse(els[11]);
+                els.MoveNext();
+                if (els.Current != String.Empty) height = 0.01 * double.Parse(els.Current);
                 double? hips = null;
-                if (els[12] != String.Empty) hips = 0.01 * double.Parse(els[12]);
-                string sizeLetter = els[13];
-                string sizeNumber = els[14].TrimEnd();
+                els.MoveNext();
+                if (els.Current != String.Empty) hips = 0.01 * double.Parse(els.Current);
+                els.MoveNext();
+                string sizeLetter = els.Current;
+                els.MoveNext();
+                string sizeNumber = els.Current.TrimEnd();
                 db.Suits.InsertOnSubmit(new Suit()
                 {
                     Retailer = retailer,
@@ -183,23 +198,33 @@ namespace Pocketailor.Model.Conversions
         public double GetChiSq(List<double> measuredVals)
         {
             // By convention, the order is determined by DressSizeUtils
-
-            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
-            double dWaist = (this.Waist.HasValue) ? (double)this.Waist - measuredVals[1] : 0.0;
-            double dSleeve = (this.Sleeve.HasValue) ? (double)this.Sleeve - measuredVals[1] : 0.0;
-            double dChest = (this.Chest.HasValue) ? (double)this.Chest - measuredVals[0] : 0.0;
-            double dInsideLeg = (this.InsideLeg.HasValue) ? (double)this.InsideLeg - measuredVals[1] : 0.0;
-            double dNeck = (this.Neck.HasValue) ? (double)this.Neck - measuredVals[1] : 0.0;
-            double dCrotch = (this.Crotch.HasValue) ? (double)this.Crotch - measuredVals[1] : 0.0;
-            double dTorsoLength = (this.TorsoLength.HasValue) ? (double)this.TorsoLength - measuredVals[1] : 0.0;
-            double dHeight = (this.Height.HasValue) ? (double)this.Height - measuredVals[1] : 0.0;
+            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.   
+            var enumerator = measuredVals.GetEnumerator();
+            enumerator.MoveNext();
+            double dWaist = (this.Waist.HasValue) ? (double)this.Waist - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dShoulder = (this.Shoulder.HasValue) ? (double)this.Shoulder - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dSleeve = (this.Sleeve.HasValue) ? (double)this.Sleeve - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dChest = (this.Chest.HasValue) ? (double)this.Chest - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dInsideLeg = (this.InsideLeg.HasValue) ? (double)this.InsideLeg - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dNeck = (this.Neck.HasValue) ? (double)this.Neck - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dCrotch = (this.Crotch.HasValue) ? (double)this.Crotch - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dTorsoLength = (this.TorsoLength.HasValue) ? (double)this.TorsoLength - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dHeight = (this.Height.HasValue) ? (double)this.Height - enumerator.Current : 0.0;
 
             double chiSq = dWaist * dWaist + dSleeve * dSleeve + dChest * dChest + dInsideLeg * dInsideLeg 
                 + dNeck * dNeck + dCrotch * dCrotch + dTorsoLength * dTorsoLength + dHeight * dHeight;
 
-            if (measuredVals.Count == 10)
+            if (enumerator.MoveNext())
             {
-                double dHips = (this.Hips.HasValue) ? (double)this.Hips - measuredVals[4] : 0.0;
+                double dHips = (this.Hips.HasValue) ? (double)this.Hips - enumerator.Current : 0.0;
                 chiSq += dHips * dHips;
             }
             return chiSq;

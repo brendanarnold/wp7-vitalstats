@@ -36,18 +36,25 @@ namespace Pocketailor.Model.Conversions
                 if (count <= AppConstants.CSV_HEADER_LINES) continue;
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
-                string[] els = line.Split(new char[] { '\t' });
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els[0], true);
-                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els[1], true);
+                var els = line.Split(new char[] { '\t' }).Cast<string>().GetEnumerator();
+                els.MoveNext();
+                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
+                els.MoveNext();
+                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els.Current, true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
                 double? chest = null;
-                if (els[2] != String.Empty) chest = 0.01 * double.Parse(els[2]);
+                els.MoveNext();
+                if (els.Current != String.Empty) chest = 0.01 * double.Parse(els.Current);
                 double? waist = null;
-                if (els[3] != String.Empty) waist = 0.01 * double.Parse(els[3]);
+                els.MoveNext();
+                if (els.Current != String.Empty) waist = 0.01 * double.Parse(els.Current);
                 double? hips = null;
-                if (els[4] != String.Empty) hips = 0.01 * double.Parse(els[4]);
-                string sizeLetter = els[5];
-                string sizeNumber = els[6].TrimEnd();
+                els.MoveNext();
+                if (els.Current != String.Empty) hips = 0.01 * double.Parse(els.Current);
+                els.MoveNext();
+                string sizeLetter = els.Current;
+                els.MoveNext();
+                string sizeNumber = els.Current.TrimEnd();
                 db.DressSizes.InsertOnSubmit(new DressSize()
                 {
                     Retailer = retailer,
@@ -125,11 +132,14 @@ namespace Pocketailor.Model.Conversions
         public double GetChiSq(List<double> measuredVals)
         {
             // By convention, the order is determined by DressSizeUtils
-
+            var enumerator = measuredVals.GetEnumerator();
+            enumerator.MoveNext();
             // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
-            double dChest = (this.Chest.HasValue) ? (double)this.Chest - measuredVals[0] : 0.0;
-            double dWaist = (this.Waist.HasValue) ? (double)this.Waist - measuredVals[1] : 0.0;
-            double dHips  = (this.Hips.HasValue)  ? (double)this.Hips  - measuredVals[2] : 0.0;
+            double dChest = (this.Chest.HasValue) ? (double)this.Chest - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dWaist = (this.Waist.HasValue) ? (double)this.Waist - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dHips  = (this.Hips.HasValue)  ? (double)this.Hips  - enumerator.Current : 0.0;
 
             return dChest * dChest + dWaist * dWaist + dHips * dHips;
         }
