@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace Pocketailor.Model.Conversions
             db.Shirts.DeleteAllOnSubmit(db.Shirts);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Shirts.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Shirt.txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
@@ -45,7 +46,7 @@ namespace Pocketailor.Model.Conversions
                 if (count <= AppConstants.CSV_HEADER_LINES) continue;
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
-                var els = line.Split(new char[] { '\t' }).Cast<string>().GetEnumerator();
+                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
                 els.MoveNext();
                 RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
                 els.MoveNext();

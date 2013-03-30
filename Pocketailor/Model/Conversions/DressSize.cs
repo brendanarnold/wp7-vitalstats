@@ -36,7 +36,7 @@ namespace Pocketailor.Model.Conversions
                 if (count <= AppConstants.CSV_HEADER_LINES) continue;
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
-                var els = line.Split(new char[] { '\t' }).Cast<string>().GetEnumerator();
+                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
                 els.MoveNext();
                 RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
                 els.MoveNext();

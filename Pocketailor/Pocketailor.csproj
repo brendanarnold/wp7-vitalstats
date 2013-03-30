@@ -75,9 +75,16 @@
     </Compile>
     <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
+    <Compile Include="Model\Conversions\Bra.cs" />
     <Compile Include="Model\Conversions\DressSize.cs" />
+    <Compile Include="Model\Conversions\Hat.cs" />
+    <Compile Include="Model\Conversions\Hosiery.cs" />
     <Compile Include="Model\Conversions\IConversionData.cs" />
     <Compile Include="Model\Conversions\Shirt.cs" />
+    <Compile Include="Model\Conversions\Shoes.cs" />
+    <Compile Include="Model\Conversions\SkiBoots.cs" />
+    <Compile Include="Model\Conversions\Suit.cs" />
+    <Compile Include="Model\Conversions\TennisRaquetSize.cs" />
     <Compile Include="Model\Conversions\Trousers.cs" />
     <Compile Include="Model\Conversions\Wetsuit.cs" />
     <Compile Include="Model\Ids.cs" />
@@ -220,6 +227,7 @@
     <Content Include="Images\wetsuit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Model\Data\Bra.txt" />
     <Content Include="Model\Data\DressSizes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -291,7 +299,13 @@
     <Content Include="Images\UnlockIcons\Stormy.png" />
     <Content Include="Images\UnlockIcons\Sunny.png" />
     <Content Include="Images\UnlockIcons\Writing.png" />
+    <Content Include="Model\Data\Hat.txt" />
+    <Content Include="Model\Data\Hosiery.txt" />
     <Content Include="Model\Data\Shirt.txt" />
+    <Content Include="Model\Data\Shoes.txt" />
+    <Content Include="Model\Data\SkiBoots.txt" />
+    <Content Include="Model\Data\Suit.txt" />
+    <Content Include="Model\Data\TennisRaquetSize.txt" />
     <Content Include="Model\Data\Trousers.txt" />
     <Content Include="Model\Data\Wetsuit.txt" />
     <Content Include="SplashScreenImage.jpg" />

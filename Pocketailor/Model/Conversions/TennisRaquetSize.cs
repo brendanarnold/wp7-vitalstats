@@ -7,19 +7,18 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
-    public static class HatUtils
+    public static class TennisRaquetSizesUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
         {
-            MeasurementId.Head,
+            MeasurementId.TennisGrip,
         };
 
         public static void ReloadCsvToDB(AppDataContext db)
         {
-            db.Hats.DeleteAllOnSubmit(db.Hats);
+            db.TennisRaquetSizes.DeleteAllOnSubmit(db.TennisRaquetSizes);
             db.SubmitChanges();
-            // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Hat.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\TennisRaquetSize.txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
@@ -37,18 +36,18 @@ namespace Pocketailor.Model.Conversions
                 els.MoveNext();
                 RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els.Current, true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double? head = null;
+                double? tennisGrip = null;
                 els.MoveNext();
-                if (els.Current != String.Empty) head = 0.01 * double.Parse(els.Current);
+                if (els.Current != String.Empty) tennisGrip = 0.01 * double.Parse(els.Current);
                 els.MoveNext();
                 string sizeLetter = els.Current;
                 els.MoveNext();
                 string sizeNumber = els.Current.TrimEnd();
-                db.Hats.InsertOnSubmit(new Hat()
+                db.TennisRaquetSizes.InsertOnSubmit(new TennisRaquetSize()
                 {
                     Retailer = retailer,
                     Region = region,
-                    Head = head,
+                    TennisGrip = tennisGrip,
                     SizeLetter = sizeLetter,
                     SizeNumber = sizeNumber,
                 });
@@ -62,11 +61,10 @@ namespace Pocketailor.Model.Conversions
         }
 
 
-
     }
 
     [Table]
-    public class Hat : IConversionData
+    public class TennisRaquetSize : IConversionData
     {
         [Column(IsVersion = true)]
         private Binary _version;
@@ -76,7 +74,7 @@ namespace Pocketailor.Model.Conversions
         public int Id { get; set; }
 
         [Column]
-        public double? Head { get; set; }
+        public double? TennisGrip { get; set; }
 
         [Column]
         public string SizeLetter { get; set; }
@@ -93,8 +91,7 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public RetailId Retailer { get; set; }
 
-        public Gender Gender 
-        {
+        public Gender Gender {
             get
             {
                 return Gender.Unspecified;
@@ -111,16 +108,17 @@ namespace Pocketailor.Model.Conversions
             }
         }
 
+
         public double GetChiSq(List<double> measuredVals)
         {
-            // By convention, the order is determined by WetsuitUtils
+            // By convention, the order is determined by DressSizeUtils
+            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.   
             var enumerator = measuredVals.GetEnumerator();
             enumerator.MoveNext();
-            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
-            double dHead = (this.Head.HasValue) ? (double)this.Head - enumerator.Current : 0.0;
+            double dTennisGrip = (this.TennisGrip.HasValue) ? (double)this.TennisGrip - enumerator.Current : 0.0;
 
-            double chiSq = dHead * dHead;
-            // Extra bit because womens sizes also consider the hips
+            double chiSq = dTennisGrip * dTennisGrip;
+
             return chiSq;
         }
 

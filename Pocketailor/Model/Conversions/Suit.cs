@@ -40,10 +40,10 @@ namespace Pocketailor.Model.Conversions
 
         public static void ReloadCsvToDB(AppDataContext db)
         {
-            db.Shirts.DeleteAllOnSubmit(db.Shirts);
+            db.Suits.DeleteAllOnSubmit(db.Suits);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Suits.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Suit.txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
@@ -55,7 +55,7 @@ namespace Pocketailor.Model.Conversions
                 if (count <= AppConstants.CSV_HEADER_LINES) continue;
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
-                var els = line.Split(new char[] { '\t' }).Cast<string>().GetEnumerator();
+                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
                 els.MoveNext();
                 RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
                 els.MoveNext();
@@ -127,7 +127,7 @@ namespace Pocketailor.Model.Conversions
     }
 
     [Table]
-    public class Suit
+    public class Suit : IConversionData
     {
         [Column(IsVersion = true)]
         private Binary _version;

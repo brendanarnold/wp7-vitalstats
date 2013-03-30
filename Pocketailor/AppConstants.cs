@@ -24,6 +24,7 @@ namespace Pocketailor
         //public static string NAME_CUSTOM_MEASUREMENT_TYPE = "Other";
         public static string FORMATTED_NAME_SEPARATOR = "/";
         public static int CSV_HEADER_LINES = 1;
+        public static char[] CSV_DELIMITERS = new char[] { '\t' };
         public static List<RegionTag> DEFAULT_REGIONS = new List<RegionTag>() { RegionTag.Worldwide };
         public static List<MeasurementId> REQUIRED_MEASUREMENTS_DRESS_SIZE = new List<MeasurementId>() {
             MeasurementId.Chest, 

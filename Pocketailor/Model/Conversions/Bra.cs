@@ -7,19 +7,20 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
-    public static class HatUtils
+    public static class BraUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
         {
-            MeasurementId.Head,
+            MeasurementId.Chest,
+            MeasurementId.Underbust,
         };
 
         public static void ReloadCsvToDB(AppDataContext db)
         {
-            db.Hats.DeleteAllOnSubmit(db.Hats);
+            db.Bras.DeleteAllOnSubmit(db.Bras);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Hat.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Bra.txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
@@ -37,18 +38,22 @@ namespace Pocketailor.Model.Conversions
                 els.MoveNext();
                 RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els.Current, true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double? head = null;
+                double? chest = null;
                 els.MoveNext();
-                if (els.Current != String.Empty) head = 0.01 * double.Parse(els.Current);
+                if (els.Current != String.Empty) chest = 0.01 * double.Parse(els.Current);
+                double? underBust = null;
+                els.MoveNext();
+                if (els.Current != String.Empty) underBust = 0.01 * double.Parse(els.Current);
                 els.MoveNext();
                 string sizeLetter = els.Current;
                 els.MoveNext();
                 string sizeNumber = els.Current.TrimEnd();
-                db.Hats.InsertOnSubmit(new Hat()
+                db.Bras.InsertOnSubmit(new Bra()
                 {
                     Retailer = retailer,
                     Region = region,
-                    Head = head,
+                    Chest = chest,
+                    UnderBust = underBust,
                     SizeLetter = sizeLetter,
                     SizeNumber = sizeNumber,
                 });
@@ -62,11 +67,10 @@ namespace Pocketailor.Model.Conversions
         }
 
 
-
     }
 
-    [Table]
-    public class Hat : IConversionData
+    [Table] 
+    public class Bra : IConversionData
     {
         [Column(IsVersion = true)]
         private Binary _version;
@@ -76,7 +80,10 @@ namespace Pocketailor.Model.Conversions
         public int Id { get; set; }
 
         [Column]
-        public double? Head { get; set; }
+        public double? Chest { get; set; }
+
+        [Column]
+        public double? UnderBust { get; set; }
 
         [Column]
         public string SizeLetter { get; set; }
@@ -93,11 +100,10 @@ namespace Pocketailor.Model.Conversions
         [Column]
         public RetailId Retailer { get; set; }
 
-        public Gender Gender 
-        {
+        public Gender Gender {
             get
             {
-                return Gender.Unspecified;
+                return Gender.Female;
             }
         }
 
@@ -111,16 +117,19 @@ namespace Pocketailor.Model.Conversions
             }
         }
 
+
         public double GetChiSq(List<double> measuredVals)
         {
-            // By convention, the order is determined by WetsuitUtils
+            // By convention, the order is determined by DressSizeUtils
+            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.   
             var enumerator = measuredVals.GetEnumerator();
             enumerator.MoveNext();
-            // Some retailers do no provide all conversion measurements. These are defined to fit 'perfectly' in the least square fits.         
-            double dHead = (this.Head.HasValue) ? (double)this.Head - enumerator.Current : 0.0;
+            double dChest = (this.Chest.HasValue) ? (double)this.Chest - enumerator.Current : 0.0;
+            enumerator.MoveNext();
+            double dUnderBust = (this.UnderBust.HasValue) ? (double)this.UnderBust - enumerator.Current : 0.0;
 
-            double chiSq = dHead * dHead;
-            // Extra bit because womens sizes also consider the hips
+            double chiSq = dChest * dChest + dUnderBust * dUnderBust;
+
             return chiSq;
         }
 
