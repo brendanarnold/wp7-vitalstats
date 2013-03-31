@@ -230,6 +230,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private bool _ShowHiddenConversions = false;
+
+		public bool ShowHiddenConversions
+		{
+			get
+			{
+				return this._ShowHiddenConversions;
+			}
+
+			set
+			{
+				if (this._ShowHiddenConversions != value)
+				{
+					this._ShowHiddenConversions = value;
+					this.OnPropertyChanged("ShowHiddenConversions");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
@@ -1934,6 +1953,44 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				{
 					this._FormattedValue = value;
 					this.OnPropertyChanged("FormattedValue");
+				}
+			}
+		}
+
+		private bool _IsHidden = false;
+
+		public bool IsHidden
+		{
+			get
+			{
+				return this._IsHidden;
+			}
+
+			set
+			{
+				if (this._IsHidden != value)
+				{
+					this._IsHidden = value;
+					this.OnPropertyChanged("IsHidden");
+				}
+			}
+		}
+
+		private bool _IsVisible = false;
+
+		public bool IsVisible
+		{
+			get
+			{
+				return this._IsVisible;
+			}
+
+			set
+			{
+				if (this._IsVisible != value)
+				{
+					this._IsVisible = value;
+					this.OnPropertyChanged("IsVisible");
 				}
 			}
 		}

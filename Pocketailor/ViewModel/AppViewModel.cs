@@ -120,8 +120,14 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TROUSER);
+                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                {
+                    return this.HasRequiredMeasurements(Model.Conversions.TrousersUtils.RequiredMeasurementsMens);
+                }
+                else
+                {
+                    return this.HasRequiredMeasurements(Model.Conversions.TrousersUtils.RequiredMeasurementsWomens);
+                }
             }
         }
 
@@ -129,8 +135,15 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHIRT);
+                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                {
+                    return this.HasRequiredMeasurements(Model.Conversions.ShirtUtils.RequiredMeasurementsMens);
+                }
+                else
+                {
+                    return this.HasRequiredMeasurements(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
+                }
+
             }
         }
 
@@ -138,7 +151,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HAT);
+                return this.HasRequiredMeasurements(Model.Conversions.HatUtils.RequiredMeasurements);
             }
         }
 
@@ -146,15 +159,15 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
                 if (App.VM.SelectedProfile.Gender == Gender.Male)
                 {
-                    return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_MENS);
+                    return this.HasRequiredMeasurements(Model.Conversions.SuitUtils.RequiredMeasurementsMens);
                 }
                 else
                 {
-                    return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SUIT_WOMENS);
+                    return this.HasRequiredMeasurements(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
                 }
+
             }
         }
 
@@ -170,8 +183,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_BRA);
+                return this.HasRequiredMeasurements(Model.Conversions.BraUtils.RequiredMeasurements);
             }
         }
 
@@ -179,8 +191,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_HOSIERY);
+                return this.HasRequiredMeasurements(Model.Conversions.HosieryUtils.RequiredMeasurements);
             }
         }
 
@@ -188,7 +199,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SHOES);
+                return this.HasRequiredMeasurements(Model.Conversions.ShoesUtils.RequiredMeasurements);
             }
         }
 
@@ -196,8 +207,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_SKIBOOTS);
+                return this.HasRequiredMeasurements(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
             }
         }
 
@@ -205,8 +215,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                // TODO: Change to ConversionsUtils defintions
-                return this.HasRequiredMeasurements(AppConstants.REQUIRED_MEASUREMENTS_TENNISGRIP);
+                return this.HasRequiredMeasurements(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
             }
         }
 
@@ -309,35 +318,65 @@ namespace Pocketailor.ViewModel
             switch (this.SelectedConversionType)
             {
                 case ConversionId.TrouserSize:
-                    // TODO: Trouser
+                    if (this.SelectedProfile.Gender == Gender.Male)
+                    {
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TrousersUtils.RequiredMeasurementsMens);
+                    }
+                    else
+                    {
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TrousersUtils.RequiredMeasurementsWomens);
+                    }
+                    dataQuery = appDB.Trousers.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.ShirtSize:
-                    // TODO: Shirts
+                    if (this.SelectedProfile.Gender == Gender.Male)
+                    {
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsMens);
+                    }
+                    else
+                    {
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
+                    }
+                    dataQuery = appDB.Shirts.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.HatSize:
-                    // TOD: Hats
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HatUtils.RequiredMeasurements);
+                    dataQuery = appDB.Hats.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.SuitSize:
-                    // TODO: Suits
+                    if (this.SelectedProfile.Gender == Gender.Male)
+                    {
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsMens);
+                    }
+                    else
+                    {
+                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
+                    }
+                    dataQuery = appDB.Suits.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.DressSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.DressSizeUtils.RequiredMeasurements);
                     dataQuery = appDB.DressSizes.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.BraSize:
-                    // TODO: Bras
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.BraUtils.RequiredMeasurements);
+                    dataQuery = appDB.Bras.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.HosierySize:
-                    // TODO: Hosiery
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HosieryUtils.RequiredMeasurements);
+                    dataQuery = appDB.Hosiery.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.ShoeSize:
-                    // TODO: Shoes
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShoesUtils.RequiredMeasurements);
+                    dataQuery = appDB.Shoes.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.SkiBootSize:
-                    // TODO: Ski boots
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
+                    dataQuery = appDB.SkiBoots.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.TennisGripSize:
-                    // TODO: Tennid grip
+                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
+                    dataQuery = appDB.TennisRaquetSizes.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.WetsuitSize:
                     if (this.SelectedProfile.Gender == Gender.Male)
@@ -363,7 +402,8 @@ namespace Pocketailor.ViewModel
                 cr.Conversions = new ObservableCollection<NameValuePair>();
                 // TODO: If gender not specified, then return Female measurements
                 Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender;
-                var dataByRegion = dataQuery.Where(ds => (ds.Region == region) && (ds.Gender == qGender));
+                // TODO: Unresolve this list used for debuggin purposes
+                var dataByRegion = dataQuery.Where(ds => (ds.Region == region) && (ds.Gender == qGender)).ToList();
                 foreach (RetailId retailId in dataByRegion.Select(ds => ds.Retailer).Distinct())
                 {
                     var conversionData = dataByRegion.Where(ds => ds.Retailer == retailId);
@@ -383,6 +423,7 @@ namespace Pocketailor.ViewModel
                         // TODO: Will need to include some kind of lookup for actual string
                         Name = retailId.ToString(),
                         FormattedValue = bestFit.FormattedValue,
+                        Retailer = retailId,
                     });
                 }
                 this.ConversionsByRegion.Add(cr);
@@ -422,11 +463,137 @@ namespace Pocketailor.ViewModel
             public ObservableCollection<NameValuePair> Conversions { get; set; }
         }
 
-        public class NameValuePair
+        public class NameValuePair : INotifyPropertyChanged
         {
+            public NameValuePair()
+            {
+
+                App.VM.HiddenRetailers.CollectionChanged += (s, e) => {
+                    this.NotifyPropertyChanged("IsHidden");
+                    this.NotifyPropertyChanged("IsVisible");
+                };
+                App.VM.PropertyChanged += (s, e) =>
+                {
+                    if (e.PropertyName == "ShowHiddenConversions")
+                        this.NotifyPropertyChanged("IsVisible");
+                };
+            }
+
             public string Name { get; set; }
             public string FormattedValue { get; set; }
+            public RetailId Retailer { get; set; }
+            // Flag set to true if user has chosen to hide this retailer e.g. show but grey this entry out
+            public bool IsHidden 
+            {
+                get
+                {
+                    return App.VM.HiddenRetailers.Contains(this.Retailer);
+                }
+            }
+            // Flag set to true is user wants to see all retailers (even hidden) e.g. show this retailer at all
+            public bool IsVisible
+            {
+                get
+                {
+                    if (!this.IsHidden) {
+                        return true;
+                    } else {
+                        return App.VM.ShowHiddenConversions;
+                    }
+                }
+            }
+
+            public void ToggleHidden()
+            {
+                if (this.IsHidden)
+                {
+                    App.VM.HiddenRetailers.Remove(this.Retailer);
+                }
+                else
+                {
+                    App.VM.HiddenRetailers.Add(this.Retailer);
+                }
+                //this.NotifyPropertyChanged("IsHidden");
+                //if (!App.VM.ShowHiddenConversions)
+                //{
+                //    this.NotifyPropertyChanged("IsVisible");
+                //}
+                App.VM.SaveHiddenRetailers();
+            }
+
+            #region INotifyPropertyChanged members
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            internal void NotifyPropertyChanged(string propertyName)
+            {
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
+            }
+
+            #endregion
+
         }
+
+        private ObservableCollection<RetailId> _hiddenRetailers;
+        public ObservableCollection<RetailId> HiddenRetailers
+        {
+            get
+            {
+                if (this._hiddenRetailers == null)
+                    this.LoadHiddenRetailers();
+                return this._hiddenRetailers;
+            }
+            set
+            {
+                if (this._hiddenRetailers != value)
+                {
+                    this._hiddenRetailers = value;
+                    this.NotifyPropertyChanged("HiddenRetailers");
+                }
+            }
+        }
+
+        public void LoadHiddenRetailers()
+        {
+            if (this.stngs.Contains("HiddenRetailers"))
+            {
+                this.HiddenRetailers = (ObservableCollection<RetailId>)this.stngs["HiddenRetailers"];
+            }
+            else
+            {
+                this.HiddenRetailers = new ObservableCollection<RetailId>();
+            }
+        }
+
+        public void SaveHiddenRetailers()
+        {
+            if (this.stngs.Contains("HiddenRetailers"))
+            {
+                this.stngs["HiddenRetailers"] = this.HiddenRetailers;
+            }
+            else
+            {
+                this.stngs.Add("HiddenRetailers", this.HiddenRetailers);
+            }
+        }
+
+        private bool _showHiddenConversions = false;
+        public bool ShowHiddenConversions
+        {
+            get { return this._showHiddenConversions; }
+            set
+            {
+                if (this._showHiddenConversions != value)
+                {
+                    this._showHiddenConversions = value;
+                    this.NotifyPropertyChanged("ShowHiddenConversions");
+                }
+            }
+        }
+
 
         #endregion
 

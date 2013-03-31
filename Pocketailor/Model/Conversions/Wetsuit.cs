@@ -28,7 +28,7 @@ namespace Pocketailor.Model.Conversions
 
         public static void ReloadCsvToDB(AppDataContext db)
         {
-            db.DressSizes.DeleteAllOnSubmit(db.DressSizes);
+            db.Wetsuits.DeleteAllOnSubmit(db.Wetsuits);
             db.SubmitChanges();
             // Load in dress sizes
             var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Wetsuit.txt", UriKind.Relative));

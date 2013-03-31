@@ -12,6 +12,23 @@ using System.Windows.Controls;
 namespace Pocketailor.View
 {
 
+
+    public class IsHiddenToVisibility : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            if (!b) return Visibility.Visible;
+            if (App.VM.ShowHiddenConversions) return Visibility.Visible;
+            return Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetTYpe, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public class SelectedConversionToBGImage : System.Windows.Data.IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
@@ -313,8 +330,12 @@ namespace Pocketailor.View
     {
         public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
         {
+            string s = (string)parameter;
             bool b = (bool)value;
-            return b ? 1.0 : 0.5;
+            if (s == "TrueIsOpaque")
+                return b ? 1.0 : 0.5;
+            else
+                return b ? 0.5 : 1.0;
         }
         public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
         {

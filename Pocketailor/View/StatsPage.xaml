@@ -199,12 +199,12 @@
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="trouserConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0" Background="{StaticResource TileBGColor}"  Opacity="{Binding HasTrouserMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="trouserConversionBtn_Tap">
+							<Canvas x:Name="trouserConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0" Background="{StaticResource TileBGColor}"  Opacity="{Binding HasTrouserMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="trouserConversionBtn_Tap">
 								<Border Width="279" Background="#97000000">
 									<TextBlock TextWrapping="Wrap" Text="Trousers" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
 								</Border>
 							</Canvas>
-							<Canvas x:Name="shirtConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1"  Opacity="{Binding HasShirtMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="shirtConversionBtn_Tap">
+							<Canvas x:Name="shirtConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1"  Opacity="{Binding HasShirtMeasurements, ConverterParameter=TrueIsOpaque,  Converter={StaticResource BoolToOpacity}}" Tap="shirtConversionBtn_Tap">
 								<Canvas.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/shirts.jpg"/>
 								</Canvas.Background>
@@ -218,7 +218,7 @@
 								<ColumnDefinition Width="3*"/>
 								<ColumnDefinition Width="6*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="hatConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0"  Opacity="{Binding HasHatMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="hatConversionBtn_Tap">
+							<Canvas x:Name="hatConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0"  Opacity="{Binding HasHatMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="hatConversionBtn_Tap">
 								<Canvas.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/wetsuit.jpg"/>
 								</Canvas.Background>
@@ -226,7 +226,7 @@
 									<TextBlock TextWrapping="Wrap" Text="Hats" Height="27" Width="83" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
 							</Canvas>
-							<Canvas x:Name="suitConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1"  Opacity="{Binding HasSuitMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="suitConversionBtn_Tap">
+							<Canvas x:Name="suitConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1"  Opacity="{Binding HasSuitMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="suitConversionBtn_Tap">
 								<Canvas.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/suits.jpg"/>
 								</Canvas.Background>
@@ -236,7 +236,7 @@
 							</Canvas>
 						</Grid>
 						<Grid  Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
-							<Canvas x:Name="dressConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0" Tap="dressConversionBtn_Tap" Opacity="{Binding HasDressSizeMeasurements, Converter={StaticResource BoolToOpacity}}">
+							<Canvas x:Name="dressConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0" Tap="dressConversionBtn_Tap" Opacity="{Binding HasDressSizeMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}">
 								<Canvas.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/dress.jpg"/>
 								</Canvas.Background>
@@ -250,12 +250,12 @@
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="braConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10"  Opacity="{Binding HasBraMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="braConversionBtn_Tap">
+							<Canvas x:Name="braConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10"  Opacity="{Binding HasBraMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="braConversionBtn_Tap">
 								<Border Width="207" Background="#99000000">
 									<TextBlock TextWrapping="Wrap" Text="Bra Sizes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
 							</Canvas>
-							<Canvas x:Name="hosieryConversionBtn" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10"  Opacity="{Binding HasHosieryMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="hosieryConversionBtn_Tap">
+							<Canvas x:Name="hosieryConversionBtn" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10"  Opacity="{Binding HasHosieryMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="hosieryConversionBtn_Tap">
 								<Border Width="217" Background="#99000000">
 									<TextBlock TextWrapping="Wrap" Text="Hosiery" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
@@ -265,7 +265,7 @@
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="shoeConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10"  Opacity="{Binding HasShoeMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="shoeConversionBtn_Tap">
+							<Canvas x:Name="shoeConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10"  Opacity="{Binding HasShoeMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="shoeConversionBtn_Tap">
 								<Border Background="#99000000" Width="434">
 									<TextBlock TextWrapping="Wrap" Text="Shoes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
@@ -281,12 +281,12 @@
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="skiBootConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Opacity="{Binding HasSkiBootMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="skiBootConversionBtn_Tap">
+							<Canvas x:Name="skiBootConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Opacity="{Binding HasSkiBootMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="skiBootConversionBtn_Tap">
 								<Border Width="207" Background="#99000000">
 									<TextBlock TextWrapping="Wrap" Text="Ski Boots" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
 							</Canvas>
-							<Canvas x:Name="tennisGripBtn" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasTennisGripMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="tennisGripBtn_Tap">
+							<Canvas x:Name="tennisGripBtn" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasTennisGripMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="tennisGripBtn_Tap">
 								<Border Width="217" Background="#99000000">
 									<TextBlock TextWrapping="Wrap" Text="Tennis Grip" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
@@ -296,7 +296,7 @@
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="wetsuitConversionBtn" Grid.Column="0" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasWetsuitMeasurements, Converter={StaticResource BoolToOpacity}}" Tap="wetsuitConversionBtn_Tap">
+							<Canvas x:Name="wetsuitConversionBtn" Grid.Column="0" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasWetsuitMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="wetsuitConversionBtn_Tap">
 								<Border Width="434" Background="#99000000">
 									<TextBlock TextWrapping="Wrap" Text="Wetsuits" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
