@@ -28,17 +28,18 @@
 			<!--
 			
 			-->
-			<StackPanel  Orientation="Horizontal" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" Margin="24,0,0,0">
+			<StackPanel  Orientation="Horizontal"  Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  Margin="24,0,0,0">
 				<toolkit:ContextMenuService.ContextMenu>
 					<toolkit:ContextMenu>
 						<toolkit:MenuItem Header="{Binding IsHidden, ConverterParameter=unhide retailer|hide retailer, Converter={StaticResource BoolToStrings}}" Tap="toggleHideRetailerContextMenuItem_Tap" />
 					</toolkit:ContextMenu>
 				</toolkit:ContextMenuService.ContextMenu>
-				<TextBlock Foreground="{StaticResource PageTxtColor}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
-				<TextBlock Foreground="{StaticResource SubTitleColor}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding FormattedValue}" Height="43" Width="63" Margin="6,0,0,0"/>
+				<TextBlock Foreground="{StaticResource PageTxtColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
+				<TextBlock Foreground="{StaticResource SubTitleColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding FormattedValue}" Height="43" Width="63" Margin="6,0,0,0"/>
 			</StackPanel>
 		</DataTemplate>
 		<Style x:Key="ConversionSubListBoxStyle" TargetType="ListBox">
+			<!--
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
 			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
@@ -46,6 +47,7 @@
 			<Setter Property="BorderThickness" Value="0"/>
 			<Setter Property="BorderBrush" Value="Transparent"/>
 			<Setter Property="Padding" Value="0"/>
+			-->
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="ListBox">
@@ -61,24 +63,7 @@
 				<ListBox ItemsSource="{Binding Conversions}"  Style="{StaticResource ConversionSubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" />
 			</StackPanel>
 		</DataTemplate>
-		<Style x:Key="ConversionListBoxStyle" TargetType="ListBox">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-			<Setter Property="BorderThickness" Value="0"/>
-			<Setter Property="BorderBrush" Value="Transparent"/>
-			<Setter Property="Padding" Value="0"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListBox">
-						<ScrollViewer x:Name="ScrollViewer" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" Padding="{TemplateBinding Padding}">
-							<ItemsPresenter/>
-						</ScrollViewer>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
+
 	</phone:PhoneApplicationPage.Resources>
 
 
@@ -123,7 +108,10 @@
 
     		</StackPanel>
     		<StackPanel >
-    			<ListBox ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" Style="{StaticResource ConversionListBoxStyle}" Height="451"/>
+    			<!--
+    			<ListBox ItemsSource="{Binding HiddenRetailers}" />
+				-->
+    			<ListBox ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" Height="451"/>
     		</StackPanel>
 
     	</StackPanel>
@@ -133,10 +121,7 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
-		    <!--
-			<shell:ApplicationBarIconButton x:Name="saveBtn" Text="save" IconUri="/Images/Save.png" Click="saveBtn_Click" IsEnabled="True" />
-			-->
-			<shell:ApplicationBar.MenuItems>
+		    <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="showHiddenAppBarMenuItem" Text="show hidden retailers" Click="showHiddenAppBarMenuItem_Click" />
             </shell:ApplicationBar.MenuItems>
 		</shell:ApplicationBar>

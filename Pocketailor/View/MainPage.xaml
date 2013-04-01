@@ -132,7 +132,7 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="unlockAppBarMenuItem" Text="unlock" Click="unlockAppBarMenuItem_Click"/>
                 <shell:ApplicationBarMenuItem x:Name="aboutAppBarMenuItem" Text="about" Click="aboutAppBarMenuItem_Click"/>
-                <shell:ApplicationBarMenuItem x:Name="settingsAppBarMenuItem" Text="settings" Click="settingsAppBarMenuItem_Click"/>
+                <shell:ApplicationBarMenuItem x:Name="AppBarMenuItem" Text="settings" Click="settingsAppBarMenuItem_Click"/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
         </shell:ApplicationBar>

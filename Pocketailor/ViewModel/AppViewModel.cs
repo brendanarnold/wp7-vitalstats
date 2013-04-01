@@ -298,7 +298,7 @@ namespace Pocketailor.ViewModel
                 if (this._conversionByRegion != value)
                 {
                     this._conversionByRegion = value;
-                    this.NotifyPropertyChanged("ConversionRegions");
+                    this.NotifyPropertyChanged("ConversionsByRegion");
                 }
             }
         }
@@ -465,16 +465,32 @@ namespace Pocketailor.ViewModel
 
         public class NameValuePair : INotifyPropertyChanged
         {
+
             public NameValuePair()
             {
-
                 App.VM.HiddenRetailers.CollectionChanged += (s, e) => {
-                    this.NotifyPropertyChanged("IsHidden");
-                    this.NotifyPropertyChanged("IsVisible");
+                    if (e.NewItems != null)
+                    {
+                        if (e.NewItems.Contains(this.Retailer))
+                        {
+                            this.NotifyPropertyChanged("IsVisible");
+                            this.NotifyPropertyChanged("IsHidden");
+                        }
+                    }
+                    if (e.OldItems != null) 
+                    {
+                        if (e.OldItems.Contains(this.Retailer))
+                        {
+                            this.NotifyPropertyChanged("IsVisible");
+                            this.NotifyPropertyChanged("IsHidden");
+                        }
+                    }
                 };
+ 
                 App.VM.PropertyChanged += (s, e) =>
                 {
-                    if (e.PropertyName == "ShowHiddenConversions")
+                    if ((e.PropertyName == "ShowHiddenConversions") 
+                        || (e.PropertyName == "HiddenRetailers"))
                         this.NotifyPropertyChanged("IsVisible");
                 };
             }
@@ -513,11 +529,6 @@ namespace Pocketailor.ViewModel
                 {
                     App.VM.HiddenRetailers.Add(this.Retailer);
                 }
-                //this.NotifyPropertyChanged("IsHidden");
-                //if (!App.VM.ShowHiddenConversions)
-                //{
-                //    this.NotifyPropertyChanged("IsVisible");
-                //}
                 App.VM.SaveHiddenRetailers();
             }
 
@@ -527,9 +538,9 @@ namespace Pocketailor.ViewModel
 
             internal void NotifyPropertyChanged(string propertyName)
             {
-                if (PropertyChanged != null)
+                if (this.PropertyChanged != null)
                 {
-                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
                 }
             }
 
@@ -560,7 +571,8 @@ namespace Pocketailor.ViewModel
         {
             if (this.stngs.Contains("HiddenRetailers"))
             {
-                this.HiddenRetailers = (ObservableCollection<RetailId>)this.stngs["HiddenRetailers"];
+                this.HiddenRetailers = new ObservableCollection<RetailId>(
+                    ((ObservableCollection<RetailId>)this.stngs["HiddenRetailers"]).Distinct<RetailId>());
             }
             else
             {
@@ -578,6 +590,7 @@ namespace Pocketailor.ViewModel
             {
                 this.stngs.Add("HiddenRetailers", this.HiddenRetailers);
             }
+            this.stngs.Save();
         }
 
         private bool _showHiddenConversions = false;
