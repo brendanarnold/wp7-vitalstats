@@ -126,6 +126,31 @@ namespace Pocketailor.View
     }
 
 
+    // Generates an Image Source binding from a Gender enum. Parameter gives two possible images separated by '|'
+    public class GenderToImage : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            Gender g;
+            if (value.GetType() == typeof(string))
+            {
+                g = (Gender)Enum.Parse(typeof(Gender), (string)value, true);
+            }
+            else
+            {
+                g = (Gender)value;
+            }
+            int i = (g == Gender.Female) ? 1 : 0;
+            string s = ((string)parameter).Split(new char[] { '|' })[i];
+            return new BitmapImage(new Uri(s, UriKind.Relative));
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     // Generates an Image Source binding from a bool. Parameter gives two possible images separated by '|'
     public class BoolToImage : System.Windows.Data.IValueConverter
     {

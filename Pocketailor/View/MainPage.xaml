@@ -33,6 +33,7 @@
         <views:BoolToStrings x:Key="BoolToStrings"/>
         <views:WordsOnNewlines x:Key="WordsOnNewlines"/>
         <views:BoolToVisibility x:Key="BoolToVisibility" />
+		<views:GenderToImage x:Key="GenderToImage" />
 
         <DataTemplate x:Key="MeasurementTypesItemTemplate">
             <StackPanel>
@@ -85,7 +86,7 @@
         	<Setter Property="Template">
         		<Setter.Value>
         			<ControlTemplate TargetType="Button">
-        				<Canvas x:Name="profileCanvas" Background="{StaticResource TileBGColor}" Tap="Button_Tap">
+        				<Canvas x:Name="profileCanvas" Tap="Button_Tap">
         					<VisualStateManager.VisualStateGroups>
         						<VisualStateGroup x:Name="CommonStates">
         							<VisualState x:Name="Normal"/>
@@ -97,12 +98,14 @@
         						</VisualStateGroup>
         					</VisualStateManager.VisualStateGroups>
 							<!--  -->
-							<Image x:Name="isProtectedImg" Height="60" Canvas.Left="140" Canvas.Top="74" Width="60" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}" Source="{Binding AppViewModel.IsLocked, Source={StaticResource ViewModelLocator}, ConverterParameter='/Images/lock.png|/Images/unlock.png', Converter={StaticResource BoolToImage}}" RenderTransformOrigin="0.5,0.5" >
-								<Image.RenderTransform>
-									<CompositeTransform ScaleX="0.65" ScaleY="0.65"/>
-								</Image.RenderTransform>
-							</Image>
-        					<ContentPresenter Height="91" Canvas.Left="6" Canvas.Top="6" Width="144"/>
+							<Image Source="{Binding Gender, ConverterParameter=/Images/MaleProfileIcon.png|/Images/FemaleProfileIcon.png, Converter={StaticResource GenderToImage}}" Height="130" Width="200"/>
+<!--  -->
+        					<Image x:Name="isProtectedImg" Height="60" Canvas.Left="-2" Canvas.Top="74" Width="60" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}" Source="{Binding AppViewModel.IsLocked, ConverterParameter=/Images/lock.png|/Images/unlock.png, Converter={StaticResource BoolToImage}, Source={StaticResource ViewModelLocator}}" RenderTransformOrigin="0.5,0.5" >
+        						<Image.RenderTransform>
+        							<CompositeTransform ScaleX="0.65" ScaleY="0.65"/>
+        						</Image.RenderTransform>
+        					</Image>
+        					<ContentPresenter Height="81" Canvas.Left="6" Canvas.Top="6" Width="144"/>
         				</Canvas>
         			</ControlTemplate>
         		</Setter.Value>
@@ -183,7 +186,7 @@
                         <ScrollViewer>
                             <StackPanel Orientation="Vertical">
 
-                                <TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">QUICKLIST</TextBlock>
+                                <TextBlock Foreground="{StaticResource PageTxtColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">QUICKLIST</TextBlock>
 
                                 <ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
                                     <ItemsControl.ItemsPanel>
@@ -194,7 +197,7 @@
                                     <ItemsControl.ItemTemplate>
 
                                         <DataTemplate>
-                                            <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource ButtonStyle1}" Width="200">
+                                            <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ButtonStyle1}" Width="200">
                                         		<toolkit:ContextMenuService.ContextMenu>
                                         			<toolkit:ContextMenu>
                                         				<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
@@ -209,7 +212,7 @@
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
 
-                                <TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">ALL</TextBlock>
+                                <TextBlock Foreground="{StaticResource PageTxtColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">ALL</TextBlock>
 
                                 <ItemsControl x:Name="mainProfileWrapPanel" ItemsSource="{Binding Profiles}" >
                                     <ItemsControl.ItemsPanel>
@@ -220,7 +223,7 @@
                                     <ItemsControl.ItemTemplate>
 
                                         <DataTemplate>
-                                             <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,10,10" Style="{StaticResource ButtonStyle1}" Width="200">
+                                             <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ButtonStyle1}" Width="200">
                                         		<toolkit:ContextMenuService.ContextMenu>
                                         			<toolkit:ContextMenu>
                                         				<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
