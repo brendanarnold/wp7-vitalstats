@@ -3,17 +3,32 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<!-- Resource dictionary entries should be defined here. -->
 
+	<!--
+	Olive
 	<SolidColorBrush x:Key="PivotTitleColor">#8ABE2D</SolidColorBrush>
+	-->
+	<SolidColorBrush x:Key="PivotTitleColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="PivotHeaderColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
 	<SolidColorBrush x:Key="TileBGColor">#313131</SolidColorBrush>
 	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageTxtColor">#ffffff</SolidColorBrush>
-	<SolidColorBrush x:Key="SubTitleColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogBGColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
 
+	<SolidColorBrush x:Key="UIBGColor">#aaffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="UIFGColor">#313131</SolidColorBrush>
+
+	<Color x:Key="ApplicationBarBGColor">#FCCD43</Color>
+	<Color x:Key="ApplicationBarFGColor">#313131</Color>
+	<Color x:Key="SystemTrayFGColor">#feffff</Color> <!-- Can't be exactly white for the light theme -->
+	<Color x:Key="SystemTrayBGColor">#000000</Color>
+	
+
+	
 	<FontFamily x:Key="ScriptFont">/Pocketailor;component/Fonts/Fonts.zip#Lobster</FontFamily>	
 
 

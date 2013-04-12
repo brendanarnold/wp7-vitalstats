@@ -17,6 +17,9 @@ namespace Pocketailor
     {
         // Increment this when new data added to DB
         public static int CONVERSION_DATA_VERSION = 1;
+        public static string APP_VERSION = "0.1." + CONVERSION_DATA_VERSION.ToString();
+        // TODO: Fill in the paid app GUID
+        public static string PAID_APP_GUID = "";
         // Number of objects that are buffered before calling SubmitChanges() on DB
         public static int DB_OBJECT_BUFFER_BEFORE_WRITE = 50;
         public static string[] VALUE_DELIMITERS = { "|" };
@@ -25,74 +28,13 @@ namespace Pocketailor
         public static string FORMATTED_NAME_SEPARATOR = "/";
         public static int CSV_HEADER_LINES = 1;
         public static char[] CSV_DELIMITERS = new char[] { '\t' };
-        public static List<RegionTag> DEFAULT_REGIONS = new List<RegionTag>() { RegionTag.Worldwide };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_DRESS_SIZE = new List<MeasurementId>() {
-            MeasurementId.Chest, 
-            MeasurementId.Waist, 
-            MeasurementId.Hips };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SUIT_MENS = new List<MeasurementId>() { 
-            MeasurementId.Chest, 
-            MeasurementId.Waist, 
-            MeasurementId.Sleeve, 
-            MeasurementId.InsideLeg, 
-            MeasurementId.Shoulder, 
-            MeasurementId.Crotch, 
-            MeasurementId.Neck, 
-            MeasurementId.Wrist };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SUIT_WOMENS = new List<MeasurementId>() { 
-            MeasurementId.Chest, 
-            MeasurementId.Waist, 
-            MeasurementId.Sleeve, 
-            MeasurementId.InsideLeg, 
-            MeasurementId.Shoulder, 
-            MeasurementId.Crotch, 
-            MeasurementId.Neck, 
-            MeasurementId.Wrist, 
-            MeasurementId.Hips };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_TROUSER = new List<MeasurementId>()
-        {
-            MeasurementId.Waist,
-            MeasurementId.InsideLeg,
+        public static List<RegionTag> DEFAULT_REGIONS = new List<RegionTag>() { 
+            RegionTag.Worldwide 
         };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SHIRT = new List<MeasurementId>()
-        {
-            MeasurementId.Neck,
-            MeasurementId.Sleeve,
-            MeasurementId.Chest,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_HAT = new List<MeasurementId>()
-        {
-            MeasurementId.Head,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_BRA = new List<MeasurementId>()
-        {
-            MeasurementId.Overbust,
-            MeasurementId.Chest,
-            MeasurementId.Underbust,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_HOSIERY = new List<MeasurementId>()
-        {
-            // TODO: refine necessary measurements for hosiery
-            MeasurementId.Height,
-            MeasurementId.Hips,
-            MeasurementId.InsideLeg,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SHOES = new List<MeasurementId>() 
-        {
-            MeasurementId.FootLength,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_SKIBOOTS = new List<MeasurementId>()
-        {
-            MeasurementId.FootLength,
-            MeasurementId.FootWidth,
-        };
-        public static List<MeasurementId> REQUIRED_MEASUREMENTS_TENNISGRIP = new List<MeasurementId>()
-        {
-            MeasurementId.TennisGrip,
-        };
+        public static string AuthorEmail = "brendanarnold@outlook.com";
+        public static string WebsiteUrl = "http://www.lassiv.com/pocketailor/";
+        public static string LicenceUrl = "http://www.lassiv.com/pocketailor/licences.html";
 
 
-
-       
     }
 }

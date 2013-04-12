@@ -9,32 +9,39 @@
 	x:Class="Pocketailor.EditProfilePage"
 	FontFamily="{StaticResource PhoneFontFamilyNormal}"
 	FontSize="{StaticResource PhoneFontSizeNormal}"
-	Foreground="{StaticResource PhoneForegroundBrush}"
+	Foreground="{StaticResource PageTxtColor}"
 	Orientation="Portrait"
-	shell:SystemTray.IsVisible="True">
+	shell:SystemTray.IsVisible="True" 
+	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
+	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
+	Background="{StaticResource PageBGColor}">
 
 	<!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
 		<ScrollViewer>
 		
 			<StackPanel Orientation="Vertical" Height="696" Width="480">
-				<TextBlock Margin="10,5,0,50" TextWrapping="Wrap" Text="add new profile" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Padding="0" />
-				<TextBlock TextWrapping="Wrap" Text="NAME" Padding="0" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0,0,0"/>
-				<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Padding="2"/>
+				<TextBlock Margin="24,5,0,50" TextWrapping="Wrap" Text="add profile" Padding="0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="60" />
+				<Canvas Height="144" Margin="23,0,0,40">
+					<RadioButton x:Name="femaleRadioBtn" Content="FEMALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" IsChecked="True"/>
+					<RadioButton x:Name="maleRadioBtn" Content="MALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Canvas.Top="72" />
+				</Canvas>
+				<TextBlock TextWrapping="Wrap" Text="NAME" Padding="0" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="24,0,0,0" Foreground="{StaticResource DialogTxtColor}"/>
+				<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Padding="2" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource UIFGColor}" Margin="12,0,12,20"/>
 				<StackPanel x:Name="genderGroupStackPanel">
-					<RadioButton x:Name="unspecifiedRadioBtn" Content="UNSPECIFIED" IsChecked="True"/>
-					<RadioButton x:Name="femaleRadioBtn" Content="FEMALE"/>
-					<RadioButton x:Name="maleRadioBtn" Content="MALE"/>
+					
 				</StackPanel>
-				<CheckBox x:Name="isProtectedCheckBox" Content="PROTECT WITH PIN" BorderThickness="3"/>
-				<CheckBox x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST"/>
+				<!--
+				<CheckBox x:Name="isProtectedCheckBox" Content="PROTECT WITH PIN" BorderThickness="3" Foreground="{StaticResource DialogTxtColor}" BorderBrush="{StaticResource UIBGColor}" Background="{StaticResource UIBGColor}"/>
+				-->
+				<CheckBox x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0"/>
 			</StackPanel>
 		
 		</ScrollViewer>
 	</Grid>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True">
+		<shell:ApplicationBar IsVisible="True" BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 		    <shell:ApplicationBarIconButton x:Name="saveBtn" Text="save" IconUri="/Images/Save.png" Click="saveBtn_Click" IsEnabled="True" />
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>

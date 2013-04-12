@@ -30,7 +30,7 @@ namespace Pocketailor.View
 
         private void UpdateUILockState()
         {
-            (this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = (App.VM.IsLocked) ? "unlock" : "lock";
+            //(this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = (App.VM.IsLocked) ? "unlock" : "lock";
         }
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
@@ -93,6 +93,11 @@ namespace Pocketailor.View
             NavigationService.Navigate(new Uri("/View/EditProfilePage.xaml", UriKind.Relative));
         }
 
+        private void rateAppBarBtn_Click(object sender, System.EventArgs e)
+        {
+            App.VM.RateApp();
+        }
+
         // Select a profile button
         private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -145,6 +150,48 @@ namespace Pocketailor.View
         {
             //for (Image im in this.profileWrapPanel.ItemTemplate
         }
+
+        private void contactAuthorTextBlock_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.EmailAuthor();
+        }
+
+        private void rateAppBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.RateApp();
+        }
+
+        private void seeLicencesBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.ViewLicences();
+        }
+
+        private void seeWebsiteBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.ViewWebsite();	
+        }
+
+        private void buyAppBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	App.VM.BuyApp();
+        }
+
+        private void Pivot_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            switch (this.mainPivot.SelectedIndex)
+            {
+                case 0:
+                    this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
+                    break;
+                case 1:
+                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        
 
 
     }

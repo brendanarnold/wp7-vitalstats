@@ -327,8 +327,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="4693.9107"
-     inkscape:cy="-481.07811"
+     inkscape:cx="2991.6968"
+     inkscape:cy="484.27934"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -356,7 +356,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3185,25 +3185,25 @@
     <text
        xml:space="preserve"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="753.39282"
-       y="321.90247"
+       x="771.39282"
+       y="337.90247"
        id="text15960"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan15962"
-         x="753.39282"
-         y="321.90247"
+         x="771.39282"
+         y="337.90247"
          style="fill:#ffffff">Rate Pocketailor</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text15866"
-       y="410.47391"
-       x="754.82141"
+       y="424.47391"
+       x="768.82141"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          style="fill:#ffffff"
-         y="410.47391"
-         x="754.82141"
+         y="424.47391"
+         x="768.82141"
          id="tspan15868"
          sodipodi:role="line">Licences</tspan></text>
     <text
@@ -3297,13 +3297,13 @@
     <text
        sodipodi:linespacing="125%"
        id="text15866-7"
-       y="501.71317"
-       x="757.26007"
+       y="515.71313"
+       x="773.26007"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          style="fill:#ffffff"
-         y="501.71317"
-         x="757.26007"
+         y="515.71313"
+         x="773.26007"
          id="tspan15868-2"
          sodipodi:role="line">Website</tspan></text>
     <path
@@ -3819,7 +3819,7 @@
            x="3584.2856"
            y="1678.0764"
            style="font-size:22px;fill:#ffffff" /></flowRegion><flowPara
-         id="flowPara19789"></flowPara></flowRoot>    <text
+         id="flowPara19789" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        x="3580"

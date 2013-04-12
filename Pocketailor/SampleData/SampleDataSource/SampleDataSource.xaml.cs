@@ -249,6 +249,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private string _AppVersion = string.Empty;
+
+		public string AppVersion
+		{
+			get
+			{
+				return this._AppVersion;
+			}
+
+			set
+			{
+				if (this._AppVersion != value)
+				{
+					this._AppVersion = value;
+					this.OnPropertyChanged("AppVersion");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>

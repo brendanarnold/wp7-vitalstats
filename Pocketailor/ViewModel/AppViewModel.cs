@@ -610,8 +610,57 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
+        #region MainPage actions
 
+        private string _appVersion = AppConstants.APP_VERSION;
+        public string AppVersion {
+            get { return this._appVersion; }
+            set { if (this._appVersion != value) this._appVersion = value; }
+        }
 
+        public void EmailAuthor() 
+        {
+            Microsoft.Phone.Tasks.EmailComposeTask emailTask = new Microsoft.Phone.Tasks.EmailComposeTask()
+            {
+                Subject = "Feedback on Pocketailor",
+                To = AppConstants.AuthorEmail,
+            };
+            emailTask.Show();
+        }
+
+        public void ViewWebsite()
+        {
+            Microsoft.Phone.Tasks.WebBrowserTask webTask = new Microsoft.Phone.Tasks.WebBrowserTask()
+            {
+                Uri = new Uri(AppConstants.WebsiteUrl, UriKind.Absolute),
+            };
+            webTask.Show();
+        }
+        
+        public void ViewLicences()
+        {
+            Microsoft.Phone.Tasks.WebBrowserTask webTask = new Microsoft.Phone.Tasks.WebBrowserTask()
+            {
+                Uri = new Uri(AppConstants.LicenceUrl, UriKind.Absolute),
+            };
+            webTask.Show();
+        }
+
+        public void RateApp()
+        {
+            Microsoft.Phone.Tasks.MarketplaceReviewTask reviewTask = new Microsoft.Phone.Tasks.MarketplaceReviewTask();
+            reviewTask.Show();
+        }
+
+        public void BuyApp()
+        {
+            Microsoft.Phone.Tasks.MarketplaceDetailTask mktTask = new Microsoft.Phone.Tasks.MarketplaceDetailTask()
+            {
+                ContentIdentifier = AppConstants.PAID_APP_GUID,
+            };
+        }
+
+        #endregion
 
         #region PIN locking methods
 
@@ -760,6 +809,7 @@ namespace Pocketailor.ViewModel
             this.appDB.Profiles.InsertOnSubmit(profile);
             this.appDB.SubmitChanges();
             this.Profiles.Add(profile);
+            this.NotifyPropertyChanged("Profiles");
             if (profile.IsQuickProfile) this.QuickProfiles.Add(profile); 
         }
 
@@ -777,6 +827,7 @@ namespace Pocketailor.ViewModel
                 this.QuickProfiles.Remove(profile);
             this.appDB.Profiles.DeleteOnSubmit(profile);
             this.appDB.SubmitChanges();
+            this.NotifyPropertyChanged("Profiles");
         }
 
         public void ToggleIsProtected(Profile profile)

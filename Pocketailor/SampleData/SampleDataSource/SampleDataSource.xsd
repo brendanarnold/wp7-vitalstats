@@ -23,6 +23,7 @@
     <xs:attribute name="ConversionsByRegionPageTitle" type="xs:string" />
     <xs:attribute name="SelectedConversionType" type="xs:string" />
     <xs:attribute name="ShowHiddenConversions" type="xs:boolean" />
+    <xs:attribute name="AppVersion" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Profiles">
     <xs:sequence>
