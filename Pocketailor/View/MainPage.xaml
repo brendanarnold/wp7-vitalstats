@@ -159,6 +159,12 @@
         </shell:ApplicationBar>
 
     </phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PageTxtColor"/>
+	</phone:PhoneApplicationPage.Foreground>
+	<phone:PhoneApplicationPage.Background>
+		<StaticResource ResourceKey="PageBGColor"/>
+	</phone:PhoneApplicationPage.Background>
 
     <d:DataContext>
         <Binding Source="{StaticResource SampleDataSource}"/>

@@ -22,8 +22,13 @@
 	<SolidColorBrush x:Key="UIBGColor">#aaffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="UIFGColor">#313131</SolidColorBrush>
 
+	<!-- Yellow scheme
 	<Color x:Key="ApplicationBarBGColor">#FCCD43</Color>
 	<Color x:Key="ApplicationBarFGColor">#313131</Color>
+	-->
+	<Color x:Key="ApplicationBarBGColor">#313131</Color>
+	<Color x:Key="ApplicationBarFGColor">#feffff</Color>
+	
 	<Color x:Key="SystemTrayFGColor">#feffff</Color> <!-- Can't be exactly white for the light theme -->
 	<Color x:Key="SystemTrayBGColor">#000000</Color>
 	

@@ -38,7 +38,7 @@ namespace Pocketailor
                 App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = Gender.Unspecified, IsProtected = false, IsQuickProfile = false };
             }
             this.nameTextBox.Text = App.VM.SelectedProfile.Name;
-            this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
+            //this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
             this.IsQuickListCheckBox.IsChecked = App.VM.SelectedProfile.IsQuickProfile;
             this.SetSelectedGender(App.VM.SelectedProfile.Gender);
                 
@@ -46,7 +46,7 @@ namespace Pocketailor
 
         private void SetSelectedGender(Model.Gender gender)
         {
-            if (gender == Model.Gender.Unspecified) this.unspecifiedRadioBtn.IsChecked = true;
+            //if (gender == Model.Gender.Unspecified) this.unspecifiedRadioBtn.IsChecked = true;
             if (gender == Model.Gender.Female) this.femaleRadioBtn.IsChecked = true;
             if (gender == Model.Gender.Male) this.maleRadioBtn.IsChecked = true;
         }
@@ -55,7 +55,7 @@ namespace Pocketailor
         private void saveBtn_Click(object sender, System.EventArgs e)
         {
             App.VM.SelectedProfile.Name = this.nameTextBox.Text;
-            App.VM.SelectedProfile.IsProtected = (bool)this.isProtectedCheckBox.IsChecked;
+            //App.VM.SelectedProfile.IsProtected = (bool)this.isProtectedCheckBox.IsChecked;
             App.VM.SelectedProfile.IsQuickProfile = (bool)this.IsQuickListCheckBox.IsChecked;
             App.VM.SelectedProfile.Gender = this.GetSelectedGender();
 
@@ -110,8 +110,8 @@ namespace Pocketailor
             // Returns true if data has been changed
             if (this.nameTextBox.Text != App.VM.SelectedProfile.Name)
                 return true;
-            if ((bool)this.isProtectedCheckBox.IsChecked != App.VM.SelectedProfile.IsProtected)
-                return true;
+            //if ((bool)this.isProtectedCheckBox.IsChecked != App.VM.SelectedProfile.IsProtected)
+            //    return true;
             if (this.GetSelectedGender() != App.VM.SelectedProfile.Gender)
                 return true;
             if ((bool)this.IsQuickListCheckBox.IsChecked != App.VM.SelectedProfile.IsQuickProfile)
@@ -122,20 +122,23 @@ namespace Pocketailor
         private void ClearAddPopUp()
         {
             this.nameTextBox.Text = String.Empty;
-            this.isProtectedCheckBox.IsChecked = false;
+            //this.isProtectedCheckBox.IsChecked = false;
             this.IsQuickListCheckBox.IsChecked = false;
-            this.unspecifiedRadioBtn.IsChecked = true;
+            this.femaleRadioBtn.IsChecked = true;
+            //this.unspecifiedRadioBtn.IsChecked = true;
         }
 
 
         private Model.Gender GetSelectedGender()
         {
             // n.b. have to use verbose form of conditional since IsChecked is nullable
-            if (this.unspecifiedRadioBtn.IsChecked == true) return Model.Gender.Unspecified;
+            //if (this.unspecifiedRadioBtn.IsChecked == true) return Model.Gender.Unspecified;
             if (this.femaleRadioBtn.IsChecked == true) return Model.Gender.Female;
             if (this.maleRadioBtn.IsChecked == true) return Model.Gender.Male;
             return Model.Gender.Unspecified;
         }
+
+
 
 
     }

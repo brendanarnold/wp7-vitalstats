@@ -243,9 +243,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="2717.1178"
-     inkscape:cy="-5732.8581"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="2819.8542"
+     inkscape:cy="-5698.276"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -7808,6 +7808,13 @@
        d="m 1831.0017,6343.2577 -141.7618,-72.6983"
        id="path10494"
        inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#00ff00;fill-opacity:1;stroke:#ffffff;stroke-width:2.70000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4370"
+       width="95.636192"
+       height="68.412582"
+       x="2797.8447"
+       y="6713.9893" />
     <path
        style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 2879.9282,6630.5725 110.5218,92.5299"
@@ -10239,7 +10246,7 @@
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        id="path4263"
-       d="m 2752.8152,6791.9695 -7.5286,4.0121 c 0,0 -4.5713,-3.9556 -7.5239,-3.9556 -2.2947,0 -3.5396,0.9754 -5.289,2.1613 -1.7492,1.1861 -18.4075,22.2692 -18.4075,22.2692 l 5.2419,4.7654 13.2127,-14.1837 c 5.8271,12.2584 -1.6799,13.294 -1.6797,23.8419 l 27.9924,10e-5 -1e-4,-20.7763 2.6537,2.6607 5.5619,-5.5613 -1e-4,-6.0935 -9.1332,-9.1401 -5.1007,0 z"
+       d="m 2762.8152,6703.9695 -7.5286,4.0121 c 0,0 -4.5713,-3.9556 -7.5239,-3.9556 -2.2947,0 -3.5396,0.9754 -5.289,2.1613 -1.7492,1.1861 -18.4075,22.2692 -18.4075,22.2692 l 5.2419,4.7654 13.2127,-14.1837 c 5.8271,12.2584 -1.6799,13.294 -1.6797,23.8419 l 27.9924,10e-5 -1e-4,-20.7763 2.6537,2.6607 5.5619,-5.5613 -1e-4,-6.0935 -9.1332,-9.1401 -5.1007,0 z"
        style="fill:#0c9ac9;fill-opacity:1;stroke:none;display:inline"
        inkscape:connector-curvature="0" />
     <rect
@@ -10247,13 +10254,13 @@
        id="rect4265"
        width="61.952202"
        height="62"
-       x="2711.9644"
-       y="6782.7842"
+       x="2721.9644"
+       y="6694.7842"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <g
-       transform="matrix(0.32819437,0,0,0.32819437,2097.9901,4733.8908)"
+       transform="matrix(0.32819437,0,0,0.32819437,2107.9901,4645.8908)"
        id="g4275"
        style="fill:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;display:inline"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
@@ -10367,7 +10374,7 @@
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
-       transform="matrix(0.34756199,0,0,0.34756199,1984.3038,4616.1241)"
+       transform="matrix(0.34756199,0,0,0.34756199,1994.3038,4528.1241)"
        id="g4295"
        style="display:inline">
       <path
@@ -10390,7 +10397,7 @@
     </g>
     <path
        style="fill:none;stroke:#8abe2d;stroke-width:0.65638876;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
-       d="m 2736.9434,6792.3628 6.7279,6.8101 2.0513,-2.0922 1.9281,2.0513 6.8102,-6.851"
+       d="m 2746.9434,6704.3628 6.7279,6.8101 2.0513,-2.0922 1.9281,2.0513 6.8102,-6.851"
        id="path4301"
        inkscape:connector-curvature="0"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
@@ -10408,7 +10415,7 @@
        sodipodi:rx="2.0883482"
        sodipodi:ry="2.0883482"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
-       transform="matrix(0.30320007,0,0,0.30320007,1956.0109,4890.5978)" />
+       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4802.5978)" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
@@ -10421,9 +10428,9 @@
        sodipodi:rx="2.0883482"
        sodipodi:ry="2.0883482"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
-       transform="matrix(0.30320007,0,0,0.30320007,1956.0109,4896.1473)" />
+       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4808.1473)" />
     <path
-       transform="matrix(0.30320007,0,0,0.30320007,1956.0109,4912.7961)"
+       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4824.7961)"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
        sodipodi:ry="2.0883482"
        sodipodi:rx="2.0883482"
@@ -10447,9 +10454,9 @@
        sodipodi:rx="2.0883482"
        sodipodi:ry="2.0883482"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
-       transform="matrix(0.30320007,0,0,0.30320007,1956.0109,4901.6969)" />
+       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4813.6969)" />
     <path
-       transform="matrix(0.30320007,0,0,0.30320007,1956.0109,4918.3455)"
+       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4830.3455)"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
        sodipodi:ry="2.0883482"
        sodipodi:rx="2.0883482"
@@ -10465,7 +10472,7 @@
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
-       transform="matrix(0.30320007,0,0,0.30320007,1956.0109,4907.2465)"
+       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4819.2465)"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
        sodipodi:ry="2.0883482"
        sodipodi:rx="2.0883482"
@@ -10481,14 +10488,14 @@
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path4315"
-       d="m 2745.5161,6832.0326 -2.6862,2.9802 -11.8193,-2.8702"
+       d="m 2755.5161,6744.0326 -2.6862,2.9802 -11.8193,-2.8702"
        style="fill:#ffffff;stroke:#ffffff;stroke-width:0.38285848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        style="fill:#ffffff;stroke:#ffffff;stroke-width:0.38285848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
-       d="m 2745.5353,6832.0326 2.6862,2.9802 10.6229,-2.8702"
+       d="m 2755.5353,6744.0326 2.6862,2.9802 10.6229,-2.8702"
        id="path4317"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
@@ -10499,7 +10506,256 @@
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        inkscape:connector-curvature="0"
        id="path4319"
-       d="m 2747.6185,6799.1106 0,31.4395 -4.3039,4.8055"
+       d="m 2757.6185,6711.1106 0,31.4395 -4.3039,4.8055"
        style="fill:none;stroke:#8abe2d;stroke-width:0.76571697;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
+    <g
+       inkscape:export-ydpi="666.07001"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       style="fill:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;display:inline"
+       id="g4324"
+       transform="matrix(0.32819437,0,0,0.32819437,2190.4901,4669.3908)">
+      <rect
+         y="3048.0205"
+         x="5814.9399"
+         height="8.3368826"
+         width="24.563316"
+         id="rect4326"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         transform="matrix(0.70683405,0.70737941,-0.70683405,0.70737941,0,0)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         transform="matrix(-0.70683405,0.70737941,0.70683405,0.70737941,0,0)"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect4328"
+         width="24.563316"
+         height="8.3368826"
+         x="3023.2224"
+         y="5839.7383"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect4330"
+         width="24.763962"
+         height="11.216905"
+         x="1960.8579"
+         y="6275.5063"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         transform="matrix(0.70683405,0.70737941,-0.70683405,0.70737941,0,0)"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect4332"
+         width="24.563316"
+         height="8.3368826"
+         x="5814.9399"
+         y="3048.0205" />
+      <rect
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         y="5839.7383"
+         x="3023.2224"
+         height="8.3368826"
+         width="24.563316"
+         id="rect4334"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         transform="matrix(-0.70683405,0.70737941,0.70683405,0.70737941,0,0)" />
+      <rect
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         y="6275.5063"
+         x="1960.8579"
+         height="11.216905"
+         width="24.763962"
+         id="rect4336"
+         style="fill:#ffffff;fill-opacity:1;stroke:none" />
+      <path
+         d="m 1959.3929,5057.415 a 3.8890872,3.8890872 0 1 1 -7.7782,0 3.8890872,3.8890872 0 1 1 7.7782,0 z"
+         sodipodi:ry="3.8890872"
+         sodipodi:rx="3.8890872"
+         sodipodi:cy="5057.415"
+         sodipodi:cx="1955.5038"
+         id="path4338"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         sodipodi:type="arc"
+         transform="matrix(0.67695675,0,0,0.67695675,649.73729,2874.0888)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <path
+         d="m 1959.3929,5057.415 a 3.8890872,3.8890872 0 1 1 -7.7782,0 3.8890872,3.8890872 0 1 1 7.7782,0 z"
+         sodipodi:ry="3.8890872"
+         sodipodi:rx="3.8890872"
+         sodipodi:cy="5057.415"
+         sodipodi:cx="1955.5038"
+         id="path4340"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         sodipodi:type="arc"
+         transform="matrix(0.67695675,0,0,0.67695675,649.73749,2886.6551)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <path
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         transform="matrix(0.67695675,0,0,0.67695675,649.73749,2899.2213)"
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="path4342"
+         sodipodi:cx="1955.5038"
+         sodipodi:cy="5057.415"
+         sodipodi:rx="3.8890872"
+         sodipodi:ry="3.8890872"
+         d="m 1959.3929,5057.415 a 3.8890872,3.8890872 0 1 1 -7.7782,0 3.8890872,3.8890872 0 1 1 7.7782,0 z" />
+    </g>
+    <g
+       style="display:inline"
+       id="g4344"
+       transform="matrix(0.34756199,0,0,0.34756199,2076.8038,4551.6241)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001">
+      <path
+         sodipodi:nodetypes="ccsccccccccccccc"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         d="m 2211.4955,6264.4303 -21.661,11.5435 c 0,0 -13.1522,-11.3809 -21.6479,-11.3807 -6.6019,-2e-4 -10.184,2.8065 -15.2171,6.2186 -5.033,3.4123 -47.3048,58.415 -47.3048,58.415 l 15.0817,13.7115 32.3587,-35.1519 c 16.7655,35.2694 -4.8332,38.2487 -4.8332,68.5972 l 80.5392,2e-4 1e-4,-62.6057 9.0496,9.0694 14.5881,-14.5869 -10e-5,-17.5319 -26.2782,-26.298 -14.6755,1e-4 z"
+         id="path4346"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         y="6030.3716"
+         x="-2878.667"
+         height="22.036686"
+         width="22.036686"
+         id="rect4348"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
+    <path
+       inkscape:export-ydpi="666.07001"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:connector-curvature="0"
+       id="path4350"
+       d="m 2829.4434,6727.8628 6.7279,6.8101 2.0513,-2.0922 1.9281,2.0513 6.8102,-6.851"
+       style="fill:none;stroke:#8abe2d;stroke-width:0.65638876;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
+    <path
+       transform="matrix(0.30320007,0,0,0.30320007,2048.5109,4826.0978)"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       sodipodi:ry="2.0883482"
+       sodipodi:rx="2.0883482"
+       sodipodi:cy="6301.0234"
+       sodipodi:cx="2603.8489"
+       id="path4352"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001" />
+    <path
+       transform="matrix(0.30320007,0,0,0.30320007,2048.5109,4831.6473)"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       sodipodi:ry="2.0883482"
+       sodipodi:rx="2.0883482"
+       sodipodi:cy="6301.0234"
+       sodipodi:cx="2603.8489"
+       id="path4354"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001" />
+    <path
+       inkscape:export-ydpi="666.07001"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path4356"
+       sodipodi:cx="2603.8489"
+       sodipodi:cy="6301.0234"
+       sodipodi:rx="2.0883482"
+       sodipodi:ry="2.0883482"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       transform="matrix(0.30320007,0,0,0.30320007,2048.5109,4848.2961)" />
+    <path
+       transform="matrix(0.30320007,0,0,0.30320007,2048.5109,4837.1969)"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       sodipodi:ry="2.0883482"
+       sodipodi:rx="2.0883482"
+       sodipodi:cy="6301.0234"
+       sodipodi:cx="2603.8489"
+       id="path4358"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001" />
+    <path
+       inkscape:export-ydpi="666.07001"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path4360"
+       sodipodi:cx="2603.8489"
+       sodipodi:cy="6301.0234"
+       sodipodi:rx="2.0883482"
+       sodipodi:ry="2.0883482"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       transform="matrix(0.30320007,0,0,0.30320007,2048.5109,4853.8455)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path4362"
+       sodipodi:cx="2603.8489"
+       sodipodi:cy="6301.0234"
+       sodipodi:rx="2.0883482"
+       sodipodi:ry="2.0883482"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       transform="matrix(0.30320007,0,0,0.30320007,2048.5109,4842.7465)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001" />
+    <path
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0.38285848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+       d="m 2838.0161,6767.5326 -2.6862,2.9802 -11.8193,-2.8702"
+       id="path4364"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path4366"
+       d="m 2838.0353,6767.5326 2.6862,2.9802 10.6229,-2.8702"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0.38285848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:0.76571697;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 2840.1185,6734.6106 0,31.4395 -4.3039,4.8055"
+       id="path4368"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\Shirt.png"
+       inkscape:export-xdpi="666.07001"
+       inkscape:export-ydpi="666.07001"
+       sodipodi:nodetypes="ccc" />
   </g>
 </svg>

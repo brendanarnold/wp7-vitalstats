@@ -5,6 +5,7 @@
 	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
 	x:Class="Pocketailor.EditProfilePage"
 	FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -15,36 +16,102 @@
 	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
 	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
 	Background="{StaticResource PageBGColor}">
-
-	<!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
-		<ScrollViewer>
-		
-			<StackPanel Orientation="Vertical" Height="696" Width="480">
-				<TextBlock Margin="24,5,0,50" TextWrapping="Wrap" Text="add profile" Padding="0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="60" />
-				<Canvas Height="144" Margin="23,0,0,40">
-					<RadioButton x:Name="femaleRadioBtn" Content="FEMALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" IsChecked="True"/>
-					<RadioButton x:Name="maleRadioBtn" Content="MALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Canvas.Top="72" />
-				</Canvas>
-				<TextBlock TextWrapping="Wrap" Text="NAME" Padding="0" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="24,0,0,0" Foreground="{StaticResource DialogTxtColor}"/>
-				<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Padding="2" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource UIFGColor}" Margin="12,0,12,20"/>
-				<StackPanel x:Name="genderGroupStackPanel">
-					
-				</StackPanel>
-				<!--
-				<CheckBox x:Name="isProtectedCheckBox" Content="PROTECT WITH PIN" BorderThickness="3" Foreground="{StaticResource DialogTxtColor}" BorderBrush="{StaticResource UIBGColor}" Background="{StaticResource UIBGColor}"/>
-				-->
-				<CheckBox x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0"/>
-			</StackPanel>
-		
-		</ScrollViewer>
-	</Grid>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 		    <shell:ApplicationBarIconButton x:Name="saveBtn" Text="save" IconUri="/Images/Save.png" Click="saveBtn_Click" IsEnabled="True" />
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
+	
+	
+<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="MaleFemaleStateGroup">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0"/>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="IsMale">
+					<Storyboard>
+						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationX)" Storyboard.TargetName="image">
+							<EasingDoubleKeyFrame KeyTime="0" Value="0.545"/>
+							<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0.545"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="image">
+							<EasingDoubleKeyFrame KeyTime="0" Value="0">
+								<EasingDoubleKeyFrame.EasingFunction>
+									<ElasticEase EasingMode="EaseOut" Springiness="5" Oscillations="1"/>
+								</EasingDoubleKeyFrame.EasingFunction>
+							</EasingDoubleKeyFrame>
+							<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="180">
+								<EasingDoubleKeyFrame.EasingFunction>
+									<ElasticEase EasingMode="EaseOut" Springiness="5" Oscillations="1"/>
+								</EasingDoubleKeyFrame.EasingFunction>
+							</EasingDoubleKeyFrame>
+						</DoubleAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="IsFemale">
+					<Storyboard>
+						<DoubleAnimation Duration="0" To="0.545" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationX)" Storyboard.TargetName="image" d:IsOptimized="True"/>
+						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="image">
+							<EasingDoubleKeyFrame KeyTime="0" Value="180">
+								<EasingDoubleKeyFrame.EasingFunction>
+									<ElasticEase EasingMode="EaseOut" Oscillations="1" Springiness="5"/>
+								</EasingDoubleKeyFrame.EasingFunction>
+							</EasingDoubleKeyFrame>
+							<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0">
+								<EasingDoubleKeyFrame.EasingFunction>
+									<ElasticEase EasingMode="EaseOut" Oscillations="1" Springiness="5"/>
+								</EasingDoubleKeyFrame.EasingFunction>
+							</EasingDoubleKeyFrame>
+						</DoubleAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<VisualStateManager.CustomVisualStateManager>
+			<ec:ExtendedVisualStateManager/>
+		</VisualStateManager.CustomVisualStateManager>
+		<ScrollViewer>
+		
+			<StackPanel Orientation="Vertical" Height="696" Width="480">
+				<TextBlock Margin="36,15,0,50" TextWrapping="Wrap" Text="add profile" Padding="0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" />
+				<Canvas Height="144" Margin="23,0,0,95">
+					<RadioButton x:Name="femaleRadioBtn" Content="FEMALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" IsChecked="True" Canvas.Top="68" Canvas.Left="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Checked">
+								<ec:GoToStateAction StateName="IsFemale"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</RadioButton>
+					<RadioButton x:Name="maleRadioBtn" Content="MALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Canvas.Top="140" Canvas.Left="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}" >
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<ec:GoToStateAction StateName="IsMale"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</RadioButton>
+					<Image x:Name="image" Source="/Pocketailor;component/Images/Shirt.png" Canvas.Left="220" Canvas.Top="-37" RenderTransformOrigin="0.5,0.5" >
+						<Image.Projection>
+							<PlaneProjection/>
+						</Image.Projection>
+						<Image.RenderTransform>
+							<CompositeTransform ScaleX="0.9" ScaleY="0.9"/>
+						</Image.RenderTransform>
+					</Image>
+				</Canvas>
+				<TextBlock TextWrapping="Wrap" Text="NAME" Padding="0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="36,0,0,0" Foreground="{StaticResource DialogTxtColor}"/>
+				<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Padding="2" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource UIFGColor}" Margin="24,0,24,20"/>
+				<StackPanel x:Name="genderGroupStackPanel"/>
+				<!--
+				<CheckBox x:Name="isProtectedCheckBox" Content="PROTECT WITH PIN" BorderThickness="3" Foreground="{StaticResource DialogTxtColor}" BorderBrush="{StaticResource UIBGColor}" Background="{StaticResource UIBGColor}"/>
+				-->
+				<CheckBox x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+			</StackPanel>
+		
+		</ScrollViewer>
+	</Grid>
 	
 	
 </phone:PhoneApplicationPage>
