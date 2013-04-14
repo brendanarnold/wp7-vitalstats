@@ -9,16 +9,22 @@
 	xmlns:local="clr-namespace:Pocketailor"
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
 	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
-
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
 	xmlns:iv="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+	xmlns:Controls="clr-namespace:Pocketailor.View.Controls" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="Pocketailor.View.StatsPage"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
+	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
 
 	<phone:PhoneApplicationPage.Resources>
+		
+		<System:Double x:Key="ConversionBtnHeight">115</System:Double>
+		<Pocketailor_View:EmptyCollectionToVisible x:Key="EmptyCollectionToVisible"/>
+		<Pocketailor_View:EmptyCollectionToCollapsed x:Key="EmptyCollectionToCollapsed"/>
 		<Pocketailor_View:NullToVisibility x:Key="NullToVisibility"/>
 		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
 		<Pocketailor_View:StringToLower x:Key="StringToLower"/>
@@ -99,13 +105,13 @@
 			</Setter>
 		</Style>
 
-		<shell:ApplicationBar x:Key="measurementsAppBar" IsVisible="True" IsMenuEnabled="True">
+		<shell:ApplicationBar x:Key="measurementsAppBar" IsVisible="True" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
 			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton x:Name="addStatAppBarBtn" IconUri="/Assets/AppBar/appbar.add.rest.png" Text="add stat" Click="addStatAppBarBtn_Click"/>
-        </shell:ApplicationBar>
-		<shell:ApplicationBar x:Key="conversionsAppBar" IsVisible="True" IsMenuEnabled="True">
+		</shell:ApplicationBar>
+		<shell:ApplicationBar x:Key="conversionsAppBar" IsVisible="True" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
 			</shell:ApplicationBar.MenuItems>
@@ -122,15 +128,40 @@
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="ListBox">
-							<ItemsPresenter/>
+						<ItemsPresenter/>
 					</ControlTemplate>
 				</Setter.Value>
 			</Setter>
+		</Style>
+		<Style x:Key="ConversionBtnStyle" TargetType="Button">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid x:Name="btnGrid" Background="{TemplateBinding Background}" Height="{StaticResource ConversionBtnHeight}" toolkit:TiltEffect.IsTiltEnabled="True">
+							<Border Background="{StaticResource ImgOverlayColor}" BorderThickness="0" Padding="0,0,0,0" VerticalAlignment="Top"  >
+								<TextBlock Text="{TemplateBinding Content}" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="{StaticResource TileTxtColor}" Margin="6,0,0,0"/>
+							</Border>
+							<Image Source="/Images/ConversionNotAvailableOverlay.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
+							
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="FontFamily" Value="Segoe WP"/>
 		</Style>
 	
 		
 
 	</phone:PhoneApplicationPage.Resources>
+	<shell:SystemTray.BackgroundColor>
+		<StaticResource ResourceKey="SystemTrayBGColor"/>
+	</shell:SystemTray.BackgroundColor>
+	<shell:SystemTray.ForegroundColor>
+		<StaticResource ResourceKey="SystemTrayFGColor"/>
+	</shell:SystemTray.ForegroundColor>
+	<phone:PhoneApplicationPage.Background>
+		<StaticResource ResourceKey="PageBGColor"/>
+	</phone:PhoneApplicationPage.Background>
 
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
@@ -145,10 +176,10 @@
 		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
 	</phone:PhoneApplicationPage.FontSize>
 	<phone:PhoneApplicationPage.Foreground>
-		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+		<StaticResource ResourceKey="PageTxtColor"/>
 	</phone:PhoneApplicationPage.Foreground>
 	
-	<Grid x:Name="LayoutRoot" Background="Transparent" Margin="0">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}" Margin="0">
 
 		
 		
@@ -168,7 +199,7 @@
 								<Run Text="POCKETAILOR"/>
 							</TextBlock>
 						</StackPanel>
-						<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
+						<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}" Foreground="{StaticResource PageTxtColor}"/>
 					</Grid>
 				</StackPanel>
           
@@ -176,12 +207,11 @@
 		
 		
 		
-			<!--Pivot item one-->
-			<controls:PivotItem x:Name="conversionsPivotItem" Margin="12,12,12,0">
+			<controls:PivotItem x:Name="conversionsPivotItem" Margin="12,12,12,0" Foreground="{StaticResource PageTxtColor}">
 
 				<controls:PivotItem.Header>
 					<Grid>
-						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="conversions"></TextBlock>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="conversions" Foreground="{StaticResource PivotHeaderColor}"/>
 					</Grid>
 				</controls:PivotItem.Header>
 
@@ -193,83 +223,69 @@
 						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">
 							<Run Text="CLOTHING"/>
 						</TextBlock>
-
+						
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="trouserConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0" Background="{StaticResource TileBGColor}"  Opacity="{Binding HasTrouserMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="trouserConversionBtn_Tap">
-								<Border Width="279" Background="#97000000">
-									<TextBlock TextWrapping="Wrap" Text="Trousers" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
-								</Border>
-							</Canvas>
-							<Canvas x:Name="shirtConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1"  Opacity="{Binding HasShirtMeasurements, ConverterParameter=TrueIsOpaque,  Converter={StaticResource BoolToOpacity}}" Tap="shirtConversionBtn_Tap">
-								<Canvas.Background>
+							
+							
+							
+							<!--
+							<toolkit:HubTile Title="Dress Sizes" Message="Tap to enter missing measurements" Width="300" Height="115" />
+						    -->
+						</Grid>
+						
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="6*"/>
+								<ColumnDefinition Width="3*"/>
+							</Grid.ColumnDefinitions>
+							<Controls:ConversionBtn x:Name="trouserConversionBtn" Background="{StaticResource TileBGColor}" Title="Trousers" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,10" BorderThickness="0" HasMeasurements="{Binding HasTrouserMeasurements}" Tap="trouserConversionBtn_Tap">
+						
+							</Controls:ConversionBtn>
+							<Controls:ConversionBtn x:Name="shirtConversionBtn" Title="Shirts" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="1" HasMeasurements="{Binding HasShirtMeasurements}" Tap="shirtConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/shirts.jpg"/>
-								</Canvas.Background>
-								<Border Width="145" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Shirts" Height="27" HorizontalAlignment="Left" Margin="12,0,0,4" FontFamily="Segoe WP"/>
-								</Border>
-							</Canvas>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
 						</Grid>
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="3*"/>
 								<ColumnDefinition Width="6*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="hatConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Grid.Column="0"  Opacity="{Binding HasHatMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="hatConversionBtn_Tap">
-								<Canvas.Background>
-									<ImageBrush Stretch="Fill" ImageSource="/Images/wetsuit.jpg"/>
-								</Canvas.Background>
-								<Border Width="135" Background="#99000000" Canvas.Top="73">
-									<TextBlock TextWrapping="Wrap" Text="Hats" Height="27" Width="83" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
-							<Canvas x:Name="suitConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="1"  Opacity="{Binding HasSuitMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="suitConversionBtn_Tap">
-								<Canvas.Background>
+							<Controls:ConversionBtn x:Name="hatConversionBtn" Title="Hats" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HasHatMeasurements}" Tap="hatConversionBtn_Tap">
+
+							</Controls:ConversionBtn>
+							<Controls:ConversionBtn x:Name="suitConversionBtn" Title="Suits" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="1" HasMeasurements="{Binding HasSuitMeasurements}" Tap="suitConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/suits.jpg"/>
-								</Canvas.Background>
-								<Border Width="289" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Suits" Height="27" Width="83" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
 						</Grid>
 						<Grid  Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
-							<Canvas x:Name="dressConversionBtn" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Grid.Column="0" Tap="dressConversionBtn_Tap" Opacity="{Binding HasDressSizeMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}">
-								<Canvas.Background>
+							<Controls:ConversionBtn x:Name="dressConversionBtn" Title="Dress Sizes" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="0" HasMeasurements="{Binding HasDressSizeMeasurements}" Tap="dressConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/dress.jpg"/>
-								</Canvas.Background>
-								<Border Width="434" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Dress Sizes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
+								</Controls:ConversionBtn.Background>
+
+							</Controls:ConversionBtn>
 						</Grid>
 						<Grid Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="braConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10"  Opacity="{Binding HasBraMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="braConversionBtn_Tap">
-								<Border Width="207" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Bra Sizes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
-							<Canvas x:Name="hosieryConversionBtn" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10"  Opacity="{Binding HasHosieryMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="hosieryConversionBtn_Tap">
-								<Border Width="217" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Hosiery" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
+							<Controls:ConversionBtn x:Name="braConversionBtn" Title="Bras" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10"  HasMeasurements="{Binding HasBraMeasurements}" Tap="braConversionBtn_Tap"/>
+							<Controls:ConversionBtn x:Name="hosieryConversionBtn" Title="Hosiery" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10"  HasMeasurements="{Binding HasHosieryMeasurements}" Tap="hosieryConversionBtn_Tap"/>
 						</Grid>
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="shoeConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10"  Opacity="{Binding HasShoeMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="shoeConversionBtn_Tap">
-								<Border Background="#99000000" Width="434">
-									<TextBlock TextWrapping="Wrap" Text="Shoes" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>	
+							<Controls:ConversionBtn x:Name="shoeConversionBtn" Title="Shoes"  Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasShoeMeasurements}" Tap="shoeConversionBtn_Tap"/>	
 						</Grid>
 
 						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">
@@ -281,51 +297,56 @@
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="skiBootConversionBtn" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,10,10" Opacity="{Binding HasSkiBootMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="skiBootConversionBtn_Tap">
-								<Border Width="207" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Ski Boots" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
-							<Canvas x:Name="tennisGripBtn" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasTennisGripMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="tennisGripBtn_Tap">
-								<Border Width="217" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Tennis Grip" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Canvas>
+							<Controls:ConversionBtn x:Name="skiBootConversionBtn" Title="Ski Boots" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10" HasMeasurements="{Binding HasSkiBootMeasurements}" Tap="skiBootConversionBtn_Tap"/>
+							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wesuits" Grid.Column="1" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasWetsuitMeasurements}" Tap="wetsuitConversionBtn_Tap"/>
+							
 						</Grid>
+						<!--
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Canvas x:Name="wetsuitConversionBtn" Grid.Column="0" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasWetsuitMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="wetsuitConversionBtn_Tap">
-								<Border Width="434" Background="#99000000">
-									<TextBlock TextWrapping="Wrap" Text="Wetsuits" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+							<Controls:ConversionBtn x:Name="tennisGripBtn" Grid.Column="0" Title="Tennis Grip" Background="{StaticResource TileBGColor}" Style="{StaticResource ConversionBtnStyle}"  HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasTennisGripMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="tennisGripBtn_Tap">
+								<Border Width="217" Background="{StaticResource ImgOverlayColor}">
+									<TextBlock TextWrapping="Wrap" Text="Tennis Grip" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
 								</Border>
-							</Canvas>
+							</Controls:ConversionBtn>
+							
+							
 						</Grid>
+						-->
 
 					</StackPanel>			
 				</ScrollViewer>
 
 			</controls:PivotItem>
 
-			<controls:PivotItem x:Name="measurementsPivotItem" Margin="12,12,12,0">
+			<controls:PivotItem x:Name="measurementsPivotItem" Margin="12,12,12,0" Foreground="{StaticResource PageTxtColor}">
 				
 				<controls:PivotItem.Header>
 					<Grid>
-						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="measurements"></TextBlock>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="measurements" Foreground="{StaticResource PivotHeaderColor}"/>
 					</Grid>
 				</controls:PivotItem.Header>
 				
-				<StackPanel Grid.Row="0" Margin="12,0,12,0">
-				
-					
+				<Canvas Margin="12,0,12,0" Grid.Row="0" >
+					<!--
 					<StackPanel Margin="0,0,0,12" Orientation="Horizontal">
 						<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 						<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 					
 					</StackPanel>
+					-->
 
-					<ScrollViewer Height="547">
+					<Canvas Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToVisible}}">
+						<TextBlock TextWrapping="Wrap" Text="add a measurement" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="{StaticResource PhoneFontSizeExtraLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="63" Canvas.Top="132"/>
+						<Image Source="/Images/ChalkArrow.png" Canvas.Top="205" Width="432" Canvas.Left="186">
+							<Image.RenderTransform>
+								<CompositeTransform ScaleX="0.2" ScaleY="0.2"/>
+							</Image.RenderTransform></Image>
+					</Canvas>
+
+					<ScrollViewer Height="547" Width="432" Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToCollapsed}}">
 						<StackPanel Orientation="Vertical">
 							<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}">
 								<ListBox.RenderTransform>
@@ -339,12 +360,13 @@
 													<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap"     />
 												</toolkit:ContextMenu>
 											</toolkit:ContextMenuService.ContextMenu>
-											<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width"/>
+											<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width" Foreground="{StaticResource PageTxtColor}"/>
 											<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource HighlightTxtColor}" Margin="10,0,0,0"/>
 										</StackPanel>
 									</DataTemplate>
 								</ListBox.ItemTemplate>
 							</ListBox>
+							<!--
 							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
 								<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
 									<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
@@ -352,11 +374,12 @@
 									<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
 								</StackPanel>
 							</Grid>
+							-->
 
 						</StackPanel>
 					</ScrollViewer>
 
-				</StackPanel>
+				</Canvas>
 				
 			</controls:PivotItem>
 

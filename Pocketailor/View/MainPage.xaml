@@ -22,6 +22,7 @@
     shell:SystemTray.IsVisible="True"
 	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
 	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
+	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
 
 	<!--
@@ -91,7 +92,7 @@
         	<Setter Property="Template">
         		<Setter.Value>
         			<ControlTemplate TargetType="Button">
-        				<Canvas x:Name="profileCanvas" Tap="Button_Tap">
+        				<Canvas toolkit:TiltEffect.IsTiltEnabled="True" x:Name="profileCanvas" Tap="Button_Tap">
         					<VisualStateManager.VisualStateGroups>
         						<VisualStateGroup x:Name="CommonStates">
         							<VisualState x:Name="Normal"/>

@@ -268,6 +268,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private bool _HasTrouserMeasurements = false;
+
+		public bool HasTrouserMeasurements
+		{
+			get
+			{
+				return this._HasTrouserMeasurements;
+			}
+
+			set
+			{
+				if (this._HasTrouserMeasurements != value)
+				{
+					this._HasTrouserMeasurements = value;
+					this.OnPropertyChanged("HasTrouserMeasurements");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>

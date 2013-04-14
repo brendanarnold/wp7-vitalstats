@@ -25,6 +25,8 @@ namespace Pocketailor.View
         {
             InitializeComponent();
 
+           
+
             //this.newStatWizardStateGroup.CurrentStateChanged += newStatWizardStateGroup_CurrentStateChanged;
         }
 

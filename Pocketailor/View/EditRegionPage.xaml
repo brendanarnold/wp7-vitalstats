@@ -8,13 +8,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" 
+	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
+	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
+	>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True">
+		<shell:ApplicationBar IsVisible="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBarIconButton x:Name="saveApplicationBarIconBtn" IconUri="/Images/Save.png" IsEnabled="True" Text="save" Click="saveApplicationBarIconBtn_Click" />
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
@@ -22,10 +24,16 @@
 	<phone:PhoneApplicationPage.Resources>
 		<DataTemplate x:Key="RegionItemTemplate">
 			<Grid>
-				<CheckBox Content="{Binding Name}" IsChecked="{Binding Selected, Mode=TwoWay}" />
+				<CheckBox Content="{Binding Name}" IsChecked="{Binding Selected, Mode=TwoWay}" Foreground="{StaticResource DialogTxtColor}" Background="{StaticResource UIBGColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
 			</Grid>
 		</DataTemplate>
 	</phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PageTxtColor"/>
+	</phone:PhoneApplicationPage.Foreground>
+	<phone:PhoneApplicationPage.Background>
+		<StaticResource ResourceKey="DialogBGColor"/>
+	</phone:PhoneApplicationPage.Background>
 
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
@@ -34,8 +42,8 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
 		<StackPanel>
-			<TextBlock TextWrapping="Wrap" Text="Select regions" Margin="12,50,12,30" FontSize="48"/>
-			<ListBox BorderThickness="12,0" SelectionMode="Multiple" ItemsSource="{Binding Regions}" ItemTemplate="{StaticResource RegionItemTemplate}" Height="551"/>
+			<TextBlock TextWrapping="Wrap" Text="select regions" Margin="36,15,36,50" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
+			<ListBox BorderThickness="24,0,12,0" SelectionMode="Multiple" ItemsSource="{Binding Regions}" ItemTemplate="{StaticResource RegionItemTemplate}" Height="551"/>
 		</StackPanel>
     </Grid>
 

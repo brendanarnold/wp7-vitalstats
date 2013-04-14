@@ -845,6 +845,7 @@ namespace Pocketailor.ViewModel
             profile.Stats.Add(stat);
             this.appDB.Stats.InsertOnSubmit(stat);
             this.appDB.SubmitChanges();
+            profile.NotifyPropertyChanged("Stats");
         }
 
         public void DeleteStatFromProfile(Stat stat, Profile profile)
@@ -852,6 +853,7 @@ namespace Pocketailor.ViewModel
             profile.Stats.Remove(stat);
             this.appDB.Stats.DeleteOnSubmit(stat);
             this.appDB.SubmitChanges();
+            profile.NotifyPropertyChanged("Stats");
         }
 
         #region SelectedProfile methods/properties

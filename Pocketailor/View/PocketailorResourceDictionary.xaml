@@ -4,13 +4,14 @@
 	<!-- Resource dictionary entries should be defined here. -->
 
 	<!--
-	Olive
-	<SolidColorBrush x:Key="PivotTitleColor">#8ABE2D</SolidColorBrush>
+	Olive  #8ABE2D
+	Banana #FCCD43
+	DarkGrey #313131
 	-->
 	<SolidColorBrush x:Key="PivotTitleColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="PivotHeaderColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
-	<SolidColorBrush x:Key="TileBGColor">#313131</SolidColorBrush>
+	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageTxtColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
@@ -19,10 +20,17 @@
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
 
+	<!-- Background for text over an image -->
+	<!--
+	<SolidColorBrush x:Key="ImgOverlayColor">#99000000</SolidColorBrush>
+	-->
+	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
+
 	<SolidColorBrush x:Key="UIBGColor">#aaffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="UIFGColor">#313131</SolidColorBrush>
 
-	<!-- Yellow scheme
+	<!-- Yellow scheme -->
+	<!--
 	<Color x:Key="ApplicationBarBGColor">#FCCD43</Color>
 	<Color x:Key="ApplicationBarFGColor">#313131</Color>
 	-->
