@@ -46,7 +46,7 @@ namespace Pocketailor.Model
             Model.Conversions.HosieryUtils.ReloadCsvToDB(db);
             Model.Conversions.ShoesUtils.ReloadCsvToDB(db);
             Model.Conversions.SkiBootsUtils.ReloadCsvToDB(db);
-            Model.Conversions.TennisRaquetSizesUtils.ReloadCsvToDB(db);
+            //Model.Conversions.TennisRaquetSizesUtils.ReloadCsvToDB(db);
             Model.Conversions.WetsuitUtils.ReloadCsvToDB(db);
             
         }

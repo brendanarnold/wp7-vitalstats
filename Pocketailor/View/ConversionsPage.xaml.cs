@@ -8,7 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace Pocketailor.View.ConversionPages
+namespace Pocketailor.View
 {
     public partial class ConversionsPage : PhoneApplicationPage
     {

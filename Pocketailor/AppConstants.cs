@@ -28,12 +28,14 @@ namespace Pocketailor
         public static string FORMATTED_NAME_SEPARATOR = "/";
         public static int CSV_HEADER_LINES = 1;
         public static char[] CSV_DELIMITERS = new char[] { '\t' };
-        public static List<RegionTag> DEFAULT_REGIONS = new List<RegionTag>() { 
-            RegionTag.Worldwide 
+        public static List<RegionIds> DEFAULT_REGIONS = new List<RegionIds>() { 
+            RegionIds.Worldwide 
         };
-        public static string AuthorEmail = "brendanarnold@outlook.com";
-        public static string WebsiteUrl = "http://www.lassiv.com/pocketailor/";
-        public static string LicenceUrl = "http://www.lassiv.com/pocketailor/licences.html";
+        public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";
+        public static string CSV_DATA_DIRECTORY = "Model\\Csv\\";
+        public static string AUTHOR_EMAIL = "brendanarnold@outlook.com";
+        public static string WEBSITE_URL = "http://www.lassiv.com/pocketailor/";
+        public static string LICENCE_URL = "http://www.lassiv.com/pocketailor/licences.html";
 
 
     }

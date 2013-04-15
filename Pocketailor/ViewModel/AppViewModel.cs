@@ -30,7 +30,7 @@ namespace Pocketailor.ViewModel
 
         #region Region methods/properties
 
-        public void SetSelectedRegions(List<RegionTag> regionTags)
+        public void SetSelectedRegions(List<RegionIds> regionTags)
         {
             if (this.stngs.Contains("SelectedRegions"))
             {
@@ -43,10 +43,10 @@ namespace Pocketailor.ViewModel
             this.stngs.Save();
         }
 
-        public List<RegionTag> GetSelectedRegions()
+        public List<RegionIds> GetSelectedRegions()
         {
             if (this.stngs.Contains("SelectedRegions"))
-                return this.stngs["SelectedRegions"] as List<RegionTag>;
+                return this.stngs["SelectedRegions"] as List<RegionIds>;
             return AppConstants.DEFAULT_REGIONS;
             //return new List<RegionTag>() { RegionTag.UK, RegionTag.Europe };
         }
@@ -72,8 +72,8 @@ namespace Pocketailor.ViewModel
         public void LoadRegions()
         {
             this._regions = new ObservableCollection<RegionContainer>();
-            List<RegionTag> selectedRegions = this.GetSelectedRegions();
-            foreach (RegionTag r in typeof(RegionTag).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionTag))).Cast<RegionTag>())
+            List<RegionIds> selectedRegions = this.GetSelectedRegions();
+            foreach (RegionIds r in typeof(RegionIds).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionIds))).Cast<RegionIds>())
             {
                 this._regions.Add(new RegionContainer { Name = r.ToString(), Id = r, Selected = selectedRegions.Contains(r) });
             }
@@ -82,7 +82,7 @@ namespace Pocketailor.ViewModel
         public class RegionContainer
         {
             public string Name { get; set; }
-            public RegionTag Id { get; set; }
+            public RegionIds Id { get; set; }
             public bool Selected { get; set; }
         }
 
@@ -211,13 +211,13 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        public bool HasTennisGripMeasurements
-        {
-            get
-            {
-                return this.HasRequiredMeasurements(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
-            }
-        }
+        //public bool HasTennisGripMeasurements
+        //{
+        //    get
+        //    {
+        //        return this.HasRequiredMeasurements(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
+        //    }
+        //}
 
         public bool HasWetsuitMeasurements
         {
@@ -374,10 +374,10 @@ namespace Pocketailor.ViewModel
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
                     dataQuery = appDB.SkiBoots.Cast<Model.Conversions.IConversionData>();
                     break;
-                case ConversionId.TennisGripSize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
-                    dataQuery = appDB.TennisRaquetSizes.Cast<Model.Conversions.IConversionData>();
-                    break;
+                //case ConversionId.TennisGripSize:
+                //    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
+                //    dataQuery = appDB.TennisRaquetSizes.Cast<Model.Conversions.IConversionData>();
+                //    break;
                 case ConversionId.WetsuitSize:
                     if (this.SelectedProfile.Gender == Gender.Male)
                     {
@@ -395,7 +395,7 @@ namespace Pocketailor.ViewModel
             // Check we have all the necessary measurements
             if (measuredVals == null) return;
             // Build up by regions
-            foreach (RegionTag region in this.GetSelectedRegions())
+            foreach (RegionIds region in this.GetSelectedRegions())
             {
                 ConversionRegion cr = new ConversionRegion();
                 cr.Name = region.ToString(); // TODO: Will need to include some kind of lookup for the actual string
@@ -623,7 +623,7 @@ namespace Pocketailor.ViewModel
             Microsoft.Phone.Tasks.EmailComposeTask emailTask = new Microsoft.Phone.Tasks.EmailComposeTask()
             {
                 Subject = "Feedback on Pocketailor",
-                To = AppConstants.AuthorEmail,
+                To = AppConstants.AUTHOR_EMAIL,
             };
             emailTask.Show();
         }
@@ -632,7 +632,7 @@ namespace Pocketailor.ViewModel
         {
             Microsoft.Phone.Tasks.WebBrowserTask webTask = new Microsoft.Phone.Tasks.WebBrowserTask()
             {
-                Uri = new Uri(AppConstants.WebsiteUrl, UriKind.Absolute),
+                Uri = new Uri(AppConstants.WEBSITE_URL, UriKind.Absolute),
             };
             webTask.Show();
         }
@@ -641,7 +641,7 @@ namespace Pocketailor.ViewModel
         {
             Microsoft.Phone.Tasks.WebBrowserTask webTask = new Microsoft.Phone.Tasks.WebBrowserTask()
             {
-                Uri = new Uri(AppConstants.LicenceUrl, UriKind.Absolute),
+                Uri = new Uri(AppConstants.LICENCE_URL, UriKind.Absolute),
             };
             webTask.Show();
         }
@@ -960,7 +960,7 @@ namespace Pocketailor.ViewModel
         #region StatTemplates methods/properties
 
         private ObservableCollection<StatTemplate> _statTemplates 
-            = new ObservableCollection<StatTemplate>(Model.Static.StatTemplates);
+            = new ObservableCollection<StatTemplate>(Model.Static.MeasurementTemplates);
         public ObservableCollection<StatTemplate> StatTemplates
         {
             get { return this._statTemplates; }
@@ -972,6 +972,8 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
+
+
 
 
 

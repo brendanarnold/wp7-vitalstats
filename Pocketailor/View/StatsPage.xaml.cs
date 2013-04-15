@@ -257,7 +257,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.TrouserSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -273,7 +273,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.ShirtSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -287,7 +287,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.HatSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -309,7 +309,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.SuitSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -323,7 +323,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.DressSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -337,7 +337,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.BraSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -351,7 +351,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.HosierySize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -365,7 +365,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.ShoeSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -379,7 +379,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.SkiBootSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {
@@ -387,19 +387,19 @@ namespace Pocketailor.View
             }
         }
 
-        private void tennisGripBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
-            if (missingMeasurements.Count == 0)
-            {
-                App.VM.SelectedConversionType = ConversionId.TennisGripSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
-            }
-            else
-            {
-                this.PromptForMissingMeasurements(missingMeasurements, "tennis grip");
-            }
-        }
+        //private void tennisGripBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
+        //    if (missingMeasurements.Count == 0)
+        //    {
+        //        App.VM.SelectedConversionType = ConversionId.TennisGripSize;
+        //        NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+        //    }
+        //    else
+        //    {
+        //        this.PromptForMissingMeasurements(missingMeasurements, "tennis grip");
+        //    }
+        //}
 
         private void wetsuitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -415,7 +415,7 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.WetsuitSize;
-                NavigationService.Navigate(new Uri("/View/ConversionPages/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
             }
             else
             {

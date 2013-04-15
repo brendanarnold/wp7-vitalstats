@@ -87,10 +87,16 @@
     <Compile Include="Model\Conversions\TennisRaquetSize.cs" />
     <Compile Include="Model\Conversions\Trousers.cs" />
     <Compile Include="Model\Conversions\Wetsuit.cs" />
-    <Compile Include="Model\Ids.cs" />
+    <Compile Include="Model\Static\ConversionIds.cs" />
+    <Compile Include="Model\Static\MeasurementIds.cs" />
+    <Compile Include="Model\Static\MeasurementTypes.cs" />
+    <Compile Include="Model\Static\MeasurementTypeIds.cs" />
+    <Compile Include="Model\Static\UnitIds.cs" />
+    <Compile Include="View\HelpData.cs" />
+    <Compile Include="Model\Static\RetailIds.cs" />
     <Compile Include="Model\MeasurementType.cs" />
-    <Compile Include="Model\Data\StaticData.cs" />
-    <Compile Include="Model\Tags.cs" />
+    <Compile Include="Model\Static\MeasurementTemplates.cs" />
+    <Compile Include="Model\Static\RegionIds.cs" />
     <Compile Include="Model\UnitTypes\SingleValueUnit.cs" />
     <Compile Include="Model\UnitTypes\IUnit.cs" />
     <Compile Include="Model\UnitTypes\DoubleValueUnit.cs" />
@@ -109,10 +115,13 @@
     <Compile Include="View\Controls\ConversionBtn.xaml.cs">
       <DependentUpon>ConversionBtn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Controls\ValueUnitTextBox.xaml.cs">
+      <DependentUpon>ValueUnitTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Controls\TitledTextBox.xaml.cs">
       <DependentUpon>TitledTextBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ConversionPages\ConversionsPage.xaml.cs">
+    <Compile Include="View\ConversionsPage.xaml.cs">
       <DependentUpon>ConversionsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Convertors.cs" />
@@ -124,9 +133,6 @@
     </Compile>
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Help\Height.xaml.cs">
-      <DependentUpon>Height.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StatDetailPage.xaml.cs">
       <DependentUpon>StatDetailPage.xaml</DependentUpon>
@@ -162,11 +168,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Controls\ValueUnitTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\TitledTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ConversionPages\ConversionsPage.xaml">
+    <Page Include="View\ConversionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,10 +191,6 @@
     <Page Include="View\EditStatPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Help\Height.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainPage.xaml">
       <SubType>Designer</SubType>
@@ -237,14 +243,102 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\dress.jpg" />
+    <Content Include="Images\HelpImages\ChestMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\ChestWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\FootLengthMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\FootLengthWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\FootWidthMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\FootWidthWoman.png" />
+    <Content Include="Images\HelpImages\HeadMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\HeadWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\HeightMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\HeightWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\HipsMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\HipsWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\InsideLegMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\InsideLegWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\NeckMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\NeckWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\OutsideLegMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\OutsideLegWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\ShoulderMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\ShoulderWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\SleeveMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\SleeveWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\TorsoLengthMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\TorsoLengthWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\UnderBustMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\UnderBustWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\WaistMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\WaistWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\WeightMan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HelpImages\WeightWoman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\suits.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\wetsuit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Model\Data\Bra.txt" />
-    <Content Include="Model\Data\DressSizes.txt">
+    <Content Include="Model\Csv\Bra.txt" />
+    <Content Include="Model\Csv\DressSizes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\AppManifest.xml" />
@@ -315,15 +409,15 @@
     <Content Include="Images\UnlockIcons\Stormy.png" />
     <Content Include="Images\UnlockIcons\Sunny.png" />
     <Content Include="Images\UnlockIcons\Writing.png" />
-    <Content Include="Model\Data\Hat.txt" />
-    <Content Include="Model\Data\Hosiery.txt" />
-    <Content Include="Model\Data\Shirt.txt" />
-    <Content Include="Model\Data\Shoes.txt" />
-    <Content Include="Model\Data\SkiBoots.txt" />
-    <Content Include="Model\Data\Suit.txt" />
-    <Content Include="Model\Data\TennisRaquetSize.txt" />
-    <Content Include="Model\Data\Trousers.txt" />
-    <Content Include="Model\Data\Wetsuit.txt" />
+    <Content Include="Model\Csv\Hat.txt" />
+    <Content Include="Model\Csv\Hosiery.txt" />
+    <Content Include="Model\Csv\Shirt.txt" />
+    <Content Include="Model\Csv\Shoes.txt" />
+    <Content Include="Model\Csv\SkiBoots.txt" />
+    <Content Include="Model\Csv\Suit.txt" />
+    <Content Include="Model\Csv\TennisRaquetSize.txt" />
+    <Content Include="Model\Csv\Trousers.txt" />
+    <Content Include="Model\Csv\Wetsuit.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\Save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

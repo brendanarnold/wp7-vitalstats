@@ -1,1 +1,0 @@
-Retailer	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	Crotch	TorsoLength	Height	Hips	SizeLetter	SizeNumber

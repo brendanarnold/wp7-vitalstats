@@ -22,7 +22,7 @@ namespace Pocketailor.Model
         public Table<Conversions.Hosiery> Hosiery;
         public Table<Conversions.Shoes> Shoes;
         public Table<Conversions.SkiBoots> SkiBoots;
-        public Table<Conversions.TennisRaquetSize> TennisRaquetSizes;
+        //public Table<Conversions.TennisRaquetSize> TennisRaquetSizes;
         public Table<Conversions.Wetsuit> Wetsuits;
     
     

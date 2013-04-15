@@ -14,7 +14,10 @@
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
 	x:Class="Pocketailor.View.EditStatPage"
 	Orientation="Portrait"
-	shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded"
+	shell:SystemTray.IsVisible="True" 
+	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
+	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
+	Loaded="PhoneApplicationPage_Loaded"
 	>
 
 	<phone:PhoneApplicationPage.Resources>
@@ -25,7 +28,11 @@
             <StackPanel>
                 <TextBlock FontSize="24" Margin="0,0,0,10" Text="{Binding Name}"/>
             </StackPanel>
-        </DataTemplate>	
+        </DataTemplate>
+        <Style x:Key="unitTextBlockStyle" TargetType="TextBlock">
+        	<Setter Property="Foreground" Value="{StaticResource DialogTxtColor}"/>
+        	<Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>	
 
     </phone:PhoneApplicationPage.Resources>
 
@@ -44,56 +51,61 @@
 	</d:DataContext>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
-        	<shell:ApplicationBarIconButton x:Name="saveAppBarBtn" IconUri="/Images/Save.png" Text="save stat" IsEnabled="True" Click="saveAppBarBtn_Click"/>
-        	<shell:ApplicationBarIconButton x:Name="helpAppBarBtn" IconUri="/Assets/AppBar/appbar.questionmark.rest.png" Text="help" Click="helpAppBarBtn_Click"/>
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
+        	<shell:ApplicationBarIconButton x:Name="saveAppBarBtn" IconUri="/Images/Save.png" Text="save" IsEnabled="True" Click="saveAppBarBtn_Click"/>
       	</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
-		<VisualStateManager.VisualStateGroups>
-			<VisualStateGroup x:Name="EditOrNewVisualGroup">
-				<VisualState x:Name="EditState">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="edit stat"/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="AddState">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="pageTitleTextBlock">
-							<DiscreteObjectKeyFrame KeyTime="0" Value="new stat"/>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-			</VisualStateGroup>
-		</VisualStateManager.VisualStateGroups>
 		
 		<ScrollViewer x:Name="containerScrollViewer">
-		<StackPanel x:Name="containerStackPanel">
-			<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name, Converter={StaticResource StringToUpper}, FallbackValue=PROFILENAME}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="12,0,0,0"/>
-			<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Text="new stat" Margin="12,0,0,0"/>
-								
-			<Pocketailor_View_Controls:TitledTextBox x:Name="nameTitledTextBox" Title="LABEL"/>
+			<StackPanel x:Name="containerStackPanel">
+				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="29.333"/>
+				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="title here" Margin="36,0,0,0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667"/>
 
-			<toolkit:ListPicker x:Name="preferredUnitListPicker" 
-				Header="UNITS"
-				SelectionChanged="preferredUnitListPicker_SelectionChanged"
-				FullModeItemTemplate="{StaticResource defaultListPickerTemplate}"
-				ItemTemplate="{StaticResource defaultListPickerTemplate}" />
+				<toolkit:ListPicker x:Name="preferredUnitListPicker" 
+					Header="UNITS"
+					SelectionChanged="preferredUnitListPicker_SelectionChanged"
+					Margin="36,12" >
+					<toolkit:ListPicker.Resources>
+						<DataTemplate x:Key="DataTemplate1">
+							<TextBlock Foreground="{StaticResource DialogTxtColor}">
+								<Run Text="UNITS"/>
+							</TextBlock>
+						</DataTemplate>
+					</toolkit:ListPicker.Resources>
+					<toolkit:ListPicker.FullModeItemTemplate>
+						<StaticResource ResourceKey="defaultListPickerTemplate"/>
+					</toolkit:ListPicker.FullModeItemTemplate>
+					<toolkit:ListPicker.ItemTemplate>
+						<StaticResource ResourceKey="defaultListPickerTemplate"/>
+					</toolkit:ListPicker.ItemTemplate>
+					<toolkit:ListPicker.HeaderTemplate>
+						<StaticResource ResourceKey="DataTemplate1"/>
+					</toolkit:ListPicker.HeaderTemplate>
+				</toolkit:ListPicker>
 
-			<StackPanel x:Name="valueContainer" Margin="25,0,0,0">
-				<Pocketailor_View_Controls:TitledTextBox x:Name="value1TitledTextBox"/>
-				<Pocketailor_View_Controls:TitledTextBox x:Name="value2TitledTextBox" Visibility="Collapsed"/>
-				<Pocketailor_View_Controls:TitledTextBox x:Name="value3TitledTextBox" Visibility="Collapsed"/>
-				<Pocketailor_View_Controls:TitledTextBox x:Name="value4TitledTextBox" Visibility="Collapsed"/>
+				<StackPanel  x:Name="valueContainer" Margin="25,0,25,20" Orientation="Horizontal">
+					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox"/>
+					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox"/>
+				</StackPanel>
+			
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,0,0,0" FontSize="22">
+						Lorum ipsum dolor sit insitam.
+						<LineBreak />
+						<LineBreak />
+						Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam.
+					</TextBlock>
+					<Image x:Name="helpImg" Grid.Column="1" Source="/Images/HelpImages/SleeveMan.png" />
+				</Grid>
+
+
 			</StackPanel>
-            
-
-
-
-		</StackPanel>
 		</ScrollViewer>
 		
 

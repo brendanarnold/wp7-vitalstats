@@ -115,7 +115,7 @@
 			           Margin="0,5" 
 					   Text="{Binding Title, ElementName=titledTextBox, FallbackValue=Title Here}" 
 					   FontSize="20" 
-					   Foreground="{StaticResource PhoneSubtleBrush}"/>
+					   Foreground="{StaticResource DialogTxtColor}"/>
             <TextBox x:Name="inputTextBox" Text="{Binding Text, ElementName=titledTextBox,  Mode=TwoWay}" Style="{StaticResource inputTextBoxStyle}" />   
         </StackPanel>
 		

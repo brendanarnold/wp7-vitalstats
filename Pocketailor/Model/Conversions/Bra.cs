@@ -20,7 +20,7 @@ namespace Pocketailor.Model.Conversions
             db.Bras.DeleteAllOnSubmit(db.Bras);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri("Model\\Data\\Bra.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + "Bra.txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
@@ -36,7 +36,7 @@ namespace Pocketailor.Model.Conversions
                 els.MoveNext();
                 RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
                 els.MoveNext();
-                RegionTag region = (RegionTag)Enum.Parse(typeof(RegionTag), els.Current, true);
+                RegionIds region = (RegionIds)Enum.Parse(typeof(RegionIds), els.Current, true);
                 // Store in DB as metres (input file is is centimetres inline with most charts in shops)
                 double? chest = null;
                 els.MoveNext();
@@ -95,7 +95,7 @@ namespace Pocketailor.Model.Conversions
         #region IConversionData methods/properties
 
         [Column]
-        public RegionTag Region { get; set; }
+        public RegionIds Region { get; set; }
 
         [Column]
         public RetailId Retailer { get; set; }
