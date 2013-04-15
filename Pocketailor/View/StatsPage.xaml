@@ -357,6 +357,7 @@
 										<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
 											<toolkit:ContextMenuService.ContextMenu>
 												<toolkit:ContextMenu>
+                                                    <toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap"     />
 													<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap"     />
 												</toolkit:ContextMenu>
 											</toolkit:ContextMenuService.ContextMenu>

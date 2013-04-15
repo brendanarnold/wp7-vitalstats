@@ -147,6 +147,16 @@ namespace Pocketailor.View
             }
         }
 
+        private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (sender != null)
+            {
+                Stat s = (sender as MenuItem).DataContext as Stat;
+                App.VM.SelectedStat = s;
+                NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}", EditStatPageActions.Edit), UriKind.Relative));
+            }
+        }
+
         // Select as a stat and show the popup
         private void stat_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
