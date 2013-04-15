@@ -68,12 +68,14 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+
+		
 		<Style x:Key="ListBoxItemStyle2" TargetType="ListBoxItem">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="BorderThickness" Value="0"/>
 			<Setter Property="BorderBrush" Value="Transparent"/>
 			<Setter Property="Padding" Value="0"/>
-			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 			<Setter Property="VerticalContentAlignment" Value="Top"/>
 			<Setter Property="Template">
 				<Setter.Value>
@@ -104,6 +106,8 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+		
+
 
 		<shell:ApplicationBar x:Key="measurementsAppBar" IsVisible="True" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBar.MenuItems>
@@ -148,6 +152,11 @@
 				</Setter.Value>
 			</Setter>
 			<Setter Property="FontFamily" Value="Segoe WP"/>
+		</Style>
+		<Style x:Key="otherUnitTextBlockStyle" TargetType="TextBlock">
+			<Setter Property="Foreground" Value="{StaticResource DialogTxtColor}"/>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+			<Setter Property="Margin" Value="3,0,0,0"/>
 		</Style>
 	
 		
@@ -348,25 +357,72 @@
 
 					<ScrollViewer Height="547" Width="432" Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToCollapsed}}">
 						<StackPanel Orientation="Vertical">
-							<ListBox x:Name="statsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding SelectedProfile.Stats}" BorderThickness="0,0,0,15" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" RenderTransformOrigin="0.5,0.5" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}">
-								<ListBox.RenderTransform>
-									<CompositeTransform/>
-								</ListBox.RenderTransform>
+							<ListBox x:Name="statsListBox" ItemsSource="{Binding SelectedProfile.Stats}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
+								<!-- this can be set in the templated style
+								<ListBox.ItemContainerStyle>
+									<Style TargetType="ListBoxItem">
+										<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+									</Style>
+								</ListBox.ItemContainerStyle>
+								-->
 								<ListBox.ItemTemplate>
 									<DataTemplate>
-										<StackPanel x:Name="statStackPanel" Orientation="Horizontal" Margin="12,0,0,5" Tap="stat_Tap">
+										<Grid x:Name="measurementGrid" Margin="0,0,0,5" HorizontalAlignment="Stretch" Tap="measurementGrid_Tap" >
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="1*"/>
+												<ColumnDefinition Width="1*"/>
+											</Grid.ColumnDefinitions>
 											<toolkit:ContextMenuService.ContextMenu>
 												<toolkit:ContextMenu>
-                                                    <toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap"     />
-													<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap"     />
+													<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+													<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
 												</toolkit:ContextMenu>
 											</toolkit:ContextMenuService.ContextMenu>
-											<TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Width" Foreground="{StaticResource PageTxtColor}"/>
-											<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource HighlightTxtColor}" Margin="10,0,0,0"/>
-										</StackPanel>
+											<TextBlock Grid.Column="0" TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PageTxtColor}" HorizontalAlignment="Right" Margin="0,0,3,0"/>
+											<StackPanel Grid.Column="1" Orientation="Vertical">
+												<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource HighlightTxtColor}" HorizontalAlignment="Left" Margin="3,0,0,0"/>
+												<!-- begin sub ListBox -->
+												<ListBox Visibility="Collapsed" x:Name="otherUnitsListBox" ItemsSource="{Binding OtherUnitFormattedValues}">
+													<ListBox.Resources>
+														<Style x:Key="ListBoxStyle1" TargetType="ListBox">
+															<Setter Property="Background" Value="Transparent"/>
+															<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+															<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+															<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+															<Setter Property="BorderThickness" Value="0"/>
+															<Setter Property="BorderBrush" Value="Transparent"/>
+															<Setter Property="Padding" Value="0"/>
+															<Setter Property="Template">
+																<Setter.Value>
+																	<ControlTemplate TargetType="ListBox">
+																		<!-- Removed the ScrollViewier -->
+																		<ItemsPresenter/>
+																	</ControlTemplate>
+																</Setter.Value>
+															</Setter>
+														</Style>
+														<DataTemplate x:Key="DataTemplate1">
+															<Grid>
+																<TextBlock  Text="{Binding}" Style="{StaticResource otherUnitTextBlockStyle}"/>
+															</Grid>
+														</DataTemplate>
+													</ListBox.Resources>
+													<ListBox.ItemTemplate>
+														<StaticResource ResourceKey="DataTemplate1"/>
+													</ListBox.ItemTemplate>
+													<ListBox.Style>
+														<StaticResource ResourceKey="ListBoxStyle1"/>
+													</ListBox.Style>
+													
+												</ListBox>
+												<!-- end sub ListBox -->
+											</StackPanel>
+										</Grid>
 									</DataTemplate>
 								</ListBox.ItemTemplate>
 							</ListBox>
+							<TextBlock TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="32" HorizontalAlignment="Center" TextAlignment="Center"/>
+							
 							<!--
 							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
 								<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">

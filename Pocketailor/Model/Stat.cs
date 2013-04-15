@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
@@ -72,6 +73,7 @@ namespace Pocketailor.Model
                 NotifyPropertyChanged("Value");
                 // Changing this changes the formatted value so need to notify UI
                 NotifyPropertyChanged("FormattedValue");
+                this.NotifyPropertyChanged("OtherUnitFormattedValues");
                 // Also need to notify units attached to this stat
                 if (this.MeasurementType != null)
                 {
@@ -101,6 +103,7 @@ namespace Pocketailor.Model
                     this.NotifyPropertyChanged("PreferredUnit");
                     // This also affects the formatted value on the stat
                     this.NotifyPropertyChanged("FormattedValue");
+                    this.NotifyPropertyChanged("OtherUnitFormattedValues");
                 }
             }
         }
@@ -181,6 +184,20 @@ namespace Pocketailor.Model
             }
         }
 
+        public ObservableCollection<string> OtherUnitFormattedValues
+        {
+            get
+            {
+                if (this.MeasurementType == null) return null;
+                ObservableCollection<string> ret = new ObservableCollection<string>();
+                foreach (IUnit u in this.MeasurementType.Units)
+                {
+                    if (u.Id == this.PreferredUnit.Id) continue;
+                    ret.Add(u.GetFormattedValue(this.Value));
+                }
+                return ret;
+            }
+        }
 
         public Stat GetCopy()
         {

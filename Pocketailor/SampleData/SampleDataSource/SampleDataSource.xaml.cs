@@ -591,6 +591,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private OtherUnitFormattedValues _OtherUnitFormattedValues = new OtherUnitFormattedValues();
+
+		public OtherUnitFormattedValues OtherUnitFormattedValues
+		{
+			get
+			{
+				return this._OtherUnitFormattedValues;
+			}
+		}
 	}
 
 	public class MeasurementType : System.ComponentModel.INotifyPropertyChanged
@@ -2068,6 +2078,23 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
+
+	public class OtherUnitFormattedValuesItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+
+	public class OtherUnitFormattedValues : System.Collections.ObjectModel.ObservableCollection<OtherUnitFormattedValuesItem>
+	{ 
 	}
 #endif
 }

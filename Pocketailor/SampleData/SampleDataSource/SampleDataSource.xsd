@@ -55,6 +55,7 @@
     <xs:sequence>
       <xs:element name="MeasurementType" type="tns:MeasurementType" />
       <xs:element name="PreferredUnit" type="tns:PreferredUnit" />
+      <xs:element name="OtherUnitFormattedValues" type="tns:OtherUnitFormattedValues" />
     </xs:sequence>
     <xs:attribute name="Id" type="xs:double" />
     <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
@@ -83,6 +84,12 @@
   <xs:complexType name="PreferredUnit">
     <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
   </xs:complexType>
+  <xs:complexType name="OtherUnitFormattedValues">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="OtherUnitFormattedValuesItem" type="tns:OtherUnitFormattedValuesItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OtherUnitFormattedValuesItem" />
   <xs:complexType name="MeasurementTypes">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="MeasurementTypesItem" type="tns:MeasurementTypesItem" />

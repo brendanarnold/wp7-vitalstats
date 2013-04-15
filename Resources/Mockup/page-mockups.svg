@@ -327,8 +327,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="2330.5591"
-     inkscape:cy="816.03157"
+     inkscape:cx="3358.9796"
+     inkscape:cy="732.91947"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -356,7 +356,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1590,21 +1590,21 @@
          sodipodi:role="line">select regions</tspan></text>
     <rect
        y="1169.8257"
-       x="3443.5859"
+       x="3743.5859"
        height="945.50281"
        width="747.51288"
        id="rect13112"
        style="fill:#000000;fill-opacity:1;stroke:none" />
     <image
        y="1251.9258"
-       x="3545.0771"
+       x="3845.0771"
        id="image13107"
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/edit-stat-page.png"
        height="800"
        width="480" />
     <rect
        y="1292.8438"
-       x="3557.8582"
+       x="3857.8582"
        height="133.8732"
        width="271.5462"
        id="rect13163"
@@ -1614,35 +1614,35 @@
        id="rect13135"
        width="12.025671"
        height="426.13409"
-       x="4012.3582"
+       x="4312.3584"
        y="1284.5258" />
     <text
        sodipodi:linespacing="125%"
        id="text12398-0"
        y="1383.8002"
-       x="3587.7878"
+       x="3887.7878"
        style="font-size:74.0162735px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
        xml:space="preserve"><tspan
          style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Lobster;-inkscape-font-specification:Lobster"
          y="1383.8002"
-         x="3587.7878"
+         x="3887.7878"
          sodipodi:role="line"
          id="tspan13137">sleeve</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:22.59091377px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="3932.6543"
+       x="4232.6543"
        y="1324.7733"
        id="text13159"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13161"
-         x="3932.6543"
+         x="4232.6543"
          y="1324.7733"
          style="fill:#ffffff">Andrea</tspan></text>
     <rect
        y="1435.4789"
-       x="3562.3511"
+       x="3862.3511"
        height="350.02704"
        width="445.74133"
        id="rect13191"
@@ -1652,39 +1652,39 @@
        id="rect13189"
        width="61.647644"
        height="39.50478"
-       x="3552.6121"
+       x="3852.6121"
        y="1772.1686" />
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect13203"
        width="747.51288"
        height="945.50281"
-       x="4280.7285"
+       x="4580.7285"
        y="1172.6829" />
     <image
        width="480"
        height="800"
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/edit-stat-page.png"
        id="image13205"
-       x="4382.2197"
+       x="4682.2197"
        y="1254.783" />
     <rect
        style="fill:#8cbe29;fill-opacity:1;stroke:#8cbe29;stroke-width:3.03269339;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect13387"
        width="462.82446"
        height="349.96732"
-       x="4392.0234"
+       x="4692.0234"
        y="1443.723" />
     <rect
        style="fill:#8cbe29;fill-opacity:1;stroke:#8cbe29;stroke-width:3.47709227;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect13207"
        width="271.5462"
        height="133.8732"
-       x="4395.001"
+       x="4695.001"
        y="1295.7009" />
     <rect
        y="1287.3829"
-       x="4849.501"
+       x="5149.501"
        height="426.13409"
        width="12.025671"
        id="rect13209"
@@ -1692,25 +1692,25 @@
     <text
        xml:space="preserve"
        style="font-size:74.0162735px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       x="4408.9307"
+       x="4708.9307"
        y="1378.6573"
        id="text13211"
        sodipodi:linespacing="125%"><tspan
          id="tspan13213"
          sodipodi:role="line"
-         x="4408.9307"
+         x="4708.9307"
          y="1378.6573"
          style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Lobster;-inkscape-font-specification:Lobster">custom</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text13215"
        y="1327.6305"
-       x="4769.7969"
+       x="5069.7969"
        style="font-size:22.59091377px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          style="fill:#ffffff"
          y="1327.6305"
-         x="4769.7969"
+         x="5069.7969"
          id="tspan13217"
          sodipodi:role="line">Andrea</tspan></text>
     <rect
@@ -1718,35 +1718,35 @@
        id="rect13221"
        width="72.14286"
        height="39.285713"
-       x="4389.8643"
+       x="4689.8643"
        y="1428.7067" />
     <text
        xml:space="preserve"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="4419.2202"
+       x="4719.2202"
        y="1466.0641"
        id="text13223"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13225"
-         x="4419.2202"
+         x="4719.2202"
          y="1466.0641">LABEL</tspan></text>
     <rect
        style="fill:#8cbe29;fill-opacity:1;stroke:#8cbe29;stroke-width:2.78093171;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect13227"
        width="61.647644"
        height="39.50478"
-       x="4387.6118"
+       x="4687.6118"
        y="1535.74" />
     <text
        sodipodi:linespacing="125%"
        id="text13229"
        y="1572.4927"
-       x="4419.5132"
+       x="4719.5132"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1572.4927"
-         x="4419.5132"
+         x="4719.5132"
          id="tspan13231"
          sodipodi:role="line">TYPE</tspan></text>
     <rect
@@ -1754,22 +1754,22 @@
        id="rect13233"
        width="61.647644"
        height="39.50478"
-       x="4394.0405"
+       x="4694.0405"
        y="1656.4542" />
     <text
        xml:space="preserve"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="4421.4136"
+       x="4721.4136"
        y="1680.4927"
        id="text13235"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13237"
-         x="4421.4136"
+         x="4721.4136"
          y="1680.4927">UNITS</tspan></text>
     <rect
        y="1775.0258"
-       x="4389.7549"
+       x="4689.7549"
        height="39.50478"
        width="61.647644"
        id="rect13239"
@@ -1778,11 +1778,11 @@
        sodipodi:linespacing="125%"
        id="text13241"
        y="1828.4884"
-       x="4553.9634"
+       x="4853.9634"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1828.4884"
-         x="4553.9634"
+         x="4853.9634"
          id="tspan13243"
          sodipodi:role="line">cm</tspan></text>
     <rect
@@ -1790,17 +1790,17 @@
        id="rect13251"
        width="407.88199"
        height="48.336861"
-       x="3579.5059"
+       x="3879.5059"
        y="1476.4252" />
     <text
        sodipodi:linespacing="125%"
        id="text13247-8"
        y="1511.7208"
-       x="3600.1426"
+       x="3900.1426"
        style="font-size:24.06772995px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1511.7208"
-         x="3600.1426"
+         x="3900.1426"
          id="tspan13249-0"
          sodipodi:role="line">feet/inches</tspan></text>
     <rect
@@ -1808,11 +1808,11 @@
        id="rect13294"
        width="123.40157"
        height="49.729656"
-       x="3578.7312"
+       x="3878.7312"
        y="1552.6229" />
     <rect
        y="1551.9087"
-       x="3743.0364"
+       x="4043.0361"
        height="49.729656"
        width="123.40157"
        id="rect13292"
@@ -1820,34 +1820,34 @@
     <text
        xml:space="preserve"
        style="font-size:24.06772995px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="3757.675"
+       x="4057.6748"
        y="1586.5555"
        id="text13317"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13319"
-         x="3757.675"
+         x="4057.6748"
          y="1586.5555">8</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text13247-8-9"
        y="1583.8209"
-       x="3585.5054"
+       x="3885.5054"
        style="font-size:24.06772995px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1583.8209"
-         x="3585.5054"
+         x="3885.5054"
          id="tspan13249-0-8"
          sodipodi:role="line">5</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text13482"
        y="1462.2457"
-       x="3578.6758"
+       x="3878.6758"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1462.2457"
-         x="3578.6758"
+         x="3878.6758"
          id="tspan13484"
          sodipodi:role="line">UNITS</tspan></text>
     <rect
@@ -1890,47 +1890,47 @@
        sodipodi:linespacing="125%"
        id="text13363"
        y="1586.1986"
-       x="3712.8533"
+       x="4012.8533"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1586.1986"
-         x="3712.8533"
+         x="4012.8533"
          id="tspan13365"
          sodipodi:role="line">ft.</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:21.99604225px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="3880.209"
+       x="4180.209"
        y="1582.4539"
        id="text13235-9-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13237-1-5"
-         x="3880.209"
+         x="4180.209"
          y="1582.4539">in.</tspan></text>
     <rect
        style="fill:#deefc5;fill-opacity:1;stroke:#deefc5;stroke-width:3.1504581;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect13251-3"
        width="407.88199"
        height="48.336861"
-       x="4416.6377"
+       x="4716.6377"
        y="1478.1096" />
     <rect
        style="fill:#deefc5;fill-opacity:1;stroke:#deefc5;stroke-width:3.1504581;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect13251-3-7"
        width="407.88199"
        height="48.336861"
-       x="4416.6377"
+       x="4716.6377"
        y="1580.9668" />
     <text
        sodipodi:linespacing="125%"
        id="text13247"
        y="1613.9608"
-       x="4430.3765"
+       x="4730.3765"
        style="font-size:24.06772995px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1613.9608"
-         x="4430.3765"
+         x="4730.3765"
          id="tspan13249"
          sodipodi:role="line">Length</tspan></text>
     <rect
@@ -1938,11 +1938,11 @@
        id="rect13251-3-7-9"
        width="407.88199"
        height="48.336861"
-       x="4418.5522"
+       x="4718.5522"
        y="1690.9756" />
     <rect
        y="1797.699"
-       x="4419.4492"
+       x="4719.4492"
        height="49.729656"
        width="123.40157"
        id="rect13292-0"
@@ -1950,28 +1950,28 @@
     <text
        xml:space="preserve"
        style="font-size:24.06772995px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="4431.9087"
+       x="4731.9087"
        y="1725.1385"
        id="text13464"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13466"
-         x="4431.9087"
+         x="4731.9087"
          y="1725.1385">Centimetres</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text13247-7"
        y="1509.9761"
-       x="4426.8579"
+       x="4726.8579"
        style="font-size:24.06772995px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.50961537;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          y="1509.9761"
-         x="4426.8579"
+         x="4726.8579"
          id="tspan13249-4"
          sodipodi:role="line">Enter custom label here ...</tspan></text>
     <rect
        y="1990.7938"
-       x="3672.9502"
+       x="3972.9502"
        height="51.51778"
        width="194.95944"
        id="rect13480"
@@ -1981,7 +1981,7 @@
        id="rect13478"
        width="194.95944"
        height="51.51778"
-       x="4524.5088"
+       x="4824.5088"
        y="1992.8141" />
     <image
        clip-path="url(#clipPath13472)"
@@ -1991,7 +1991,7 @@
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/edit-stat-page.png"
        height="800"
        width="480"
-       transform="translate(781.89358,49.497475)" />
+       transform="translate(1081.8936,49.497475)" />
     <image
        width="480"
        height="800"
@@ -2000,7 +2000,7 @@
        x="2794.4983"
        y="1203.4385"
        clip-path="url(#clipPath13472)"
-       transform="translate(1633.4522,50.507627)" />
+       transform="translate(1933.4522,50.507627)" />
     <rect
        y="1533.0826"
        x="601.82959"
@@ -2304,8 +2304,9 @@
     <path
        inkscape:connector-curvature="0"
        id="path14652"
-       d="m 3436.2931,740.84951 160,359.99999"
-       style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+       d="m 3504.8645,720.84951 294.2857,391.42859"
+       style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path14654"
@@ -3613,7 +3614,7 @@
        y="559.41302" />
     <g
        id="g19732"
-       transform="matrix(0.77230846,0,0,0.77230846,844.65632,386.62385)"
+       transform="matrix(0.77230846,0,0,0.77230846,1144.6563,386.62385)"
        clip-path="url(#clipPath19814)">
       <path
          transform="matrix(1.5025347,0.05989116,-0.00206624,1.5037266,30.575154,-7728.4539)"
@@ -4059,49 +4060,276 @@
     <text
        xml:space="preserve"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="3580"
+       x="3880"
        y="1678.0764"
        id="text19795"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan19797"
-         x="3580"
+         x="3880"
          y="1678.0764"
          style="font-size:24px;fill:#ffffff">Place arm on hip.</tspan><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1708.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19811" /><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1738.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19801">Measurement is</tspan><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1768.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19799">taken from cuff </tspan><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1798.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19803">along the outside </tspan><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1828.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19805">of the arm, over the </tspan><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1858.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19807">shoulder to the </tspan><tspan
          sodipodi:role="line"
-         x="3580"
+         x="3880"
          y="1888.0764"
          style="font-size:24px;fill:#ffffff"
          id="tspan19809">centre of the neck.</tspan></text>
+    <rect
+       y="-12.711303"
+       x="3171.2986"
+       height="38.890873"
+       width="335.37064"
+       id="rect3567"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
+    <rect
+       y="185.31665"
+       x="3176.0725"
+       height="40.911179"
+       width="438.40622"
+       id="rect3569"
+       style="fill:#8abe2d;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       style="font-size:28.06390381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="3410.1016"
+       y="185.9939"
+       id="text3571"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3573"
+         x="3410.1016"
+         y="185.9939"
+         style="fill:#ffffff">Add</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3575"
+       y="232.27966"
+       x="3349.0752"
+       style="font-size:28.06390381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;fill:#ffffff;-inkscape-font-specification:Segoe WP Bold"
+         y="232.27966"
+         x="3349.0752"
+         id="tspan3577"
+         sodipodi:role="line">Inside Leg?</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect12191-1"
+       width="451.79919"
+       height="56.03373"
+       x="3166.6003"
+       y="187.20247" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect12191-1-7"
+       width="451.79919"
+       height="85.226631"
+       x="3165.3354"
+       y="157.34033" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:10.05953789;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3632"
+       width="248.4583"
+       height="140.10945"
+       x="3190.2341"
+       y="39.126587" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3623"
+       y="136.28345"
+       x="3394.8098"
+       style="font-size:33.46506119px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#fccd43;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="136.28345"
+         x="3394.8098"
+         id="tspan3625"
+         sodipodi:role="line">1.34 m</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3627"
+       y="221.47668"
+       x="3394.8098"
+       style="font-size:33.46506119px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#fccd43;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="221.47668"
+         x="3394.8098"
+         id="tspan3629"
+         sodipodi:role="line">5 ft 4 in</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:33.46506119px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       x="3394.8098"
+       y="178.73254"
+       id="text3615"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3617"
+         x="3394.8098"
+         y="178.73254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#fccd43;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP">76 in</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3654"
+       y="278.40576"
+       x="3272.5232"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="278.40576"
+         x="3272.5232"
+         id="tspan3656"
+         sodipodi:role="line">Waist</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3658"
+       y="321.60791"
+       x="3290.0066"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="321.60791"
+         x="3290.0066"
+         id="tspan3660"
+         sodipodi:role="line">Hips</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3662"
+       y="364.26868"
+       x="3211.7075"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="364.26868"
+         x="3211.7075"
+         id="tspan3664"
+         sodipodi:role="line">Inside leg</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3666"
+       y="280.40576"
+       x="3390.0388"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8cbe29;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8cbe29;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="280.40576"
+         x="3390.0388"
+         id="tspan3668"
+         sodipodi:role="line">54.0 cm</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3670"
+       y="320.85242"
+       x="3390.8459"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8cbe29;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8cbe29;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="320.85242"
+         x="3390.8459"
+         id="tspan3672"
+         sodipodi:role="line">54.0 cm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8cbe29;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       x="3390.5669"
+       y="366.24841"
+       id="text3650"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3652"
+         x="3390.5669"
+         y="366.24841"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8cbe29;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP">54.0 cm</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3654-4"
+       y="94.390137"
+       x="3272.5232"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="94.390137"
+         x="3272.5232"
+         id="tspan3656-0"
+         sodipodi:role="line">Chest</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3666-9"
+       y="96.905151"
+       x="3393.6238"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8cbe29;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8cbe29;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="96.905151"
+         x="3393.6238"
+         id="tspan3668-4"
+         sodipodi:role="line">54.0 cm</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3654-4-8"
+       y="51.858032"
+       x="3256.5295"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="51.858032"
+         x="3256.5295"
+         id="tspan3656-0-8"
+         sodipodi:role="line">Height</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3666-9-2"
+       y="55.801636"
+       x="3394.7729"
+       style="font-size:35.03530884px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8cbe29;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8cbe29;fill-opacity:1;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+         y="55.801636"
+         x="3394.7729"
+         id="tspan3668-4-4"
+         sodipodi:role="line">54.0 cm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:29.65501213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="3195.6643"
+       y="420.99817"
+       id="text4599"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4601"
+         x="3195.6643"
+         y="420.99817"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust">Long press a measurement to edit</tspan></text>
   </g>
 </svg>

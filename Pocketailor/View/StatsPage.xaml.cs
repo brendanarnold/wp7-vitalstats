@@ -157,12 +157,7 @@ namespace Pocketailor.View
             }
         }
 
-        // Select as a stat and show the popup
-        private void stat_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            App.VM.SelectedStat = ((sender as StackPanel).DataContext as Stat);
-            NavigationService.Navigate(new Uri("/View/StatDetailPage.xaml", UriKind.Relative));
-        }
+
 
         // navigate to the edit profile page
         private void editProfileAppBarMenuItem_Click(object sender, System.EventArgs e)
@@ -431,6 +426,14 @@ namespace Pocketailor.View
             {
                 this.PromptForMissingMeasurements(missingMeasurements, "wetsuit");
             }
+        }
+
+        // Toggle the visibility
+        private void measurementGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Grid g = sender as Grid;
+            ListBox lb = g.FindName("otherUnitsListBox") as ListBox;
+            if (lb.Visibility == Visibility.Visible) lb.Visibility = Visibility.Collapsed; else lb.Visibility = Visibility.Visible;
         }
 
 
