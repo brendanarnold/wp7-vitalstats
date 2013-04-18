@@ -18,6 +18,58 @@
    sodipodi:docname="page-mockups.svg">
   <defs
      id="defs8298">
+    <inkscape:path-effect
+       effect="rough_hatches"
+       id="path-effect6851"
+       is_visible="true"
+       direction="1041.7619,91.464007 , 48.268592,0"
+       dist_rdm="1;870553735"
+       growth="0"
+       do_bend="true"
+       bender="1041.7619,96.464007 , 5,0"
+       bottom_edge_variation="15.24;1827656208"
+       top_edge_variation="15.24;988594804"
+       bottom_tgt_variation="0;1187336792"
+       top_tgt_variation="0;233211148"
+       scale_bf="1"
+       scale_bb="1"
+       scale_tf="1"
+       scale_tb="1"
+       top_smth_variation="0;-401573660"
+       bottom_smth_variation="0;68485854"
+       fat_output="true"
+       stroke_width_top="1"
+       stroke_width_bottom="1"
+       front_thickness="1"
+       back_thickness="0.25" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect6161"
+       is_visible="true"
+       pattern="#path6173"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0.3"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4657"
+       is_visible="true"
+       pattern="M 0,0 1,0"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
     <marker
        inkscape:stockid="Arrow1Mstart"
        orient="auto"
@@ -318,6 +370,157 @@
          id="rect19816"
          style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:31.62511635;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     </clipPath>
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4657-1"
+       is_visible="true"
+       pattern="m 785.26089,128.86474 1,0"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <filter
+       id="filter6881"
+       inkscape:label="ChalkOnPath"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.3"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence6883"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset6885"
+         dx="-5.7553956834532354"
+         dy="-2.877697841726623"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap6887"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="2.464788732394366"
+         in="SourceGraphic" />
+    </filter>
+    <filter
+       id="filter6881-2"
+       inkscape:label="ChalkOnPath"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.30000001"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence6883-3"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset6885-2"
+         dx="-5.7553956834532354"
+         dy="-2.877697841726623"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap6887-2"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="2.4647887"
+         in="SourceGraphic" />
+    </filter>
+    <filter
+       id="filter6903"
+       inkscape:label="ChalkOnPath"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.30000001"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence6905"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset6907"
+         dx="-5.7553956834532354"
+         dy="-2.877697841726623"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap6909"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="2.4647887"
+         in="SourceGraphic" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6970">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6972"
+         width="246.47722"
+         height="211.12189"
+         x="17.910809"
+         y="-1121.1578"
+         transform="matrix(0,1,-1,0,0,0)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6974">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6976"
+         width="716.63257"
+         height="613.83698"
+         x="712.61877"
+         y="-687.10327"
+         transform="matrix(0.96592583,-0.25881905,-0.25881905,-0.96592583,0,0)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6978">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6980"
+         width="296.32544"
+         height="253.81975"
+         x="-940.01074"
+         y="465.40149"
+         transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6982">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6984"
+         width="246.47722"
+         height="211.12189"
+         x="1726.3507"
+         y="968.51953" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -326,9 +529,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="3358.9796"
-     inkscape:cy="732.91947"
+     inkscape:zoom="0.35"
+     inkscape:cx="939.15675"
+     inkscape:cy="70.158013"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -356,7 +559,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3215,15 +3418,6 @@
        x="-68.7733"
        y="-457.23389"
        transform="matrix(0,1,-1,0,0,0)" />
-    <image
-       y="-260.8157"
-       x="925.71606"
-       id="image8940-2"
-       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/profiles-page.png"
-       height="800"
-       width="480"
-       clip-path="url(#clipPath15459)"
-       transform="translate(-1014.7513,-74.751288)" />
     <path
        inkscape:connector-curvature="0"
        id="path14652-8"
@@ -3273,6 +3467,13 @@
          x="3347.9121"
          y="218.67531"
          style="font-weight:bold;fill:#ffffff;-inkscape-font-specification:Segoe WP Bold">Inside Leg?</tspan></text>
+    <rect
+       style="fill:#212021;fill-opacity:1;stroke:#000000;stroke-width:2.01057314999999990;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect16145"
+       width="474.76114"
+       height="82.821938"
+       x="699.03082"
+       y="559.41302" />
     <image
        y="-155.75986"
        x="697.21344"
@@ -3344,14 +3545,14 @@
        x="712.85712"
        y="23.790754" />
     <rect
-       y="288.93359"
+       y="388.93359"
        x="744.28571"
        height="74.285713"
        width="377.14285"
        id="rect15858"
        style="fill:#8cbe29;fill-opacity:1;stroke:none" />
     <rect
-       y="378.83722"
+       y="478.83722"
        x="744.70416"
        height="74.285713"
        width="376.42856"
@@ -3400,121 +3601,81 @@
     <text
        sodipodi:linespacing="125%"
        id="text15935"
-       y="141.90413"
-       x="740.68488"
+       y="240.1478"
+       x="745.33466"
        style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
-         y="141.90413"
-         x="740.68488"
+         y="240.1478"
+         x="745.33466"
          id="tspan15937"
          sodipodi:role="line">VERSION</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        x="771.39282"
-       y="337.90247"
+       y="437.90247"
        id="text15960"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan15962"
          x="771.39282"
-         y="337.90247"
+         y="437.90247"
          style="fill:#ffffff">Rate Pocketailor</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text15866"
-       y="424.47391"
+       y="524.47388"
        x="768.82141"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          style="fill:#ffffff"
-         y="424.47391"
+         y="524.47388"
          x="768.82141"
          id="tspan15868"
-         sodipodi:role="line">Licences</tspan></text>
+         sodipodi:role="line">Visit on Facebook</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="741.25665"
-       y="177.20114"
+       x="745.90643"
+       y="275.44482"
        id="text16012"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan16014"
-         x="741.25665"
-         y="177.20114"
+         x="745.90643"
+         y="275.44482"
          style="fill:#ffffff">1.0.0</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="739.27692"
-       y="93.73629"
-       id="text16020"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan16022"
-         x="739.27692"
-         y="93.73629"
-         style="fill:#ffffff">Pocketailor</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text15985"
-       y="256.022"
+       y="356.022"
        x="743.56262"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          style="fill:#ffffff"
-         y="256.022"
+         y="356.022"
          x="743.56262"
          id="tspan15987"
-         sodipodi:role="line">brendanarnold@outlook.com</tspan></text>
-    <path
-       sodipodi:type="star"
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path15989"
-       sodipodi:sides="5"
-       sodipodi:cx="967.72614"
-       sodipodi:cy="173.52946"
-       sodipodi:r1="7.772531"
-       sodipodi:r2="20.454029"
-       sodipodi:arg1="-0.26179939"
-       sodipodi:arg2="0.36651914"
-       inkscape:flatsided="false"
-       inkscape:rounded="0"
-       inkscape:randomized="0"
-       d="m 975.23382,171.51779 11.5878,9.34174 -14.86226,-0.81147 -5.30371,13.9074 -3.82093,-14.3856 -14.86566,-0.7465 12.50079,-8.07932 -3.88378,-14.36877 11.54685,9.39232 12.46535,-8.13389 z"
-       inkscape:transform-center-x="0.36580189"
-       inkscape:transform-center-y="1.1607841"
-       transform="matrix(-0.81490507,0.03166265,-0.03166265,-0.81490507,1867.7951,439.39902)" />
-    <text
-       xml:space="preserve"
-       style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="739.59357"
-       y="57.05162"
-       id="text16016"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan16018"
-         x="739.59357"
-         y="57.05162">NAME</tspan></text>
+         sodipodi:role="line">pocketailor@lassiv.com</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text15935-7"
-       y="220.69633"
+       y="320.69635"
        x="745.65448"
        style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
-         y="220.69633"
+         y="320.69635"
          x="745.65448"
          id="tspan15937-9"
          sodipodi:role="line">CONTACT</tspan></text>
     <path
        style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 744.28571,264.36218 367.85719,0"
+       d="m 744.28571,364.36218 291.85719,0"
        id="path16024"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <rect
-       y="470.07651"
+       y="570.07654"
        x="745.71423"
        height="74.285713"
        width="377.14285"
@@ -3523,12 +3684,12 @@
     <text
        sodipodi:linespacing="125%"
        id="text15866-7"
-       y="515.71313"
+       y="599.71313"
        x="773.26007"
        style="font-size:28.435112px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
          style="fill:#ffffff"
-         y="515.71313"
+         y="599.71313"
          x="773.26007"
          id="tspan15868-2"
          sodipodi:role="line">Website</tspan></text>
@@ -3536,17 +3697,23 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path16087"
-       d="m 1197.3261,271.00482 113.1277,-76.99929"
+       d="m 1191.6118,408.14768 113.1277,-76.99929"
        style="fill:#000000;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 1209.2449,595.65772 113.1277,76.99929"
+       id="path7551"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path16089"
-       d="m 1189.2449,524.22915 113.1277,76.99929"
+       d="m 1190.1583,684.26298 133.7575,446.10432"
        style="fill:#000000;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 1201.3668,425.2342 135.3511,-1.79261"
+       d="m 1198.5097,499.51991 135.3511,-1.79261"
        id="path13836-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -3575,43 +3742,55 @@
     <text
        sodipodi:linespacing="125%"
        id="text16137"
-       y="151.4511"
-       x="1210.1719"
+       y="282.87967"
+       x="1220.1719"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
-         y="151.4511"
-         x="1210.1719"
+         y="282.87967"
+         x="1220.1719"
          id="tspan16139"
          sodipodi:role="line">To WP Store WWW</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text16141"
-       y="438.33441"
-       x="1369.776"
+       y="481.19153"
+       x="1372.8571"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
        xml:space="preserve"><tspan
-         y="438.33441"
-         x="1369.776"
+         y="481.19153"
+         x="1372.8571"
          id="tspan16143"
-         sodipodi:role="line">To Lassiv WWW</tspan></text>
+         sodipodi:role="line">To Lassiv WWW</tspan><tspan
+         y="551.19153"
+         x="1372.8571"
+         sodipodi:role="line"
+         id="tspan7547">(Like Page)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7606"
+       y="939.09735"
+       x="1414.2856"
+       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       xml:space="preserve"><tspan
+         y="939.09735"
+         x="1414.2856"
+         id="tspan7608"
+         sodipodi:role="line">To Lassiv WWW</tspan><tspan
+         id="tspan7610"
+         y="1009.0974"
+         x="1414.2856"
+         sodipodi:role="line">(Acknowledgements page)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="1260.6796"
-       y="684.81165"
+       x="1414.2856"
+       y="736.24023"
        id="text14664-7-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan14666-4-1"
-         x="1260.6796"
-         y="684.81165">To Lassiv WWW</tspan></text>
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.01057315;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect16145"
-       width="474.76114"
-       height="82.821938"
-       x="699.03082"
-       y="559.41302" />
+         x="1414.2856"
+         y="736.24023"
+         id="tspan7614">To Uservoice</tspan></text>
     <g
        id="g19732"
        transform="matrix(0.77230846,0,0,0.77230846,1144.6563,386.62385)"
@@ -4331,5 +4510,256 @@
          x="3195.6643"
          y="420.99817"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust">Long press a measurement to edit</tspan></text>
+    <g
+       id="g7579"
+       transform="matrix(0.92593921,0,0,0.92593921,78.168035,10.576107)">
+      <path
+         sodipodi:nodetypes="cccccczcc"
+         inkscape:connector-curvature="0"
+         id="path6155"
+         d="m 1011.2798,172.16573 0,-64.05921 -33.14017,33.05695 -47.12919,-50.347574 74.56746,-69.625042 41.6927,-0.338511 c 0,15.832968 17.6461,34.251206 33.6087,34.198847 15.9626,-0.05236 30.5562,-19.907994 30.5562,-33.854868 l 26.8636,0.198418"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter6881)" />
+      <g
+         transform="matrix(-0.58815643,0.58815643,-0.58815643,-0.58815643,1702.3885,-376.465)"
+         id="g6145">
+        <g
+           style="fill:#fccd43;fill-opacity:1;display:inline"
+           id="g4731"
+           transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1166.859,-729.65754)"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <rect
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             id="rect4733"
+             width="16"
+             height="58.185001"
+             x="1997.75"
+             y="5067.6558" />
+          <path
+             inkscape:connector-curvature="0"
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+             id="path4735"
+             inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+             inkscape:export-xdpi="89.999985"
+             inkscape:export-ydpi="89.999985"
+             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+          <rect
+             y="5067.6558"
+             x="1840.6687"
+             height="58.185001"
+             width="16"
+             id="rect4737"
+             style="fill:#fccd43;fill-opacity:1;stroke:none" />
+        </g>
+        <g
+           style="fill:#fccd43;fill-opacity:1;display:inline"
+           id="g4739"
+           transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1121.6385,-774.87801)"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <rect
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             id="rect4741"
+             width="16"
+             height="58.185001"
+             x="1997.75"
+             y="5067.6558" />
+          <path
+             inkscape:connector-curvature="0"
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+             id="path4743"
+             inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+             inkscape:export-xdpi="89.999985"
+             inkscape:export-ydpi="89.999985"
+             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+          <rect
+             y="5067.6558"
+             x="1840.6687"
+             height="58.185001"
+             width="16"
+             id="rect4745"
+             style="fill:#fccd43;fill-opacity:1;stroke:none" />
+        </g>
+      </g>
+      <path
+         inkscape:transform-center-y="3.4895413"
+         inkscape:transform-center-x="1.7780041"
+         transform="matrix(0.33221865,-0.08901772,-0.08901772,-0.33221865,675.4108,246.96708)"
+         d="m 1042.4774,-138.61685 c 12.512,0 54.3789,72.515683 48.1229,83.35136 -6.2559,10.835676 -89.9898,10.835674 -96.24581,-3e-6 -6.25598,-10.835677 35.61101,-83.351357 48.12291,-83.351357 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0.13"
+         inkscape:flatsided="true"
+         sodipodi:arg2="-0.52359878"
+         sodipodi:arg1="-1.5707963"
+         sodipodi:r2="27.783787"
+         sodipodi:r1="55.567574"
+         sodipodi:cy="-83.049278"
+         sodipodi:cx="1042.4774"
+         sodipodi:sides="3"
+         id="path6157"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         sodipodi:type="star" />
+      <path
+         transform="matrix(0,-1,1,0,902.59672,1131.8039)"
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path6159"
+         d="m 1107.6855,110.25662 -94.2561,-2.02034"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:12, 12;stroke-dashoffset:0;filter:url(#filter6881)" />
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect7134"
+       width="287.14285"
+       height="137.14285"
+       x="-78.571426"
+       y="385.21933" />
+    <text
+       xml:space="preserve"
+       style="font-size:29.65501213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="-47.082508"
+       y="427.73917"
+       id="text4599-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4601-7"
+         x="-47.082508"
+         y="427.73917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust">Long press a profile tile to edit</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="-465.68033"
+       y="-1306.8491"
+       id="text7246"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7248"
+         x="-465.68033"
+         y="-1306.8491" /></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7254"
+       y="38.677483"
+       x="745.65308"
+       style="font-size:24.90628815000000200px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         y="38.677483"
+         x="938.06873"
+         id="tspan7256"
+         sodipodi:role="line">Enter your </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         y="69.810341"
+         x="931.64758"
+         sodipodi:role="line"
+         id="tspan7541">measurements to</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         y="100.9432"
+         x="931.64758"
+         sodipodi:role="line"
+         id="tspan7458">find the correct</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         y="132.07607"
+         x="938.06873"
+         sodipodi:role="line"
+         id="tspan7460">size clothing for </tspan><tspan
+         id="tspan7260"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         y="163.20892"
+         x="931.64758"
+         sodipodi:role="line">hundreds of brands</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         y="194.34178"
+         x="938.06873"
+         sodipodi:role="line"
+         id="tspan7539">worldwide </tspan></text>
+    <rect
+       style="fill:#212021;fill-opacity:1;stroke:#212021;stroke-width:3.18792987;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect7462"
+       width="476.43076"
+       height="69.191353"
+       x="699.5379"
+       y="574.47015" />
+    <path
+       transform="matrix(0.939357,0,0,0.939357,1133.2424,1637.5738)"
+       d="m -172.73609,-1098 a 23.486046,23.486046 0 1 1 -46.97209,0 23.486046,23.486046 0 1 1 46.97209,0 z"
+       sodipodi:ry="23.486046"
+       sodipodi:rx="23.486046"
+       sodipodi:cy="-1098"
+       sodipodi:cx="-196.22214"
+       id="path7501"
+       style="opacity:0.98000004;fill:none;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none"
+       sodipodi:type="arc" />
+    <g
+       id="g7358-8"
+       transform="translate(1270.8616,1527.39)">
+      <image
+         width="59.837559"
+         height="59.837559"
+         xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Pocketailor/Images/appbar.heart.png"
+         id="image7324-3"
+         x="-219.61824"
+         y="-1126.1511" />
+      <path
+         transform="matrix(0.939357,0,0,0.939357,-5.3335076,-66.586016)"
+         d="m -172.73609,-1098 c 0,12.971 -10.51506,23.486 -23.48605,23.486 -12.97098,0 -23.48604,-10.515 -23.48604,-23.486 0,-12.971 10.51506,-23.486 23.48604,-23.486 12.97099,0 23.48605,10.515 23.48605,23.486 z"
+         sodipodi:ry="23.486046"
+         sodipodi:rx="23.486046"
+         sodipodi:cy="-1098"
+         sodipodi:cx="-196.22214"
+         id="path7327-9"
+         style="opacity:0.98000004;fill:none;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none"
+         sodipodi:type="arc" />
+    </g>
+    <g
+       transform="translate(1365.5976,1612.2779)"
+       id="g7527">
+      <image
+         y="-1130.865"
+         x="-317.11829"
+         id="image7529"
+         xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/appbar.facebook.heart.png"
+         height="63.041332"
+         width="63.041332" />
+      <path
+         sodipodi:type="arc"
+         style="opacity:0.98000004;fill:none;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path7531"
+         sodipodi:cx="-196.22214"
+         sodipodi:cy="-1098"
+         sodipodi:rx="23.486046"
+         sodipodi:ry="23.486046"
+         d="m -172.73609,-1098 c 0,12.971 -10.51506,23.486 -23.48605,23.486 -12.97098,0 -23.48604,-10.515 -23.48604,-23.486 0,-12.971 10.51506,-23.486 23.48604,-23.486 12.97099,0 23.48605,10.515 23.48605,23.486 z"
+         transform="matrix(0.939357,0,0,0.939357,-101.13933,-66.737073)" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="1414.2856"
+       y="1194.505"
+       id="text14664-7-2-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="1414.2856"
+         y="1194.505"
+         id="tspan7549-9">To Lassiv WWW</tspan></text>
+    <image
+       y="568.14709"
+       x="911.14722"
+       id="image7601"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/appbar.settings.png"
+       height="76"
+       width="76" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path7618"
+       d="m 1206.3878,658.51486 207.8979,219.85643"
+       style="fill:#000000;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
   </g>
 </svg>

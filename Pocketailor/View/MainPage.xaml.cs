@@ -17,21 +17,21 @@ namespace Pocketailor.View
         public MainPage()
         {
             InitializeComponent();
-            this.lockedStateGroup.CurrentStateChanged += lockedStateGroup_StateChanged;
+            //this.lockedStateGroup.CurrentStateChanged += lockedStateGroup_StateChanged;
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             this.DataContext = App.VM;
-            this.UpdateUILockState();
+            //this.UpdateUILockState();
             
         }
 
-        private void UpdateUILockState()
-        {
-            //(this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = (App.VM.IsLocked) ? "unlock" : "lock";
-        }
+        //private void UpdateUILockState()
+        //{
+        //    (this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = (App.VM.IsLocked) ? "unlock" : "lock";
+        //}
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
@@ -65,12 +65,12 @@ namespace Pocketailor.View
             messageBox.Show();
         }
 
-        private void toggleProtectionContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            Profile p = (sender as MenuItem).DataContext as Profile;
-            if (p.IsProtected && App.VM.IsLocked) return;
-            App.VM.ToggleIsProtected(p);
-        }
+        //private void toggleProtectionContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    Profile p = (sender as MenuItem).DataContext as Profile;
+        //    if (p.IsProtected && App.VM.IsLocked) return;
+        //    App.VM.ToggleIsProtected(p);
+        //}
 
 
         private void toggleQuickListContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -93,57 +93,50 @@ namespace Pocketailor.View
             NavigationService.Navigate(new Uri("/View/EditProfilePage.xaml", UriKind.Relative));
         }
 
-        private void rateAppBarBtn_Click(object sender, System.EventArgs e)
-        {
-            App.VM.RateApp();
-        }
+        
 
         // Select a profile button
         private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as Canvas).DataContext as Profile;
-            if (p.IsProtected && App.VM.IsLocked)
-            {
-                MessageBoxResult res = MessageBox.Show(String.Format("Profile '{0}' is locked. Do you want to unlock the profile?", p.Name),
-                    "Profile locked", MessageBoxButton.OKCancel);
-                if (res == MessageBoxResult.OK)
-                    NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
-            }
-            else
-            {
+            //if (p.IsProtected && App.VM.IsLocked)
+            //{
+            //    MessageBoxResult res = MessageBox.Show(String.Format("Profile '{0}' is locked. Do you want to unlock the profile?", p.Name),
+            //        "Profile locked", MessageBoxButton.OKCancel);
+            //    if (res == MessageBoxResult.OK)
+            //        NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
+            //}
+            //else
+            //{
                 NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
-            }
+            //}
         }
 
-        private void howtoBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
-        }
 
-        private void unlockAppBarMenuItem_Click(object sender, System.EventArgs e)
-        {
-            if (App.VM.IsLocked)
-            {
-                NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
-            }
-            else
-            {
-                App.VM.IsLocked = true;
-                this.UpdateUILockState();
-            }
-        }
+        //private void unlockAppBarMenuItem_Click(object sender, System.EventArgs e)
+        //{
+        //    if (App.VM.IsLocked)
+        //    {
+        //        NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
+        //    }
+        //    else
+        //    {
+        //        App.VM.IsLocked = true;
+        //        this.UpdateUILockState();
+        //    }
+        //}
 
-        private void aboutAppBarMenuItem_Click(object sender, System.EventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/View/About.xaml", UriKind.Relative));
-        }
+        
 
         private void settingsAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-        	// TODO: Add event handler implementation here.
+            throw new NotImplementedException();
         }
 
-
+        private void settingsAppBarBtn_Click(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
 
         public void lockedStateGroup_StateChanged(object sender, VisualStateChangedEventArgs e)
@@ -151,30 +144,40 @@ namespace Pocketailor.View
             //for (Image im in this.profileWrapPanel.ItemTemplate
         }
 
-        private void contactAuthorTextBlock_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void contactBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.EmailAuthor();
         }
 
-        private void rateAppBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void rateBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.RateApp();
         }
 
-        private void seeLicencesBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void legalBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.ViewLicences();
         }
 
-        private void seeWebsiteBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void websiteBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.ViewWebsite();	
         }
 
-        private void buyAppBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void facebookBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	App.VM.BuyApp();
+            App.VM.GotoFacebook();
         }
+
+        private void feedbackBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.GiveFeedback();
+        }
+
+        //private void buyAppBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    App.VM.BuyApp();
+        //}
 
         private void Pivot_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {

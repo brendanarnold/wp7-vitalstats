@@ -50,14 +50,68 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdDuplex.WindowsPhone">
+      <HintPath>..\packages\AdDuplexWP7.2.7.0.3\lib\sl4-windowsphone71\AdDuplex.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.AdMob.Ads.WindowsPhone7">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Google.AdMob.Ads.WindowsPhone7.dll</HintPath>
+    </Reference>
+    <Reference Include="Inneractive.Nokia.Ad">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Inneractive.Nokia.Ad.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.AdDuplex">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.AdDuplex.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.AdMob">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.AdMob.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.InnerActive">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.InnerActive.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.MillennialMedia">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.MillennialMedia.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.MobFox">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.MobFox.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.PubCenter">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.PubCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="MC.Phone.Ads.Smaato">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.Smaato.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Microsoft.Advertising.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile.UI, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Microsoft.Advertising.Mobile.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone" />
-    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Microsoft.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Microsoft.Phone.Controls.Maps.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604">
       <HintPath>Includes\WindowsPhoneToolkit\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="MillennialMedia.WP7.SDK">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MillennialMedia.WP7.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="MobFox.Ads">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MobFox.Ads.dll</HintPath>
+    </Reference>
+    <Reference Include="SOMAWP7">
+      <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\SOMAWP7.dll</HintPath>
+    </Reference>
     <Reference Include="system.data.linq" />
+    <Reference Include="System.Observable" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -92,6 +146,9 @@
     <Compile Include="Model\Static\MeasurementTypes.cs" />
     <Compile Include="Model\Static\MeasurementTypeIds.cs" />
     <Compile Include="Model\Static\UnitIds.cs" />
+    <Compile Include="View\Controls\AboutButton.xaml.cs">
+      <DependentUpon>AboutButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HelpData.cs" />
     <Compile Include="Model\Static\RetailIds.cs" />
     <Compile Include="Model\MeasurementType.cs" />
@@ -164,6 +221,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Controls\AboutButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\ConversionBtn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +275,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ads\AdSettings.xml" />
     <Content Include="Assets\AppBar\appbar.check.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -226,8 +288,19 @@
       <Numbers>True</Numbers>
       <Punctuation>True</Punctuation>
     </BlendEmbeddedFont>
+    <None Include="WP-Unified-Ad-HowTo.txt" />
+    <None Include="Ads\UnifiedAd.xsd" />
     <None Include="Includes\WindowsPhoneToolkit\Microsoft.Phone.Controls.Toolkit.dll" />
+    <Content Include="Images\appbar.chat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\appbar.facebook.heart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\appbar.globe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\appbar.globe.wire.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\appbar.heart.outline.png">
@@ -236,7 +309,16 @@
     <Content Include="Images\appbar.heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\appbar.scale.unbalanced.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\appbar.settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\ChalkArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ChalkDesign.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\dress-bg.jpg">
@@ -341,6 +423,7 @@
     <Content Include="Model\Csv\DressSizes.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>

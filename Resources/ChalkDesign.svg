@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg6996"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 23">
+  <defs
+     id="defs6998">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6970">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6972"
+         width="246.47722"
+         height="211.12189"
+         x="17.910809"
+         y="-1121.1578"
+         transform="matrix(0,1,-1,0,0,0)" />
+    </clipPath>
+    <filter
+       id="filter6881-2"
+       inkscape:label="ChalkOnPath"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.30000001"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence6883-3"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset6885-2"
+         dx="-5.7553956834532354"
+         dy="-2.877697841726623"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap6887-2"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="2.4647887"
+         in="SourceGraphic" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6974">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6976"
+         width="716.63257"
+         height="613.83698"
+         x="712.61877"
+         y="-687.10327"
+         transform="matrix(0.96592583,-0.25881905,-0.25881905,-0.96592583,0,0)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6978">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6980"
+         width="296.32544"
+         height="253.81975"
+         x="-940.01074"
+         y="465.40149"
+         transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6982">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect6984"
+         width="246.47722"
+         height="211.12189"
+         x="1726.3507"
+         y="968.51953" />
+    </clipPath>
+    <filter
+       id="filter7044"
+       inkscape:label="ChalkOnPath"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.30000001"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence7046"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset7048"
+         dx="-5.7553956834532354"
+         dy="-2.877697841726623"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap7050"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="2.4647887"
+         in="SourceGraphic" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1068"
+     inkscape:window-height="711"
+     inkscape:window-x="26"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7001">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect6986"
+       width="349.51279"
+       height="272.74118"
+       x="105.24359"
+       y="304.56302" />
+    <path
+       transform="translate(-1566.5589,-632.64175)"
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter6881-2)"
+       d="m 1817.123,1130.0392 0,-64.0592 -33.1402,33.0569 -47.1292,-50.3475 74.5675,-69.62509 41.6927,-0.33852 c 0,15.83297 17.6461,34.25121 33.6087,34.19881 15.9626,-0.052 30.5562,-19.90795 30.5562,-33.85483 l 26.8636,0.19842"
+       id="path6155-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccczcc"
+       clip-path="url(#clipPath6982)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ChalkDesign.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <g
+       id="g6145-6"
+       transform="matrix(-0.58815643,0.58815643,-0.58815643,-0.58815643,941.6728,-51.233299)"
+       clip-path="url(#clipPath6978)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ChalkDesign.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+         transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1166.859,-729.65754)"
+         id="g4731-8"
+         style="fill:#fccd43;fill-opacity:1;display:inline">
+        <rect
+           y="5067.6558"
+           x="1997.75"
+           height="58.185001"
+           width="16"
+           id="rect4733-5"
+           style="fill:#fccd43;fill-opacity:1;stroke:none" />
+        <path
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
+           inkscape:export-ydpi="89.999985"
+           inkscape:export-xdpi="89.999985"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+           id="path4735-7"
+           d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0" />
+        <rect
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           id="rect4737-6"
+           width="16"
+           height="58.185001"
+           x="1840.6687"
+           y="5067.6558" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+         transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1121.6385,-774.87801)"
+         id="g4739-1"
+         style="fill:#fccd43;fill-opacity:1;display:inline">
+        <rect
+           y="5067.6558"
+           x="1997.75"
+           height="58.185001"
+           width="16"
+           id="rect4741-8"
+           style="fill:#fccd43;fill-opacity:1;stroke:none" />
+        <path
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
+           inkscape:export-ydpi="89.999985"
+           inkscape:export-xdpi="89.999985"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+           id="path4743-9"
+           d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0" />
+        <rect
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           id="rect4745-2"
+           width="16"
+           height="58.185001"
+           x="1840.6687"
+           y="5067.6558" />
+      </g>
+    </g>
+    <path
+       sodipodi:type="star"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path6157-7"
+       sodipodi:sides="3"
+       sodipodi:cx="1042.4774"
+       sodipodi:cy="-83.049278"
+       sodipodi:r1="55.567574"
+       sodipodi:r2="27.783787"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:arg2="-0.52359878"
+       inkscape:flatsided="true"
+       inkscape:rounded="0.13"
+       inkscape:randomized="0"
+       d="m 1042.4774,-138.61685 c 12.512,0 54.3789,72.515683 48.1229,83.35136 -6.2559,10.835676 -89.9898,10.835674 -96.24581,-3e-6 -6.25598,-10.835677 35.61101,-83.351357 48.12291,-83.351357 z"
+       transform="matrix(0.33221865,-0.08901772,-0.08901772,-0.33221865,-85.30488,572.19875)"
+       inkscape:transform-center-x="1.7780041"
+       inkscape:transform-center-y="3.4895413"
+       clip-path="url(#clipPath6974)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ChalkDesign.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:12, 12;stroke-dashoffset:0;filter:url(#filter6881-2)"
+       d="m 1107.6855,110.25662 -94.2561,-2.02034"
+       id="path6159-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       transform="matrix(0,-1,1,0,141.88102,1457.0356)"
+       clip-path="url(#clipPath6970)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ChalkDesign.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="291.42856"
+       y="680.93359"
+       id="text7128"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7130"
+         x="291.42856"
+         y="680.93359">Use Chalk and Sponge</tspan><tspan
+         sodipodi:role="line"
+         x="291.42856"
+         y="710.93359"
+         id="tspan7132">Edit and set Displacement Map scale to 2.5</tspan></text>
+  </g>
+</svg>

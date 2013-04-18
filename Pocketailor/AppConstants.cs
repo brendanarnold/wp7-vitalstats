@@ -35,7 +35,9 @@ namespace Pocketailor
         public static string CSV_DATA_DIRECTORY = "Model\\Csv\\";
         public static string AUTHOR_EMAIL = "brendanarnold@outlook.com";
         public static string WEBSITE_URL = "http://www.lassiv.com/pocketailor/";
-        public static string LICENCE_URL = "http://www.lassiv.com/pocketailor/licences.html";
+        public static string LEGAL_URL = "http://www.lassiv.com/pocketailor/licences.html";
+        public static string FACEBOOK_LIKE_URL = "http://facebook.com/Pocketailor";
+        public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
 
 
     }

@@ -16,12 +16,11 @@
     xmlns:ViewModel="clr-namespace:Pocketailor.ViewModel"
 	xmlns:App="clr-namespace:App"
     xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls"
+    xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     x:Class="Pocketailor.View.MainPage"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
-	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
 	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
 
@@ -42,50 +41,50 @@
 		<views:GenderToImage x:Key="GenderToImage" />
 
         <DataTemplate x:Key="MeasurementTypesItemTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding Id}"/>
-                <CheckBox IsChecked="{Binding IsConvertible, Mode=TwoWay}"/>
-                <TextBlock Text="{Binding Name}"/>
-            </StackPanel>
+        	<StackPanel>
+        		<TextBlock Text="{Binding Id}"/>
+        		<CheckBox IsChecked="{Binding IsConvertible, Mode=TwoWay}"/>
+        		<TextBlock Text="{Binding Name}"/>
+        	</StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="StatTemplatesItemTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding Id}"/>
-                <TextBlock Text="{Binding Name}"/>
-            </StackPanel>
+        	<StackPanel>
+        		<TextBlock Text="{Binding Id}"/>
+        		<TextBlock Text="{Binding Name}"/>
+        	</StackPanel>
         </DataTemplate>
 
 		
 
         <Style x:Key="PivotStyle1" TargetType="controls:Pivot">
-            <Setter Property="Margin" Value="0"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="ItemsPanel">
-                <Setter.Value>
-                    <ItemsPanelTemplate>
-                        <Grid/>
-                    </ItemsPanelTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="controls:Pivot">
-                        <Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Background="{TemplateBinding Background}" CacheMode="BitmapCache" Grid.RowSpan="3"/>
-                            <ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="24,17,0,-7"/>
-                            <controlsPrimitives:PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1"/>
-                            <ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="2"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+        	<Setter Property="Margin" Value="0"/>
+        	<Setter Property="Padding" Value="0"/>
+        	<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        	<Setter Property="Background" Value="Transparent"/>
+        	<Setter Property="ItemsPanel">
+        		<Setter.Value>
+        			<ItemsPanelTemplate>
+        				<Grid/>
+        			</ItemsPanelTemplate>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="controls:Pivot">
+        				<Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+        					<Grid.RowDefinitions>
+        						<RowDefinition Height="Auto"/>
+        						<RowDefinition Height="Auto"/>
+        						<RowDefinition Height="*"/>
+        					</Grid.RowDefinitions>
+        					<Grid Background="{TemplateBinding Background}" CacheMode="BitmapCache" Grid.RowSpan="3"/>
+        					<ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="24,17,0,-7"/>
+        					<controlsPrimitives:PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1"/>
+        					<ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="2"/>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
         </Style>
 
         <Style x:Key="ButtonStyle1" TargetType="Button">
@@ -103,8 +102,8 @@
         							<VisualState x:Name="Focused"/>
         						</VisualStateGroup>
         					</VisualStateManager.VisualStateGroups>
-							<!--  -->
-							<Image Source="{Binding Gender, ConverterParameter=/Images/MaleProfileIcon.png|/Images/FemaleProfileIcon.png, Converter={StaticResource GenderToImage}}" Height="130" Width="200"/>
+        					<!--  -->
+        					<Image Source="{Binding Gender, ConverterParameter=/Images/MaleProfileIcon.png|/Images/FemaleProfileIcon.png, Converter={StaticResource GenderToImage}}" Height="130" Width="200"/>
 <!--  -->
         					<Image x:Name="isProtectedImg" Height="60" Canvas.Left="-2" Canvas.Top="74" Width="60" Visibility="{Binding IsProtected, Converter={StaticResource BoolToVisibility}}" Source="{Binding AppViewModel.IsLocked, ConverterParameter=/Images/lock.png|/Images/unlock.png, Converter={StaticResource BoolToImage}, Source={StaticResource ViewModelLocator}}" RenderTransformOrigin="0.5,0.5" >
         						<Image.RenderTransform>
@@ -120,6 +119,7 @@
         	<Setter Property="FontSize" Value="29.333"/>
         	<Setter Property="Foreground" Value="{StaticResource TileTxtColor}"/>
         </Style>
+
         <Style x:Key="ButtonStyleBigBtn" TargetType="Button">
         	<Setter Property="Template">
         		<Setter.Value>
@@ -135,9 +135,9 @@
         							<VisualState x:Name="Focused"/>
         						</VisualStateGroup>
         					</VisualStateManager.VisualStateGroups>
-							<Border BorderThickness="0" Background="{StaticResource DialogBGColor}" Padding="10" Margin="0,0,0,18">
-        						<TextBlock Text="{TemplateBinding Property=ContentControl.Content}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
-							</Border>
+        					<Border BorderThickness="0" Background="{StaticResource DialogBGColor}" Padding="10" Margin="0,0,0,18">
+        						<TextBlock Text="{TemplateBinding Property=Content}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
+        					</Border>
         				</Grid>
         			</ControlTemplate>
         		</Setter.Value>
@@ -149,17 +149,32 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="settings" Click="settingsAppBarMenuItem_Click"/>
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
+			<shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
         </shell:ApplicationBar>
 
-		<shell:ApplicationBar x:Key="aboutApplicationBar" IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}" >
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="settings" Click="settingsAppBarMenuItem_Click"/>
-            </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="rateAppBarBtn" IconUri="/Images/appbar.heart.outline.png" Text="rate" Click="rateAppBarBtn_Click" IsEnabled="True"/>
+		<shell:ApplicationBar x:Key="aboutApplicationBar" IsVisible="True" IsMenuEnabled="False" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}" >
+			<shell:ApplicationBarIconButton x:Name="settingsAppBarBtn" IconUri="/Images/appbar.settings.png" Text="settings" Click="settingsAppBarBtn_Click" IsEnabled="True"/>
         </shell:ApplicationBar>
+
+		<Style x:Key="hyperlinkBtnStyle" TargetType="Button">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<TextBlock Text="{TemplateBinding Property=Content}" FontFamily="Segoe WP" TextDecorations="Underline"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+			<Setter Property="Foreground" Value="{StaticResource PageTxtColor}"/>
+		</Style>
 
     </phone:PhoneApplicationPage.Resources>
+	<shell:SystemTray.BackgroundColor>
+		<StaticResource ResourceKey="SystemTrayBGColor"/>
+	</shell:SystemTray.BackgroundColor>
+	<shell:SystemTray.ForegroundColor>
+		<StaticResource ResourceKey="SystemTrayFGColor"/>
+	</shell:SystemTray.ForegroundColor>
 	<phone:PhoneApplicationPage.Foreground>
 		<StaticResource ResourceKey="PageTxtColor"/>
 	</phone:PhoneApplicationPage.Foreground>
@@ -183,173 +198,194 @@
 
 
 
-    <Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}">
 
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="lockedStateGroup">
-        		<VisualState x:Name="Locked"/>
-        		<VisualState x:Name="Unlocked"/>
-        	</VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="lockedStateGroup">
+				<VisualState x:Name="Locked"/>
+				<VisualState x:Name="Unlocked"/>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
 
 
 
-        <controls:Pivot x:Name="mainPivot" Style="{StaticResource PivotStyle1}" Margin="0" SelectionChanged="Pivot_SelectionChanged">
+		<controls:Pivot x:Name="mainPivot" Style="{StaticResource PivotStyle1}" Margin="0" SelectionChanged="Pivot_SelectionChanged">
 
 		
-            <controls:Pivot.Title>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"></Image>
-                    <TextBlock Foreground="{StaticResource PivotTitleColor}">POCKETAILOR</TextBlock>
-                </StackPanel>
-            </controls:Pivot.Title>
+			<controls:Pivot.Title>
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"/>
+					<TextBlock Foreground="{StaticResource PivotTitleColor}">
+						<Run Text="POCKETAILOR"/>
+					</TextBlock>
+				</StackPanel>
+			</controls:Pivot.Title>
 		
 
             <!--Pivot item one-->
-            <controls:PivotItem x:Name="peoplePivotItem">
-                <controls:PivotItem.Header>
-                    <Grid>
-                        <TextBlock FontFamily="{StaticResource ScriptFont}" Text="people" Foreground="{StaticResource PivotHeaderColor}"></TextBlock>
-                    </Grid>
-                </controls:PivotItem.Header>
+			<controls:PivotItem x:Name="peoplePivotItem">
+				<controls:PivotItem.Header>
+					<Grid>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="people" Foreground="{StaticResource PivotHeaderColor}"/>
+					</Grid>
+				</controls:PivotItem.Header>
 
 
 
-                <Grid x:Name="Layout" Background="Transparent">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+				<Grid x:Name="Layout" Background="Transparent">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
 
-                    <!--TitlePanel contains the name of the application and page title-->
+					<!--TitlePanel contains the name of the application and page title-->
 
                     <!--ContentPanel - place additional content here-->
-                    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0" >
+					<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0" >
 
 
 
 
-                        <Canvas Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}">
-                    		<TextBlock TextWrapping="Wrap" Text="add a profile" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="{StaticResource PhoneFontSizeExtraLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="101" Canvas.Top="132"/>
-                    		<Image Source="/Images/ChalkArrow.png" Canvas.Top="205" Width="432" Canvas.Left="186">
-                    			<Image.RenderTransform>
-                    				<CompositeTransform ScaleX="0.2" ScaleY="0.2"/>
-                    			</Image.RenderTransform></Image>
-                    	</Canvas>
+						<Canvas Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}">
+							<TextBlock TextWrapping="Wrap" Text="add a profile" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="{StaticResource PhoneFontSizeExtraLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="101" Canvas.Top="132"/>
+							<Image Source="/Images/ChalkArrow.png" Canvas.Top="205" Width="432" Canvas.Left="186">
+								<Image.RenderTransform>
+									<CompositeTransform ScaleX="0.2" ScaleY="0.2"/>
+								</Image.RenderTransform></Image>
+						</Canvas>
 
 
 
 
-                        <ScrollViewer Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
-                            <StackPanel Orientation="Vertical">
+						<ScrollViewer Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+							<StackPanel Orientation="Vertical">
 
-                                <TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
-                                	<Run Text="QUICKLIST"/>
-</TextBlock>
+								<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+									<Run Text="QUICKLIST"/>
+								</TextBlock>
 
-                                <ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <toolkit:WrapPanel Orientation="Horizontal" />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
+								<ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+									<ItemsControl.ItemsPanel>
+										<ItemsPanelTemplate>
+											<toolkit:WrapPanel Orientation="Horizontal" />
+										</ItemsPanelTemplate>
+									</ItemsControl.ItemsPanel>
+									<ItemsControl.ItemTemplate>
 
-                                        <DataTemplate>
-                                            <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ButtonStyle1}" Width="200">
-                                        		<toolkit:ContextMenuService.ContextMenu>
-                                        			<toolkit:ContextMenu>
-                                        				<!--
+										<DataTemplate>
+											<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ButtonStyle1}" Width="200">
+												<toolkit:ContextMenuService.ContextMenu>
+													<toolkit:ContextMenu>
+														<!--
 														<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
                                         				-->
 														<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
-                                        				<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
-                                        				<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
-                                        			</toolkit:ContextMenu>
-                                        		</toolkit:ContextMenuService.ContextMenu>
-                                        	</Button>
-                                        </DataTemplate>
+														<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+														<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
+													</toolkit:ContextMenu>
+												</toolkit:ContextMenuService.ContextMenu>
+											</Button>
+										</DataTemplate>
 
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
 
-                                <TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
-                                	<Run Text="ALL"/>
-</TextBlock>
+								<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+									<Run Text="ALL"/>
+								</TextBlock>
 
-                                <ItemsControl x:Name="mainProfileWrapPanel" ItemsSource="{Binding Profiles}" >
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <toolkit:WrapPanel Orientation="Horizontal" />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
+								<ItemsControl x:Name="mainProfileWrapPanel" ItemsSource="{Binding Profiles}" Margin="0,0,0,6" >
+									<ItemsControl.ItemsPanel>
+										<ItemsPanelTemplate>
+											<toolkit:WrapPanel Orientation="Horizontal" />
+										</ItemsPanelTemplate>
+									</ItemsControl.ItemsPanel>
+									<ItemsControl.ItemTemplate>
 
-                                        <DataTemplate>
-                                             <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ButtonStyle1}" Width="200">
-                                        		<toolkit:ContextMenuService.ContextMenu>
-                                        			<toolkit:ContextMenu>
-                                        				<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
-                                        				<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
-                                        				<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
-                                        				<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
-                                        			</toolkit:ContextMenu>
-                                        		</toolkit:ContextMenuService.ContextMenu>
-                                        	</Button>
-                                        </DataTemplate>
+										<DataTemplate>
+											<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ButtonStyle1}" Width="200">
+												<toolkit:ContextMenuService.ContextMenu>
+													<toolkit:ContextMenu>
+														<!--
+														<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
+                                        				-->
+														<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
+														<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+														<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
+													</toolkit:ContextMenu>
+												</toolkit:ContextMenuService.ContextMenu>
+											</Button>
+										</DataTemplate>
 
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
+								<TextBlock TextWrapping="Wrap" Text="Long press a profile for more options" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="32" TextAlignment="Center"/>
 
 
-                            </StackPanel>
-                        </ScrollViewer>
-                    </Grid>
+							</StackPanel>
+						</ScrollViewer>
+					</Grid>
 
-                </Grid>
+				</Grid>
 
-            </controls:PivotItem>
+			</controls:PivotItem>
 
 		
-            <controls:PivotItem  x:Name="aboutPivotItem">
+			<controls:PivotItem  x:Name="aboutPivotItem">
 				
-                <controls:PivotItem.Header>
-                    <Grid>
-						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="about" Foreground="{StaticResource PivotHeaderColor}"></TextBlock>
-                    </Grid>
-                </controls:PivotItem.Header>
+				<controls:PivotItem.Header>
+					<Grid>
+						<TextBlock FontFamily="{StaticResource ScriptFont}" Text="about" Foreground="{StaticResource PivotHeaderColor}"/>
+					</Grid>
+				</controls:PivotItem.Header>
 
 				<ScrollViewer Margin="24,0,12,0">
 
-            		<StackPanel Margin="0,0,12,0">
-            			<TextBlock Foreground="{StaticResource PageTxtColor}"  Margin="0,0,0,18" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TextWrapping="Wrap">
-            				<Run Text="Pocketailor converts your measurements into clothing sizes for popular brands"/>
-            			</TextBlock>
-            			<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0">
-            				<Run Text="VERSION"/>
-            			</TextBlock>
-            			<TextBlock Foreground="{StaticResource PageTxtColor}" Text="{Binding AppVersion}" Margin="0,0,0,18" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
-            			<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0">
-            				<Run Text="CONTACT"/>
-            			</TextBlock>
-            			<TextBlock x:Name="contactAuthorTextBlock" Foreground="{StaticResource PageTxtColor}" Text="brendanarnold@outlook.com" Margin="0,0,0,24" TextDecorations="Underline" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Tap="contactAuthorTextBlock_Tap" />
-            			<Button x:Name="rateAppBtn" Content="Rate Pocketailor" Style="{StaticResource ButtonStyleBigBtn}" Tap="rateAppBtn_Tap"/>
-            			<Button x:Name="buyAppBtn" Content="Buy Pocketailor"  Style="{StaticResource ButtonStyleBigBtn}" Tap="buyAppBtn_Tap" />
-            			<Button x:Name="seeLicencesBtn" Content="Legal"  Style="{StaticResource ButtonStyleBigBtn}" Tap="seeLicencesBtn_Tap" />
-            			<Button x:Name="seeWebsiteBtn" Content="Website"  Style="{StaticResource ButtonStyleBigBtn}" Tap="seeWebsiteBtn_Tap" />
+					<StackPanel Margin="0,0,12,0">
+            			
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*" />
+								<ColumnDefinition Width="1*" />
+							</Grid.ColumnDefinitions>
+
+							<TextBlock Grid.Column="0" Foreground="{StaticResource PageTxtColor}"  Margin="0,0,0,18" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TextWrapping="Wrap" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust">
+								<Run Text="Enter your measurements to find the right size clothing for hundreds of brands worldwide."/>
+							</TextBlock>
+
+							<Image Grid.Column="1" Source="/Images/ChalkDesign.png" />
+            			
+						</Grid>
+						
+						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0">
+							<Run Text="VERSION"/>
+						</TextBlock>
+						<TextBlock Foreground="{StaticResource PageTxtColor}" Text="{Binding AppVersion}" Margin="0,0,0,18" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
+						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0">
+							<Run Text="CONTACT"/>
+						</TextBlock>
+						<Button x:Name="contactAuthorBtn" Content="pocketailor@lassiv.com" Margin="0,0,0,24" Style="{StaticResource hyperlinkBtnStyle}" Tap="contactBtn_Tap" />
+            			
+						<Controls:AboutButton x:Name="rateBtn" TitleText="Rate Pocketailor" IconImage="/Images/appbar.heart.png" Margin="0,0,0,10" Tap="rateBtn_Tap" />
+						<Controls:AboutButton x:Name="facebookBtn" TitleText="Visit on Facebook" IconImage="/Images/appbar.facebook.heart.png" Margin="0,0,0,10" Tap="facebookBtn_Tap" />
+						<Controls:AboutButton x:Name="feedbackBtn" TitleText="Give feedback" IconImage="/Images/appbar.chat.png" Margin="0,0,0,10"  Tap="feedbackBtn_Tap" />
+						<Controls:AboutButton x:Name="legalBtn" TitleText="Legal and thanks" IconImage="/Images/appbar.scale.unbalanced.png" Margin="0,0,0,10" Tap="legalBtn_Tap" />
+						<Controls:AboutButton x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/appbar.globe.wire.png" Margin="0,0,0,10" Tap="websiteBtn_Tap" />
 					
 
-            		</StackPanel>
+						
 
-            	</ScrollViewer>
+					</StackPanel>
 
-            </controls:PivotItem>
+				</ScrollViewer>
+
+			</controls:PivotItem>
 
 
 		
-        </controls:Pivot>
+		</controls:Pivot>
 
-    </Grid>
+	</Grid>
 
 
 </phone:PhoneApplicationPage>

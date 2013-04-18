@@ -10,6 +10,7 @@
 
 
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -81,43 +82,6 @@
 	<d:DataContext>
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>
-	
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-    	<Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Opacity="0.6" Margin="0,0,0,0"/>
-    	<StackPanel Margin="0" Orientation="Vertical">
-    		<StackPanel x:Name="headerStackPanel" Margin="0" Orientation="Vertical" Height="319" VerticalAlignment="Top">
-    		
-    			<Grid Margin="0,0,0,0" Background="#99000000">
-    				<Grid.ColumnDefinitions>
-    					<ColumnDefinition Width="5*"/>
-    					<ColumnDefinition Width="5*"/>
-    				</Grid.ColumnDefinitions>
-    				<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" Margin="12,0,0,0">
-    					<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"/>
-    					<TextBlock Foreground="{StaticResource PivotTitleColor}">
-    						<Run Text="POCKETAILOR"/>
-    					</TextBlock>
-    				</StackPanel>
-    				<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
-    			</Grid>
-    			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" VerticalAlignment="Top" FontSize="74.667" Margin="24,5,0,0" FontFamily="{StaticResource ScriptFont}"/>
-
-    		</StackPanel>
-    		<StackPanel >
-    			<!--
-    			<ListBox ItemsSource="{Binding HiddenRetailers}" />
-				-->
-    			<ListBox ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" Height="451" HorizontalContentAlignment="Stretch"/>
-    		</StackPanel>
-
-    	</StackPanel>
-
-     
-    </Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
@@ -126,6 +90,49 @@
             </shell:ApplicationBar.MenuItems>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
+	
+
+<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Grid x:Name="headerGrid" Grid.Row="0" Margin="0" VerticalAlignment="Top">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
+			<Grid x:Name="titleBarGrid" Grid.Row="0" Margin="0" Background="#99000000" VerticalAlignment="Top">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="5*"/>
+				</Grid.ColumnDefinitions>
+				<StackPanel x:Name="logoContainer" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" Margin="12,0,0,0">
+					<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0" Stretch="None"/>
+					<TextBlock Foreground="{StaticResource PivotTitleColor}">
+						<Run Text="POCKETAILOR"/>
+					</TextBlock>
+				</StackPanel>
+				<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
+			</Grid>
+			
+			<Border x:Name="pageTitleBorder" Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Center" >
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" />
+			</Border>
+			
+		</Grid>
+
+		<StackPanel Grid.Row="1" Margin="0" Orientation="Vertical">
+			<ListBox ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" HorizontalContentAlignment="Stretch"/>
+			
+		</StackPanel>
+
+		<Ads:AdControl Grid.Row="1"  Content="AdControl" VerticalAlignment="Bottom"/>
+     
+	</Grid>
 	
 
 </phone:PhoneApplicationPage>

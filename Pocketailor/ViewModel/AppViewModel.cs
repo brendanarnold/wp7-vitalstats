@@ -11,6 +11,7 @@ using System.Collections;
 using System.IO.IsolatedStorage;
 using System;
 using System.Windows.Media.Imaging;
+using Microsoft.Phone.Tasks;
 
 namespace Pocketailor.ViewModel
 {
@@ -620,7 +621,7 @@ namespace Pocketailor.ViewModel
 
         public void EmailAuthor() 
         {
-            Microsoft.Phone.Tasks.EmailComposeTask emailTask = new Microsoft.Phone.Tasks.EmailComposeTask()
+            EmailComposeTask emailTask = new EmailComposeTask()
             {
                 Subject = "Feedback on Pocketailor",
                 To = AppConstants.AUTHOR_EMAIL,
@@ -630,35 +631,46 @@ namespace Pocketailor.ViewModel
 
         public void ViewWebsite()
         {
-            Microsoft.Phone.Tasks.WebBrowserTask webTask = new Microsoft.Phone.Tasks.WebBrowserTask()
-            {
-                Uri = new Uri(AppConstants.WEBSITE_URL, UriKind.Absolute),
-            };
+            WebBrowserTask webTask = new WebBrowserTask();
+            webTask.Uri = new Uri(AppConstants.WEBSITE_URL, UriKind.Absolute);
             webTask.Show();
         }
         
         public void ViewLicences()
         {
-            Microsoft.Phone.Tasks.WebBrowserTask webTask = new Microsoft.Phone.Tasks.WebBrowserTask()
-            {
-                Uri = new Uri(AppConstants.LICENCE_URL, UriKind.Absolute),
-            };
+            WebBrowserTask webTask = new WebBrowserTask();
+            webTask.Uri = new Uri(AppConstants.LEGAL_URL, UriKind.Absolute);
             webTask.Show();
         }
 
         public void RateApp()
         {
-            Microsoft.Phone.Tasks.MarketplaceReviewTask reviewTask = new Microsoft.Phone.Tasks.MarketplaceReviewTask();
+            MarketplaceReviewTask reviewTask = new MarketplaceReviewTask();
             reviewTask.Show();
         }
 
-        public void BuyApp()
+        public void GotoFacebook()
         {
-            Microsoft.Phone.Tasks.MarketplaceDetailTask mktTask = new Microsoft.Phone.Tasks.MarketplaceDetailTask()
-            {
-                ContentIdentifier = AppConstants.PAID_APP_GUID,
-            };
+            WebBrowserTask wbTask = new WebBrowserTask();
+            wbTask.Uri = new Uri(AppConstants.FACEBOOK_LIKE_URL, UriKind.Absolute);
+            wbTask.Show();
         }
+
+        public void GiveFeedback()
+        {
+            WebBrowserTask wbTask = new WebBrowserTask();
+            wbTask.Uri = new Uri(AppConstants.FEEDBACK_URL, UriKind.Absolute);
+            wbTask.Show();
+        }
+
+
+        //public void BuyApp()
+        //{
+        //    Microsoft.Phone.Tasks.MarketplaceDetailTask mktTask = new Microsoft.Phone.Tasks.MarketplaceDetailTask()
+        //    {
+        //        ContentIdentifier = AppConstants.PAID_APP_GUID,
+        //    };
+        //}
 
         #endregion
 
@@ -972,6 +984,7 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
+
 
 
 
