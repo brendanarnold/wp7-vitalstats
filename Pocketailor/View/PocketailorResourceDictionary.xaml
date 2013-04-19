@@ -53,7 +53,7 @@
     <Style x:Key="TileFontStyle" TargetType="TextBlock">
     	<Setter Property="Foreground" Value="{StaticResource TileTxtColor}"/>
     	<Setter Property="FontFamily" Value="{StaticResource TileTxtFont}"/>
-    	<Setter Property="FontSize" Value="23"/>
+    	<Setter Property="FontSize" Value="25"/>
     </Style>
 
     <Style x:Key="SubTitleTextBoxStyle" TargetType="TextBlock">

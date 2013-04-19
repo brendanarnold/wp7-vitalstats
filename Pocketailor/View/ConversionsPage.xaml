@@ -11,12 +11,14 @@
 
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
+    xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 	
 	<phone:PhoneApplicationPage.Resources>
+		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
 		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
 		<Pocketailor_View:SelectedConversionToBGImage x:Key="SelectedConversionToBGImage"/>
 		<Pocketailor_View:SelectedConversionToPageTitleString x:Key="SelectedConversionToPageTitleString"/>
@@ -26,32 +28,13 @@
         
 
 		<DataTemplate x:Key="ConversionsByRegionSubItemTemplate">
-			<Grid Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  Margin="24,0,0,0">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-				<toolkit:ContextMenuService.ContextMenu>
-					<toolkit:ContextMenu>
-						<toolkit:MenuItem Header="{Binding IsHidden, ConverterParameter=unhide retailer|hide retailer, Converter={StaticResource BoolToStrings}}" Tap="toggleHideRetailerContextMenuItem_Tap" />
-					</toolkit:ContextMenu>
-				</toolkit:ContextMenuService.ContextMenu>
-				<TextBlock Grid.Column="0" Foreground="{StaticResource PageTxtColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
-				<TextBlock Grid.Column="1" Foreground="{StaticResource SubTitleColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding FormattedValue}" Margin="6,0,0,0"/>
-			</Grid>
+			
+			<Controls:ConversionValueButton ClothingSize="{Binding FormattedValue}" IsHidden="{Binding IsHidden}" RetailerName="{Binding Name}"  Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}" toolkit:TiltEffect.IsTiltEnabled="True" Margin="24,0,0,0" />
+			
 		</DataTemplate>
 
-		<Style x:Key="ConversionSubListBoxStyle" TargetType="ListBox">
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListBox">
-						<ItemsPresenter/>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
 
-		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
+		<Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="BorderThickness" Value="0"/>
 			<Setter Property="BorderBrush" Value="Transparent"/>
@@ -109,9 +92,8 @@
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
-				<TextBlock Grid.Row="0" Margin="12,0,0,0" Foreground="{StaticResource SubTitleColor}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
-				<ListBox Grid.Row="1" ItemsSource="{Binding Conversions}"  Style="{StaticResource SubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
-				</ListBox>
+				<TextBlock Grid.Row="0" Margin="12,0,0,0" Text="{Binding Name, Converter={StaticResource StringToUpper}}" Style="{StaticResource SubTitleTextBoxStyle}"/>
+				<ListBox Grid.Row="1" ItemsSource="{Binding Conversions}"  Style="{StaticResource SubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
 			</Grid>
 		</DataTemplate>
 
@@ -177,9 +159,7 @@
 			
 		</Grid>
 
-		<ListBox Grid.Row="1" ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
-			
-		</ListBox>
+		<ListBox Grid.Row="1" ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
 
 		<Border Grid.Row="2" Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
 			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">

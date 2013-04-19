@@ -20,11 +20,11 @@ namespace Pocketailor.View
             this.DataContext = App.VM;
         }
 
-        public void toggleHideRetailerContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            ViewModel.AppViewModel.NameValuePair nvp = (sender as MenuItem).DataContext as ViewModel.AppViewModel.NameValuePair;
-            nvp.ToggleHidden();
-        }
+        //public void toggleHideRetailerContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    ViewModel.AppViewModel.NameValuePair nvp = (sender as MenuItem).DataContext as ViewModel.AppViewModel.NameValuePair;
+        //    nvp.ToggleHidden();
+        //}
 
         private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
         {

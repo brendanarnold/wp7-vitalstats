@@ -158,6 +158,9 @@
     <Compile Include="View\Controls\AboutButton.xaml.cs">
       <DependentUpon>AboutButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Controls\ConversionValueButton.xaml.cs">
+      <DependentUpon>ConversionValueButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HelpData.cs" />
     <Compile Include="Model\Static\RetailIds.cs" />
     <Compile Include="Model\MeasurementType.cs" />
@@ -235,6 +238,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Controls\ConversionBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\ConversionValueButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
