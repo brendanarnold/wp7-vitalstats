@@ -97,6 +97,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
+			<RowDefinition Height="80"/>
 		</Grid.RowDefinitions>
 
 		<Grid x:Name="headerGrid" Grid.Row="0" Margin="0" VerticalAlignment="Top">
@@ -125,12 +126,9 @@
 			
 		</Grid>
 
-		<StackPanel Grid.Row="1" Margin="0" Orientation="Vertical">
-			<ListBox ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" HorizontalContentAlignment="Stretch"/>
-			
-		</StackPanel>
-
-		<Ads:AdControl Grid.Row="1"  Content="AdControl" VerticalAlignment="Bottom"/>
+		<ListBox Grid.Row="1" ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" HorizontalContentAlignment="Stretch"/>
+		
+		<Ads:AdControl Grid.Row="2"  Content="AdControl" VerticalAlignment="Bottom"/>
      
 	</Grid>
 	

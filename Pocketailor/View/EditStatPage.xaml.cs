@@ -106,7 +106,9 @@ namespace Pocketailor.View
             //if (this.nameTitledTextBox.Text != this.FormSnapshot.Name) return true;
             List<string> a = this.ReadValueFromTextBox();
             List<string> b = this.FormSnapshot.Value;
-            if (!a.SequenceEqual(b)) return true;
+            if (a == null && b != null) return true;
+            if (a != null && b == null) return true;
+            if (a != null && b != null && !a.SequenceEqual(b)) return true;
             if (this.preferredUnitListPicker.SelectedIndex != this.FormSnapshot.PreferredUnitIndex) return true;
             return false;
         }
