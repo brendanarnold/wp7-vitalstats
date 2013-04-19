@@ -14,7 +14,7 @@
 		
 		<Grid x:Name="btnGrid" toolkit:TiltEffect.IsTiltEnabled="True" Height="115">
 			<Border Background="{StaticResource ImgOverlayColor}" BorderThickness="0" Padding="0" VerticalAlignment="Top"  >
-				<TextBlock x:Name="titleTxtBlock" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="{StaticResource TileTxtColor}" Margin="6,0,0,0"/>
+				<TextBlock x:Name="titleTxtBlock" Foreground="{StaticResource TileTxtColor}" Margin="6,0,0,0" Style="{StaticResource TileFontStyle}"/>
 			</Border>
 			<Image x:Name="notAvailableImg" Source="/Images/ConversionNotAvailableOverlay.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
 		</Grid>

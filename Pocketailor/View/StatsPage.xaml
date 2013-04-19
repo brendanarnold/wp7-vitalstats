@@ -197,19 +197,21 @@
 			<controls:Pivot.Title>
                 
 				<StackPanel Orientation="Vertical">
-					<Grid>
+					
+					<Grid x:Name="titleBarGrid" Margin="-12,0,0,0" VerticalAlignment="Top">
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="5*"/>
-							<ColumnDefinition Width="5*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
 						</Grid.ColumnDefinitions>
-						<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0">
-							<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0"/>
+						<StackPanel x:Name="logoContainer" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" Margin="12,0,0,0">
+							<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0" Stretch="None"/>
 							<TextBlock Foreground="{StaticResource PivotTitleColor}">
 								<Run Text="POCKETAILOR"/>
 							</TextBlock>
 						</StackPanel>
-						<TextBlock Grid.Column="1" x:Name="PageTitle" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}" Foreground="{StaticResource PageTxtColor}"/>
+						<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 					</Grid>
+
 				</StackPanel>
           
 			</controls:Pivot.Title>
@@ -229,7 +231,7 @@
 				<ScrollViewer>
 					<StackPanel Orientation="Vertical" Margin="12,0,10,0">
 						
-						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">
+						<TextBlock Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
 							<Run Text="CLOTHING"/>
 						</TextBlock>
 						
@@ -297,7 +299,7 @@
 							<Controls:ConversionBtn x:Name="shoeConversionBtn" Title="Shoes"  Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasShoeMeasurements}" Tap="shoeConversionBtn_Tap"/>	
 						</Grid>
 
-						<TextBlock Foreground="{StaticResource SubTitleColor}" Margin="0,0,0,6">
+						<TextBlock x:Name="sportsSubTitle" Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
 							<Run Text="SPORTS"/>
 						</TextBlock>
 
@@ -307,7 +309,7 @@
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
 							<Controls:ConversionBtn x:Name="skiBootConversionBtn" Title="Ski Boots" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10" HasMeasurements="{Binding HasSkiBootMeasurements}" Tap="skiBootConversionBtn_Tap"/>
-							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wesuits" Grid.Column="1" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasWetsuitMeasurements}" Tap="wetsuitConversionBtn_Tap"/>
+							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wetsuits" Grid.Column="1" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasWetsuitMeasurements}" Tap="wetsuitConversionBtn_Tap"/>
 							
 						</Grid>
 						<!--
@@ -348,7 +350,7 @@
 					-->
 
 					<Canvas Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToVisible}}">
-						<TextBlock TextWrapping="Wrap" Text="add a measurement" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="{StaticResource PhoneFontSizeExtraLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="63" Canvas.Top="132"/>
+						<TextBlock TextWrapping="Wrap" Text="add a measurement" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="63" Canvas.Top="132" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}"/>
 						<Image Source="/Images/ChalkArrow.png" Canvas.Top="205" Width="432" Canvas.Left="186">
 							<Image.RenderTransform>
 								<CompositeTransform ScaleX="0.2" ScaleY="0.2"/>
@@ -421,9 +423,9 @@
 									</DataTemplate>
 								</ListBox.ItemTemplate>
 							</ListBox>
-							<TextBlock TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="32" HorizontalAlignment="Center" TextAlignment="Center"/>
-							
-							<!--
+                            <TextBlock TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
+
+                            <!--
 							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
 								<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
 									<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>

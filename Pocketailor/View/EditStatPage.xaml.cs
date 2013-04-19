@@ -65,7 +65,7 @@ namespace Pocketailor.View
         private void LoadStatIntoPage()
         {
             // Set the unit name from the selected stat
-            this.pageTitleTextBlock.Text = (App.VM.SelectedStat.Name == null) ? String.Empty : App.VM.SelectedStat.Name;
+            this.pageTitleTextBlock.Text = (App.VM.SelectedStat.Name == null) ? String.Empty : App.VM.SelectedStat.Name.ToLower();
             // Hide the unit selection if the unit type is custom
             if (App.VM.SelectedStat.MeasurementType == null)
             {

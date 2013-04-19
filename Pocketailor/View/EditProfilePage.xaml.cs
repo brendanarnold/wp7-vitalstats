@@ -33,8 +33,13 @@ namespace Pocketailor
             else
                 this.Action = EditProfilePageActions.New;
 
-            if (this.Action != EditProfilePageActions.Edit)
+            if (this.Action == EditProfilePageActions.Edit)
             {
+                this.titleTextBlock.Text = "edit profile";
+            } 
+            else 
+            {
+                this.titleTextBlock.Text = "add profile";
                 App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = Gender.Unspecified, IsProtected = false, IsQuickProfile = false };
             }
             this.nameTextBox.Text = App.VM.SelectedProfile.Name;

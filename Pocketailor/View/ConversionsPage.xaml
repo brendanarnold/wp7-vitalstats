@@ -26,29 +26,74 @@
         
 
 		<DataTemplate x:Key="ConversionsByRegionSubItemTemplate">
-			<!--
-			
-			-->
-			<StackPanel  Orientation="Horizontal"  Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  Margin="24,0,0,0">
+			<Grid Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  Margin="24,0,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
 				<toolkit:ContextMenuService.ContextMenu>
 					<toolkit:ContextMenu>
 						<toolkit:MenuItem Header="{Binding IsHidden, ConverterParameter=unhide retailer|hide retailer, Converter={StaticResource BoolToStrings}}" Tap="toggleHideRetailerContextMenuItem_Tap" />
 					</toolkit:ContextMenu>
 				</toolkit:ContextMenuService.ContextMenu>
-				<TextBlock Foreground="{StaticResource PageTxtColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
-				<TextBlock Foreground="{StaticResource SubTitleColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding FormattedValue}" Height="43" Width="63" Margin="6,0,0,0"/>
-			</StackPanel>
+				<TextBlock Grid.Column="0" Foreground="{StaticResource PageTxtColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
+				<TextBlock Grid.Column="1" Foreground="{StaticResource SubTitleColor}" Opacity="{Binding IsHidden, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding FormattedValue}" Margin="6,0,0,0"/>
+			</Grid>
 		</DataTemplate>
+
 		<Style x:Key="ConversionSubListBoxStyle" TargetType="ListBox">
-			<!--
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBox">
+						<ItemsPresenter/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
 			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
 			<Setter Property="BorderThickness" Value="0"/>
 			<Setter Property="BorderBrush" Value="Transparent"/>
 			<Setter Property="Padding" Value="0"/>
-			-->
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBoxItem">
+						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="LayoutRoot">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentContainer"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Unselected"/>
+									<VisualState x:Name="Selected">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="SubListBoxStyle" TargetType="ListBox">
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="ListBox">
@@ -59,10 +104,15 @@
 		</Style>
 	
 		<DataTemplate x:Key="ConversionsByRegionItemTemplate">
-			<StackPanel Orientation="Vertical" Margin="0">
-				<TextBlock Margin="12,0,0,0" Foreground="{StaticResource SubTitleColor}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
-				<ListBox ItemsSource="{Binding Conversions}"  Style="{StaticResource ConversionSubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" />
-			</StackPanel>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<TextBlock Grid.Row="0" Margin="12,0,0,0" Foreground="{StaticResource SubTitleColor}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Name}"/>
+				<ListBox Grid.Row="1" ItemsSource="{Binding Conversions}"  Style="{StaticResource SubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
+				</ListBox>
+			</Grid>
 		</DataTemplate>
 
 	</phone:PhoneApplicationPage.Resources>
@@ -93,7 +143,7 @@
 	
 
 <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot">
+	<Grid x:Name="LayoutRoot" Margin="0,6,0,0">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
@@ -106,10 +156,11 @@
 				<RowDefinition Height="1*"/>
 			</Grid.RowDefinitions>
 			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
+			
 			<Grid x:Name="titleBarGrid" Grid.Row="0" Margin="0" Background="#99000000" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="5*"/>
-					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<StackPanel x:Name="logoContainer" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" Margin="12,0,0,0">
 					<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0" Stretch="None"/>
@@ -121,15 +172,25 @@
 			</Grid>
 			
 			<Border x:Name="pageTitleBorder" Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Center" >
-				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" />
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" />
 			</Border>
 			
 		</Grid>
 
-		<ListBox Grid.Row="1" ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" HorizontalContentAlignment="Stretch"/>
-		
+		<ListBox Grid.Row="1" ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
+			
+		</ListBox>
+
+		<Border Grid.Row="2" Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Run Text="Advert here"/>
+			</TextBlock>
+		</Border>
+		<!--
 		<Ads:AdControl Grid.Row="2"  Content="AdControl" VerticalAlignment="Bottom"/>
-     
+		-->
+
+
 	</Grid>
 	
 

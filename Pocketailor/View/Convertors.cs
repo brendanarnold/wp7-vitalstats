@@ -46,7 +46,7 @@ namespace Pocketailor.View
             switch (conversionId)
             {
                 case ConversionId.TrouserSize:
-                    return new BitmapImage(new Uri("/Images/trouser-bg.jpg", UriKind.Relative));
+                    return new BitmapImage(new Uri("/Images/trousers-bg.jpg", UriKind.Relative));
                 case ConversionId.ShirtSize:
                     return new BitmapImage(new Uri("/Images/shirt-bg.jpg", UriKind.Relative));
                 case ConversionId.HatSize:
@@ -60,9 +60,9 @@ namespace Pocketailor.View
                 case ConversionId.HosierySize:
                     return new BitmapImage(new Uri("/Images/hosiery-bg.jpg", UriKind.Relative));
                 case ConversionId.ShoeSize:
-                    return new BitmapImage(new Uri("/Images/shoe-bg.jpg", UriKind.Relative));
+                    return new BitmapImage(new Uri("/Images/shoes-bg.jpg", UriKind.Relative));
                 case ConversionId.SkiBootSize:
-                    return new BitmapImage(new Uri("/Images/skiboot-bg.jpg", UriKind.Relative));
+                    return new BitmapImage(new Uri("/Images/skiboots-bg.jpg", UriKind.Relative));
                 case ConversionId.TennisGripSize:
                     return new BitmapImage(new Uri("/Images/tennisgrip-bg.jpg", UriKind.Relative));
                 case ConversionId.WetsuitSize:

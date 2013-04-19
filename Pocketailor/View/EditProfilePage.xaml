@@ -76,7 +76,7 @@
 		<ScrollViewer>
 		
 			<StackPanel Orientation="Vertical" Height="696" Width="480">
-				<TextBlock Margin="36,15,0,50" TextWrapping="Wrap" Text="add profile" Padding="0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" />
+				<TextBlock x:Name="titleTextBlock" Margin="36,15,0,50" TextWrapping="Wrap" Text="add profile" Padding="0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" />
 				<Canvas Height="144" Margin="23,0,0,95">
 					<RadioButton x:Name="femaleRadioBtn" Content="FEMALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" IsChecked="True" Canvas.Top="68" Canvas.Left="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
 						<i:Interaction.Triggers>
