@@ -52,7 +52,7 @@ namespace Pocketailor.View
 
 
             // Load a new suggested app
-            App.VM.LoadNextSuggestedStatTemplate();
+            //App.VM.LoadNextSuggestedStatTemplate();
 
         }
 
@@ -73,18 +73,18 @@ namespace Pocketailor.View
         #region New stat behaviours
 
         // User selected a suggested stat template, can move straight to new stat page
-        private void suggestedStatGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            App.VM.SelectedStat = new Stat()
-            {
-                Name = App.VM.SuggestedStatTemplate.Name,
-                MeasurementType = App.VM.SuggestedStatTemplate.MeasurementType,
-                PreferredUnit = App.VM.SuggestedStatTemplate.MeasurementType.DefaultUnit,
-                Value = String.Empty,
-            };
-            NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}",
-                EditStatPageActions.New), UriKind.Relative));
-        }
+        //private void suggestedStatGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    App.VM.SelectedStat = new Stat()
+        //    {
+        //        Name = App.VM.SuggestedStatTemplate.Name,
+        //        MeasurementType = App.VM.SuggestedStatTemplate.MeasurementType,
+        //        PreferredUnit = App.VM.SuggestedStatTemplate.MeasurementType.DefaultUnit,
+        //        Value = String.Empty,
+        //    };
+        //    NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}",
+        //        EditStatPageActions.New), UriKind.Relative));
+        //}
 
         // User chose to create a new stat, should be prompted to select a stat template or custom
         private void addStatAppBarBtn_Click(Object sender, EventArgs e) 

@@ -155,6 +155,10 @@
     <Compile Include="Model\Static\MeasurementTypes.cs" />
     <Compile Include="Model\Static\MeasurementTypeIds.cs" />
     <Compile Include="Model\Static\UnitIds.cs" />
+    <Compile Include="ViewModel\ConversionPageViewModel.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\StatsPageViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\Controls\AboutButton.xaml.cs">
       <DependentUpon>AboutButton.xaml</DependentUpon>
     </Compile>
@@ -176,7 +180,6 @@
     <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AppViewModelBoilerplate.cs" />
     <Compile Include="ViewModel\SettingsHelpers.cs" />
     <Compile Include="View\Controls\ConversionBtn.xaml.cs">
       <DependentUpon>ConversionBtn.xaml</DependentUpon>
