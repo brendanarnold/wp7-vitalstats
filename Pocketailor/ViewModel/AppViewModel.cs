@@ -22,8 +22,9 @@ namespace Pocketailor.ViewModel
     // other parts of this class
     public partial class AppViewModel : INotifyPropertyChanged
     {
+
+        public SettingsHelpers Settings;
  
-        public IsolatedStorageSettings stngs = IsolatedStorageSettings.ApplicationSettings;
 
 
 
@@ -33,23 +34,13 @@ namespace Pocketailor.ViewModel
 
         public void SetSelectedRegions(List<RegionIds> regionTags)
         {
-            if (this.stngs.Contains("SelectedRegions"))
-            {
-                this.stngs["SelectedRegions"] = regionTags;
-            }
-            else
-            {
-                this.stngs.Add("SelectedRegions", regionTags);
-            }
-            this.stngs.Save();
+            this.Settings.AddOrUpdateValue("SelectedRegions", regionTags);
+            this.Settings.Save();
         }
 
         public List<RegionIds> GetSelectedRegions()
         {
-            if (this.stngs.Contains("SelectedRegions"))
-                return this.stngs["SelectedRegions"] as List<RegionIds>;
-            return AppConstants.DEFAULT_REGIONS;
-            //return new List<RegionTag>() { RegionTag.UK, RegionTag.Europe };
+            return this.Settings.GetValueOrDefault<List<RegionIds>>("SelectedRegions", AppConstants.DEFAULT_REGIONS);
         }
 
         private ObservableCollection<RegionContainer> _regions;
@@ -570,28 +561,14 @@ namespace Pocketailor.ViewModel
 
         public void LoadHiddenRetailers()
         {
-            if (this.stngs.Contains("HiddenRetailers"))
-            {
-                this.HiddenRetailers = new ObservableCollection<RetailId>(
-                    ((ObservableCollection<RetailId>)this.stngs["HiddenRetailers"]).Distinct<RetailId>());
-            }
-            else
-            {
-                this.HiddenRetailers = new ObservableCollection<RetailId>();
-            }
+            var lstRetailers = this.Settings.GetValueOrDefault<List<RetailId>>("HiddenRetailers", new List<RetailId>()).Distinct<RetailId>();
+            this.HiddenRetailers = new ObservableCollection<RetailId>(lstRetailers);
         }
 
         public void SaveHiddenRetailers()
         {
-            if (this.stngs.Contains("HiddenRetailers"))
-            {
-                this.stngs["HiddenRetailers"] = this.HiddenRetailers;
-            }
-            else
-            {
-                this.stngs.Add("HiddenRetailers", this.HiddenRetailers);
-            }
-            this.stngs.Save();
+            this.Settings.AddOrUpdateValue("HiddenRetailers", this.HiddenRetailers);
+            this.Settings.Save();
         }
 
         private bool _showHiddenConversions = false;
@@ -676,87 +653,87 @@ namespace Pocketailor.ViewModel
 
         #region PIN locking methods
 
-        private bool _isLocked = true;
-        public bool IsLocked
-        {
-            get { return this._isLocked; }
-            set
-            {
-                if (this._isLocked != value)
-                {
-                    this._isLocked = value;
-                    this.NotifyPropertyChanged("IsLocked");
-                }
-            }
-        }
+        //private bool _isLocked = true;
+        //public bool IsLocked
+        //{
+        //    get { return this._isLocked; }
+        //    set
+        //    {
+        //        if (this._isLocked != value)
+        //        {
+        //            this._isLocked = value;
+        //            this.NotifyPropertyChanged("IsLocked");
+        //        }
+        //    }
+        //}
 
-        public bool IsValidPin(string pin)
-        {
-            if (pin.Length != 4) return false;
-            for (int i = 0; i < 4; i++)
-            {
-                if (!char.IsDigit(pin[i])) return false;
-            }
-            return true;
-        }
+        //public bool IsValidPin(string pin)
+        //{
+        //    if (pin.Length != 4) return false;
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        if (!char.IsDigit(pin[i])) return false;
+        //    }
+        //    return true;
+        //}
 
-        public bool SetPin(string pin)
-        {
-            if (this.IsLocked) return false;
-            if (this.stngs.Contains("pin"))
-            {
-                this.stngs["pin"] = pin;
-            }
-            else
-            {
-                this.stngs.Add("pin", pin);
-            }
-            return true;
-        }
+        //public bool SetPin(string pin)
+        //{
+        //    if (this.IsLocked) return false;
+        //    if (this.stngs.Contains("pin"))
+        //    {
+        //        this.stngs["pin"] = pin;
+        //    }
+        //    else
+        //    {
+        //        this.stngs.Add("pin", pin);
+        //    }
+        //    return true;
+        //}
 
-        public string GetPin()
-        {
-            string pin;
-            try
-            {
-                pin = (string)this.stngs["pin"];
-            }
-            catch (System.Collections.Generic.KeyNotFoundException)
-            {
-                pin = null;
-                this.SetPin(null);
-            }
-            return pin;
-        }
+        //public string GetPin()
+        //{
+        //    string pin;
+        //    try
+        //    {
+        //        pin = (string)this.stngs["pin"];
+        //    }
+        //    catch (System.Collections.Generic.KeyNotFoundException)
+        //    {
+        //        pin = null;
+        //        this.SetPin(null);
+        //    }
+        //    return pin;
+        //}
 
-        public bool TryUnlock(string pin)
-        {
-            string appPin;
+        //public bool TryUnlock(string pin)
+        //{
+        //    string appPin;
 
-            appPin = this.GetPin();
-            if (appPin == null) 
-            {
-                this.IsLocked = false;
-                if (this.IsValidPin(pin)) this.SetPin(pin);
-                return true;
-            } 
-            else if (appPin == pin)
-            {
-                this.IsLocked = false;
-                return true;
-            }
-            else
-            {
-                this.IsLocked = true;
-                return false;
-            }
+        //    appPin = this.GetPin();
+        //    if (appPin == null) 
+        //    {
+        //        this.IsLocked = false;
+        //        if (this.IsValidPin(pin)) this.SetPin(pin);
+        //        return true;
+        //    } 
+        //    else if (appPin == pin)
+        //    {
+        //        this.IsLocked = false;
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        this.IsLocked = true;
+        //        return false;
+        //    }
 
-        }
+        //}
 
-        public void Lock()
-        {
-            this.IsLocked = true;
-        }
+        //public void Lock()
+        //{
+        //    this.IsLocked = true;
+        //}
 
         #endregion
 

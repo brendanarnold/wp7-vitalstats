@@ -28,6 +28,7 @@ namespace Pocketailor.ViewModel
         {
             this.ConnectionString = connectionString;
             this.RecreateDataContext();
+            this.Settings = new SettingsHelpers();
         }
 
         

@@ -10,9 +10,11 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
 
-namespace Pocketailor.Settings
+
+namespace Pocketailor.ViewModel
 {
-    public partial class ViewSettings
+    // Settings that apply to the backend
+    public class SettingsHelpers
     {
         IsolatedStorageSettings settings;
 
@@ -22,7 +24,7 @@ namespace Pocketailor.Settings
         // Default setting value
         //const bool ExampleDefault = true;
 
-        public ViewSettings()
+        public SettingsHelpers()
         {
             settings = IsolatedStorageSettings.ApplicationSettings;
         }

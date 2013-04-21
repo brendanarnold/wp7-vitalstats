@@ -34,6 +34,7 @@ namespace Pocketailor
             get { return _vm; }
         }
 
+        public static SettingsHelpers Settings;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -69,17 +70,20 @@ namespace Pocketailor
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+            
+            Settings = new SettingsHelpers();
 
             // Database initialisation
             string dbConnectionString = "Data Source=isostore:/Pocketailor.sdf";
+
 
             using (AppDataContext db = new AppDataContext(dbConnectionString))
             {
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
 
-                int dataVersion = 0;
-                if (IsolatedStorageSettings.ApplicationSettings.Contains("ConversionDataVersion")) dataVersion = (int)IsolatedStorageSettings.ApplicationSettings["ConversionDataVersion"];
+                int dataVersion = Settings.GetValueOrDefault<int>("ConversionDataVersion", 0);
+                
                 if (AppConstants.CONVERSION_DATA_VERSION > dataVersion)
                 {
                     SetupDatabase.LoadConversions(db);

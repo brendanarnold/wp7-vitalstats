@@ -83,7 +83,7 @@ namespace Pocketailor.View
         private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as MenuItem).DataContext as Profile;
-            if (p.IsProtected && App.VM.IsLocked) return;
+            //if (p.IsProtected && App.VM.IsLocked) return;
             App.VM.SelectedProfile = p;
             NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
         }

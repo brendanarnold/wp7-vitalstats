@@ -78,19 +78,19 @@ namespace Pocketailor.View
                 "up the Eiffel tower"
             };
 
-            this.Loaded +=UnlockPage_Loaded;
+           // this.Loaded +=UnlockPage_Loaded;
 
 
         }
 
-        private void UnlockPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            if ((App.VM.GetPin() == null) && !this.NewPinWarningSeen)
-            {
-                MessageBox.Show("Entering a PIN on this page will set the PIN for the app. This cannot be retrieved once set and so must be remembered.", "New PIN", MessageBoxButton.OK);
-                this.NewPinWarningSeen = true;
-            }
-        }
+        //private void UnlockPage_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    if ((App.VM.GetPin() == null) && !this.NewPinWarningSeen)
+        //    {
+        //        MessageBox.Show("Entering a PIN on this page will set the PIN for the app. This cannot be retrieved once set and so must be remembered.", "New PIN", MessageBoxButton.OK);
+        //        this.NewPinWarningSeen = true;
+        //    }
+        //}
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -148,24 +148,24 @@ namespace Pocketailor.View
 
         }
 
-        private void ApplicationBarIconButton_Click_1(object sender, System.EventArgs e)
-        {
-            if (!App.VM.IsValidPin(this.pinTextBox.Text))
-            {
-                MessageBox.Show("Make sure the PIN field contains a four digit number only", "Invalid PIN entered", MessageBoxButton.OK);
-                return;
-            }
-            else if (App.VM.TryUnlock(this.pinTextBox.Text))
-            {
-                if (NavigationService.CanGoBack) NavigationService.GoBack();
+        //private void ApplicationBarIconButton_Click_1(object sender, System.EventArgs e)
+        //{
+        //    if (!App.VM.IsValidPin(this.pinTextBox.Text))
+        //    {
+        //        MessageBox.Show("Make sure the PIN field contains a four digit number only", "Invalid PIN entered", MessageBoxButton.OK);
+        //        return;
+        //    }
+        //    else if (App.VM.TryUnlock(this.pinTextBox.Text))
+        //    {
+        //        if (NavigationService.CanGoBack) NavigationService.GoBack();
                 
-            }
-            else
-            {
-                MessageBox.Show("Please try a different PIN combination", "Incorrect PIN", MessageBoxButton.OK);
-            }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Please try a different PIN combination", "Incorrect PIN", MessageBoxButton.OK);
+        //    }
             
-        }
+        //}
 
         private void pinTextBox_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {

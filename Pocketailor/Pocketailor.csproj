@@ -177,10 +177,7 @@
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AppViewModelBoilerplate.cs" />
-    <Compile Include="ViewModel\ViewModelSettings.cs" />
-    <Compile Include="View\About.xaml.cs">
-      <DependentUpon>About.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\SettingsHelpers.cs" />
     <Compile Include="View\Controls\ConversionBtn.xaml.cs">
       <DependentUpon>ConversionBtn.xaml</DependentUpon>
     </Compile>
@@ -203,16 +200,9 @@
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\StatDetailPage.xaml.cs">
-      <DependentUpon>StatDetailPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\StatsPage.xaml.cs">
       <DependentUpon>StatsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UnlockPage.xaml.cs">
-      <DependentUpon>UnlockPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ViewSettings.cs" />
     <Compile Include="View\ViewState.cs" />
     <Compile Include="ViewModel\AppViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
@@ -229,10 +219,6 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </DesignTimeOnly>
-    <Page Include="View\About.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Controls\AboutButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,17 +259,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StatDetailPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\StatsPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\UnlockPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PocketailorResourceDictionary.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
@@ -582,17 +560,37 @@
     <Content Include="Images\ConversionNotAvailableOverlay.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Images\bra-btn.jpg" />
-    <Resource Include="Images\dress-btn.jpg" />
-    <Resource Include="Images\hat-btn.jpg" />
-    <Resource Include="Images\hosiery-btn.jpg" />
-    <Resource Include="Images\shirt-btn.jpg" />
+    <Content Include="Images\bra-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\dress-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\hat-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\hosiery-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\shirt-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\Shirt.png" />
-    <Resource Include="Images\shoes-btn.jpg" />
-    <Resource Include="Images\skiboots-btn.jpg" />
-    <Resource Include="Images\suit-btn.jpg" />
-    <Resource Include="Images\trousers-btn.jpg" />
-    <Resource Include="Images\wetsuit-btn.jpg" />
+    <Content Include="Images\shoes-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\skiboots-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\suit-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\trousers-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wetsuit-btn.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Includes\" />
