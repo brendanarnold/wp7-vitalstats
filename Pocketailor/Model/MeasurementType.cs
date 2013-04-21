@@ -9,15 +9,12 @@ namespace Pocketailor.Model
     {
         public string Name { get; set; }
         public MeasurementTypeId Id { get; set; }
-        public UnitId DefaultUnitId { get; set; }
+        public Dictionary<UnitCultureId, UnitId> DefaultUnitDict;
         public IUnit DefaultUnit {
             get
             {
-                return (from IUnit u in this.Units where u.Id == this.DefaultUnitId select u).First();
-            }
-            set
-            {
-                this.DefaultUnitId = value.Id;
+                UnitId id = this.DefaultUnitDict[App.VM.UnitCulture];
+                return (from IUnit u in this.Units where u.Id == id select u).First();
             }
         }
         public List<IUnit> Units { get; set; }

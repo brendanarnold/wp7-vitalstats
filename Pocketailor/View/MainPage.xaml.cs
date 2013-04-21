@@ -130,12 +130,17 @@ namespace Pocketailor.View
 
         private void settingsAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            this.GoToSettingsPage();
         }
 
         private void settingsAppBarBtn_Click(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            this.GoToSettingsPage();
+        }
+
+        public void GoToSettingsPage()
+        {
+            NavigationService.Navigate(new Uri("/View/SettingsPage.xaml", UriKind.Relative));
         }
 
 

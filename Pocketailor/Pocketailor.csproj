@@ -154,6 +154,7 @@
     <Compile Include="Model\Static\MeasurementIds.cs" />
     <Compile Include="Model\Static\MeasurementTypes.cs" />
     <Compile Include="Model\Static\MeasurementTypeIds.cs" />
+    <Compile Include="Model\Static\UnitCultureIds.cs" />
     <Compile Include="Model\Static\UnitIds.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
@@ -202,6 +203,9 @@
     </Compile>
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StatsPage.xaml.cs">
       <DependentUpon>StatsPage.xaml</DependentUpon>
@@ -259,6 +263,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

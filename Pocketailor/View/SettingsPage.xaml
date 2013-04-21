@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Pocketailor.View.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
+		    <shell:ApplicationBarIconButton x:Name="saveAppBarIconBtn" IconUri="/Images/Save.png" Text="save" Click="saveAppBarIconBtn_Click"></shell:ApplicationBarIconButton>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+           
+        </Grid.RowDefinitions>
+
+		<ScrollViewer x:Name="containerScollViewer">
+			<StackPanel >
+				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="settings" Margin="36,36,0,36" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
+				
+
+				<TextBlock Foreground="{StaticResource PageTxtColor}" Margin="36,0" TextWrapping="Wrap" FontSize="21.333">The default units for measurements. This can be overridden for each measurement.</TextBlock>
+				<RadioButton x:Name="imperialRadioBtn" Content="IMPERIAL (ft/in/lb)" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Checked="imperialRadioBtn_Checked"/>
+				<RadioButton x:Name="metricRadioBtn" Content="METRIC (m/cm/kg)" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Checked="metricRadioBtn_Checked"/>
+
+
+
+
+
+			</StackPanel>
+
+		</ScrollViewer>
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

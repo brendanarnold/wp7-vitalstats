@@ -31,7 +31,28 @@ namespace Pocketailor.ViewModel
             this.RecreateDataContext();
         }
 
-        
+
+        #region UnitCulture property
+
+        // Cache this for fast access
+        private UnitCultureId? _unitCulture = null;
+        public UnitCultureId UnitCulture
+        {
+            get
+            {
+                if (this._unitCulture == null) this._unitCulture = App.Settings.GetValueOrDefault<UnitCultureId>("_unitCulture", AppConstants.DEFAULT_UNIT_CULTURE);
+                return (UnitCultureId)this._unitCulture;
+            }
+            set
+            {
+                this._unitCulture = value;
+                App.Settings.AddOrUpdateValue("_unitCulture", value);
+            }
+
+        }
+
+        #endregion
+
         #region Database methods
 
         private string ConnectionString;

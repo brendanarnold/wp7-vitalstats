@@ -38,6 +38,8 @@ namespace Pocketailor
         public static string LEGAL_URL = "http://www.lassiv.com/pocketailor/legal.html";
         public static string FACEBOOK_LIKE_URL = "http://facebook.com/Pocketailor";
         public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
+        public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
+
 
 
     }

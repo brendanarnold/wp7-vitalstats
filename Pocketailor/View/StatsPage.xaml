@@ -349,7 +349,7 @@
 					</Grid>
 				</controls:PivotItem.Header>
 				
-				<Canvas Margin="12,0,12,0" Grid.Row="0" >
+				<Grid Margin="12,0,12,0">
 					<!--
 					<StackPanel Margin="0,0,0,12" Orientation="Horizontal">
 						<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
@@ -366,9 +366,13 @@
 							</Image.RenderTransform></Image>
 					</Canvas>
 
-					<ScrollViewer Height="547" Width="432" Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToCollapsed}}">
-						<StackPanel Orientation="Vertical">
-							<ListBox x:Name="statsListBox" ItemsSource="{Binding SelectedProfile.Stats}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
+					<ScrollViewer Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToCollapsed}}" d:IsHidden="True">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<ListBox Grid.Row="0" x:Name="statsListBox" ItemsSource="{Binding SelectedProfile.Stats}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
 								<!-- this can be set in the templated style
 								<ListBox.ItemContainerStyle>
 									<Style TargetType="ListBoxItem">
@@ -432,7 +436,7 @@
 									</DataTemplate>
 								</ListBox.ItemTemplate>
 							</ListBox>
-                            <TextBlock TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
+                            <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
 
                             <!--
 							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
@@ -444,10 +448,10 @@
 							</Grid>
 							-->
 
-						</StackPanel>
+						</Grid>
 					</ScrollViewer>
 
-				</Canvas>
+				</Grid>
 				
 			</controls:PivotItem>
 

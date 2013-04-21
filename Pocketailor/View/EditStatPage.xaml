@@ -57,11 +57,10 @@
 	</phone:PhoneApplicationPage.ApplicationBar>
 
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
-		
 		<ScrollViewer x:Name="containerScrollViewer">
 			<StackPanel x:Name="containerStackPanel">
-				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22"/>
-				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="title here" Margin="36,0,0,0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667"/>
+				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22" Foreground="{StaticResource PageTxtColor}"/>
+				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="title here" Margin="36,0,0,0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
 
 				<toolkit:ListPicker x:Name="preferredUnitListPicker" 
 					Header="UNITS"
@@ -74,6 +73,9 @@
 							</TextBlock>
 						</DataTemplate>
 					</toolkit:ListPicker.Resources>
+					<toolkit:ListPicker.Background>
+						<StaticResource ResourceKey="UIBGColor"/>
+					</toolkit:ListPicker.Background>
 					<toolkit:ListPicker.FullModeItemTemplate>
 						<StaticResource ResourceKey="defaultListPickerTemplate"/>
 					</toolkit:ListPicker.FullModeItemTemplate>
@@ -86,8 +88,8 @@
 				</toolkit:ListPicker>
 
 				<StackPanel  x:Name="valueContainer" Margin="25,0,25,20" Orientation="Horizontal">
-					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox"/>
-					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox"/>
+					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox" Background="{StaticResource UIBGColor}"/>
+					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox" Background="{StaticResource UIBGColor}"/>
 				</StackPanel>
 			
 				<Grid>
@@ -95,11 +97,11 @@
 						<ColumnDefinition Width="1*"/>
 						<ColumnDefinition Width="1*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,0,0,0" FontSize="21.333">
-						Lorum ipsum dolor sit insitam.
+					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,0,0,0" FontSize="21.333" Foreground="{StaticResource PageTxtColor}">
+						<Run Text="Lorum ipsum dolor sit insitam. "/>
 						<LineBreak />
 						<LineBreak />
-						Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam.
+						<Run Text=" Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam."/>
 					</TextBlock>
 					<Image x:Name="helpImg" Grid.Column="1" Source="/Images/HelpImages/SleeveMan.png" />
 				</Grid>
@@ -107,8 +109,6 @@
 
 			</StackPanel>
 		</ScrollViewer>
-		
-
-		</Grid>
+	</Grid>
 	
 </phone:PhoneApplicationPage>

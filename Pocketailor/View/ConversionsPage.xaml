@@ -7,14 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-
-
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
+	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
+	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
     shell:SystemTray.IsVisible="True">
 	
 	<phone:PhoneApplicationPage.Resources>
@@ -98,6 +99,9 @@
 		</DataTemplate>
 
 	</phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.Background>
+		<StaticResource ResourceKey="PageBGColor"/>
+	</phone:PhoneApplicationPage.Background>
 
 
 	<phone:PhoneApplicationPage.FontFamily>
@@ -116,7 +120,7 @@
 	</d:DataContext>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
 		    <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="showHiddenAppBarMenuItem" Text="show hidden retailers" Click="showHiddenAppBarMenuItem_Click" />
             </shell:ApplicationBar.MenuItems>
@@ -125,7 +129,7 @@
 	
 
 <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Margin="0,6,0,0">
+	<Grid x:Name="LayoutRoot" Margin="0,6,0,0" Background="{StaticResource PageBGColor}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
@@ -154,7 +158,7 @@
 			</Grid>
 			
 			<Border x:Name="pageTitleBorder" Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
-				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" />
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
 			</Border>
 			
 		</Grid>
