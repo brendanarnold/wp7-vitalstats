@@ -1,0 +1,14 @@
+WVGA	480 × 800	15:9
+None. This is the only supported resolution for Windows Phone OS 7.1.
+
+WXGA	768 × 1280	15:9
+1.6x scale
+
+720p	720 × 1280	16:9
+1.5x scale, 80 pixels taller (53 pixels, after scaling)
+
+
+
+ConversionPage BG images should be 768 x 380 px
+
+StatsPage button images should be 1.6*WVGA scale x 179 px

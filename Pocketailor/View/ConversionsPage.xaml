@@ -153,8 +153,8 @@
 				<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 			</Grid>
 			
-			<Border x:Name="pageTitleBorder" Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Center" >
-				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" />
+			<Border x:Name="pageTitleBorder" Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
+				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" />
 			</Border>
 			
 		</Grid>

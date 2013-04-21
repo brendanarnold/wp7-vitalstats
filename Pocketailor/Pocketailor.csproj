@@ -554,11 +554,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\shirts.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image01.png" />
     <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image02.png" />
     <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource_Files\image03.png" />
@@ -587,7 +582,17 @@
     <Content Include="Images\ConversionNotAvailableOverlay.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\bra-btn.jpg" />
+    <Resource Include="Images\dress-btn.jpg" />
+    <Resource Include="Images\hat-btn.jpg" />
+    <Resource Include="Images\hosiery-btn.jpg" />
+    <Resource Include="Images\shirt-btn.jpg" />
     <Resource Include="Images\Shirt.png" />
+    <Resource Include="Images\shoes-btn.jpg" />
+    <Resource Include="Images\skiboots-btn.jpg" />
+    <Resource Include="Images\suit-btn.jpg" />
+    <Resource Include="Images\trousers-btn.jpg" />
+    <Resource Include="Images\wetsuit-btn.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Includes\" />

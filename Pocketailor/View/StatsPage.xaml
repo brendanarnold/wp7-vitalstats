@@ -253,33 +253,38 @@
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="trouserConversionBtn" Background="{StaticResource TileBGColor}" Title="Trousers" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,10" BorderThickness="0" HasMeasurements="{Binding HasTrouserMeasurements}" Tap="trouserConversionBtn_Tap">
-						
-							</Controls:ConversionBtn>
-							<Controls:ConversionBtn x:Name="shirtConversionBtn" Title="Shirts" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="1" HasMeasurements="{Binding HasShirtMeasurements}" Tap="shirtConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="shirtConversionBtn" Title="Shirts" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HasShirtMeasurements}" Tap="shirtConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
-									<ImageBrush Stretch="Fill" ImageSource="/Images/shirts.jpg"/>
+									<ImageBrush Stretch="Fill" ImageSource="/Pocketailor;component/Images/shirt-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
+							<Controls:ConversionBtn x:Name="trouserConversionBtn" Title="Trousers" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,10" BorderThickness="0" HasMeasurements="{Binding HasTrouserMeasurements}" Tap="trouserConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Pocketailor;component/Images/trousers-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
+							
 						</Grid>
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="3*"/>
 								<ColumnDefinition Width="6*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="hatConversionBtn" Title="Hats" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HasHatMeasurements}" Tap="hatConversionBtn_Tap">
-
+							<Controls:ConversionBtn x:Name="hatConversionBtn" Title="Hats" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HasHatMeasurements}" Tap="hatConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Pocketailor;component/Images/hat-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
 							<Controls:ConversionBtn x:Name="suitConversionBtn" Title="Suits" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="1" HasMeasurements="{Binding HasSuitMeasurements}" Tap="suitConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
-									<ImageBrush Stretch="Fill" ImageSource="/Images/suits.jpg"/>
+									<ImageBrush Stretch="Fill" ImageSource="/Pocketailor;component/Images/suit-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
 						</Grid>
 						<Grid  Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
 							<Controls:ConversionBtn x:Name="dressConversionBtn" Title="Dress Sizes" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="0" HasMeasurements="{Binding HasDressSizeMeasurements}" Tap="dressConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
-									<ImageBrush Stretch="Fill" ImageSource="/Images/dress.jpg"/>
+									<ImageBrush Stretch="Fill" ImageSource="/Pocketailor;component/Images/dress-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
 
 							</Controls:ConversionBtn>
@@ -289,14 +294,18 @@
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="braConversionBtn" Title="Bras" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10"  HasMeasurements="{Binding HasBraMeasurements}" Tap="braConversionBtn_Tap"/>
-							<Controls:ConversionBtn x:Name="hosieryConversionBtn" Title="Hosiery" Grid.Column="1"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10"  HasMeasurements="{Binding HasHosieryMeasurements}" Tap="hosieryConversionBtn_Tap"/>
+							<Controls:ConversionBtn x:Name="braConversionBtn" Title="Bras" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10"  HasMeasurements="{Binding HasBraMeasurements}" Tap="braConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+							<Controls:ConversionBtn x:Name="hosieryConversionBtn" Title="Hosiery" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10"  HasMeasurements="{Binding HasHosieryMeasurements}" Tap="hosieryConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 						</Grid>
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="shoeConversionBtn" Title="Shoes"  Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasShoeMeasurements}" Tap="shoeConversionBtn_Tap"/>	
+							<Controls:ConversionBtn x:Name="shoeConversionBtn" Title="Shoes"  Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasShoeMeasurements}" Tap="shoeConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Pocketailor;component/Images/shoes-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>	
 						</Grid>
 
 						<TextBlock x:Name="sportsSubTitle" Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
@@ -308,8 +317,8 @@
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="skiBootConversionBtn" Title="Ski Boots" Grid.Column="0"  Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,10,10" HasMeasurements="{Binding HasSkiBootMeasurements}" Tap="skiBootConversionBtn_Tap"/>
-							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wetsuits" Grid.Column="1" Background="{StaticResource TileBGColor}" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasWetsuitMeasurements}" Tap="wetsuitConversionBtn_Tap"/>
+							<Controls:ConversionBtn x:Name="skiBootConversionBtn" Title="Ski Boots" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10" HasMeasurements="{Binding HasSkiBootMeasurements}" Tap="skiBootConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wetsuits" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding HasWetsuitMeasurements}" Tap="wetsuitConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 							
 						</Grid>
 						<!--
