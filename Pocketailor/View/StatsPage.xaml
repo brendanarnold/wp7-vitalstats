@@ -19,6 +19,83 @@
 	shell:SystemTray.IsVisible="True"
 	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
+	
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+	<!--
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+	-->
+
+
+    <!--Transitions-->
+	<!--
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+			-->
+                <!--
+                // This page contains relatively complex visuals that can slow down
+                // the UI thread while they are being rendered.
+                // Slightly delaying the turnstile feather transition using the BeginTime
+                // property makes the animation appear smooth by waiting for the 
+                // rendering process to finish.
+                -->
+				<!--
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" BeginTime="0:0:0.7"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+	-->
 
 	<phone:PhoneApplicationPage.Resources>
 		
@@ -192,7 +269,7 @@
 
 		
 		
-		<controls:Pivot x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
+		<controls:Pivot  x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
 			
 			<controls:Pivot.Title>
                 
@@ -231,24 +308,13 @@
 				<ScrollViewer>
 					<StackPanel Orientation="Vertical" Margin="12,0,10,0">
 						
-						<TextBlock Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
+						<TextBlock  Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
 							<Run Text="CLOTHING"/>
 						</TextBlock>
 						
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="6*"/>
-								<ColumnDefinition Width="3*"/>
-							</Grid.ColumnDefinitions>
-							
-							
-							
-							<!--
-							<toolkit:HubTile Title="Dress Sizes" Message="Tap to enter missing measurements" Width="300" Height="115" />
-						    -->
-						</Grid>
 						
-						<Grid>
+						
+						<Grid  >
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
@@ -265,7 +331,7 @@
 							</Controls:ConversionBtn>
 							
 						</Grid>
-						<Grid>
+						<Grid  >
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="3*"/>
 								<ColumnDefinition Width="6*"/>
@@ -281,7 +347,7 @@
 								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
 						</Grid>
-						<Grid  Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
+						<Grid   Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
 							<Controls:ConversionBtn x:Name="dressConversionBtn" Title="Dress Sizes" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="0" HasMeasurements="{Binding HasDressSizeMeasurements}" Tap="dressConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/dress-btn.jpg"/>
@@ -289,7 +355,7 @@
 
 							</Controls:ConversionBtn>
 						</Grid>
-						<Grid Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
+						<Grid   Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
@@ -297,7 +363,7 @@
 							<Controls:ConversionBtn x:Name="braConversionBtn" Title="Bras" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10"  HasMeasurements="{Binding HasBraMeasurements}" Tap="braConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 							<Controls:ConversionBtn x:Name="hosieryConversionBtn" Title="Hosiery" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10"  HasMeasurements="{Binding HasHosieryMeasurements}" Tap="hosieryConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 						</Grid>
-						<Grid>
+						<Grid  >
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
@@ -308,11 +374,11 @@
 							</Controls:ConversionBtn>	
 						</Grid>
 
-						<TextBlock x:Name="sportsSubTitle" Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
+						<TextBlock   x:Name="sportsSubTitle" Margin="0,0,0,6" Style="{StaticResource SubTitleTextBoxStyle}">
 							<Run Text="SPORTS"/>
 						</TextBlock>
 
-						<Grid>
+						<Grid  >
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
@@ -372,7 +438,7 @@
 								<RowDefinition Height="Auto"/>
 								<RowDefinition Height="Auto"/>
 							</Grid.RowDefinitions>
-							<ListBox Grid.Row="0" x:Name="statsListBox" ItemsSource="{Binding SelectedProfile.Stats}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
+							<ListBox   Grid.Row="0" x:Name="statsListBox" ItemsSource="{Binding SelectedProfile.Stats}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
 								<!-- this can be set in the templated style
 								<ListBox.ItemContainerStyle>
 									<Style TargetType="ListBoxItem">
@@ -436,7 +502,7 @@
 									</DataTemplate>
 								</ListBox.ItemTemplate>
 							</ListBox>
-                            <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
+                            <TextBlock   Grid.Row="1" TextWrapping="Wrap" Text="Long press a measurement to edit, tap for other units" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
 
                             <!--
 							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">

@@ -307,7 +307,8 @@ namespace Pocketailor.ViewModel
                 }
                 else
                 {
-                    App.VM.HiddenRetailers.Add(this.Retailer);
+                    if (!App.VM.HiddenRetailers.Contains(this.Retailer))
+                        App.VM.HiddenRetailers.Add(this.Retailer);
                 }
                 App.VM.SaveHiddenRetailers();
             }
@@ -349,8 +350,7 @@ namespace Pocketailor.ViewModel
 
         public void LoadHiddenRetailers()
         {
-            var lstRetailers = App.Settings.GetValueOrDefault<List<RetailId>>("HiddenRetailers", new List<RetailId>()).Distinct<RetailId>();
-            this.HiddenRetailers = new ObservableCollection<RetailId>(lstRetailers);
+            this.HiddenRetailers = App.Settings.GetValueOrDefault<ObservableCollection<RetailId>>("HiddenRetailers", new ObservableCollection<RetailId>());
         }
 
         public void SaveHiddenRetailers()

@@ -18,6 +18,83 @@
 	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
     shell:SystemTray.IsVisible="True">
 	
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+
+	<!--
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+	-->
+
+    <!--Transitions-->
+    <!--
+	<toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+			-->
+                <!--
+                // This page contains relatively complex visuals that can slow down
+                // the UI thread while they are being rendered.
+                // Slightly delaying the turnstile feather transition using the BeginTime
+                // property makes the animation appear smooth by waiting for the 
+                // rendering process to finish.
+                -->
+				<!--
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" BeginTime="0:0:0.7"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+	-->
+
 	<phone:PhoneApplicationPage.Resources>
 		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
 		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
@@ -27,6 +104,12 @@
 		<Pocketailor_View:IsHiddenToVisibility x:Key="IsHiddenToVisibility"/>
 		<Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
         
+
+
+
+
+
+
 
 		<DataTemplate x:Key="ConversionsByRegionSubItemTemplate">
 			
@@ -136,14 +219,14 @@
 			<RowDefinition Height="80"/>
 		</Grid.RowDefinitions>
 
-		<Grid x:Name="headerGrid" Grid.Row="0" Margin="0" VerticalAlignment="Top">
+		<Grid x:Name="headerGrid"  Grid.Row="0" Margin="0" VerticalAlignment="Top">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="2*"/>
 				<RowDefinition Height="1*"/>
 			</Grid.RowDefinitions>
 			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
 			
-			<Grid x:Name="titleBarGrid" Grid.Row="0" Margin="0" Background="#99000000" VerticalAlignment="Top">
+			<Grid x:Name="titleBarGrid"  Grid.Row="0" Margin="0" Background="#99000000" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -157,15 +240,15 @@
 				<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 			</Grid>
 			
-			<Border x:Name="pageTitleBorder" Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
+			<Border x:Name="pageTitleBorder"   Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
 				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
 			</Border>
 			
 		</Grid>
 
-		<ListBox Grid.Row="1" ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
+		<ListBox Grid.Row="1"   ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
 
-		<Border Grid.Row="2" Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
+		<Border Grid.Row="2"   Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
 			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
 				<Run Text="Advert here"/>
 			</TextBlock>

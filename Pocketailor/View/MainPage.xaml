@@ -23,9 +23,71 @@
     shell:SystemTray.IsVisible="True"
 	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
 
-    <!--
-	
+	<!--
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+-->
+
+	<!--
+	<toolkit:TransitionService.NavigationInTransition>
+		<toolkit:NavigationInTransition>
+			<toolkit:NavigationInTransition.Backward>
+				<toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
+			</toolkit:NavigationInTransition.Backward>
+			<toolkit:NavigationInTransition.Forward>
+				<toolkit:TurnstileFeatherTransition Mode="ForwardIn" BeginTime="0:0:0.7"/>
+			</toolkit:NavigationInTransition.Forward>
+		</toolkit:NavigationInTransition>
+	</toolkit:TransitionService.NavigationInTransition>
+	<toolkit:TransitionService.NavigationOutTransition>
+		<toolkit:NavigationOutTransition>
+			<toolkit:NavigationOutTransition.Backward>
+				<toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
+			</toolkit:NavigationOutTransition.Backward>
+			<toolkit:NavigationOutTransition.Forward>
+				<toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
+			</toolkit:NavigationOutTransition.Forward>
+		</toolkit:NavigationOutTransition>
+	</toolkit:TransitionService.NavigationOutTransition>
 	-->
 
     <phone:PhoneApplicationPage.Resources>
@@ -173,7 +235,7 @@
 
 
 
-        <controls:Pivot x:Name="mainPivot" Style="{StaticResource PivotStyle1}" Margin="0" SelectionChanged="Pivot_SelectionChanged">
+        <controls:Pivot  x:Name="mainPivot" Style="{StaticResource PivotStyle1}" Margin="0" SelectionChanged="Pivot_SelectionChanged">
 
 
             <controls:Pivot.Title>
@@ -237,11 +299,11 @@
                         <ScrollViewer Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
                             <StackPanel Orientation="Vertical">
 
-                                <TextBlock x:Name="quicklistSubTitle" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Style="{StaticResource SubTitleTextBoxStyle}">
+                                <TextBlock x:Name="quicklistSubTitle"   Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Style="{StaticResource SubTitleTextBoxStyle}">
 									<Run Text="QUICKLIST"/>
                                 </TextBlock>
 
-                                <ItemsControl x:Name="profileWrapPanel" ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+                                <ItemsControl x:Name="profileWrapPanel"  ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -267,11 +329,11 @@
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
 
-                                <TextBlock x:Name="allSubTitle" Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Style="{StaticResource SubTitleTextBoxStyle}">
+                                <TextBlock x:Name="allSubTitle"  Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Style="{StaticResource SubTitleTextBoxStyle}">
 									<Run Text="ALL"/>
                                 </TextBlock>
 
-                                <ItemsControl x:Name="mainProfileWrapPanel" ItemsSource="{Binding Profiles}" Margin="0,0,0,6" >
+                                <ItemsControl x:Name="mainProfileWrapPanel"  ItemsSource="{Binding Profiles}" Margin="0,0,0,6" >
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -296,7 +358,7 @@
 
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
-                                <TextBlock TextWrapping="Wrap" Text="Long press a profile for more options" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
+                                <TextBlock  TextWrapping="Wrap" Text="Long press a profile for more options" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
 
 
                             </StackPanel>
@@ -326,28 +388,28 @@
                                 <ColumnDefinition Width="1*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" Foreground="{StaticResource PageTxtColor}"  Margin="0,0,0,18" TextWrapping="Wrap" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}">
+                            <TextBlock  Grid.Column="0" Foreground="{StaticResource PageTxtColor}"  Margin="0,0,0,18" TextWrapping="Wrap" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}">
 								<Run Text="Enter your measurements to find the right size clothing for hundreds of brands worldwide."/>
                             </TextBlock>
 
-                            <Image Grid.Column="1" Source="/Images/ChalkDesign.png" />
+                            <Image  Grid.Column="1" Source="/Images/ChalkDesign.png" />
 
                         </Grid>
 
                         <TextBlock  Margin="0" Style="{StaticResource SubTitleTextBoxStyle}">
 							<Run Text="VERSION"/>
                         </TextBlock>
-                        <TextBlock Foreground="{StaticResource PageTxtColor}" Text="{Binding AppVersion}" Margin="0,0,0,18" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
-                        <TextBlock Margin="0" Style="{StaticResource SubTitleTextBoxStyle}">
+                        <TextBlock  Foreground="{StaticResource PageTxtColor}" Text="{Binding AppVersion}" Margin="0,0,0,18" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
+                        <TextBlock  Margin="0" Style="{StaticResource SubTitleTextBoxStyle}">
 							<Run Text="CONTACT"/>
                         </TextBlock>
-                        <Button x:Name="contactAuthorBtn" Content="pocketailor@lassiv.com" Margin="0,0,0,24" Style="{StaticResource hyperlinkBtnStyle}" Tap="contactBtn_Tap" />
+                        <Button  x:Name="contactAuthorBtn" Content="pocketailor@lassiv.com" Margin="0,0,0,24" Style="{StaticResource hyperlinkBtnStyle}" Tap="contactBtn_Tap" />
 
-                        <Controls:AboutButton x:Name="rateBtn" TitleText="Rate Pocketailor" IconImage="/Images/appbar.heart.png" Margin="0,0,0,10" Tap="rateBtn_Tap" />
-                        <Controls:AboutButton x:Name="facebookBtn" TitleText="Visit on Facebook" IconImage="/Images/appbar.facebook.heart.png" Margin="0,0,0,10" Tap="facebookBtn_Tap" />
-                        <Controls:AboutButton x:Name="feedbackBtn" TitleText="Give feedback" IconImage="/Images/appbar.chat.png" Margin="0,0,0,10"  Tap="feedbackBtn_Tap" />
-                        <Controls:AboutButton x:Name="legalBtn" TitleText="Legal and thanks" IconImage="/Images/appbar.scale.unbalanced.png" Margin="0,0,0,10" Tap="legalBtn_Tap" />
-                        <Controls:AboutButton x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/appbar.globe.wire.png" Margin="0,0,0,10" Tap="websiteBtn_Tap" />
+                        <Controls:AboutButton  x:Name="rateBtn" TitleText="Rate Pocketailor" IconImage="/Images/appbar.heart.png" Margin="0,0,0,10" Tap="rateBtn_Tap" />
+                        <Controls:AboutButton  x:Name="facebookBtn" TitleText="Visit on Facebook" IconImage="/Images/appbar.facebook.heart.png" Margin="0,0,0,10" Tap="facebookBtn_Tap" />
+                        <Controls:AboutButton  x:Name="feedbackBtn" TitleText="Give feedback" IconImage="/Images/appbar.chat.png" Margin="0,0,0,10"  Tap="feedbackBtn_Tap" />
+                        <Controls:AboutButton  x:Name="legalBtn" TitleText="Legal and thanks" IconImage="/Images/appbar.scale.unbalanced.png" Margin="0,0,0,10" Tap="legalBtn_Tap" />
+                        <Controls:AboutButton  x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/appbar.globe.wire.png" Margin="0,0,0,10" Tap="websiteBtn_Tap" />
 
 
 
