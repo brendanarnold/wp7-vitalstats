@@ -204,6 +204,9 @@
     <Compile Include="View\EditStatPage.xaml.cs">
       <DependentUpon>EditStatPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecondaryTileHelpers.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>

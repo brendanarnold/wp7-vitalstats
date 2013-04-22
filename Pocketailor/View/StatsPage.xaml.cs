@@ -99,6 +99,7 @@ namespace Pocketailor.View
             VisualStateManager.GoToState(this, "VSSelectStatType", false);
         }
         
+        
 
         private void changeRegionsAppBarBtn_Click(Object sender, EventArgs e) 
         {
@@ -137,6 +138,7 @@ namespace Pocketailor.View
 
         #region Other page behaviours
 
+        
         // Delete a stat from the context menu
         private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -155,6 +157,11 @@ namespace Pocketailor.View
                 App.VM.SelectedStat = s;
                 NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}", EditStatPageActions.Edit), UriKind.Relative));
             }
+        }
+
+        private void secondaryTileAppBarMenuItem_Click(object sender, System.EventArgs e)
+        {
+            SecondaryTileHelpers.CreateSecondaryTile(App.VM.SelectedProfile);
         }
 
 

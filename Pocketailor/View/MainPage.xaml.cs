@@ -88,6 +88,12 @@ namespace Pocketailor.View
             NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
         }
 
+        private void secondaryTileContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Profile p = (sender as MenuItem).DataContext as Profile;
+            SecondaryTileHelpers.CreateSecondaryTile(p);
+        }
+
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {
             NavigationService.Navigate(new Uri("/View/EditProfilePage.xaml", UriKind.Relative));
