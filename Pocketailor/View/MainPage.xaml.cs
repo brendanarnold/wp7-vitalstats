@@ -26,6 +26,9 @@ namespace Pocketailor.View
             this.DataContext = App.VM;
             //this.UpdateUILockState();
             
+            // Hack to get QuickProfiles to update when modified off this page
+            App.VM.NotifyPropertyChanged("QuickProfiles");
+            
         }
 
         //private void UpdateUILockState()
@@ -88,11 +91,11 @@ namespace Pocketailor.View
             NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
         }
 
-        private void secondaryTileContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            Profile p = (sender as MenuItem).DataContext as Profile;
-            SecondaryTileHelpers.CreateSecondaryTile(p);
-        }
+        //private void secondaryTileContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    Profile p = (sender as MenuItem).DataContext as Profile;
+        //    SecondaryTileHelpers.CreateSecondaryTile(p);
+        //}
 
         private void addAppBarBtn_Click(object sender, System.EventArgs e)
         {

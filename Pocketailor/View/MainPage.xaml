@@ -319,7 +319,7 @@
 														<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
                                         				-->
                                                         <toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
-                                                        <toolkit:MenuItem Header="add to start menu" Tap="secondaryTileContextMenuItem_Tap" />
+                                                        <!--<toolkit:MenuItem Header="add to start menu" Tap="secondaryTileContextMenuItem_Tap" />-->
                                                         <toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
                                                         <toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
                                                     </toolkit:ContextMenu>

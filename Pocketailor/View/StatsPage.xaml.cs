@@ -159,10 +159,10 @@ namespace Pocketailor.View
             }
         }
 
-        private void secondaryTileAppBarMenuItem_Click(object sender, System.EventArgs e)
-        {
-            SecondaryTileHelpers.CreateSecondaryTile(App.VM.SelectedProfile);
-        }
+        //private void secondaryTileAppBarMenuItem_Click(object sender, System.EventArgs e)
+        //{
+        //    SecondaryTileHelpers.CreateSecondaryTile(App.VM.SelectedProfile);
+        //}
 
 
 

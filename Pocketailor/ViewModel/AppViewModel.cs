@@ -244,7 +244,11 @@ namespace Pocketailor.ViewModel
             this.appDB.SubmitChanges();
             this.Profiles.Add(profile);
             this.NotifyPropertyChanged("Profiles");
-            if (profile.IsQuickProfile) this.QuickProfiles.Add(profile); 
+            if (profile.IsQuickProfile)
+            {
+                this.QuickProfiles.Add(profile);
+                this.NotifyPropertyChanged("QuickProfiles");
+            }
         }
 
         public void UpdateProfile(Profile profile)
@@ -262,6 +266,7 @@ namespace Pocketailor.ViewModel
             this.appDB.Profiles.DeleteOnSubmit(profile);
             this.appDB.SubmitChanges();
             this.NotifyPropertyChanged("Profiles");
+            this.NotifyPropertyChanged("QuickProfiles");
         }
 
         public void AddStatToProfile(Stat stat, Profile profile)
