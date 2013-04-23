@@ -33,4 +33,36 @@ namespace Pocketailor.Model
         Canada = 20,
 
     }
+
+    public static partial class Lookup {
+
+        public static Dictionary<RegionIds, string> Regions = new Dictionary<RegionIds,string>() 
+        {
+            { RegionIds.Worldwide , "Worldwide" },
+            { RegionIds.Europe , "Europe" },
+            { RegionIds.NorthAmerica, "North America" },
+            { RegionIds.SouthAmerica, "South America" },
+            { RegionIds.Africa, "Africa" },
+            { RegionIds.Asia, "Asia" },
+            { RegionIds.Australasia, "Australasia" },
+            { RegionIds.UK, "UK" },
+            { RegionIds.Ireland, "Ireland" },
+            { RegionIds.France, "France" },
+            { RegionIds.Italy, "Italy" },
+            { RegionIds.Germany, "Germany" },
+            { RegionIds.Denmark, "Denmark" },
+            { RegionIds.Sweden, "Sweden" },
+            { RegionIds.Norway, "Norway" },
+            { RegionIds.Finland, "Finland" },
+            { RegionIds.Spain, "Spain" },
+            { RegionIds.US, "United States" },
+            { RegionIds.Australia, "Australia" },
+            { RegionIds.NewZealand, "New Zealand" },
+            { RegionIds.Canada, "Canada" },
+
+        };
+
+    }
+
+
 }

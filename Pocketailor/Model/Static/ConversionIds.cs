@@ -20,4 +20,22 @@ namespace Pocketailor.Model
         WetsuitSize = 10,
     }
 
+    public static partial class Lookup
+    {
+        public static Dictionary<ConversionId, string> Conversions = new Dictionary<ConversionId, string>()
+        {
+            { ConversionId.TrouserSize, "Trouser" },
+            { ConversionId.ShirtSize, "Shirt" },
+            { ConversionId.HatSize, "Hat" },
+            { ConversionId.SuitSize, "Suit" },
+            { ConversionId.DressSize, "Dress" },
+            { ConversionId.BraSize, "Bra" },
+            { ConversionId.HosierySize, "Hosiery" },
+            { ConversionId.ShoeSize, "Shoe" },
+            { ConversionId.SkiBootSize, "Ski Boot" },
+            { ConversionId.TennisGripSize, "Tennis Grip" },
+            { ConversionId.WetsuitSize, "Wetsuit" },
+        };
+    }
+
 }

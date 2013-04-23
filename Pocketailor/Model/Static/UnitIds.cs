@@ -21,4 +21,21 @@ namespace Pocketailor.Model
         PoundOunce = 9,
     }
 
+    public static partial class Lookup
+    {
+        public static Dictionary<UnitId, string> Unit = new Dictionary<UnitId, string>()
+        {
+            { UnitId.Metre, "Metres" },
+            { UnitId.Centimetre, "Centimetres" },
+            { UnitId.Feet, "Feet" },
+            { UnitId.Inch, "Inches" },
+            { UnitId.FeetInch, "Feet/Inches"},
+            { UnitId.Pound, "Pounds"},
+            { UnitId.Stone, "Stones" },
+            { UnitId.Kilogram, "Kilograms" },
+            { UnitId.Ounce, "Ounces" },
+            { UnitId.PoundOunce, "Pounds/Ounces"},
+        };
+    }
+
 }

@@ -28,7 +28,66 @@ namespace Pocketailor.View
             
             // Hack to get QuickProfiles to update when modified off this page
             App.VM.NotifyPropertyChanged("QuickProfiles");
-            
+
+
+            // Show the welcome messagebox if appropriate
+            if (App.Settings.GetValueOrDefault<bool>("ShowWelcome", true))
+            {
+                
+                ListPicker listPicker = new ListPicker()
+                {
+                    Header = "Please choose your preferred units:",
+                    ItemsSource = new string[] { "Metric (m/cm/kg)", "Imperial (ft/in/lb)" },
+                    Margin = new Thickness(12, 42, 24, 18)
+                };
+
+
+                CustomMessageBox messageBox = new CustomMessageBox()
+                {
+                    Caption = "Welcome to Pocketailor!",
+                    Message =
+                        "Pocketailor calculates the best clothing sizes for brands worldwide based on your measurements."
+                        + Environment.NewLine + Environment.NewLine
+                        + "Whilst we believe Pocketailer gives great results, we cannot accept any responsibility if, for some reason, clothes bought are not the correct size!",
+                    Content = listPicker,
+                    LeftButtonContent = "ok",
+                    IsFullScreen = false,
+                };
+
+                messageBox.Dismissing += (s1, e1) =>
+                {
+                    if (listPicker.ListPickerMode == ListPickerMode.Expanded)
+                    {
+                        e1.Cancel = true;
+                    }
+                };
+
+                messageBox.Dismissed += (s1, e1) =>
+                {
+                    switch (e1.Result)
+                    {
+                        case CustomMessageBoxResult.None:
+                        case CustomMessageBoxResult.LeftButton:
+                            if (listPicker.SelectedIndex == 0)
+                            {
+                                App.VM.UnitCulture = UnitCultureId.Metric;
+                            }
+                            else
+                            {
+                                App.VM.UnitCulture = UnitCultureId.Imperial;
+                            }
+                            App.Settings.AddOrUpdateValue("ShowWelcome", false);
+                            break;
+                        case CustomMessageBoxResult.RightButton:
+                            break;
+                        default:
+                            break;
+                    }
+                };
+
+                messageBox.Show();
+            }
+
         }
 
         //private void UpdateUILockState()

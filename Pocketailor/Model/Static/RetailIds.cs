@@ -14,4 +14,15 @@ namespace Pocketailor.Model
         Jaeger = 3,
     }
 
+    public static partial class Lookup
+    {
+        public static Dictionary<RetailId, string> Retail = new Dictionary<RetailId, string>()
+        {
+            { RetailId.ASOS, "ASOS" },
+            { RetailId.BananaRepublic, "Banana Republic" },
+            { RetailId.MarksSpencer, "Marks and Spencer" },
+            { RetailId.Jaeger, "Jaeger" },
+        };
+    }
+
 }

@@ -87,17 +87,17 @@ namespace Pocketailor.View
         //}
 
         // User chose to create a new stat, should be prompted to select a stat template or custom
-        private void addStatAppBarBtn_Click(Object sender, EventArgs e) 
-        {
-            App.VM.SelectedStat = new Stat()
-            {
-                Name = String.Empty,
-                PreferredUnit = null,
-                Value = String.Empty,
-                MeasurementType = null,
-            };
-            VisualStateManager.GoToState(this, "VSSelectStatType", false);
-        }
+        //private void addStatAppBarBtn_Click(Object sender, EventArgs e) 
+        //{
+        //    App.VM.SelectedStat = new Stat()
+        //    {
+        //        Name = String.Empty,
+        //        PreferredUnit = null,
+        //        Value = String.Empty,
+        //        MeasurementType = null,
+        //    };
+        //    NavigationService.Navigate(new Uri(String.Format("/View/EditStat.xaml?Action={0}", EditStatPageActions.NewBlank), UriKind.Relative));
+        //}
         
         
 
@@ -239,13 +239,42 @@ namespace Pocketailor.View
             string s = String.Empty;
             foreach (MeasurementId id in missingIds)
             {
-                // TODO: Include a proper lookup for this
-                s += Environment.NewLine + "  \u2022 " + id.ToString();
+                s += Environment.NewLine + "  \u2022 " +  Lookup.Measurements[id].ToLower();
             }
-            string measurementName = missingIds[0].ToString();
+            string measurementName = Lookup.Measurements[missingIds[0]];
             string msg = String.Format("To calculate {0} conversions the following measurements need to be entered,{1}",
                 conversionName, s);
             string title = String.Format("Add {0} measurement?", measurementName.ToLower());
+            string btnTitle = String.Format("add {0} measurement", measurementName.ToLower());
+
+            //CustomMessageBox cMb = new CustomMessageBox()
+            //{
+            //    Caption = title,
+            //    Message = msg,
+            //    LeftButtonContent = "add",
+            //    RightButtonContent = "cancel",
+            //    IsFullScreen = false,
+            //};
+            // Add this so have access in the callback
+            //cMb.Tag = missingIds[0];
+
+            //cMb.Dismissed += (s1, e) =>
+            //{
+            //    switch (e.Result)
+            //    {
+            //        case CustomMessageBoxResult.LeftButton:
+            //            this.EditStatFromTemplate((MeasurementId)((s1 as CustomMessageBox).Tag));
+            //            break;
+            //        case CustomMessageBoxResult.RightButton:
+            //        case CustomMessageBoxResult.None:
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //};
+
+            //cMb.Show();
+
             MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {

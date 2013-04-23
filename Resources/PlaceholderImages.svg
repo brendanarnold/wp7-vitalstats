@@ -49,6 +49,36 @@
        nbgenerations="1"
        drawall="true"
        maxComplexity="1000" />
+    <filter
+       id="filter3771"
+       inkscape:label="Chalk and sponge"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.3"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence3773"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset3775"
+         dx="-5"
+         dy="-5"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap3777"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="2.112676056338028"
+         in="SourceGraphic" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -57,9 +87,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="414.33517"
-     inkscape:cy="687.34092"
+     inkscape:zoom="1.4"
+     inkscape:cx="709.35487"
+     inkscape:cy="747.86511"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -76,7 +106,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -91,30 +121,6 @@
        height="491.42856"
        x="-1.0924557"
        y="148.15262" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text2995"
-       y="176.67508"
-       x="128.61942"
-       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;font-family:Paprika;-inkscape-font-specification:Paprika;fill:#ffffff"
-         y="176.67508"
-         x="128.61942"
-         sodipodi:role="line"
-         id="tspan3007">Step 1: add a profile</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       x="118.62834"
-       y="262.53806"
-       id="text2985"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="118.62834"
-         y="262.53806"
-         id="tspan2993"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Segoe WP;-inkscape-font-specification:Segoe WP;fill:#ffffff">Step 1: add a profile</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:EraserDust;-inkscape-font-specification:EraserDust"
@@ -134,5 +140,40 @@
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/ChalkArrow.png"
        height="154.93172"
        width="47.080025" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="158.57143"
+       y="183.79076"
+       id="text2993"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2995"
+         x="158.57143"
+         y="183.79076"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust">tap a conversion to start</tspan><tspan
+         sodipodi:role="line"
+         x="158.57143"
+         y="213.79076"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust"
+         id="tspan2997"> entering measurements</tspan></text>
+    <g
+       id="g3779"
+       transform="translate(175.71429,7.8571429)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ChalkArrowHorizontal.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path2999"
+         d="M 304.28571,232.36218 C 286.42857,274.68086 192.8587,271.6479 106.42857,275.21933"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3771)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3769"
+         d="m 123.56843,255.0426 -19.69797,19.69797 19.69798,19.69796"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3771)" />
+    </g>
   </g>
 </svg>

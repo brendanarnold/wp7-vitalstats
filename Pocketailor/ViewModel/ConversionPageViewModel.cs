@@ -174,7 +174,7 @@ namespace Pocketailor.ViewModel
             foreach (RegionIds region in this.GetSelectedRegions())
             {
                 ConversionRegion cr = new ConversionRegion();
-                cr.Name = region.ToString(); // TODO: Will need to include some kind of lookup for the actual string
+                cr.Name = Lookup.Regions[region];
                 cr.Conversions = new ObservableCollection<NameValuePair>();
                 // TODO: If gender not specified, then return Female measurements
                 Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender;
@@ -197,7 +197,6 @@ namespace Pocketailor.ViewModel
                     cr.Conversions.Add(new NameValuePair()
                     {
                         // TODO: Will need to include some kind of lookup for actual string
-                        Name = retailId.ToString(),
                         FormattedValue = bestFit.FormattedValue,
                         Retailer = retailId,
                     });
@@ -272,7 +271,9 @@ namespace Pocketailor.ViewModel
                 };
             }
 
-            public string Name { get; set; }
+            public string Name {
+                get { return Lookup.Retail[this.Retailer]; }
+            }
             public string FormattedValue { get; set; }
             public RetailId Retailer { get; set; }
             // Flag set to true if user has chosen to hide this retailer e.g. show but grey this entry out

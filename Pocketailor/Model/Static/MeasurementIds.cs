@@ -28,5 +28,31 @@ namespace Pocketailor.Model
         TorsoLength = 18,
     }
 
+    public static partial class Lookup
+    {
+        public static Dictionary<MeasurementId, string> Measurements = new Dictionary<MeasurementId, string>()
+        {
+           { MeasurementId.Height, "Height"},
+           { MeasurementId.Weight, "Weight"},
+           { MeasurementId.Waist, "Waist"},
+           { MeasurementId.Chest, "Chest"},
+           { MeasurementId.Hips, "Hips"},
+           { MeasurementId.InsideLeg, "Inside Leg"},
+           { MeasurementId.OutsideLeg, "Outside Leg"},
+           { MeasurementId.Sleeve, "Sleeve"},
+           { MeasurementId.Wrist, "Wrist"},
+           { MeasurementId.Shoulder, "Shoulder"},
+           { MeasurementId.Neck, "Neck"},
+           { MeasurementId.Overbust, "Overbust"},
+           { MeasurementId.Underbust, "Underbust"},
+           { MeasurementId.FootLength, "Foot Length"},
+           { MeasurementId.FootWidth, "Foot Width"},
+           { MeasurementId.Crotch, "Crotch"},
+           { MeasurementId.Head, "Head"},
+           { MeasurementId.TennisGrip, "Tennis Grip"},
+           { MeasurementId.TorsoLength, "Torso Length"},
+        };
+    }
+
 
 }

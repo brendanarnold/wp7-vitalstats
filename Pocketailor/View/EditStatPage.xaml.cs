@@ -53,6 +53,7 @@ namespace Pocketailor.View
                 this.PageAction = EditStatPageActions.New;
             }
 
+
             // Load values into the page
             this.LoadStatIntoPage();
             // Take a snapshot to determine if changes have been made

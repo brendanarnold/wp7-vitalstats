@@ -118,7 +118,7 @@ namespace Pocketailor.ViewModel
             List<RegionIds> selectedRegions = this.GetSelectedRegions();
             foreach (RegionIds r in typeof(RegionIds).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionIds))).Cast<RegionIds>())
             {
-                this._regions.Add(new RegionContainer { Name = r.ToString(), Id = r, Selected = selectedRegions.Contains(r) });
+                this._regions.Add(new RegionContainer { Name = Lookup.Regions[r], Id = r, Selected = selectedRegions.Contains(r) });
             }
         }
 
