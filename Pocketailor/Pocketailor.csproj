@@ -143,6 +143,7 @@
     <Compile Include="Model\Conversions\Hat.cs" />
     <Compile Include="Model\Conversions\Hosiery.cs" />
     <Compile Include="Model\Conversions\IConversionData.cs" />
+    <Compile Include="Model\Conversions\ICsvReader.cs" />
     <Compile Include="Model\Conversions\Shirt.cs" />
     <Compile Include="Model\Conversions\Shoes.cs" />
     <Compile Include="Model\Conversions\SkiBoots.cs" />
@@ -461,8 +462,8 @@
     <Content Include="Images\wetsuit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Model\Csv\Bra.txt" />
-    <Content Include="Model\Csv\DressSizes.txt">
+    <Content Include="Model\Csv\BraSize.txt" />
+    <Content Include="Model\Csv\DressSize.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
@@ -534,15 +535,15 @@
     <Content Include="Images\UnlockIcons\Stormy.png" />
     <Content Include="Images\UnlockIcons\Sunny.png" />
     <Content Include="Images\UnlockIcons\Writing.png" />
-    <Content Include="Model\Csv\Hat.txt" />
-    <Content Include="Model\Csv\Hosiery.txt" />
-    <Content Include="Model\Csv\Shirt.txt" />
-    <Content Include="Model\Csv\Shoes.txt" />
-    <Content Include="Model\Csv\SkiBoots.txt" />
-    <Content Include="Model\Csv\Suit.txt" />
+    <Content Include="Model\Csv\HatSize.txt" />
+    <Content Include="Model\Csv\HosierySize.txt" />
+    <Content Include="Model\Csv\ShirtSize.txt" />
+    <Content Include="Model\Csv\ShoeSize.txt" />
+    <Content Include="Model\Csv\SkiBootSize.txt" />
+    <Content Include="Model\Csv\SuitSize.txt" />
     <Content Include="Model\Csv\TennisRaquetSize.txt" />
-    <Content Include="Model\Csv\Trousers.txt" />
-    <Content Include="Model\Csv\Wetsuit.txt" />
+    <Content Include="Model\Csv\TrouserSize.txt" />
+    <Content Include="Model\Csv\WetsuitSize.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\Save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

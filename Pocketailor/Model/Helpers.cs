@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Pocketailor.Model
 {
@@ -45,6 +46,14 @@ namespace Pocketailor.Model
             }
             return String.Join(AppConstants.VALUE_DELIMITERS[0], strs.ToArray());
         }
+
+        public static string GetVersionNumber()
+        {
+            var asm = Assembly.GetExecutingAssembly();
+            var parts = asm.FullName.Split(',');
+            return parts[1].Split('=')[1];
+        }
+
 
 
     }

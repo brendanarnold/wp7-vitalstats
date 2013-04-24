@@ -8,6 +8,33 @@ using System.IO;
 
 namespace Pocketailor.Model.Conversions
 {
+    public class WetsuitCsvReader : ICsvReader
+    {
+        public WetsuitCsvReader()
+        {
+            this.ConversionId = ConversionId.WetsuitSize;
+        }
+        public ConversionId ConversionId {get; set; }
+        public AppDataContext Db { get; set; }
+        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
+        {
+            this.Db.Wetsuits.InsertOnSubmit(new Wetsuit()
+            {
+                Retailer = csvLine.Retailer,
+                Region = csvLine.Region,
+                Gender = csvLine.Gender,
+                Height = csvLine.GetMeasurementOrNull(MeasurementId.Height),
+                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
+                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
+                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
+                Weight = csvLine.GetMeasurementOrNull(MeasurementId.Weight),
+                SizeLetter = csvLine.SizeLetter,
+                SizeNumber = csvLine.SizeNumber,
+            });
+        }
+    }
+
+
     public static class WetsuitUtils
     {
         public static List<MeasurementId> RequiredMeasurementsMens = new List<MeasurementId>()
@@ -26,71 +53,7 @@ namespace Pocketailor.Model.Conversions
             MeasurementId.Hips,
         };
 
-        public static void ReloadCsvToDB(AppDataContext db)
-        {
-            db.Wetsuits.DeleteAllOnSubmit(db.Wetsuits);
-            db.SubmitChanges();
-            // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.WetsuitSize.ToString() + ".txt", UriKind.Relative));
-            StreamReader fh = new StreamReader(res.Stream);
-
-            int count = 0;
-            while (!fh.EndOfStream)
-            {
-                count++;
-                string line = fh.ReadLine();
-                // Skip headers
-                if (count <= AppConstants.CSV_HEADER_LINES) continue;
-                // Skip commented lines
-                if (line.StartsWith("#")) continue;
-                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
-                els.MoveNext();
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
-                els.MoveNext();
-                RegionIds region = (RegionIds)Enum.Parse(typeof(RegionIds), els.Current, true);
-                els.MoveNext();
-                Gender gender = (Gender)Enum.Parse(typeof(Gender), els.Current, true);
-                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double? height = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) height = 0.01 * double.Parse(els.Current);
-                double? chest = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) chest = 0.01 * double.Parse(els.Current);
-                double? waist = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) waist = 0.01 * double.Parse(els.Current);
-                double? hips = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) hips = 0.01 * double.Parse(els.Current);
-                double? weight = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) weight = double.Parse(els.Current);
-                els.MoveNext();
-                string sizeLetter = els.Current;
-                els.MoveNext();
-                string sizeNumber = els.Current.TrimEnd();
-                db.Wetsuits.InsertOnSubmit(new Wetsuit()
-                {
-                    Retailer = retailer,
-                    Region = region,
-                    Gender = gender,
-                    Height = height,
-                    Chest = chest,
-                    Waist = waist,
-                    Hips = hips,
-                    Weight = weight,
-                    SizeLetter = sizeLetter,
-                    SizeNumber = sizeNumber,
-                });
-                if (count > AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE)
-                {
-                    count = 0;
-                    db.SubmitChanges();
-                }
-            }
-            db.SubmitChanges();
-        }
+       
 
 
 

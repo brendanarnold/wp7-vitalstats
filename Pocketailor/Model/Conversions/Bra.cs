@@ -7,6 +7,29 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
+    public class BraCsvReader : ICsvReader
+    {
+        public BraCsvReader()
+        {
+            this.ConversionId = ConversionId.BraSize;
+        }
+        public ConversionId ConversionId { get; set; }
+        public AppDataContext Db { get; set; }
+        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
+        {
+            this.Db.Bras.InsertOnSubmit(new Bra()
+            {
+                Retailer = csvLine.Retailer,
+                Region = csvLine.Region,
+                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
+                UnderBust = csvLine.GetMeasurementOrNull(MeasurementId.UnderBust),
+                SizeLetter = csvLine.SizeLetter,
+                SizeNumber = csvLine.SizeNumber,
+            });
+        }
+    }
+
+
     public static class BraUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
@@ -14,59 +37,6 @@ namespace Pocketailor.Model.Conversions
             MeasurementId.Chest,
             MeasurementId.UnderBust,
         };
-
-        public static void ReloadCsvToDB(AppDataContext db)
-        {
-            db.Bras.DeleteAllOnSubmit(db.Bras);
-            db.SubmitChanges();
-            // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.BraSize.ToString() + ".txt", UriKind.Relative));
-            System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
-
-            int count = 0;
-            while (!fh.EndOfStream)
-            {
-                count++;
-                string line = fh.ReadLine();
-                // Skip headers
-                if (count <= AppConstants.CSV_HEADER_LINES) continue;
-                // Skip commented lines
-                if (line.StartsWith("#")) continue;
-                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
-                els.MoveNext();
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
-                els.MoveNext();
-                RegionIds region = (RegionIds)Enum.Parse(typeof(RegionIds), els.Current, true);
-                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double? chest = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) chest = 0.01 * double.Parse(els.Current);
-                double? underBust = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) underBust = 0.01 * double.Parse(els.Current);
-                els.MoveNext();
-                string sizeLetter = els.Current;
-                els.MoveNext();
-                string sizeNumber = els.Current.TrimEnd();
-                db.Bras.InsertOnSubmit(new Bra()
-                {
-                    Retailer = retailer,
-                    Region = region,
-                    Chest = chest,
-                    UnderBust = underBust,
-                    SizeLetter = sizeLetter,
-                    SizeNumber = sizeNumber,
-                });
-                if (count > AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE)
-                {
-                    count = 0;
-                    db.SubmitChanges();
-                }
-            }
-            db.SubmitChanges();
-        }
-
-
     }
 
     [Table] 

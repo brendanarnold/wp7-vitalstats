@@ -37,28 +37,61 @@ namespace Pocketailor.Model
 
         public static void LoadConversions(AppDataContext db)
         {
-            Model.Conversions.TrousersUtils.ReloadCsvToDB(db);
-            Model.Conversions.ShirtUtils.ReloadCsvToDB(db);
-            Model.Conversions.HatUtils.ReloadCsvToDB(db);
-            Model.Conversions.SuitUtils.ReloadCsvToDB(db);
-            Model.Conversions.DressSizeUtils.ReloadCsvToDB(db);
-            Model.Conversions.BraUtils.ReloadCsvToDB(db);
-            Model.Conversions.HosieryUtils.ReloadCsvToDB(db);
-            Model.Conversions.ShoesUtils.ReloadCsvToDB(db);
-            Model.Conversions.SkiBootsUtils.ReloadCsvToDB(db);
-            //Model.Conversions.TennisRaquetSizesUtils.ReloadCsvToDB(db);
-            Model.Conversions.WetsuitUtils.ReloadCsvToDB(db);
+            // The CsvReader classes are defined in Model.Conversions files to keep definitions for formats in same place
+            ReadCsvFileIntoDb(db, new Model.Conversions.SuitCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.ShirtCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.TrousersCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.HatCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.DressCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.BraCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.HosieryCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.ShoesCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.SkiBootsCsvReader());
+            ReadCsvFileIntoDb(db, new Model.Conversions.WetsuitCsvReader());
             
         }
 
+        
+ 
 
-        public static List<T> ReadCsvFile<T>(Uri fn)
+        public class CsvLine
         {
-            var res = System.Windows.Application.GetResourceStream(fn);
+            public CsvLine()
+            {
+                this.Measurements = new Dictionary<MeasurementId, double?>();
+            }
+            public Dictionary<MeasurementId, double?> Measurements;
+            public RetailId Retailer;
+            public RegionIds Region;
+            public string SizeLetter;
+            public string SizeNumber;
+            public Gender Gender;
+            public double? GetMeasurementOrNull(MeasurementId id)
+            {
+                double? d;
+                if (this.Measurements.TryGetValue(id, out d))
+                {
+                    return d;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+
+        }
+
+
+        public static void ReadCsvFileIntoDb(AppDataContext db, ICsvReader csvReader)
+        {
+            csvReader.Db = db;
+            Uri uri = new Uri(AppConstants.CSV_DATA_DIRECTORY + csvReader.ConversionId.ToString() + ".txt", UriKind.Relative);
+            var res = System.Windows.Application.GetResourceStream(uri);
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;
-            List<string> headers;
+            List<string> headers = new List<string>();
             while (!fh.EndOfStream)
             {
                 count++;
@@ -72,53 +105,54 @@ namespace Pocketailor.Model
                 // Skip commented lines
                 if (line.StartsWith("#")) continue;
                 var els = line.Split(AppConstants.CSV_DELIMITERS).ToList<string>();
-                T entry = new T();
-                Type conversionType = entry.GetType();
-                for (int i=0; i < els.Count; i++) 
+                CsvLine csvLine = new CsvLine();
+                for (int i = 0; i < els.Count; i++)
                 {
-                    var property = conversionType.GetProperty(headers[i]);
-                    double? dval = 0.0;
-                    string sval = null;
-                    switch (headers[i]) 
+                    switch (headers[i])
                     {
                         case "Retailer":
-                            property.SetValue(entry, (RetailId)Enum.Parse(typeof(RetailId), els[i], true), null);
-                            break;
+                            csvLine.Retailer = (RetailId)Enum.Parse(typeof(RetailId), els[i], true);
+                            continue;
                         case "Region":
-                            property.SetValue(entry, (RegionIds)Enum.Parse(typeof(RegionIds), els[i], true), null);
-                            break;
+                            csvLine.Region = (RegionIds)Enum.Parse(typeof(RegionIds), els[i], true);
+                            continue;
                         case "Gender":
+                            csvLine.Gender = (Gender)Enum.Parse(typeof(Gender), els[i], true);
+                            continue;
                         case "SizeLetter":
+                            csvLine.SizeLetter = els[i];
+                            continue;
                         case "SizeNumber":
-                            sval = els[0];
-                            break;
+                            csvLine.SizeNumber = els[i];
+                            continue;
                         // Assume all remaining properties are numbers
                         default:
-                            double d;
-                            if (double.TryParse(els[0], out d)) dval = d;
+                            double? d;
+                            if (els[i] == String.Empty) {
+                                d = null;
+                            } else {
+                                d = double.Parse(els[i]);
+                            }
+                            MeasurementId mId = (MeasurementId)Enum.Parse(typeof(MeasurementId), headers[i], true);
+                            csvLine.Measurements.Add(mId, d);
                             break;
                     }
-                    
-                    if (sval == null) 
+                    csvReader.QueueWriteObj(csvLine);
+                    if ((count % AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE) == 0)
                     {
-                        property.SetValue(entry, dval, null);
-                    } 
-                    else 
-                    {
-                        property.SetValue(entry, sval, null);
+                        db.SubmitChanges();
                     }
+                    
                 }
-                
-                db.Bras.InsertOnSubmit(new Bra()
-                {
-                    Retailer = retailer,
-                    Region = region,
-                    Chest = chest,
-                    UnderBust = underBust,
-                    SizeLetter = sizeLetter,
-                    SizeNumber = sizeNumber,
-                });
+                db.SubmitChanges();
+
+            }
         }
+
+        
+
+
+
 
     }
 }

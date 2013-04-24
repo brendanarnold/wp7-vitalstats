@@ -7,61 +7,35 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
+
+    public class HatCsvReader : ICsvReader
+    {
+        public HatCsvReader()
+        {
+            this.ConversionId = ConversionId.HatSize;
+        }
+        public ConversionId ConversionId { get; set; }
+        public AppDataContext Db { get; set; }
+        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
+        {
+            this.Db.Hats.InsertOnSubmit(new Hat()
+            {
+                Retailer = csvLine.Retailer,
+                Region =  csvLine.Region,
+                Head = csvLine.GetMeasurementOrNull(MeasurementId.Head),
+                SizeLetter = csvLine.SizeLetter,
+                SizeNumber = csvLine.SizeNumber,
+            });
+        }
+    }
+
+
     public static class HatUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
         {
             MeasurementId.Head,
         };
-
-        public static void ReloadCsvToDB(AppDataContext db)
-        {
-            db.Hats.DeleteAllOnSubmit(db.Hats);
-            db.SubmitChanges();
-            // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.HatSize.ToString() + ".txt", UriKind.Relative));
-            System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
-
-            int count = 0;
-            while (!fh.EndOfStream)
-            {
-                count++;
-                string line = fh.ReadLine();
-                // Skip headers
-                if (count <= AppConstants.CSV_HEADER_LINES) continue;
-                // Skip commented lines
-                if (line.StartsWith("#")) continue;
-                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
-                els.MoveNext();
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
-                els.MoveNext();
-                RegionIds region = (RegionIds)Enum.Parse(typeof(RegionIds), els.Current, true);
-                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double? head = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) head = 0.01 * double.Parse(els.Current);
-                els.MoveNext();
-                string sizeLetter = els.Current;
-                els.MoveNext();
-                string sizeNumber = els.Current.TrimEnd();
-                db.Hats.InsertOnSubmit(new Hat()
-                {
-                    Retailer = retailer,
-                    Region = region,
-                    Head = head,
-                    SizeLetter = sizeLetter,
-                    SizeNumber = sizeNumber,
-                });
-                if (count > AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE)
-                {
-                    count = 0;
-                    db.SubmitChanges();
-                }
-            }
-            db.SubmitChanges();
-        }
-
-
 
     }
 

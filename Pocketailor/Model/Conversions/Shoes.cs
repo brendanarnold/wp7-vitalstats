@@ -7,6 +7,31 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
+    public class ShoesCsvReader : ICsvReader
+    {
+        public ShoesCsvReader()
+        {
+            this.ConversionId = ConversionId.ShoeSize;
+        }
+        public ConversionId ConversionId { get; set; }
+        public AppDataContext Db { get; set; }
+        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
+        {
+            this.Db.Shoes.InsertOnSubmit(new Shoes()
+            {
+                Retailer = csvLine.Retailer,
+                Region = csvLine.Region,
+                Gender = csvLine.Gender,
+                FootLength = csvLine.GetMeasurementOrNull(MeasurementId.FootLength),
+                FootWidth = csvLine.GetMeasurementOrNull(MeasurementId.FootWidth),
+                SizeLetter = csvLine.SizeLetter,
+                SizeNumber = csvLine.SizeNumber,
+            });
+        }
+    }
+
+
+
     public static class ShoesUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
@@ -15,58 +40,7 @@ namespace Pocketailor.Model.Conversions
             MeasurementId.FootWidth,
         };
 
-        public static void ReloadCsvToDB(AppDataContext db)
-        {
-            db.Shoes.DeleteAllOnSubmit(db.Shoes);
-            db.SubmitChanges();
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.ShoeSize.ToString() + ".txt", UriKind.Relative));
-            System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
-
-            int count = 0;
-            while (!fh.EndOfStream)
-            {
-                count++;
-                string line = fh.ReadLine();
-                // Skip headers
-                if (count <= AppConstants.CSV_HEADER_LINES) continue;
-                // Skip commented lines
-                if (line.StartsWith("#")) continue;
-                var els = line.Split(AppConstants.CSV_DELIMITERS).Cast<string>().GetEnumerator();
-                els.MoveNext();
-                RetailId retailer = (RetailId)Enum.Parse(typeof(RetailId), els.Current, true);
-                els.MoveNext();
-                RegionIds region = (RegionIds)Enum.Parse(typeof(RegionIds), els.Current, true);
-                els.MoveNext();
-                Gender gender = (Gender)Enum.Parse(typeof(Gender), els.Current, true);
-                // Store in DB as metres (input file is is centimetres inline with most charts in shops)
-                double? footLength = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) footLength = 0.01 * double.Parse(els.Current);
-                double? footWidth = null;
-                els.MoveNext();
-                if (els.Current != String.Empty) footWidth = 0.01 * double.Parse(els.Current);
-                els.MoveNext();
-                string sizeLetter = els.Current;
-                els.MoveNext();
-                string sizeNumber = els.Current.TrimEnd();
-                db.Shoes.InsertOnSubmit(new Shoes()
-                {
-                    Retailer = retailer,
-                    Region = region,
-                    Gender = gender,
-                    FootLength = footLength,
-                    FootWidth = footWidth,
-                    SizeLetter = sizeLetter,
-                    SizeNumber = sizeNumber,
-                });
-                if (count > AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE)
-                {
-                    count = 0;
-                    db.SubmitChanges();
-                }
-            }
-            db.SubmitChanges();
-        }
+        
     }
 
     [Table]

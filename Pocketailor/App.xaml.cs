@@ -87,6 +87,7 @@ namespace Pocketailor
                 if (AppConstants.CONVERSION_DATA_VERSION > dataVersion)
                 {
                     SetupDatabase.LoadConversions(db);
+                    Settings.AddOrUpdateValue("ConversionDataVersion", AppConstants.CONVERSION_DATA_VERSION);
                 }
 
                 // For debugging

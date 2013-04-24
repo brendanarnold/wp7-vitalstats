@@ -1,4 +1,4 @@
-Retailer	Regions	Chest	Waist	Hips	SizeLetter	SizeNumber
+Retailer	Region	Chest	Waist	Hips	SizeLetter	SizeNumber
 ASOS	UK	73.5	55.5	81	XXS	2
 ASOS	UK	76	58	83.5	XS	4
 ASOS	UK	78.5	60.5	86	XS	6
@@ -54,7 +54,7 @@ ASOS	Australia	116	98	123.5	XL	20
 ASOS	Australia	122	104	129.5	XL	22
 ASOS	Australia	128	110	135.5	XXL	24
 ASOS	Australia	134	116	141.5	XXL	26
-ASOS	Australia	140	122	147.5	XXXL	28						
+ASOS	Australia	140	122	147.5	XXXL	28
 BananaRepublic	UK	81	64		XS	4
 BananaRepublic	UK	84	66		XS	6
 BananaRepublic	UK	86	69		S	8
