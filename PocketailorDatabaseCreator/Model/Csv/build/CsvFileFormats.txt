@@ -8,3 +8,4 @@ SuitSize	Retailer	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	Torso
 TennisGripSize	Retailer	Region	Gender	SizeLetter	SizeNumber
 TrouserSize	Retailer	Region	Gender	Waist	Hips	InsideLeg	SizeLetter	SizeNumber
 WetsuitSize	Retailer	Region	Gender	Height	Chest	Waist	Hips	Weight	SizeLetter	SizeNumber
+BraSize	Retailer	Region	Chest	Underbust	SizeLetter	SizeNumber

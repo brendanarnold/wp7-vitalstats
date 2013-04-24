@@ -8,27 +8,6 @@ using System.Text;
 namespace Pocketailor.Model.Conversions
 {
 
-    public class HatCsvReader : ICsvReader
-    {
-        public HatCsvReader()
-        {
-            this.ConversionId = ConversionId.HatSize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.Hats.InsertOnSubmit(new Hat()
-            {
-                Retailer = csvLine.Retailer,
-                Region =  csvLine.Region,
-                Head = csvLine.GetMeasurementOrNull(MeasurementId.Head),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
-
 
     public static class HatUtils
     {

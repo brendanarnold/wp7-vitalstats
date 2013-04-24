@@ -4,5 +4,6 @@ glob:*.suo
 glob:*.orig
 glob:Pocketailor/Bin/*
 glob:Pocketailor/obj/*
-glob:VitalStatsTestApplication/*
+glob:PocketailorDatabaseCreator/Bin/*
+glob:PocketailorDatabaseCreator/obj/*
 glob:Testing/*

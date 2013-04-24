@@ -74,35 +74,17 @@ namespace Pocketailor
             Settings = new SettingsHelpers();
 
             // Database initialisation
-            string dbConnectionString = "Data Source=isostore:/Pocketailor.sdf";
+            string appDbConnectionString = "Data Source=isostore:/Pocketailor.sdf";
+            string converisonsDbConnectionString = "Data Source=appdata:/PocketailorConversions.sdf;Mode=Read Only";
 
 
-            using (AppDataContext db = new AppDataContext(dbConnectionString))
+            using (AppDataContext db = new AppDataContext(appDbConnectionString))
             {
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
-
-                int dataVersion = Settings.GetValueOrDefault<int>("ConversionDataVersion", 0);
-                
-                if (AppConstants.CONVERSION_DATA_VERSION > dataVersion)
-                {
-                    SetupDatabase.LoadConversions(db);
-                    Settings.AddOrUpdateValue("ConversionDataVersion", AppConstants.CONVERSION_DATA_VERSION);
-                }
-
-                // For debugging
-                //SetupDatabase.EmptyDB(db);
-
-    
-                if (db.DressSizes.Count() == 0)
-                {
-                    SetupDatabase.LoadConversions(db);
-                    db.SubmitChanges();
-                }
-
             }
 
-            _vm = new AppViewModel(dbConnectionString);
+            _vm = new AppViewModel(appDbConnectionString, converisonsDbConnectionString);
             _vm.LoadProfilesFromDB();
             _vm.LoadQuickProfilesFromDB();
 
@@ -113,13 +95,18 @@ namespace Pocketailor
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             ViewState.IsLaunching = true;
+#if DEBUG
+            IsolatedStorageExplorer.Explorer.Start("localhost");
+#endif
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            
+#if DEBUG
+            IsolatedStorageExplorer.Explorer.RestoreFromTombstone();
+#endif
         }
 
         // Code to execute when the application is deactivated (sent to background)

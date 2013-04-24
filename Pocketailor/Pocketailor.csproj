@@ -59,6 +59,7 @@
     <Reference Include="Inneractive.Nokia.Ad">
       <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\Inneractive.Nokia.Ad.dll</HintPath>
     </Reference>
+    <Reference Include="IsolatedStorageExplorer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="MC.Phone.Ads">
       <HintPath>..\packages\wpunifiedad.1.3.2\lib\sl4-wp71\MC.Phone.Ads.dll</HintPath>
     </Reference>
@@ -138,12 +139,12 @@
     </Compile>
     <Compile Include="AppConstants.cs" />
     <Compile Include="Model\AppDataContext.cs" />
+    <Compile Include="Model\ConversionsDataContext.cs" />
     <Compile Include="Model\Conversions\Bra.cs" />
     <Compile Include="Model\Conversions\DressSize.cs" />
     <Compile Include="Model\Conversions\Hat.cs" />
     <Compile Include="Model\Conversions\Hosiery.cs" />
     <Compile Include="Model\Conversions\IConversionData.cs" />
-    <Compile Include="Model\Conversions\ICsvReader.cs" />
     <Compile Include="Model\Conversions\Shirt.cs" />
     <Compile Include="Model\Conversions\Shoes.cs" />
     <Compile Include="Model\Conversions\SkiBoots.cs" />
@@ -462,10 +463,6 @@
     <Content Include="Images\wetsuit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Model\Csv\BraSize.txt" />
-    <Content Include="Model\Csv\DressSize.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -535,15 +532,6 @@
     <Content Include="Images\UnlockIcons\Stormy.png" />
     <Content Include="Images\UnlockIcons\Sunny.png" />
     <Content Include="Images\UnlockIcons\Writing.png" />
-    <Content Include="Model\Csv\HatSize.txt" />
-    <Content Include="Model\Csv\HosierySize.txt" />
-    <Content Include="Model\Csv\ShirtSize.txt" />
-    <Content Include="Model\Csv\ShoeSize.txt" />
-    <Content Include="Model\Csv\SkiBootSize.txt" />
-    <Content Include="Model\Csv\SuitSize.txt" />
-    <Content Include="Model\Csv\TennisRaquetSize.txt" />
-    <Content Include="Model\Csv\TrouserSize.txt" />
-    <Content Include="Model\Csv\WetsuitSize.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\Save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

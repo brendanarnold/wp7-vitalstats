@@ -7,28 +7,6 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
-    public class ShoesCsvReader : ICsvReader
-    {
-        public ShoesCsvReader()
-        {
-            this.ConversionId = ConversionId.ShoeSize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.Shoes.InsertOnSubmit(new Shoes()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Gender = csvLine.Gender,
-                FootLength = csvLine.GetMeasurementOrNull(MeasurementId.FootLength),
-                FootWidth = csvLine.GetMeasurementOrNull(MeasurementId.FootWidth),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
 
 
 

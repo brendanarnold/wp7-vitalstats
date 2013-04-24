@@ -86,7 +86,7 @@ namespace Pocketailor.ViewModel
             // Declare vars in the top scope
             List<double> measuredVals = new List<double>();
             // TODO: remove this hack needed to compile
-            IEnumerable<Model.Conversions.IConversionData> dataQuery = appDB.DressSizes.Cast<Model.Conversions.IConversionData>(); ;
+            IEnumerable<Model.Conversions.IConversionData> dataQuery = this.conversiondsDB.DressSizes.Cast<Model.Conversions.IConversionData>(); ;
             // Make sure we have region data
             if (this.GetSelectedRegions() == null) return;
 
@@ -102,7 +102,7 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TrousersUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = appDB.Trousers.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Trousers.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.ShirtSize:
                     if (this.SelectedProfile.Gender == Gender.Male)
@@ -113,11 +113,11 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = appDB.Shirts.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Shirts.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.HatSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HatUtils.RequiredMeasurements);
-                    dataQuery = appDB.Hats.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Hats.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.SuitSize:
                     if (this.SelectedProfile.Gender == Gender.Male)
@@ -128,27 +128,27 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = appDB.Suits.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Suits.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.DressSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.DressSizeUtils.RequiredMeasurements);
-                    dataQuery = appDB.DressSizes.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.DressSizes.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.BraSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.BraUtils.RequiredMeasurements);
-                    dataQuery = appDB.Bras.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Bras.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.HosierySize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HosieryUtils.RequiredMeasurements);
-                    dataQuery = appDB.Hosiery.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Hosiery.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.ShoeSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShoesUtils.RequiredMeasurements);
-                    dataQuery = appDB.Shoes.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Shoes.Cast<Model.Conversions.IConversionData>();
                     break;
                 case ConversionId.SkiBootSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
-                    dataQuery = appDB.SkiBoots.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.SkiBoots.Cast<Model.Conversions.IConversionData>();
                     break;
                 //case ConversionId.TennisGripSize:
                 //    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
@@ -163,7 +163,7 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = appDB.Wetsuits.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Wetsuits.Cast<Model.Conversions.IConversionData>();
                     break;
                 default:
                     return;

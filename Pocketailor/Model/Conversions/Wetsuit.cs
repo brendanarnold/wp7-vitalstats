@@ -8,31 +8,6 @@ using System.IO;
 
 namespace Pocketailor.Model.Conversions
 {
-    public class WetsuitCsvReader : ICsvReader
-    {
-        public WetsuitCsvReader()
-        {
-            this.ConversionId = ConversionId.WetsuitSize;
-        }
-        public ConversionId ConversionId {get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.Wetsuits.InsertOnSubmit(new Wetsuit()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Gender = csvLine.Gender,
-                Height = csvLine.GetMeasurementOrNull(MeasurementId.Height),
-                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                Weight = csvLine.GetMeasurementOrNull(MeasurementId.Weight),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
 
 
     public static class WetsuitUtils

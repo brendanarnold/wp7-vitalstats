@@ -7,27 +7,7 @@ using System.Text;
 
 namespace Pocketailor.Model.Conversions
 {
-    public class BraCsvReader : ICsvReader
-    {
-        public BraCsvReader()
-        {
-            this.ConversionId = ConversionId.BraSize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.Bras.InsertOnSubmit(new Bra()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
-                UnderBust = csvLine.GetMeasurementOrNull(MeasurementId.UnderBust),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
+ 
 
 
     public static class BraUtils

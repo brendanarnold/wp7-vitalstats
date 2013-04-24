@@ -8,33 +8,6 @@ using System.Text;
 namespace Pocketailor.Model.Conversions
 {
 
-    public class ShirtCsvReader : ICsvReader
-    {
-        public ShirtCsvReader()
-        {
-            this.ConversionId = ConversionId.ShirtSize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.Shirts.InsertOnSubmit(new Shirt()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Gender = csvLine.Gender,
-                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Neck = csvLine.GetMeasurementOrNull(MeasurementId.Neck),
-                TorsoLength = csvLine.GetMeasurementOrNull(MeasurementId.TorsoLength),
-                Sleeve = csvLine.GetMeasurementOrNull(MeasurementId.Sleeve),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
-
 
     public static class ShirtUtils
     {

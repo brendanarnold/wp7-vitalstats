@@ -172,7 +172,7 @@ namespace Pocketailor.View
             }
             if (this.PageAction == EditStatPageActions.Edit) 
             {
-                App.VM.SaveChangesToDB();
+                App.VM.SaveChangesToAppDB();
             }
             else
             {

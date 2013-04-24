@@ -25,10 +25,14 @@ namespace Pocketailor.ViewModel
         // Empty constructor needed for design-time data created in XAML
         public AppViewModel() { }
 
-        public AppViewModel(string connectionString)
+        public AppViewModel(string appDbConnectionString, string conversionsDbConnectionString)
         {
-            this.ConnectionString = connectionString;
+            // Open up app db
+            this.AppDatabaseConnectionString = appDbConnectionString;
             this.RecreateDataContext();
+            // Open up conversions db
+            this.ConversionsDatabaseConnectionString = conversionsDbConnectionString;
+            this.RecreateConversionsDataContext();
         }
 
 
@@ -53,9 +57,25 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
-        #region Database methods
 
-        private string ConnectionString;
+        #region Conversions database methods
+
+        // No need for write methods since this is a readonly DB
+        private string ConversionsDatabaseConnectionString;
+        private ConversionsDataContext conversiondsDB;
+
+        public void RecreateConversionsDataContext()
+        {
+            this.conversiondsDB = null;
+            this.conversiondsDB = new ConversionsDataContext(this.ConversionsDatabaseConnectionString);
+        }
+
+        #endregion
+
+
+        #region App database methods
+
+        private string AppDatabaseConnectionString;
         private AppDataContext appDB;
 
         // Checks for uncommitted changes in the ORM
@@ -69,11 +89,11 @@ namespace Pocketailor.ViewModel
         public void RecreateDataContext()
         {
             this.appDB = null;
-            this.appDB = new AppDataContext(this.ConnectionString);
+            this.appDB = new AppDataContext(this.AppDatabaseConnectionString);
         }
 
         // Save the cache's changes in the ORM to the DB
-        public void SaveChangesToDB()
+        public void SaveChangesToAppDB()
         {
             this.appDB.SubmitChanges();
         }
@@ -255,7 +275,7 @@ namespace Pocketailor.ViewModel
         {
             if (profile.IsQuickProfile && !this.QuickProfiles.Contains(profile)) this.QuickProfiles.Add(profile);
             if (!profile.IsQuickProfile && this.QuickProfiles.Contains(profile)) this.QuickProfiles.Remove(profile);
-            App.VM.SaveChangesToDB();
+            App.VM.SaveChangesToAppDB();
         }
 
         public void DeleteProfile(Profile profile)

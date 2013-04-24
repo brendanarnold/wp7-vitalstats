@@ -9,29 +9,7 @@ namespace Pocketailor.Model.Conversions
 {
 
 
-    public class HosieryCsvReader : ICsvReader
-    {
-        public HosieryCsvReader()
-        {
-            this.ConversionId = ConversionId.HosierySize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.Hosiery.InsertOnSubmit(new Hosiery()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                InsideLeg = csvLine.GetMeasurementOrNull(MeasurementId.InsideLeg),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
-
+ 
     public static class HosieryUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()

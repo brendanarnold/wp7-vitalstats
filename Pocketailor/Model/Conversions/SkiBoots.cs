@@ -8,29 +8,7 @@ using System.Text;
 namespace Pocketailor.Model.Conversions
 {
 
-    public class SkiBootsCsvReader : ICsvReader
-    {
-        public SkiBootsCsvReader() 
-        {
-            this.ConversionId = ConversionId.SkiBootSize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get; set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.SkiBoots.InsertOnSubmit(new SkiBoots()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Gender = csvLine.Gender,
-                FootLength = csvLine.GetMeasurementOrNull(MeasurementId.FootLength),
-                FootWidth = csvLine.GetMeasurementOrNull(MeasurementId.FootWidth),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
-
+ 
     public static class SkiBootsUtils
     {
         public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()

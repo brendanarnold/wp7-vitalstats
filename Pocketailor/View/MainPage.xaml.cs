@@ -98,7 +98,7 @@ namespace Pocketailor.View
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            App.VM.SaveChangesToDB();
+            App.VM.SaveChangesToAppDB();
         }
 
         private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)

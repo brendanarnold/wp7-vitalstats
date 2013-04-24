@@ -9,28 +9,7 @@ using System.IO;
 namespace Pocketailor.Model.Conversions
 {
 
-    public class DressCsvReader : ICsvReader 
-    {
-        public DressCsvReader()
-        {
-            this.ConversionId = ConversionId.DressSize;
-        }
-        public ConversionId ConversionId { get; set; }
-        public AppDataContext Db { get;  set; }
-        public void QueueWriteObj(Pocketailor.Model.SetupDatabase.CsvLine csvLine)
-        {
-            this.Db.DressSizes.InsertOnSubmit(new DressSize()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
-        }
-    }
+    
 
     public static class DressSizeUtils
     {
