@@ -12,6 +12,7 @@ namespace Pocketailor.Model
         BananaRepublic = 1,
         MarksSpencer = 2,
         Jaeger = 3,
+        Gap = 4,
     }
 
     public static partial class Lookup

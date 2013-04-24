@@ -1,0 +1,10 @@
+DressSize	Retailer	Region	Gender	Chest	Waist	Hips	SizeLetter	SizeNumber
+HatSize	Retailer	Region	Gender	Head	SizeLetter	SizeNumber
+HosierySize	Retailer	Region	Gender	SizeLetter	SizeNumber
+ShirtSize	Retailer	Region	Gender	Chest	Neck	Sleeve	TorsoLength	Hips	SizeLetter	SizeNumber
+ShoeSize	Retailer	Region	Gender	FootLength	FootWidth	SizeLetter	SizeNumber
+SkiBootSize	Retailer	Region	Gender	FootLength	FootWidth	SizeLetter	SizeNumber
+SuitSize	Retailer	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	TorsoLength	Hips	SizeLetter	SizeNumber
+TennisGripSize	Retailer	Region	Gender	SizeLetter	SizeNumber
+TrouserSize	Retailer	Region	Gender	Waist	Hips	InsideLeg	SizeLetter	SizeNumber
+WetsuitSize	Retailer	Region	Gender	Height	Chest	Waist	Hips	Weight	SizeLetter	SizeNumber

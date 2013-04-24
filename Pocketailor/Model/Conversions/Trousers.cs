@@ -27,7 +27,7 @@ namespace Pocketailor.Model.Conversions
             db.Trousers.DeleteAllOnSubmit(db.Trousers);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + "Trousers.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.TrouserSize.ToString() + ".txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;

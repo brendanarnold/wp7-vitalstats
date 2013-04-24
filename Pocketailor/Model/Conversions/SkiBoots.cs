@@ -19,7 +19,7 @@ namespace Pocketailor.Model.Conversions
         {
             db.SkiBoots.DeleteAllOnSubmit(db.SkiBoots);
             db.SubmitChanges();
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + "SkiBoots.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.SkiBootSize.ToString() +  ".txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;

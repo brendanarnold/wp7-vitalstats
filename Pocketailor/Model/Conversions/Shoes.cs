@@ -19,7 +19,7 @@ namespace Pocketailor.Model.Conversions
         {
             db.Shoes.DeleteAllOnSubmit(db.Shoes);
             db.SubmitChanges();
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + "Shoes.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.ShoeSize.ToString() + ".txt", UriKind.Relative));
             System.IO.StreamReader fh = new System.IO.StreamReader(res.Stream);
 
             int count = 0;

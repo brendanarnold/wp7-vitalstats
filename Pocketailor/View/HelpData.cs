@@ -36,7 +36,7 @@ For women, take the measurement just above the belly button. For men, take the m
                 { MeasurementId.Neck, @"Wrap the tape around the neck, over the Adam's apple.
 
 Tuck in four fingers as you make the measurement to allow breathing space." },
-                { MeasurementId.Underbust, @"Measure around the upper torso so that crosses just below the breasts" },
+                { MeasurementId.UnderBust, @"Measure around the upper torso so that crosses just below the breasts" },
                 { MeasurementId.Head, @"Measure around the head at the level where you expect a hat to sit."},
                 { MeasurementId.FootWidth, @"Draw around the foot on a piece of paper.
 
@@ -63,7 +63,7 @@ The seam should lie just past the corner of the shoulder." },
                 { MeasurementId.Waist, "WaistMan.png" },
                 { MeasurementId.InsideLeg, "InsideLegMan.png"},
                 { MeasurementId.Neck, "NeckMan.png"},
-                { MeasurementId.Underbust, "UnderBustMan.png" },
+                { MeasurementId.UnderBust, "UnderBustMan.png" },
                 { MeasurementId.Head, "HeadMan.png" },
                 { MeasurementId.FootWidth, "FootWidthMan.png" },
                 { MeasurementId.FootLength, "FootLengthMan.png" },
@@ -82,7 +82,7 @@ The seam should lie just past the corner of the shoulder." },
                 { MeasurementId.Waist, "WaistWoman.png" },
                 { MeasurementId.InsideLeg, "InsideLegWoman.png"},
                 { MeasurementId.Neck, "NeckWoman.png"},
-                { MeasurementId.Underbust, "UnderBustWoman.png" },
+                { MeasurementId.UnderBust, "UnderBustWoman.png" },
                 { MeasurementId.Head, "HeadWoman.png" },
                 { MeasurementId.FootWidth, "FootWidthWoman.png" },
                 { MeasurementId.FootLength, "FootLengthWoman.png" },

@@ -31,7 +31,7 @@ namespace Pocketailor.Model.Conversions
             db.Wetsuits.DeleteAllOnSubmit(db.Wetsuits);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + "Wetsuit.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.WetsuitSize.ToString() + ".txt", UriKind.Relative));
             StreamReader fh = new StreamReader(res.Stream);
 
             int count = 0;

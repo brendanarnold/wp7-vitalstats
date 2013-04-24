@@ -24,7 +24,7 @@ namespace Pocketailor.Model.Conversions
             db.DressSizes.DeleteAllOnSubmit(db.DressSizes);
             db.SubmitChanges();
             // Load in dress sizes
-            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + "DressSizes.txt", UriKind.Relative));
+            var res = System.Windows.Application.GetResourceStream(new Uri(AppConstants.CSV_DATA_DIRECTORY + ConversionId.DressSize.ToString() + ".txt", UriKind.Relative));
             StreamReader fh = new StreamReader(res.Stream);
 
             int count = 0;
