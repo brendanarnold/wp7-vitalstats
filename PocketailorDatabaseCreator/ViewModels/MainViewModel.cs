@@ -32,7 +32,25 @@ namespace PocketailorDatabaseCreator
                 conversionsDb.DeleteDatabase();
             }
             conversionsDb.CreateDatabase();
-            PocketailorDatabaseCreator.Model.SetupDatabase.LoadConversions(conversionsDb);
+
+            this.TestLoadingWithoutCsv(conversionsDb);
+            //PocketailorDatabaseCreator.Model.SetupDatabase.LoadConversions(conversionsDb);
+        }
+
+
+        public void TestLoadingWithoutCsv(ConversionsDataContext db)
+        {
+            db.DressSizes.InsertOnSubmit(new Pocketailor.Model.Conversions.DressSize()
+            {
+                Chest = 50.0,
+                Waist = 50.0,
+                Hips = 50.0,
+                SizeLetter = "XS",
+                SizeNumber = "8",
+                Region = RegionIds.Worldwide,
+                Retailer = RetailId.ASOS,
+            });
+            db.SubmitChanges();
         }
 
 

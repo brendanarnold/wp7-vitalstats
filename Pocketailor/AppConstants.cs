@@ -23,6 +23,8 @@ namespace Pocketailor
         public static List<RegionIds> DEFAULT_REGIONS = new List<RegionIds>() { 
             RegionIds.Worldwide 
         };
+        public static string CONVERSIONS_DB_CONNECTION_STRING = "Data Source = 'appdata:/PocketailorConversions.sdf'; File Mode = read only;";
+        public static string APP_DB_CONNECTION_STRING = "Data Source=isostore:/Pocketailor.sdf";
         public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";
         public static string AUTHOR_EMAIL = "brendanarnold@outlook.com";
         public static string WEBSITE_URL = "http://www.lassiv.com/pocketailor/";

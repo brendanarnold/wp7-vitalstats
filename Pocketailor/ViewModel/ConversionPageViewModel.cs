@@ -86,7 +86,7 @@ namespace Pocketailor.ViewModel
             // Declare vars in the top scope
             List<double> measuredVals = new List<double>();
             // TODO: remove this hack needed to compile
-            IEnumerable<Model.Conversions.IConversionData> dataQuery = this.conversiondsDB.DressSizes.Cast<Model.Conversions.IConversionData>(); ;
+            IEnumerable<Model.Conversions.IConversionData> dataQuery = null;
             // Make sure we have region data
             if (this.GetSelectedRegions() == null) return;
 
@@ -178,8 +178,7 @@ namespace Pocketailor.ViewModel
                 cr.Conversions = new ObservableCollection<NameValuePair>();
                 // TODO: If gender not specified, then return Female measurements
                 Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender;
-                // TODO: Unresolve this list used for debuggin purposes
-                var dataByRegion = dataQuery.Where(ds => (ds.Region == region) && (ds.Gender == qGender)).ToList();
+                var dataByRegion = dataQuery.Where(ds => (ds.Region == region) && (ds.Gender == qGender));
                 foreach (RetailId retailId in dataByRegion.Select(ds => ds.Retailer).Distinct())
                 {
                     var conversionData = dataByRegion.Where(ds => ds.Retailer == retailId);
