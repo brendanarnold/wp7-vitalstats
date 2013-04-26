@@ -1,0 +1,6 @@
+Australia	6	8	10	12	14
+SizeLetter	XS	S	M	L	XL
+Bust	84cm	86cm	90cm	95cm	100cm
+Waist	67cm	70cm	74cm	79cm	84cm
+Hips	93cm	95cm	99cm	104cm	109cm
+

@@ -1,0 +1,3 @@
+SizeLetter	S/M	L/XL
+Height	152-170	170
+Weight	40-65	65-80

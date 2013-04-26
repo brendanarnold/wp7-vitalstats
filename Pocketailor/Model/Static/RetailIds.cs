@@ -13,6 +13,7 @@ namespace Pocketailor.Model
         MarksSpencer = 2,
         Jaeger = 3,
         Gap = 4,
+	FrenchConnection = 5,
     }
 
     public static partial class Lookup
@@ -23,6 +24,8 @@ namespace Pocketailor.Model
             { RetailId.BananaRepublic, "Banana Republic" },
             { RetailId.MarksSpencer, "Marks and Spencer" },
             { RetailId.Jaeger, "Jaeger" },
+            { RetailId.FrenchConnection, "French Connection" },
+            { RetailId.Gap, "Gap" },
         };
     }
 

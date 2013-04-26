@@ -1,0 +1,5 @@
+UK	XS	S	M	L	XL	XXL
+Chest	94cm	97cm	102cm	107cm	112cm	117cm
+Neck	38.5cm	39cm	41cm	42cm	43cm	44cm
+Waist	73.5cm	76cm	81cm	86cm	91cm	96cm
+

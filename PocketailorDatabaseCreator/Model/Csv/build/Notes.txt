@@ -1,2 +1,7 @@
 Need to compile in InsideLeg measurements for trousers too
 Bra size cup is difficult - maybe just include band size
+Inlcude range calculation
+Some emasurements do not have SizeLetter, build this from measurements e.g. Waist insideleg for mens trousers
+parse out 'cm'
+parse out " and interpret as inch
+Need to extract region from filename if not in file
