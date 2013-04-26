@@ -153,6 +153,7 @@
     <Compile Include="Model\Conversions\Trousers.cs" />
     <Compile Include="Model\Conversions\Wetsuit.cs" />
     <Compile Include="Model\Static\ConversionIds.cs" />
+    <Compile Include="Model\Static\Gender.cs" />
     <Compile Include="Model\Static\MeasurementIds.cs" />
     <Compile Include="Model\Static\MeasurementTypes.cs" />
     <Compile Include="Model\Static\MeasurementTypeIds.cs" />

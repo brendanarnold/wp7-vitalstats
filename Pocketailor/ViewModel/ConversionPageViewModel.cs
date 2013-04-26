@@ -85,11 +85,12 @@ namespace Pocketailor.ViewModel
             this.ConversionsByRegion = new ObservableCollection<ConversionRegion>();
             // Declare vars in the top scope
             List<double> measuredVals = new List<double>();
-            // TODO: remove this hack needed to compile
-            IEnumerable<Model.Conversions.IConversionData> dataQuery = null;
+            IQueryable dataQuery = null;
             // Make sure we have region data
             if (this.GetSelectedRegions() == null) return;
-
+            // TODO: If gender not specified, then return Female measurements. Note only perform gener query on tables that have 
+            // Gender fields (even after casting) because it still generate SQL to query gender
+            Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender; 
             // Get the conversion specific data
             switch (this.SelectedConversionType)
             {
@@ -102,7 +103,7 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TrousersUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = this.conversiondsDB.Trousers.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Trousers.Where(q => q.Gender == qGender);
                     break;
                 case ConversionId.ShirtSize:
                     if (this.SelectedProfile.Gender == Gender.Male)
@@ -113,11 +114,11 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = this.conversiondsDB.Shirts.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Shirts.Where(q => q.Gender == qGender);
                     break;
                 case ConversionId.HatSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HatUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Hats.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Hats;
                     break;
                 case ConversionId.SuitSize:
                     if (this.SelectedProfile.Gender == Gender.Male)
@@ -128,27 +129,27 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = this.conversiondsDB.Suits.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Suits.Where(q => q.Gender == qGender);
                     break;
                 case ConversionId.DressSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.DressSizeUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.DressSizes.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.DressSizes;
                     break;
                 case ConversionId.BraSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.BraUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Bras.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Bras;
                     break;
                 case ConversionId.HosierySize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HosieryUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Hosiery.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Hosiery;
                     break;
                 case ConversionId.ShoeSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShoesUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Shoes.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Shoes.Where(q => q.Gender == qGender);
                     break;
                 case ConversionId.SkiBootSize:
                     measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.SkiBoots.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.SkiBoots.Where(q => q.Gender == qGender);
                     break;
                 //case ConversionId.TennisGripSize:
                 //    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
@@ -163,7 +164,7 @@ namespace Pocketailor.ViewModel
                     {
                         measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
                     }
-                    dataQuery = this.conversiondsDB.Wetsuits.Cast<Model.Conversions.IConversionData>();
+                    dataQuery = this.conversiondsDB.Wetsuits.Where(q => q.Gender == qGender);
                     break;
                 default:
                     return;
@@ -176,9 +177,7 @@ namespace Pocketailor.ViewModel
                 ConversionRegion cr = new ConversionRegion();
                 cr.Name = Lookup.Regions[region];
                 cr.Conversions = new ObservableCollection<NameValuePair>();
-                // TODO: If gender not specified, then return Female measurements
-                Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender;
-                var dataByRegion = dataQuery.Where(ds => (ds.Region == region) && (ds.Gender == qGender));
+                var dataByRegion = dataQuery.Cast<Model.Conversions.IConversionData>().Where(q => q.Region == region);
                 foreach (RetailId retailId in dataByRegion.Select(ds => ds.Retailer).Distinct())
                 {
                     var conversionData = dataByRegion.Where(ds => ds.Retailer == retailId);

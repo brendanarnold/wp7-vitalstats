@@ -1,0 +1,4 @@
+SizeLetter	InsideLeg
+Short	73½
+Regular	81
+Long	86

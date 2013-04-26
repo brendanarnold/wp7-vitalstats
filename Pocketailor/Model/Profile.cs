@@ -158,11 +158,6 @@ namespace Pocketailor.Model
     }
 
     
-    public enum Gender
-    {
-        Unspecified,
-        Female,
-        Male
-    }
+
 
 }
