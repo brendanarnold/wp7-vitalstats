@@ -1,0 +1,6 @@
+SizeLetter		S/M	S/M	S/M	M/L	M/L	
+UK	6	8	10	12	14	16	18
+Europe	34	36	38	40	42	44	46
+US	2	4	6	8	10	12	14
+Chest	80	84	88	93	98	104	112
+Waist	62	66	70	75	80	87	94

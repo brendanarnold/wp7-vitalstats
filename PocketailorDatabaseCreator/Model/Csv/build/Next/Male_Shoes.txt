@@ -1,0 +1,4 @@
+SizeLetters	S	S	M	M	L	L	XL	XL
+UK	6.5	7	8	9	10	11	11.5	12
+US	7.5	8	9	10	11	12	12.5	13
+Europe	40	41	42	43	44	45	46	47

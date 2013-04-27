@@ -1,0 +1,8 @@
+SizeLetter	XS	S	M	M	L	L
+US	2	4	6	8	10	12
+France	34	36	38	40	42	44
+Italy	38	40	42	44	46	48
+Australia	06	08	10	12	14	16
+UK	6	8	10	12	14	16
+Chest	79	82	86	91	96	101
+Sleeve	62.3	62.6	63	63.5	64	64.5

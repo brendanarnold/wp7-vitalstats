@@ -1,0 +1,4 @@
+SizeLetters	S	M
+UK	6-8	10-12
+Chest	48	50
+

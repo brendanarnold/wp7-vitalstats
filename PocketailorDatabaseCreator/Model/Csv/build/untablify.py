@@ -9,14 +9,14 @@ inner_data = data[1:,1:]
 col_headers = data[0,1:]
 row_headers = data[1:,0]
 
-# aux = ['53-57', '53-57', '68-72', '73-77', '78-82', '83-87', '88-92', '93-97' ]
+# aux = ['32', '34', '36', '38']
 
 out = []
-for i in xrange(len(col_headers)):
-    for j in xrange(len(row_headers)):
-        c = col_headers[i]
-        r = row_headers[j]
-        inner = inner_data[j,i]
+for j in xrange(len(col_headers)):
+    for i in xrange(len(row_headers)):
+        c = col_headers[j]
+        r = row_headers[i]
+        inner = inner_data[i,j]
         if not inner:
             continue
         out.append([inner, r, c])
