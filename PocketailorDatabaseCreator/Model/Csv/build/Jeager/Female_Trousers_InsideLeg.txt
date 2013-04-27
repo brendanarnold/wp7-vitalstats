@@ -1,0 +1,2 @@
+SizeLetter	Wide	Straight	Narrow
+InsideLeg	85	83	80

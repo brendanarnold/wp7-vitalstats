@@ -1,0 +1,8 @@
+US	2	4	6	8	10	12
+Europe	34	36	38	40	42	44
+UK	6	8	10	12	14	16
+Russia	40-42	42-44	44-46	46-48	48-50	50-52
+Chest	78.5cm	81 cm	86 cm	91 cm	96 cm	101 cm
+Waist	60.5 cm	63 cm	68 cm	73 cm	78 cm	83 cm
+Hips	86.5 cm	89 cm	94 cm	99 cm	104 cm	109 cm
+
