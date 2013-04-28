@@ -7,3 +7,7 @@ parse out " and interpret as inch
 Need to extract region from filename if not in file
 Multiple same lines append to end of data e.g. Linea bra sizes
 Format should be include country size then if SizeLetter include in brackets. If SizeLetter only, inlcude that e.g. Hats
+Allow case insensitive
+
+Include extra on shirts page and trousers page which specifies measurements in cm and inches as above other measurments, include in Bing style squares
+
