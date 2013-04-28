@@ -1,3 +1,4 @@
+Convention for multiple sizes: comma means between two sizes, (slash is likey given by manufactorer)
 Need to compile in InsideLeg measurements for trousers too
 Bra size cup is difficult - maybe just include band size
 Inlcude range calculation
@@ -8,6 +9,8 @@ Need to extract region from filename if not in file
 Multiple same lines append to end of data e.g. Linea bra sizes
 Format should be include country size then if SizeLetter include in brackets. If SizeLetter only, inlcude that e.g. Hats
 Allow case insensitive
+Allow hip as well as hips
+Allos eu as Europe
 
 Include extra on shirts page and trousers page which specifies measurements in cm and inches as above other measurments, include in Bing style squares
 

@@ -1,0 +1,8 @@
+SizeLetter	XS	XS	S	M	M	L	XL
+Europe	32	34	36	38	40	42	44
+US	4	6	8	10	12	14	16
+UK	6	8	10	12	14	16	18
+Chest	81cm 	85cm	89cm	93cm	98cm	103cm	108cm
+Waist	62cm  	66cm  	70cm	74cm	79cm	84cm 	89cm   
+Hip	89cm	93cm	97cm	101cm	106cm	111cm	116cm
+

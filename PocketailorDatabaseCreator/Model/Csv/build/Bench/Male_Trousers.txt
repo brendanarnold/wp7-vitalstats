@@ -1,0 +1,2 @@
+SizeLetter	S	M	L	XL	XXL
+Waist	71	76	81	86	91

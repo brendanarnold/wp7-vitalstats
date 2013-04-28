@@ -1,0 +1,3 @@
+SizeLetter	S	M	L	XL	XXL
+Chest	96-99	100-103	104-107	108-111	112-115
+

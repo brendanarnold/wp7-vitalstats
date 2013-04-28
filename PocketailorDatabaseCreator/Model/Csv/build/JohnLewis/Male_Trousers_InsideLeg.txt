@@ -1,0 +1,3 @@
+SizeLetter	Short	Regular	Long
+InsideLeg	76.5cm	81cm	86.5cm
+

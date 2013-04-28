@@ -1,0 +1,7 @@
+#Unit:Inches
+SizeLetter	XS	S	S	M	M	L	L
+US	2	4	6	8	10	12	14
+Europe	34	34	36	38	40	42	42
+Chest	32	33	34	34	36	37.5	39
+Waist	23.5	24.5	25.5	26.5	27.5	29	30.5
+Hips	34	35	36	37	38	39.5	41
