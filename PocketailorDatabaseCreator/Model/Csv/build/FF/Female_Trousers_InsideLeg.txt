@@ -1,0 +1,2 @@
+SizeLetter	Extra Short	Short	Regular	Long
+InsideLeg	73	76	81	86

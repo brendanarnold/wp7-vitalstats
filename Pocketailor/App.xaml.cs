@@ -16,6 +16,7 @@ using Pocketailor.View;
 using Pocketailor.ViewModel;
 using Pocketailor.Model;
 using System.IO.IsolatedStorage;
+using Pocketailor.Model.AdjustmentFeedback;
 
 namespace Pocketailor
 {
@@ -35,6 +36,8 @@ namespace Pocketailor
         }
 
         public static SettingsHelpers Settings;
+
+        public static FeedbackAgent FeedbackAgent;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -70,18 +73,22 @@ namespace Pocketailor
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
-            
+            // Setup settings
             Settings = new SettingsHelpers();
-
+            // Create DB if not there already
             using (AppDataContext db = new AppDataContext(AppConstants.APP_DB_CONNECTION_STRING))
             {
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
             }
-
+            // Load ViewModel
             _vm = new AppViewModel(AppConstants.APP_DB_CONNECTION_STRING, AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
             _vm.LoadProfilesFromDB();
             _vm.LoadQuickProfilesFromDB();
+
+            // Load and send feedback
+            FeedbackAgent = new FeedbackAgent();
+            FeedbackAgent.DeliverAdjustmentsTaskAsync();
 
         }
 

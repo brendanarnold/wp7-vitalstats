@@ -1,0 +1,5 @@
+#Unit:Inches
+SizeLetter	S	M	L	XL	XXL
+UK	15	15.5	16	16.5	17
+Europe	46	48	50	52	54
+Neck	15	15.5	16	16.5	17

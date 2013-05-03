@@ -15,6 +15,26 @@ namespace Pocketailor
 {
     public static class AppConstants
     {
+        
+        
+        // The name of the field in the POST request
+        public static string ADJUSTMENT_REQUEST_POST_FIELD = "adjustment";
+        public static string SECRET_REQUEST_POST_FIELD = "pocketailor_adjustments_secret";
+        public static string POCKETAILOR_ADJUSTMENTS_SERVER_OK_RESPONSE = "pocketed";
+#if DEBUG
+        public static int MAX_ADJUSTMENTS_PER_REQUEST = 2;
+        public static int MAX_DELIVERY_ATTEMPTS = 3;
+        public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://localhost:3000/";
+        public static string POCKETAILOR_ADJUSTMENTS_SECRET = "testing_secret";
+#else
+        public static int MAX_ADJUSTMENTS_PER_REQUEST = 50;
+        public static int MAX_DELIVERY_ATTEMPTS = 3;
+        // This is a random string used by the server to verify that it is a Pocketailor app talking to it 
+        public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "https://pocketailor_adjustments.eu01.aws.af.cm/";
+        public static string POCKETAILOR_ADJUSTMENTS_SECRET = "7f1f830c-18fa-4e49-af6f-5ea4c2c85f62";
+#endif
+
+
         public static string APP_VERSION = "0.1.1";
         // TODO: Fill in the paid app GUID
         public static string PAID_APP_GUID = "";
