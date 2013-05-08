@@ -11,10 +11,6 @@ namespace Pocketailor.Model.Conversions
 
     public static class HatUtils
     {
-        public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
-        {
-            MeasurementId.Head,
-        };
 
     }
 

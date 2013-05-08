@@ -11,25 +11,6 @@ namespace Pocketailor.Model.Conversions
 
     public static class ShirtUtils
     {
-        public static List<MeasurementId> RequiredMeasurementsMens = new List<MeasurementId>()
-        {
-            MeasurementId.Chest,
-            MeasurementId.Waist,
-            MeasurementId.Neck,
-            MeasurementId.TorsoLength,
-            MeasurementId.Sleeve,
-        };
-
-        public static List<MeasurementId> RequiredMeasurementsWomens = new List<MeasurementId>()
-        {
-            MeasurementId.Chest,
-            MeasurementId.Waist,
-            MeasurementId.Neck,
-            MeasurementId.TorsoLength,
-            MeasurementId.Sleeve,
-            MeasurementId.Hips,
-        };
-
         
 
     }

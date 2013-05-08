@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using System.Globalization;
 using Pocketailor.Model;
 using Microsoft.Phone.Shell;
+using Pocketailor.Model.Conversions;
 
 namespace Pocketailor.View
 {
@@ -288,11 +289,11 @@ namespace Pocketailor.View
             List<MeasurementId> missingMeasurements;
             if (App.VM.SelectedProfile.Gender == Gender.Male)
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.TrousersUtils.RequiredMeasurementsMens);
+                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.TrousersMens);
             }
             else
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.TrousersUtils.RequiredMeasurementsMens);
+                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.TrousersWomens);
             
             }
             if (missingMeasurements.Count == 0)
@@ -308,8 +309,8 @@ namespace Pocketailor.View
 
         private void shirtConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> required = (App.VM.SelectedProfile.Gender == Gender.Male) ? Model.Conversions.ShirtUtils.RequiredMeasurementsMens
-                : Model.Conversions.ShirtUtils.RequiredMeasurementsWomens;
+            List<MeasurementId> required = (App.VM.SelectedProfile.Gender == Gender.Male) ? RequiredMeasurements.ShirtMens
+                : RequiredMeasurements.ShirtWomens;
             List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(required);
             if (missingMeasurements.Count == 0)
             {
@@ -324,7 +325,7 @@ namespace Pocketailor.View
 
         private void hatConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.HatUtils.RequiredMeasurements);
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Hat);
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.HatSize;
@@ -341,11 +342,11 @@ namespace Pocketailor.View
             List<MeasurementId> missingMeasurements;
             if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.SuitUtils.RequiredMeasurementsMens);
+                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SuitMens);
             }
             else
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
+                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SuitWomens);
             }
             if (missingMeasurements.Count == 0)
             {
@@ -360,7 +361,7 @@ namespace Pocketailor.View
 
         private void dressConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.DressSizeUtils.RequiredMeasurements);
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.DressSize);
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.DressSize;
@@ -374,7 +375,7 @@ namespace Pocketailor.View
 
         private void braConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.BraUtils.RequiredMeasurements);
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Bra);
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.BraSize;
@@ -388,7 +389,7 @@ namespace Pocketailor.View
 
         private void hosieryConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.HosieryUtils.RequiredMeasurements);
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Hosiery);
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.HosierySize;
@@ -402,7 +403,7 @@ namespace Pocketailor.View
 
         private void shoeConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.ShoesUtils.RequiredMeasurements);
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Shoes);
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.ShoeSize;
@@ -416,7 +417,7 @@ namespace Pocketailor.View
 
         private void skiBootConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
+            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SkiBoots);
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.SkiBootSize;
@@ -447,11 +448,11 @@ namespace Pocketailor.View
             List<MeasurementId> missingMeasurements;
             if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
+                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.WetsuitMens);
             }
             else
             {
-                missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
+                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.WetsuitWomens);
             }
             if (missingMeasurements.Count == 0)
             {

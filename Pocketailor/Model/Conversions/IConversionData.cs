@@ -7,7 +7,7 @@ namespace Pocketailor.Model.Conversions
 {
     public interface IConversionData
     {
-        double GetChiSq(List<double> measuredVals);
+        double FindBestFit(Dictionary<MeasurementId, double> measuredVals);
         RegionIds Region { get; }
         RetailId Retailer { get; }
         Gender Gender { get; }

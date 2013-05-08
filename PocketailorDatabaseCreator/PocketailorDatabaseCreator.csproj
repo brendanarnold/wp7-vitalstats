@@ -70,18 +70,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\CsvFileReader.cs" />
     <Compile Include="Model\CsvLineData.cs" />
-    <Compile Include="Model\CsvReaders\BraCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\DressCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\HatCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\HosieryCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\ICsvReader.cs" />
-    <Compile Include="Model\CsvReaders\ShirtCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\ShoesCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\SkiBootsCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\SuitCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\TrousersCsvReader.cs" />
-    <Compile Include="Model\CsvReaders\WetsuitCsvReader.cs" />
     <Compile Include="Model\SetupDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

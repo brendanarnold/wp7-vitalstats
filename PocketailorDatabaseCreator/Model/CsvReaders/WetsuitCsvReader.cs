@@ -17,19 +17,19 @@ namespace PocketailorDatabaseCreator.Model.CsvReaders
         public ConversionsDataContext Db { get; set; }
         public void QueueWriteObj(CsvLine csvLine)
         {
-            this.Db.Wetsuits.InsertOnSubmit(new Wetsuit()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Gender = csvLine.Gender,
-                Height = csvLine.GetMeasurementOrNull(MeasurementId.Height),
-                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                Weight = csvLine.GetMeasurementOrNull(MeasurementId.Weight),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
+            //this.Db.Wetsuits.InsertOnSubmit(new Wetsuit()
+            //{
+            //    Retailer = csvLine.Retailer,
+            //    Region = csvLine.Region,
+            //    Gender = csvLine.Gender,
+            //    Height = csvLine.GetMeasurementOrNull(MeasurementId.Height),
+            //    Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
+            //    Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
+            //    Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
+            //    Weight = csvLine.GetMeasurementOrNull(MeasurementId.Weight),
+            //    SizeLetter = csvLine.SizeLetter,
+            //    SizeNumber = csvLine.SizeNumber,
+            //});
         }
     }
 

@@ -12,12 +12,7 @@ namespace Pocketailor.Model.Conversions
 
     public static class ShoesUtils
     {
-        public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
-        {
-            MeasurementId.FootLength,
-            MeasurementId.FootWidth,
-        };
-
+       
         
     }
 

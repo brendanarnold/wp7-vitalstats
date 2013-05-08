@@ -17,14 +17,14 @@ namespace PocketailorDatabaseCreator.Model.CsvReaders
         public ConversionsDataContext Db { get; set; }
         public void QueueWriteObj(CsvLine csvLine)
         {
-            this.Db.Hats.InsertOnSubmit(new Pocketailor.Model.Conversions.Hat()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Head = csvLine.GetMeasurementOrNull(MeasurementId.Head),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
+            //this.Db.Hats.InsertOnSubmit(new Pocketailor.Model.Conversions.Hat()
+            //{
+            //    Retailer = csvLine.Retailer,
+            //    Region = csvLine.Region,
+            //    Head = csvLine.GetMeasurementOrNull(MeasurementId.Head),
+            //    SizeLetter = csvLine.SizeLetter,
+            //    SizeNumber = csvLine.SizeNumber,
+            //});
         }
     }
 

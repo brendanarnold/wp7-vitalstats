@@ -16,7 +16,7 @@ using Pocketailor.View;
 using Pocketailor.ViewModel;
 using Pocketailor.Model;
 using System.IO.IsolatedStorage;
-using Pocketailor.Model.AdjustmentFeedback;
+using Pocketailor.Model.Adjustments;
 
 namespace Pocketailor
 {
@@ -29,15 +29,10 @@ namespace Pocketailor
         public PhoneApplicationFrame RootFrame { get; private set; }
 
         // Allow access to a single view model instance throughout the app
-        private static AppViewModel _vm;
-        public static AppViewModel VM
-        {
-            get { return _vm; }
-        }
-
+        public static AppViewModel VM;
         public static SettingsHelpers Settings;
-
         public static FeedbackAgent FeedbackAgent;
+        public static Cache Cache;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -81,14 +76,18 @@ namespace Pocketailor
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
             }
+
             // Load ViewModel
-            _vm = new AppViewModel(AppConstants.APP_DB_CONNECTION_STRING, AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
-            _vm.LoadProfilesFromDB();
-            _vm.LoadQuickProfilesFromDB();
+            VM = new AppViewModel(AppConstants.APP_DB_CONNECTION_STRING, AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
+            VM.LoadProfilesFromDB();
+            VM.LoadQuickProfilesFromDB();
 
             // Load and send feedback
             FeedbackAgent = new FeedbackAgent();
             FeedbackAgent.DeliverAdjustmentsTaskAsync();
+
+            // Load cache
+            Cache = new Cache();
 
         }
 

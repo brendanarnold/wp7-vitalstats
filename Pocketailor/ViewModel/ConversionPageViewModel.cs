@@ -1,4 +1,5 @@
 ﻿using Pocketailor.Model;
+using Pocketailor.Model.Conversions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,50 +31,50 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        private string _conversionsByRegionPageTitle;
-        public string ConversionsByRegionPageTitle
+        private string _conversionsPageTitle;
+        public string ConversionsPageTitle
         {
             get
             {
-                return this._conversionsByRegionPageTitle;
+                return this._conversionsPageTitle;
             }
             set
             {
-                if (this._conversionsByRegionPageTitle != value)
+                if (this._conversionsPageTitle != value)
                 {
-                    this._conversionsByRegionPageTitle = value;
+                    this._conversionsPageTitle = value;
                     this.NotifyPropertyChanged("ConversionsByRegionPageTitle");
                 }
             }
         }
 
-        private BitmapImage _conversionsByRegionPageBGImage;
-        public BitmapImage ConversionsByRegionPageBGImage
+        private BitmapImage _conversionsPageBGImage;
+        public BitmapImage ConversionsPageBGImage
         {
             get
             {
-                return this._conversionsByRegionPageBGImage;
+                return this._conversionsPageBGImage;
             }
             set
             {
-                if (this._conversionsByRegionPageBGImage != value)
+                if (this._conversionsPageBGImage != value)
                 {
-                    this._conversionsByRegionPageBGImage = value;
+                    this._conversionsPageBGImage = value;
                     this.NotifyPropertyChanged("ConversionsByRegionPageBGImage");
                 }
 
             }
         }
 
-        private ObservableCollection<ConversionRegion> _conversionByRegion;
-        public ObservableCollection<ConversionRegion> ConversionsByRegion
+        private ObservableCollection<Group<NameValuePair>> _groupedConversions;
+        public ObservableCollection<Group<NameValuePair>> GroupedConversions
         {
-            get { return this._conversionByRegion; }
+            get { return this._groupedConversions; }
             set
             {
-                if (this._conversionByRegion != value)
+                if (this._groupedConversions != value)
                 {
-                    this._conversionByRegion = value;
+                    this._groupedConversions = value;
                     this.NotifyPropertyChanged("ConversionsByRegion");
                 }
             }
@@ -82,9 +83,9 @@ namespace Pocketailor.ViewModel
         public void LoadConversionsPageData()
         {
             // Reset the list
-            this.ConversionsByRegion = new ObservableCollection<ConversionRegion>();
+            this.GroupedConversions = new ObservableCollection<Group<NameValuePair>>();
             // Declare vars in the top scope
-            List<double> measuredVals = new List<double>();
+            Dictionary<MeasurementId, double> measuredVals = new Dictionary<MeasurementId, double>();
             IQueryable dataQuery = null;
             // Make sure we have region data
             if (this.GetSelectedRegions() == null) return;
@@ -92,122 +93,143 @@ namespace Pocketailor.ViewModel
             // Gender fields (even after casting) because it still generate SQL to query gender
             Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender; 
             // Get the conversion specific data
-            switch (this.SelectedConversionType)
-            {
-                case ConversionId.TrouserSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TrousersUtils.RequiredMeasurementsMens);
-                    }
-                    else
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TrousersUtils.RequiredMeasurementsWomens);
-                    }
-                    dataQuery = this.conversiondsDB.Trousers.Where(q => q.Gender == qGender);
-                    break;
-                case ConversionId.ShirtSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsMens);
-                    }
-                    else
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
-                    }
-                    dataQuery = this.conversiondsDB.Shirts.Where(q => q.Gender == qGender);
-                    break;
-                case ConversionId.HatSize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HatUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Hats;
-                    break;
-                case ConversionId.SuitSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsMens);
-                    }
-                    else
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
-                    }
-                    dataQuery = this.conversiondsDB.Suits.Where(q => q.Gender == qGender);
-                    break;
-                case ConversionId.DressSize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.DressSizeUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.DressSizes;
-                    break;
-                case ConversionId.BraSize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.BraUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Bras;
-                    break;
-                case ConversionId.HosierySize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HosieryUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Hosiery;
-                    break;
-                case ConversionId.ShoeSize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShoesUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.Shoes.Where(q => q.Gender == qGender);
-                    break;
-                case ConversionId.SkiBootSize:
-                    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
-                    dataQuery = this.conversiondsDB.SkiBoots.Where(q => q.Gender == qGender);
-                    break;
-                //case ConversionId.TennisGripSize:
-                //    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
-                //    dataQuery = appDB.TennisRaquetSizes.Cast<Model.Conversions.IConversionData>();
-                //    break;
-                case ConversionId.WetsuitSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
-                    }
-                    else
-                    {
-                        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
-                    }
-                    dataQuery = this.conversiondsDB.Wetsuits.Where(q => q.Gender == qGender);
-                    break;
-                default:
-                    return;
-            }
+            //switch (this.SelectedConversionType)
+            //{
+            //    case ConversionId.TrouserSize:
+            //        if (this.SelectedProfile.Gender == Gender.Male)
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.TrousersMens);
+            //        }
+            //        else
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.TrousersWomens);
+            //        }
+            //        dataQuery = this.conversiondsDB.Trousers.Where(q => q.Gender == qGender);
+            //        break;
+            //    case ConversionId.ShirtSize:
+            //        if (this.SelectedProfile.Gender == Gender.Male)
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsMens);
+            //        }
+            //        else
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
+            //        }
+            //        dataQuery = this.conversiondsDB.Shirts.Where(q => q.Gender == qGender);
+            //        break;
+            //    case ConversionId.HatSize:
+            //        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HatUtils.RequiredMeasurements);
+            //        dataQuery = this.conversiondsDB.Hats;
+            //        break;
+            //    case ConversionId.SuitSize:
+            //        if (this.SelectedProfile.Gender == Gender.Male)
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsMens);
+            //        }
+            //        else
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
+            //        }
+            //        dataQuery = this.conversiondsDB.Suits.Where(q => q.Gender == qGender);
+            //        break;
+            //    case ConversionId.DressSize:
+            //        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.DressSizeUtils.RequiredMeasurements);
+            //        dataQuery = this.conversiondsDB.DressSizes;
+            //        break;
+            //    case ConversionId.BraSize:
+            //        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.BraUtils.RequiredMeasurements);
+            //        dataQuery = this.conversiondsDB.Bras;
+            //        break;
+            //    case ConversionId.HosierySize:
+            //        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.HosieryUtils.RequiredMeasurements);
+            //        dataQuery = this.conversiondsDB.Hosiery;
+            //        break;
+            //    case ConversionId.ShoeSize:
+            //        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.ShoesUtils.RequiredMeasurements);
+            //        dataQuery = this.conversiondsDB.Shoes.Where(q => q.Gender == qGender);
+            //        break;
+            //    case ConversionId.SkiBootSize:
+            //        measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
+            //        dataQuery = this.conversiondsDB.SkiBoots.Where(q => q.Gender == qGender);
+            //        break;
+            //    //case ConversionId.TennisGripSize:
+            //    //    measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
+            //    //    dataQuery = appDB.TennisRaquetSizes.Cast<Model.Conversions.IConversionData>();
+            //    //    break;
+            //    case ConversionId.WetsuitSize:
+            //        if (this.SelectedProfile.Gender == Gender.Male)
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
+            //        }
+            //        else
+            //        {
+            //            measuredVals = this.GetRequiredMeasuredValues(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
+            //        }
+            //        dataQuery = this.conversiondsDB.Wetsuits.Where(q => q.Gender == qGender);
+            //        break;
+            //    default:
+            //        return;
+            //}
             // Check we have all the necessary measurements
             if (measuredVals == null) return;
             // Build up by regions
-            foreach (RegionIds region in this.GetSelectedRegions())
-            {
-                ConversionRegion cr = new ConversionRegion();
-                cr.Name = Lookup.Regions[region];
-                cr.Conversions = new ObservableCollection<NameValuePair>();
-                var dataByRegion = dataQuery.Cast<Model.Conversions.IConversionData>().Where(q => q.Region == region);
-                foreach (RetailId retailId in dataByRegion.Select(ds => ds.Retailer).Distinct())
-                {
-                    var conversionData = dataByRegion.Where(ds => ds.Retailer == retailId);
-                    double lowestChisq = double.MaxValue;
-                    Model.Conversions.IConversionData bestFit = null;
-                    foreach (Model.Conversions.IConversionData candidateConversion in conversionData)
-                    {
-                        double chiSq = candidateConversion.GetChiSq(measuredVals);
-                        if (chiSq < lowestChisq)
-                        {
-                            lowestChisq = chiSq;
-                            bestFit = candidateConversion;
-                        }
-                    }
-                    cr.Conversions.Add(new NameValuePair()
-                    {
-                        // TODO: Will need to include some kind of lookup for actual string
-                        FormattedValue = bestFit.FormattedValue,
-                        Retailer = retailId,
-                    });
-                }
-                this.ConversionsByRegion.Add(cr);
-            }
+            List<RegionIds> selectedRegions = this.GetSelectedRegions();
+            //dataQuery = dataQuery.Cast<Model.Conversions.IConversionData>().Where(q => selectedRegions.Contains(q.Region));
+
+
+            //var newQuery = dataQuery.Cast<IConversionData>().GroupBy(c => c.Retailer).Select(g => 
+                
+                
+                
+                
+                //from cnv in dataQuery.Cast<Model.Conversions.IConversionData>()
+                //           group cnv.GetChiSq(measuredVals) by cnv.Retailer into cnvEnumerable
+                //           select cnvEnumerable.Min()
+                           
+
+
+                           //orderby Lookup.Retail[cnvEnumerable.Key]
+                           //select new Group<IConversionData>(Lookup.Retail[cnvEnumerable.Key], cnvEnumerable);
+                           
+
+
+        //    foreach (RegionIds region in this.GetSelectedRegions())
+        //    {
+        //        ConversionRegion cr = new ConversionRegion();
+        //        cr.Name = Lookup.Regions[region];
+        //        cr.Conversions = new ObservableCollection<NameValuePair>();
+        //        var dataByRegion = dataQuery.Cast<Model.Conversions.IConversionData>().Where(q => q.Region == region);
+        //        foreach (RetailId retailId in dataByRegion.Select(ds => ds.Retailer).Distinct())
+        //        {
+        //            var conversionData = dataByRegion.Where(ds => ds.Retailer == retailId);
+        //            double lowestChisq = double.MaxValue;
+        //            Model.Conversions.IConversionData bestFit = null;
+        //            foreach (Model.Conversions.IConversionData candidateConversion in conversionData)
+        //            {
+        //                double chiSq = candidateConversion.GetChiSq(measuredVals);
+        //                if (chiSq < lowestChisq)
+        //                {
+        //                    lowestChisq = chiSq;
+        //                    bestFit = candidateConversion;
+        //                }
+        //            }
+        //            cr.Conversions.Add(new NameValuePair()
+        //            {
+        //                // TODO: Will need to include some kind of lookup for actual string
+        //                FormattedValue = bestFit.FormattedValue,
+        //                Retailer = retailId,
+        //            });
+        //        }
+        //        this.GroupedConversions.Add(cr);
+        //    }
         }
 
 
         // Already been checked that these values have been taken
-        public List<double> GetRequiredMeasuredValues(List<MeasurementId> requiredIds)
+        public Dictionary<MeasurementId, double> GetRequiredMeasuredValues(List<MeasurementId> requiredIds)
         {
-            List<double> requiredValues = new List<double>();
+            Dictionary<MeasurementId, double> requiredValues = new Dictionary<MeasurementId, double>();
+            
             foreach (MeasurementId mID in requiredIds)
             {
                 Stat s = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == mID);
@@ -215,7 +237,7 @@ namespace Pocketailor.ViewModel
                 double d;
                 if (double.TryParse(s.Value, out d))
                 {
-                    requiredValues.Add(d);
+                    requiredValues.Add(mID, d);
                 }
                 else
                 {
@@ -234,6 +256,52 @@ namespace Pocketailor.ViewModel
         {
             public string Name { get; set; }
             public ObservableCollection<NameValuePair> Conversions { get; set; }
+        }
+
+        public class Group<T> : IEnumerable<T>
+        {
+            public Group(string name, IEnumerable<T> items)
+            {
+                this.Title = name;
+                this.Items = new List<T>(items);
+            }
+
+            public override bool Equals(object obj)
+            {
+                Group<T> that = obj as Group<T>;
+
+                return (that != null) && (this.Title.Equals(that.Title));
+            }
+
+            public string Title
+            {
+                get;
+                set;
+            }
+
+            public IList<T> Items
+            {
+                get;
+                set;
+            }
+
+            #region IEnumerable<T> Members
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                return this.Items.GetEnumerator();
+            }
+
+            #endregion
+
+            #region IEnumerable Members
+
+            System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+            {
+                return this.Items.GetEnumerator();
+            }
+
+            #endregion
         }
 
         public class NameValuePair : INotifyPropertyChanged

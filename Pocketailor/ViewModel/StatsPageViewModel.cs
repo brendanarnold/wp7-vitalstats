@@ -1,4 +1,5 @@
 ﻿using Pocketailor.Model;
+using Pocketailor.Model.Conversions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,11 +43,11 @@ namespace Pocketailor.ViewModel
             {
                 if (App.VM.SelectedProfile.Gender == Gender.Male)
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.TrousersUtils.RequiredMeasurementsMens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.TrousersMens);
                 }
                 else
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.TrousersUtils.RequiredMeasurementsWomens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.TrousersWomens);
                 }
             }
         }
@@ -57,11 +58,11 @@ namespace Pocketailor.ViewModel
             {
                 if (App.VM.SelectedProfile.Gender == Gender.Male)
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.ShirtUtils.RequiredMeasurementsMens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.ShirtMens);
                 }
                 else
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.ShirtUtils.RequiredMeasurementsWomens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.ShirtWomens);
                 }
 
             }
@@ -71,7 +72,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(Model.Conversions.HatUtils.RequiredMeasurements);
+                return this.HasRequiredMeasurements(RequiredMeasurements.Hat);
             }
         }
 
@@ -81,11 +82,11 @@ namespace Pocketailor.ViewModel
             {
                 if (App.VM.SelectedProfile.Gender == Gender.Male)
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.SuitUtils.RequiredMeasurementsMens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.SuitMens);
                 }
                 else
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.SuitUtils.RequiredMeasurementsWomens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.SuitWomens);
                 }
 
             }
@@ -95,7 +96,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(Model.Conversions.DressSizeUtils.RequiredMeasurements);
+                return this.HasRequiredMeasurements(RequiredMeasurements.DressSize);
             }
         }
 
@@ -103,7 +104,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(Model.Conversions.BraUtils.RequiredMeasurements);
+                return this.HasRequiredMeasurements(RequiredMeasurements.Bra);
             }
         }
 
@@ -111,7 +112,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(Model.Conversions.HosieryUtils.RequiredMeasurements);
+                return this.HasRequiredMeasurements(RequiredMeasurements.Hosiery);
             }
         }
 
@@ -119,7 +120,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(Model.Conversions.ShoesUtils.RequiredMeasurements);
+                return this.HasRequiredMeasurements(RequiredMeasurements.Shoes);
             }
         }
 
@@ -127,7 +128,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return this.HasRequiredMeasurements(Model.Conversions.SkiBootsUtils.RequiredMeasurements);
+                return this.HasRequiredMeasurements(RequiredMeasurements.SkiBoots);
             }
         }
 
@@ -145,11 +146,11 @@ namespace Pocketailor.ViewModel
             {
                 if (App.VM.SelectedProfile.Gender == Gender.Male)
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsMens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.WetsuitMens);
                 }
                 else
                 {
-                    return this.HasRequiredMeasurements(Model.Conversions.WetsuitUtils.RequiredMeasurementsWomens);
+                    return this.HasRequiredMeasurements(RequiredMeasurements.WetsuitWomens);
                 }
             }
         }

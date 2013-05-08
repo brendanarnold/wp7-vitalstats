@@ -540,9 +540,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="4478.4764"
-     inkscape:cy="932.60318"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="4400.6059"
+     inkscape:cy="742.42975"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -618,13 +618,6 @@
        x="-89.035217"
        id="image8940"
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/profiles-page.png"
-       height="800"
-       width="480" />
-    <image
-       y="-127.96579"
-       x="-1102.1638"
-       id="image8951"
-       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/splash.png"
        height="800"
        width="480" />
     <rect
@@ -707,21 +700,14 @@
        x="-81.033264"
        y="1203.0507" />
     <image
-       y="-176.50975"
-       x="4756.5244"
+       y="-193.6526"
+       x="4162.2388"
        id="image13804"
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/dress-conversions-page.png"
        height="800"
        width="480" />
-    <image
-       width="480"
-       height="800"
-       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/dress-conversions-page.png"
-       id="image9180"
-       x="4160.5347"
-       y="-176.50975" />
     <g
-       transform="matrix(0.99260066,0,0,0.99260066,2428.7011,1557.6623)"
+       transform="matrix(0.99260066,0,0,0.99260066,1834.4154,1509.2336)"
        id="g13806">
       <rect
          style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:3.30684876;stroke-miterlimit:4;stroke-dasharray:none"
@@ -760,81 +746,41 @@
        id="rect13818"
        width="468.715"
        height="54.429279"
-       x="4761.8901"
-       y="123.38905" />
-    <rect
-       y="123.38905"
-       x="4165.9004"
-       height="54.429279"
-       width="468.715"
-       id="rect9182"
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:6.99928951;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+       x="4167.6045"
+       y="106.24619" />
     <image
-       y="-177.38768"
-       x="4756.2905"
+       y="-192.36809"
+       x="4162.0049"
        id="image13820"
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Photos/dress1-orig.jpg"
-       height="320.92007"
+       height="304.75763"
        width="478.51761" />
-    <image
-       width="478.51761"
-       height="320.92007"
-       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Photos/dress1-orig.jpg"
-       id="image9184"
-       x="4160.3008"
-       y="-177.38768" />
     <rect
        style="fill:#8abe2d;fill-opacity:1;stroke:none"
        id="rect13822"
        width="480.24084"
        height="67.680222"
-       x="4757.1885"
-       y="-17.284531" />
-    <rect
-       y="30.715469"
-       x="4161.1987"
-       height="67.680222"
-       width="480.24084"
-       id="rect9186"
-       style="fill:#8abe2d;fill-opacity:1;stroke:none" />
+       x="4162.9028"
+       y="-34.427387" />
     <text
        xml:space="preserve"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       x="4776.605"
-       y="28.818008"
+       x="4182.3193"
+       y="11.675151"
        id="text13824"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13826"
-         x="4776.605"
-         y="28.818008"
+         x="4182.3193"
+         y="11.675151"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Lobster;-inkscape-font-specification:Lobster">dress size</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text9188"
-       y="80.818008"
-       x="4180.6152"
-       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Lobster;-inkscape-font-specification:Lobster"
-         y="80.818008"
-         x="4180.6152"
-         id="tspan9190"
-         sodipodi:role="line">dress size</tspan></text>
     <rect
        style="opacity:0.58407078;fill:#000000;fill-opacity:1;stroke:none"
        id="rect13828"
        width="478.81232"
        height="27.274118"
-       x="4759.0859"
-       y="-143.87633" />
-    <rect
-       y="-143.87633"
-       x="4163.0962"
-       height="27.274118"
-       width="478.81232"
-       id="rect9192"
-       style="opacity:0.58407078;fill:#000000;fill-opacity:1;stroke:none" />
+       x="4164.8003"
+       y="-161.01918" />
     <image
        y="-49.066414"
        x="2395.7144"
@@ -843,40 +789,19 @@
        height="800"
        width="480"
        clip-path="url(#clipPath8926)"
-       transform="translate(2361.6049,-130.82988)" />
-    <image
-       transform="translate(1765.6149,-130.82988)"
-       clip-path="url(#clipPath8926)"
-       width="480"
-       height="800"
-       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/screenshot2.png"
-       id="image9194"
-       x="2395.7144"
-       y="-49.066414" />
+       transform="translate(1767.3192,-147.97274)" />
     <text
        xml:space="preserve"
        style="font-size:22.36366463px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       x="5172.2632"
-       y="-142.80124"
+       x="4577.9775"
+       y="-159.94409"
        id="text13832"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan13834"
-         x="5172.2632"
-         y="-142.80124"
+         x="4577.9775"
+         y="-159.94409"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP">13:44</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text9208"
-       y="-142.80124"
-       x="4576.2734"
-       style="font-size:22.36366463px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-         y="-142.80124"
-         x="4576.2734"
-         id="tspan9210"
-         sodipodi:role="line">13:44</tspan></text>
     <image
        y="22.489309"
        x="2225.5134"
@@ -2541,14 +2466,14 @@
     <text
        xml:space="preserve"
        style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="4837.4355"
-       y="-238.86479"
+       x="4243.1499"
+       y="-256.00766"
        id="text14660"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan14662"
-         x="4837.4355"
-         y="-238.86479">With advert</tspan></text>
+         x="4243.1499"
+         y="-256.00766">With advert</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text14668"
@@ -2597,28 +2522,9 @@
          x="125.77838"
          y="-13.507541"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#636563;fill-opacity:1;font-family:Lobster;-inkscape-font-specification:Lobster">about</tspan></text>
-    <rect
-       style="fill:#8abe2d;fill-opacity:1;stroke:none"
-       id="rect14684"
-       width="337.14285"
-       height="100"
-       x="-1010"
-       y="458.07648" />
-    <text
-       xml:space="preserve"
-       style="font-size:74.60126495px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="-1001.7075"
-       y="521.73163"
-       id="text14680"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan14682"
-         x="-1001.7075"
-         y="521.73163"
-         style="fill:#ffffff">PKTAILOR</tspan></text>
     <image
-       y="-147.67863"
-       x="-1697.1981"
+       y="-167.67863"
+       x="-1125.7695"
        id="image8951-5"
        xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/splash.png"
        height="800"
@@ -3016,41 +2922,23 @@
        x="1857.1655"
        y="24.531956" />
     <rect
-       y="-125.9376"
-       x="4244.6611"
-       height="28.284271"
-       width="165.66502"
-       id="rect15097"
-       style="fill:#000000;fill-opacity:1;stroke:none" />
-    <rect
        style="fill:#000000;fill-opacity:1;stroke:none"
        id="rect12185-8"
        width="165.66502"
        height="28.284271"
-       x="4839.6406"
-       y="-125.9376" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text15099"
-       y="-106.52458"
-       x="4243.3242"
-       style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       xml:space="preserve"><tspan
-         y="-106.52458"
-         x="4243.3242"
-         id="tspan15101"
-         sodipodi:role="line">POCKETAILOR</tspan></text>
+       x="4245.355"
+       y="-143.08046" />
     <text
        xml:space="preserve"
        style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
-       x="4838.3037"
-       y="-106.52458"
+       x="4244.0181"
+       y="-123.66744"
        id="text12187-6"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan12189-1"
-         x="4838.3037"
-         y="-106.52458">POCKETAILOR</tspan></text>
+         x="4244.0181"
+         y="-123.66744">POCKETAILOR</tspan></text>
     <image
        width="480"
        height="800"
@@ -5325,49 +5213,70 @@
          x="-598.75812"
          y="-1053.3506">Use a 'home' screen?</tspan></text>
     <rect
-       y="62.339153"
-       x="5147.6636"
+       y="41.196297"
+       x="4555.3779"
        height="57.725777"
        width="57.725777"
        id="rect4806"
        style="fill:#000000;fill-opacity:0.53968255;stroke:#ffffff;stroke-width:0.85291946;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     <rect
-       style="fill:#8abe2d;fill-opacity:1;stroke:none"
-       id="rect13822-8"
-       width="480.24084"
-       height="24.823078"
-       x="4757.022"
-       y="141.37923" />
-    <text
-       xml:space="preserve"
-       style="font-size:43.12823868px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       x="5188.5205"
-       y="156.12138"
-       id="text4826"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4828"
-         x="5188.5205"
-         y="156.12138"
-         style="fill:#ffffff">...</tspan></text>
-    <rect
-       y="-88.67865"
-       x="4784.5142"
+       y="-105.82151"
+       x="4190.2285"
        height="57.725777"
        width="57.725777"
        id="rect4806-5"
        style="fill:#000000;fill-opacity:0.53968255;stroke:#ffffff;stroke-width:0.85291946;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       style="fill:#212021;fill-opacity:1;stroke:none"
+       id="rect3733"
+       width="480"
+       height="65.714287"
+       x="4161.7856"
+       y="540.57654" />
     <text
        xml:space="preserve"
-       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
-       x="5097.1426"
-       y="26.647903"
-       id="text4848"
+       style="font-size:43.12823868px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="4594.2349"
+       y="558.97852"
+       id="text4826"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan4850"
-         x="5097.1426"
-         y="26.647903"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe UI;-inkscape-font-specification:Segoe UI">(by region)</tspan></text>
+         id="tspan4828"
+         x="4594.2349"
+         y="558.97852"
+         style="fill:#ffffff">...</tspan></text>
+    <image
+       y="541.25977"
+       x="4375.3081"
+       id="image3743"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/appbar.globe.png"
+       height="55.796947"
+       width="55.796947" />
+    <path
+       transform="matrix(0.81608478,0,0,0.81608478,2264.7189,107.9028)"
+       d="m 2647.8572,566.29077 a 27.142857,27.142857 0 1 1 -54.2857,0 27.142857,27.142857 0 1 1 54.2857,0 z"
+       sodipodi:ry="27.142857"
+       sodipodi:rx="27.142857"
+       sodipodi:cy="566.29077"
+       sodipodi:cx="2620.7144"
+       id="path4584"
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart-4)"
+       d="M 4654.2857,70.933611 4858.5714,49.505039"
+       id="path4616"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="4894.9214"
+       y="42.760616"
+       id="text14660-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan14662-8"
+         x="4894.9214"
+         y="42.760616">Bing-like tips</tspan></text>
   </g>
 </svg>

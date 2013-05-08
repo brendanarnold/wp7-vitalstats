@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pocketailor.Model.AdjustmentFeedback
+namespace Pocketailor.Model.Adjustments
 {
     // The class that will get JSONified and sent over the wire to the server
     // Note the names are abbreviated since MongoDB stores fields with each entry
     public class Adjustment
     {
+        // Adjustment version format
+        public int v = AppConstants.ADJUSTMENT_FORMAT_VERSION;
+
         // Gender of the person the adjustment applies to 
         public Gender g;
 
@@ -18,8 +21,8 @@ namespace Pocketailor.Model.AdjustmentFeedback
         // Region
         public RegionIds r;
 
-        // Adjustment i.e. +1 means next size up, 0 is right, -1 is next size down
-        public int a;
+        // Adjustment factor, the factor by which the chart is scaled so that the correct size is obtained
+        public double a;
 
         // App ID, a GUID for this installlation
         public Guid i;
@@ -27,11 +30,8 @@ namespace Pocketailor.Model.AdjustmentFeedback
         // Conversion
         public ConversionId c;
 
-        // Measurement
-        public MeasurementId m;
-
-        // Measurement value
-        public double v;
+        // Measurements, a list of the measurements for this conversion
+        public List<double> m;
 
         // Time logged in UNIX time format i.e. seconds since 1/1/1970 UTC
         public double t;

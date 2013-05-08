@@ -33,23 +33,30 @@ namespace PocketailorDatabaseCreator
             }
             conversionsDb.CreateDatabase();
 
-            this.TestLoadingWithoutCsv(conversionsDb);
-            //PocketailorDatabaseCreator.Model.SetupDatabase.LoadConversions(conversionsDb);
+            //this.TestLoadingWithoutCsv(conversionsDb);
+            PocketailorDatabaseCreator.Model.SetupDatabase.LoadConversions(conversionsDb);
         }
 
 
         public void TestLoadingWithoutCsv(ConversionsDataContext db)
         {
-            db.DressSizes.InsertOnSubmit(new Pocketailor.Model.Conversions.DressSize()
+            Pocketailor.Model.Conversions.ConversionData cd = new Pocketailor.Model.Conversions.ConversionData()
             {
-                Chest = 50.0,
-                Waist = 50.0,
-                Hips = 50.0,
-                SizeLetter = "XS",
-                SizeNumber = "8",
-                Region = RegionIds.Worldwide,
-                Retailer = RetailId.ASOS,
-            });
+                Measurements = new Dictionary<MeasurementId, List<double?>>()
+                {
+                    {MeasurementId.Chest, new List<double?>() {null, 2, 3, 4, null }},
+                    {MeasurementId.Hips, new List<double?>() {1, 2, 3, 4, 5 }},
+                    {MeasurementId.Waist, new List<double?>() {1, 2, 3, 4, 5 }},
+                },
+                Conversion = ConversionId.DressSize,
+                Region = RegionIds.UK,
+                Retailer = RetailId.MarksSpencer,
+                Gender = Gender.Female,
+                GeneralSizes = new List<string>() { "XS", "S", "M", "L", "XL" },
+                RegionalSizes = new List<string>() { "8", "10", "12", "14", "16" },
+            };
+            cd.JsonifyData();
+            db.ConversionData.InsertOnSubmit(cd);
             db.SubmitChanges();
         }
 

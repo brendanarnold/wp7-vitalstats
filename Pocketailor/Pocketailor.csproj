@@ -164,22 +164,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppConstants.cs" />
-    <Compile Include="Model\AdjustmentFeedback\Adjustment.cs" />
-    <Compile Include="Model\AdjustmentFeedback\FeedbackAgent.cs" />
+    <Compile Include="Model\Adjustments\Adjustment.cs" />
+    <Compile Include="Model\Adjustments\AdjustmentUtils.cs" />
+    <Compile Include="Model\Adjustments\FeedbackAgent.cs" />
     <Compile Include="Model\AppDataContext.cs" />
+    <Compile Include="Model\Cache.cs" />
     <Compile Include="Model\ConversionsDataContext.cs" />
-    <Compile Include="Model\Conversions\Bra.cs" />
-    <Compile Include="Model\Conversions\DressSize.cs" />
-    <Compile Include="Model\Conversions\Hat.cs" />
-    <Compile Include="Model\Conversions\Hosiery.cs" />
-    <Compile Include="Model\Conversions\IConversionData.cs" />
-    <Compile Include="Model\Conversions\Shirt.cs" />
-    <Compile Include="Model\Conversions\Shoes.cs" />
-    <Compile Include="Model\Conversions\SkiBoots.cs" />
-    <Compile Include="Model\Conversions\Suit.cs" />
-    <Compile Include="Model\Conversions\TennisRaquetSize.cs" />
-    <Compile Include="Model\Conversions\Trousers.cs" />
-    <Compile Include="Model\Conversions\Wetsuit.cs" />
+    <Compile Include="Model\Conversions\ConversionData.cs" />
+    <Compile Include="Model\Conversions\RequiredMeasurements.cs" />
     <Compile Include="Model\Static\ConversionIds.cs" />
     <Compile Include="Model\Static\Gender.cs" />
     <Compile Include="Model\Static\MeasurementIds.cs" />
@@ -212,7 +204,7 @@
     <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\SettingsHelpers.cs" />
+    <Compile Include="Model\SettingsHelpers.cs" />
     <Compile Include="View\Controls\ConversionBtn.xaml.cs">
       <DependentUpon>ConversionBtn.xaml</DependentUpon>
     </Compile>

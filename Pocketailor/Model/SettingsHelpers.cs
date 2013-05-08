@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
 
 
-namespace Pocketailor.ViewModel
+namespace Pocketailor.Model
 {
     // Settings that apply to the backend
     public class SettingsHelpers

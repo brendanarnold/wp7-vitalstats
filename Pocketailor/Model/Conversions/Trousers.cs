@@ -10,18 +10,6 @@ namespace Pocketailor.Model.Conversions
 
     public static class TrousersUtils
     {
-        public static List<MeasurementId> RequiredMeasurementsMens = new List<MeasurementId>()
-        {
-            MeasurementId.Waist,
-            MeasurementId.InsideLeg,
-        };
-
-        public static List<MeasurementId> RequiredMeasurementsWomens = new List<MeasurementId>()
-        {
-            MeasurementId.Waist,
-            MeasurementId.InsideLeg,
-            MeasurementId.Hips,
-        };
 
     
 

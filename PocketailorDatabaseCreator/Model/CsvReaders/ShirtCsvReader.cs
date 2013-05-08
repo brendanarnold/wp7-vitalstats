@@ -16,20 +16,20 @@ namespace PocketailorDatabaseCreator.Model.CsvReaders
         public ConversionsDataContext Db { get; set; }
         public void QueueWriteObj(CsvLine csvLine)
         {
-            this.Db.Shirts.InsertOnSubmit(new Pocketailor.Model.Conversions.Shirt()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Gender = csvLine.Gender,
-                Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Neck = csvLine.GetMeasurementOrNull(MeasurementId.Neck),
-                TorsoLength = csvLine.GetMeasurementOrNull(MeasurementId.TorsoLength),
-                Sleeve = csvLine.GetMeasurementOrNull(MeasurementId.Sleeve),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
+            //this.Db.Shirts.InsertOnSubmit(new Pocketailor.Model.Conversions.Shirt()
+            //{
+            //    Retailer = csvLine.Retailer,
+            //    Region = csvLine.Region,
+            //    Gender = csvLine.Gender,
+            //    Chest = csvLine.GetMeasurementOrNull(MeasurementId.Chest),
+            //    Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
+            //    Neck = csvLine.GetMeasurementOrNull(MeasurementId.Neck),
+            //    TorsoLength = csvLine.GetMeasurementOrNull(MeasurementId.TorsoLength),
+            //    Sleeve = csvLine.GetMeasurementOrNull(MeasurementId.Sleeve),
+            //    Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
+            //    SizeLetter = csvLine.SizeLetter,
+            //    SizeNumber = csvLine.SizeNumber,
+            //});
         }
     }
 

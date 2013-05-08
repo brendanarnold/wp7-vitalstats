@@ -12,12 +12,6 @@ namespace Pocketailor.Model.Conversions
  
     public static class HosieryUtils
     {
-        public static List<MeasurementId> RequiredMeasurements = new List<MeasurementId>()
-        {
-            MeasurementId.Hips,
-            MeasurementId.Waist,
-            MeasurementId.InsideLeg,
-        };
 
        
 

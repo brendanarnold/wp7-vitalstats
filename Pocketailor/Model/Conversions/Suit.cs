@@ -10,30 +10,7 @@ namespace Pocketailor.Model.Conversions
 
     public static class SuitUtils
     {
-        public static List<MeasurementId> RequiredMeasurementsMens = new List<MeasurementId>()
-        {
-            MeasurementId.Waist,
-            MeasurementId.Shoulder,
-            MeasurementId.Sleeve,
-            MeasurementId.Chest,
-            MeasurementId.InsideLeg,
-            MeasurementId.Neck,
-            MeasurementId.TorsoLength,
-            
-        };
-
-        public static List<MeasurementId> RequiredMeasurementsWomens = new List<MeasurementId>()
-        {
-            MeasurementId.Waist,
-            MeasurementId.Shoulder,
-            MeasurementId.Sleeve,
-            MeasurementId.Chest,
-            MeasurementId.InsideLeg,
-            MeasurementId.Neck,
-            MeasurementId.TorsoLength,
-            MeasurementId.Hips,
-        };
-
+ 
         
 
     }

@@ -53,7 +53,7 @@ namespace Pocketailor
         public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
         public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
 
-
-
+        // This app generates adjustmnts of this version
+        public static int ADJUSTMENT_FORMAT_VERSION = 1;
     }
 }

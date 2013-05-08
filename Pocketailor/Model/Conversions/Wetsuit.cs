@@ -12,21 +12,6 @@ namespace Pocketailor.Model.Conversions
 
     public static class WetsuitUtils
     {
-        public static List<MeasurementId> RequiredMeasurementsMens = new List<MeasurementId>()
-        {
-            MeasurementId.Height,
-            MeasurementId.Chest,
-            MeasurementId.Waist,
-            MeasurementId.Weight,
-        };
-        public static List<MeasurementId> RequiredMeasurementsWomens = new List<MeasurementId>()
-        {
-            MeasurementId.Height,
-            MeasurementId.Chest,
-            MeasurementId.Waist,
-            MeasurementId.Weight,
-            MeasurementId.Hips,
-        };
 
        
 

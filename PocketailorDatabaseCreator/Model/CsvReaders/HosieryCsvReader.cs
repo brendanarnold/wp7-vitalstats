@@ -17,16 +17,16 @@ namespace PocketailorDatabaseCreator.Model.CsvReaders
         public ConversionsDataContext Db { get; set; }
         public void QueueWriteObj(CsvLine csvLine)
         {
-            this.Db.Hosiery.InsertOnSubmit(new Hosiery()
-            {
-                Retailer = csvLine.Retailer,
-                Region = csvLine.Region,
-                Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
-                Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
-                InsideLeg = csvLine.GetMeasurementOrNull(MeasurementId.InsideLeg),
-                SizeLetter = csvLine.SizeLetter,
-                SizeNumber = csvLine.SizeNumber,
-            });
+            //this.Db.Hosiery.InsertOnSubmit(new Hosiery()
+            //{
+            //    Retailer = csvLine.Retailer,
+            //    Region = csvLine.Region,
+            //    Waist = csvLine.GetMeasurementOrNull(MeasurementId.Waist),
+            //    Hips = csvLine.GetMeasurementOrNull(MeasurementId.Hips),
+            //    InsideLeg = csvLine.GetMeasurementOrNull(MeasurementId.InsideLeg),
+            //    SizeLetter = csvLine.SizeLetter,
+            //    SizeNumber = csvLine.SizeNumber,
+            //});
         }
     }
 }
