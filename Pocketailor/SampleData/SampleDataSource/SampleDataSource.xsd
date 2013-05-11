@@ -16,7 +16,6 @@
       <xs:element name="SelectedStat" type="tns:SelectedStat" />
       <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
       <xs:element name="Regions" type="tns:Regions" />
-      <xs:element name="GroupedConversions" type="tns:GroupedConversions" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
     <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
@@ -25,6 +24,7 @@
     <xs:attribute name="ShowHiddenConversions" type="xs:boolean" />
     <xs:attribute name="AppVersion" type="xs:string" />
     <xs:attribute name="HasTrouserMeasurements" type="xs:boolean" />
+    <xs:attribute name="SelectedRegion" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Profiles">
     <xs:sequence>
@@ -213,26 +213,6 @@
   </xs:complexType>
   <xs:complexType name="RegionsItem">
     <xs:attribute name="Name" type="xs:string" />
-  </xs:complexType>
-  <xs:complexType name="GroupedConversions">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="GroupedConversionsItem" type="tns:GroupedConversionsItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="GroupedConversionsItem">
-    <xs:sequence>
-      <xs:element name="Items" type="tns:Items" />
-    </xs:sequence>
-    <xs:attribute name="Title" type="xs:string" />
-  </xs:complexType>
-  <xs:complexType name="Items">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="ItemsItem" type="tns:ItemsItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ItemsItem">
-    <xs:attribute name="FormattedValue" type="xs:string" />
-    <xs:attribute name="BrandName" type="xs:string" />
   </xs:complexType>
   <xs:simpleType name="Basic-Image">
     <xs:restriction base="xs:anyURI" />

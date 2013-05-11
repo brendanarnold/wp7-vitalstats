@@ -66,8 +66,8 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        private ObservableCollection<Group<ConversionData>> _groupedConversions;
-        public ObservableCollection<Group<ConversionData>> GroupedConversions
+        private ObservableCollection<LongListSelectorGroup<ConversionData>> _groupedConversions;
+        public ObservableCollection<LongListSelectorGroup<ConversionData>> GroupedConversions
         {
             get { return this._groupedConversions; }
             set
@@ -169,14 +169,14 @@ namespace Pocketailor.ViewModel
                         select d).AsEnumerable();
 
             // Now do Linq-to-object stuff using methods, getters etc.
-            this.GroupedConversions = new ObservableCollection<Group<ConversionData>>(
+            this.GroupedConversions = new ObservableCollection<LongListSelectorGroup<ConversionData>>(
                         from d in conversions
                         orderby d.BrandName ascending
                         // Group into sublists organised by first letter of the retailer
                         group d by d.BrandName[0].ToString().ToUpper()
                             into g
                             orderby g.Key ascending
-                            select new Group<Model.Conversions.ConversionData>(g.Key, g)
+                            select new LongListSelectorGroup<Model.Conversions.ConversionData>(g.Key, g)
                         );
 
             // Now do the fits
@@ -219,51 +219,7 @@ namespace Pocketailor.ViewModel
         }
 
         
-        public class Group<T> : IEnumerable<T>
-        {
-            public Group(string title, IEnumerable<T> items)
-            {
-                this.Title = title;
-                this.Items = new List<T>(items);
-            }
-
-            public override bool Equals(object obj)
-            {
-                Group<T> that = obj as Group<T>;
-
-                return (that != null) && (this.Title.Equals(that.Title));
-            }
-
-            public string Title
-            {
-                get;
-                set;
-            }
-
-            public IList<T> Items
-            {
-                get;
-                set;
-            }
-
-            #region IEnumerable<T> Members
-
-            public IEnumerator<T> GetEnumerator()
-            {
-                return this.Items.GetEnumerator();
-            }
-
-            #endregion
-
-            #region IEnumerable Members
-
-            System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-            {
-                return this.Items.GetEnumerator();
-            }
-
-            #endregion
-        }
+        
 
         public class NameValuePair : INotifyPropertyChanged
         {

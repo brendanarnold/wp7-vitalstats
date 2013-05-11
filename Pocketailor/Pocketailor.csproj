@@ -180,7 +180,9 @@
     <Compile Include="Model\Static\MeasurementTypeIds.cs" />
     <Compile Include="Model\Static\UnitCultureIds.cs" />
     <Compile Include="Model\Static\UnitIds.cs" />
+    <Compile Include="SampleData\SampleDataSource\LongListSampleData.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
+    <Compile Include="ViewModel\LongListSelectorGroup.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\StatsPageViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

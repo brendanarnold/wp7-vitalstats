@@ -278,13 +278,22 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private GroupedConversions _GroupedConversions = new GroupedConversions();
+		private string _SelectedRegion = string.Empty;
 
-		public GroupedConversions GroupedConversions
+		public string SelectedRegion
 		{
 			get
 			{
-				return this._GroupedConversions;
+				return this._SelectedRegion;
+			}
+
+			set
+			{
+				if (this._SelectedRegion != value)
+				{
+					this._SelectedRegion = value;
+					this.OnPropertyChanged("SelectedRegion");
+				}
 			}
 		}
 	}
@@ -1956,107 +1965,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
-	}
-
-	public class GroupedConversionsItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _Title = string.Empty;
-
-		public string Title
-		{
-			get
-			{
-				return this._Title;
-			}
-
-			set
-			{
-				if (this._Title != value)
-				{
-					this._Title = value;
-					this.OnPropertyChanged("Title");
-				}
-			}
-		}
-
-		private Items _Items = new Items();
-
-		public Items Items
-		{
-			get
-			{
-				return this._Items;
-			}
-		}
-	}
-
-	public class GroupedConversions : System.Collections.ObjectModel.ObservableCollection<GroupedConversionsItem>
-	{ 
-	}
-
-	public class ItemsItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _FormattedValue = string.Empty;
-
-		public string FormattedValue
-		{
-			get
-			{
-				return this._FormattedValue;
-			}
-
-			set
-			{
-				if (this._FormattedValue != value)
-				{
-					this._FormattedValue = value;
-					this.OnPropertyChanged("FormattedValue");
-				}
-			}
-		}
-
-		private string _BrandName = string.Empty;
-
-		public string BrandName
-		{
-			get
-			{
-				return this._BrandName;
-			}
-
-			set
-			{
-				if (this._BrandName != value)
-				{
-					this._BrandName = value;
-					this.OnPropertyChanged("BrandName");
-				}
-			}
-		}
-	}
-
-	public class Items : System.Collections.ObjectModel.ObservableCollection<ItemsItem>
-	{ 
 	}
 #endif
 }

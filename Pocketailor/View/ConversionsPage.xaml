@@ -11,6 +11,7 @@
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
+    xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -117,8 +118,12 @@
 				<ListBox Grid.Row="1" ItemsSource="{Binding Conversions}"  Style="{StaticResource SubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
 			</Grid>
 		</DataTemplate>
+    
+  
+  <SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
 
 	</phone:PhoneApplicationPage.Resources>
+  
 	<phone:PhoneApplicationPage.Background>
 		<StaticResource ResourceKey="PageBGColor"/>
 	</phone:PhoneApplicationPage.Background>
@@ -178,9 +183,14 @@
 				<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 			</Grid>
 			
-			<Border x:Name="pageTitleBorder"   Grid.Row="1" Margin="0" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
-				<TextBlock TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
-			</Border>
+			<Grid x:Name="pageTitleContainerGrid" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
+				<TextBlock x:Name="regionTextBlock" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,24,0" FontSize="26.667" Text="{Binding SelectedRegion}"/>
+			</Grid>
 			
 		</Grid>
 
@@ -189,13 +199,14 @@
 		-->
 
 		
-		<toolkit:LongListSelector x:Name="conversionsLongListSelector" Grid.Row="1" IsFlatList="False" ItemsSource="{Binding GroupedConversions}" >
+		<toolkit:LongListSelector x:Name="conversionsLongListSelector" Grid.Row="1" IsFlatList="False"
+                                  d:DataContext="{StaticResource LongListSampleDataInstance}" ItemsSource="{Binding GroupedConversions}" >
 			<toolkit:LongListSelector.Resources>
 				<DataTemplate x:Key="groupHeaderTemplate">
 					<!-- The header for the group e.g. letter -->
-					<Grid Background="{StaticResource TileBGColor}" Width="60" Height="60">
-						<TextBlock  Foreground="{StaticResource PageTxtColor}" FontSize="26.667" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">A</TextBlock>
-					</Grid>
+					<Border Background="{StaticResource TileBGColor}" Width="62" Height="62" Margin="24,12,23,5" HorizontalAlignment="Left">
+						<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" Padding="6" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+					</Border>
 				</DataTemplate>
 				<DataTemplate x:Key="groupFooterTemplate">
 					<!-- The footer for each group -->
@@ -213,10 +224,64 @@
 						<TextBlock>A</TextBlock>
 					</Grid>
 				</DataTemplate>
+				<Style x:Key="bigSmallBtnStyle" TargetType="Button">
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate TargetType="Button">
+								<Grid>
+									<TextBlock FontSize="24" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
+								</Grid>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
 				<DataTemplate x:Key="itemTemplate">
 					<!-- Applied to each item -->
 					<Grid>
-						<TextBlock Text="Placeholder text" Foreground="{StaticResource PageTxtColor}"></TextBlock>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<Grid x:Name="conversionGrid" Margin="24,0,0,6" Tap="conversionGrid_Tap">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"></ColumnDefinition>
+								<ColumnDefinition Width="*"></ColumnDefinition>
+							</Grid.ColumnDefinitions>
+							<TextBlock Grid.Column="0" Text="{Binding BrandName}" Foreground="{StaticResource PageTxtColor}" FontSize="26.667"></TextBlock>
+							<TextBlock Grid.Column="1" Text="{Binding FormattedValue}" Foreground="{StaticResource SubTitleColor}" FontSize="26.667" Margin="5,0,0,0"></TextBlock>
+						</Grid>
+						<Grid x:Name="adjustmentContainer" Margin="24,0,24,24" Visibility="Visible" Grid.Row="1">
+							
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<Button x:Name="tooBigBtn" Content="too big" Grid.Column="0" Style="{StaticResource bigSmallBtnStyle}" Tap="tooBigBtn_Tap"/>
+							<Button x:Name="tooSmallBtn" Content="too small" Grid.Column="1"  Style="{StaticResource bigSmallBtnStyle}" Tap="tooSmallBtn_Tap"/>
+							<Button x:Name="hideBrandBtn" Content="hide brand" Grid.Column="2" HorizontalAlignment="Right" Margin="0" Tap="hideBrandBtn_Tap">
+								<Button.Resources>
+									<Style x:Key="ButtonStyle1" TargetType="Button">
+										<Setter Property="Template">
+											<Setter.Value>
+												<ControlTemplate TargetType="Button">
+													<Grid>
+														<Border Background="{StaticResource SubTitleColor}" Padding="12,4">
+															<TextBlock Text="{TemplateBinding Content}" Foreground="{StaticResource AccentColor}" FontFamily="Segoe WP" FontSize="21.333"  />
+														</Border>
+													</Grid>
+												</ControlTemplate>
+											</Setter.Value>
+										</Setter>
+									</Style>
+								</Button.Resources>
+								<Button.Style>
+									<StaticResource ResourceKey="ButtonStyle1"/>
+								</Button.Style>
+							</Button>
+
+							
+						</Grid>
 					</Grid>
 				</DataTemplate>
 				<DataTemplate x:Key="listFooterTemplate">
@@ -238,12 +303,14 @@
 			<toolkit:LongListSelector.ItemTemplate>
 				<StaticResource ResourceKey="itemTemplate"/>
 			</toolkit:LongListSelector.ItemTemplate>
+			<!--
 			<toolkit:LongListSelector.GroupItemTemplate>
 				<StaticResource ResourceKey="groupItemTemplate"/>
 			</toolkit:LongListSelector.GroupItemTemplate>
 			<toolkit:LongListSelector.GroupItemsPanel>
 				<StaticResource ResourceKey="groupItemsPanelTemplate"/>
 			</toolkit:LongListSelector.GroupItemsPanel>
+			-->
 			<toolkit:LongListSelector.GroupFooterTemplate>
 				<StaticResource ResourceKey="groupFooterTemplate"/>
 			</toolkit:LongListSelector.GroupFooterTemplate>
