@@ -1,1 +1,1 @@
-Retailer	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	TorsoLength	Hips	SizeLetter	SizeNumber
+Retailer	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	TorsoLength	Hips	GeneralSize	RegionalSize

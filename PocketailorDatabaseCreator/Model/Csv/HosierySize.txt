@@ -1,1 +1,1 @@
-Retailer	Region	SizeLetter	SizeNumber
+Retailer	Region	RegionalSize	GeneralSize

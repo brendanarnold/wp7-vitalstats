@@ -162,7 +162,7 @@
 				<RowDefinition Height="2*"/>
 				<RowDefinition Height="1*"/>
 			</Grid.RowDefinitions>
-			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
+			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="2,0,-2,0"/>
 			
 			<Grid x:Name="titleBarGrid"  Grid.Row="0" Margin="0" Background="Black" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
@@ -189,42 +189,46 @@
 		-->
 
 		
-		<toolkit:LongListSelector Grid.Row="1" >
+		<toolkit:LongListSelector x:Name="conversionsLongListSelector" Grid.Row="1" IsFlatList="False" ItemsSource="{Binding GroupedConversions}" >
 			<toolkit:LongListSelector.Resources>
 				<DataTemplate x:Key="groupHeaderTemplate">
 					<!-- The header for the group e.g. letter -->
-					<Grid Background="{StaticResource TileBGColor}">
-						<TextBlock Text="{Binding Letter}" Foreground="{StaticResource PageTextColor}">A</TextBlock>
+					<Grid Background="{StaticResource TileBGColor}" Width="60" Height="60">
+						<TextBlock  Foreground="{StaticResource PageTxtColor}" FontSize="26.667" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">A</TextBlock>
 					</Grid>
 				</DataTemplate>
 				<DataTemplate x:Key="groupFooterTemplate">
 					<!-- The footer for each group -->
 					<!--
-					<Grid/>
+					
 					-->
 				</DataTemplate>
 				<ItemsPanelTemplate x:Key="groupItemsPanelTemplate">
 					<!-- The selection dialog container -->
-					<StackPanel/>
+					<toolkit:WrapPanel></toolkit:WrapPanel>
 				</ItemsPanelTemplate>
 				<DataTemplate x:Key="groupItemTemplate">
 					<!-- The individual item in the selector dialog -->
-					<Grid/>
+					<Grid>
+						<TextBlock>A</TextBlock>
+					</Grid>
 				</DataTemplate>
 				<DataTemplate x:Key="itemTemplate">
 					<!-- Applied to each item -->
-					<Grid/>
+					<Grid>
+						<TextBlock Text="Placeholder text" Foreground="{StaticResource PageTxtColor}"></TextBlock>
+					</Grid>
 				</DataTemplate>
 				<DataTemplate x:Key="listFooterTemplate">
 					<!-- Bottom of whole control -->
 					<Grid/>
 				</DataTemplate>
 				<DataTemplate x:Key="listHeaderTemplate">
-					<!-- Top of whol control -->
+					<!-- Top of whole control -->
 					<Grid/>
 				</DataTemplate>
-
 			</toolkit:LongListSelector.Resources>
+
 			<toolkit:LongListSelector.ListHeaderTemplate>
 				<StaticResource ResourceKey="listHeaderTemplate"/>
 			</toolkit:LongListSelector.ListHeaderTemplate>
@@ -246,9 +250,6 @@
 			<toolkit:LongListSelector.GroupHeaderTemplate>
 				<StaticResource ResourceKey="groupHeaderTemplate"/>
 			</toolkit:LongListSelector.GroupHeaderTemplate>
-			
-
-
 		</toolkit:LongListSelector>
 
 		<Border Grid.Row="2"   Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">

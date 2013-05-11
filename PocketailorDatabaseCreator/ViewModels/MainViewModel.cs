@@ -42,11 +42,11 @@ namespace PocketailorDatabaseCreator
         {
             Pocketailor.Model.Conversions.ConversionData cd = new Pocketailor.Model.Conversions.ConversionData()
             {
-                Measurements = new Dictionary<MeasurementId, List<double?>>()
+                Measurements = new Dictionary<MeasurementId, List<double>>()
                 {
-                    {MeasurementId.Chest, new List<double?>() {null, 2, 3, 4, null }},
-                    {MeasurementId.Hips, new List<double?>() {1, 2, 3, 4, 5 }},
-                    {MeasurementId.Waist, new List<double?>() {1, 2, 3, 4, 5 }},
+                    {MeasurementId.Chest, new List<double>() {-1, 2, 3, 4, -1 }},
+                    {MeasurementId.Hips, new List<double>() {1, 2, 3, 4, 5 }},
+                    {MeasurementId.Waist, new List<double>() {1, 2, 3, 4, 5 }},
                 },
                 Conversion = ConversionId.DressSize,
                 Region = RegionIds.UK,

@@ -10,25 +10,25 @@ namespace PocketailorDatabaseCreator.Model
     {
         public CsvLine()
         {
-            this.Measurements = new Dictionary<MeasurementId, double?>();
+            this.Measurements = new Dictionary<MeasurementId, double>();
         }
-        public Dictionary<MeasurementId, double?> Measurements;
+        public Dictionary<MeasurementId, double> Measurements;
         public RetailId Retailer;
         public RegionIds Region;
         public ConversionId Conversion;
-        public string SizeLetter;
-        public string SizeNumber;
+        public string RegionalSize;
+        public string GeneralSize;
         public Gender Gender;
-        public double? GetMeasurementOrNull(MeasurementId id)
+        public double GetMeasurementOrNull(MeasurementId id)
         {
-            double? d;
+            double d;
             if (this.Measurements.TryGetValue(id, out d))
             {
                 return d;
             }
             else
             {
-                return null;
+                return -1;
             }
         }
 

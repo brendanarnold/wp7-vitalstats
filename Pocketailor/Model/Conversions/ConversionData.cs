@@ -39,6 +39,7 @@ namespace Pocketailor.Model.Conversions
                 if (this._data == null && this.JsonifiedData != null)
                 {
                     this._data = JsonConvert.DeserializeObject<JsonifiableDataContainer>(this.JsonifiedData);
+
                 }
                 else if (this._data == null)
                 {
@@ -58,10 +59,10 @@ namespace Pocketailor.Model.Conversions
         }
 
 
-        public Dictionary<MeasurementId, List<double?>> Measurements {
+        public Dictionary<MeasurementId, List<double>> Measurements {
             get
             {
-                if (this.Data.Measurements == null) this.Data.Measurements = new Dictionary<MeasurementId, List<double?>>();
+                if (this.Data.Measurements == null) this.Data.Measurements = new Dictionary<MeasurementId, List<double>>();
                 return this.Data.Measurements;
             }
             set
@@ -112,7 +113,15 @@ namespace Pocketailor.Model.Conversions
         // Index of the sizes that best fits
         public int BestFitInd { get; set; }
 
-        // Returns the formatted strin of the best fit
+        public string BrandName
+        {
+            get
+            {
+                return Lookup.Retail[this.Retailer];
+            }
+        }
+
+        // Returns the formatted string of the best fit
         public string FormattedValue
         {
             get
@@ -146,7 +155,7 @@ namespace Pocketailor.Model.Conversions
                 List<double> vals = new List<double>();
                 foreach (MeasurementId mID in measuredVals.Keys)
                 {
-                    vals.Add((this.Measurements[mID][i].HasValue) ? (double)this.Measurements[mID][i] - measuredVals[mID] : 0.0);
+                    vals.Add((this.Measurements[mID][i] != -1) ? (double)this.Measurements[mID][i] - measuredVals[mID] : 0.0);
                 }
                 if (vals.Any(x => x < 0)) continue;
                 double chiSq = vals.Sum(x => x * x);
@@ -174,9 +183,10 @@ namespace Pocketailor.Model.Conversions
 
     public class JsonifiableDataContainer
     {
-        public Dictionary<MeasurementId, List<double?>> Measurements { get; set; }
+        public Dictionary<MeasurementId, List<double>> Measurements { get; set; }
         public List<string> RegionalSizes { get; set; }
         public List<string> GeneralSizes { get; set; }
+
     }
 
 

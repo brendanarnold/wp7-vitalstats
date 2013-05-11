@@ -1,1 +1,1 @@
-﻿Retailer	Region	Gender	Chest	Neck	Sleeve	BodyLength	Hips	SizeLetter	SizeNumber
+﻿Retailer	Region	Gender	Chest	Neck	Sleeve	BodyLength	Hips	GeneralSize	RegionalSize

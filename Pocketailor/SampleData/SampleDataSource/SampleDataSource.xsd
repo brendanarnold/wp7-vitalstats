@@ -15,8 +15,8 @@
       <xs:element name="SuggestedStatTemplate" type="tns:SuggestedStatTemplate" />
       <xs:element name="SelectedStat" type="tns:SelectedStat" />
       <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
-      <xs:element name="ConversionsByRegion" type="tns:ConversionsByRegion" />
       <xs:element name="Regions" type="tns:Regions" />
+      <xs:element name="GroupedConversions" type="tns:GroupedConversions" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
     <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
@@ -206,28 +206,6 @@
     <xs:attribute name="IsProtected" type="xs:boolean" />
     <xs:attribute name="Name" type="xs:string" />
   </xs:complexType>
-  <xs:complexType name="ConversionsByRegion">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="ConversionsByRegionItem" type="tns:ConversionsByRegionItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ConversionsByRegionItem">
-    <xs:sequence>
-      <xs:element name="Conversions" type="tns:Conversions" />
-    </xs:sequence>
-    <xs:attribute name="Name" type="xs:string" />
-  </xs:complexType>
-  <xs:complexType name="Conversions">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="ConversionsItem" type="tns:ConversionsItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ConversionsItem">
-    <xs:attribute name="Name" type="xs:string" />
-    <xs:attribute name="FormattedValue" type="xs:string" />
-    <xs:attribute name="IsHidden" type="xs:boolean" />
-    <xs:attribute name="IsVisible" type="xs:boolean" />
-  </xs:complexType>
   <xs:complexType name="Regions">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="RegionsItem" type="tns:RegionsItem" />
@@ -235,6 +213,26 @@
   </xs:complexType>
   <xs:complexType name="RegionsItem">
     <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="GroupedConversions">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="GroupedConversionsItem" type="tns:GroupedConversionsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GroupedConversionsItem">
+    <xs:sequence>
+      <xs:element name="Items" type="tns:Items" />
+    </xs:sequence>
+    <xs:attribute name="Title" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Items">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="ItemsItem" type="tns:ItemsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemsItem">
+    <xs:attribute name="FormattedValue" type="xs:string" />
+    <xs:attribute name="BrandName" type="xs:string" />
   </xs:complexType>
   <xs:simpleType name="Basic-Image">
     <xs:restriction base="xs:anyURI" />

@@ -53,18 +53,18 @@ namespace PocketailorDatabaseCreator.Model
                         case "Gender":
                             csvLine.Gender = (Gender)Enum.Parse(typeof(Gender), els[i], true);
                             continue;
-                        case "SizeLetter":
-                            csvLine.SizeLetter = els[i];
+                        case "GeneralSize":
+                            csvLine.GeneralSize = els[i];
                             continue;
-                        case "SizeNumber":
-                            csvLine.SizeNumber = els[i];
+                        case "RegionalSize":
+                            csvLine.RegionalSize = els[i];
                             continue;
                         // Assume all remaining properties are numbers
                         default:
-                            double? d;
+                            double d;
                             if (els[i] == String.Empty)
                             {
-                                d = null;
+                                d = -1;
                             }
                             else
                             {
@@ -84,7 +84,7 @@ namespace PocketailorDatabaseCreator.Model
                     cd.Conversion = csvLine.Conversion;
                     cd.Gender = csvLine.Gender;
                 }
-                // See if need to write anew object to the database i.e. the dataset has changed
+                // See if need to write a new object to the database i.e. the dataset has changed
                 if (csvLine.Region != cd.Region
                     || csvLine.Retailer != cd.Retailer
                     || csvLine.Conversion != cd.Conversion
@@ -105,9 +105,11 @@ namespace PocketailorDatabaseCreator.Model
                 foreach (MeasurementId mId in csvLine.Measurements.Keys)
                 {
                     if (!cd.Measurements.Keys.Contains(mId)) 
-                        cd.Measurements.Add(mId, new List<double?>());
+                        cd.Measurements.Add(mId, new List<double>());
                     cd.Measurements[mId].Add(csvLine.Measurements[mId]);
                 }
+                cd.RegionalSizes.Add(csvLine.RegionalSize);
+                cd.GeneralSizes.Add(csvLine.GeneralSize);
 
                 // Write to db is obj count too high
                 //if ((objNum % AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE) == 0)

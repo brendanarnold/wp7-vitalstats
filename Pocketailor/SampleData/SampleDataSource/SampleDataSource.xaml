@@ -316,56 +316,6 @@
     <SampleData:QuickProfilesItem Gender="Male" Id="43" IsProtected="True" Name="Me" />
     <SampleData:QuickProfilesItem Gender="Unspecified" Id="78" IsProtected="False" Name="Andrea" />
   </SampleData:SampleDataSource.QuickProfiles>
-  <SampleData:SampleDataSource.ConversionsByRegion>
-    <SampleData:ConversionsByRegionItem Name="UK">
-      <SampleData:ConversionsByRegionItem.Conversions>
-        <SampleData:ConversionsItem Name="Primark" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Marks &amp; Spencer" FormattedValue="8 (S)" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Debehams" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Jaeger" FormattedValue="9 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Gap" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Banana Republic" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="White Stuff" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="TopShop" FormattedValue="9 (M)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="H&amp;M" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="House Of Fraser" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Next" FormattedValue="8 (S)" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="ASOS" FormattedValue="8 (S)" IsHidden="False" IsVisible="True" />
-      </SampleData:ConversionsByRegionItem.Conversions>
-    </SampleData:ConversionsByRegionItem>
-    <SampleData:ConversionsByRegionItem Name="EUROPE">
-      <SampleData:ConversionsByRegionItem.Conversions>
-        <SampleData:ConversionsItem Name="Nunc aptent" FormattedValue="Aliquet hac aptent" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Bibendum hac etiam" FormattedValue="Amet blandit" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Dictumst eleifend facilisi" FormattedValue="Curae ante donec etiam" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Amet faucibus" FormattedValue="Auctor maecenas leo" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Integer habitant ante arcu" FormattedValue="Congue cursus dictum" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Lobortis auctor congue eget" FormattedValue="Commodo conubia" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Cursus elit enim" FormattedValue="Cubilia hac leo" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Dapibus dictum" FormattedValue="Erat nascetur fusce" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Eros lectus" FormattedValue="Lorem pharetra morbi nulla" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Nibh mus nec libero" FormattedValue="Ligula litora egestas" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Non placerat nisi" FormattedValue="Nisl per" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Luctus proin euismod sed" FormattedValue="Nunc feugiat" IsHidden="False" IsVisible="False" />
-      </SampleData:ConversionsByRegionItem.Conversions>
-    </SampleData:ConversionsByRegionItem>
-    <SampleData:ConversionsByRegionItem Name="WORLDWIDE">
-      <SampleData:ConversionsByRegionItem.Conversions>
-        <SampleData:ConversionsItem Name="Inceptos quisque" FormattedValue="Praesent arcu" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Fusce lorem morbi" FormattedValue="Mus commodo conubia cubilia" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Nulla vivamus interdum" FormattedValue="Accumsan nec" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Diam leo mus" FormattedValue="Diam lectus eget" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Aliquam nec eget aliquet" FormattedValue="Fusce dapibus" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Odio sem sit" FormattedValue="Magnis gravida mattis mauris" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Orci augue" FormattedValue="Mollis dolor fames felis" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Iaculis montes vel" FormattedValue="Ipsum pede" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Lacinia nam" FormattedValue="Sed nostra ornare" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Platea dis pulvinar primis" FormattedValue="Justo laoreet lacus rutrum" IsHidden="False" IsVisible="False" />
-        <SampleData:ConversionsItem Name="Est quam natoque" FormattedValue="Sapien quis lorem semper" IsHidden="True" IsVisible="True" />
-        <SampleData:ConversionsItem Name="Urna magna" FormattedValue="Hac cras duis leo" IsHidden="False" IsVisible="False" />
-      </SampleData:ConversionsByRegionItem.Conversions>
-    </SampleData:ConversionsByRegionItem>
-  </SampleData:SampleDataSource.ConversionsByRegion>
   <SampleData:SampleDataSource.Regions>
     <SampleData:RegionsItem Name="UK" />
     <SampleData:RegionsItem Name="Europe" />
@@ -378,4 +328,96 @@
     <SampleData:RegionsItem Name="Germany" />
     <SampleData:RegionsItem Name="Italy" />
   </SampleData:SampleDataSource.Regions>
+  <SampleData:SampleDataSource.GroupedConversions>
+    <SampleData:GroupedConversionsItem Title="A">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="6 (S)" BrandName="Mark &amp; Spencer" />
+        <SampleData:ItemsItem FormattedValue="10 (M)" BrandName="Gap" />
+        <SampleData:ItemsItem FormattedValue="6 (S)" BrandName="H&amp;M" />
+        <SampleData:ItemsItem FormattedValue="6 (S)" BrandName="River Island" />
+        <SampleData:ItemsItem FormattedValue="6 (S)" BrandName="Primark" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="B">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Lorem sed integer nunc" BrandName="Leo etiam mus nec" />
+        <SampleData:ItemsItem FormattedValue="Morbi nulla amet congue" BrandName="Accumsan vivamus" />
+        <SampleData:ItemsItem FormattedValue="Dis quisque" BrandName="Fusce non" />
+        <SampleData:ItemsItem FormattedValue="Cursus vivamus est" BrandName="Aliquam lorem aliquet per" />
+        <SampleData:ItemsItem FormattedValue="Accumsan bibendum" BrandName="Nunc blandit nullam" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="C">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Ante proin dictum" BrandName="Amet bibendum" />
+        <SampleData:ItemsItem FormattedValue="Aliquam aliquet arcu dictumst" BrandName="Aptent ante auctor morbi" />
+        <SampleData:ItemsItem FormattedValue="Diam hac blandit lectus" BrandName="Commodo conubia arcu sed" />
+        <SampleData:ItemsItem FormattedValue="Libero ligula" BrandName="Cubilia dapibus egestas euismod" />
+        <SampleData:ItemsItem FormattedValue="Eleifend leo eget" BrandName="Feugiat dictumst gravida" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="D">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Mus elit" BrandName="Eleifend facilisi" />
+        <SampleData:ItemsItem FormattedValue="Commodo augue enim" BrandName="Sem nulla congue" />
+        <SampleData:ItemsItem FormattedValue="Nec dolor non per" BrandName="Faucibus habitant" />
+        <SampleData:ItemsItem FormattedValue="Erat facilisi fames felis" BrandName="Sit diam vel eget" />
+        <SampleData:ItemsItem FormattedValue="Faucibus eros ipsum sed" BrandName="Inceptos iaculis" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="E">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Conubia nibh habitant nisi" BrandName="Nam cursus dictum" />
+        <SampleData:ItemsItem FormattedValue="Cubilia litora" BrandName="Proin interdum lectus" />
+        <SampleData:ItemsItem FormattedValue="Luctus magnis inceptos" BrandName="Sed elit libero" />
+        <SampleData:ItemsItem FormattedValue="Mattis justo interdum" BrandName="Ligula augue" />
+        <SampleData:ItemsItem FormattedValue="Lobortis dapibus egestas nascetur" BrandName="Litora lobortis dis" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="F">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Mauris lacus lorem" BrandName="Est nascetur luctus" />
+        <SampleData:ItemsItem FormattedValue="Magna mollis montes" BrandName="Enim hac" />
+        <SampleData:ItemsItem FormattedValue="Nisl pharetra massa" BrandName="Magnis leo mus erat" />
+        <SampleData:ItemsItem FormattedValue="Euismod nostra metus morbi" BrandName="Lacinia eros" />
+        <SampleData:ItemsItem FormattedValue="Placerat nunc" BrandName="Laoreet nec natoque non" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="G">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Neque sem" BrandName="Dolor nibh fames" />
+        <SampleData:ItemsItem FormattedValue="Netus pulvinar ornare" BrandName="Pharetra felis placerat" />
+        <SampleData:ItemsItem FormattedValue="Odio sagittis" BrandName="Nisi nisl nunc" />
+        <SampleData:ItemsItem FormattedValue="Nulla platea" BrandName="Pulvinar per posuere" />
+        <SampleData:ItemsItem FormattedValue="Orci senectus porta purus" BrandName="Ipsum justo lacus" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="H">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Sit pede vel" BrandName="Mattis potenti mauris pretium" />
+        <SampleData:ItemsItem FormattedValue="Risus quam" BrandName="Rhoncus sed" />
+        <SampleData:ItemsItem FormattedValue="Primis feugiat velit sociosqu" BrandName="Mollis sodales" />
+        <SampleData:ItemsItem FormattedValue="Nam rutrum sed dis" BrandName="Odio orci viverra sem" />
+        <SampleData:ItemsItem FormattedValue="Suscipit torquent est" BrandName="Pede sagittis" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="I">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Hac leo mus" BrandName="Quam sit lorem" />
+        <SampleData:ItemsItem FormattedValue="Ultrices vitae vehicula" BrandName="Magna vel quis urna" />
+        <SampleData:ItemsItem FormattedValue="Gravida class volutpat nec" BrandName="Senectus aliquam" />
+        <SampleData:ItemsItem FormattedValue="Iaculis lacinia non laoreet" BrandName="Massa nam sociosqu" />
+        <SampleData:ItemsItem FormattedValue="Per sapien" BrandName="Integer metus" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+    <SampleData:GroupedConversionsItem Title="J">
+      <SampleData:GroupedConversionsItem.Items>
+        <SampleData:ItemsItem FormattedValue="Quis natoque" BrandName="Morbi suscipit quisque montes" />
+        <SampleData:ItemsItem FormattedValue="Maecenas sed" BrandName="Nostra torquent sed" />
+        <SampleData:ItemsItem FormattedValue="Semper urna" BrandName="Neque dis" />
+        <SampleData:ItemsItem FormattedValue="Sem praesent" BrandName="Cras ultrices est vehicula" />
+        <SampleData:ItemsItem FormattedValue="Sit posuere sociis accumsan" BrandName="Netus duis ornare" />
+      </SampleData:GroupedConversionsItem.Items>
+    </SampleData:GroupedConversionsItem>
+  </SampleData:SampleDataSource.GroupedConversions>
 </SampleData:SampleDataSource>

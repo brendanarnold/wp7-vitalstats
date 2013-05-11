@@ -40,63 +40,7 @@
         </toolkit:NavigationOutTransition.Forward>
     </toolkit:NavigationOutTransition>
 </toolkit:TransitionService.NavigationOutTransition>
-	<!--
-	<toolkit:TransitionService.NavigationInTransition>
-    <toolkit:NavigationInTransition>
-        <toolkit:NavigationInTransition.Backward>
-            <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
-        </toolkit:NavigationInTransition.Backward>
-        <toolkit:NavigationInTransition.Forward>
-            <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
-        </toolkit:NavigationInTransition.Forward>
-    </toolkit:NavigationInTransition>
-</toolkit:TransitionService.NavigationInTransition>
-<toolkit:TransitionService.NavigationOutTransition>
-    <toolkit:NavigationOutTransition>
-        <toolkit:NavigationOutTransition.Backward>
-            <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
-        </toolkit:NavigationOutTransition.Backward>
-        <toolkit:NavigationOutTransition.Forward>
-            <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
-        </toolkit:NavigationOutTransition.Forward>
-    </toolkit:NavigationOutTransition>
-</toolkit:TransitionService.NavigationOutTransition>
-	-->
-
-
-    <!--Transitions-->
-	<!--
-    <toolkit:TransitionService.NavigationInTransition>
-        <toolkit:NavigationInTransition>
-            <toolkit:NavigationInTransition.Backward>
-                <toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
-            </toolkit:NavigationInTransition.Backward>
-            <toolkit:NavigationInTransition.Forward>
-			-->
-                <!--
-                // This page contains relatively complex visuals that can slow down
-                // the UI thread while they are being rendered.
-                // Slightly delaying the turnstile feather transition using the BeginTime
-                // property makes the animation appear smooth by waiting for the 
-                // rendering process to finish.
-                -->
-				<!--
-                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" BeginTime="0:0:0.7"/>
-            </toolkit:NavigationInTransition.Forward>
-        </toolkit:NavigationInTransition>
-    </toolkit:TransitionService.NavigationInTransition>
-    <toolkit:TransitionService.NavigationOutTransition>
-        <toolkit:NavigationOutTransition>
-            <toolkit:NavigationOutTransition.Backward>
-                <toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
-            </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
-            </toolkit:NavigationOutTransition.Forward>
-        </toolkit:NavigationOutTransition>
-    </toolkit:TransitionService.NavigationOutTransition>
-	-->
-
+	
 	<phone:PhoneApplicationPage.Resources>
 		
 		<System:Double x:Key="ConversionBtnHeight">115</System:Double>

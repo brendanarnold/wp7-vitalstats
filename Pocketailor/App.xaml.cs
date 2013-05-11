@@ -77,6 +77,10 @@ namespace Pocketailor
                     SetupDatabase.InitialiseDB(db);
             }
 
+
+            // Load cache
+            Cache = new Cache();
+
             // Load ViewModel
             VM = new AppViewModel(AppConstants.APP_DB_CONNECTION_STRING, AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
             VM.LoadProfilesFromDB();
@@ -86,8 +90,6 @@ namespace Pocketailor
             FeedbackAgent = new FeedbackAgent();
             FeedbackAgent.DeliverAdjustmentsTaskAsync();
 
-            // Load cache
-            Cache = new Cache();
 
         }
 

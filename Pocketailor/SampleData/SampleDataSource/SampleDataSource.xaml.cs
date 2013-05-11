@@ -135,16 +135,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private ConversionsByRegion _ConversionsByRegion = new ConversionsByRegion();
-
-		public ConversionsByRegion ConversionsByRegion
-		{
-			get
-			{
-				return this._ConversionsByRegion;
-			}
-		}
-
 		private Regions _Regions = new Regions();
 
 		public Regions Regions
@@ -285,6 +275,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._HasTrouserMeasurements = value;
 					this.OnPropertyChanged("HasTrouserMeasurements");
 				}
+			}
+		}
+
+		private GroupedConversions _GroupedConversions = new GroupedConversions();
+
+		public GroupedConversions GroupedConversions
+		{
+			get
+			{
+				return this._GroupedConversions;
 			}
 		}
 	}
@@ -535,6 +535,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
+		private OtherUnitFormattedValues _OtherUnitFormattedValues = new OtherUnitFormattedValues();
+
+		public OtherUnitFormattedValues OtherUnitFormattedValues
+		{
+			get
+			{
+				return this._OtherUnitFormattedValues;
+			}
+		}
+
 		private double _Id = 0;
 
 		public double Id
@@ -589,16 +599,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._FormattedValue = value;
 					this.OnPropertyChanged("FormattedValue");
 				}
-			}
-		}
-
-		private OtherUnitFormattedValues _OtherUnitFormattedValues = new OtherUnitFormattedValues();
-
-		public OtherUnitFormattedValues OtherUnitFormattedValues
-		{
-			get
-			{
-				return this._OtherUnitFormattedValues;
 			}
 		}
 	}
@@ -823,6 +823,23 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._FormattedValue = value;
 					this.OnPropertyChanged("FormattedValue");
 				}
+			}
+		}
+	}
+
+	public class OtherUnitFormattedValues : System.Collections.ObjectModel.ObservableCollection<OtherUnitFormattedValuesItem>
+	{ 
+	}
+
+	public class OtherUnitFormattedValuesItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1905,145 +1922,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class ConversionsByRegion : System.Collections.ObjectModel.ObservableCollection<ConversionsByRegionItem>
-	{ 
-	}
-
-	public class ConversionsByRegionItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private Conversions _Conversions = new Conversions();
-
-		public Conversions Conversions
-		{
-			get
-			{
-				return this._Conversions;
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-	}
-
-	public class Conversions : System.Collections.ObjectModel.ObservableCollection<ConversionsItem>
-	{ 
-	}
-
-	public class ConversionsItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private string _Name = string.Empty;
-
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-
-			set
-			{
-				if (this._Name != value)
-				{
-					this._Name = value;
-					this.OnPropertyChanged("Name");
-				}
-			}
-		}
-
-		private string _FormattedValue = string.Empty;
-
-		public string FormattedValue
-		{
-			get
-			{
-				return this._FormattedValue;
-			}
-
-			set
-			{
-				if (this._FormattedValue != value)
-				{
-					this._FormattedValue = value;
-					this.OnPropertyChanged("FormattedValue");
-				}
-			}
-		}
-
-		private bool _IsHidden = false;
-
-		public bool IsHidden
-		{
-			get
-			{
-				return this._IsHidden;
-			}
-
-			set
-			{
-				if (this._IsHidden != value)
-				{
-					this._IsHidden = value;
-					this.OnPropertyChanged("IsHidden");
-				}
-			}
-		}
-
-		private bool _IsVisible = false;
-
-		public bool IsVisible
-		{
-			get
-			{
-				return this._IsVisible;
-			}
-
-			set
-			{
-				if (this._IsVisible != value)
-				{
-					this._IsVisible = value;
-					this.OnPropertyChanged("IsVisible");
-				}
-			}
-		}
-	}
-
 	public class Regions : System.Collections.ObjectModel.ObservableCollection<RegionsItem>
 	{ 
 	}
@@ -2080,7 +1958,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class OtherUnitFormattedValuesItem : System.ComponentModel.INotifyPropertyChanged
+	public class GroupedConversionsItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -2091,9 +1969,93 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
 			}
 		}
+
+		private string _Title = string.Empty;
+
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+
+			set
+			{
+				if (this._Title != value)
+				{
+					this._Title = value;
+					this.OnPropertyChanged("Title");
+				}
+			}
+		}
+
+		private Items _Items = new Items();
+
+		public Items Items
+		{
+			get
+			{
+				return this._Items;
+			}
+		}
 	}
 
-	public class OtherUnitFormattedValues : System.Collections.ObjectModel.ObservableCollection<OtherUnitFormattedValuesItem>
+	public class GroupedConversions : System.Collections.ObjectModel.ObservableCollection<GroupedConversionsItem>
+	{ 
+	}
+
+	public class ItemsItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _FormattedValue = string.Empty;
+
+		public string FormattedValue
+		{
+			get
+			{
+				return this._FormattedValue;
+			}
+
+			set
+			{
+				if (this._FormattedValue != value)
+				{
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
+				}
+			}
+		}
+
+		private string _BrandName = string.Empty;
+
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+
+			set
+			{
+				if (this._BrandName != value)
+				{
+					this._BrandName = value;
+					this.OnPropertyChanged("BrandName");
+				}
+			}
+		}
+	}
+
+	public class Items : System.Collections.ObjectModel.ObservableCollection<ItemsItem>
 	{ 
 	}
 #endif
