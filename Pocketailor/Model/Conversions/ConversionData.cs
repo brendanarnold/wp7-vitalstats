@@ -2,6 +2,7 @@
 using Pocketailor.Model.Adjustments;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
@@ -13,11 +14,29 @@ namespace Pocketailor.Model.Conversions
     // UK, Female, M&S, Dress sizes.
 
     [Table]
-    public class ConversionData
+    public class ConversionData : INotifyPropertyChanged
     {
         public ConversionData()
         {
-            
+            #if !IS_DATABASE_HELPER_APP
+
+            // Add a handler so that if user chooses to view/hide the blacklisted conversions
+            // the visibility property correctly notifies the View
+            if (this.IsBlacklisted)
+            {
+                App.VM.PropertyChanged += NotifyVisibilityChanged;
+            }
+
+            #endif            
+
+        }
+
+        void NotifyVisibilityChanged(object sender, PropertyChangedEventArgs e)
+        {
+                if (e.PropertyName == "ShowBlacklistedConversions")
+                {
+                    this.NotifyPropertyChanged("IsVisible");
+                }
         }
 
 
@@ -176,6 +195,70 @@ namespace Pocketailor.Model.Conversions
                 this.BestFitInd = (int)BestFitInd;
             }
         }
+
+
+        // This is necessary since database create app has no reference to App.VM
+#if !IS_DATABASE_HELPER_APP
+
+        public bool IsBlacklisted
+        {
+            get 
+            {
+                return App.VM.BlacklistedRetailers.Contains(this.Retailer);
+            }
+        }
+
+        public bool IsVisible
+        {
+            get
+            {
+                if (this.IsBlacklisted)
+                {
+                    return App.VM.ShowBlacklistedConversions;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        internal void ToggleBlacklisted()
+        {
+            if (this.IsBlacklisted)
+            {
+                while (App.VM.BlacklistedRetailers.Contains(this.Retailer))
+                {
+                    App.VM.BlacklistedRetailers.Remove(this.Retailer);
+                }
+                App.VM.PropertyChanged -= NotifyVisibilityChanged;
+            }
+            else
+            {
+                App.VM.BlacklistedRetailers.Add(this.Retailer);
+            }
+            App.VM.PropertyChanged += NotifyVisibilityChanged;
+            this.NotifyPropertyChanged("IsBlacklisted");
+            this.NotifyPropertyChanged("IsVisible");
+        }
+
+
+#endif
+
+        #region INotifyPropertyChanged members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
 
 
     }

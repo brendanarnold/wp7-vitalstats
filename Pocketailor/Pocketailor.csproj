@@ -182,6 +182,7 @@
     <Compile Include="Model\Static\UnitIds.cs" />
     <Compile Include="SampleData\SampleDataSource\LongListSampleData.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
+    <Compile Include="ViewModel\EditRegionsViewModel.cs" />
     <Compile Include="ViewModel\LongListSelectorGroup.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\StatsPageViewModel.cs" />
@@ -189,8 +190,8 @@
     <Compile Include="View\Controls\AboutButton.xaml.cs">
       <DependentUpon>AboutButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\ConversionValueButton.xaml.cs">
-      <DependentUpon>ConversionValueButton.xaml</DependentUpon>
+    <Compile Include="View\Controls\ConversionResultsBtn.xaml.cs">
+      <DependentUpon>ConversionResultsBtn.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HelpData.cs" />
     <Compile Include="Model\Static\RetailIds.cs" />
@@ -263,7 +264,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Controls\ConversionValueButton.xaml">
+    <Page Include="View\Controls\ConversionResultsBtn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

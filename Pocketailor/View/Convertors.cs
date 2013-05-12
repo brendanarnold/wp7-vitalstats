@@ -19,7 +19,7 @@ namespace Pocketailor.View
         {
             bool b = (bool)value;
             if (!b) return Visibility.Visible;
-            if (App.VM.ShowHiddenConversions) return Visibility.Visible;
+            if (App.VM.ShowBlacklistedConversions) return Visibility.Visible;
             return Visibility.Collapsed;
         }
 

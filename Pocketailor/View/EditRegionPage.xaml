@@ -47,7 +47,7 @@
 	<phone:PhoneApplicationPage.Resources>
 		<DataTemplate x:Key="RegionItemTemplate">
 			<Grid>
-				<CheckBox Content="{Binding Name}" IsChecked="{Binding Selected, Mode=TwoWay}" Foreground="{StaticResource DialogTxtColor}" Background="{StaticResource UIBGColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" />
+				<RadioButton Content="{Binding Name}" IsChecked="{Binding Selected, Mode=TwoWay}" Foreground="{StaticResource DialogTxtColor}" Background="{StaticResource UIBGColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="regionGroup" />
 			</Grid>
 		</DataTemplate>
 	</phone:PhoneApplicationPage.Resources>
@@ -65,7 +65,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
 		<StackPanel>
-			<TextBlock TextWrapping="Wrap" Text="select regions" Margin="36,15,36,50" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
+			<TextBlock TextWrapping="Wrap" Text="select region" Margin="36,15,36,50" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
 			<ListBox BorderThickness="24,0,12,0" SelectionMode="Multiple" ItemsSource="{Binding Regions}" ItemTemplate="{StaticResource RegionItemTemplate}" Height="551"/>
 		</StackPanel>
     </Grid>

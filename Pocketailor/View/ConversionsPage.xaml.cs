@@ -21,11 +21,17 @@ namespace Pocketailor.View
         }
 
 
+
         private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            App.VM.ShowHiddenConversions = !App.VM.ShowHiddenConversions;
+            App.VM.ShowBlacklistedConversions = !App.VM.ShowBlacklistedConversions;
             ApplicationBarMenuItem mi = (ApplicationBarMenuItem)ApplicationBar.MenuItems[0];
-            mi.Text = (App.VM.ShowHiddenConversions) ? "hide hidden retailers" : "show hidden retailers";
+            mi.Text = (App.VM.ShowBlacklistedConversions) ? "hide hidden retailers" : "show hidden retailers";
+        }
+
+        private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        {
+        	NavigationService.Navigate(new Uri("/View/EditRegionPage.xaml", UriKind.Relative));
         }
 
 

@@ -101,55 +101,7 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
-        #region Region methods/properties
-
-        public void SetSelectedRegions(List<RegionIds> regionTags)
-        {
-            App.Settings.AddOrUpdateValue("SelectedRegions", regionTags);
-            App.Settings.Save();
-        }
-
-        public List<RegionIds> GetSelectedRegions()
-        {
-            return App.Settings.GetValueOrDefault<List<RegionIds>>("SelectedRegions", AppConstants.DEFAULT_REGIONS);
-        }
-
-        private ObservableCollection<RegionContainer> _regions;
-        public ObservableCollection<RegionContainer> Regions
-        {
-            get
-            {
-                if (this._regions == null) this.LoadRegions();
-                return this._regions;
-            }
-            set
-            {
-                if (this._regions != value)
-                {
-                    this._regions = value;
-                    this.NotifyPropertyChanged("Regions");
-                }
-            }
-        }
-
-        public void LoadRegions()
-        {
-            this._regions = new ObservableCollection<RegionContainer>();
-            List<RegionIds> selectedRegions = this.GetSelectedRegions();
-            foreach (RegionIds r in typeof(RegionIds).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionIds))).Cast<RegionIds>())
-            {
-                this._regions.Add(new RegionContainer { Name = Lookup.Regions[r], Id = r, Selected = selectedRegions.Contains(r) });
-            }
-        }
-
-        public class RegionContainer
-        {
-            public string Name { get; set; }
-            public RegionIds Id { get; set; }
-            public bool Selected { get; set; }
-        }
-
-        #endregion
+       
      
         // Not used
         #region PIN locking methods
@@ -451,6 +403,8 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
+
+ 
     }
 
 

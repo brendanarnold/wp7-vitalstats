@@ -14,6 +14,7 @@
     xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
+	toolkit:TiltEffect.IsTiltEnabled="True"
     mc:Ignorable="d"
 	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
 	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
@@ -51,74 +52,10 @@
 		<Pocketailor_View:IsHiddenToVisibility x:Key="IsHiddenToVisibility"/>
 		<Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
     
-		<DataTemplate x:Key="ConversionsByRegionSubItemTemplate">
-			<Controls:ConversionValueButton ClothingSize="{Binding FormattedValue}" IsHidden="{Binding IsHidden}" RetailerName="{Binding Name}"  Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}" toolkit:TiltEffect.IsTiltEnabled="True" Margin="24,0,0,0" />
-		</DataTemplate>
+   
 
-
-		<Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderThickness" Value="0"/>
-			<Setter Property="BorderBrush" Value="Transparent"/>
-			<Setter Property="Padding" Value="0"/>
-			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-			<Setter Property="VerticalContentAlignment" Value="Top"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListBoxItem">
-						<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
-							<VisualStateManager.VisualStateGroups>
-								<VisualStateGroup x:Name="CommonStates">
-									<VisualState x:Name="Normal"/>
-									<VisualState x:Name="MouseOver"/>
-									<VisualState x:Name="Disabled">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="LayoutRoot">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-											<DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentContainer"/>
-										</Storyboard>
-									</VisualState>
-								</VisualStateGroup>
-								<VisualStateGroup x:Name="SelectionStates">
-									<VisualState x:Name="Unselected"/>
-									<VisualState x:Name="Selected">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-								</VisualStateGroup>
-							</VisualStateManager.VisualStateGroups>
-							<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-
-		<Style x:Key="SubListBoxStyle" TargetType="ListBox">
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListBox">
-						<ItemsPresenter/>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
 	
-		<DataTemplate x:Key="ConversionsByRegionItemTemplate">
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-				</Grid.RowDefinitions>
-				<TextBlock Grid.Row="0" Margin="12,0,0,0" Text="{Binding Name, Converter={StaticResource StringToUpper}}" Style="{StaticResource SubTitleTextBoxStyle}"/>
-				<ListBox Grid.Row="1" ItemsSource="{Binding Conversions}"  Style="{StaticResource SubListBoxStyle}" ItemTemplate="{StaticResource ConversionsByRegionSubItemTemplate}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
-			</Grid>
-		</DataTemplate>
-    
+	
   
   <SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
 
@@ -146,7 +83,7 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
-		    <shell:ApplicationBarIconButton IconUri="/Images/appbar.globe.png" Text="change region"></shell:ApplicationBarIconButton>
+		    <shell:ApplicationBarIconButton IconUri="/Images/appbar.globe.png" Text="change region" Click="ApplicationBarIconButton_Click"></shell:ApplicationBarIconButton>
 			<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="showHiddenAppBarMenuItem" Text="show hidden retailers" Click="showHiddenAppBarMenuItem_Click" />
             </shell:ApplicationBar.MenuItems>
@@ -189,15 +126,12 @@
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
-				<TextBlock x:Name="regionTextBlock" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,24,0" FontSize="26.667" Text="{Binding SelectedRegion}"/>
+				<TextBlock x:Name="regionTextBlock" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,24,0" FontSize="26.667" Text="{Binding SelectedRegionString}"/>
 			</Grid>
 			
 		</Grid>
 
-		<!--
-		<ListBox Grid.Row="1"   ItemTemplate="{StaticResource ConversionsByRegionItemTemplate}" ItemsSource="{Binding ConversionsByRegion}" ItemContainerStyle="{StaticResource ListBoxItemStyle}"/>
-		-->
-
+	
 		
 		<toolkit:LongListSelector x:Name="conversionsLongListSelector" Grid.Row="1" IsFlatList="False"
                                   d:DataContext="{StaticResource LongListSampleDataInstance}" ItemsSource="{Binding GroupedConversions}" >
@@ -237,53 +171,8 @@
 				</Style>
 				<DataTemplate x:Key="itemTemplate">
 					<!-- Applied to each item -->
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="Auto"/>
-						</Grid.RowDefinitions>
-						<Grid x:Name="conversionGrid" Margin="24,0,0,6" Tap="conversionGrid_Tap">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="Auto"></ColumnDefinition>
-								<ColumnDefinition Width="*"></ColumnDefinition>
-							</Grid.ColumnDefinitions>
-							<TextBlock Grid.Column="0" Text="{Binding BrandName}" Foreground="{StaticResource PageTxtColor}" FontSize="26.667"></TextBlock>
-							<TextBlock Grid.Column="1" Text="{Binding FormattedValue}" Foreground="{StaticResource SubTitleColor}" FontSize="26.667" Margin="5,0,0,0"></TextBlock>
-						</Grid>
-						<Grid x:Name="adjustmentContainer" Margin="24,0,24,24" Visibility="Visible" Grid.Row="1">
-							
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="Auto" />
-							</Grid.ColumnDefinitions>
-							<Button x:Name="tooBigBtn" Content="too big" Grid.Column="0" Style="{StaticResource bigSmallBtnStyle}" Tap="tooBigBtn_Tap"/>
-							<Button x:Name="tooSmallBtn" Content="too small" Grid.Column="1"  Style="{StaticResource bigSmallBtnStyle}" Tap="tooSmallBtn_Tap"/>
-							<Button x:Name="hideBrandBtn" Content="hide brand" Grid.Column="2" HorizontalAlignment="Right" Margin="0" Tap="hideBrandBtn_Tap">
-								<Button.Resources>
-									<Style x:Key="ButtonStyle1" TargetType="Button">
-										<Setter Property="Template">
-											<Setter.Value>
-												<ControlTemplate TargetType="Button">
-													<Grid>
-														<Border Background="{StaticResource SubTitleColor}" Padding="12,4">
-															<TextBlock Text="{TemplateBinding Content}" Foreground="{StaticResource AccentColor}" FontFamily="Segoe WP" FontSize="21.333"  />
-														</Border>
-													</Grid>
-												</ControlTemplate>
-											</Setter.Value>
-										</Setter>
-									</Style>
-								</Button.Resources>
-								<Button.Style>
-									<StaticResource ResourceKey="ButtonStyle1"/>
-								</Button.Style>
-							</Button>
-
-							
-						</Grid>
-					</Grid>
-				</DataTemplate>
+					<Controls:ConversionResultsBtn ClothingSize="{Binding FormattedValue}" BrandName="{Binding BrandName}" IsBlacklisted="{Binding IsBlacklisted}" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  />
+					</DataTemplate>
 				<DataTemplate x:Key="listFooterTemplate">
 					<!-- Bottom of whole control -->
 					<Grid/>

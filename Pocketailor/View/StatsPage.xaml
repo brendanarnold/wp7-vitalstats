@@ -137,13 +137,13 @@
 			</shell:ApplicationBar.MenuItems>
 			<!--<shell:ApplicationBarIconButton x:Name="addStatAppBarBtn" IconUri="/Assets/AppBar/appbar.add.rest.png" Text="add stat" Click="addStatAppBarBtn_Click"/>-->
 		</shell:ApplicationBar>
-		<shell:ApplicationBar x:Key="conversionsAppBar" IsVisible="True" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
+		<shell:ApplicationBar x:Key="conversionsAppBar" IsVisible="True" Mode="Minimized" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBar.MenuItems>
         <!--<shell:ApplicationBarMenuItem Text="add to start menu" Click="secondaryTileAppBarMenuItem_Click"/>-->
 				<shell:ApplicationBarMenuItem Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
 			</shell:ApplicationBar.MenuItems>
-			<shell:ApplicationBarIconButton x:Name="changeRegionsAppBarBtn" IconUri="/Images/appbar.globe.png" Text="set regions" Click="changeRegionsAppBarBtn_Click"/>
 		</shell:ApplicationBar>
+
 		<Style x:Key="statListBoxTemplate" TargetType="ListBox">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>

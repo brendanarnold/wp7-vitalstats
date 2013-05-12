@@ -12,7 +12,7 @@ namespace Pocketailor.ViewModel
 {
     public partial class AppViewModel
     {
-        #region ConversionsPage methods/properties
+        
 
         private ConversionId _selectedConversionType;
         public ConversionId SelectedConversionType
@@ -75,17 +75,17 @@ namespace Pocketailor.ViewModel
                 if (this._groupedConversions != value)
                 {
                     this._groupedConversions = value;
-                    this.NotifyPropertyChanged("ConversionsByRegion");
+                    this.NotifyPropertyChanged("GroupedConversions");
                 }
             }
         }
+
+
 
         public void LoadConversionsPageData()
         {
             // Declare vars in the top scope
             Dictionary<MeasurementId, double> measuredVals = new Dictionary<MeasurementId, double>();
-            // Make sure we have region data
-            if (this.GetSelectedRegions() == null) return;
             // TODO: If gender not specified, then return Female measurements. Note only perform gener query on tables that have 
             // Gender fields (even after casting) because it still generate SQL to query gender
             Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender; 
@@ -157,13 +157,13 @@ namespace Pocketailor.ViewModel
             // Check we have all the necessary measurements
             if (measuredVals == null) return;
             // Build up by regions
-            List<RegionIds> selectedRegions = this.GetSelectedRegions();
+            RegionIds selectedRegion = this.SelectedRegion;
 
             // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsEnumerable
             IEnumerable<ConversionData> conversions = (from d in conversiondsDB.ConversionData
                         where d is ConversionData
                         // Filter to specific region, gender, conversion
-                        && selectedRegions.Contains(d.Region)
+                        && d.Region == selectedRegion
                         && d.Gender == qGender
                         && d.Conversion == this.SelectedConversionType 
                         select d).AsEnumerable();
@@ -173,7 +173,7 @@ namespace Pocketailor.ViewModel
                         from d in conversions
                         orderby d.BrandName ascending
                         // Group into sublists organised by first letter of the retailer
-                        group d by d.BrandName[0].ToString().ToUpper()
+                        group d by d.BrandName[0].ToString().ToLower()
                             into g
                             orderby g.Key ascending
                             select new LongListSelectorGroup<Model.Conversions.ConversionData>(g.Key, g)
@@ -218,141 +218,55 @@ namespace Pocketailor.ViewModel
             return requiredIds.Except(this.SelectedProfile.Stats.Select(s => s.MeasurementId)).ToList();
         }
 
-        
-        
 
-        public class NameValuePair : INotifyPropertyChanged
+        internal void ApplyAdjustment(Model.Conversions.ConversionData c, int p)
         {
-
-            public NameValuePair()
-            {
-                App.VM.HiddenRetailers.CollectionChanged += (s, e) =>
-                {
-                    if (e.NewItems != null)
-                    {
-                        if (e.NewItems.Contains(this.Retailer))
-                        {
-                            this.NotifyPropertyChanged("IsVisible");
-                            this.NotifyPropertyChanged("IsHidden");
-                        }
-                    }
-                    if (e.OldItems != null)
-                    {
-                        if (e.OldItems.Contains(this.Retailer))
-                        {
-                            this.NotifyPropertyChanged("IsVisible");
-                            this.NotifyPropertyChanged("IsHidden");
-                        }
-                    }
-                };
-
-                App.VM.PropertyChanged += (s, e) =>
-                {
-                    if ((e.PropertyName == "ShowHiddenConversions")
-                        || (e.PropertyName == "HiddenRetailers"))
-                        this.NotifyPropertyChanged("IsVisible");
-                };
-            }
-
-            public string Name {
-                get { return Lookup.Retail[this.Retailer]; }
-            }
-            public string FormattedValue { get; set; }
-            public RetailId Retailer { get; set; }
-            // Flag set to true if user has chosen to hide this retailer e.g. show but grey this entry out
-            public bool IsHidden
-            {
-                get
-                {
-                    return App.VM.HiddenRetailers.Contains(this.Retailer);
-                }
-            }
-            // Flag set to true is user wants to see all retailers (even hidden) e.g. show this retailer at all
-            public bool IsVisible
-            {
-                get
-                {
-                    if (!this.IsHidden)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return App.VM.ShowHiddenConversions;
-                    }
-                }
-            }
-
-            public void ToggleHidden()
-            {
-                if (this.IsHidden)
-                {
-                    App.VM.HiddenRetailers.Remove(this.Retailer);
-                }
-                else
-                {
-                    if (!App.VM.HiddenRetailers.Contains(this.Retailer))
-                        App.VM.HiddenRetailers.Add(this.Retailer);
-                }
-                App.VM.SaveHiddenRetailers();
-            }
-
-            #region INotifyPropertyChanged members
-
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            internal void NotifyPropertyChanged(string propertyName)
-            {
-                if (this.PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-                }
-            }
-
-            #endregion
-
+            // TODO: Implement this
         }
 
-        private ObservableCollection<RetailId> _hiddenRetailers;
-        public ObservableCollection<RetailId> HiddenRetailers
+
+        #region Blacklist properties/methods
+
+        private ObservableCollection<RetailId> _blacklistedRetailers;
+        public ObservableCollection<RetailId> BlacklistedRetailers
         {
             get
             {
-                if (this._hiddenRetailers == null)
-                    this.LoadHiddenRetailers();
-                return this._hiddenRetailers;
+                if (this._blacklistedRetailers == null)
+                    this.LoadBlacklistedRetailers();
+                return this._blacklistedRetailers;
             }
             set
             {
-                if (this._hiddenRetailers != value)
+                if (this._blacklistedRetailers != value)
                 {
-                    this._hiddenRetailers = value;
-                    this.NotifyPropertyChanged("HiddenRetailers");
+                    this._blacklistedRetailers = value;
+                    this.NotifyPropertyChanged("BlacklistedRetailers");
                 }
             }
         }
 
-        public void LoadHiddenRetailers()
+        public void LoadBlacklistedRetailers()
         {
-            this.HiddenRetailers = App.Settings.GetValueOrDefault<ObservableCollection<RetailId>>("HiddenRetailers", new ObservableCollection<RetailId>());
+            this.BlacklistedRetailers = App.Settings.GetValueOrDefault<ObservableCollection<RetailId>>("BlacklistedRetailers", new ObservableCollection<RetailId>());
         }
 
-        public void SaveHiddenRetailers()
+        public void SaveBlacklistedRetailers()
         {
-            App.Settings.AddOrUpdateValue("HiddenRetailers", this.HiddenRetailers);
+            App.Settings.AddOrUpdateValue("BlacklistedRetailers", this.BlacklistedRetailers);
             App.Settings.Save();
         }
 
-        private bool _showHiddenConversions = false;
-        public bool ShowHiddenConversions
+        private bool _showBlacklistedConversions = false;
+        public bool ShowBlacklistedConversions
         {
-            get { return this._showHiddenConversions; }
+            get { return this._showBlacklistedConversions; }
             set
             {
-                if (this._showHiddenConversions != value)
+                if (this._showBlacklistedConversions != value)
                 {
-                    this._showHiddenConversions = value;
-                    this.NotifyPropertyChanged("ShowHiddenConversions");
+                    this._showBlacklistedConversions = value;
+                    this.NotifyPropertyChanged("ShowBlacklistedConversions");
                 }
             }
         }

@@ -7,6 +7,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     d:DesignHeight="480" d:DesignWidth="480">
     
     <Grid x:Name="LayoutRoot">
@@ -30,7 +31,7 @@
               <ControlTemplate TargetType="Button">
                 <Grid>
                   <Border Background="{StaticResource SubTitleColor}" Padding="12,4">
-                    <TextBlock Text="{TemplateBinding Content}" Foreground="{StaticResource AccentColor}" FontFamily="Segoe WP" FontSize="21.333"  />
+                    <TextBlock Text="{TemplateBinding Content}" Foreground="{StaticResource AccentColor}" FontFamily="Segoe WP" FontSize="21.333" HorizontalAlignment="Center"  />
                   </Border>
                 </Grid>
               </ControlTemplate>
@@ -44,7 +45,7 @@
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
-      <Grid x:Name="conversionResultContainerGrid" Margin="24,0,0,6" Tap="conversionGrid_Tap">
+      <Grid x:Name="conversionResultContainerGrid" toolkit:TiltEffect.IsTiltEnabled="True" Margin="24,0,0,6" Tap="conversionGrid_Tap">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="Auto"></ColumnDefinition>
           <ColumnDefinition Width="*"></ColumnDefinition>
@@ -52,16 +53,16 @@
         <TextBlock Grid.Column="0" Text="{Binding BrandName}" x:Name="brandNameTextBlock" Foreground="{StaticResource PageTxtColor}" FontSize="26.667"></TextBlock>
         <TextBlock Grid.Column="1" Text="{Binding FormattedValue}" x:Name="clothingSizeTextBlock" Foreground="{StaticResource SubTitleColor}" FontSize="26.667" Margin="5,0,0,0"></TextBlock>
       </Grid>
-      <Grid x:Name="adjustmentContainerGrid" Margin="24,0,24,24" Visibility="Visible" Grid.Row="1">
+      <Grid x:Name="adjustmentContainerGrid" Margin="24,0,24,24" Visibility="Collapsed" Grid.Row="1">
 
       <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="1*" />
+          <ColumnDefinition Width="1*" />
+          <ColumnDefinition Width="160" />
       </Grid.ColumnDefinitions>
       <Button x:Name="tooBigBtn" Content="too big" Grid.Column="0" Style="{StaticResource bigSmallBtnStyle}" Tap="tooBigBtn_Tap"/>
       <Button x:Name="tooSmallBtn" Content="too small" Grid.Column="1"  Style="{StaticResource bigSmallBtnStyle}" Tap="tooSmallBtn_Tap"/>
-      <Button x:Name="hideBrandBtn" Content="hide brand" Grid.Column="2" HorizontalAlignment="Right" Margin="0" Style="{StaticResource hideBrandBtnStyle}" Tap="hideBrandBtn_Tap" />
+      <Button x:Name="hideBrandBtn" Content="hide brand" Grid.Column="2" Margin="0" Style="{StaticResource hideBrandBtnStyle}" Tap="hideBrandBtn_Tap" />
         
 
 

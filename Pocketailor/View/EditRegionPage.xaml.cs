@@ -18,12 +18,14 @@ namespace Pocketailor.View
             InitializeComponent();
 
             this.DataContext = App.VM;
+
         }
+
+        
 
         private void saveApplicationBarIconBtn_Click(object sender, System.EventArgs e)
         {
-            // TODO: May consider making this enumerable rather than List
-            App.VM.SetSelectedRegions(App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).ToList());
+            App.VM.SelectedRegion = (App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault());
             if (NavigationService.CanGoBack)
             {
                 NavigationService.GoBack();

@@ -278,21 +278,21 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private string _SelectedRegion = string.Empty;
+		private string _SelectedRegionString = string.Empty;
 
-		public string SelectedRegion
+		public string SelectedRegionString
 		{
 			get
 			{
-				return this._SelectedRegion;
+				return this._SelectedRegionString;
 			}
 
 			set
 			{
-				if (this._SelectedRegion != value)
+				if (this._SelectedRegionString != value)
 				{
-					this._SelectedRegion = value;
-					this.OnPropertyChanged("SelectedRegion");
+					this._SelectedRegionString = value;
+					this.OnPropertyChanged("SelectedRegionString");
 				}
 			}
 		}

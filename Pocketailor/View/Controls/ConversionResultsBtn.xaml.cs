@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Pocketailor.Model.Conversions;
+using System.ComponentModel;
 
 namespace Pocketailor.View.Controls
 {
@@ -17,18 +18,21 @@ namespace Pocketailor.View.Controls
         {
             InitializeComponent();
 
-            if (!TiltEffect.TiltableItems.Contains(typeof(ConversionValueButton)))
-                TiltEffect.TiltableItems.Add(typeof(ConversionValueButton));
+            if (!TiltEffect.TiltableItems.Contains(typeof(ConversionResultsBtn)))
+                TiltEffect.TiltableItems.Add(typeof(ConversionResultsBtn));
+
+
+            
 
         }
 
         // Is nullable so the IsHiddenPropertyChanged event is fired since it will always be assigned from null to true or false
         // Alternate is to design button in one state e.g. Hidden state and set the default PropertyMetaData to true rather than null
-        public static readonly DependencyProperty IsHiddenProperty =
-            DependencyProperty.Register("IsHidden", typeof(bool?), typeof(ConversionResultsBtn),
-            new PropertyMetadata(null, new PropertyChangedCallback(IsHiddenPropertyChanged)));
+        public static readonly DependencyProperty IsBlacklistedProperty =
+            DependencyProperty.Register("IsBlacklisted", typeof(bool?), typeof(ConversionResultsBtn),
+            new PropertyMetadata(null, new PropertyChangedCallback(IsBlacklistedPropertyChanged)));
 
-        private static void IsHiddenPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void IsBlacklistedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
             bool val = (bool)e.NewValue;
@@ -44,10 +48,10 @@ namespace Pocketailor.View.Controls
             }
         }
 
-        public bool? IsHidden
+        public bool? IsBlacklisted
         {
-            get { return (bool)GetValue(IsHiddenProperty); }
-            set { SetValue(IsHiddenProperty, value); }
+            get { return (bool)GetValue(IsBlacklistedProperty); }
+            set { SetValue(IsBlacklistedProperty, value); }
         }
 
 
@@ -118,7 +122,7 @@ namespace Pocketailor.View.Controls
         private void hideBrandBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             ConversionData c = (sender as Button).DataContext as ConversionData;
-            c.ToggleHidden();
+            c.ToggleBlacklisted();
         }
 
 
