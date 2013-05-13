@@ -50,8 +50,11 @@ namespace Pocketailor
         public static string FACEBOOK_LIKE_URL = "http://facebook.com/Pocketailor";
         public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
         public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
+        public static bool? DEFAULT_ALLOW_FEEDBACK = null;
 
         // This app generates adjustmnts of this version
         public static int ADJUSTMENT_FORMAT_VERSION = 1;
+
+        
     }
 }

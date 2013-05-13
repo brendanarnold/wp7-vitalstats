@@ -133,14 +133,38 @@
 
 	
 		
-		<toolkit:LongListSelector x:Name="conversionsLongListSelector" Grid.Row="1" IsFlatList="False"
-                                  d:DataContext="{StaticResource LongListSampleDataInstance}" ItemsSource="{Binding GroupedConversions}" >
+		<toolkit:LongListSelector x:Name="conversionsLongListSelector" 
+								Grid.Row="1" IsFlatList="False"
+                                d:DataContext="{StaticResource LongListSampleDataInstance}" 
+								ItemsSource="{Binding GroupedConversions}" 
+								DisplayAllGroups="True">
 			<toolkit:LongListSelector.Resources>
 				<DataTemplate x:Key="groupHeaderTemplate">
 					<!-- The header for the group e.g. letter -->
-					<Border Background="{StaticResource TileBGColor}" Width="62" Height="62" Margin="24,12,23,5" HorizontalAlignment="Left">
-						<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" Padding="6" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-					</Border>
+
+					<Border Background="Transparent" Margin="24,6,0,6" Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}">
+                                <Border Background="{StaticResource TileBGColor}" 	
+                                        Padding="8,0,0,0" 
+										Width="62" Height="62" 				 
+                                        HorizontalAlignment="Left"
+										>
+                                    <TextBlock Text="{Binding Key}" 
+                                               Foreground="{StaticResource PageTxtColor}" 
+                                               FontSize="48"
+                                               FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Bottom"/>
+                                </Border>
+                            </Border>
+					<!--<Border Background="{StaticResource TileBGColor}" Width="62" Height="62" 
+						Margin="24,6,0,6" HorizontalAlignment="Left">
+						<TextBlock Text="{Binding Key}" 
+							Foreground="{StaticResource PageTxtColor}" 
+							FontSize="48" Padding="6" HorizontalAlignment="Left" 
+							FontFamily="{StaticResource PhoneFontFamilySemiLight}" 
+							VerticalAlignment="Center"/>
+					</Border>-->
+					
 				</DataTemplate>
 				<DataTemplate x:Key="groupFooterTemplate">
 					<!-- The footer for each group -->
@@ -150,28 +174,23 @@
 				</DataTemplate>
 				<ItemsPanelTemplate x:Key="groupItemsPanelTemplate">
 					<!-- The selection dialog container -->
-					<toolkit:WrapPanel></toolkit:WrapPanel>
+					<toolkit:WrapPanel Orientation="Horizontal"></toolkit:WrapPanel>
 				</ItemsPanelTemplate>
 				<DataTemplate x:Key="groupItemTemplate">
 					<!-- The individual item in the selector dialog -->
-					<Grid>
-						<TextBlock>A</TextBlock>
-					</Grid>
+					<Border Background="Black" Margin="6" IsHitTestVisible="{Binding HasItems}">
+						<Border Background="{StaticResource TileBGColor}" Width="99" Height="99"  
+							 Opacity="{Binding HasItems, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}">
+							<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" 
+							Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+				 />
+						</Border>
+					</Border>
 				</DataTemplate>
-				<Style x:Key="bigSmallBtnStyle" TargetType="Button">
-					<Setter Property="Template">
-						<Setter.Value>
-							<ControlTemplate TargetType="Button">
-								<Grid>
-									<TextBlock FontSize="24" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
-								</Grid>
-							</ControlTemplate>
-						</Setter.Value>
-					</Setter>
-				</Style>
+
 				<DataTemplate x:Key="itemTemplate">
 					<!-- Applied to each item -->
-					<Controls:ConversionResultsBtn ClothingSize="{Binding FormattedValue}" BrandName="{Binding BrandName}" IsBlacklisted="{Binding IsBlacklisted}" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  />
+					<Controls:ConversionResultsBtn Margin="36,0,24,0" ClothingSize="{Binding FormattedValue}" BrandName="{Binding BrandName}" IsBlacklisted="{Binding IsBlacklisted}" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  />
 					</DataTemplate>
 				<DataTemplate x:Key="listFooterTemplate">
 					<!-- Bottom of whole control -->
@@ -192,14 +211,14 @@
 			<toolkit:LongListSelector.ItemTemplate>
 				<StaticResource ResourceKey="itemTemplate"/>
 			</toolkit:LongListSelector.ItemTemplate>
-			<!--
+			
 			<toolkit:LongListSelector.GroupItemTemplate>
 				<StaticResource ResourceKey="groupItemTemplate"/>
 			</toolkit:LongListSelector.GroupItemTemplate>
 			<toolkit:LongListSelector.GroupItemsPanel>
 				<StaticResource ResourceKey="groupItemsPanelTemplate"/>
 			</toolkit:LongListSelector.GroupItemsPanel>
-			-->
+			
 			<toolkit:LongListSelector.GroupFooterTemplate>
 				<StaticResource ResourceKey="groupFooterTemplate"/>
 			</toolkit:LongListSelector.GroupFooterTemplate>

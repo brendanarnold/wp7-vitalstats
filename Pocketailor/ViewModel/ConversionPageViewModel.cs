@@ -1,4 +1,5 @@
 ﻿using Pocketailor.Model;
+using Pocketailor.Model.Adjustments;
 using Pocketailor.Model.Conversions;
 using System;
 using System.Collections.Generic;
@@ -160,33 +161,41 @@ namespace Pocketailor.ViewModel
             RegionIds selectedRegion = this.SelectedRegion;
 
             // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsEnumerable
-            IEnumerable<ConversionData> conversions = (from d in conversiondsDB.ConversionData
+            List<ConversionData> conversions = (from d in conversiondsDB.ConversionData
                         where d is ConversionData
                         // Filter to specific region, gender, conversion
                         && d.Region == selectedRegion
                         && d.Gender == qGender
                         && d.Conversion == this.SelectedConversionType 
-                        select d).AsEnumerable();
+                        select d).ToList();
 
-            // Now do Linq-to-object stuff using methods, getters etc.
-            this.GroupedConversions = new ObservableCollection<LongListSelectorGroup<ConversionData>>(
-                        from d in conversions
-                        orderby d.BrandName ascending
-                        // Group into sublists organised by first letter of the retailer
-                        group d by d.BrandName[0].ToString().ToLower()
-                            into g
-                            orderby g.Key ascending
-                            select new LongListSelectorGroup<Model.Conversions.ConversionData>(g.Key, g)
-                        );
+            conversions.Sort((a, b) => { return a.BrandName.CompareTo(b.BrandName); });
 
-            // Now do the fits
-            for (int i = 0; i < this.GroupedConversions.Count; i++)
+            // Group up the brand names
+            string groupKeys = "#abcdefghijklmnopqrstuvwxyz";
+            // Initially store in a dictionary
+            Dictionary<string, List<ConversionData>> groupDict = new Dictionary<string,List<ConversionData>>();
+            foreach (char c in groupKeys)
             {
-                for (int j = 0; j < this.GroupedConversions[i].Items.Count; j++)
-                {
-                    this.GroupedConversions[i].Items[j].FindBestFit(measuredVals);
-                }
+                groupDict.Add(c.ToString(), new List<ConversionData>());
             }
+            foreach (ConversionData cd in conversions)
+            {
+                // Find the best fit whilst at it
+                cd.FindBestFit(measuredVals);
+                // Add to the right group according to the first letter of the brand name
+                char key = char.ToLower(cd.BrandName[0]);
+                if (key < 'a' || key > 'z') key = '#';
+                groupDict[key.ToString()].Add(cd);
+            }
+            // Buffer first to avoid triggering the NotifyPropertyChanged events on ObservableCollection hundreds of times
+            List<LongListSelectorGroup<ConversionData>> buff = new List<LongListSelectorGroup<ConversionData>>();
+            foreach (char key in groupKeys)
+            {
+                string k = key.ToString();
+                buff.Add(new LongListSelectorGroup<ConversionData>(k, groupDict[k]));
+            }
+            this.GroupedConversions = new ObservableCollection<LongListSelectorGroup<ConversionData>>(buff);
 
         }
 
@@ -219,9 +228,13 @@ namespace Pocketailor.ViewModel
         }
 
 
-        internal void ApplyAdjustment(Model.Conversions.ConversionData c, int p)
+        internal void ApplyAdjustment(Model.Conversions.ConversionData c, int delta)
         {
-            // TODO: Implement this
+            Adjustment adj = c.AdjustValue(delta);
+            if ((bool)App.VM.AllowFeedBack)
+            {
+                App.FeedbackAgent.CacheAdjustment(adj);
+            }
         }
 
 

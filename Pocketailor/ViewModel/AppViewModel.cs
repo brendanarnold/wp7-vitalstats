@@ -57,6 +57,25 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
+        #region AllowFeedback property
+
+        private bool? _allowFeedback = null;
+        public bool? AllowFeedBack
+        {
+            get
+            {
+                if (this._allowFeedback == null) this._allowFeedback = App.Settings.GetValueOrDefault<bool?>("_allowFeedback", AppConstants.DEFAULT_ALLOW_FEEDBACK);
+                return this._allowFeedback;
+            }
+            set
+            {
+                this._allowFeedback = value;
+                App.Settings.AddOrUpdateValue("_allowFeedback", value);
+            }
+        }
+
+        #endregion
+
 
         #region Conversions database methods
 
@@ -404,7 +423,8 @@ namespace Pocketailor.ViewModel
 
 
 
- 
+
+
     }
 
 

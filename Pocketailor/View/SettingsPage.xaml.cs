@@ -29,7 +29,13 @@ namespace Pocketailor.View
             bool isMetric = (uId == UnitCultureId.Metric);
             this.metricRadioBtn.IsChecked = isMetric;
             this.imperialRadioBtn.IsChecked = !isMetric;
-            
+
+            if (App.VM.AllowFeedBack != null)
+            {
+                this.allowFeedbackRadioBtn.IsChecked = App.VM.AllowFeedBack;
+                this.disallowFeedbackRadioBtn.IsChecked = !App.VM.AllowFeedBack;
+            }
+
         }
 
 
@@ -47,6 +53,16 @@ namespace Pocketailor.View
         private void saveAppBarIconBtn_Click(object sender, System.EventArgs e)
         {
             if (NavigationService.CanGoBack) NavigationService.GoBack();
+        }
+
+        private void allowFeedbackRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            App.VM.AllowFeedBack = true;
+        }
+
+        private void disallowFeedbackRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            App.VM.AllowFeedBack = false;
         }
 
 

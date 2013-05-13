@@ -129,8 +129,37 @@ namespace Pocketailor.Model.Conversions
         // Flag that is set when all the sizes are found to be too small
         public bool AllTooSmall { get; set; }
 
+        // Flag that indicates that there are no bigger sizes available
+        public bool NoneBigger
+        {
+            get 
+            {
+                return (this.AllTooSmall || (this.BestFitInd >= this.GeneralSizes.Count - 1));
+            }
+        }
+
+        // Flag that indicates if there are no smaller sizes availble
+        public bool NoneSmaller
+        {
+            get { return (this.BestFitInd == 0); }
+        }
+
         // Index of the sizes that best fits
-        public int BestFitInd { get; set; }
+        private int _bestFitInd;
+        public int BestFitInd
+        {
+            get
+            {
+                return this._bestFitInd;
+            }
+            set
+            {
+                if (this._bestFitInd != value) this._bestFitInd = value;
+                this.NotifyPropertyChanged("BestFitInd");
+                this.NotifyPropertyChanged("NoneBigger");
+                this.NotifyPropertyChanged("NoneSmaller");
+            }
+        }
 
         public string BrandName
         {
@@ -188,6 +217,7 @@ namespace Pocketailor.Model.Conversions
             if (bestInd == null)
             {
                 this.AllTooSmall = true;
+                this.BestFitInd = this.GeneralSizes.Count - 1;
             }
             else
             {
@@ -199,6 +229,18 @@ namespace Pocketailor.Model.Conversions
 
         // This is necessary since database create app has no reference to App.VM
 #if !IS_DATABASE_HELPER_APP
+
+        public Adjustment AdjustValue(int delta)
+        {
+            // TODO
+            Adjustment adj = new Adjustment();
+
+            App.Cache.Adjustments.Add(adj);
+            return null;
+        }
+
+
+
 
         public bool IsBlacklisted
         {

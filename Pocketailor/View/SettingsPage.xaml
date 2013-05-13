@@ -81,6 +81,9 @@
 				<RadioButton x:Name="imperialRadioBtn" Content="IMPERIAL (ft/in/lb)" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Checked="imperialRadioBtn_Checked"/>
 				<RadioButton x:Name="metricRadioBtn" Content="METRIC (m/cm/kg)" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Checked="metricRadioBtn_Checked"/>
 
+				<TextBlock Foreground="{StaticResource PageTxtColor}" Margin="36,24,36,0" TextWrapping="Wrap" FontSize="21.333">Allow adjustments to be sent anonymously over the internet to Pocketailor. This will be used to improve the measurements.</TextBlock>
+				<RadioButton x:Name="allowFeedbackRadioBtn" Content="ALLOW FEEDBACK" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="feedbackRadioGroup" Checked="allowFeedbackRadioBtn_Checked" />
+				<RadioButton x:Name="disallowFeedbackRadioBtn" Content="DISALLOW FEEDBACK" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="feedbackRadioGroup" Checked="disallowFeedbackRadioBtn_Checked" />
 
 
 

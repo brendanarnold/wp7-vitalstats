@@ -12,7 +12,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
         public LongListSampleData() : base()
         {
 
-            IEnumerable<MockConversionData> conversions = new List<MockConversionData>() {
+            List<MockConversionData> conversions = new List<MockConversionData>() {
                     new MockConversionData() {
                         FormattedValue = "10 (L)",
                         BrandName = "ASOS",
@@ -33,20 +33,20 @@ namespace Expression.Blend.SampleData.SampleDataSource
                         FormattedValue = "12",
                         BrandName = "Marks & Spencers",
                     },
+                    new MockConversionData() {
+                        FormattedValue = "12",
+                        BrandName = "Jaeger",
+                    },
                 };
 
-            this.groupedConversions = new List<LongListSelectorGroup<MockConversionData>>()
-            {
-                new LongListSelectorGroup<MockConversionData>("a", conversions),
-                new LongListSelectorGroup<MockConversionData>("b", conversions),
-                new LongListSelectorGroup<MockConversionData>("c", conversions),
-                new LongListSelectorGroup<MockConversionData>("d", conversions),
-                new LongListSelectorGroup<MockConversionData>("e", conversions),
-            };
+            this.groupedConversions = from c in conversions
+                                      group c by c.BrandName[0].ToString().ToLower() into g
+                                      orderby g.Key
+                                      select new LongListSelectorGroup<MockConversionData>(g.Key, g);
         }
 
-        private List<LongListSelectorGroup<MockConversionData>> groupedConversions;
-        public List<LongListSelectorGroup<MockConversionData>> GroupedConversions
+        private IEnumerable<LongListSelectorGroup<MockConversionData>> groupedConversions;
+        public IEnumerable<LongListSelectorGroup<MockConversionData>> GroupedConversions
         {
             get
             {

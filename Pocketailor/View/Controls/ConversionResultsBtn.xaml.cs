@@ -109,12 +109,16 @@ namespace Pocketailor.View.Controls
 
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
             ConversionData c = (sender as Button).DataContext as ConversionData;
             App.VM.ApplyAdjustment(c, 1);
         }
 
+        
+
         private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
             ConversionData c = (sender as Button).DataContext as ConversionData;
             App.VM.ApplyAdjustment(c, -1);
         }
@@ -125,7 +129,38 @@ namespace Pocketailor.View.Controls
             c.ToggleBlacklisted();
         }
 
+        private void PromptForFeedbackPermission()
+        {
+            CustomMessageBox messageBox = new CustomMessageBox()
+            {
+                Caption = "Allow feedback?",
+                Message = "You can send any adjustments to the Pocketailor team anonymously over the web so we can improve our conversions. If you would like to help then click 'allow' below, if you would rather not then click 'disallow'."
+                    + Environment.NewLine + Environment.NewLine
+                    + "You can change this anytime in the settings.",
+                LeftButtonContent = "disallow",
+                RightButtonContent = "allow",
+                IsFullScreen = false,
+            };
 
+            messageBox.Dismissed += (s, e) =>
+            {
+                switch (e.Result)
+                {
+                    case CustomMessageBoxResult.LeftButton:
+                        App.VM.AllowFeedBack = false;
+                        break;
+                    case CustomMessageBoxResult.RightButton:
+                        App.VM.AllowFeedBack = true;
+                        break;
+                    default:
+                        break;
+                }
+            };
+
+            messageBox.Show();
+
+
+        }
 
     }
 }
