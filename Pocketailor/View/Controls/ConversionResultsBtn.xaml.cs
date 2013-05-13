@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace Pocketailor.View.Controls
 {
-    public partial class ConversionResultsBtn : UserControl
+    public partial class ConversionResultsBtn : UserControl, INotifyPropertyChanged
     {
         public ConversionResultsBtn()
         {
@@ -26,69 +26,103 @@ namespace Pocketailor.View.Controls
 
         }
 
-        // Is nullable so the IsHiddenPropertyChanged event is fired since it will always be assigned from null to true or false
-        // Alternate is to design button in one state e.g. Hidden state and set the default PropertyMetaData to true rather than null
-        public static readonly DependencyProperty IsBlacklistedProperty =
-            DependencyProperty.Register("IsBlacklisted", typeof(bool?), typeof(ConversionResultsBtn),
-            new PropertyMetadata(null, new PropertyChangedCallback(IsBlacklistedPropertyChanged)));
+        // IsBlacklistedPropertyChanged event is fired on instantiation only if the bound property is different to the default value
+        // so need to design the button to be in the default value state at instantiation
+        public static readonly DependencyProperty BtnIsBlacklistedProperty =
+            DependencyProperty.Register("BtnIsBlacklisted", 
+                typeof(bool), 
+                typeof(ConversionResultsBtn),
+                new PropertyMetadata(false, new PropertyChangedCallback(BtnIsBlacklistedPropertyChanged))
+            );
 
-        private static void IsBlacklistedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void BtnIsBlacklistedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
             bool val = (bool)e.NewValue;
             if (val)
             {
-                cBtn.hideBrandBtn.Content = "unhide brand";
                 cBtn.conversionResultContainerGrid.Opacity = 0.5;
             }
             else
             {
-                cBtn.hideBrandBtn.Content = "hide brand";
                 cBtn.conversionResultContainerGrid.Opacity = 1.0;
+            }
+            cBtn.NotifyPropertyChanged("BtnIsBlacklisted");
+        }
+
+        public bool BtnIsBlacklisted
+        {
+            get { return (bool)GetValue(BtnIsBlacklistedProperty); }
+            set { SetValue(BtnIsBlacklistedProperty, value); }
+        }
+
+        // ShowBlacklistedPropertyChanged event is fired on instantiation only if the bound property is different to the default value
+        // so need to design the button to be in the default value state at instantiation
+        public static readonly DependencyProperty BtnShowBlacklistedProperty =
+            DependencyProperty.Register("BtnShowBlacklisted", typeof(bool), typeof(ConversionResultsBtn),
+            new PropertyMetadata(true, new PropertyChangedCallback(BtnShowBlacklistedPropertyChanged)));
+
+        private static void BtnShowBlacklistedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
+            bool val = (bool)e.NewValue;
+            if (val)
+            {
+                cBtn.notBlacklistedCheckBox.Visibility = Visibility.Visible;
+                cBtn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                cBtn.notBlacklistedCheckBox.Visibility = Visibility.Collapsed;
+                if ((bool)cBtn.BtnIsBlacklisted)
+                {
+                    cBtn.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
-        public bool? IsBlacklisted
+        public bool BtnShowBlacklisted
         {
-            get { return (bool)GetValue(IsBlacklistedProperty); }
-            set { SetValue(IsBlacklistedProperty, value); }
+            get { return (bool)GetValue(BtnShowBlacklistedProperty); }
+            set { SetValue(BtnShowBlacklistedProperty, value); }
         }
 
 
 
-        public static readonly DependencyProperty BrandNameProperty =
-            DependencyProperty.Register("BrandName", typeof(string), typeof(ConversionResultsBtn),
-            new PropertyMetadata(String.Empty, new PropertyChangedCallback(BrandNamePropertyChanged)));
 
-        public static void BrandNamePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public static readonly DependencyProperty BtnBrandNameProperty =
+            DependencyProperty.Register("BtnBrandName", typeof(string), typeof(ConversionResultsBtn),
+            new PropertyMetadata(String.Empty, new PropertyChangedCallback(BtnBrandNamePropertyChanged)));
+
+        public static void BtnBrandNamePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
             string val = (string)e.NewValue;
             cBtn.brandNameTextBlock.Text = val;
         }
 
-        public string BrandName
+        public string BtnBrandName
         {
-            get { return (string)GetValue(BrandNameProperty); }
-            set { SetValue(BrandNameProperty, value); }
+            get { return (string)GetValue(BtnBrandNameProperty); }
+            set { SetValue(BtnBrandNameProperty, value); }
         }
 
 
-        public static readonly DependencyProperty ClothingSizeProperty =
-            DependencyProperty.Register("ClothingSize", typeof(string), typeof(ConversionResultsBtn),
-            new PropertyMetadata(String.Empty, new PropertyChangedCallback(ClothingSizePropertyChanged)));
+        public static readonly DependencyProperty BtnClothingSizeProperty =
+            DependencyProperty.Register("BtnClothingSize", typeof(string), typeof(ConversionResultsBtn),
+            new PropertyMetadata(String.Empty, new PropertyChangedCallback(BtnClothingSizePropertyChanged)));
 
-        public static void ClothingSizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public static void BtnClothingSizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
             string val = (string)e.NewValue;
             cBtn.clothingSizeTextBlock.Text = val;
         }
 
-        public string ClothingSize
+        public string BtnClothingSize
         {
-            get { return (string)GetValue(ClothingSizeProperty); }
-            set { SetValue(ClothingSizeProperty, value); }
+            get { return (string)GetValue(BtnClothingSizeProperty); }
+            set { SetValue(BtnClothingSizeProperty, value); }
         }
 
 
@@ -110,57 +144,71 @@ namespace Pocketailor.View.Controls
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
-            ConversionData c = (sender as Button).DataContext as ConversionData;
+            ConversionData c = this.DataContext as ConversionData;
             App.VM.ApplyAdjustment(c, 1);
         }
 
-        
+        private void rightSizeBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
+            ConversionData c = this.DataContext as ConversionData;
+            App.VM.ApplyAdjustment(c, 0);
+        }
 
         private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
-            ConversionData c = (sender as Button).DataContext as ConversionData;
+            ConversionData c = this.DataContext as ConversionData;
             App.VM.ApplyAdjustment(c, -1);
         }
 
-        private void hideBrandBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            ConversionData c = (sender as Button).DataContext as ConversionData;
-            c.ToggleBlacklisted();
-        }
+       
 
         private void PromptForFeedbackPermission()
         {
-            CustomMessageBox messageBox = new CustomMessageBox()
-            {
-                Caption = "Allow feedback?",
-                Message = "You can send any adjustments to the Pocketailor team anonymously over the web so we can improve our conversions. If you would like to help then click 'allow' below, if you would rather not then click 'disallow'."
+
+            MessageBoxResult res = MessageBox.Show("You can send any adjustments to the Pocketailor team anonymously over the web so we can improve our conversions. If you would like to help then click 'ok' below, if you would rather not then click 'cancel'."
                     + Environment.NewLine + Environment.NewLine
                     + "You can change this anytime in the settings.",
-                LeftButtonContent = "disallow",
-                RightButtonContent = "allow",
-                IsFullScreen = false,
-            };
-
-            messageBox.Dismissed += (s, e) =>
+                    "Allow feedback?",
+                    MessageBoxButton.OKCancel);
+            if (res == MessageBoxResult.OK)
             {
-                switch (e.Result)
-                {
-                    case CustomMessageBoxResult.LeftButton:
-                        App.VM.AllowFeedBack = false;
-                        break;
-                    case CustomMessageBoxResult.RightButton:
-                        App.VM.AllowFeedBack = true;
-                        break;
-                    default:
-                        break;
-                }
-            };
-
-            messageBox.Show();
-
+                App.VM.AllowFeedBack = true;
+            }
+            else
+            {
+                App.VM.AllowFeedBack = false;
+            }
 
         }
+
+
+
+
+
+
+
+        #region INotifyPropertyChanged members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        internal void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
+
+        
+
+        
+
+        
 
     }
 }

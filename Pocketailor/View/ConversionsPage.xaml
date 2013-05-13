@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
+	xmlns:Pocketailor_ViewModel="clr-namespace:Pocketailor.ViewModel"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
@@ -44,6 +45,7 @@
 	
 
 	<phone:PhoneApplicationPage.Resources>
+		<Pocketailor_View:BoolToNotCheckBox x:Key="BoolToNotCheckBox"/>
 		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
 		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
 		<Pocketailor_View:SelectedConversionToBGImage x:Key="SelectedConversionToBGImage"/>
@@ -53,7 +55,7 @@
 		<Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
     
    
-
+		<Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelInstanceLocator" />
 	
 	
   
@@ -142,7 +144,7 @@
 				<DataTemplate x:Key="groupHeaderTemplate">
 					<!-- The header for the group e.g. letter -->
 
-					<Border Background="Transparent" Margin="24,6,0,6" Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}">
+					<Border Background="Transparent" Margin="12,6,0,6" Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Left">
                                 <Border Background="{StaticResource TileBGColor}" 	
                                         Padding="8,0,0,0" 
 										Width="62" Height="62" 				 
@@ -156,14 +158,7 @@
                                                VerticalAlignment="Bottom"/>
                                 </Border>
                             </Border>
-					<!--<Border Background="{StaticResource TileBGColor}" Width="62" Height="62" 
-						Margin="24,6,0,6" HorizontalAlignment="Left">
-						<TextBlock Text="{Binding Key}" 
-							Foreground="{StaticResource PageTxtColor}" 
-							FontSize="48" Padding="6" HorizontalAlignment="Left" 
-							FontFamily="{StaticResource PhoneFontFamilySemiLight}" 
-							VerticalAlignment="Center"/>
-					</Border>-->
+					
 					
 				</DataTemplate>
 				<DataTemplate x:Key="groupFooterTemplate">
@@ -190,7 +185,15 @@
 
 				<DataTemplate x:Key="itemTemplate">
 					<!-- Applied to each item -->
-					<Controls:ConversionResultsBtn Margin="36,0,24,0" ClothingSize="{Binding FormattedValue}" BrandName="{Binding BrandName}" IsBlacklisted="{Binding IsBlacklisted}" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibility}}"  />
+
+						<Controls:ConversionResultsBtn 
+							Margin="12,0,24,4" 
+							BtnClothingSize="{Binding FormattedValue}" 
+							BtnBrandName="{Binding BrandName}" 
+							BtnIsBlacklisted="{Binding IsBlacklisted, Mode=TwoWay}" 
+							BtnShowBlacklisted="{Binding AppViewModel.ShowBlacklistedConversions, Source={StaticResource ViewModelInstanceLocator}}"
+						 />
+						
 					</DataTemplate>
 				<DataTemplate x:Key="listFooterTemplate">
 					<!-- Bottom of whole control -->

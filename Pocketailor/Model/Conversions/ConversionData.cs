@@ -248,41 +248,56 @@ namespace Pocketailor.Model.Conversions
             {
                 return App.VM.BlacklistedRetailers.Contains(this.Retailer);
             }
-        }
-
-        public bool IsVisible
-        {
-            get
+            set
             {
-                if (this.IsBlacklisted)
+                if (value)
                 {
-                    return App.VM.ShowBlacklistedConversions;
+                    App.VM.BlacklistedRetailers.Add(this.Retailer);
                 }
                 else
                 {
-                    return true;
+                    while (App.VM.BlacklistedRetailers.Contains(this.Retailer))
+                    {
+                        App.VM.BlacklistedRetailers.Remove(this.Retailer);
+                    }
                 }
+                this.NotifyPropertyChanged("IsBlacklisted");
             }
         }
 
-        internal void ToggleBlacklisted()
-        {
-            if (this.IsBlacklisted)
-            {
-                while (App.VM.BlacklistedRetailers.Contains(this.Retailer))
-                {
-                    App.VM.BlacklistedRetailers.Remove(this.Retailer);
-                }
-                App.VM.PropertyChanged -= NotifyVisibilityChanged;
-            }
-            else
-            {
-                App.VM.BlacklistedRetailers.Add(this.Retailer);
-            }
-            App.VM.PropertyChanged += NotifyVisibilityChanged;
-            this.NotifyPropertyChanged("IsBlacklisted");
-            this.NotifyPropertyChanged("IsVisible");
-        }
+        //public bool IsVisible
+        //{
+        //    get
+        //    {
+        //        if (this.IsBlacklisted)
+        //        {
+        //            return App.VM.ShowBlacklistedConversions;
+        //        }
+        //        else
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //}
+
+        //internal void ToggleBlacklisted()
+        //{
+        //    if (this.IsBlacklisted)
+        //    {
+        //        while (App.VM.BlacklistedRetailers.Contains(this.Retailer))
+        //        {
+        //            App.VM.BlacklistedRetailers.Remove(this.Retailer);
+        //        }
+        //        App.VM.PropertyChanged -= NotifyVisibilityChanged;
+        //    }
+        //    else
+        //    {
+        //        App.VM.BlacklistedRetailers.Add(this.Retailer);
+        //    }
+        //    App.VM.PropertyChanged += NotifyVisibilityChanged;
+        //    this.NotifyPropertyChanged("IsBlacklisted");
+        //    this.NotifyPropertyChanged("IsVisible");
+        //}
 
 
 #endif

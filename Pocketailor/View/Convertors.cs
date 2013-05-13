@@ -12,6 +12,22 @@ using System.Windows.Controls;
 namespace Pocketailor.View
 {
 
+    public class BoolToNotCheckBox : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return (bool?)!b;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return !b;
+        }
+
+        
+    }
 
     public class IsHiddenToVisibility : System.Windows.Data.IValueConverter
     {
@@ -384,6 +400,7 @@ namespace Pocketailor.View
     //}
 
     // Converter that returns visibility if an Ienumerable is empty based on paramter
+
     public class CountToVisibility : System.Windows.Data.IValueConverter
     {
         public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
