@@ -7,7 +7,7 @@ namespace Pocketailor.Model.Adjustments
 {
     public static class AdjustmentUtils
     {
-        public static Adjustment GetAdjustmentOrNull(ConversionId cId, RegionIds rId, Gender gender, RetailId bId)
+        public static Adjustment GetAdjustmentOrNull(ConversionId cId, RegionId rId, GenderId gender, RetailId bId)
         {
             throw new NotImplementedException();
         }

@@ -40,7 +40,7 @@ namespace Pocketailor
             else 
             {
                 this.titleTextBlock.Text = "add profile";
-                App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = Gender.Unspecified, IsProtected = false, IsQuickProfile = false };
+                App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = GenderId.Unspecified, IsProtected = false, IsQuickProfile = false };
             }
             this.nameTextBox.Text = App.VM.SelectedProfile.Name;
             //this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
@@ -49,11 +49,11 @@ namespace Pocketailor
                 
         }
 
-        private void SetSelectedGender(Model.Gender gender)
+        private void SetSelectedGender(Model.GenderId gender)
         {
             //if (gender == Model.Gender.Unspecified) this.unspecifiedRadioBtn.IsChecked = true;
-            if (gender == Model.Gender.Female) this.femaleRadioBtn.IsChecked = true;
-            if (gender == Model.Gender.Male) this.maleRadioBtn.IsChecked = true;
+            if (gender == Model.GenderId.Female) this.femaleRadioBtn.IsChecked = true;
+            if (gender == Model.GenderId.Male) this.maleRadioBtn.IsChecked = true;
         }
 
 
@@ -134,13 +134,13 @@ namespace Pocketailor
         }
 
 
-        private Model.Gender GetSelectedGender()
+        private Model.GenderId GetSelectedGender()
         {
             // n.b. have to use verbose form of conditional since IsChecked is nullable
             //if (this.unspecifiedRadioBtn.IsChecked == true) return Model.Gender.Unspecified;
-            if (this.femaleRadioBtn.IsChecked == true) return Model.Gender.Female;
-            if (this.maleRadioBtn.IsChecked == true) return Model.Gender.Male;
-            return Model.Gender.Unspecified;
+            if (this.femaleRadioBtn.IsChecked == true) return Model.GenderId.Female;
+            if (this.maleRadioBtn.IsChecked == true) return Model.GenderId.Male;
+            return Model.GenderId.Unspecified;
         }
 
 

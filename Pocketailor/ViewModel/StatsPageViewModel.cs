@@ -1,5 +1,5 @@
 ﻿using Pocketailor.Model;
-using Pocketailor.Model.Conversions;
+using Pocketailor.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace Pocketailor.ViewModel
 
         public bool HasRequiredMeasurements(List<MeasurementId> requiredIds)
         {
-            IEnumerable<MeasurementId> statIds = from Stat s in this.SelectedProfile.Stats select s.MeasurementId;
+            IEnumerable<MeasurementId> statIds = from Measurement s in this.SelectedProfile.Stats select s.MeasurementId;
             foreach (MeasurementId id in requiredIds)
                 if (!statIds.Contains(id)) return false;
             return true;
@@ -41,7 +41,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                if (App.VM.SelectedProfile.Gender == GenderId.Male)
                 {
                     return this.HasRequiredMeasurements(RequiredMeasurements.TrousersMens);
                 }
@@ -56,7 +56,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                if (App.VM.SelectedProfile.Gender == GenderId.Male)
                 {
                     return this.HasRequiredMeasurements(RequiredMeasurements.ShirtMens);
                 }
@@ -80,7 +80,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                if (App.VM.SelectedProfile.Gender == GenderId.Male)
                 {
                     return this.HasRequiredMeasurements(RequiredMeasurements.SuitMens);
                 }
@@ -144,7 +144,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (App.VM.SelectedProfile.Gender == Gender.Male)
+                if (App.VM.SelectedProfile.Gender == GenderId.Male)
                 {
                     return this.HasRequiredMeasurements(RequiredMeasurements.WetsuitMens);
                 }

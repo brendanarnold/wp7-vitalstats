@@ -277,19 +277,19 @@ namespace Pocketailor.ViewModel
             this.NotifyPropertyChanged("QuickProfiles");
         }
 
-        public void AddStatToProfile(Stat stat, Profile profile)
+        public void AddStatToProfile(Measurement stat, Profile profile)
         {
             stat.Profile = profile;
             profile.Stats.Add(stat);
-            this.appDB.Stats.InsertOnSubmit(stat);
+            this.appDB.Measurements.InsertOnSubmit(stat);
             this.appDB.SubmitChanges();
             profile.NotifyPropertyChanged("Stats");
         }
 
-        public void DeleteStatFromProfile(Stat stat, Profile profile)
+        public void DeleteStatFromProfile(Measurement stat, Profile profile)
         {
             profile.Stats.Remove(stat);
-            this.appDB.Stats.DeleteOnSubmit(stat);
+            this.appDB.Measurements.DeleteOnSubmit(stat);
             this.appDB.SubmitChanges();
             profile.NotifyPropertyChanged("Stats");
         }
@@ -360,8 +360,8 @@ namespace Pocketailor.ViewModel
 
         #region SelectedStat methods/properties
 
-        private Stat _selectedStat;
-        public Stat SelectedStat
+        private Measurement _selectedStat;
+        public Measurement SelectedStat
         {
             get { return this._selectedStat; }
             set
@@ -409,9 +409,9 @@ namespace Pocketailor.ViewModel
 
         #region StatTemplates methods/properties
 
-        private ObservableCollection<StatTemplate> _statTemplates 
-            = new ObservableCollection<StatTemplate>(Model.Static.MeasurementTemplates);
-        public ObservableCollection<StatTemplate> StatTemplates
+        private ObservableCollection<MeasurementTemplate> _statTemplates 
+            = new ObservableCollection<MeasurementTemplate>(Model.Static.MeasurementTemplates);
+        public ObservableCollection<MeasurementTemplate> StatTemplates
         {
             get { return this._statTemplates; }
             set

@@ -12,7 +12,7 @@ namespace Pocketailor.Model
         {
         }
 
-        public Table<Conversions.ConversionData> ConversionData;
+        public Table<ConversionData> ConversionData;
 
     }
 }

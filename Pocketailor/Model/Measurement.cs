@@ -9,9 +9,9 @@ using System.Linq;
 namespace Pocketailor.Model
 {
     [Table]
-    public class Stat : INotifyPropertyChanged, INotifyPropertyChanging
+    public class Measurement : INotifyPropertyChanged, INotifyPropertyChanging
     {
-        public Stat()
+        public Measurement()
         {
         }
 
@@ -199,9 +199,9 @@ namespace Pocketailor.Model
             }
         }
 
-        public Stat GetCopy()
+        public Measurement GetCopy()
         {
-            return this.MemberwiseClone() as Stat;
+            return this.MemberwiseClone() as Measurement;
         }
 
         #endregion

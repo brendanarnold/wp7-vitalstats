@@ -13,7 +13,7 @@ namespace Pocketailor.Model
         MarksSpencer = 2,
         Jaeger = 3,
         Gap = 4,
-	FrenchConnection = 5,
+	    FrenchConnection = 5,
     }
 
     public static partial class Lookup

@@ -12,7 +12,7 @@ namespace Pocketailor.Model.Adjustments
         /// <summary>
         /// Gender of the person the adjustment applies to
         /// </summary>
-        public Gender g;
+        public GenderId g;
 
         /// <summary>
         /// Brand
@@ -22,7 +22,7 @@ namespace Pocketailor.Model.Adjustments
         /// <summary>
         /// Region
         /// </summary>
-        public RegionIds r;
+        public RegionId r;
 
         /// <summary>
         /// (Index of) the fitted value that the app calculated
@@ -52,7 +52,7 @@ namespace Pocketailor.Model.Adjustments
         /// <summary>
         /// Time logged in UNIX time format i.e. seconds since 1/1/1970 UTC
         /// </summary>
-        public double t;
+        public long t;
     }
     
 }

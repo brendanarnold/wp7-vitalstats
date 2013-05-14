@@ -162,16 +162,16 @@ namespace Pocketailor.View
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
         {
-            Gender g;
+            GenderId g;
             if (value.GetType() == typeof(string))
             {
-                g = (Gender)Enum.Parse(typeof(Gender), (string)value, true);
+                g = (GenderId)Enum.Parse(typeof(GenderId), (string)value, true);
             }
             else
             {
-                g = (Gender)value;
+                g = (GenderId)value;
             }
-            int i = (g == Gender.Female) ? 1 : 0;
+            int i = (g == GenderId.Female) ? 1 : 0;
             string s = ((string)parameter).Split(new char[] { '|' })[i];
             return new BitmapImage(new Uri(s, UriKind.Relative));
         }
@@ -368,10 +368,10 @@ namespace Pocketailor.View
     {
         public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
         {
-            Model.Gender? g = value as Model.Gender?;
+            Model.GenderId? g = value as Model.GenderId?;
             string p = parameter as string;
             if (g == null) return null; // Is this the right thing to do?
-            if ((p == "HideIfMale") && (g == Model.Gender.Male)) return Visibility.Collapsed;
+            if ((p == "HideIfMale") && (g == Model.GenderId.Male)) return Visibility.Collapsed;
             return Visibility.Visible;
         }
         public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)

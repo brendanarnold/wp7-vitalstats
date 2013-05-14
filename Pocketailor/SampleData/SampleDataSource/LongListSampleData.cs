@@ -1,4 +1,4 @@
-﻿using Pocketailor.Model.Conversions;
+﻿using Pocketailor.Model;
 using Pocketailor.ViewModel;
 using System;
 using System.Collections.Generic;

@@ -20,11 +20,9 @@ namespace Pocketailor
         // The name of the field in the POST request
         public static string ADJUSTMENT_REQUEST_POST_FIELD = "adjustment";
         public static string SECRET_REQUEST_POST_FIELD = "pocketailor_adjustments_secret";
-        public static string POCKETAILOR_ADJUSTMENTS_SERVER_OK_RESPONSE = "pocketed";
 #if DEBUG
-        public static int MAX_ADJUSTMENTS_PER_REQUEST = 2;
+        public static int MAX_ADJUSTMENTS_PER_REQUEST = 50;
         public static int MAX_DELIVERY_ATTEMPTS = 3;
-        //public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://192.168.1.71:7000/";
         public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://whitby:7000/";
         public static string POCKETAILOR_ADJUSTMENTS_SECRET = "testing_secret";
 #else
@@ -41,7 +39,7 @@ namespace Pocketailor
         public static string PAID_APP_GUID = "";
         public static string[] VALUE_DELIMITERS = { "|" };
         public static string FORMATTED_NAME_SEPARATOR = "/";
-        public static RegionIds DEFAULT_REGION = RegionIds.Worldwide;
+        public static RegionId DEFAULT_REGION = RegionId.Worldwide;
         public static string CONVERSIONS_DB_CONNECTION_STRING = "Data Source = 'appdata:/PocketailorConversions.sdf'; File Mode = read only;";
         public static string APP_DB_CONNECTION_STRING = "Data Source=isostore:/Pocketailor.sdf";
         public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";

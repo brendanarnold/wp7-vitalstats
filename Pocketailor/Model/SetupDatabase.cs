@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Linq;
 using System.IO;
-using Pocketailor.Model.Conversions;
 
 namespace Pocketailor.Model
 {
@@ -27,7 +26,7 @@ namespace Pocketailor.Model
         public static void EmptyDB(AppDataContext db)
         {
             // The order here is important so as to not leave hanging references
-            db.Stats.DeleteAllOnSubmit(db.Stats);
+            db.Measurements.DeleteAllOnSubmit(db.Measurements);
             db.Profiles.DeleteAllOnSubmit(db.Profiles);
             db.SubmitChanges();
         }

@@ -252,13 +252,13 @@ namespace Pocketailor.View
                 tb.Clear();
         }
 
-        public BitmapImage GetHelpImg(MeasurementId measurementId, Gender gender)
+        public BitmapImage GetHelpImg(MeasurementId measurementId, GenderId gender)
         {
-            string fn = (gender == Gender.Male) ? this.HelpData.HelpImgMale[measurementId] : this.HelpData.HelpImgFemale[measurementId];
+            string fn = (gender == GenderId.Male) ? this.HelpData.HelpImgMale[measurementId] : this.HelpData.HelpImgFemale[measurementId];
             return new BitmapImage(new Uri(AppConstants.HELP_IMAGE_DIRECTORY + fn, UriKind.Relative));
         }
 
-        public string GetHelpText(MeasurementId measurementId, Gender gender)
+        public string GetHelpText(MeasurementId measurementId, GenderId gender)
         {
             return this.HelpData.HelpText[measurementId];
         }

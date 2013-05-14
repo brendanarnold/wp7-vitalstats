@@ -17,7 +17,7 @@ namespace PocketailorDatabaseCreator.Model
 
             int lineNum = 0;
             List<string> headers = new List<string>();
-            Pocketailor.Model.Conversions.ConversionData cd = null;
+            Pocketailor.Model.ConversionData cd = null;
 
             while (!fh.EndOfStream)
             {
@@ -48,10 +48,10 @@ namespace PocketailorDatabaseCreator.Model
                             csvLine.Retailer = (RetailId)Enum.Parse(typeof(RetailId), els[i], true);
                             continue;
                         case "Region":
-                            csvLine.Region = (RegionIds)Enum.Parse(typeof(RegionIds), els[i], true);
+                            csvLine.Region = (RegionId)Enum.Parse(typeof(RegionId), els[i], true);
                             continue;
                         case "Gender":
-                            csvLine.Gender = (Gender)Enum.Parse(typeof(Gender), els[i], true);
+                            csvLine.Gender = (GenderId)Enum.Parse(typeof(GenderId), els[i], true);
                             continue;
                         case "GeneralSize":
                             csvLine.GeneralSize = els[i];
@@ -78,7 +78,7 @@ namespace PocketailorDatabaseCreator.Model
                 // Take into account the first line
                 if (cd == null)
                 {
-                    cd = new Pocketailor.Model.Conversions.ConversionData();
+                    cd = new Pocketailor.Model.ConversionData();
                     cd.Region = csvLine.Region;
                     cd.Retailer = csvLine.Retailer;
                     cd.Conversion = csvLine.Conversion;
@@ -95,7 +95,7 @@ namespace PocketailorDatabaseCreator.Model
                     db.ConversionData.InsertOnSubmit(cd);
                     db.SubmitChanges();
                     // Create next database object
-                    cd = new Pocketailor.Model.Conversions.ConversionData();
+                    cd = new Pocketailor.Model.ConversionData();
                     cd.Region = csvLine.Region;
                     cd.Retailer = csvLine.Retailer;
                     cd.Conversion = csvLine.Conversion;

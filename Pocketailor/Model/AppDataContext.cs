@@ -12,7 +12,7 @@ namespace Pocketailor.Model
         }
 
         public Table<Profile> Profiles;
-        public Table<Stat> Stats;
+        public Table<Measurement> Measurements;
     }
 
 

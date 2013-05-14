@@ -13,7 +13,6 @@ using Microsoft.Phone.Controls;
 using System.Globalization;
 using Pocketailor.Model;
 using Microsoft.Phone.Shell;
-using Pocketailor.Model.Conversions;
 
 namespace Pocketailor.View
 {
@@ -60,7 +59,7 @@ namespace Pocketailor.View
         #endregion
 
 
-        private void ConfirmAndDeleteStat(Stat s)
+        private void ConfirmAndDeleteStat(Measurement s)
         {
             MessageBoxResult res = MessageBox.Show(String.Format("Are you sure you want to delete the statistic '{0}'?", s.Name), "Delete stat?", MessageBoxButton.OKCancel);
             if (res == MessageBoxResult.OK)
@@ -109,7 +108,7 @@ namespace Pocketailor.View
         // User has selected a stat template from the popup, can go to new stat page
         private void selectStatTemplateStackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            StatTemplate s = (sender as StackPanel).DataContext as StatTemplate;
+            MeasurementTemplate s = (sender as StackPanel).DataContext as MeasurementTemplate;
             this.EditStatFromTemplate(s.Id);
         }
 
@@ -145,7 +144,7 @@ namespace Pocketailor.View
         {
             if (sender != null)
             {
-                Stat s = (sender as MenuItem).DataContext as Stat;
+                Measurement s = (sender as MenuItem).DataContext as Measurement;
                 this.ConfirmAndDeleteStat(s);
             }
         }
@@ -154,7 +153,7 @@ namespace Pocketailor.View
         {
             if (sender != null)
             {
-                Stat s = (sender as MenuItem).DataContext as Stat;
+                Measurement s = (sender as MenuItem).DataContext as Measurement;
                 App.VM.SelectedStat = s;
                 NavigationService.Navigate(new Uri(String.Format("/View/EditStatPage.xaml?Action={0}", EditStatPageActions.Edit), UriKind.Relative));
             }
@@ -217,8 +216,8 @@ namespace Pocketailor.View
 
         private void EditStatFromTemplate(MeasurementId id)
         {
-            StatTemplate st = App.VM.StatTemplates.Where(x => x.Id == id).First();
-            App.VM.SelectedStat = new Stat()
+            MeasurementTemplate st = App.VM.StatTemplates.Where(x => x.Id == id).First();
+            App.VM.SelectedStat = new Measurement()
             {
                 Name = st.Name,
                 MeasurementType = st.MeasurementType,
@@ -287,7 +286,7 @@ namespace Pocketailor.View
         private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             List<MeasurementId> missingMeasurements;
-            if (App.VM.SelectedProfile.Gender == Gender.Male)
+            if (App.VM.SelectedProfile.Gender == GenderId.Male)
             {
                 missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.TrousersMens);
             }
@@ -309,7 +308,7 @@ namespace Pocketailor.View
 
         private void shirtConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> required = (App.VM.SelectedProfile.Gender == Gender.Male) ? RequiredMeasurements.ShirtMens
+            List<MeasurementId> required = (App.VM.SelectedProfile.Gender == GenderId.Male) ? RequiredMeasurements.ShirtMens
                 : RequiredMeasurements.ShirtWomens;
             List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(required);
             if (missingMeasurements.Count == 0)
@@ -340,7 +339,7 @@ namespace Pocketailor.View
         private void suitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             List<MeasurementId> missingMeasurements;
-            if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
+            if (App.VM.SelectedProfile.Gender == Model.GenderId.Male)
             {
                 missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SuitMens);
             }
@@ -446,7 +445,7 @@ namespace Pocketailor.View
         private void wetsuitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             List<MeasurementId> missingMeasurements;
-            if (App.VM.SelectedProfile.Gender == Model.Gender.Male)
+            if (App.VM.SelectedProfile.Gender == Model.GenderId.Male)
             {
                 missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.WetsuitMens);
             }

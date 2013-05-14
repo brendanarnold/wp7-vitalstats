@@ -14,11 +14,11 @@ namespace PocketailorDatabaseCreator.Model
         }
         public Dictionary<MeasurementId, double> Measurements;
         public RetailId Retailer;
-        public RegionIds Region;
+        public RegionId Region;
         public ConversionId Conversion;
         public string RegionalSize;
         public string GeneralSize;
-        public Gender Gender;
+        public GenderId Gender;
         public double GetMeasurementOrNull(MeasurementId id)
         {
             double d;

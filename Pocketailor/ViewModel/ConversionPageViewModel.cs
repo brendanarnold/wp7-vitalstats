@@ -1,6 +1,6 @@
 ﻿using Pocketailor.Model;
 using Pocketailor.Model.Adjustments;
-using Pocketailor.Model.Conversions;
+using Pocketailor.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -89,13 +89,13 @@ namespace Pocketailor.ViewModel
             Dictionary<MeasurementId, double> measuredVals = new Dictionary<MeasurementId, double>();
             // TODO: If gender not specified, then return Female measurements. Note only perform gener query on tables that have 
             // Gender fields (even after casting) because it still generate SQL to query gender
-            Gender qGender = (this.SelectedProfile.Gender == Gender.Unspecified) ? Gender.Female : this.SelectedProfile.Gender; 
+            GenderId qGender = (this.SelectedProfile.Gender == GenderId.Unspecified) ? GenderId.Female : this.SelectedProfile.Gender; 
 
             // Get the conversion specific data
             switch (this.SelectedConversionType)
             {
                 case ConversionId.TrouserSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
+                    if (this.SelectedProfile.Gender == GenderId.Male)
                     {
                         measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.TrousersMens);
                     }
@@ -105,7 +105,7 @@ namespace Pocketailor.ViewModel
                     }
                     break;
                 case ConversionId.ShirtSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
+                    if (this.SelectedProfile.Gender == GenderId.Male)
                     {
                         measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.ShirtMens);
                     }
@@ -118,7 +118,7 @@ namespace Pocketailor.ViewModel
                     measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.Hat);
                     break;
                 case ConversionId.SuitSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
+                    if (this.SelectedProfile.Gender == GenderId.Male)
                     {
                         measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.SuitMens);
                     }
@@ -143,7 +143,7 @@ namespace Pocketailor.ViewModel
                     measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.SkiBoots);
                     break;
                 case ConversionId.WetsuitSize:
-                    if (this.SelectedProfile.Gender == Gender.Male)
+                    if (this.SelectedProfile.Gender == GenderId.Male)
                     {
                         measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.WetsuitMens);
                     }
@@ -158,7 +158,7 @@ namespace Pocketailor.ViewModel
             // Check we have all the necessary measurements
             if (measuredVals == null) return;
             // Build up by regions
-            RegionIds selectedRegion = this.SelectedRegion;
+            RegionId selectedRegion = this.SelectedRegion;
 
             // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsEnumerable
             List<ConversionData> conversions = (from d in conversiondsDB.ConversionData
@@ -207,7 +207,7 @@ namespace Pocketailor.ViewModel
             
             foreach (MeasurementId mID in requiredIds)
             {
-                Stat s = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == mID);
+                Measurement s = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == mID);
                 if (s == null) return null;
                 double d;
                 if (double.TryParse(s.Value, out d))

@@ -12,13 +12,13 @@ namespace Pocketailor.Model
         {
             #region EntitySet bookkeeping
 
-            this._stats = new EntitySet<Stat>(
-                delegate(Stat entity)
+            this._stats = new EntitySet<Measurement>(
+                delegate(Measurement entity)
                 {
                     this.NotifyPropertyChanging("Stats");
                     entity.Profile = this;
                 },
-                delegate(Stat entity)
+                delegate(Measurement entity)
                 {
                     this.NotifyPropertyChanging("Stats");
                     entity.Profile = null;
@@ -99,17 +99,17 @@ namespace Pocketailor.Model
             }
         }
 
-        private EntitySet<Stat> _stats;
+        private EntitySet<Measurement> _stats;
         [Association(Storage = "_stats", OtherKey = "_profileId", ThisKey = "Id", DeleteRule="CASCADE")]
-        public EntitySet<Stat> Stats
+        public EntitySet<Measurement> Stats
         {
             get { return this._stats; }
             set { this._stats.Assign(value); }
         }
 
-        private Model.Gender _gender = Model.Gender.Unspecified;
+        private Model.GenderId _gender = Model.GenderId.Unspecified;
         [Column]
-        public Model.Gender Gender
+        public Model.GenderId Gender
         {
             get { return this._gender; }
             set

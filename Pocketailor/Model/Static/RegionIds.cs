@@ -6,7 +6,7 @@ using System.Text;
 namespace Pocketailor.Model
 {
 
-    public enum RegionIds
+    public enum RegionId
     {
         // Regions
         Worldwide = 0,
@@ -36,29 +36,29 @@ namespace Pocketailor.Model
 
     public static partial class Lookup {
 
-        public static Dictionary<RegionIds, string> Regions = new Dictionary<RegionIds,string>() 
+        public static Dictionary<RegionId, string> Regions = new Dictionary<RegionId,string>() 
         {
-            { RegionIds.Worldwide , "Worldwide" },
-            { RegionIds.Europe , "Europe" },
-            { RegionIds.NorthAmerica, "North America" },
-            { RegionIds.SouthAmerica, "South America" },
-            { RegionIds.Africa, "Africa" },
-            { RegionIds.Asia, "Asia" },
-            { RegionIds.Australasia, "Australasia" },
-            { RegionIds.UK, "UK" },
-            { RegionIds.Ireland, "Ireland" },
-            { RegionIds.France, "France" },
-            { RegionIds.Italy, "Italy" },
-            { RegionIds.Germany, "Germany" },
-            { RegionIds.Denmark, "Denmark" },
-            { RegionIds.Sweden, "Sweden" },
-            { RegionIds.Norway, "Norway" },
-            { RegionIds.Finland, "Finland" },
-            { RegionIds.Spain, "Spain" },
-            { RegionIds.US, "United States" },
-            { RegionIds.Australia, "Australia" },
-            { RegionIds.NewZealand, "New Zealand" },
-            { RegionIds.Canada, "Canada" },
+            { RegionId.Worldwide , "Worldwide" },
+            { RegionId.Europe , "Europe" },
+            { RegionId.NorthAmerica, "North America" },
+            { RegionId.SouthAmerica, "South America" },
+            { RegionId.Africa, "Africa" },
+            { RegionId.Asia, "Asia" },
+            { RegionId.Australasia, "Australasia" },
+            { RegionId.UK, "UK" },
+            { RegionId.Ireland, "Ireland" },
+            { RegionId.France, "France" },
+            { RegionId.Italy, "Italy" },
+            { RegionId.Germany, "Germany" },
+            { RegionId.Denmark, "Denmark" },
+            { RegionId.Sweden, "Sweden" },
+            { RegionId.Norway, "Norway" },
+            { RegionId.Finland, "Finland" },
+            { RegionId.Spain, "Spain" },
+            { RegionId.US, "United States" },
+            { RegionId.Australia, "Australia" },
+            { RegionId.NewZealand, "New Zealand" },
+            { RegionId.Canada, "Canada" },
 
         };
 

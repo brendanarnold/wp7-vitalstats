@@ -40,7 +40,7 @@
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
-			<shell:ApplicationBarIconButton x:Name="saveApplicationBarIconBtn" IconUri="/Images/Save.png" IsEnabled="True" Text="save" Click="saveApplicationBarIconBtn_Click" />
+			<shell:ApplicationBarIconButton x:Name="saveApplicationBarIconBtn" IconUri="/Images/AppBar/appbar.save.png" IsEnabled="True" Text="save" Click="saveApplicationBarIconBtn_Click" />
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

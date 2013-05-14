@@ -130,11 +130,11 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="settings" Click="settingsAppBarMenuItem_Click"/>
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/add.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
+            <shell:ApplicationBarIconButton x:Name="addAppBarBtn" IconUri="/Images/AppBar/appbar.add.rest.png" Text="add profile" Click="addAppBarBtn_Click" IsEnabled="True"/>
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="aboutApplicationBar" IsVisible="True" IsMenuEnabled="False" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}" >
-            <shell:ApplicationBarIconButton x:Name="settingsAppBarBtn" IconUri="/Images/appbar.settings.png" Text="settings" Click="settingsAppBarBtn_Click" IsEnabled="True"/>
+            <shell:ApplicationBarIconButton x:Name="settingsAppBarBtn" IconUri="/Images/AppBar/appbar.settings.png" Text="settings" Click="settingsAppBarBtn_Click" IsEnabled="True"/>
         </shell:ApplicationBar>
 
         <Style x:Key="hyperlinkBtnStyle" TargetType="Button">

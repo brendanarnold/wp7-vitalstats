@@ -12,16 +12,16 @@ namespace Pocketailor.ViewModel
     {
 
 
-        private RegionIds? _selectedRegion;
-        public RegionIds SelectedRegion
+        private RegionId? _selectedRegion;
+        public RegionId SelectedRegion
         {
             get
             {
                 if (this._selectedRegion == null)
                 {
-                    this._selectedRegion = App.Settings.GetValueOrDefault<RegionIds>("SelectedRegion", AppConstants.DEFAULT_REGION);
+                    this._selectedRegion = App.Settings.GetValueOrDefault<RegionId>("SelectedRegion", AppConstants.DEFAULT_REGION);
                 }
-                return  (RegionIds)this._selectedRegion;
+                return  (RegionId)this._selectedRegion;
             }
             set 
             {
@@ -68,8 +68,8 @@ namespace Pocketailor.ViewModel
         public void LoadRegionContainers()
         {
             this._regions = new ObservableCollection<RegionContainer>();
-            RegionIds selectedRegion = this.SelectedRegion;
-            foreach (RegionIds r in typeof(RegionIds).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionIds))).Cast<RegionIds>())
+            RegionId selectedRegion = this.SelectedRegion;
+            foreach (RegionId r in typeof(RegionId).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionId))).Cast<RegionId>())
             {
                 this._regions.Add(new RegionContainer { Name = Lookup.Regions[r], Id = r, Selected = (selectedRegion == r) });
             }
@@ -78,7 +78,7 @@ namespace Pocketailor.ViewModel
         public class RegionContainer
         {
             public string Name { get; set; }
-            public RegionIds Id { get; set; }
+            public RegionId Id { get; set; }
             public bool Selected { get; set; }
         }
 

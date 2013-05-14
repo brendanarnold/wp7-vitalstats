@@ -8,7 +8,7 @@ using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 
-namespace Pocketailor.Model.Conversions
+namespace Pocketailor.Model
 {
     // Represents the all the data for a particular region, gender, brand and conversion e.g.
     // UK, Female, M&S, Dress sizes.
@@ -115,13 +115,13 @@ namespace Pocketailor.Model.Conversions
         }
 
         [Column]
-        public RegionIds Region { get; set; }
+        public RegionId Region { get; set; }
 
         [Column]
         public RetailId Retailer { get; set; }
 
         [Column]
-        public Gender Gender { get; set; }
+        public GenderId Gender { get; set; }
 
         [Column]
         public ConversionId Conversion { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pocketailor.Model
 {
-    public enum Gender
+    public enum GenderId
     {
         Unspecified = 0,
         Female = 1,

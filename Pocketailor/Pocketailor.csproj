@@ -171,10 +171,10 @@
     <Compile Include="Model\AppDataContext.cs" />
     <Compile Include="Model\Cache.cs" />
     <Compile Include="Model\ConversionsDataContext.cs" />
-    <Compile Include="Model\Conversions\ConversionData.cs" />
-    <Compile Include="Model\Conversions\RequiredMeasurements.cs" />
+    <Compile Include="Model\ConversionData.cs" />
+    <Compile Include="Model\Static\RequiredMeasurements.cs" />
     <Compile Include="Model\Static\ConversionIds.cs" />
-    <Compile Include="Model\Static\Gender.cs" />
+    <Compile Include="Model\Static\GenderIds.cs" />
     <Compile Include="Model\Static\MeasurementIds.cs" />
     <Compile Include="Model\Static\MeasurementTypes.cs" />
     <Compile Include="Model\Static\MeasurementTypeIds.cs" />
@@ -204,7 +204,7 @@
     <Compile Include="Model\Helpers.cs" />
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\SetupDatabase.cs" />
-    <Compile Include="Model\Stat.cs" />
+    <Compile Include="Model\Measurement.cs" />
     <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
@@ -311,7 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ads\AdSettings.xml" />
-    <Content Include="Assets\AppBar\appbar.check.rest.png">
+    <Content Include="Images\AppBar\appbar.check.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <BlendEmbeddedFont Include="Fonts\Lobster.ttf">
@@ -335,6 +335,7 @@
     <Content Include="Images\hosiery-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Lock.png" />
     <Content Include="Images\shirt-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -350,6 +351,7 @@
     <Content Include="Images\trousers-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Unlock.png" />
     <Content Include="Images\wetsuit-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -363,28 +365,28 @@
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
     <None Include="WP-Unified-Ad-HowTo.txt" />
     <None Include="Ads\UnifiedAd.xsd" />
-    <Content Include="Images\appbar.chat.png">
+    <Content Include="Images\AppBar\appbar.chat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.facebook.heart.png">
+    <Content Include="Images\AppBar\appbar.facebook.heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.globe.png">
+    <Content Include="Images\AppBar\appbar.globe.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.globe.wire.png">
+    <Content Include="Images\AppBar\appbar.globe.wire.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.heart.outline.png">
+    <Content Include="Images\AppBar\appbar.heart.outline.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.heart.png">
+    <Content Include="Images\AppBar\appbar.heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.scale.unbalanced.png">
+    <Content Include="Images\AppBar\appbar.scale.unbalanced.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.settings.png">
+    <Content Include="Images\AppBar\appbar.settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\ChalkArrow.png">
@@ -396,7 +398,6 @@
     <Content Include="Images\dress-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\dress.jpg" />
     <Content Include="Images\HelpImages\ChestMan.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -485,9 +486,6 @@
     <Content Include="Images\HelpImages\WeightWoman.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\suits.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\wetsuit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -502,66 +500,35 @@
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\AppBar\appbar.add.rest.png">
+    <Content Include="Images\AppBar\appbar.add.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\AppBar\appbar.questionmark.rest.png">
+    <Content Include="Images\AppBar\appbar.questionmark.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\AppBar\appbar.unlock.png">
+    <Content Include="Images\AppBar\appbar.unlock.keyhole.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.unlock.keyhole.png">
+    <Content Include="Images\AppBar\appbar.unlock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\appbar.unlock.png">
+    <Content Include="Images\AppBar\appbar.cross.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Check.png">
+    <Content Include="Images\AppBar\appbar.key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Close.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Key.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Lock.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Add.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Edit.png">
+    <Content Include="Images\AppBar\appbar.edit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\SmallLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Unlock.png" />
-    <Content Include="Images\UnlockIcons\Angry.png" />
-    <Content Include="Images\UnlockIcons\Cheeky.png" />
-    <Content Include="Images\UnlockIcons\Chicago.png" />
-    <Content Include="Images\UnlockIcons\Confused.png" />
-    <Content Include="Images\UnlockIcons\Drinking.png" />
-    <Content Include="Images\UnlockIcons\Happy.png" />
-    <Content Include="Images\UnlockIcons\Hiking.png" />
-    <Content Include="Images\UnlockIcons\Nightime.png" />
-    <Content Include="Images\UnlockIcons\PlayingJigsaw.png" />
-    <Content Include="Images\UnlockIcons\PlayingVideoGames.png" />
-    <Content Include="Images\UnlockIcons\Rainy.png" />
-    <Content Include="Images\UnlockIcons\Sad.png" />
-    <Content Include="Images\UnlockIcons\SanFranscisco.png" />
-    <Content Include="Images\UnlockIcons\Seattle.png" />
-    <Content Include="Images\UnlockIcons\Snowy.png" />
-    <Content Include="Images\UnlockIcons\Stormy.png" />
-    <Content Include="Images\UnlockIcons\Sunny.png" />
-    <Content Include="Images\UnlockIcons\Writing.png" />
     <Content Include="SplashScreenImage.jpg" />
-    <Content Include="Images\Save.png">
+    <Content Include="Images\AppBar\appbar.save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -603,7 +570,7 @@
     <Content Include="Images\hat-btn.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\hosiery-btn.jpg">
+    <Content Include="Images\AppBar\hosiery-btn.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\shirt-btn.jpg">
@@ -627,6 +594,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\" />
     <Folder Include="Includes\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Pocketailor.Model.Conversions;
+using Pocketailor.Model;
 using System.ComponentModel;
 using System.Windows.Media;
 

@@ -85,7 +85,7 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
-		    <shell:ApplicationBarIconButton IconUri="/Images/appbar.globe.png" Text="change region" Click="ApplicationBarIconButton_Click"></shell:ApplicationBarIconButton>
+		    <shell:ApplicationBarIconButton IconUri="/Images/AppBar/appbar.globe.png" Text="change region" Click="ApplicationBarIconButton_Click"></shell:ApplicationBarIconButton>
 			<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="showHiddenAppBarMenuItem" Text="show hidden retailers" Click="showHiddenAppBarMenuItem_Click" />
             </shell:ApplicationBar.MenuItems>
