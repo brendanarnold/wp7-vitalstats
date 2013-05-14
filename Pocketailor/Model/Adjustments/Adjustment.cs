@@ -5,35 +5,54 @@ using System.Text;
 
 namespace Pocketailor.Model.Adjustments
 {
-    // The class that will get JSONified and sent over the wire to the server
+     // The class that will get JSONified and sent over the wire to the server
     // Note the names are abbreviated since MongoDB stores fields with each entry
     public class Adjustment
     {
-        // Adjustment version format
-        public int v = AppConstants.ADJUSTMENT_FORMAT_VERSION;
-
-        // Gender of the person the adjustment applies to 
+        /// <summary>
+        /// Gender of the person the adjustment applies to
+        /// </summary>
         public Gender g;
 
-        // Brand
+        /// <summary>
+        /// Brand
+        /// </summary>
         public RetailId b;
 
-        // Region
+        /// <summary>
+        /// Region
+        /// </summary>
         public RegionIds r;
 
-        // Adjustment factor, the factor by which the chart is scaled so that the correct size is obtained
-        public double a;
+        /// <summary>
+        /// (Index of) the fitted value that the app calculated
+        /// </summary>
+        public int f;
 
-        // App ID, a GUID for this installlation
-        public Guid i;
+        /// <summary>
+        /// Adjustment to the fitted value e.g. +1, 0, -1
+        /// </summary>
+        public int a;
 
-        // Conversion
+        /// <summary>
+        /// App ID, a GUID for this installlation
+        /// </summary>
+        public string i;
+
+        /// <summary>
+        /// Conversion ID
+        /// </summary>
         public ConversionId c;
 
-        // Measurements, a list of the measurements for this conversion
-        public List<double> m;
+        /// <summary>
+        /// App version
+        /// </summary>
+        public string v;
 
-        // Time logged in UNIX time format i.e. seconds since 1/1/1970 UTC
+        /// <summary>
+        /// Time logged in UNIX time format i.e. seconds since 1/1/1970 UTC
+        /// </summary>
         public double t;
     }
+    
 }

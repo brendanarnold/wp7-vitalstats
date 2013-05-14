@@ -144,6 +144,8 @@ namespace Pocketailor.Model.Conversions
             get { return ((this.BestFitInd + this.Adjustment) == 0); }
         }
 
+        public Adjustment PersistedAdjustment { get; set; }
+
         private int _adjustment;
         public int Adjustment
         {
@@ -207,14 +209,14 @@ namespace Pocketailor.Model.Conversions
         public void FindBestFit(Dictionary<MeasurementId, double> measuredVals)
         {
             // If there is an adjustment, apply that
-            double scaleFactor = 1.0;
             Adjustment adj = App.Cache.Adjustments.FirstOrDefault(a =>
                    a.c == this.Conversion
                 && a.r == this.Region
                 && a.g == this.Gender
                 && a.b == this.Retailer
             );
-            if (adj != null) scaleFactor = adj.v;
+            this.PersistedAdjustment = adj;
+            this.Adjustment = (this.PersistedAdjustment == null) ? 0 : this.PersistedAdjustment.a;
 
             // Find index of the closest fit which all values are  if any size is too small then go for the next size up
             int? bestInd = null;
@@ -250,23 +252,50 @@ namespace Pocketailor.Model.Conversions
 
 
         // This is necessary since database create app has no reference to App.VM
-#if !IS_DATABASE_HELPER_APP
+        #if !IS_DATABASE_HELPER_APP
 
-        public void AdjustValue()
+        public void AcceptAdjustment()
         {
-            int targetInd = this.BestFitInd + this.Adjustment;
-            // TODO
-            Adjustment adj = new Adjustment();
+            if (this.PersistedAdjustment != null)
+            {
+                this.PersistedAdjustment.a = this.Adjustment;
+                App.Cache.SaveAdjustments();
+            }
+            else
+            {
+                Adjustment adj = new Adjustment()
+                {
+                    a = this.Adjustment,
+                    b = this.Retailer,
+                    c = this.Conversion,
+                    f = this.BestFitInd,
+                    g = this.Gender,
+                    i = App.VM.AppGUID,
+                    r = this.Region,
+                    t = Helpers.GetUnixTime(),
+                    v = AppConstants.APP_VERSION,
+                };
+                App.Cache.Adjustments.Add(adj);
+                App.Cache.SaveAdjustments();
+                this.PersistedAdjustment = adj;
+            }
+            if (App.VM.AllowFeedBack == true)
+            {
+                App.FeedbackAgent.QueueFeedback(this.PersistedAdjustment);
+            }
 
-            //App.Cache.Adjustments.Add(adj);
+
         }
 
-        public void TryAdjustment(int delta) 
+        public void TweakAdjustment(int delta) 
         {
             this.Adjustment += delta;
         }
 
-
+        internal void ResetAdjustment()
+        {
+            this.Adjustment = (this.PersistedAdjustment == null) ? 0 : this.PersistedAdjustment.a;
+        }
 
 
         public bool IsBlacklisted
@@ -292,42 +321,8 @@ namespace Pocketailor.Model.Conversions
             }
         }
 
-        //public bool IsVisible
-        //{
-        //    get
-        //    {
-        //        if (this.IsBlacklisted)
-        //        {
-        //            return App.VM.ShowBlacklistedConversions;
-        //        }
-        //        else
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //}
+        #endif
 
-        //internal void ToggleBlacklisted()
-        //{
-        //    if (this.IsBlacklisted)
-        //    {
-        //        while (App.VM.BlacklistedRetailers.Contains(this.Retailer))
-        //        {
-        //            App.VM.BlacklistedRetailers.Remove(this.Retailer);
-        //        }
-        //        App.VM.PropertyChanged -= NotifyVisibilityChanged;
-        //    }
-        //    else
-        //    {
-        //        App.VM.BlacklistedRetailers.Add(this.Retailer);
-        //    }
-        //    App.VM.PropertyChanged += NotifyVisibilityChanged;
-        //    this.NotifyPropertyChanged("IsBlacklisted");
-        //    this.NotifyPropertyChanged("IsVisible");
-        //}
-
-
-#endif
 
         #region INotifyPropertyChanged members
 
@@ -343,13 +338,7 @@ namespace Pocketailor.Model.Conversions
 
         #endregion
 
-
-
-
-        internal void ResetAdjustment()
-        {
-            this.Adjustment = 0;
-        }
+ 
     }
 
 

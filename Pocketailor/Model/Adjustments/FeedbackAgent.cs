@@ -12,19 +12,14 @@ namespace Pocketailor.Model.Adjustments
     {
         public FeedbackAgent()
         {
-            App.Cache.LoadQueuedAdjustments();
+            App.Cache.LoadQueuedFeedback();
         }
 
-
-        public void CacheAdjustment(Adjustment adj)
-        {
-            App.Cache.QueuedAdjustments.Add(adj);
-        }
 
         // An Async method that sends off the adjustments in batches
         public async System.Threading.Tasks.Task DeliverAdjustmentsTaskAsync()
         {
-            if (App.Cache.Adjustments.Count == 0) return;
+            if (App.Cache.QueuedFeedback.Count == 0) return;
             // Take MAX_ADJUSTMENTS_PER_REQUEST adjustments at a time from the cache and send on
             int attempt = AppConstants.MAX_DELIVERY_ATTEMPTS;
             do
@@ -32,8 +27,8 @@ namespace Pocketailor.Model.Adjustments
                 // Give up after a certain amount of attempts
                 if (attempt == 0) break;
                 // Take a batch of adjustments 
-                int nvals = Math.Min(App.Cache.Adjustments.Count, AppConstants.MAX_ADJUSTMENTS_PER_REQUEST);
-                List<Adjustment> buff = App.Cache.Adjustments.GetRange(0, nvals);
+                int nvals = Math.Min(App.Cache.QueuedFeedback.Count, AppConstants.MAX_ADJUSTMENTS_PER_REQUEST);
+                List<Adjustment> buff = App.Cache.QueuedFeedback.GetRange(0, nvals);
                 // JSONify
                 string adjustmentsJson = Newtonsoft.Json.JsonConvert.SerializeObject(buff);
                 // Send over web
@@ -47,15 +42,22 @@ namespace Pocketailor.Model.Adjustments
                 if (res.StatusCode == HttpStatusCode.OK)
                 {
                     // Remove adjustments from cache
-                    App.Cache.Adjustments.RemoveRange(0, nvals);
+                    App.Cache.QueuedFeedback.RemoveRange(0, nvals);
                     attempt = AppConstants.MAX_DELIVERY_ATTEMPTS;
                 }
                 else
                 {
                     attempt--;
                 }
-            } while (App.Cache.Adjustments.Count > 0);
+            } while (App.Cache.QueuedFeedback.Count > 0);
+            App.Cache.SaveQueuedFeedback();
         }
 
+
+        internal void QueueFeedback(Adjustment adj)
+        {
+            App.Cache.QueuedFeedback.Add(adj);
+            App.Cache.SaveQueuedFeedback();
+        }
     }
 }

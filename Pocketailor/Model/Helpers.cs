@@ -55,6 +55,14 @@ namespace Pocketailor.Model
         }
 
 
+        public static double GetUnixTime()
+        {
+            DateTime t0 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            double deltaSeconds = (DateTime.UtcNow - t0).TotalSeconds;
+            return deltaSeconds;
+        }
+
+
 
     }
 }

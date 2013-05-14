@@ -19,7 +19,9 @@ namespace Pocketailor.View
 
             this.LoadSettingsIntoPage();
 
-            
+#if DEBUG
+            this.debugOnlyContainer.Visibility = Visibility.Visible;
+#endif
 
         }
 
@@ -63,6 +65,25 @@ namespace Pocketailor.View
         private void disallowFeedbackRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             App.VM.AllowFeedBack = false;
+        }
+
+        private void debugBtn1_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+#if DEBUG
+            if (System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Contains("_allowFeedback"))
+                System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Remove("_allowFeedback");
+#endif
+        }
+
+        private void debugBtn2_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+#if DEBUG
+            this.debugTextBlock1.Text = String.Empty;
+            foreach (string k in System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Keys)
+            {
+                this.debugTextBlock1.Text += k + Environment.NewLine;
+            }
+#endif
         }
 
 

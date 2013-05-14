@@ -24,7 +24,8 @@ namespace Pocketailor
 #if DEBUG
         public static int MAX_ADJUSTMENTS_PER_REQUEST = 2;
         public static int MAX_DELIVERY_ATTEMPTS = 3;
-        public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://localhost:3000/";
+        //public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://192.168.1.71:7000/";
+        public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://whitby:7000/";
         public static string POCKETAILOR_ADJUSTMENTS_SECRET = "testing_secret";
 #else
         public static int MAX_ADJUSTMENTS_PER_REQUEST = 50;

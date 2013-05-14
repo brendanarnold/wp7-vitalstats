@@ -129,7 +129,8 @@ namespace Pocketailor.View.Controls
         }
 
 
-        // Use this technique http://stackoverflow.com/questions/636383/wpf-ways-to-find-controls
+        // Use this technique http://stackoverflow.com/a/636456/199
+        // to find the parent page
         public PhoneApplicationPage GetPage(DependencyObject child) 
         {
             DependencyObject parentObject = VisualTreeHelper.GetParent(child);
@@ -141,7 +142,6 @@ namespace Pocketailor.View.Controls
             }
             else
             {
-                // use recursion to proceed with next level
                 return GetPage(parentObject);
             }
         }
@@ -155,6 +155,7 @@ namespace Pocketailor.View.Controls
             // Subscribe to back button press event on parent
             PhoneApplicationPage page = this.GetPage(this);
             page.BackKeyPress += page_BackKeyPress;
+            // Kick out any other buttons in the adjusting state
             if (ConversionResultsBtn.CurrentlyAdjusting != null) 
                 ConversionResultsBtn.CurrentlyAdjusting.LeaveAdjustConversionState();
             ConversionResultsBtn.CurrentlyAdjusting = this;
@@ -203,7 +204,7 @@ namespace Pocketailor.View.Controls
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             ConversionData c = this.DataContext as ConversionData;
-            c.TryAdjustment(-1);
+            c.TweakAdjustment(-1);
         }
 
         private void rightSizeBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -211,13 +212,13 @@ namespace Pocketailor.View.Controls
             if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
             this.LeaveAdjustConversionState();
             ConversionData c = this.DataContext as ConversionData;
-            c.AdjustValue();
+            c.AcceptAdjustment();
         }
 
         private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             ConversionData c = this.DataContext as ConversionData;
-            c.TryAdjustment(1);
+            c.TweakAdjustment(1);
         }
 
        
@@ -225,7 +226,7 @@ namespace Pocketailor.View.Controls
         private void PromptForFeedbackPermission()
         {
 
-            MessageBoxResult res = MessageBox.Show("You can send any adjustments to the Pocketailor team anonymously over the web so we can improve our conversions. If you would like to help then click 'ok' below, if you would rather not then click 'cancel'."
+            MessageBoxResult res = MessageBox.Show("You can send your adjustments to the Pocketailor team anonymously over the web so we can make the results better next time. If you would like to help then click 'ok' below, if you would rather not then click 'cancel'."
                     + Environment.NewLine + Environment.NewLine
                     + "You can change this anytime in the settings.",
                     "Allow feedback?",

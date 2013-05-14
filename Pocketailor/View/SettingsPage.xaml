@@ -67,28 +67,94 @@
 
 
     <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-           
-        </Grid.RowDefinitions>
+        
 
 		<ScrollViewer x:Name="containerScollViewer">
-			<StackPanel >
-				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="settings" Margin="36,36,0,36" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
+			<Grid x:Name="containerGrid" >
 				
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
 
-				<TextBlock Foreground="{StaticResource PageTxtColor}" Margin="36,0" TextWrapping="Wrap" FontSize="21.333">The default units for measurements. This can be overridden for each measurement.</TextBlock>
-				<RadioButton x:Name="imperialRadioBtn" Content="IMPERIAL (ft/in/lb)" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Checked="imperialRadioBtn_Checked"/>
-				<RadioButton x:Name="metricRadioBtn" Content="METRIC (m/cm/kg)" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Checked="metricRadioBtn_Checked"/>
+				<TextBlock x:Name="pageTitleTextBlock" 
+					Grid.Row="0"
+					TextWrapping="Wrap" Text="settings" Margin="36,36,0,36" 
+					FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" 
+					FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
+				
+				<Grid x:Name="debugOnlyContainer" 
+					Grid.Row="1"
+					Visibility="Collapsed" >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<Button x:Name="debugBtn1"
+						Grid.Row="0" 
+						Content="Reset AllowFeedback" Click="debugBtn1_Click"></Button>
+					<Button x:Name="debugBtn2"
+						Grid.Row="1" 
+						Content="Show ApplicationSettings Keys" Click="debugBtn2_Click" />
+					<TextBlock x:Name="debugTextBlock1"
+						Grid.Row="2" 
+						Margin="16"></TextBlock>
+				</Grid>
 
-				<TextBlock Foreground="{StaticResource PageTxtColor}" Margin="36,24,36,0" TextWrapping="Wrap" FontSize="21.333">Allow adjustments to be sent anonymously over the internet to Pocketailor. This will be used to improve the measurements.</TextBlock>
-				<RadioButton x:Name="allowFeedbackRadioBtn" Content="ALLOW FEEDBACK" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="feedbackRadioGroup" Checked="allowFeedbackRadioBtn_Checked" />
-				<RadioButton x:Name="disallowFeedbackRadioBtn" Content="DISALLOW FEEDBACK" Background="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="feedbackRadioGroup" Checked="disallowFeedbackRadioBtn_Checked" />
+				<Grid Grid.Row="2">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					
+					<TextBlock 
+						Grid.Row="0"
+						Foreground="{StaticResource PageTxtColor}" Margin="36,0" TextWrapping="Wrap" FontSize="21.333">The default units for measurements. This can be overridden for each measurement.</TextBlock>
+					<RadioButton x:Name="imperialRadioBtn" 
+						Grid.Row="1"
+						Content="IMPERIAL (ft/in/lb)" Background="{StaticResource UIBGColor}" 
+						Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" 
+						FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+						Checked="imperialRadioBtn_Checked"/>
+					<RadioButton x:Name="metricRadioBtn" 
+						Grid.Row="2"
+						Content="METRIC (m/cm/kg)" Background="{StaticResource UIBGColor}" 
+						Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" 
+						FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+						Checked="metricRadioBtn_Checked"/>
+				</Grid>
+
+				<Grid Grid.Row="3">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<TextBlock
+						Grid.Row="0" 
+						Foreground="{StaticResource PageTxtColor}" Margin="36,24,36,0" TextWrapping="Wrap" FontSize="21.333">Allow adjustments to be sent anonymously over the internet to Pocketailor. This will be used to improve the measurements.</TextBlock>
+					<RadioButton x:Name="allowFeedbackRadioBtn" 
+						Grid.Row="1"
+						Content="ALLOW FEEDBACK" Background="{StaticResource UIBGColor}" 
+						Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" 
+						FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+						GroupName="feedbackRadioGroup" Checked="allowFeedbackRadioBtn_Checked" />
+					<RadioButton x:Name="disallowFeedbackRadioBtn" 
+						Grid.Row="2"
+						Content="DISALLOW FEEDBACK" Background="{StaticResource UIBGColor}" 
+						Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" 
+						FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+						GroupName="feedbackRadioGroup" Checked="disallowFeedbackRadioBtn_Checked" />
+				</Grid>
 
 
-
-
-			</StackPanel>
+			</Grid>
 
 		</ScrollViewer>
 

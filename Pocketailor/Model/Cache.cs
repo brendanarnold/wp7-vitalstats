@@ -13,7 +13,7 @@ namespace Pocketailor.Model
         public void SaveCache()
         {
             this.SaveAdjustments();
-            this.SaveQueuedAdjustments();
+            this.SaveQueuedFeedback();
         }
 
 
@@ -58,39 +58,39 @@ namespace Pocketailor.Model
 
         #region Queued adjustments cache
 
-        private List<Adjustment> _queuedAdjustments;
-        public List<Adjustment> QueuedAdjustments
+        private List<Adjustment> _queuedFeedback;
+        public List<Adjustment> QueuedFeedback
         {
             get
             {
-                if (this._queuedAdjustments == null)
+                if (this._queuedFeedback == null)
                 {
-                    this.LoadQueuedAdjustments();
+                    this.LoadQueuedFeedback();
                 }
-                return this._queuedAdjustments;
+                return this._queuedFeedback;
             }
             set
             {
-                if (this._queuedAdjustments != value)
+                if (this._queuedFeedback != value)
                 {
-                    this._queuedAdjustments = value;
+                    this._queuedFeedback = value;
                 }
             }
         }
 
-        public void LoadQueuedAdjustments()
+        public void LoadQueuedFeedback()
         {
-            this.QueuedAdjustments = App.Settings.GetValueOrDefault<List<Adjustment>>("QueuedAdjustments", new List<Adjustment>());
+            this.QueuedFeedback = App.Settings.GetValueOrDefault<List<Adjustment>>("QueuedFeedback", new List<Adjustment>());
         }
 
-        public void FreeQueuedAdjustments()
+        public void FreeQueuedFeedback()
         {
-            this.QueuedAdjustments = null;
+            this.QueuedFeedback = null;
         }
 
-        public void SaveQueuedAdjustments()
+        public void SaveQueuedFeedback()
         {
-            App.Settings.AddOrUpdateValue("QueuedAdjustements", this.QueuedAdjustments);
+            App.Settings.AddOrUpdateValue("QueuedFeedback", this.QueuedFeedback);
         }
 
         #endregion

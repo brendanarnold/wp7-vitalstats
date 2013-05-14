@@ -57,6 +57,7 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
+        
         #region AllowFeedback property
 
         private bool? _allowFeedback = null;
@@ -77,6 +78,25 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
+        #region App GUID property
+
+        public string AppGUID
+        {
+            get
+            {
+                string guid = App.Settings.GetValueOrDefault<string>("AppGUID", String.Empty);
+                if (guid == String.Empty)
+                {
+                    guid = Guid.NewGuid().ToString();
+                    App.Settings.AddOrUpdateValue("AppGUID", guid);
+                }
+                return guid;
+            }
+        }
+
+        #endregion
+
+        
         #region Conversions database methods
 
         // No need for write methods since this is a readonly DB
@@ -118,9 +138,6 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
-
-
-       
      
         // Not used
         #region PIN locking methods
@@ -420,8 +437,6 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
-
-
 
 
 
