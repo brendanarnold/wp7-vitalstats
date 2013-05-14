@@ -1,4 +1,5 @@
 ﻿<UserControl
+	x:Name="thisConversionResultsBtn"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,28 +14,16 @@
 		<View:BoolToOpacity x:Key="BoolToOpacity"/>
 		<View:BoolToNotCheckBox x:Key="BoolToNotCheckBox"/>
 		<Storyboard x:Name="AdjustmentAnimation">
-			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="clothingSizeTextBlock" RepeatBehavior="Forever">
-				<DiscreteObjectKeyFrame KeyTime="0">
-					<DiscreteObjectKeyFrame.Value>
-						<Thickness>7,0,-2,0</Thickness>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
-					<DiscreteObjectKeyFrame.Value>
-						<Thickness>20,0,-2,0</Thickness>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-				<DiscreteObjectKeyFrame KeyTime="0:0:0.8">
-					<DiscreteObjectKeyFrame.Value>
-						<Thickness>7,0,-2,0</Thickness>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-				<DiscreteObjectKeyFrame KeyTime="0:0:2">
-					<DiscreteObjectKeyFrame.Value>
-						<Thickness>7,0,-2,0</Thickness>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)" Storyboard.TargetName="adjustmentSizeContainer" RepeatBehavior="Forever">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<ElasticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
 	</UserControl.Resources>
 	<UserControl.FontFamily>
@@ -86,7 +75,7 @@
 		<CheckBox x:Name="notBlacklistedCheckBox" Grid.Column="0" Grid.Row="0"
 			HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-12,-15,-6,-14"
 			Visibility="Collapsed"
-			IsChecked="{Binding IsBlacklisted, Converter={StaticResource BoolToNotCheckBox}, Mode=TwoWay}" />
+			IsChecked="{Binding Path=BtnIsBlacklisted, ElementName=thisConversionResultsBtn, Converter={StaticResource BoolToNotCheckBox}, Mode=TwoWay}" />
 		
 		<!--
 		TODO: The Tag and Content bindings do not actually work - it is only updated because of the 
@@ -98,21 +87,29 @@
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<TextBlock x:Name="brandNameTextBlock"
-				Text="{Binding BtnBrandName, FallbackValue=Some Brand}" 
+				Text="{Binding Path=BtnBrandName, ElementName=thisConversionResultsBtn, FallbackValue=Some Brand}" 
 				Grid.Column="0" FontFamily="Segoe WP"
 				FontSize="34.667" Foreground="{StaticResource PageTxtColor}"/>
-			<TextBlock x:Name="clothingSizeTextBlock" 
-				Text="{Binding BtnClothingSize, FallbackValue=(XXXXXXXXL)}" 
-				Margin="7,0,-2,0" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
-				Grid.Column="1" FontFamily="Segoe WP"/>
-			<TextBlock x:Name="questionTextBlock" 
-				Text="?" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
-				Grid.Column="2" FontFamily="Segoe WP" 
-				Visibility="Collapsed"
-				/>
+			<StackPanel x:Name="adjustmentSizeContainer" Grid.Column="1" Orientation="Horizontal">
+				<StackPanel.Projection>
+					<PlaneProjection/>
+				</StackPanel.Projection>
+				<TextBlock x:Name="clothingSizeTextBlock" 
+					Text="{Binding Path=BtnClothingSize, ElementName=thisConversionResultsBtn, FallbackValue=(XXXXXXXXL)}" 
+					Margin="7,0,-2,0" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
+					FontFamily="Segoe WP">
+					<TextBlock.Projection>
+						<PlaneProjection/>
+					</TextBlock.Projection>
+				</TextBlock>
+				<TextBlock x:Name="questionTextBlock" 
+					Text="?" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
+					FontFamily="Segoe WP" 
+					Visibility="Collapsed"
+					/>
+			</StackPanel>
 		</Grid>
 							
 

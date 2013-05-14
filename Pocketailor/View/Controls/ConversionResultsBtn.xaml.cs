@@ -96,9 +96,9 @@ namespace Pocketailor.View.Controls
 
         public static void BtnBrandNamePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
-            string val = (string)e.NewValue;
-            cBtn.brandNameTextBlock.Text = val;
+            //ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
+            //string val = (string)e.NewValue;
+            //cBtn.brandNameTextBlock.Text = val;
         }
 
         public string BtnBrandName
@@ -114,9 +114,9 @@ namespace Pocketailor.View.Controls
 
         public static void BtnClothingSizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
-            string val = (string)e.NewValue;
-            cBtn.clothingSizeTextBlock.Text = val;
+            //ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
+            //string val = (string)e.NewValue;
+            //cBtn.clothingSizeTextBlock.Text = val;
         }
 
         public string BtnClothingSize
@@ -131,6 +131,7 @@ namespace Pocketailor.View.Controls
         {
             this.adjustmentContainerGrid.Visibility = Visibility.Visible;
             this.questionTextBlock.Visibility = Visibility.Visible;
+            this.AdjustmentAnimation.Begin();
 
         }
 
@@ -138,6 +139,7 @@ namespace Pocketailor.View.Controls
         {
             this.adjustmentContainerGrid.Visibility = Visibility.Collapsed;
             this.questionTextBlock.Visibility = Visibility.Collapsed;
+            this.AdjustmentAnimation.Stop();
         }
 
         private void AbortAdjustment() 
