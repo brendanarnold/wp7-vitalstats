@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Pocketailor.Model.Conversions;
 using System.ComponentModel;
+using System.Windows.Media;
 
 namespace Pocketailor.View.Controls
 {
@@ -20,9 +21,6 @@ namespace Pocketailor.View.Controls
 
             //if (!TiltEffect.TiltableItems.Contains(typeof(ConversionResultsBtn)))
             //    TiltEffect.TiltableItems.Add(typeof(ConversionResultsBtn));
-
-
-            
 
         }
 
@@ -126,13 +124,38 @@ namespace Pocketailor.View.Controls
         }
 
 
+        // Use this technique http://stackoverflow.com/questions/636383/wpf-ways-to-find-controls
+        public PhoneApplicationPage GetPage(DependencyObject child) 
+        {
+            DependencyObject parentObject = VisualTreeHelper.GetParent(child);
+            if (parentObject == null) return null;
+            PhoneApplicationPage parent = parentObject as PhoneApplicationPage;
+            if (parent != null)
+            {
+                return parent;
+            }
+            else
+            {
+                // use recursion to proceed with next level
+                return GetPage(parentObject);
+            }
+        }
+
 
         private void EnterAdjustConversionState()
         {
             this.adjustmentContainerGrid.Visibility = Visibility.Visible;
             this.questionTextBlock.Visibility = Visibility.Visible;
             this.AdjustmentAnimation.Begin();
+            PhoneApplicationPage page = this.GetPage(this);
+            page.BackKeyPress += page_BackKeyPress;
+        }
 
+        // Ovveride the back key press event on the page
+        void page_BackKeyPress(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.LeaveAdjustConversionState();
         }
 
         private void LeaveAdjustConversionState()
@@ -140,6 +163,8 @@ namespace Pocketailor.View.Controls
             this.adjustmentContainerGrid.Visibility = Visibility.Collapsed;
             this.questionTextBlock.Visibility = Visibility.Collapsed;
             this.AdjustmentAnimation.Stop();
+            PhoneApplicationPage page = this.GetPage(this);
+            page.BackKeyPress -= page_BackKeyPress;
         }
 
         private void AbortAdjustment() 

@@ -18,9 +18,12 @@ namespace Pocketailor.View
 
             App.VM.LoadConversionsPageData();
             this.DataContext = App.VM;
+
+            
+
         }
 
-
+        
 
         private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
