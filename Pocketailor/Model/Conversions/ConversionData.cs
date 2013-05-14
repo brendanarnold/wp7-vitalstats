@@ -134,14 +134,34 @@ namespace Pocketailor.Model.Conversions
         {
             get 
             {
-                return (this.AllTooSmall || (this.BestFitInd >= this.GeneralSizes.Count - 1));
+                return (this.AllTooSmall || ((this.BestFitInd + this.Adjustment) >= this.GeneralSizes.Count - 1));
             }
         }
 
         // Flag that indicates if there are no smaller sizes availble
         public bool NoneSmaller
         {
-            get { return (this.BestFitInd == 0); }
+            get { return ((this.BestFitInd + this.Adjustment) == 0); }
+        }
+
+        private int _adjustment;
+        public int Adjustment
+        {
+            get
+            {
+                return this._adjustment;
+            }
+            set
+            {
+                if (this._adjustment != value)
+                {
+                    this._adjustment = value;
+                    this.NotifyPropertyChanged("Adjustment");
+                    this.NotifyPropertyChanged("NoneBigger");
+                    this.NotifyPropertyChanged("NoneSmaller");
+                    this.NotifyPropertyChanged("FormattedValue");
+                }
+            }
         }
 
         // Index of the sizes that best fits
@@ -158,6 +178,7 @@ namespace Pocketailor.Model.Conversions
                 this.NotifyPropertyChanged("BestFitInd");
                 this.NotifyPropertyChanged("NoneBigger");
                 this.NotifyPropertyChanged("NoneSmaller");
+                this.NotifyPropertyChanged("FormattedValue");
             }
         }
 
@@ -175,9 +196,10 @@ namespace Pocketailor.Model.Conversions
             get
             {
                 if (this.AllTooSmall) return "N/A";
-                if (this.GeneralSizes[this.BestFitInd] == String.Empty) return String.Format("{0}", this.RegionalSizes[this.BestFitInd]);
-                if (this.RegionalSizes[this.BestFitInd] == String.Empty) return String.Format("({0})", this.RegionalSizes[this.BestFitInd]);
-                return String.Format("{0} ({1})", this.RegionalSizes[this.BestFitInd], this.GeneralSizes[this.BestFitInd]);
+                int i = this.BestFitInd + this.Adjustment;
+                if (this.GeneralSizes[i] == String.Empty) return String.Format("{0}", this.RegionalSizes[i]);
+                if (this.RegionalSizes[i] == String.Empty) return String.Format("({0})", this.RegionalSizes[i]);
+                return String.Format("{0} ({1})", this.RegionalSizes[i], this.GeneralSizes[i]);
             }
         }
 
@@ -230,13 +252,18 @@ namespace Pocketailor.Model.Conversions
         // This is necessary since database create app has no reference to App.VM
 #if !IS_DATABASE_HELPER_APP
 
-        public Adjustment AdjustValue(int delta)
+        public void AdjustValue()
         {
+            int targetInd = this.BestFitInd + this.Adjustment;
             // TODO
             Adjustment adj = new Adjustment();
 
-            App.Cache.Adjustments.Add(adj);
-            return null;
+            //App.Cache.Adjustments.Add(adj);
+        }
+
+        public void TryAdjustment(int delta) 
+        {
+            this.Adjustment += delta;
         }
 
 
@@ -318,6 +345,11 @@ namespace Pocketailor.Model.Conversions
 
 
 
+
+        internal void ResetAdjustment()
+        {
+            this.Adjustment = 0;
+        }
     }
 
 

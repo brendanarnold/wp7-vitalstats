@@ -228,14 +228,7 @@ namespace Pocketailor.ViewModel
         }
 
 
-        internal void ApplyAdjustment(Model.Conversions.ConversionData c, int delta)
-        {
-            Adjustment adj = c.AdjustValue(delta);
-            if ((bool)App.VM.AllowFeedBack)
-            {
-                App.FeedbackAgent.CacheAdjustment(adj);
-            }
-        }
+        
 
 
         #region Blacklist properties/methods

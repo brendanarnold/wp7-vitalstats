@@ -9,7 +9,33 @@
     d:DesignHeight="480" d:DesignWidth="480">
     
 	<UserControl.Resources>
+		<View:BoolToNotBool x:Key="BoolToNotBool"/>
+		<View:BoolToOpacity x:Key="BoolToOpacity"/>
 		<View:BoolToNotCheckBox x:Key="BoolToNotCheckBox"/>
+		<Storyboard x:Name="AdjustmentAnimation">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="clothingSizeTextBlock" RepeatBehavior="Forever">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Thickness>7,0,-2,0</Thickness>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Thickness>20,0,-2,0</Thickness>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8">
+					<DiscreteObjectKeyFrame.Value>
+						<Thickness>7,0,-2,0</Thickness>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2">
+					<DiscreteObjectKeyFrame.Value>
+						<Thickness>7,0,-2,0</Thickness>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
 	</UserControl.Resources>
 	<UserControl.FontFamily>
 		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
@@ -24,7 +50,7 @@
     <Grid x:Name="LayoutRoot"
 			DataContext="{Binding RelativeSource={RelativeSource Self}}">
 			-->
-	<Grid x:Name="LayoutRoot">
+	<Grid x:Name="LayoutRoot" toolkit:TiltEffect.IsTiltEnabled="False">
 
 		<Grid.Resources>
 			<Style x:Key="bigSmallBtnStyle" TargetType="Button">
@@ -32,7 +58,7 @@
 					<Setter.Value>
 						<ControlTemplate TargetType="Button">
 							<Grid>
-								<TextBlock FontSize="24" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
+								<TextBlock FontSize="28" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
 							</Grid>
 						</ControlTemplate>
 					</Setter.Value>
@@ -40,6 +66,9 @@
 			</Style>
         
 		</Grid.Resources>
+		<d:DataContext>
+			<Binding Source="{StaticResource SampleDataSource}"/>
+		</d:DataContext>
 
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto" />
@@ -58,22 +87,37 @@
 			HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-12,-15,-6,-14"
 			Visibility="Collapsed"
 			IsChecked="{Binding IsBlacklisted, Converter={StaticResource BoolToNotCheckBox}, Mode=TwoWay}" />
-
-
-		<Grid x:Name="conversionResultContainerGrid" 
-			Grid.Row="0" Grid.Column="1"
-			toolkit:TiltEffect.IsTiltEnabled="True" 
-			Margin="0,0,0,6" Tap="conversionGrid_Tap" HorizontalAlignment="Left">
+		
+		<!--
+		TODO: The Tag and Content bindings do not actually work - it is only updated because of the 
+		propertychanged event handler
+		-->
+		<Grid x:Name="conversionResultContainerGrid" Tap="conversionGrid_Tap"
+			Grid.Column="1" HorizontalAlignment="Left" 
+			Margin="0,0,0,10" Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
-			<TextBlock Grid.Column="0" Text="{Binding Path=BtnBrandName, FallbackValue=Some Brand, ElementName=UserControl}" x:Name="brandNameTextBlock" Foreground="{StaticResource PageTxtColor}" FontSize="29.333"/>
-			<TextBlock Grid.Column="1" Text="{Binding Path=BtnClothingSize, FallbackValue=(XXXXXXXXL), ElementName=UserControl}" x:Name="clothingSizeTextBlock" Foreground="{StaticResource SubTitleColor}" FontSize="29.333" Margin="5,0,0,0"/>
+			<TextBlock x:Name="brandNameTextBlock"
+				Text="{Binding BtnBrandName, FallbackValue=Some Brand}" 
+				Grid.Column="0" FontFamily="Segoe WP"
+				FontSize="34.667" Foreground="{StaticResource PageTxtColor}"/>
+			<TextBlock x:Name="clothingSizeTextBlock" 
+				Text="{Binding BtnClothingSize, FallbackValue=(XXXXXXXXL)}" 
+				Margin="7,0,-2,0" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
+				Grid.Column="1" FontFamily="Segoe WP"/>
+			<TextBlock x:Name="questionTextBlock" 
+				Text="?" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
+				Grid.Column="2" FontFamily="Segoe WP" 
+				Visibility="Collapsed"
+				/>
 		</Grid>
+							
 
 		<Grid x:Name="adjustmentContainerGrid" 
-			Margin="0,0,0,24" 
+			Margin="0,0,0,32" 
 			Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
 
 			<Grid.ColumnDefinitions>
@@ -81,9 +125,21 @@
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="160" />
 			</Grid.ColumnDefinitions>
-			<Button x:Name="tooBigBtn" Content="too big" Grid.Column="0" Style="{StaticResource bigSmallBtnStyle}" Tap="tooBigBtn_Tap"/>
-			<Button x:Name="rightSizeBtn" Content="right size" Grid.Column="1"  Style="{StaticResource bigSmallBtnStyle}" Tap="rightSizeBtn_Tap" HorizontalAlignment="Center" FontFamily="Segoe WP Semibold" FontWeight="Bold"/>
-			<Button x:Name="tooSmallBtn" Content="too small" Grid.Column="2"  Style="{StaticResource bigSmallBtnStyle}" Tap="tooSmallBtn_Tap" HorizontalAlignment="Right"/>
+			<Button x:Name="tooBigBtn" Content="too big" Grid.Column="0" 
+				Style="{StaticResource bigSmallBtnStyle}" Tap="tooBigBtn_Tap"
+				HorizontalAlignment="Left"
+				IsHitTestVisible="{Binding NoneSmaller, Converter={StaticResource BoolToNotBool}}"
+				Opacity="{Binding NoneSmaller, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}" />
+			<Button x:Name="rightSizeBtn" Content="confirm" Grid.Column="1"  
+				Style="{StaticResource bigSmallBtnStyle}" Tap="rightSizeBtn_Tap" 
+				HorizontalAlignment="Center" 
+				FontWeight="Bold" />
+			<Button x:Name="tooSmallBtn" Content="too small" Grid.Column="2"  
+				Style="{StaticResource bigSmallBtnStyle}" Tap="tooSmallBtn_Tap" 
+				HorizontalAlignment="Right"
+				IsHitTestVisible="{Binding NoneBigger, Converter={StaticResource BoolToNotBool}}"
+				Opacity="{Binding NoneBigger, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"
+				 />
 		  
 		</Grid>
       

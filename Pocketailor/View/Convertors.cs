@@ -12,6 +12,21 @@ using System.Windows.Controls;
 namespace Pocketailor.View
 {
 
+    public class BoolToNotBool : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return !b;
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return !b;
+        }
+
+    }
+
     public class BoolToNotCheckBox : System.Windows.Data.IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)

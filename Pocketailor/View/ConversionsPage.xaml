@@ -183,7 +183,7 @@
 					</Border>
 				</DataTemplate>
 
-				<DataTemplate x:Key="itemTemplate">
+				<DataTemplate x:Key="itemTemplate" toolkit:TiltEffect.SuppressTilt="True">
 					<!-- Applied to each item -->
 
 						<Controls:ConversionResultsBtn 

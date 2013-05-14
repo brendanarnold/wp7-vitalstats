@@ -18,8 +18,8 @@ namespace Pocketailor.View.Controls
         {
             InitializeComponent();
 
-            if (!TiltEffect.TiltableItems.Contains(typeof(ConversionResultsBtn)))
-                TiltEffect.TiltableItems.Add(typeof(ConversionResultsBtn));
+            //if (!TiltEffect.TiltableItems.Contains(typeof(ConversionResultsBtn)))
+            //    TiltEffect.TiltableItems.Add(typeof(ConversionResultsBtn));
 
 
             
@@ -127,39 +127,56 @@ namespace Pocketailor.View.Controls
 
 
 
+        private void EnterAdjustConversionState()
+        {
+            this.adjustmentContainerGrid.Visibility = Visibility.Visible;
+            this.questionTextBlock.Visibility = Visibility.Visible;
 
+        }
+
+        private void LeaveAdjustConversionState()
+        {
+            this.adjustmentContainerGrid.Visibility = Visibility.Collapsed;
+            this.questionTextBlock.Visibility = Visibility.Collapsed;
+        }
+
+        private void AbortAdjustment() 
+        {
+            this.LeaveAdjustConversionState();
+            ConversionData c = this.DataContext as ConversionData;
+            c.ResetAdjustment();
+        }
 
         private void conversionGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (this.adjustmentContainerGrid.Visibility == Visibility.Collapsed)
             {
-                this.adjustmentContainerGrid.Visibility = Visibility.Visible;
+                this.EnterAdjustConversionState();
             }
             else
             {
-                this.adjustmentContainerGrid.Visibility = Visibility.Collapsed;
+                this.AbortAdjustment();
             }
         }
 
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
             ConversionData c = this.DataContext as ConversionData;
-            App.VM.ApplyAdjustment(c, 1);
+            c.TryAdjustment(-1);
         }
 
         private void rightSizeBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
+            this.LeaveAdjustConversionState();
             ConversionData c = this.DataContext as ConversionData;
-            App.VM.ApplyAdjustment(c, 0);
+            c.AdjustValue();
         }
 
         private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
             ConversionData c = this.DataContext as ConversionData;
-            App.VM.ApplyAdjustment(c, -1);
+            c.TryAdjustment(1);
         }
 
        
