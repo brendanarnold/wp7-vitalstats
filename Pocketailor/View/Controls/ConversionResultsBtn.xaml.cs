@@ -24,6 +24,11 @@ namespace Pocketailor.View.Controls
 
         }
 
+        // Use this to make sure only one button can adjust at a time
+        public static ConversionResultsBtn CurrentlyAdjusting;
+
+
+
         // IsBlacklistedPropertyChanged event is fired on instantiation only if the bound property is different to the default value
         // so need to design the button to be in the default value state at instantiation
         public static readonly DependencyProperty BtnIsBlacklistedProperty =
@@ -147,8 +152,13 @@ namespace Pocketailor.View.Controls
             this.adjustmentContainerGrid.Visibility = Visibility.Visible;
             this.questionTextBlock.Visibility = Visibility.Visible;
             this.AdjustmentAnimation.Begin();
+            // Subscribe to back button press event on parent
             PhoneApplicationPage page = this.GetPage(this);
             page.BackKeyPress += page_BackKeyPress;
+            if (ConversionResultsBtn.CurrentlyAdjusting != null) 
+                ConversionResultsBtn.CurrentlyAdjusting.LeaveAdjustConversionState();
+            ConversionResultsBtn.CurrentlyAdjusting = this;
+
         }
 
         // Ovveride the back key press event on the page
@@ -163,8 +173,12 @@ namespace Pocketailor.View.Controls
             this.adjustmentContainerGrid.Visibility = Visibility.Collapsed;
             this.questionTextBlock.Visibility = Visibility.Collapsed;
             this.AdjustmentAnimation.Stop();
+            // Unsubscribe to back button press event on parent
             PhoneApplicationPage page = this.GetPage(this);
             page.BackKeyPress -= page_BackKeyPress;
+            // Done adjusting
+            if (ConversionResultsBtn.CurrentlyAdjusting == this)
+                ConversionResultsBtn.CurrentlyAdjusting = null;
         }
 
         private void AbortAdjustment() 
