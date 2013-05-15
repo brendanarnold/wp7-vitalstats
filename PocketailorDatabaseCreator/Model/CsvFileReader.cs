@@ -56,6 +56,9 @@ namespace PocketailorDatabaseCreator.Model
                         case "GeneralSize":
                             csvLine.GeneralSize = els[i];
                             continue;
+                        case "SizeId":
+                            csvLine.SizeId = Int32.Parse(els[i]);
+                            continue;
                         case "RegionalSize":
                             csvLine.RegionalSize = els[i];
                             continue;
@@ -68,7 +71,7 @@ namespace PocketailorDatabaseCreator.Model
                             }
                             else
                             {
-                                d = double.Parse(els[i]);
+                                d = Double.Parse(els[i]);
                             }
                             MeasurementId mId = (MeasurementId)Enum.Parse(typeof(MeasurementId), headers[i], true);
                             csvLine.Measurements.Add(mId, d);
@@ -110,6 +113,7 @@ namespace PocketailorDatabaseCreator.Model
                 }
                 cd.RegionalSizes.Add(csvLine.RegionalSize);
                 cd.GeneralSizes.Add(csvLine.GeneralSize);
+                cd.SizeIds.Add(csvLine.SizeId);
 
                 // Write to db is obj count too high
                 //if ((objNum % AppConstants.DB_OBJECT_BUFFER_BEFORE_WRITE) == 0)

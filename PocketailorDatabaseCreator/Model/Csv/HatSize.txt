@@ -1,1 +1,1 @@
-Brand	Region	GeneralSize	RegionalSize
+Brand	Region	SizeId  GeneralSize	RegionalSize

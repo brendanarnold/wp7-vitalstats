@@ -1,1 +1,1 @@
-Brand	Region	Gender	Height	Chest	Waist	Hips	Weight	GeneralSize	RegionalSize
+Brand	Region	Gender	Height	Chest	Waist	Hips	Weight	SizeId  GeneralSize	RegionalSize

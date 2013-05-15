@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-#if IS_MAIN_APP
+#if !IS_DATABASE_HELPER_APP
 using Pocketailor.Model.Adjustments;
 #endif
 using System;
@@ -20,7 +20,9 @@ namespace Pocketailor.Model
     {
         public ConversionData()
         {
-            #if IS_MAIN_APP
+            // DatabaseCreator app does not have a reference to App.VM, don't include 
+            // this when compiling this source in the DatabaseCreator project
+            #if !IS_DATABASE_HELPER_APP
 
             // Add a handler so that if user chooses to view/hide the blacklisted conversions
             // the visibility property correctly notifies the View
@@ -116,6 +118,19 @@ namespace Pocketailor.Model
             }
         }
 
+        public List<int> SizeIds
+        {
+            get
+            {
+                if (this.Data.SizeIds == null) this.Data.SizeIds = new List<int>();
+                return this.Data.SizeIds;
+            }
+            set
+            {
+                this.Data.SizeIds = value;
+            }
+        }
+
         [Column]
         public RegionId Region { get; set; }
 
@@ -207,7 +222,7 @@ namespace Pocketailor.Model
         }
 
         // This is necessary since database create app has no reference to App.VM
-        #if IS_MAIN_APP
+        #if !IS_DATABASE_HELPER_APP
 
 
         public Adjustment PersistedAdjustment { get; set; }
@@ -328,7 +343,7 @@ namespace Pocketailor.Model
             }
         }
 
-        #endif
+#endif
 
 
         #region INotifyPropertyChanged members
@@ -354,6 +369,7 @@ namespace Pocketailor.Model
         public Dictionary<MeasurementId, List<double>> Measurements { get; set; }
         public List<string> RegionalSizes { get; set; }
         public List<string> GeneralSizes { get; set; }
+        public List<int> SizeIds { get; set; }
 
     }
 

@@ -1,1 +1,1 @@
-Brand	Region	Gender	Waist	Hips	InsideLeg	GeneralSize	RegionalSize
+Brand	Region	Gender	Waist	Hips	InsideLeg	SizeId  GeneralSize	RegionalSize

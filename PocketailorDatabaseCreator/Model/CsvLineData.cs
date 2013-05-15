@@ -18,6 +18,7 @@ namespace PocketailorDatabaseCreator.Model
         public ConversionId Conversion;
         public string RegionalSize;
         public string GeneralSize;
+        public int SizeId;
         public GenderId Gender;
         public double GetMeasurementOrNull(MeasurementId id)
         {

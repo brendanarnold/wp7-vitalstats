@@ -1,1 +1,1 @@
-﻿Brand	Region	Gender	Chest	Neck	Sleeve	BodyLength	Hips	GeneralSize	RegionalSize
+﻿Brand	Region	Gender	Chest	Neck	Sleeve	BodyLength	Hips	SizeId  GeneralSize	RegionalSize

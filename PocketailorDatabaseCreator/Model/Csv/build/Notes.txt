@@ -20,7 +20,7 @@ Include RegionalSize column in output
 Incldue Conversion in all output
 Include Gender in all ouptut
 Include Region
-
+Include SizeID for each size e.g. -40, -20, 0, 20, 40 ...
 
 Include extra on shirts page and trousers page which specifies measurements in cm and inches as above other measurments, include in Bing style squares
 
