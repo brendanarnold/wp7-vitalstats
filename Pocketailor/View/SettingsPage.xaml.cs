@@ -70,8 +70,7 @@ namespace Pocketailor.View
         private void debugBtn1_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 #if DEBUG
-            if (System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Contains("_allowFeedback"))
-                System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Remove("_allowFeedback");
+            System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Clear();
 #endif
         }
 

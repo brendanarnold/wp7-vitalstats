@@ -50,7 +50,7 @@ namespace PocketailorDatabaseCreator
                 },
                 Conversion = ConversionId.DressSize,
                 Region = RegionId.UK,
-                Retailer = RetailId.MarksSpencer,
+                Brand = BrandId.MarksSpencer,
                 Gender = GenderId.Female,
                 GeneralSizes = new List<string>() { "XS", "S", "M", "L", "XL" },
                 RegionalSizes = new List<string>() { "8", "10", "12", "14", "16" },

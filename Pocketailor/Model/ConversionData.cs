@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+#if IS_MAIN_APP
 using Pocketailor.Model.Adjustments;
+#endif
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +20,7 @@ namespace Pocketailor.Model
     {
         public ConversionData()
         {
-            #if !IS_DATABASE_HELPER_APP
+            #if IS_MAIN_APP
 
             // Add a handler so that if user chooses to view/hide the blacklisted conversions
             // the visibility property correctly notifies the View
@@ -118,7 +120,7 @@ namespace Pocketailor.Model
         public RegionId Region { get; set; }
 
         [Column]
-        public RetailId Retailer { get; set; }
+        public BrandId Brand { get; set; }
 
         [Column]
         public GenderId Gender { get; set; }
@@ -144,8 +146,7 @@ namespace Pocketailor.Model
             get { return ((this.BestFitInd + this.Adjustment) == 0); }
         }
 
-        public Adjustment PersistedAdjustment { get; set; }
-
+        
         private int _adjustment;
         public int Adjustment
         {
@@ -188,7 +189,7 @@ namespace Pocketailor.Model
         {
             get
             {
-                return Lookup.Retail[this.Retailer];
+                return Lookup.Brand[this.Brand];
             }
         }
 
@@ -205,6 +206,12 @@ namespace Pocketailor.Model
             }
         }
 
+        // This is necessary since database create app has no reference to App.VM
+        #if IS_MAIN_APP
+
+
+        public Adjustment PersistedAdjustment { get; set; }
+
 
         public void FindBestFit(Dictionary<MeasurementId, double> measuredVals)
         {
@@ -213,7 +220,7 @@ namespace Pocketailor.Model
                    a.c == this.Conversion
                 && a.r == this.Region
                 && a.g == this.Gender
-                && a.b == this.Retailer
+                && a.b == this.Brand
             );
             this.PersistedAdjustment = adj;
             this.Adjustment = (this.PersistedAdjustment == null) ? 0 : this.PersistedAdjustment.a;
@@ -251,8 +258,6 @@ namespace Pocketailor.Model
         }
 
 
-        // This is necessary since database create app has no reference to App.VM
-        #if !IS_DATABASE_HELPER_APP
 
         public void AcceptAdjustment()
         {
@@ -266,7 +271,7 @@ namespace Pocketailor.Model
                 Adjustment adj = new Adjustment()
                 {
                     a = this.Adjustment,
-                    b = this.Retailer,
+                    b = this.Brand,
                     c = this.Conversion,
                     f = this.BestFitInd,
                     g = this.Gender,
@@ -302,19 +307,19 @@ namespace Pocketailor.Model
         {
             get 
             {
-                return App.VM.BlacklistedRetailers.Contains(this.Retailer);
+                return App.VM.BlacklistedBrands.Contains(this.Brand);
             }
             set
             {
                 if (value)
                 {
-                    App.VM.BlacklistedRetailers.Add(this.Retailer);
+                    App.VM.BlacklistedBrands.Add(this.Brand);
                 }
                 else
                 {
-                    while (App.VM.BlacklistedRetailers.Contains(this.Retailer))
+                    while (App.VM.BlacklistedBrands.Contains(this.Brand))
                     {
-                        App.VM.BlacklistedRetailers.Remove(this.Retailer);
+                        App.VM.BlacklistedBrands.Remove(this.Brand);
                     }
                 }
                 this.NotifyPropertyChanged("IsBlacklisted");

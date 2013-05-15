@@ -45,9 +45,19 @@
 
 
     <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
-        
+        <Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
-		<ScrollViewer x:Name="containerScollViewer">
+		<TextBlock x:Name="pageTitleTextBlock" 
+			Grid.Row="0"
+			TextWrapping="Wrap" Text="settings" Margin="36,36,0,36" 
+			FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" 
+			FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
+		
+
+		<ScrollViewer x:Name="containerScollViewer" Grid.Row="1">
 			<Grid x:Name="containerGrid" >
 				
 				<Grid.RowDefinitions>
@@ -57,11 +67,6 @@
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
 
-				<TextBlock x:Name="pageTitleTextBlock" 
-					Grid.Row="0"
-					TextWrapping="Wrap" Text="settings" Margin="36,36,0,36" 
-					FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" 
-					FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
 				
 				<Grid x:Name="debugOnlyContainer" 
 					Grid.Row="1"
@@ -75,7 +80,7 @@
 					</Grid.RowDefinitions>
 					<Button x:Name="debugBtn1"
 						Grid.Row="0" 
-						Content="Reset AllowFeedback" Click="debugBtn1_Click"></Button>
+						Content="Reset AppSettings" Click="debugBtn1_Click"></Button>
 					<Button x:Name="debugBtn2"
 						Grid.Row="1" 
 						Content="Show ApplicationSettings Keys" Click="debugBtn2_Click" />

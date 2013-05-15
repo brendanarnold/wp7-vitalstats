@@ -1,1 +1,1 @@
-Retailer	Region	Gender	RegionalSize	GeneralSize
+Brand	Region	Gender	RegionalSize	GeneralSize

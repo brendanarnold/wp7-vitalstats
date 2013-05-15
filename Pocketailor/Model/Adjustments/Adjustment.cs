@@ -17,7 +17,7 @@ namespace Pocketailor.Model.Adjustments
         /// <summary>
         /// Brand
         /// </summary>
-        public RetailId b;
+        public BrandId b;
 
         /// <summary>
         /// Region

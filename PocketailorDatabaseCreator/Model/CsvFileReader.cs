@@ -34,7 +34,7 @@ namespace PocketailorDatabaseCreator.Model
                 // Skip empty lines
                 if (line.Trim() == String.Empty) continue;
                 var els = line.Split(AppConstants.CSV_DELIMITERS).ToList<string>();
-                // We make the assumption that data for a particular retailer, gender, region, conversion are contiguous, 
+                // We make the assumption that data for a particular brand, gender, region, conversion are contiguous, 
                 // so when any one of these change, we change the object
                 CsvLine csvLine = new CsvLine();
                 for (int i = 0; i < els.Count; i++)
@@ -44,8 +44,8 @@ namespace PocketailorDatabaseCreator.Model
                         case "Conversion":
                             csvLine.Conversion = (ConversionId)Enum.Parse(typeof(ConversionId), els[i], true);
                             continue;
-                        case "Retailer":
-                            csvLine.Retailer = (RetailId)Enum.Parse(typeof(RetailId), els[i], true);
+                        case "Brand":
+                            csvLine.Brand = (BrandId)Enum.Parse(typeof(BrandId), els[i], true);
                             continue;
                         case "Region":
                             csvLine.Region = (RegionId)Enum.Parse(typeof(RegionId), els[i], true);
@@ -80,13 +80,13 @@ namespace PocketailorDatabaseCreator.Model
                 {
                     cd = new Pocketailor.Model.ConversionData();
                     cd.Region = csvLine.Region;
-                    cd.Retailer = csvLine.Retailer;
+                    cd.Brand = csvLine.Brand;
                     cd.Conversion = csvLine.Conversion;
                     cd.Gender = csvLine.Gender;
                 }
                 // See if need to write a new object to the database i.e. the dataset has changed
                 if (csvLine.Region != cd.Region
-                    || csvLine.Retailer != cd.Retailer
+                    || csvLine.Brand != cd.Brand
                     || csvLine.Conversion != cd.Conversion
                     || csvLine.Gender != cd.Gender)
                 {
@@ -97,7 +97,7 @@ namespace PocketailorDatabaseCreator.Model
                     // Create next database object
                     cd = new Pocketailor.Model.ConversionData();
                     cd.Region = csvLine.Region;
-                    cd.Retailer = csvLine.Retailer;
+                    cd.Brand = csvLine.Brand;
                     cd.Conversion = csvLine.Conversion;
                     cd.Gender = csvLine.Gender;
                 }

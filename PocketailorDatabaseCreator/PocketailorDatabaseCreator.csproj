@@ -100,6 +100,39 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Pocketailor\Model\ConversionData.cs">
+      <Link>Model\ConversionData.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\ConversionsDataContext.cs">
+      <Link>Model\ConversionsDataContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\ConversionIds.cs">
+      <Link>Model\Static\ConversionIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\GenderIds.cs">
+      <Link>Model\Static\GenderIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\MeasurementIds.cs">
+      <Link>Model\Static\MeasurementIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\MeasurementTypeIds.cs">
+      <Link>Model\Static\MeasurementTypeIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\RegionIds.cs">
+      <Link>Model\Static\RegionIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\RequiredMeasurements.cs">
+      <Link>Model\Static\RequiredMeasurements.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\RetailIds.cs">
+      <Link>Model\Static\RetailIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\UnitCultureIds.cs">
+      <Link>Model\Static\UnitCultureIds.cs</Link>
+    </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\UnitIds.cs">
+      <Link>Model\Static\UnitIds.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -109,7 +142,9 @@
     </Compile>
     <Compile Include="Model\CsvFileReader.cs" />
     <Compile Include="Model\CsvLineData.cs" />
-    <Compile Include="Model\SetupDatabase.cs" />
+    <Compile Include="Model\SetupDatabase.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
@@ -125,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PocketailorDatabaseCreator_2013_05_15_00_57_56.sap" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
@@ -174,12 +210,6 @@
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Pocketailor\Pocketailor.csproj">
-      <Project>{D32D65B9-9B76-4C72-93DE-35E409A7F54B}</Project>
-      <Name>Pocketailor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

@@ -233,33 +233,33 @@ namespace Pocketailor.ViewModel
 
         #region Blacklist properties/methods
 
-        private ObservableCollection<RetailId> _blacklistedRetailers;
-        public ObservableCollection<RetailId> BlacklistedRetailers
+        private ObservableCollection<BrandId> _blacklistedBrand;
+        public ObservableCollection<BrandId> BlacklistedBrands
         {
             get
             {
-                if (this._blacklistedRetailers == null)
-                    this.LoadBlacklistedRetailers();
-                return this._blacklistedRetailers;
+                if (this._blacklistedBrand == null)
+                    this.LoadBlacklistedBrands();
+                return this._blacklistedBrand;
             }
             set
             {
-                if (this._blacklistedRetailers != value)
+                if (this._blacklistedBrand != value)
                 {
-                    this._blacklistedRetailers = value;
-                    this.NotifyPropertyChanged("BlacklistedRetailers");
+                    this._blacklistedBrand = value;
+                    this.NotifyPropertyChanged("BlacklistedBrands");
                 }
             }
         }
 
-        public void LoadBlacklistedRetailers()
+        public void LoadBlacklistedBrands()
         {
-            this.BlacklistedRetailers = App.Settings.GetValueOrDefault<ObservableCollection<RetailId>>("BlacklistedRetailers", new ObservableCollection<RetailId>());
+            this.BlacklistedBrands = App.Settings.GetValueOrDefault<ObservableCollection<BrandId>>("BlacklistedBrands", new ObservableCollection<BrandId>());
         }
 
-        public void SaveBlacklistedRetailers()
+        public void SaveBlacklistedBrands()
         {
-            App.Settings.AddOrUpdateValue("BlacklistedRetailers", this.BlacklistedRetailers);
+            App.Settings.AddOrUpdateValue("BlacklistedBrands", this.BlacklistedBrands);
             App.Settings.Save();
         }
 

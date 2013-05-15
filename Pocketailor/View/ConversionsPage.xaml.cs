@@ -27,9 +27,19 @@ namespace Pocketailor.View
 
         private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
+            if (!App.VM.ShowBlacklistedConversions && App.Settings.GetValueOrDefault<bool>("ShowHiddenBrandsHelp", true))
+            {
+                MessageBoxResult res = MessageBox.Show("Edit hidden brands", 
+                    "Untick the boxes for all the brands that you are not interested in. When done, click the button at the bottom again to hide them", MessageBoxButton.OK);
+                if (res == MessageBoxResult.OK)
+                {
+                    App.Settings.AddOrUpdateValue("ShowHiddenBrandsHelp", true);
+                }
+            }
+
             App.VM.ShowBlacklistedConversions = !App.VM.ShowBlacklistedConversions;
             ApplicationBarMenuItem mi = (ApplicationBarMenuItem)ApplicationBar.MenuItems[0];
-            mi.Text = (App.VM.ShowBlacklistedConversions) ? "hide hidden retailers" : "show hidden retailers";
+            mi.Text = (App.VM.ShowBlacklistedConversions) ? "hide hidden brands" : "edit hidden brands";
         }
 
         private void ApplicationBarIconButton_Click(object sender, System.EventArgs e)

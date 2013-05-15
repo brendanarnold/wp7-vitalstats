@@ -6,7 +6,7 @@ using System.Text;
 namespace Pocketailor.Model
 {
 
-    public enum RetailId
+    public enum BrandId
     {
         ASOS = 0,
         BananaRepublic = 1,
@@ -18,14 +18,14 @@ namespace Pocketailor.Model
 
     public static partial class Lookup
     {
-        public static Dictionary<RetailId, string> Retail = new Dictionary<RetailId, string>()
+        public static Dictionary<BrandId, string> Brand = new Dictionary<BrandId, string>()
         {
-            { RetailId.ASOS, "ASOS" },
-            { RetailId.BananaRepublic, "Banana Republic" },
-            { RetailId.MarksSpencer, "Marks and Spencer" },
-            { RetailId.Jaeger, "Jaeger" },
-            { RetailId.FrenchConnection, "French Connection" },
-            { RetailId.Gap, "Gap" },
+            { BrandId.ASOS, "ASOS" },
+            { BrandId.BananaRepublic, "Banana Republic" },
+            { BrandId.MarksSpencer, "Marks and Spencer" },
+            { BrandId.Jaeger, "Jaeger" },
+            { BrandId.FrenchConnection, "French Connection" },
+            { BrandId.Gap, "Gap" },
         };
     }
 
