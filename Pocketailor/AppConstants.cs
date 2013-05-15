@@ -17,15 +17,19 @@ namespace Pocketailor
     {
         
         
-        // The name of the field in the POST request
+        // The name of the fields in the POST request
         public static string ADJUSTMENT_REQUEST_POST_FIELD = "adjustment";
         public static string SECRET_REQUEST_POST_FIELD = "pocketailor_adjustments_secret";
+
 #if DEBUG
+        // If there are more than this number of items queued for delivey, dump the feedback
+        public static int MAX_FEEDBACK_ITEMS_FOR_DELIVERY = 15;
         public static int MAX_ADJUSTMENTS_PER_REQUEST = 50;
         public static int MAX_DELIVERY_ATTEMPTS = 3;
         public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "http://whitby:7000/";
         public static string POCKETAILOR_ADJUSTMENTS_SECRET = "testing_secret";
 #else
+        public static int MAX_FEEDBACK_ITEMS_FOR_DELIVERY = 15;
         public static int MAX_ADJUSTMENTS_PER_REQUEST = 50;
         public static int MAX_DELIVERY_ATTEMPTS = 3;
         // This is a random string used by the server to verify that it is a Pocketailor app talking to it 

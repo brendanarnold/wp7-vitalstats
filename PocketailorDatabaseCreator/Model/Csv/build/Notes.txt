@@ -14,6 +14,13 @@ Allow eu as Europe
 Include parser for Female_Bra_International e.g. FF
 Allow Aus for Australia
 Include parser for Female_Hosiery_Height e.g. Tu
+Change Retailer to Brand
+Instead of SizeLetter, should be GeneralSize in ouptut
+Include RegionalSize column in output
+Incldue Conversion in all output
+Include Gender in all ouptut
+Include Region
+
 
 Include extra on shirts page and trousers page which specifies measurements in cm and inches as above other measurments, include in Bing style squares
 

@@ -264,7 +264,6 @@ namespace Pocketailor.Model
             if (this.PersistedAdjustment != null)
             {
                 this.PersistedAdjustment.a = this.Adjustment;
-                App.Cache.SaveAdjustments();
             }
             else
             {
@@ -281,16 +280,19 @@ namespace Pocketailor.Model
                     v = AppConstants.APP_VERSION,
                 };
                 App.Cache.Adjustments.Add(adj);
-                App.Cache.SaveAdjustments();
                 this.PersistedAdjustment = adj;
             }
+            // Send feedback if explicitly allowed
             if (App.VM.AllowFeedBack == true)
-            {
                 App.FeedbackAgent.QueueFeedback(this.PersistedAdjustment);
+            // Prune out adjustements that don't do anything
+            if (this.PersistedAdjustment.a == 0)
+            {
+                App.Cache.Adjustments.Remove(this.PersistedAdjustment);
+                this.PersistedAdjustment = null;
             }
-
-
-        }
+            App.Cache.SaveAdjustments();
+            }
 
         public void TweakAdjustment(int delta) 
         {

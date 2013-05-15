@@ -56,6 +56,9 @@ namespace Pocketailor.Model.Adjustments
 
         internal void QueueFeedback(Adjustment adj)
         {
+            // This line save clogging the feedback system up if they are not being delivered
+            if (App.Cache.QueuedFeedback.Count >= AppConstants.MAX_FEEDBACK_ITEMS_FOR_DELIVERY)
+                return;
             App.Cache.QueuedFeedback.Add(adj);
             App.Cache.SaveQueuedFeedback();
         }
