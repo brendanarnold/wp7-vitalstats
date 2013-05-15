@@ -138,7 +138,7 @@ namespace Pocketailor.Model
         {
             get
             {
-                return this.GetAdbsIndAdjustment() == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL;
+                return this.GetAdbsIndAdjustment() >= this.SizeIds.Count;
             }
         }
 
@@ -146,8 +146,8 @@ namespace Pocketailor.Model
         public bool NoneSmaller
         {
             get 
-            { 
-                return this.GetAdbsIndAdjustment() == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG; 
+            {
+                return this.GetAdbsIndAdjustment() < 0; 
             }
         }
 
@@ -205,8 +205,8 @@ namespace Pocketailor.Model
             get
             {
                 int i = this.GetAdbsIndAdjustment();
-                if (i == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG) return "all too big";
-                if (i == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL) return "all too small";
+                if (i < 0) return "all too big";
+                if (i >= this.SizeIds.Count) return "all too small";
                 if (this.GeneralSizes[i] == String.Empty) return String.Format("{0}", this.RegionalSizes[i]);
                 if (this.RegionalSizes[i] == String.Empty) return String.Format("({0})", this.RegionalSizes[i]);
                 return String.Format("{0} ({1})", this.RegionalSizes[i], this.GeneralSizes[i]);
@@ -238,9 +238,9 @@ namespace Pocketailor.Model
                     bestChiSq = chiSq;
                 }
             }
-            // Take care of case where all sizes were too small
+            // Take care of case where all sizes were too small. Set to one above the indexes of the SizeIds
             this.BestFitInd = (bestInd == null) ? 
-                AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL : (int)bestInd;
+                this.SizeIds.Count : (int)bestInd;
             // If there is an adjustment, also load this
             LocalAdjustment adj = App.Cache.Adjustments.FirstOrDefault(a =>
                    a.Conversion == this.Conversion
@@ -261,7 +261,7 @@ namespace Pocketailor.Model
         {
             if (this.PersistedAdjustment != null)
             {
-                this.PersistedAdjustment.SizeId = this.SizeIds[this.GetAdbsIndAdjustment()];
+                this.PersistedAdjustment.SizeId = this.GetSizeId();
             }
             else
             {
@@ -271,7 +271,7 @@ namespace Pocketailor.Model
                     Brand = this.Brand,
                     Conversion = this.Conversion,
                     Gender = this.Gender,
-                    SizeId = this.SizeIds[this.GetAdbsIndAdjustment()],
+                    SizeId = this.GetSizeId(),
                 };
                 App.Cache.Adjustments.Add(adj);
                 this.PersistedAdjustment = adj;
@@ -286,7 +286,7 @@ namespace Pocketailor.Model
                     f = this.BestFitInd,
                     g = this.Gender,
                     i = App.VM.AppGUID,
-                    s = this.SizeIds[this.GetAdbsIndAdjustment()],
+                    s = this.GetSizeId(),
                     t = Helpers.GetUnixTime(),
                     v = AppConstants.APP_VERSION,
                 };
@@ -301,37 +301,22 @@ namespace Pocketailor.Model
             App.Cache.SaveAdjustments();
         }
 
+        public int GetSizeId()
+        {
+            int i = this.GetAdbsIndAdjustment();
+            if (i < 0) return AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG;
+            if (i >= this.SizeIds.Count) return AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL;
+            return i;
+        }
 
         public void TweakSizeDown() 
         {
-            if (this.GetAdbsIndAdjustment() - 1 < 0)
-            {
-                this.SetAbsIndAdjustment(AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG);
-            }
-            else if (this.GetAdbsIndAdjustment() == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL)
-            {
-                this.SetAbsIndAdjustment(this.SizeIds.Count - 1);
-            }
-            else
-            {
-                this.RelativeIndAdjustment -= 1;
-            }
+            this.RelativeIndAdjustment -= 1;
         }
 
         public void TweakSizeUp() 
         {
-            if (this.GetAdbsIndAdjustment() + 1 >= this.SizeIds.Count)
-            {
-                this.SetAbsIndAdjustment(AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL);
-            }
-            else if (this.GetAdbsIndAdjustment() == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG)
-            {
-                this.SetAbsIndAdjustment(0);
-            }
-            else
-            {
-                this.RelativeIndAdjustment += 1;
-            }
+            this.RelativeIndAdjustment += 1;
         }
         
 
@@ -347,8 +332,21 @@ namespace Pocketailor.Model
         // Obtain the relative adjustment based on what the persisted adjustment is
         public int GetRelativeIndAdjustment()
         {
-            return (this.PersistedAdjustment == null) ? 0
-               : this.SizeIds.IndexOf(this.PersistedAdjustment.SizeId) - this.BestFitInd;
+            if (this.PersistedAdjustment == null) return 0;
+            int sizeIdInd;
+            if (this.PersistedAdjustment.SizeId == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL) 
+            {
+                sizeIdInd = this.SizeIds.Count;
+            } 
+            else if (this.PersistedAdjustment.SizeId == AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG)
+            {
+                sizeIdInd = -1;
+            }
+            else
+            {
+                sizeIdInd = this.SizeIds.IndexOf(this.PersistedAdjustment.SizeId);
+            }
+            return sizeIdInd - this.BestFitInd;
         }
 
         // Resolves the bestfit and the relative adjustment to get the current SizeId index 
