@@ -51,6 +51,7 @@ namespace Pocketailor.Model
         public void SaveAdjustments()
         {
             App.Settings.AddOrUpdateValue("Adjustments", this.Adjustments);
+            App.Settings.Save();
         }
 
         #endregion
@@ -91,6 +92,7 @@ namespace Pocketailor.Model
         public void SaveQueuedFeedback()
         {
             App.Settings.AddOrUpdateValue("QueuedFeedback", this.QueuedFeedback);
+            App.Settings.Save();
         }
 
         #endregion

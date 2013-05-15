@@ -244,7 +244,7 @@ namespace Pocketailor.Model
             // If there is an adjustment, also load this
             LocalAdjustment adj = App.Cache.Adjustments.FirstOrDefault(a =>
                    a.Conversion == this.Conversion
-                && a.Profile == App.VM.SelectedProfile
+                && a.ProfileId == App.VM.SelectedProfile.Id
                 && a.Gender == this.Gender
                 && a.Brand == this.Brand
             );
@@ -267,7 +267,7 @@ namespace Pocketailor.Model
             {
                 LocalAdjustment adj = new LocalAdjustment()
                 {
-                    Profile = App.VM.SelectedProfile,
+                    ProfileId = App.VM.SelectedProfile.Id,
                     Brand = this.Brand,
                     Conversion = this.Conversion,
                     Gender = this.Gender,

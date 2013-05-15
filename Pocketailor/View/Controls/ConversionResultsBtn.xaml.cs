@@ -166,7 +166,7 @@ namespace Pocketailor.View.Controls
         void page_BackKeyPress(object sender, CancelEventArgs e)
         {
             e.Cancel = true;
-            this.LeaveAdjustConversionState();
+            this.AbortAdjustment();
         }
 
         private void LeaveAdjustConversionState()
