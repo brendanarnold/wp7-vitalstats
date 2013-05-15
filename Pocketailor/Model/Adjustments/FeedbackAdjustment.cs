@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Pocketailor.Model.Adjustments
 {
-     // The class that will get JSONified and sent over the wire to the server
+    // The class that will get JSONified and sent over the wire to the server
     // Note the names are abbreviated since MongoDB stores fields with each entry
-    public class Adjustment
+    public class FeedbackAdjustment
     {
         /// <summary>
         /// Gender of the person the adjustment applies to
@@ -20,19 +20,14 @@ namespace Pocketailor.Model.Adjustments
         public BrandId b;
 
         /// <summary>
-        /// Region
-        /// </summary>
-        public RegionId r;
-
-        /// <summary>
-        /// (Index of) the fitted value that the app calculated
+        /// (SizeId of) the fitted value that the app calculated
         /// </summary>
         public int f;
 
         /// <summary>
-        /// Adjustment to the fitted value e.g. +1, 0, -1
+        /// SizeId of the corrected value
         /// </summary>
-        public int a;
+        public int s;
 
         /// <summary>
         /// App ID, a GUID for this installlation

@@ -19,8 +19,8 @@ namespace Pocketailor.Model
 
         #region Adjustments cache
 
-        private List<Adjustment> _adjustments;
-        public List<Adjustment> Adjustments {
+        private List<LocalAdjustment> _adjustments;
+        public List<LocalAdjustment> Adjustments {
             get
             {
                 if (this._adjustments == null)
@@ -40,7 +40,7 @@ namespace Pocketailor.Model
 
         public void LoadAdjustments()
         {
-            this.Adjustments = App.Settings.GetValueOrDefault<List<Adjustment>>("Adjustments", new List<Adjustment>());
+            this.Adjustments = App.Settings.GetValueOrDefault<List<LocalAdjustment>>("Adjustments", new List<LocalAdjustment>());
         }
 
         public void FreeAdjustments()
@@ -58,8 +58,8 @@ namespace Pocketailor.Model
 
         #region Queued adjustments cache
 
-        private List<Adjustment> _queuedFeedback;
-        public List<Adjustment> QueuedFeedback
+        private List<FeedbackAdjustment> _queuedFeedback;
+        public List<FeedbackAdjustment> QueuedFeedback
         {
             get
             {
@@ -80,7 +80,7 @@ namespace Pocketailor.Model
 
         public void LoadQueuedFeedback()
         {
-            this.QueuedFeedback = App.Settings.GetValueOrDefault<List<Adjustment>>("QueuedFeedback", new List<Adjustment>());
+            this.QueuedFeedback = App.Settings.GetValueOrDefault<List<FeedbackAdjustment>>("QueuedFeedback", new List<FeedbackAdjustment>());
         }
 
         public void FreeQueuedFeedback()

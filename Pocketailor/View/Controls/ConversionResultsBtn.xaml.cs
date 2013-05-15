@@ -186,7 +186,7 @@ namespace Pocketailor.View.Controls
         {
             this.LeaveAdjustConversionState();
             ConversionData c = this.DataContext as ConversionData;
-            c.ResetAdjustment();
+            c.DiscardTweaks();
         }
 
         private void conversionGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -204,7 +204,7 @@ namespace Pocketailor.View.Controls
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             ConversionData c = this.DataContext as ConversionData;
-            c.TweakAdjustment(-1);
+            c.TweakSizeDown();
         }
 
         private void rightSizeBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -212,13 +212,13 @@ namespace Pocketailor.View.Controls
             if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
             this.LeaveAdjustConversionState();
             ConversionData c = this.DataContext as ConversionData;
-            c.AcceptAdjustment();
+            c.AcceptTweaks();
         }
 
         private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             ConversionData c = this.DataContext as ConversionData;
-            c.TweakAdjustment(1);
+            c.TweakSizeUp();
         }
 
        

@@ -28,7 +28,7 @@ namespace Pocketailor.Model.Adjustments
                 if (attempt == 0) break;
                 // Take a batch of adjustments 
                 int nvals = Math.Min(App.Cache.QueuedFeedback.Count, AppConstants.MAX_ADJUSTMENTS_PER_REQUEST);
-                List<Adjustment> buff = App.Cache.QueuedFeedback.GetRange(0, nvals);
+                List<FeedbackAdjustment> buff = App.Cache.QueuedFeedback.GetRange(0, nvals);
                 // JSONify
                 string adjustmentsJson = Newtonsoft.Json.JsonConvert.SerializeObject(buff);
                 // Send over web
@@ -54,7 +54,7 @@ namespace Pocketailor.Model.Adjustments
         }
 
 
-        internal void QueueFeedback(Adjustment adj)
+        internal void QueueFeedback(FeedbackAdjustment adj)
         {
             // This line save clogging the feedback system up if they are not being delivered
             if (App.Cache.QueuedFeedback.Count >= AppConstants.MAX_FEEDBACK_ITEMS_FOR_DELIVERY)
