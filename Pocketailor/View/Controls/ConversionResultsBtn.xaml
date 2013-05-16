@@ -47,7 +47,7 @@
 					<Setter.Value>
 						<ControlTemplate TargetType="Button">
 							<Grid>
-								<TextBlock FontSize="28" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
+								<TextBlock Padding="0,6,0,6" FontSize="28" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
 							</Grid>
 						</ControlTemplate>
 					</Setter.Value>

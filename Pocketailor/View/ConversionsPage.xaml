@@ -185,7 +185,6 @@
 
 				<DataTemplate x:Key="itemTemplate" toolkit:TiltEffect.SuppressTilt="True">
 					<!-- Applied to each item -->
-
 						<Controls:ConversionResultsBtn 
 							Margin="12,0,24,4" 
 							BtnClothingSize="{Binding FormattedValue}" 
@@ -201,7 +200,25 @@
 				</DataTemplate>
 				<DataTemplate x:Key="listHeaderTemplate">
 					<!-- Top of whole control -->
-					<Grid/>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<TextBlock
+							Grid.Row="0" 
+							Text="MEASUREMENTS USED" Style="{StaticResource SubTitleTextBoxStyle}"
+							Margin="12,12,0,0" />
+						<ListBox x:Name="measurementsListBox"
+							Grid.Row="1">
+						</ListBox>
+						<TextBlock 
+							Grid.Row="2"
+							Text="CONVERSIONS" Style="{StaticResource SubTitleTextBoxStyle}"
+							Margin="12,0,0,8" />
+					</Grid>
+					
 				</DataTemplate>
 			</toolkit:LongListSelector.Resources>
 
