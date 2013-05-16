@@ -306,7 +306,7 @@ namespace Pocketailor.Model
             int i = this.GetAdbsIndAdjustment();
             if (i < 0) return AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_BIG;
             if (i >= this.SizeIds.Count) return AppConstants.ADJUSTMENT_SIZEID_ALL_TOO_SMALL;
-            return i;
+            return this.SizeIds[i];
         }
 
         public void TweakSizeDown() 

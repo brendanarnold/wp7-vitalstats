@@ -106,7 +106,7 @@
 				<RowDefinition Height="2*"/>
 				<RowDefinition Height="1*"/>
 			</Grid.RowDefinitions>
-			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="2,0,-2,0"/>
+			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
 			
 			<Grid x:Name="titleBarGrid"  Grid.Row="0" Margin="0" Background="Black" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
