@@ -135,9 +135,9 @@ namespace Pocketailor.View
                 case ConversionId.SuitSize:
                     return "suits";
                 case ConversionId.DressSize:
-                    return "dress size";
+                    return "dresses";
                 case ConversionId.BraSize:
-                    return "bra";
+                    return "bras";
                 case ConversionId.HosierySize:
                     return "hosiery";
                 case ConversionId.ShoeSize:
@@ -401,23 +401,8 @@ namespace Pocketailor.View
         }
     }
 
-    // Converter to add extra item to databound listpicker on EditStats page
-    //public class AddCustomStatTemplateOption : System.Windows.Data.IValueConverter
-    //{
-    //    public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
-    //    {
-    //        ObservableCollection<Stat> statTemplates = value as ObservableCollection<Stat>;
-    //        statTemplates.Insert(0, new Stat() { Name = "Custom", Id = -1 });
-    //        return statTemplates;
-    //    }
-    //    public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
-    //    {
-    //        return null;
-    //    }
-    //}
 
     // Converter that returns visibility if an Ienumerable is empty based on paramter
-
     public class CountToVisibility : System.Windows.Data.IValueConverter
     {
         public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)

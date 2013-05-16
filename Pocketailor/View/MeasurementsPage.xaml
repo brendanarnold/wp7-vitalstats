@@ -14,7 +14,7 @@
 	xmlns:iv="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	xmlns:Controls="clr-namespace:Pocketailor.View.Controls" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
-	x:Class="Pocketailor.View.StatsPage"
+	x:Class="Pocketailor.View.MeasurementsPage"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
 	toolkit:TiltEffect.IsTiltEnabled="True"
@@ -135,7 +135,6 @@
         <!--<shell:ApplicationBarMenuItem Text="add to start menu" Click="secondaryTileAppBarMenuItem_Click"/>-->
 				<shell:ApplicationBarMenuItem Text="edit profile" Click="editProfileAppBarMenuItem_Click"/>
 			</shell:ApplicationBar.MenuItems>
-			<!--<shell:ApplicationBarIconButton x:Name="addStatAppBarBtn" IconUri="/Assets/AppBar/appbar.add.rest.png" Text="add stat" Click="addStatAppBarBtn_Click"/>-->
 		</shell:ApplicationBar>
 		<shell:ApplicationBar x:Key="conversionsAppBar" IsVisible="True" Mode="Minimized" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBar.MenuItems>
@@ -144,7 +143,7 @@
 			</shell:ApplicationBar.MenuItems>
 		</shell:ApplicationBar>
 
-		<Style x:Key="statListBoxTemplate" TargetType="ListBox">
+		<Style x:Key="measurementsListBoxTemplate" TargetType="ListBox">
 			<Setter Property="Background" Value="Transparent"/>
 			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
 			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
@@ -294,7 +293,7 @@
 							</Controls:ConversionBtn>
 						</Grid>
 						<Grid   Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
-							<Controls:ConversionBtn x:Name="dressConversionBtn" Title="Dress Sizes" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="0" HasMeasurements="{Binding HasDressSizeMeasurements}" Tap="dressConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="dressConversionBtn" Title="Dresses" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="0" HasMeasurements="{Binding HasDressSizeMeasurements}" Tap="dressConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/dress-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
@@ -374,7 +373,7 @@
 					<!--
 					
 					-->
-					<Canvas Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToVisible}}" >
+					<Canvas Visibility="{Binding SelectedProfile.Measurements, Converter={StaticResource EmptyCollectionToVisible}}" >
 						<TextBlock TextWrapping="Wrap" Text="unlock a conversion button by tapping and adding measurements" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="51" Canvas.Top="140" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}" Width="352" TextAlignment="Center"/>
 						<Image Source="/Images/ChalkArrowHorizontal.png" Canvas.Top="246" Width="432" Canvas.Left="-79" RenderTransformOrigin="0.5,0.5">
 							<Image.RenderTransform>
@@ -383,13 +382,13 @@
 						</Image>
 					</Canvas>
 
-					<ScrollViewer Visibility="{Binding SelectedProfile.Stats, Converter={StaticResource EmptyCollectionToCollapsed}}" d:IsHidden="True">
+					<ScrollViewer Visibility="{Binding SelectedProfile.Measurements, Converter={StaticResource EmptyCollectionToCollapsed}}" d:IsHidden="True">
 						<Grid>
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto"/>
 								<RowDefinition Height="Auto"/>
 							</Grid.RowDefinitions>
-							<ListBox   Grid.Row="0" x:Name="statsListBox" ItemsSource="{Binding SelectedProfile.Stats}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="statsListBox_SizeChanged" Style="{StaticResource statListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
+							<ListBox   Grid.Row="0" x:Name="measurementsListBox" ItemsSource="{Binding SelectedProfile.Measurements}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="measurementsListBox_SizeChanged" Style="{StaticResource measurementsListBoxTemplate}" Margin="0,0,0,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
 								<!-- this can be set in the templated style
 								<ListBox.ItemContainerStyle>
 									<Style TargetType="ListBoxItem">
@@ -475,51 +474,7 @@
 			
 		</controls:Pivot>
 
-		<!--
-			<Grid x:Name="selectMeasurementTypePopUpGrid" Background="{StaticResource DialogBGColor}" Margin="2,0,-2,0" Visibility="Collapsed">
-				<StackPanel>
-					<TextBlock x:Name="TitleTextBlock" TextWrapping="Wrap" Text="select measurement type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
-					<TextBlock x:Name="customMeasurementTypeTextBox" TextWrapping="Wrap"  FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5" Text="Custom" Tap="customMeasurementTypeTextBox_Tap"/>
-					<Grid x:Name="OrDividerGrid2" Margin="0,0,0,5">
-						<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />
-						<Border Background="{StaticResource DialogBGColor}" HorizontalAlignment="Center" Padding="5,0" >
-							<TextBlock TextWrapping="Wrap" Text="OR" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-						</Border>
-					</Grid>
-					<ListBox ItemsSource="{Binding MeasurementTypes}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}" Padding="0" Margin="0,0,0,0">
-						<ListBox.ItemTemplate>
-							<DataTemplate>
-								<StackPanel x:Name="selectMeasurementTypeStackPanel" Margin="24,0,0,8" Tap="selectMeasurementTypeStackPanel_Tap">
-									<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5" />
-								</StackPanel>
-							</DataTemplate>
-						</ListBox.ItemTemplate>
-					</ListBox>
-				</StackPanel>
-			</Grid>
 		
-			<Grid x:Name="selectStatTypePopUpGrid" Background="{StaticResource DialogBGColor}" Margin="0" Visibility="Collapsed">
-				<StackPanel>
-					<TextBlock x:Name="TitleTextBlock1" TextWrapping="Wrap" Text="select stat type" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,5,0,30"/>
-					<TextBlock x:Name="customStatTextBox" TextWrapping="Wrap" Text="Custom stat ..." FontSize="{StaticResource PhoneFontSizeLarge}" Margin="24,0,0,5" Tap="customStatTextBox_Tap"/>
-					<Grid x:Name="OrDividerGrid1" Margin="0,0,0,5">
-						<Border BorderThickness="0,2,0,0" BorderBrush="White" Margin="12,15,12,0" />
-						<Border Background="{StaticResource DialogBGColor}" HorizontalAlignment="Center" Padding="5,0" >
-							<TextBlock TextWrapping="Wrap" Text="OR" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-						</Border>
-					</Grid>
-					<ListBox ItemsSource="{Binding StatTemplates}" Margin="12,0,0,0" ItemContainerStyle="{StaticResource ListBoxItemStyle1}">
-						<ListBox.ItemTemplate>
-							<DataTemplate>
-								<StackPanel x:Name="selectStatTemplateStackPanel" Margin="12,0,0,8" Tap="selectStatTemplateStackPanel_Tap">
-									<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,0,5" />
-								</StackPanel>
-							</DataTemplate>
-						</ListBox.ItemTemplate>
-					</ListBox>
-				</StackPanel>
-			</Grid>
-		    -->
 	
 	</Grid>
 	

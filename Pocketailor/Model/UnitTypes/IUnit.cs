@@ -19,7 +19,7 @@ namespace Pocketailor.Model
         {
             get;
         }
-        // A single string containing all the formatted values (of the selected stat) with unit names
+        // A single string containing all the formatted values (of the selected measurement) with unit names
         string FormattedValue
         {
             get;
@@ -37,7 +37,7 @@ namespace Pocketailor.Model
         List<string> ConvertFromDBString(string val);
 
 
-        // UI binds to property on units (e.g. FormattedValue) so necessary to expose method when selected stat value changes
+        // UI binds to property on units (e.g. FormattedValue) so necessary to expose method when selected measurement value changes
         void NotifyPropertyChanged(string propertyName);
     }
 

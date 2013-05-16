@@ -1,5 +1,4 @@
 ﻿using Pocketailor.Model;
-using Pocketailor.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +30,9 @@ namespace Pocketailor.ViewModel
 
         public bool HasRequiredMeasurements(List<MeasurementId> requiredIds)
         {
-            IEnumerable<MeasurementId> statIds = from Measurement s in this.SelectedProfile.Stats select s.MeasurementId;
+            IEnumerable<MeasurementId> measurementIds = from Measurement s in this.SelectedProfile.Measurements select s.MeasurementId;
             foreach (MeasurementId id in requiredIds)
-                if (!statIds.Contains(id)) return false;
+                if (!measurementIds.Contains(id)) return false;
             return true;
         }
 

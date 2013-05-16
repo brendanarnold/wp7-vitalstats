@@ -208,7 +208,7 @@
 						</Grid.RowDefinitions>
 						<TextBlock
 							Grid.Row="0" 
-							Text="MEASUREMENTS USED" Style="{StaticResource SubTitleTextBoxStyle}"
+							Text="RELEVANT MEASUREMENTS" Style="{StaticResource SubTitleTextBoxStyle}"
 							Margin="12,12,0,0" />
 						<ListBox x:Name="measurementsListBox"
 							Grid.Row="1">

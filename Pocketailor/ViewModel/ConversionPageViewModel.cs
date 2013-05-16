@@ -207,7 +207,7 @@ namespace Pocketailor.ViewModel
             
             foreach (MeasurementId mID in requiredIds)
             {
-                Measurement s = App.VM.SelectedProfile.Stats.FirstOrDefault(x => x.MeasurementId == mID);
+                Measurement s = App.VM.SelectedProfile.Measurements.FirstOrDefault(x => x.MeasurementId == mID);
                 if (s == null) return null;
                 double d;
                 if (double.TryParse(s.Value, out d))
@@ -224,7 +224,7 @@ namespace Pocketailor.ViewModel
 
         internal List<MeasurementId> GetMissingMeasurements(List<MeasurementId> requiredIds)
         {
-            return requiredIds.Except(this.SelectedProfile.Stats.Select(s => s.MeasurementId)).ToList();
+            return requiredIds.Except(this.SelectedProfile.Measurements.Select(s => s.MeasurementId)).ToList();
         }
 
 

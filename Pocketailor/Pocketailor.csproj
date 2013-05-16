@@ -229,8 +229,8 @@
     <Compile Include="View\EditRegionPage.xaml.cs">
       <DependentUpon>EditRegionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditStatPage.xaml.cs">
-      <DependentUpon>EditStatPage.xaml</DependentUpon>
+    <Compile Include="View\EditMeasurementPage.xaml.cs">
+      <DependentUpon>EditMeasurementPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecondaryTileHelpers.cs">
       <SubType>Code</SubType>
@@ -238,8 +238,8 @@
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\StatsPage.xaml.cs">
-      <DependentUpon>StatsPage.xaml</DependentUpon>
+    <Compile Include="View\MeasurementsPage.xaml.cs">
+      <DependentUpon>MeasurementsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewState.cs" />
     <Compile Include="ViewModel\AppViewModel.cs" />
@@ -289,7 +289,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditStatPage.xaml">
+    <Page Include="View\EditMeasurementPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -301,7 +301,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StatsPage.xaml">
+    <Page Include="View\MeasurementsPage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>

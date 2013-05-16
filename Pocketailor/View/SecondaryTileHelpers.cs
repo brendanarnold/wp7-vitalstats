@@ -20,7 +20,7 @@ namespace Pocketailor.View
                 BackContent = String.Empty,
                 Count = 0,
             };
-            string uriStr = String.Format("/View/StatsPage.xaml?Id={0}", p.Id);
+            string uriStr = String.Format("/View/MeasurementsPage.xaml?Id={0}", p.Id);
             // Remove any existing tile with the same URI
             DeleteSecondaryTile(p);
             ShellTile.Create(new Uri(uriStr, UriKind.Relative), td);

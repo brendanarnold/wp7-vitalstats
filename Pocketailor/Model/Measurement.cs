@@ -150,12 +150,12 @@ namespace Pocketailor.Model
                     if (p != null)
                     {
                         this._profile.Entity = null;
-                        p.Stats.Remove(this);
+                        p.Measurements.Remove(this);
                     }
                     this._profile.Entity = value;
                     if (value != null)
                     {
-                        value.Stats.Add(this);
+                        value.Measurements.Add(this);
                     }
                     NotifyPropertyChanged("Profile");
                 }

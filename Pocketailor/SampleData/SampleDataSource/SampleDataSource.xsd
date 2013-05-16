@@ -11,9 +11,9 @@
       <xs:element name="Profiles" type="tns:Profiles" />
       <xs:element name="SelectedProfile" type="tns:SelectedProfile" />
       <xs:element name="MeasurementTypes" type="tns:MeasurementTypes" />
-      <xs:element name="StatTemplates" type="tns:StatTemplates" />
-      <xs:element name="SuggestedStatTemplate" type="tns:SuggestedStatTemplate" />
-      <xs:element name="SelectedStat" type="tns:SelectedStat" />
+      <xs:element name="MeasurementTemplates" type="tns:MeasurementTemplates" />
+      <xs:element name="SuggestedMeasurementTemplate" type="tns:SuggestedMeasurementTemplate" />
+      <xs:element name="SelectedMeasurement" type="tns:SelectedMeasurement" />
       <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
       <xs:element name="Regions" type="tns:Regions" />
     </xs:sequence>
@@ -39,19 +39,19 @@
   </xs:complexType>
   <xs:complexType name="SelectedProfile">
     <xs:sequence>
-      <xs:element name="Stats" type="tns:Stats" />
+      <xs:element name="Measurements" type="tns:Measurements" />
     </xs:sequence>
     <xs:attribute name="Id" type="xs:double" />
     <xs:attribute blend:Format="Name" name="Name" type="xs:string" />
     <xs:attribute name="IsProtected" type="xs:boolean" />
     <xs:attribute blend:FormatParameters="1,8" name="Gender" type="xs:string" />
   </xs:complexType>
-  <xs:complexType name="Stats">
+  <xs:complexType name="Measurements">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="StatsItem" type="tns:StatsItem" />
+      <xs:element maxOccurs="unbounded" name="MeasurementsItem" type="tns:MeasurementsItem" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="StatsItem">
+  <xs:complexType name="MeasurementsItem">
     <xs:sequence>
       <xs:element name="MeasurementType" type="tns:MeasurementType" />
       <xs:element name="PreferredUnit" type="tns:PreferredUnit" />
@@ -100,12 +100,12 @@
     <xs:attribute blend:FormatParameters="1,6" name="Name" type="xs:string" />
     <xs:attribute name="IsConvertible" type="xs:boolean" />
   </xs:complexType>
-  <xs:complexType name="StatTemplates">
+  <xs:complexType name="MeasurementTemplates">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="StatTemplatesItem" type="tns:StatTemplatesItem" />
+      <xs:element maxOccurs="unbounded" name="MeasurementTemplatesItem" type="tns:MeasurementTemplatesItem" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="StatTemplatesItem">
+  <xs:complexType name="MeasurementTemplatesItem">
     <xs:sequence>
       <xs:element name="MeasurementType" type="tns:MeasurementType3" />
       <xs:element name="PreferredUnit" type="tns:PreferredUnit2" />
@@ -133,7 +133,7 @@
     <xs:attribute blend:FormatParameters="1,8" name="Name" type="xs:string" />
     <xs:attribute blend:FormatParameters="1,8" name="FormattedValue" type="xs:string" />
   </xs:complexType>
-  <xs:complexType name="SuggestedStatTemplate">
+  <xs:complexType name="SuggestedMeasurementTemplate">
     <xs:sequence>
       <xs:element name="MeasurementType" type="tns:MeasurementType1" />
     </xs:sequence>
@@ -161,7 +161,7 @@
     <xs:attribute name="ConversionFactor" type="xs:double" />
     <xs:attribute name="ConversionIntercept" type="xs:double" />
   </xs:complexType>
-  <xs:complexType name="SelectedStat">
+  <xs:complexType name="SelectedMeasurement">
     <xs:sequence>
       <xs:element name="MeasurementType" type="tns:MeasurementType2" />
       <xs:element name="PreferredUnit" type="tns:PreferredUnit1" />

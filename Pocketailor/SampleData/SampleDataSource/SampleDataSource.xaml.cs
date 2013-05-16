@@ -77,50 +77,50 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private StatTemplates _StatTemplates = new StatTemplates();
+		private MeasurementTemplates _MeasurementTemplates = new MeasurementTemplates();
 
-		public StatTemplates StatTemplates
+		public MeasurementTemplates MeasurementTemplates
 		{
 			get
 			{
-				return this._StatTemplates;
+				return this._MeasurementTemplates;
 			}
 		}
 
-		private SuggestedStatTemplate _SuggestedStatTemplate = new SuggestedStatTemplate();
+		private SuggestedMeasurementTemplate _SuggestedMeasurementTemplate = new SuggestedMeasurementTemplate();
 
-		public SuggestedStatTemplate SuggestedStatTemplate
+		public SuggestedMeasurementTemplate SuggestedMeasurementTemplate
 		{
 			get
 			{
-				return this._SuggestedStatTemplate;
+				return this._SuggestedMeasurementTemplate;
 			}
 
 			set
 			{
-				if (this._SuggestedStatTemplate != value)
+				if (this._SuggestedMeasurementTemplate != value)
 				{
-					this._SuggestedStatTemplate = value;
-					this.OnPropertyChanged("SuggestedStatTemplate");
+					this._SuggestedMeasurementTemplate = value;
+					this.OnPropertyChanged("SuggestedMeasurementTemplate");
 				}
 			}
 		}
 
-		private SelectedStat _SelectedStat = new SelectedStat();
+		private SelectedMeasurement _SelectedMeasurement = new SelectedMeasurement();
 
-		public SelectedStat SelectedStat
+		public SelectedMeasurement SelectedMeasurement
 		{
 			get
 			{
-				return this._SelectedStat;
+				return this._SelectedMeasurement;
 			}
 
 			set
 			{
-				if (this._SelectedStat != value)
+				if (this._SelectedMeasurement != value)
 				{
-					this._SelectedStat = value;
-					this.OnPropertyChanged("SelectedStat");
+					this._SelectedMeasurement = value;
+					this.OnPropertyChanged("SelectedMeasurement");
 				}
 			}
 		}
@@ -403,13 +403,13 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private Stats _Stats = new Stats();
+		private Measurements _Measurements = new Measurements();
 
-		public Stats Stats
+		public Measurements Measurements
 		{
 			get
 			{
-				return this._Stats;
+				return this._Measurements;
 			}
 		}
 
@@ -490,11 +490,11 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Stats : System.Collections.ObjectModel.ObservableCollection<StatsItem>
+	public class Measurements : System.Collections.ObjectModel.ObservableCollection<MeasurementsItem>
 	{ 
 	}
 
-	public class StatsItem : System.ComponentModel.INotifyPropertyChanged
+	public class MeasurementsItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -927,11 +927,11 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class StatTemplates : System.Collections.ObjectModel.ObservableCollection<StatTemplatesItem>
+	public class MeasurementTemplates : System.Collections.ObjectModel.ObservableCollection<MeasurementTemplatesItem>
 	{ 
 	}
 
-	public class StatTemplatesItem : System.ComponentModel.INotifyPropertyChanged
+	public class MeasurementTemplatesItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -1187,7 +1187,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class SuggestedStatTemplate : System.ComponentModel.INotifyPropertyChanged
+	public class SuggestedMeasurementTemplate : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -1468,7 +1468,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class SelectedStat : System.ComponentModel.INotifyPropertyChanged
+	public class SelectedMeasurement : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 

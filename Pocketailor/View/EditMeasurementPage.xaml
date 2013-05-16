@@ -12,7 +12,7 @@
 	xmlns:Pocketailor_View_Controls="clr-namespace:Pocketailor.View.Controls"
 	xmlns:Pocketailor="clr-namespace:Pocketailor"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
-	x:Class="Pocketailor.View.EditStatPage"
+	x:Class="Pocketailor.View.EditMeasurementPage"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True" 
 	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"

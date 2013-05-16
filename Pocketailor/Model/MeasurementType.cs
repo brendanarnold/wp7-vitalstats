@@ -22,7 +22,7 @@ namespace Pocketailor.Model
         {
             get
             {
-                if (this.DefaultUnit == null) return App.VM.SelectedStat.Value;
+                if (this.DefaultUnit == null) return App.VM.SelectedMeasurement.Value;
                 return this.DefaultUnit.FormattedValue;
             }
         }

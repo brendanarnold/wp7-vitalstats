@@ -11,9 +11,9 @@
   </SampleData:SampleDataSource.Profiles>
   <SampleData:SampleDataSource.SelectedProfile>
     <SampleData:SelectedProfile Id="44" Name="Andrea" IsProtected="True" Gender="Male">
-      <SampleData:SelectedProfile.Stats>
-        <SampleData:StatsItem Id="67" Name="Height" FormattedValue="6 ft. 0 in.">
-          <SampleData:StatsItem.MeasurementType>
+      <SampleData:SelectedProfile.Measurements>
+        <SampleData:MeasurementsItem Id="67" Name="Height" FormattedValue="6 ft. 0 in.">
+          <SampleData:MeasurementsItem.MeasurementType>
             <SampleData:MeasurementType Id="69" Name="Aenean" IsConvertible="True">
               <SampleData:MeasurementType.Units>
                 <SampleData:UnitsItem Id="33" Name="Metre" Format="{}{0} m." />
@@ -23,20 +23,20 @@
                 <SampleData:UnitsItem Id="13" Name="Inches" Format="{}{32} in." />
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
-          </SampleData:StatsItem.MeasurementType>
-          <SampleData:StatsItem.PreferredUnit>
+   </SampleData:MeasurementsItem.MeasurementType>
+          <SampleData:MeasurementsItem.PreferredUnit>
             <SampleData:PreferredUnit FormattedValue="6 ft. 0 in." />
-          </SampleData:StatsItem.PreferredUnit>
-          <SampleData:StatsItem.OtherUnitFormattedValues>
+   </SampleData:MeasurementsItem.PreferredUnit>
+          <SampleData:MeasurementsItem.OtherUnitFormattedValues>
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
-          </SampleData:StatsItem.OtherUnitFormattedValues>
-        </SampleData:StatsItem>
-        <SampleData:StatsItem Id="14" Name="Weight" FormattedValue="10.3 st.">
-          <SampleData:StatsItem.MeasurementType>
+   </SampleData:MeasurementsItem.OtherUnitFormattedValues>
+ </SampleData:MeasurementsItem>
+        <SampleData:MeasurementsItem Id="14" Name="Weight" FormattedValue="10.3 st.">
+          <SampleData:MeasurementsItem.MeasurementType>
             <SampleData:MeasurementType Id="61" Name="Cras" IsConvertible="False">
               <SampleData:MeasurementType.Units>
                 <SampleData:UnitsItem Id="57" Name="Aenean" ConversionFactor="Duis" ConversionIntercept="Aliquam" Format="Mauris" />
@@ -46,20 +46,20 @@
                 <SampleData:UnitsItem Id="21" Name="Duis" ConversionFactor="Nullam" ConversionIntercept="Accumsan" Format="Sed" />
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
-          </SampleData:StatsItem.MeasurementType>
-          <SampleData:StatsItem.PreferredUnit>
+   </SampleData:MeasurementsItem.MeasurementType>
+          <SampleData:MeasurementsItem.PreferredUnit>
             <SampleData:PreferredUnit FormattedValue="10.3 st." />
-          </SampleData:StatsItem.PreferredUnit>
-          <SampleData:StatsItem.OtherUnitFormattedValues>
+   </SampleData:MeasurementsItem.PreferredUnit>
+          <SampleData:MeasurementsItem.OtherUnitFormattedValues>
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
-          </SampleData:StatsItem.OtherUnitFormattedValues>
-        </SampleData:StatsItem>
-        <SampleData:StatsItem Id="82" Name="Shoe Size" FormattedValue="9">
-          <SampleData:StatsItem.MeasurementType>
+   </SampleData:MeasurementsItem.OtherUnitFormattedValues>
+ </SampleData:MeasurementsItem>
+        <SampleData:MeasurementsItem Id="82" Name="Shoe Size" FormattedValue="9">
+          <SampleData:MeasurementsItem.MeasurementType>
             <SampleData:MeasurementType Id="51" Name="Nam" IsConvertible="True">
               <SampleData:MeasurementType.Units>
                 <SampleData:UnitsItem Id="97" Name="Lorem" ConversionFactor="Curae" ConversionIntercept="Integer" Format="Curae" />
@@ -69,20 +69,20 @@
                 <SampleData:UnitsItem Id="80" Name="Morbi" ConversionFactor="Quisque" ConversionIntercept="Curae" Format="Auctor" />
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
-          </SampleData:StatsItem.MeasurementType>
-          <SampleData:StatsItem.PreferredUnit>
+   </SampleData:MeasurementsItem.MeasurementType>
+          <SampleData:MeasurementsItem.PreferredUnit>
             <SampleData:PreferredUnit FormattedValue="7 UK Womens" />
-          </SampleData:StatsItem.PreferredUnit>
-          <SampleData:StatsItem.OtherUnitFormattedValues>
+   </SampleData:MeasurementsItem.PreferredUnit>
+          <SampleData:MeasurementsItem.OtherUnitFormattedValues>
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
-          </SampleData:StatsItem.OtherUnitFormattedValues>
-        </SampleData:StatsItem>
-        <SampleData:StatsItem Id="54" Name="Tennis Grip" FormattedValue="3.2 in.">
-          <SampleData:StatsItem.MeasurementType>
+   </SampleData:MeasurementsItem.OtherUnitFormattedValues>
+ </SampleData:MeasurementsItem>
+        <SampleData:MeasurementsItem Id="54" Name="Tennis Grip" FormattedValue="3.2 in.">
+          <SampleData:MeasurementsItem.MeasurementType>
             <SampleData:MeasurementType Id="46" Name="Duis" IsConvertible="False">
               <SampleData:MeasurementType.Units>
                 <SampleData:UnitsItem Id="11" Name="Accumsan" ConversionFactor="Praesent" ConversionIntercept="Dis" Format="Congue" />
@@ -92,19 +92,19 @@
                 <SampleData:UnitsItem Id="64" Name="Proin" ConversionFactor="Vivamus" ConversionIntercept="Eleifend" Format="Fusce" />
               </SampleData:MeasurementType.Units>
             </SampleData:MeasurementType>
-          </SampleData:StatsItem.MeasurementType>
-          <SampleData:StatsItem.PreferredUnit>
+   </SampleData:MeasurementsItem.MeasurementType>
+          <SampleData:MeasurementsItem.PreferredUnit>
             <SampleData:PreferredUnit FormattedValue="3.2 in." />
-          </SampleData:StatsItem.PreferredUnit>
-          <SampleData:StatsItem.OtherUnitFormattedValues>
+   </SampleData:MeasurementsItem.PreferredUnit>
+          <SampleData:MeasurementsItem.OtherUnitFormattedValues>
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
             <SampleData:OtherUnitFormattedValuesItem />
-          </SampleData:StatsItem.OtherUnitFormattedValues>
-        </SampleData:StatsItem>
-      </SampleData:SelectedProfile.Stats>
+   </SampleData:MeasurementsItem.OtherUnitFormattedValues>
+ </SampleData:MeasurementsItem>
+      </SampleData:SelectedProfile.Measurements>
     </SampleData:SelectedProfile>
   </SampleData:SampleDataSource.SelectedProfile>
   <SampleData:SampleDataSource.MeasurementTypes>
@@ -113,9 +113,9 @@
     <SampleData:MeasurementTypesItem Id="70" Name="Shoe Size" IsConvertible="True" />
     <SampleData:MeasurementTypesItem Id="45" Name="Other" IsConvertible="False" />
   </SampleData:SampleDataSource.MeasurementTypes>
-  <SampleData:SampleDataSource.StatTemplates>
-    <SampleData:StatTemplatesItem Name="Height" Id="79">
-      <SampleData:StatTemplatesItem.MeasurementType>
+  <SampleData:SampleDataSource.MeasurementTemplates>
+    <SampleData:MeasurementTemplatesItem Name="Height" Id="79">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="True" Name="Maecenas">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Aenean" FormattedValue="Nam" />
@@ -125,13 +125,13 @@
             <SampleData:UnitsItem3 Name="Maecenas" FormattedValue="Aenean" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Aenean" FormattedValue="Class" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Weight" Id="52">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Weight" Id="52">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="False" Name="Cras">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Praesent" FormattedValue="Mauris" />
@@ -141,13 +141,13 @@
             <SampleData:UnitsItem3 Name="Sed" FormattedValue="Curae" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Mauris" FormattedValue="Maecenas" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Shoe Size" Id="84">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Shoe Size" Id="84">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="True" Name="Praesent">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Aptent" FormattedValue="Bibendum" />
@@ -157,13 +157,13 @@
             <SampleData:UnitsItem3 Name="Bibendum" FormattedValue="Nunc" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Cras" FormattedValue="Curae" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Tennis Grip" Id="16">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Tennis Grip" Id="16">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="False" Name="Nam">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Aliquam" FormattedValue="Nullam" />
@@ -173,13 +173,13 @@
             <SampleData:UnitsItem3 Name="Cursus" FormattedValue="Eleifend" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Duis" FormattedValue="Cras" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Collar Size" Id="62">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Collar Size" Id="62">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="True" Name="Sed">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Dictumst" FormattedValue="Etiam" />
@@ -189,13 +189,13 @@
             <SampleData:UnitsItem3 Name="Vivamus" FormattedValue="Faucibus" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Nam" FormattedValue="Aliquam" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Bra Size" Id="34">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Bra Size" Id="34">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="False" Name="Dis">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Etiam" FormattedValue="Lorem" />
@@ -205,13 +205,13 @@
             <SampleData:UnitsItem3 Name="Amet" FormattedValue="Quisque" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Sed" FormattedValue="Integer" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Inside Leg" Id="50">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Inside Leg" Id="50">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="True" Name="Aenean">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Est" FormattedValue="Morbi" />
@@ -221,13 +221,13 @@
             <SampleData:UnitsItem3 Name="Arcu" FormattedValue="Habitant" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Nunc" FormattedValue="Donec" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Waist" Id="40">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Waist" Id="40">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="False" Name="Duis">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Facilisi" FormattedValue="Auctor" />
@@ -237,13 +237,13 @@
             <SampleData:UnitsItem3 Name="Hac" FormattedValue="Interdum" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Dis" FormattedValue="Praesent" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Dress Size" Id="36">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Dress Size" Id="36">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="True" Name="Est">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Leo" FormattedValue="Leo" />
@@ -253,13 +253,13 @@
             <SampleData:UnitsItem3 Name="Nulla" FormattedValue="Nec" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Aliquam" FormattedValue="Etiam" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-    <SampleData:StatTemplatesItem Name="Chest Size" Id="30">
-      <SampleData:StatTemplatesItem.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+    <SampleData:MeasurementTemplatesItem Name="Chest Size" Id="30">
+      <SampleData:MeasurementTemplatesItem.MeasurementType>
         <SampleData:MeasurementType3 IsConvertible="False" Name="Nunc">
           <SampleData:MeasurementType3.Units>
             <SampleData:UnitsItem3 Name="Proin" FormattedValue="Dictum" />
@@ -269,15 +269,15 @@
             <SampleData:UnitsItem3 Name="Dolor" FormattedValue="Lectus" />
           </SampleData:MeasurementType3.Units>
         </SampleData:MeasurementType3>
-      </SampleData:StatTemplatesItem.MeasurementType>
-      <SampleData:StatTemplatesItem.PreferredUnit>
+      </SampleData:MeasurementTemplatesItem.MeasurementType>
+      <SampleData:MeasurementTemplatesItem.PreferredUnit>
         <SampleData:PreferredUnit2 Name="Est" FormattedValue="Aenean" />
-      </SampleData:StatTemplatesItem.PreferredUnit>
-    </SampleData:StatTemplatesItem>
-  </SampleData:SampleDataSource.StatTemplates>
-  <SampleData:SampleDataSource.SuggestedStatTemplate>
-    <SampleData:SuggestedStatTemplate Name="Collar Size" Id="39" Value="null">
-      <SampleData:SuggestedStatTemplate.MeasurementType>
+      </SampleData:MeasurementTemplatesItem.PreferredUnit>
+    </SampleData:MeasurementTemplatesItem>
+  </SampleData:SampleDataSource.MeasurementTemplates>
+  <SampleData:SampleDataSource.SuggestedMeasurementTemplate>
+    <SampleData:SuggestedMeasurementTemplate Name="Collar Size" Id="39" Value="null">
+      <SampleData:SuggestedMeasurementTemplate.MeasurementType>
         <SampleData:MeasurementType1 Id="45" Name="Length" IsConvertible="True">
           <SampleData:MeasurementType1.Units>
             <SampleData:UnitsItem1 Id="28" Name="Centimetre" Format="\{0\} cm." ConversionFactor="100.0" ConversionIntercept="0.0" />
@@ -286,12 +286,12 @@
             <SampleData:UnitsItem1 Id="68" Name="Feet/Inches" Format="\{0\} ft. \{1\} in." ConversionFactor="32" ConversionIntercept="0.0" />
           </SampleData:MeasurementType1.Units>
         </SampleData:MeasurementType1>
-      </SampleData:SuggestedStatTemplate.MeasurementType>
-    </SampleData:SuggestedStatTemplate>
-  </SampleData:SampleDataSource.SuggestedStatTemplate>
-  <SampleData:SampleDataSource.SelectedStat>
-    <SampleData:SelectedStat Id="66" Name="Shoe Size" Value="23">
-      <SampleData:SelectedStat.MeasurementType>
+      </SampleData:SuggestedMeasurementTemplate.MeasurementType>
+    </SampleData:SuggestedMeasurementTemplate>
+  </SampleData:SampleDataSource.SuggestedMeasurementTemplate>
+  <SampleData:SampleDataSource.SelectedMeasurement>
+    <SampleData:SelectedMeasurement Id="66" Name="Shoe Size" Value="23">
+      <SampleData:SelectedMeasurement.MeasurementType>
         <SampleData:MeasurementType2 Name="Shoes Size" Id="64" IsConvertible="True">
           <SampleData:MeasurementType2.Units>
             <SampleData:UnitsItem2 Id="12" Name="UK Mens" Format="\{0\}" ConversionFactor="53" ConversionIntercept="27" FormattedValue="9" />
@@ -306,12 +306,12 @@
             <SampleData:UnitsItem2 Id="69" Name="US Child" Format="Hac" ConversionFactor="50" ConversionIntercept="58" FormattedValue="26" />
           </SampleData:MeasurementType2.Units>
         </SampleData:MeasurementType2>
-      </SampleData:SelectedStat.MeasurementType>
-      <SampleData:SelectedStat.PreferredUnit>
+      </SampleData:SelectedMeasurement.MeasurementType>
+      <SampleData:SelectedMeasurement.PreferredUnit>
         <SampleData:PreferredUnit1 FormattedValue="12 cm." Name="Centimetres" />
-      </SampleData:SelectedStat.PreferredUnit>
-    </SampleData:SelectedStat>
-  </SampleData:SampleDataSource.SelectedStat>
+      </SampleData:SelectedMeasurement.PreferredUnit>
+    </SampleData:SelectedMeasurement>
+  </SampleData:SampleDataSource.SelectedMeasurement>
   <SampleData:SampleDataSource.QuickProfiles>
     <SampleData:QuickProfilesItem Gender="Male" Id="43" IsProtected="True" Name="Me" />
     <SampleData:QuickProfilesItem Gender="Unspecified" Id="78" IsProtected="False" Name="Andrea" />

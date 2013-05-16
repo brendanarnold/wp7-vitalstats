@@ -176,7 +176,7 @@ namespace Pocketailor.View
             //}
             //else
             //{
-                NavigationService.Navigate(new Uri(String.Format("/View/StatsPage.xaml?Id={0}", p.Id), UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/MeasurementsPage.xaml?Id={0}", p.Id), UriKind.Relative));
             //}
         }
 

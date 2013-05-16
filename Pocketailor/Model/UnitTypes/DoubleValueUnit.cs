@@ -43,7 +43,7 @@ namespace Pocketailor.Model
         {
             get
             {
-                return this.GetFormattedValue(App.VM.SelectedStat.Value);
+                return this.GetFormattedValue(App.VM.SelectedMeasurement.Value);
             }
         }
 

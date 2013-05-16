@@ -277,21 +277,21 @@ namespace Pocketailor.ViewModel
             this.NotifyPropertyChanged("QuickProfiles");
         }
 
-        public void AddStatToProfile(Measurement stat, Profile profile)
+        public void AddMeasurementToProfile(Measurement measurement, Profile profile)
         {
-            stat.Profile = profile;
-            profile.Stats.Add(stat);
-            this.appDB.Measurements.InsertOnSubmit(stat);
+            measurement.Profile = profile;
+            profile.Measurements.Add(measurement);
+            this.appDB.Measurements.InsertOnSubmit(measurement);
             this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Stats");
+            profile.NotifyPropertyChanged("Measurements");
         }
 
-        public void DeleteStatFromProfile(Measurement stat, Profile profile)
+        public void DeleteMeasurementsFromProfile(Measurement measurement, Profile profile)
         {
-            profile.Stats.Remove(stat);
-            this.appDB.Measurements.DeleteOnSubmit(stat);
+            profile.Measurements.Remove(measurement);
+            this.appDB.Measurements.DeleteOnSubmit(measurement);
             this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Stats");
+            profile.NotifyPropertyChanged("Measurements");
         }
 
         //public void ToggleIsProtected(Profile profile)
@@ -318,7 +318,7 @@ namespace Pocketailor.ViewModel
         #endregion
 
         // Not used
-        #region SuggestedStat methods/proprties
+        #region SuggestedMeasurement methods/proprties
 
         //private StatTemplate _suggestedStatTemplate;
         //public StatTemplate SuggestedStatTemplate
@@ -358,26 +358,26 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
-        #region SelectedStat methods/properties
+        #region SelectedMeasurements methods/properties
 
-        private Measurement _selectedStat;
-        public Measurement SelectedStat
+        private Measurement _selectedMeasurement;
+        public Measurement SelectedMeasurement
         {
-            get { return this._selectedStat; }
+            get { return this._selectedMeasurement; }
             set
             {
-                this._selectedStat = value;
-                this.NotifyPropertyChanged("SelectedStat");
+                this._selectedMeasurement = value;
+                this.NotifyPropertyChanged("SelectedMeasurement");
             }
         }
 
         
 
 
-        // Allows non-numeric values when the stat type is custom i.e. does not allow for conversions
+        // Allows non-numeric values when the measurement type is custom i.e. does not allow for conversions
         public bool AllowNonNumericValue()
         {
-            if (this.SelectedStat.MeasurementType != null)
+            if (this.SelectedMeasurement.MeasurementType != null)
             {
                 return false;
             }
@@ -407,17 +407,17 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
-        #region StatTemplates methods/properties
+        #region MeasurementTemplates methods/properties
 
-        private ObservableCollection<MeasurementTemplate> _statTemplates 
+        private ObservableCollection<MeasurementTemplate> _measurementTemplates 
             = new ObservableCollection<MeasurementTemplate>(Model.Static.MeasurementTemplates);
-        public ObservableCollection<MeasurementTemplate> StatTemplates
+        public ObservableCollection<MeasurementTemplate> MeasurementTemplates
         {
-            get { return this._statTemplates; }
+            get { return this._measurementTemplates; }
             set
             {
-                this._statTemplates = value;
-                this.NotifyPropertyChanged("StatTemplates");
+                this._measurementTemplates = value;
+                this.NotifyPropertyChanged("MeasurementTemplates");
             }
         }
 
