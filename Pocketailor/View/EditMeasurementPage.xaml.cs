@@ -158,17 +158,8 @@ namespace Pocketailor.View
 
             // Read values into the Measurement object to be saved
             List<string> valStr = this.ReadValueFromTextBox();
-            if (App.VM.AllowNonNumericValue())
-            {
-                App.VM.SelectedMeasurement.Value = valStr[0];
-                App.VM.SelectedMeasurement.PreferredUnit = null;
-                App.VM.SelectedMeasurement.MeasurementType = null;
-            }
-            else
-            {
-                App.VM.SelectedMeasurement.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as IUnit);
-                App.VM.SelectedMeasurement.Value = App.VM.SelectedMeasurement.PreferredUnit.ConvertToDBString(valStr);
-            }
+            App.VM.SelectedMeasurement.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as IUnit);
+            App.VM.SelectedMeasurement.Value = App.VM.SelectedMeasurement.PreferredUnit.ConvertToDBString(valStr);
             if (this.PageAction == EditMeasurementPageActions.Edit) 
             {
                 App.VM.SaveChangesToAppDB();
@@ -219,11 +210,6 @@ namespace Pocketailor.View
         private List<string> ReadValueFromTextBox()
         {
             List<string> sVals = new List<string>();
-            if (App.VM.AllowNonNumericValue())
-            {
-                sVals.Add((this.valueContainer.Children[0] as ValueUnitTextBox).ValueText);
-                return sVals;
-            }
             foreach (ValueUnitTextBox tb in this.valueContainer.Children)
             {
                 if (tb.Visibility == Visibility.Visible)

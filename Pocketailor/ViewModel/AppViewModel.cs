@@ -44,13 +44,13 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._unitCulture == null) this._unitCulture = App.Settings.GetValueOrDefault<UnitCultureId>("_unitCulture", AppConstants.DEFAULT_UNIT_CULTURE);
+                if (this._unitCulture == null) this._unitCulture = App.Settings.GetValueOrDefault<UnitCultureId>("UnitCulture", AppConstants.DEFAULT_UNIT_CULTURE);
                 return (UnitCultureId)this._unitCulture;
             }
             set
             {
                 this._unitCulture = value;
-                App.Settings.AddOrUpdateValue("_unitCulture", value);
+                App.Settings.AddOrUpdateValue("UnitCulture", value);
             }
 
         }
@@ -65,13 +65,13 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._allowFeedback == null) this._allowFeedback = App.Settings.GetValueOrDefault<bool?>("_allowFeedback", AppConstants.DEFAULT_ALLOW_FEEDBACK);
+                if (this._allowFeedback == null) this._allowFeedback = App.Settings.GetValueOrDefault<bool?>("AllowFeedback", AppConstants.DEFAULT_ALLOW_FEEDBACK);
                 return this._allowFeedback;
             }
             set
             {
                 this._allowFeedback = value;
-                App.Settings.AddOrUpdateValue("_allowFeedback", value);
+                App.Settings.AddOrUpdateValue("AllowFeedback", value);
             }
         }
 
@@ -80,15 +80,15 @@ namespace Pocketailor.ViewModel
 
         #region App GUID property
 
-        public string AppGUID
+        public string AppGuid
         {
             get
             {
-                string guid = App.Settings.GetValueOrDefault<string>("AppGUID", String.Empty);
+                string guid = App.Settings.GetValueOrDefault<string>("AppGuid", String.Empty);
                 if (guid == String.Empty)
                 {
                     guid = Guid.NewGuid().ToString();
-                    App.Settings.AddOrUpdateValue("AppGUID", guid);
+                    App.Settings.AddOrUpdateValue("AppGuid", guid);
                 }
                 return guid;
             }
@@ -139,6 +139,7 @@ namespace Pocketailor.ViewModel
 
         #endregion
      
+
         // Not used
         #region PIN locking methods
 
@@ -227,81 +228,6 @@ namespace Pocketailor.ViewModel
         #endregion
       
 
-        #region Profiles collection methods/properties
-
-        private ObservableCollection<Profile> _profiles;
-        public ObservableCollection<Profile> Profiles 
-        {
-            get { return this._profiles; }
-            set 
-            {
-                this._profiles = value;
-                this.NotifyPropertyChanged("Profiles");
-            }
-        }
-
-        public void LoadProfilesFromDB()
-        {
-            var profiles = from Profile p in this.appDB.Profiles select p;
-            this.Profiles = new ObservableCollection<Profile>(profiles);
-        }
-
-        public void AddProfile(Profile profile)
-        {
-            this.appDB.Profiles.InsertOnSubmit(profile);
-            this.appDB.SubmitChanges();
-            this.Profiles.Add(profile);
-            this.NotifyPropertyChanged("Profiles");
-            if (profile.IsQuickProfile)
-            {
-                this.QuickProfiles.Add(profile);
-                this.NotifyPropertyChanged("QuickProfiles");
-            }
-        }
-
-        public void UpdateProfile(Profile profile)
-        {
-            if (profile.IsQuickProfile && !this.QuickProfiles.Contains(profile)) this.QuickProfiles.Add(profile);
-            if (!profile.IsQuickProfile && this.QuickProfiles.Contains(profile)) this.QuickProfiles.Remove(profile);
-            App.VM.SaveChangesToAppDB();
-        }
-
-        public void DeleteProfile(Profile profile)
-        {
-            this.Profiles.Remove(profile);
-            if (this.QuickProfiles.Contains(profile))
-                this.QuickProfiles.Remove(profile);
-            this.appDB.Profiles.DeleteOnSubmit(profile);
-            this.appDB.SubmitChanges();
-            this.NotifyPropertyChanged("Profiles");
-            this.NotifyPropertyChanged("QuickProfiles");
-        }
-
-        public void AddMeasurementToProfile(Measurement measurement, Profile profile)
-        {
-            measurement.Profile = profile;
-            profile.Measurements.Add(measurement);
-            this.appDB.Measurements.InsertOnSubmit(measurement);
-            this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Measurements");
-        }
-
-        public void DeleteMeasurementsFromProfile(Measurement measurement, Profile profile)
-        {
-            profile.Measurements.Remove(measurement);
-            this.appDB.Measurements.DeleteOnSubmit(measurement);
-            this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Measurements");
-        }
-
-        //public void ToggleIsProtected(Profile profile)
-        //{
-        //    profile.IsProtected = !profile.IsProtected; 
-        //}
-
-        #endregion
-
-
         #region SelectedProfile methods/properties
 
         private Profile _selectedProfile;
@@ -358,7 +284,7 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
-        #region SelectedMeasurements methods/properties
+        #region SelectedMeasurement methods/properties
 
         private Measurement _selectedMeasurement;
         public Measurement SelectedMeasurement
@@ -368,22 +294,6 @@ namespace Pocketailor.ViewModel
             {
                 this._selectedMeasurement = value;
                 this.NotifyPropertyChanged("SelectedMeasurement");
-            }
-        }
-
-        
-
-
-        // Allows non-numeric values when the measurement type is custom i.e. does not allow for conversions
-        public bool AllowNonNumericValue()
-        {
-            if (this.SelectedMeasurement.MeasurementType != null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
             }
         }
 

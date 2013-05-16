@@ -285,7 +285,7 @@ namespace Pocketailor.Model
                     c = this.Conversion,
                     f = this.BestFitInd,
                     g = this.Gender,
-                    i = App.VM.AppGUID,
+                    i = App.VM.AppGuid,
                     s = this.GetSizeId(),
                     t = Helpers.GetUnixTime(),
                     v = AppConstants.APP_VERSION,
