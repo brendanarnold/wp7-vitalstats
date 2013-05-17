@@ -9,7 +9,7 @@ namespace Pocketailor.ViewModel
     public partial class AppViewModel
     {
 
-        #region HasMeasurement properties
+       
 
         // Helkper method to notify the View of possible updates to HasMeasurement properties
         internal void RefreshRequiredMeasurement()
@@ -35,6 +35,8 @@ namespace Pocketailor.ViewModel
                 if (!measurementIds.Contains(id)) return false;
             return true;
         }
+
+        #region Bindable properties which call HasRequiredMeasureemnts
 
         public bool HasTrouserMeasurements
         {

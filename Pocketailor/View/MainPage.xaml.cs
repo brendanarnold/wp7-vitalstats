@@ -77,6 +77,7 @@ namespace Pocketailor.View
                                 App.VM.UnitCulture = UnitCultureId.Imperial;
                             }
                             App.Settings.AddOrUpdateValue("ShowWelcome", false);
+                            App.Settings.Save();
                             break;
                         case CustomMessageBoxResult.RightButton:
                             break;

@@ -7,10 +7,45 @@ using System.Collections;
 using System.Linq;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
+using System.Collections.Generic;
 
 
 namespace Pocketailor.View
 {
+
+
+    public class StringToNextString : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            string s = (string)value;
+            List<string> allStrings = (parameter as string).Split(new char[] { '|' }).ToList();
+            // Find the index of the next string along
+            int i = allStrings.IndexOf(s);
+            i = (i + 1) % allStrings.Count;
+            return allStrings[i];
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class VisibilityToOpposite : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            Visibility vis = (Visibility)value;
+            return (vis == Visibility.Collapsed) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+        
+    }
+
 
     public class BoolToNotBool : System.Windows.Data.IValueConverter
     {

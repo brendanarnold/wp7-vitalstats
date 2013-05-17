@@ -73,8 +73,7 @@
 		itself - it works though so ...
 		-->
 		<CheckBox x:Name="notBlacklistedCheckBox" Grid.Column="0" Grid.Row="0"
-			HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-12,-15,-6,-14"
-			Visibility="Collapsed"
+			HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-12,-13,-6,-14"
 			IsChecked="{Binding Path=BtnIsBlacklisted, ElementName=thisConversionResultsBtn, Converter={StaticResource BoolToNotCheckBox}, Mode=TwoWay}" />
 		
 		<!--
@@ -83,7 +82,7 @@
 		-->
 		<Grid x:Name="conversionResultContainerGrid" Tap="conversionGrid_Tap"
 			Grid.Column="1" HorizontalAlignment="Left" 
-			Margin="0,0,0,10" Grid.Row="0">
+			Margin="0,0,0,10" Grid.Row="0" VerticalAlignment="Center">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>

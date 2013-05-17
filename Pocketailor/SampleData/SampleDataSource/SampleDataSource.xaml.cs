@@ -296,6 +296,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private ConversionMeasurements _ConversionMeasurements = new ConversionMeasurements();
+
+		public ConversionMeasurements ConversionMeasurements
+		{
+			get
+			{
+				return this._ConversionMeasurements;
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
@@ -1965,6 +1975,61 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
+
+	public class ConversionMeasurementsItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private string _FormattedValue = string.Empty;
+
+		public string FormattedValue
+		{
+			get
+			{
+				return this._FormattedValue;
+			}
+
+			set
+			{
+				if (this._FormattedValue != value)
+				{
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
+				}
+			}
+		}
+	}
+
+	public class ConversionMeasurements : System.Collections.ObjectModel.ObservableCollection<ConversionMeasurementsItem>
+	{ 
 	}
 #endif
 }

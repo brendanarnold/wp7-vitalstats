@@ -44,7 +44,7 @@ namespace Pocketailor.ViewModel
                 if (this._conversionsPageTitle != value)
                 {
                     this._conversionsPageTitle = value;
-                    this.NotifyPropertyChanged("ConversionsByRegionPageTitle");
+                    this.NotifyPropertyChanged("ConversionsPageTitle");
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace Pocketailor.ViewModel
                 if (this._conversionsPageBGImage != value)
                 {
                     this._conversionsPageBGImage = value;
-                    this.NotifyPropertyChanged("ConversionsByRegionPageBGImage");
+                    this.NotifyPropertyChanged("ConversionsPageBGImage");
                 }
 
             }
@@ -85,8 +85,6 @@ namespace Pocketailor.ViewModel
 
         public void LoadConversionsPageData()
         {
-            // Declare vars in the top scope
-            Dictionary<MeasurementId, double> measuredVals = new Dictionary<MeasurementId, double>();
             // TODO: If gender not specified, then return Female measurements. Note only perform gener query on tables that have 
             // Gender fields (even after casting) because it still generate SQL to query gender
             GenderId qGender = (this.SelectedProfile.Gender == GenderId.Unspecified) ? GenderId.Female : this.SelectedProfile.Gender; 
@@ -97,70 +95,71 @@ namespace Pocketailor.ViewModel
                 case ConversionId.TrouserSize:
                     if (this.SelectedProfile.Gender == GenderId.Male)
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.TrousersMens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.TrousersMens);
                     }
                     else
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.TrousersWomens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.TrousersWomens);
                     }
                     break;
                 case ConversionId.ShirtSize:
                     if (this.SelectedProfile.Gender == GenderId.Male)
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.ShirtMens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.ShirtMens);
                     }
                     else
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.ShirtWomens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.ShirtWomens);
                     }
                     break;
                 case ConversionId.HatSize:
-                    measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.Hat);
+                    this.LoadConversionMeasurements(RequiredMeasurements.Hat);
                     break;
                 case ConversionId.SuitSize:
                     if (this.SelectedProfile.Gender == GenderId.Male)
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.SuitMens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.SuitMens);
                     }
                     else
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.SuitWomens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.SuitWomens);
                     }
                     break;
                 case ConversionId.DressSize:
-                    measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.DressSize);
+                    this.LoadConversionMeasurements(RequiredMeasurements.DressSize);
                     break;
                 case ConversionId.BraSize:
-                    measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.Bra);
+                    this.LoadConversionMeasurements(RequiredMeasurements.Bra);
                     break;
                 case ConversionId.HosierySize:
-                    measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.Hosiery);
+                    this.LoadConversionMeasurements(RequiredMeasurements.Hosiery);
                     break;
                 case ConversionId.ShoeSize:
-                    measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.Shoes);
+                    this.LoadConversionMeasurements(RequiredMeasurements.Shoes);
                     break;
                 case ConversionId.SkiBootSize:
-                    measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.SkiBoots);
+                    this.LoadConversionMeasurements(RequiredMeasurements.SkiBoots);
                     break;
                 case ConversionId.WetsuitSize:
                     if (this.SelectedProfile.Gender == GenderId.Male)
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.WetsuitMens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.WetsuitMens);
                     }
                     else
                     {
-                        measuredVals = this.GetRequiredMeasuredValues(RequiredMeasurements.WetsuitWomens);
+                        this.LoadConversionMeasurements(RequiredMeasurements.WetsuitWomens);
                     }
                     break;
                 default:
                     return;
             }
+            Dictionary<MeasurementId, double> measuredVals = this.ConversionMeasurements.ToDictionary(k => k.MeasurementId, v => Double.Parse(v.Value));
             // Check we have all the necessary measurements
             if (measuredVals == null) return;
             // Build up by regions
             RegionId selectedRegion = this.SelectedRegion;
 
-            // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsEnumerable
+            // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsList
             List<ConversionData> conversions = (from d in conversiondsDB.ConversionData
                         where d is ConversionData
                         // Filter to specific region, gender, conversion
@@ -200,27 +199,16 @@ namespace Pocketailor.ViewModel
         }
 
 
-        // Already been checked that these values have been taken
-        public Dictionary<MeasurementId, double> GetRequiredMeasuredValues(List<MeasurementId> requiredIds)
+        public void LoadConversionMeasurements(List<MeasurementId> requiredIds)
         {
-            Dictionary<MeasurementId, double> requiredValues = new Dictionary<MeasurementId, double>();
-            
-            foreach (MeasurementId mID in requiredIds)
-            {
-                Measurement s = App.VM.SelectedProfile.Measurements.FirstOrDefault(x => x.MeasurementId == mID);
-                if (s == null) return null;
-                double d;
-                if (double.TryParse(s.Value, out d))
-                {
-                    requiredValues.Add(mID, d);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            return requiredValues;
+            this.ConversionMeasurements = new ObservableCollection<Model.Measurement>(
+                App.VM.SelectedProfile.Measurements.Where(m => requiredIds.Contains(m.MeasurementId)));
         }
+
+        public ObservableCollection<Measurement> ConversionMeasurements { get; set; }
+
+
+        
 
         internal List<MeasurementId> GetMissingMeasurements(List<MeasurementId> requiredIds)
         {

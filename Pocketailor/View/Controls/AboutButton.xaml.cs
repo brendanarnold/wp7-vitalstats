@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media.Imaging;
+using System.ComponentModel;
 
 namespace Pocketailor.View.Controls
 {
@@ -37,11 +38,27 @@ namespace Pocketailor.View.Controls
             }
         }
 
+
+        public static readonly DependencyProperty TitleTextProperty =
+            DependencyProperty.Register("TitleText", typeof(string), typeof(AboutButton),
+            new PropertyMetadata(String.Empty, new PropertyChangedCallback(TitleTextPropertyChanged)));
+
+        public static void TitleTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            AboutButton aBtn = (AboutButton)d;
+            aBtn.titleTextBlock.Text = (string)e.NewValue;
+        }
+
         public string TitleText
         {
-            get { return this.titleTextBlock.Text; }
-            set { this.titleTextBlock.Text = value; }
+            get { return (string)GetValue(TitleTextProperty); }
+            set { SetValue(TitleTextProperty, value); }
         }
+
+
+
+
+
 
 
     }

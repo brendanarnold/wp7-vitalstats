@@ -51,6 +51,7 @@ namespace Pocketailor.ViewModel
             {
                 this._unitCulture = value;
                 App.Settings.AddOrUpdateValue("UnitCulture", value);
+                App.Settings.Save();
             }
 
         }
@@ -72,6 +73,7 @@ namespace Pocketailor.ViewModel
             {
                 this._allowFeedback = value;
                 App.Settings.AddOrUpdateValue("AllowFeedback", value);
+                App.Settings.Save();
             }
         }
 
@@ -89,6 +91,7 @@ namespace Pocketailor.ViewModel
                 {
                     guid = Guid.NewGuid().ToString();
                     App.Settings.AddOrUpdateValue("AppGuid", guid);
+                    App.Settings.Save();
                 }
                 return guid;
             }

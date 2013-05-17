@@ -159,6 +159,18 @@ namespace Pocketailor.View.Controls
             if (ConversionResultsBtn.CurrentlyAdjusting != null) 
                 ConversionResultsBtn.CurrentlyAdjusting.LeaveAdjustConversionState();
             ConversionResultsBtn.CurrentlyAdjusting = this;
+            // Give help if not done already
+            if (App.Settings.GetValueOrDefault<bool>("ShowHelpAdjustment", true))
+            {
+                MessageBoxResult res = MessageBox.Show("Tap a brand name to adjust the sizes."
+                    + Environment.NewLine
+                    + Environment.NewLine
+                    + "If you don't want to make an adjustment, tap the brand name again or hit the back button.",
+                    "Making an adjustment", MessageBoxButton.OK);
+                App.Settings.AddOrUpdateValue("ShowHelpAdjustment", false);
+                App.Settings.Save();
+            }
+
 
         }
 

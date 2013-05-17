@@ -411,7 +411,7 @@
 											</toolkit:ContextMenuService.ContextMenu>
 											<TextBlock Grid.Column="0" TextWrapping="Wrap" Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PageTxtColor}" HorizontalAlignment="Right" Margin="0,0,3,0"/>
 											<StackPanel Grid.Column="1" Orientation="Vertical">
-												<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource HighlightTxtColor}" HorizontalAlignment="Left" Margin="3,0,0,0"/>
+												<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource SubTitleColor}" HorizontalAlignment="Left" Margin="3,0,0,0"/>
 												<!-- begin sub ListBox -->
 												<ListBox Visibility="Collapsed" x:Name="otherUnitsListBox" ItemsSource="{Binding OtherUnitFormattedValues}">
 													<ListBox.Resources>
