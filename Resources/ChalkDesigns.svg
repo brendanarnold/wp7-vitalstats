@@ -14,7 +14,7 @@
    id="svg6996"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 23">
+   sodipodi:docname="ChalkDesigns.svg">
   <defs
      id="defs6998">
     <clipPath
@@ -124,6 +124,36 @@
          scale="2.4647887"
          in="SourceGraphic" />
     </filter>
+    <filter
+       id="filter3790"
+       inkscape:label="Chalk and sponge"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.3"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence3792"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1" />
+      <feOffset
+         id="feOffset3794"
+         dx="-5"
+         dy="-5"
+         result="result2" />
+      <feDisplacementMap
+         id="feDisplacementMap3796"
+         in2="result1"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="30"
+         in="SourceGraphic" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -132,17 +162,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="375"
-     inkscape:cy="520"
+     inkscape:zoom="1.4"
+     inkscape:cx="983.92111"
+     inkscape:cy="636.82441"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1068"
-     inkscape:window-height="711"
-     inkscape:window-x="26"
-     inkscape:window-y="26"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7001">
     <rdf:RDF>
@@ -290,10 +320,45 @@
          sodipodi:role="line"
          id="tspan7130"
          x="291.42856"
-         y="680.93359">Use Chalk and Sponge</tspan><tspan
+         y="680.93359">Draw path with stroke about 3px</tspan><tspan
          sodipodi:role="line"
          x="291.42856"
          y="710.93359"
+         id="tspan3018">Use Chalk and Sponge</tspan><tspan
+         sodipodi:role="line"
+         x="291.42856"
+         y="740.93359"
          id="tspan7132">Edit and set Displacement Map scale to 2.5</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3014"
+       width="490"
+       height="454.28574"
+       x="657.14288"
+       y="212.36218" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter7044)"
+       d="m 992.95501,514.63119 c 0,0 39.99999,-68.57143 0,-147.14286"
+       id="path3016"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\UpChalkArrow.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter7044)"
+       d="m 976.21751,401.90792 15.39,-36.14571 32.85979,13.99094"
+       id="path3788"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\UpChalkArrow.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3798"
+       width="76.771591"
+       height="160.61426"
+       x="804.08142"
+       y="441.21988" />
   </g>
 </svg>

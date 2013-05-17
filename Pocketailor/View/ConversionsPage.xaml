@@ -125,9 +125,15 @@
 				<RowDefinition Height="2*"/>
 				<RowDefinition Height="1*"/>
 			</Grid.RowDefinitions>
-			<Image x:Name="bgImage" Grid.RowSpan="2" VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
+
+
+			<Image x:Name="bgImage" 
+				Grid.RowSpan="2" 
+				VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
 			
-			<Grid x:Name="titleBarGrid"  Grid.Row="0" Margin="0" Background="Black" VerticalAlignment="Top">
+			<Grid x:Name="titleBarGrid"  
+				Grid.Row="0" 
+				Margin="0" Background="Black" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -141,7 +147,9 @@
 				<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
 			</Grid>
 			
-			<Grid x:Name="pageTitleContainerGrid" Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" Grid.Row="1">
+			<Grid x:Name="pageTitleContainerGrid" 
+				Grid.Row="1"
+				Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>

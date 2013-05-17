@@ -91,10 +91,6 @@ namespace Pocketailor.View
 
         }
 
-        //private void UpdateUILockState()
-        //{
-        //    (this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).Text = (App.VM.IsLocked) ? "unlock" : "lock";
-        //}
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
@@ -164,36 +160,13 @@ namespace Pocketailor.View
 
         
 
-        // Select a profile button
-        private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void profileButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as Canvas).DataContext as Profile;
-            //if (p.IsProtected && App.VM.IsLocked)
-            //{
-            //    MessageBoxResult res = MessageBox.Show(String.Format("Profile '{0}' is locked. Do you want to unlock the profile?", p.Name),
-            //        "Profile locked", MessageBoxButton.OKCancel);
-            //    if (res == MessageBoxResult.OK)
-            //        NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
-            //}
-            //else
-            //{
-                NavigationService.Navigate(new Uri(String.Format("/View/MeasurementsPage.xaml?Id={0}", p.Id), UriKind.Relative));
-            //}
+            NavigationService.Navigate(new Uri(String.Format("/View/MeasurementsPage.xaml?Id={0}", p.Id), UriKind.Relative));
         }
 
 
-        //private void unlockAppBarMenuItem_Click(object sender, System.EventArgs e)
-        //{
-        //    if (App.VM.IsLocked)
-        //    {
-        //        NavigationService.Navigate(new Uri("/View/UnlockPage.xaml", UriKind.Relative));
-        //    }
-        //    else
-        //    {
-        //        App.VM.IsLocked = true;
-        //        this.UpdateUILockState();
-        //    }
-        //}
 
         
 
@@ -261,14 +234,23 @@ namespace Pocketailor.View
                     this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
                     break;
                 case 1:
-                    this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
+                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
                     break;
                 case 2:
                     this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
                     break;
                 default:
                     break;
+                    //                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
+                    //this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
+                    //this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
+
             }
+        }
+
+        private void addProfileBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
         }
 
         

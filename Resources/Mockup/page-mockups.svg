@@ -532,6 +532,50 @@
          x="-481.42856"
          y="-1327.6378" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3766-1">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3768-7"
+         width="217.14285"
+         height="142.85715"
+         x="-481.42856"
+         y="-1327.6378" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3951">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3953"
+         width="336.3808"
+         height="98.994934"
+         x="-417.19299"
+         y="-1359.8821" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3951-1">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3953-7"
+         width="336.3808"
+         height="98.994934"
+         x="-417.19299"
+         y="-1359.8821" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3766-1-4">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect3768-7-0"
+         width="217.14285"
+         height="142.85715"
+         x="-481.42856"
+         y="-1327.6378" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -541,8 +585,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="4400.6059"
-     inkscape:cy="742.42975"
+     inkscape:cx="1002.9834"
+     inkscape:cy="2408.8817"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -5278,5 +5322,289 @@
          id="tspan14662-8"
          x="4894.9214"
          y="42.760616">Bing-like tips</tspan></text>
+    <image
+       y="-1440.6738"
+       x="114.76401"
+       id="image8940-1-4"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/profiles-page.png"
+       height="800"
+       width="480" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect12110-74-0"
+       width="165.66502"
+       height="28.284271"
+       x="198.19034"
+       y="-1388.1663" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="196.85361"
+       y="-1368.7533"
+       id="text12106-0-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12108-94-4"
+         x="196.85361"
+         y="-1368.7533">POCKETAILOR</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect14672-1-5"
+       width="25.253813"
+       height="394.96964"
+       x="569.92645"
+       y="-1415.4404" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect14678-7-5"
+       width="256.83618"
+       height="83.842659"
+       x="319.4086"
+       y="-1356.8516" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect15419-9-7-1"
+       width="212.85715"
+       height="66.046043"
+       x="-1353.6873"
+       y="-661.03314"
+       transform="matrix(0,1,-1,0,0,0)" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect7134-6-7"
+       width="287.14285"
+       height="137.14285"
+       x="125.22775"
+       y="-899.6947" />
+    <text
+       xml:space="preserve"
+       style="font-size:29.65501213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="170.36874"
+       y="-804.14954"
+       id="text4599-1-1-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4601-7-4-1"
+         x="170.36874"
+         y="-804.14954"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust">Long press a profile tile to edit</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3723-5"
+       width="197.14285"
+       height="94.285713"
+       x="116.46994"
+       y="-1357.8167" />
+    <text
+       xml:space="preserve"
+       style="font-size:71.12391663px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#636563;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="307.86301"
+       y="-1298.4215"
+       id="text14674-11-27"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan14676-52-6"
+         x="307.86301"
+         y="-1298.4215"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#636563;fill-opacity:1;font-family:Lobster;-inkscape-font-specification:Lobster">people</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:71.12391663px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="138.38449"
+       y="-1296.0925"
+       id="text14674-11-2-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan14676-52-3-4"
+         x="138.38449"
+         y="-1296.0925"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Lobster;-inkscape-font-specification:Lobster">home</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3770-2"
+       width="444.28571"
+       height="348.57144"
+       x="125.04147"
+       y="-1253.531" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3790-3"
+       y="-992.60168"
+       x="145.79794"
+       style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       xml:space="preserve"><tspan
+         y="-992.60168"
+         x="145.79794"
+         id="tspan3792-2"
+         sodipodi:role="line">QUICKLIST</tspan></text>
+    <image
+       y="-1544.7806"
+       x="-498.57141"
+       id="image8940-1-2-6"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/profiles-page.png"
+       height="800"
+       width="480"
+       clip-path="url(#clipPath3766-1)"
+       transform="translate(617.89856,343.82102)" />
+    <image
+       y="-1377.1423"
+       x="-427.5087"
+       id="image3946"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Photos/OpenLicensed/Measuring_tape_ubt_203.JPG"
+       height="194.07277"
+       width="371.57144"
+       clip-path="url(#clipPath3951)"
+       transform="matrix(1.0990991,0,0,1.2672673,600.96796,480.53259)" />
+    <rect
+       style="fill:#8cbe29;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3955"
+       width="370.72598"
+       height="38.844955"
+       x="140.41121"
+       y="-1242.934" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="151.01779"
+       y="-1218.4607"
+       id="text3957"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3959"
+         x="151.01779"
+         y="-1218.4607"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP">Add a profile</tspan></text>
+    <image
+       y="-1567.6378"
+       x="934.28571"
+       id="image8940-1-4-9"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Mockup/profiles-page.png"
+       height="800"
+       width="480" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect12110-74-0-4"
+       width="165.66502"
+       height="28.284271"
+       x="1017.712"
+       y="-1515.1302" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.96443939px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="1016.3753"
+       y="-1495.7173"
+       id="text12106-0-9-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12108-94-4-8"
+         x="1016.3753"
+         y="-1495.7173">POCKETAILOR</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect14672-1-5-2"
+       width="25.253813"
+       height="394.96964"
+       x="1389.4481"
+       y="-1542.4044" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect14678-7-5-4"
+       width="256.83618"
+       height="83.842659"
+       x="1138.9303"
+       y="-1483.8156" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect15419-9-7-1-5"
+       width="212.85715"
+       height="66.046043"
+       x="-1480.6512"
+       y="-1480.5548"
+       transform="matrix(0,1,-1,0,0,0)" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect7134-6-7-5"
+       width="287.14285"
+       height="137.14285"
+       x="944.74945"
+       y="-1026.6587" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3723-5-1"
+       width="197.14285"
+       height="94.285713"
+       x="935.99164"
+       y="-1484.7806" />
+    <text
+       xml:space="preserve"
+       style="font-size:71.12391663px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#636563;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="1127.3846"
+       y="-1425.3855"
+       id="text14674-11-27-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan14676-52-6-5"
+         x="1127.3846"
+         y="-1425.3855"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#636563;fill-opacity:1;font-family:Lobster;-inkscape-font-specification:Lobster">people</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:71.12391663px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="957.90619"
+       y="-1423.0565"
+       id="text14674-11-2-1-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan14676-52-3-4-7"
+         x="957.90619"
+         y="-1423.0565"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Lobster;-inkscape-font-specification:Lobster">home</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3770-2-6"
+       width="444.28571"
+       height="348.57144"
+       x="944.56317"
+       y="-1380.495" />
+    <text
+       xml:space="preserve"
+       style="font-size:29.65501213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       x="1112.7476"
+       y="-1018.2563"
+       id="text4599-1-1-1-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4601-7-4-1-7"
+         x="1112.7476"
+         y="-1018.2563"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:EraserDust;-inkscape-font-specification:EraserDust">Start here</tspan></text>
+    <image
+       y="-1377.1423"
+       x="-427.5087"
+       id="image3946-3"
+       xlink:href="file:///C:/Users/brendan/Documents/Code/WindowsPhone/Pocketailor/Resources/Photos/OpenLicensed/Measuring_tape_ubt_203.JPG"
+       height="194.07277"
+       width="371.57144"
+       clip-path="url(#clipPath3951-1)"
+       transform="matrix(1.0990991,0,0,1.2672673,1420.4896,353.5686)" />
+    <rect
+       style="fill:#8cbe29;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3955-2"
+       width="370.72598"
+       height="38.844955"
+       x="959.93292"
+       y="-1369.8979" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="970.53949"
+       y="-1345.4247"
+       id="text3957-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3959-1"
+         x="970.53949"
+         y="-1345.4247"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Segoe WP;-inkscape-font-specification:Segoe WP">Add a profile</tspan></text>
   </g>
 </svg>
