@@ -258,9 +258,12 @@ namespace Pocketailor.View
             switch (this.mainPivot.SelectedIndex)
             {
                 case 0:
-                    this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
+                    this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
                     break;
                 case 1:
+                    this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
+                    break;
+                case 2:
                     this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
                     break;
                 default:

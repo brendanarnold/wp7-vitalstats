@@ -104,6 +104,9 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem x:Name="changeRegionApplicationBarMenuItem" IsEnabled="True" Text="change region" Click="changeRegionApplicationBarMenuItem_Click"/>
+			</shell:ApplicationBar.MenuItems>
 		    <shell:ApplicationBarIconButton x:Name="editHiddenBrandsApplicationBarIconButton" IconUri="/Images/AppBar/appbar.edit.png" Text="edit hidden brands" Click="editHiddenBrandsApplicationBarIconButton_Click"></shell:ApplicationBarIconButton>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
@@ -224,6 +227,7 @@
 							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
 
+						<!--
 						<Controls:AboutButton x:Name="changeRegionBtn" 
 							Grid.Row="0"
 							Margin="12,12,12,0"
@@ -235,6 +239,7 @@
 								</i:EventTrigger>
 							</i:Interaction.Triggers>
 						</Controls:AboutButton>
+						-->
 
 						<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
 							Grid.Row="1"

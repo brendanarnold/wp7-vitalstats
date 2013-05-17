@@ -106,6 +106,9 @@
     <Compile Include="..\Pocketailor\Model\ConversionsDataContext.cs">
       <Link>Model\ConversionsDataContext.cs</Link>
     </Compile>
+    <Compile Include="..\Pocketailor\Model\Static\BrandIds.cs">
+      <Link>Model\Static\BrandIds.cs</Link>
+    </Compile>
     <Compile Include="..\Pocketailor\Model\Static\ConversionIds.cs">
       <Link>Model\Static\ConversionIds.cs</Link>
     </Compile>
@@ -123,9 +126,6 @@
     </Compile>
     <Compile Include="..\Pocketailor\Model\Static\RequiredMeasurements.cs">
       <Link>Model\Static\RequiredMeasurements.cs</Link>
-    </Compile>
-    <Compile Include="..\Pocketailor\Model\Static\RetailIds.cs">
-      <Link>Model\Static\RetailIds.cs</Link>
     </Compile>
     <Compile Include="..\Pocketailor\Model\Static\UnitCultureIds.cs">
       <Link>Model\Static\UnitCultureIds.cs</Link>

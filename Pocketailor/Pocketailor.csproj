@@ -195,7 +195,7 @@
       <DependentUpon>ConversionResultsBtn.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HelpData.cs" />
-    <Compile Include="Model\Static\RetailIds.cs" />
+    <Compile Include="Model\Static\BrandIds.cs" />
     <Compile Include="Model\MeasurementType.cs" />
     <Compile Include="Model\Static\MeasurementTemplates.cs" />
     <Compile Include="Model\Static\RegionIds.cs" />

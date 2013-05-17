@@ -14,7 +14,7 @@
    id="svg3829"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 2">
+   sodipodi:docname="appbar.pocketailor.tape.svg">
   <defs
      id="defs3831" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="238.57415"
-     inkscape:cy="664.91799"
+     inkscape:zoom="3.959798"
+     inkscape:cx="276.5426"
+     inkscape:cy="607.44222"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -87,9 +87,16 @@
        height="150"
        x="298.57144"
        y="148.07646" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3921"
+       width="75.761444"
+       height="76.013977"
+       x="234.10286"
+       y="420.00668" />
     <g
        id="g3824"
-       transform="matrix(0.91961673,-0.91961676,0.91961676,0.91961673,977.42012,1346.6278)"
+       transform="matrix(0.67639633,-0.67639635,0.67639635,0.67639633,703.70129,1290.3787)"
        style="fill:#ffffff"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\appbar.pocketailor.tape.png"
        inkscape:export-xdpi="89.999985"

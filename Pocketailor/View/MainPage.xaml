@@ -125,6 +125,8 @@
             </Setter>
         </Style>
 
+		<shell:ApplicationBar x:Key="homeApplicationBar" IsVisible="False" IsMenuEnabled="False" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}" >
+        </shell:ApplicationBar>
       
         <shell:ApplicationBar x:Key="peopleApplicationBar" IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}" >
             <shell:ApplicationBar.MenuItems>
@@ -214,8 +216,103 @@
 
 			</controls:Pivot.Title>
 			
+			<!-- Pivot item one -->
 
-            <!--Pivot item one-->
+			<controls:PivotItem x:Name="homePivotItem">
+				
+				<controls:PivotItem.Header>
+                    <Grid>
+                        <TextBlock FontFamily="{StaticResource ScriptFont}" Text="home" Foreground="{StaticResource PivotHeaderColor}"/>
+                    </Grid>
+                </controls:PivotItem.Header>
+
+				<Grid x:Name="homeLayout" Background="Transparent">
+					
+					<ScrollViewer>
+						<Grid>
+					
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+
+							<TextBlock x:Name="startSubTitle" 
+								Grid.Row="0"
+								Margin="12,0,12,6" 
+								Style="{StaticResource SubTitleTextBoxStyle}"
+								Text="START"/>
+                    
+							<Grid Grid.Row="1">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+
+
+								<Canvas Width="200" 
+									Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+									Height="200" Margin="12,0,12,0" Background="{StaticResource TileBGColor}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+								<Canvas Width="200" 
+									Grid.Column="1" Grid.Row="0"
+									Height="94" Margin="0,0,0,12" 
+									Background="{StaticResource TileBGColor}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+						
+								<Canvas Width="200" 
+									Grid.Column="1" Grid.Row="1"
+									Height="94" Margin="0" 
+									Background="{StaticResource TileBGColor}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+
+							</Grid>
+						
+					
+					
+							<TextBlock x:Name="quicklistSubTitle" 
+								Grid.Row="2"
+								Margin="12,0,12,6" 
+								Style="{StaticResource SubTitleTextBoxStyle}"
+								Text="QUICKLIST"/>
+                     
+							 <ItemsControl x:Name="quicklistItemsControl" 
+								Grid.Row="3" Margin="12,0,12,0"
+								ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+								<ItemsControl.ItemsPanel>
+									<ItemsPanelTemplate>
+										<toolkit:WrapPanel Orientation="Horizontal" />
+									</ItemsPanelTemplate>
+								</ItemsControl.ItemsPanel>
+								<ItemsControl.ItemTemplate>
+
+									<DataTemplate>
+										<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ProfileButtonStyle}" Width="200">
+											<toolkit:ContextMenuService.ContextMenu>
+												<toolkit:ContextMenu>
+													<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
+													<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+													<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
+												</toolkit:ContextMenu>
+											</toolkit:ContextMenuService.ContextMenu>
+										</Button>
+									</DataTemplate>
+
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>    
+						</Grid>
+					</ScrollViewer>
+
+				</Grid>
+
+			</controls:PivotItem>
+
+
+            <!--Pivot item two -->
             <controls:PivotItem x:Name="peoplePivotItem">
                 <controls:PivotItem.Header>
                     <Grid>
@@ -225,102 +322,68 @@
 
 
 
-                <Grid x:Name="Layout" Background="Transparent">
+                <Grid x:Name="peopleLayout" Background="Transparent" Margin="10,0,-10,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <!--TitlePanel contains the name of the application and page title-->
+                   
 
-                    <!--ContentPanel - place additional content here-->
-                    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0" >
-
-
-
-
-                        <Canvas Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}">
-                            <TextBlock TextWrapping="Wrap" Text="add a profile" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="107" Canvas.Top="142" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}"/>
-                            <Image Source="/Images/ChalkArrow.png" Canvas.Top="205" Width="432" Canvas.Left="186">
-                                <Image.RenderTransform>
-                                    <CompositeTransform ScaleX="0.2" ScaleY="0.2"/>
-                                </Image.RenderTransform>
-                            </Image>
-                        </Canvas>
+                    <Canvas Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}">
+                        <TextBlock TextWrapping="Wrap" Text="add a profile" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="107" Canvas.Top="142" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}"/>
+                        <Image Source="/Images/ChalkArrow.png" Canvas.Top="205" Width="432" Canvas.Left="186">
+                            <Image.RenderTransform>
+                                <CompositeTransform ScaleX="0.2" ScaleY="0.2"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Canvas>
 
 
+                    <ScrollViewer Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+                        <Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
 
+                            <ItemsControl x:Name="mainProfileItemsControl"
+								Grid.Row="0"
+								ItemsSource="{Binding Profiles}" Margin="12,0,12,6" >
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <toolkit:WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
 
-                        <ScrollViewer Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
-                            <StackPanel Orientation="Vertical">
+                                    <DataTemplate>
+                                        <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ProfileButtonStyle}" Width="200">
+                                            <toolkit:ContextMenuService.ContextMenu>
+                                                <toolkit:ContextMenu>
+                                                    <!--
+													<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
+                                        			-->
+                                                    <toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
+                                                    <toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
+                                                    <toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
+                                                </toolkit:ContextMenu>
+                                            </toolkit:ContextMenuService.ContextMenu>
+                                        </Button>
+                                    </DataTemplate>
 
-                                <TextBlock x:Name="quicklistSubTitle"   Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Style="{StaticResource SubTitleTextBoxStyle}">
-									<Run Text="QUICKLIST"/>
-                                </TextBlock>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                                
+							<TextBlock 
+								Grid.Row="1"
+								TextWrapping="Wrap" Margin="12,0,12,0"
+								Text="Long press a profile for more options" 
+								TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" 
+								FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
 
-                                <ItemsControl x:Name="profileWrapPanel"  ItemsSource="{Binding QuickProfiles}" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <toolkit:WrapPanel Orientation="Horizontal" />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-
-                                        <DataTemplate>
-                                            <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ProfileButtonStyle}" Width="200">
-                                                <toolkit:ContextMenuService.ContextMenu>
-                                                    <toolkit:ContextMenu>
-                                                        <!--
-														<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
-                                        				-->
-                                                        <toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
-                                                        <!--<toolkit:MenuItem Header="add to start menu" Tap="secondaryTileContextMenuItem_Tap" />-->
-                                                        <toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
-                                                        <toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
-                                                    </toolkit:ContextMenu>
-                                                </toolkit:ContextMenuService.ContextMenu>
-                                            </Button>
-                                        </DataTemplate>
-
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-
-                                <TextBlock x:Name="allSubTitle"  Margin="0,0,0,6" Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Style="{StaticResource SubTitleTextBoxStyle}">
-									<Run Text="ALL"/>
-                                </TextBlock>
-
-                                <ItemsControl x:Name="mainProfileWrapPanel"  ItemsSource="{Binding Profiles}" Margin="0,0,0,6" >
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <toolkit:WrapPanel Orientation="Horizontal" />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-
-                                        <DataTemplate>
-                                            <Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ProfileButtonStyle}" Width="200">
-                                                <toolkit:ContextMenuService.ContextMenu>
-                                                    <toolkit:ContextMenu>
-                                                        <!--
-														<toolkit:MenuItem Header="{Binding IsProtected, ConverterParameter=remove PIN protection|add PIN protection, Converter={StaticResource BoolToStrings}}" Tap="toggleProtectionContextMenuItem_Tap" />
-                                        				-->
-                                                        <toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
-                                                        <toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
-                                                        <toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
-                                                    </toolkit:ContextMenu>
-                                                </toolkit:ContextMenuService.ContextMenu>
-                                            </Button>
-                                        </DataTemplate>
-
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                                <TextBlock  TextWrapping="Wrap" Text="Long press a profile for more options" TextAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
-
-
-                            </StackPanel>
-                        </ScrollViewer>
-                    </Grid>
-
+                        </Grid>
+                    </ScrollViewer>
+                   
                 </Grid>
 
             </controls:PivotItem>

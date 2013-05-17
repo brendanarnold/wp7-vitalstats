@@ -14,6 +14,10 @@ namespace Pocketailor.Model
         Jaeger = 3,
         Gap = 4,
 	    FrenchConnection = 5,
+        AbercrombieAndFitch = 6,
+        Aardvark = 7,
+        Alexion = 8,
+        Almari = 9,
     }
 
     public static partial class Lookup
@@ -26,6 +30,10 @@ namespace Pocketailor.Model
             { BrandId.Jaeger, "Jaeger" },
             { BrandId.FrenchConnection, "French Connection" },
             { BrandId.Gap, "Gap" },
+            { BrandId.AbercrombieAndFitch, "Abercrombie & Fitch" },
+            { BrandId.Aardvark, "Aardvark" },
+            { BrandId.Alexion, "Alexion" },
+            { BrandId.Almari, "Almari" },
         };
     }
 

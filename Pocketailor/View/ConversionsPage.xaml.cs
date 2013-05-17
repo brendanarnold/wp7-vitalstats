@@ -72,6 +72,11 @@ namespace Pocketailor.View
             }
         }
 
+        private void changeRegionApplicationBarMenuItem_Click(object sender, System.EventArgs e)
+        {
+        	NavigationService.Navigate(new Uri("/Views/EditRegionPage.xaml", UriKind.Relative));
+        }
+
 
 
     }
