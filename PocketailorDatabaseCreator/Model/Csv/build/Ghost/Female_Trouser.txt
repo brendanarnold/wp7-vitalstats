@@ -1,0 +1,5 @@
+SizeLetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+UK	8	10	12	14	16
+Waist	63	68	73	78	83
+Hips	88.5	93	98.5	103.5	108.5

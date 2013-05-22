@@ -1,5 +1,0 @@
-UK	6	8	10	12	14	16	18	20
-SizeLetter	XXS	XS	S	M	L	XL	XXL	
-Bust	81cm	84cm	86cm	91cm	96cm	101cm	106.5cm	112cm
-Waist	65cm	67cm	70cm	75cm	80cm	85cm	90cm	95cm
-Hips	90cm	93cm	95cm	100cm	105cm	110cm	115cm	120.5cm

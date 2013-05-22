@@ -1,4 +1,0 @@
-SizeLetter	S	S	M	M	L	L
-UK	7	8	9	10	11	12
-Europe	41	42	43	44	45	47
-

@@ -1,0 +1,5 @@
+#Unit:Inches
+# Going to have to approximate here for different styles
+SizeLetter	Short	Medium	Long
+SizeId	-2	0	2
+InsideLeg	27.5	30	32.5

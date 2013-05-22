@@ -1,4 +1,0 @@
-SizeLetter	XS	S	S	M	M	L	XL
-UK	6	8	10	12	14	16	18
-Chest	80	84	88	92	97	102	107
-Waist	61	65	69	73	78	83	88

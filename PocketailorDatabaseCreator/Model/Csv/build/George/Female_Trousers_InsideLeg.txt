@@ -1,2 +1,0 @@
-SizeLetter	Short	Standard	Long
-InsideLeg	73.5	78.5	83.5

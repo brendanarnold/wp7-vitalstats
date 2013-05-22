@@ -1,0 +1,6 @@
+SizeLetters	S	M	L
+SizeId	-20	0	20
+Chest	90	94	98
+Waist	60	64	68
+Hips	 92	96	100
+

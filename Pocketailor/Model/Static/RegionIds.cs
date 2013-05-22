@@ -31,6 +31,11 @@ namespace Pocketailor.Model
         Australia = 18,
         NewZealand = 19,
         Canada = 20,
+        Austria = 21,
+        Switzerland = 22,
+        Netherlands = 23,
+        Belgium = 24,
+        Portugal = 25,
 
     }
 
@@ -59,7 +64,11 @@ namespace Pocketailor.Model
             { RegionId.Australia, "Australia" },
             { RegionId.NewZealand, "New Zealand" },
             { RegionId.Canada, "Canada" },
-
+            { RegionId.Austria, "Austria" },
+            { RegionId.Switzerland, "Switzerland" },
+            { RegionId.Netherlands, "Netherlands" },
+            { RegionId.Belgium, "Belgium" },
+            { RegionId.Portugal, "Portugal" },
         };
 
     }

@@ -1,0 +1,6 @@
+SizeLetter	S	S	M	M	L	L
+SizeId	-60	-40	-20	0	20	40
+UK	8	10	12	14	16	18
+WAIST	69 	73 	77 	82 	87 	92
+HIPS	95 	99 	103 	108 	113 	118
+

@@ -1,0 +1,3 @@
+SizeLetter	S	M	L
+SizeId	-2	0	2
+InsideLeg	76	81	86

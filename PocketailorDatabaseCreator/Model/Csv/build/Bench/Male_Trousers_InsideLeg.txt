@@ -1,2 +1,0 @@
-SizeLetter	S	M	L
-InsideLeg	76	81	86

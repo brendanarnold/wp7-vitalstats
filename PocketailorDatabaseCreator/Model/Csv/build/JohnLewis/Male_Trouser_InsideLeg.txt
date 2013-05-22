@@ -1,0 +1,4 @@
+SizeLetter	Short	Regular	Long
+SizeId	-2	0	2
+InsideLeg	76.5cm	81cm	86.5cm
+

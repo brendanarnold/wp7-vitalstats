@@ -1,0 +1,3 @@
+SizeLetter	Regular	Tall
+SizeId	-2	0
+InsideLeg	81.5	86

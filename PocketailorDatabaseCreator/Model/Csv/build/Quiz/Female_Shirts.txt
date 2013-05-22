@@ -1,6 +1,0 @@
-SizeLetter	XS	XS,S	S,M	M,L	L,XL	XL	
-US	 2	 4	 6	 8	 10	 12	 14
-Europe	 34	 36	 38	 40	 42	 44	 46
-UK	6	8	10	12	14	16	18
-Chest	77	 82	 87	 92	 97	 102	 107
-Hips	83	88	93	98	103	108	

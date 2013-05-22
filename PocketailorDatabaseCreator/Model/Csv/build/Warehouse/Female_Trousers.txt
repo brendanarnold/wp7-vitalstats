@@ -1,4 +1,0 @@
-SizeLetter	S	S	M	M	L	L	XL
-UK	6	8	10	12	14	16	18
-Waist	62	64	69	74	79	84	89
-Hips	86	89	93	99	104	109	204

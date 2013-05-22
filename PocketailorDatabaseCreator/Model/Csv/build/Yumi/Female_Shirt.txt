@@ -1,0 +1,7 @@
+SizeLetter	S	S,M	M,L	L	
+SizeId	-40	-20	0	20	40
+UK	8	10	12	14	16
+Europe	36"	38"	40"	42"	44"
+US	4	6	7	10	12
+Chest	81cm	86cm	91.5cm	96.5cm	101.5cm
+Waist	66cm	68.5cm	73.5cm	78.5cm	83.5cm

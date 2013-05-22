@@ -1,4 +1,0 @@
-Aus	8	10	12	14
-Chest 	84cm	89cm	94cm	99cm
-waist 	66cm	71cm	76cm	81cm
-hips 	97cm	102cm	107cm	112cm

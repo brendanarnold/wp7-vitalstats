@@ -1,0 +1,7 @@
+UK	8	10	12
+SizeId	-20	0	20
+SizeLetter	S	M	L
+Chest	83	88	93
+Waist	68	73	78
+Hips	91	96	101
+

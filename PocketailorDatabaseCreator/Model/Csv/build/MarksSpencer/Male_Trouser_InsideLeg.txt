@@ -1,0 +1,3 @@
+SizeLetter	Leg 74	Leg 79	Leg 84
+SizeId	-2	0	2
+InsideLeg	74	79	84

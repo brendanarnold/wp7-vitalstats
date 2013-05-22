@@ -1,0 +1,3 @@
+SizeLetter	30	32	34	36
+SizeId	-4	-2	0	2
+InsideLeg	30	32	34	36

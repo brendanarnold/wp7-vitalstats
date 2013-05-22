@@ -1,3 +1,4 @@
 SizeLetter	S/M	M/L
+SizeId	-20	0
 Height	159	171.5
 Weight	56.5	65.5

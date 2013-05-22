@@ -1,2 +1,0 @@
-SizeLetter	Standard	Cropped
-InsideLeg	82	62

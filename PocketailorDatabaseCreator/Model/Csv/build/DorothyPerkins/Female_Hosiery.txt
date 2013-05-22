@@ -1,4 +1,5 @@
 SizeLetter	S/M	M/L	XL
+SizeId	-20	0	20
 UK	6-10	12-16	18-22
 Hips	86-101	107-117	122-132
 Heightm	155-162	163-170	175-183

@@ -1,3 +1,4 @@
 #Unit:Inch
 SizeLetter	Extra Short	Short	Regular	Long
+SizeId	-4	-2	0	2
 Height	57	60-63	64-66	68

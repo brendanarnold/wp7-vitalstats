@@ -1,0 +1,3 @@
+SizeLetter	Short	Regular	Longer
+SizeId	-2	0	2
+InsideLeg	74	79	84

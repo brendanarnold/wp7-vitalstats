@@ -1,2 +1,0 @@
-SizeLetter	Short	Regular	Longer
-InsideLeg	74	79	84

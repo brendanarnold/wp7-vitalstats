@@ -1,5 +1,6 @@
 #Unit:Inches
 SizeLetter	S	M	M	L	L		XL
+SizeId	-60	-40	-20	0	20	40	60
 Height	59-64	59-64	65-69	65-69	70-72	61-69
 Hips	34-39	40-42	34-39	40-42	34-39	43-48
 

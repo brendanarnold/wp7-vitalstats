@@ -1,0 +1,14 @@
+# For some reason Netherlands has two different definitions for size
+SizeLetters	XS	XS/S	S/M	M/L	L/XL	XL		
+SizeId	-80	-60	-40	-20	0	20	40	60
+UK	6	8	10	12	14	16	18	20
+Austria	32	34	36	38	40	42	44	46
+Switzerland	32	34	36	38	40	42	44	46
+Germany	32	34	36	38	40	42	44	46
+Netherlands	32/34	34/36	36/38	38/40	40/42	42/44	44/46	46/48
+Belgium	34	36	38	40	42	44	46	48
+France	34	36	38	40	42	44	46	48
+Spain	34	36	38	40	42	44	46	48
+Sweden	34	36	38	40	42	44	46	48
+Chest	76	81	86	91	96	101	106	111
+Waist	59	64	69	74	79	84	89	94

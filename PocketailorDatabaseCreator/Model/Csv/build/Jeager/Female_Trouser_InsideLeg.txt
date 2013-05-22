@@ -1,0 +1,3 @@
+SizeLetter	Wide	Straight	Narrow
+SizeId	-2	0	2
+InsideLeg	85	83	80

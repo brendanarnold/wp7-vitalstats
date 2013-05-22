@@ -1,0 +1,3 @@
+SizeLetter	Petite	Regular	Long	Extra Long	Tall
+SizeId	-4	-2	0	2	4
+InsideLeg	70	74	79	84	89

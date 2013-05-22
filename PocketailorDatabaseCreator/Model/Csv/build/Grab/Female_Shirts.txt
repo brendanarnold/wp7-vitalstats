@@ -1,4 +1,0 @@
-SizeLetter	S	M	L
-Aus	S	M	L
-Chest	85	90	95
-

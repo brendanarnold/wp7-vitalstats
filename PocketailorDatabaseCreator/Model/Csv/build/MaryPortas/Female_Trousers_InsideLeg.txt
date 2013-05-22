@@ -1,2 +1,0 @@
-SizeLetter	Regular	Tall
-InsideLeg	81.5	86

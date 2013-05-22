@@ -1,2 +1,0 @@
-SizeLetter	Petite	Regular	Long	Extra Long	Tall
-InsideLeg	70	74	79	84	89

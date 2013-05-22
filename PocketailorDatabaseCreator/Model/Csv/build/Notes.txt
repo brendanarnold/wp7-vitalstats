@@ -1,26 +1,26 @@
-Convention for multiple sizes: comma means between two sizes, (slash is likey given by manufactorer)
-Need to compile in InsideLeg measurements for trousers too
-Bra size cup is difficult - maybe just include band size
-Inlcude range calculation
-Some emasurements do not have SizeLetter, build this from measurements e.g. Waist insideleg for mens trousers
-parse out 'cm'
-parse out " and interpret as inch
-Need to extract region from filename if not in file
-Multiple same lines append to end of data e.g. Linea bra sizes
-Format should be include country size then if SizeLetter include in brackets. If SizeLetter only, inlcude that e.g. Hats
-Allow case insensitive
-Allow hip as well as hips
-Allow eu as Europe
-Include parser for Female_Bra_International e.g. FF
-Allow Aus for Australia
-Include parser for Female_Hosiery_Height e.g. Tu
-Change Retailer to Brand
-Instead of SizeLetter, should be GeneralSize in ouptut
-Include RegionalSize column in output
-Incldue Conversion in all output
-Include Gender in all ouptut
-Include Region
-Include SizeID for each size e.g. -40, -20, 0, 20, 40 ...
+o Allow auxilliary portion of filename to contain the country
+o Convention for multiple sizes: comma means between two sizes, (slash is likey given by manufactorer)
+x Need to compile in InsideLeg measurements for trousers too
+o Bra size cup is difficult - maybe just include band size
+o Inlcude range calculation
+x  Some emasurements do not have SizeLetter, build this from measurements e.g. Waist insideleg for mens trousers
+x parse out 'cm'
+x parse out " and interpret as inch
+o Need to extract region from filename if not in file
+x Multiple same lines append to end of data e.g. Linea bra sizes
+o Format should be include country size then if SizeLetter include in brackets. If SizeLetter only, inlcude that e.g. Hats
+x Allow case insensitive
+x Allow hip as well as hips
+x Allow eu as Europe
+x Include parser for Female_Bra_International e.g. FF
+x Allow Aus for Australia
+x Include parser for Female_Hosiery_Height e.g. Tu
+o Change Retailer to Brand
+x Instead of SizeLetter, should be GeneralSize in ouptut
+x Include RegionalSize column in output
+x Incldue Conversion in all output
+x Include Gender in all ouptut
+x Include Region
+x Include SizeID for each size e.g. -40, -20, 0, 20, 40 ...
 
-Include extra on shirts page and trousers page which specifies measurements in cm and inches as above other measurments, include in Bing style squares
 

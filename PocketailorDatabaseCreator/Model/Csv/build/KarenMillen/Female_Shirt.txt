@@ -1,0 +1,9 @@
+Chest	82 cm	86 cm	92 cm	98 cm
+SizeId	-40	-20	0	20
+Waist	64 cm	68 cm	74 cm	80 cm
+Hips	90 cm	94 cm	100 cm	106 cm
+SizeLetters	1	2	3	4
+US	2-4	6	8-10	12
+Europe	34-36	38	40-42	44
+UK	6-8	10	12-14	16
+

@@ -1,4 +1,0 @@
-SizeLetter	XS	S	M	L
-Chest	80	86	92	 98
-Waist	62	68	74	 80
-Hips	88	94	100	 106

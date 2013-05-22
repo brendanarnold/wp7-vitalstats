@@ -1,0 +1,5 @@
+SizeLetter	S	M	L
+SizeId	-20	0	20
+Aus	S	M	L
+Chest	85	90	95
+

@@ -1,0 +1,7 @@
+#Unit:Inches
+SizeLetter	XS	S	M	L
+SizeId	-40	-20	0	20
+BUST	33"	34"	35.5"	37.5"
+WAIST	26.5"	27.5"	29"	31"
+HIP	36.5"	37.5"	39"	41"
+

@@ -1,2 +1,0 @@
-SizeLetter	Short	Regular	Long	Extra Long	2X Long
-InsideLeg	74	79	84	89	94

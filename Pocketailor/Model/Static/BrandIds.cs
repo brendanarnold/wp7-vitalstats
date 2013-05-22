@@ -15,7 +15,7 @@ namespace Pocketailor.Model
         Gap = 4,
 	    FrenchConnection = 5,
         AbercrombieAndFitch = 6,
-        Aardvark = 7,
+        Aftershock = 7,
         Alexion = 8,
         Almari = 9,
     }
@@ -31,7 +31,7 @@ namespace Pocketailor.Model
             { BrandId.FrenchConnection, "French Connection" },
             { BrandId.Gap, "Gap" },
             { BrandId.AbercrombieAndFitch, "Abercrombie & Fitch" },
-            { BrandId.Aardvark, "Aardvark" },
+            { BrandId.Aftershock, "Afatershock" },
             { BrandId.Alexion, "Alexion" },
             { BrandId.Almari, "Almari" },
         };

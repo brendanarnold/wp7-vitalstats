@@ -2,112 +2,204 @@
 # Above is necessary for the half substitution
 
 
-TMP_FILE_SUFFIX = '.tmp'
-REGIONID_FN = r"..\..\Static\RegionIds.cs"
-MEASUREMENTID_FN = r"..\..\Static\MeasurementIds.cs"
-RETAILID_FN = r"..\..\Static\RetailIds.cs"
-CONVERSIONID_FN = r"..\..\Static\ConversionIds.cs"
-ID_FN = r"..\..\Static\RegionId.cs"
-FILE_FORMATS_FN = r'CsvFileFormats.txt'
-IN_FN = r'Gap_Female_ShirtSize.txt'
-GENDERS = ['Male', 'Female', 'Unspecified']
-TMP_FILE_DIR = "test\\"
-OUT_FILE_DIR = "..\\"
+from python_constants import *
+import os
 
-def get_csharp_enums(fn, enum_name):
-    '''Code to read enums from c# source'''
-    start_record = False
-    ids = []
-    with open(fn, 'r') as fh:
+IN_DIR = r'MarksSpencer'
+IN_FN = r'Female_Dress.txt'
+
+
+def main():
+    # Read in the formats indexed by MeasurementId
+    format_dict = dict()
+    with open(FILE_FORMATS_FN, 'r') as fh:
         for line in fh:
-            if ('enum ' + enum_name) in line:
-                start_record = True
-                continue
-            if start_record:
-                line = line.strip()
-                if (line in ['{', '']) or line.startswith("//"):
-                    continue
-                if line == '}':
-                    break
-                else:
-                    ids.append(line.split('=')[0].replace(',','').strip())
-    return ids
+            els = [el.strip().lower() for el in line.split('\t')]
+            format_dict[els[0]] = els[1:]
+    # Create or wipe temporary build files, insert headerline and create
+    # handles to the files
+    out_fns = {}
+    for conversion_id in CONVERSION_IDS:
+        conversion_id = conversion_id.lower()
+        out_fns[conversion_id] = TMP_FILE_DIR + conversion_id + TMP_FILE_SUFFIX
+        with open(out_fns[conversion_id], 'w') as fh:
+            fh.write('\t'.join(format_dict[conversion_id]) + '\n')
 
-# Read in the formats indexed by MeasurementId
-format_dict = dict()
-with open(FILE_FORMATS_FN, 'r') as fh:
-    for line in fh:
-        els = [el.strip() for el in line.split('\t')]
-        format_dict[els[0]] = els[1:]
-# Read in the region ids
-region_ids = get_csharp_enums(REGIONID_FN, 'RegionIds')
-# Get measurement ids
-measurement_ids = get_csharp_enums(MEASUREMENTID_FN, 'MeasurementId')
-# Get retail ids
-retail_ids = get_csharp_enums(RETAILID_FN, 'RetailId')
-# Get conversion ids
-conversion_ids = get_csharp_enums(CONVERSIONID_FN, 'ConversionId')
+    # TODO iterate directories
+    for path, dirs, fns in os.walk(IN_DIR):
+        pass
+    in_dir = IN_DIR
+    in_fns = [IN_FN]
 
-# Create or wipe temporary build files and insert headerline
-for conversion_id in conversion_ids:
-    fn = TMP_FILE_DIR + conversion_id + TMP_FILE_SUFFIX
-    with open(fn, 'w') as fh:
-        fh.write('\t'.join(format_dict[conversion_id]) + '\n')
-
-# TODO iterate files
-in_fn = IN_FN
-
-# Parse and sanity check filename
-retailer, gender, conversion = in_fn.split('.')[0].split('_')
-if retailer not in retail_ids:
-    raise Exception("No retailer in RetailIds called: " + retailer)
-if gender not in GENDERS:
-    raise Exception("Gender not recognised: " + gender)
-if conversion not in conversion_ids:
-    raise Exception("No conversion in ConversionIds called: " + conversion)
-
-# Read in data
-with open(in_fn, 'r') as fh:
-    size_letters = []
-    size_numbers = dict() # By region
-    measurements = dict() # By measurement
-    for line in fh:
-        line = line.strip()
-        if not line:
-            continue
-        if line.startswith("#"):
-            continue
-        els = [el.strip() for el in line.split("\t")]
-        if els[0] == "SizeLetter":
-            size_letters = els[1:]
-        elif els[0] in region_ids:
-            size_numbers[els[0]] = els[1:]
-        elif els[0] in measurement_ids:
-            measurements[els[0]] = [el.replace("½", ".5") for el in els[1:]]
+    # Sanity check the dir name
+    brand = os.path.basename(in_dir).lower()
+    if brand not in [b.lower() for b in BRAND_IDS]:
+        raise Exception("No brand in BrandId called: " + brand)
+    # Create a list of filenames and auxialliary filenames
+    fns = []
+    aux_fns = []
+    for fn in in_fns:
+        # Parse and sanity check filename
+        gender, conversion, aux = parse_fn(fn)
+        if (aux == None) or aux not in ['insideleg', 'height']:
+            fns.append(fn)
         else:
-            raise Exception("Unparseable line:\n" + line)
-# Append data to the temporary file
-out_fn = TMP_FILE_DIR + conversion + TMP_FILE_SUFFIX
-with open(out_fn, 'a') as fh:
-    fmt = format_dict[conversion]
-    for region in size_numbers.keys():
-        for i, size_number in enumerate(size_numbers[region]):
-            line = []
+            fn.append(aux_fn)
+    # Read each file into the output CSV file
+    for fn in fns:
+        # Read in the data
+        data = read_csv_input(os.path.join(in_dir, fn))
+        gender, conversion, aux = parse_fn(fn)
+        # Read in auxilliary data if any and use to augment the ordinary data
+        aux_data = get_aux_file_data(fn, aux_fns)
+        if aux_data != None:
+            data = combine_aux_data(data, aux_data)
+        # Write the data for each region in the file  n.b. files with a
+        # region in the filename also have the region in the file in the
+        # usual place so no need to extract from the filename
+        regions = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in REGION_IDS]]
+        for region in regions:
+            write_csv_output(data, format_dict[conversion], out_fns[conversion], gender, region, brand)
+
+
+def combine_aux_data(data, aux_data):
+    # Need to replicate the main data set for each data point in
+    # the auxilliary data
+    for dk in data.keys():
+        if dk == 'generalsize':
+            all_sizes = []
+            for aux_sz in aux_data['generalsize']:
+                all_sizes = all_sizes + [ sz + ' (%s)' % aux_sz for sz in data['generalsize']]
+            data['generalsize'] = all_sizes
+        # Need to combine the sizeid of the auxilliary
+        # measurements with the main measurements
+        # aux sizeids are usually -2,0,2 ... whereas sizeids ae
+        # usually -20, 0, 20, ...
+        elif dk == 'sizeid':
+            all_sizeids = []
+            for aux_szid in aux_data['sizeid']:
+                all_sizeids = all_sizeids + [ str(int(aux_szid) + int(szid)) for szid in data['sizeid']]
+            data['sizeid'] = all_sizeids
+        else:
+            data[dk] = len(aux_data['generalsize']) * data[dk]
+    # Finally add the axilliary measuremnts
+    for aux_dk in aux_data.keys():
+        if aux_dk not in  ['generalsize', 'sizeid']:
+            data[aux_dk] = aux_data[aux_dx]
+    return data
+
+
+def get_aux_file_data(fn, aux_fns):
+    '''Obtains the data in the auxialliary file if there is any, otherwise returns None'''
+    if fn in aux_fns:
+        return None
+    stem = fn.split('.')[0]
+    aux_data = None
+    for aux_fn in aux_fns:
+        if stem == aux_fn[0:len(stem)]:
+            aux_data = read_csv_input(os.path.join(in_dir, aux_fn))
+            processed_aux.append(aux_fn)
+            break
+    return aux_data
+
+                
+def parse_fn(fn):
+    els = fn.split('.')[0].split('_')
+    gender, conversion = [el.lower() for el in els[0:2]]
+    conversion += 'size'
+    if len(els) == 3:
+        aux = els[2]
+    else:
+        aux = None
+    if gender not in [g.lower() for g in GENDERS]:
+        raise Exception("Gender not recognised: " + str(gender))
+    if conversion not in [c.lower() for c in CONVERSION_IDS]:
+        raise Exception("No conversion in ConversionIds called: " + str(conversion))
+    if (aux != None) and (aux not in ['', 'InternationalConversions', 'InsideLeg', 'Height']):
+        raise Exception("No extra filefeature called: " + str(aux))
+    return (gender, conversion, aux)
+
+
+def write_csv_output(data, fmt, fn, gender, region, brand):
+    # Process the normal data according to the format dictionary
+    with open(fn, 'a') as out_fh:
+        for i,sz in enumerate(data['sizeid']):
+            row = []
             for header in fmt:
-                if header == "SizeLetter":
-                    line.append(size_letters[i])
-                elif header == "SizeNumber":
-                    line.append(size_number)
-                elif header == "Gender":
-                    line.append(gender)
-                elif header == "Region":
-                    line.append(region)
-                elif header == "Retailer":
-                    line.append(retailer)
-                elif header in measurements.keys():
-                    line.append(measurements[header][i])
+                if header == 'gender':
+                    row.append(gender)
+                elif header == 'region':
+                    row.append(region)
+                elif header == 'brand':
+                    row.append(brand)
+                elif header == 'generalsize':
+                    if 'generalsize' in data.keys():
+                        row.append(data['generalsize'][i])
+                    else:
+                        row.append('')
+                elif header == 'regionalsize':
+                    if region in data.keys():
+                        row.append(data[region][i])
+                    else:
+                        row.append('')
+                elif header in [m.lower() for m in MEASUREMENT_IDS]:
+                    if header in data.keys():
+                        row.append(data[header][i])
+                    else:
+                        row.append('')
+                elif header == 'sizeid':
+                    row.append(data[header][i])
                 else:
-                    line.append("")
-            fh.write("\t".join(line) + "\n")
-    
-    
+                    print header
+            out_fh.write('\t'.join(row) + '\n')
+
+
+def read_csv_input(fn):
+    '''Read the data into a dictionary'''
+    data = {}
+    is_metric = True
+    with open(fn, 'r') as fh:
+        line_num = 0
+        for line in fh:
+            line_num += 1
+            # Skip if is commented
+            if line.startswith('#'):
+                # Check if there is a directive e.g. #Unit:Inches
+                if line_num == 1:
+                    if line.split(':')[1].lower().strip() in ['inches', 'inch']:
+                        is_metric = False
+                    else:
+                        print "WARNING: Maybe a missed directive?: " + line
+                continue
+            line = line.strip()
+            if line == '':
+                continue
+            els = line.split('\t')
+            header = els[0].lower().strip()
+            # Common header replacements
+            if header == 'hip':
+                header = 'hips'
+            if header == 'eu':
+                header = 'europe'
+            if header == 'aus':
+                header = 'australia'
+            header = header.replace('sizeletter', 'generalsize')
+            # Common element replacements
+            els = [el.strip().lower() for el in els[1:]]
+            for el in els:
+                if '"' in el:
+                    is_metric = False
+            els = [el.replace('"', '') for el in els]
+            els = [el.replace('"', '') for el in els]
+            els = [el.replace("½", ".5") for el in els]
+            if (not is_metric) and header in [x.lower() for x in MEASUREMENT_IDS]:
+                els = ["%.2f" % (float(el) * 2.54) for el in els]
+            if header in OK_HEADERS:
+                data[header] = els
+            else:
+                raise Exception("Unrecognised header: " + header)
+    return data
+
+
+if __name__ == '__main__':
+    main()
