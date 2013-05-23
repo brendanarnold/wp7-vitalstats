@@ -1,4 +1,0 @@
-#Unit:Inches
-SizeLetter	S/M	L/XL
-SizeId	-20	0
-Head	22.5	23.75

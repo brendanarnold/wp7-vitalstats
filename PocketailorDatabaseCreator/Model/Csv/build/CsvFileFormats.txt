@@ -1,11 +1,11 @@
-DressSize	SizeId	Brand	Region	Gender	Chest	Waist	Hips	GeneralSize	RegionalSize
-HatSize	SizeId	Brand	Region	Gender	Head	GeneralSize	RegionalSize
-HosierySize	SizeId	Brand	Region	Gender	GeneralSize	RegionalSize
-ShirtSize	SizeId	Brand	Region	Gender	Chest	Neck	Sleeve	TorsoLength	Hips	GeneralSize	RegionalSize
-ShoeSize	SizeId	Brand	Region	Gender	FootLength	FootWidth	GeneralSize	RegionalSize
-SkiBootSize	SizeId	Brand	Region	Gender	FootLength	FootWidth	GeneralSize	RegionalSize
-SuitSize	SizeId	Brand	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	TorsoLength	Hips	GeneralSize	RegionalSize
-TennisGripSize	SizeId	Brand	Region	Gender	GeneralSize	RegionalSize
-TrouserSize	SizeId	Brand	Region	Gender	Waist	Hips	InsideLeg	GeneralSize	RegionalSize
-WetsuitSize	SizeId	Brand	Region	Gender	Height	Chest	Waist	Hips	Weight	GeneralSize	RegionalSize
-BraSize	SizeId	Brand	Region	Chest	Underbust	GeneralSize	RegionalSize
+DressSize	SizeId	Brand	Region	Gender	Chest	Waist	Hips	Size
+HatSize	SizeId	Brand	Region	Gender	Head	Size
+HosierySize	SizeId	Brand	Region	Gender	Waist	Hips	Height	InsideLeg	Size
+ShirtSize	SizeId	Brand	Region	Gender	Chest	Neck	Sleeve	TorsoLength	Hips	Size
+ShoeSize	SizeId	Brand	Region	Gender	FootLength	FootWidth	Size
+SkiBootSize	SizeId	Brand	Region	Gender	FootLength	FootWidth	Size
+SuitSize	SizeId	Brand	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	TorsoLength	Hips	Size
+TennisGripSize	SizeId	Brand	Region	Gender	Size
+TrouserSize	SizeId	Brand	Region	Gender	Waist	Hips	InsideLeg	Size
+WetsuitSize	SizeId	Brand	Region	Gender	Height	Chest	Waist	Hips	Weight	Size
+BraSize	SizeId	Brand	Region	Chest	Underbust	Size

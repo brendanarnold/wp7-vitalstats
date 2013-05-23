@@ -1,4 +1,0 @@
-SizeLetter	S	M	L	XL	XXL
-SizeId	-40	-20	0	20	40
-Chest	96-99	100-103	104-107	108-111	112-115
-

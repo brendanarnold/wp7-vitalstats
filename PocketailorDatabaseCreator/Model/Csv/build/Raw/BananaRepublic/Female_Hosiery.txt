@@ -1,0 +1,7 @@
+UK	S,M	L,XL
+Canada	S,M	L,XL
+EU	S,M	L,XL
+US	S,M	L,XL
+SizeId	-20	0
+Height	152-170	170
+Weight	40-65	65-80

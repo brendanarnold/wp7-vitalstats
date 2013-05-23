@@ -1,1 +1,1665 @@
-Brand	Region	Gender	SizeId  GeneralSize	RegionalSize
+sizeid	brand	region	gender	footlength	footwidth	size
+-40	abercrombieandfitch	europe	female	24.8		38/xs
+-20	abercrombieandfitch	europe	female	25.6		39,40/s
+0	abercrombieandfitch	europe	female	26.4		41/m
+20	abercrombieandfitch	europe	female	27.2		42/l
+-40	abercrombieandfitch	us	female	24.8		6,7/xs
+-20	abercrombieandfitch	us	female	25.6		7,8/s
+0	abercrombieandfitch	us	female	26.4		8,9/m
+20	abercrombieandfitch	us	female	27.2		9,10/l
+-40	abercrombieandfitch	china	female	24.8		235-92/xs
+-20	abercrombieandfitch	china	female	25.6		243-94/s
+0	abercrombieandfitch	china	female	26.4		252-97/m
+20	abercrombieandfitch	china	female	27.2		260-100/l
+-40	abercrombieandfitch	uk	female	24.8		5/xs
+-20	abercrombieandfitch	uk	female	25.6		6/s
+0	abercrombieandfitch	uk	female	26.4		7/m
+20	abercrombieandfitch	uk	female	27.2		8/l
+-40	abercrombieandfitch	japan	female	24.8		24.8/xs
+-20	abercrombieandfitch	japan	female	25.6		25.6/s
+0	abercrombieandfitch	japan	female	26.4		26.4/m
+20	abercrombieandfitch	japan	female	27.2		27.2/l
+-40	abercrombieandfitch	europe	male	28.2		43/s
+-20	abercrombieandfitch	europe	male	29		44/m
+0	abercrombieandfitch	europe	male	29.8		45/l
+20	abercrombieandfitch	europe	male	30.6		46/xl
+-40	abercrombieandfitch	us	male	28.2		9,10/s
+-20	abercrombieandfitch	us	male	29		10,11/m
+0	abercrombieandfitch	us	male	29.8		11,12/l
+20	abercrombieandfitch	us	male	30.6		12,13/xl
+-40	abercrombieandfitch	china	male	28.2		270-103/s
+-20	abercrombieandfitch	china	male	29		279-106/m
+0	abercrombieandfitch	china	male	29.8		287-109/l
+20	abercrombieandfitch	china	male	30.6		295-112/xl
+-40	abercrombieandfitch	uk	male	28.2		9.5/s
+-20	abercrombieandfitch	uk	male	29		10.5/m
+0	abercrombieandfitch	uk	male	29.8		11.5/l
+20	abercrombieandfitch	uk	male	30.6		12.5/xl
+-40	abercrombieandfitch	japan	male	28.2		28.2/s
+-20	abercrombieandfitch	japan	male	29		29/m
+0	abercrombieandfitch	japan	male	29.8		29.8/l
+20	abercrombieandfitch	japan	male	30.6		30.6/xl
+-60	andreajoen	australia	female	24		36
+-40	andreajoen	australia	female	24.5		37
+-20	andreajoen	australia	female	25.5		38
+0	andreajoen	australia	female	26		39
+20	andreajoen	australia	female	26.5		40
+40	andreajoen	australia	female	27.5		41
+-60	andreajoen	uk	female	24		3
+-40	andreajoen	uk	female	24.5		4
+-20	andreajoen	uk	female	25.5		5
+0	andreajoen	uk	female	26		6
+20	andreajoen	uk	female	26.5		7
+40	andreajoen	uk	female	27.5		8
+-60	andreajoen	us	female	24		6
+-40	andreajoen	us	female	24.5		7
+-20	andreajoen	us	female	25.5		8
+0	andreajoen	us	female	26		9
+20	andreajoen	us	female	26.5		10
+40	andreajoen	us	female	27.5		11
+-80	bananarepublic	europe	female			37
+-60	bananarepublic	europe	female			37.5
+-40	bananarepublic	europe	female			38
+-20	bananarepublic	europe	female			38.5
+0	bananarepublic	europe	female			39
+20	bananarepublic	europe	female			39.5
+40	bananarepublic	europe	female			40
+60	bananarepublic	europe	female			40.5
+80	bananarepublic	europe	female			41
+-80	bananarepublic	us	female			6
+-60	bananarepublic	us	female			6.5
+-40	bananarepublic	us	female			7
+-20	bananarepublic	us	female			7.5
+0	bananarepublic	us	female			8
+20	bananarepublic	us	female			8.5
+40	bananarepublic	us	female			9
+60	bananarepublic	us	female			9.5
+80	bananarepublic	us	female			10
+-80	bananarepublic	uk	female			4
+-60	bananarepublic	uk	female			4.5
+-40	bananarepublic	uk	female			5
+-20	bananarepublic	uk	female			5.5
+0	bananarepublic	uk	female			6
+20	bananarepublic	uk	female			6.5
+40	bananarepublic	uk	female			7
+60	bananarepublic	uk	female			7.5
+80	bananarepublic	uk	female			8
+-60	coast	europe	female			36
+-40	coast	europe	female			37
+-20	coast	europe	female			38
+0	coast	europe	female			39
+20	coast	europe	female			40
+40	coast	europe	female			41
+-60	coast	us	female			5.5
+-40	coast	us	female			6.5
+-20	coast	us	female			7.5
+0	coast	us	female			8.5
+20	coast	us	female			9.5
+40	coast	us	female			10.5
+-60	coast	uk	female			3
+-40	coast	uk	female			4
+-20	coast	uk	female			5
+0	coast	uk	female			6
+20	coast	uk	female			7
+40	coast	uk	female			8
+-160	debut	europe	female			35
+-140	debut	europe	female			35.5
+-120	debut	europe	female			36
+-100	debut	europe	female			36.5
+-80	debut	europe	female			37
+-60	debut	europe	female			37.5
+-40	debut	europe	female			38
+-20	debut	europe	female			38.5
+0	debut	europe	female			39
+20	debut	europe	female			39.5
+40	debut	europe	female			40
+60	debut	europe	female			40.5
+80	debut	europe	female			41
+100	debut	europe	female			41.5
+120	debut	europe	female			42
+140	debut	europe	female			42.5
+-160	debut	us	female			4
+-140	debut	us	female			4.5
+-120	debut	us	female			5
+-100	debut	us	female			5.5
+-80	debut	us	female			6
+-60	debut	us	female			6.5
+-40	debut	us	female			7
+-20	debut	us	female			7.5
+0	debut	us	female			8
+20	debut	us	female			8.5
+40	debut	us	female			9
+60	debut	us	female			9.5
+80	debut	us	female			10
+100	debut	us	female			10.5
+120	debut	us	female			11
+140	debut	us	female			11.5
+-160	debut	uk	female			2
+-140	debut	uk	female			2.5
+-120	debut	uk	female			3
+-100	debut	uk	female			3.5
+-80	debut	uk	female			4
+-60	debut	uk	female			4.5
+-40	debut	uk	female			5
+-20	debut	uk	female			5.5
+0	debut	uk	female			6
+20	debut	uk	female			6.5
+40	debut	uk	female			7
+60	debut	uk	female			7.5
+80	debut	uk	female			8
+100	debut	uk	female			8.5
+120	debut	uk	female			9
+140	debut	uk	female			9.5
+-60	dorothyperkins	europe	female			36
+-40	dorothyperkins	europe	female			37
+-20	dorothyperkins	europe	female			38
+0	dorothyperkins	europe	female			39
+20	dorothyperkins	europe	female			41
+40	dorothyperkins	europe	female			42
+60	dorothyperkins	europe	female			43
+-60	dorothyperkins	australia	female			6
+-40	dorothyperkins	australia	female			7
+-20	dorothyperkins	australia	female			8
+0	dorothyperkins	australia	female			9
+20	dorothyperkins	australia	female			10
+40	dorothyperkins	australia	female			11
+60	dorothyperkins	australia	female			12
+-60	dorothyperkins	us	female			5
+-40	dorothyperkins	us	female			6
+-20	dorothyperkins	us	female			7
+0	dorothyperkins	us	female			8
+20	dorothyperkins	us	female			9
+40	dorothyperkins	us	female			10
+60	dorothyperkins	us	female			11
+-60	dorothyperkins	uk	female			3
+-40	dorothyperkins	uk	female			4
+-20	dorothyperkins	uk	female			5
+0	dorothyperkins	uk	female			6
+20	dorothyperkins	uk	female			7
+40	dorothyperkins	uk	female			8
+60	dorothyperkins	uk	female			9
+-100	ff	europe	female			36
+-80	ff	europe	female			36,37
+-60	ff	europe	female			37
+-40	ff	europe	female			38
+-20	ff	europe	female			38,39
+0	ff	europe	female			39
+20	ff	europe	female			40
+40	ff	europe	female			41
+60	ff	europe	female			41,42
+80	ff	europe	female			42
+-100	ff	australia	female			4
+-80	ff	australia	female			4,5
+-60	ff	australia	female			5
+-40	ff	australia	female			6
+-20	ff	australia	female			6,7
+0	ff	australia	female			7
+20	ff	australia	female			7,8
+40	ff	australia	female			8
+60	ff	australia	female			8,9
+80	ff	australia	female			9
+-100	ff	us	female			5
+-80	ff	us	female			5,6
+-60	ff	us	female			6
+-40	ff	us	female			7
+-20	ff	us	female			7,8
+0	ff	us	female			8
+20	ff	us	female			8,9
+40	ff	us	female			9
+60	ff	us	female			9,10
+80	ff	us	female			10
+-100	ff	uk	female			3
+-80	ff	uk	female			3,4
+-60	ff	uk	female			4
+-40	ff	uk	female			5
+-20	ff	uk	female			5,6
+0	ff	uk	female			6
+20	ff	uk	female			6,7
+40	ff	uk	female			7
+60	ff	uk	female			7,8
+80	ff	uk	female			8
+-100	ff	europe	male			40.5
+-80	ff	europe	male			41
+-60	ff	europe	male			42
+-40	ff	europe	male			42,43
+-20	ff	europe	male			43
+0	ff	europe	male			43,44
+20	ff	europe	male			44
+40	ff	europe	male			44,45
+60	ff	europe	male			45
+80	ff	europe	male			45,46.5
+100	ff	europe	male			46.5
+-100	ff	australia	male			7
+-80	ff	australia	male			7.5
+-60	ff	australia	male			8
+-40	ff	australia	male			8.5
+-20	ff	australia	male			9
+0	ff	australia	male			9.5
+20	ff	australia	male			10
+40	ff	australia	male			10.5
+60	ff	australia	male			11
+80	ff	australia	male			11.5
+100	ff	australia	male			12
+-100	ff	us	male			7.5
+-80	ff	us	male			8
+-60	ff	us	male			8.5
+-40	ff	us	male			9
+-20	ff	us	male			9.5
+0	ff	us	male			10
+20	ff	us	male			10.5
+40	ff	us	male			11
+60	ff	us	male			11.5
+80	ff	us	male			12
+100	ff	us	male			12.5
+-100	ff	uk	male			7
+-80	ff	uk	male			7.5
+-60	ff	uk	male			8
+-40	ff	uk	male			8.5
+-20	ff	uk	male			9
+0	ff	uk	male			9.5
+20	ff	uk	male			10
+40	ff	uk	male			10.5
+60	ff	uk	male			11
+80	ff	uk	male			11.5
+100	ff	uk	male			12
+-80	frenchconnection	canada	female			36
+-60	frenchconnection	canada	female			37
+-40	frenchconnection	canada	female			38
+-20	frenchconnection	canada	female			39
+0	frenchconnection	canada	female			40
+20	frenchconnection	canada	female			41
+-80	frenchconnection	europe	female			35.5
+-60	frenchconnection	europe	female			36.5
+-40	frenchconnection	europe	female			37.5
+-20	frenchconnection	europe	female			38.5
+0	frenchconnection	europe	female			39.5
+20	frenchconnection	europe	female			40.5
+40	frenchconnection	europe	female			41.5
+-80	frenchconnection	australia	female			5
+-60	frenchconnection	australia	female			6
+-40	frenchconnection	australia	female			7
+-20	frenchconnection	australia	female			8
+0	frenchconnection	australia	female			9
+20	frenchconnection	australia	female			10
+40	frenchconnection	australia	female			11
+-80	frenchconnection	uk	female			3
+-60	frenchconnection	uk	female			4
+-40	frenchconnection	uk	female			5
+-20	frenchconnection	uk	female			6
+0	frenchconnection	uk	female			7
+20	frenchconnection	uk	female			8
+40	frenchconnection	uk	female			9
+60	frenchconnection	uk	female			10
+-60	frenchconnection	canada	male			41
+-40	frenchconnection	canada	male			42
+-20	frenchconnection	canada	male			43
+0	frenchconnection	canada	male			44
+20	frenchconnection	canada	male			45
+40	frenchconnection	canada	male			46
+-60	frenchconnection	europe	male			40
+-40	frenchconnection	europe	male			41
+-20	frenchconnection	europe	male			42
+0	frenchconnection	europe	male			43
+20	frenchconnection	europe	male			44
+40	frenchconnection	europe	male			45
+-60	frenchconnection	australia	male			7
+-40	frenchconnection	australia	male			8
+-20	frenchconnection	australia	male			9
+0	frenchconnection	australia	male			10
+20	frenchconnection	australia	male			11
+40	frenchconnection	australia	male			12
+-60	frenchconnection	uk	male			7
+-40	frenchconnection	uk	male			8
+-20	frenchconnection	uk	male			9
+0	frenchconnection	uk	male			10
+20	frenchconnection	uk	male			11
+40	frenchconnection	uk	male			12
+-120	gap	europe	female			36/s
+-100	gap	europe	female			36.5/s
+-80	gap	europe	female			37/s
+-60	gap	europe	female			37.5/s
+-40	gap	europe	female			38/m
+-20	gap	europe	female			38.5/m
+0	gap	europe	female			39/m
+20	gap	europe	female			39.5/m
+40	gap	europe	female			40/l
+60	gap	europe	female			40.5/l
+80	gap	europe	female			41/l
+100	gap	europe	female			41.5/l
+120	gap	europe	female			42/l
+-120	gap	us	female			5/s
+-100	gap	us	female			5.5/s
+-80	gap	us	female			6/s
+-60	gap	us	female			6.5/s
+-40	gap	us	female			7/m
+-20	gap	us	female			7.5/m
+0	gap	us	female			8/m
+20	gap	us	female			8.5/m
+40	gap	us	female			9/l
+60	gap	us	female			9.5/l
+80	gap	us	female			10/l
+100	gap	us	female			10.5/l
+120	gap	us	female			11/l
+-120	gap	uk	female			3/s
+-100	gap	uk	female			3.5/s
+-80	gap	uk	female			4/s
+-60	gap	uk	female			4.5/s
+-40	gap	uk	female			5/m
+-20	gap	uk	female			5.5/m
+0	gap	uk	female			6/m
+20	gap	uk	female			6.5/m
+40	gap	uk	female			7/l
+60	gap	uk	female			7.5/l
+80	gap	uk	female			8/l
+100	gap	uk	female			8.5/l
+120	gap	uk	female			9/l
+-80	george	europe	female			36
+-60	george	europe	female			37
+-40	george	europe	female			38
+-20	george	europe	female			39
+0	george	europe	female			40
+20	george	europe	female			41
+40	george	europe	female			42
+60	george	europe	female			43
+80	george	europe	female			44
+-80	george	uk	female			3
+-60	george	uk	female			4
+-40	george	uk	female			5
+-20	george	uk	female			6
+0	george	uk	female			6½
+20	george	uk	female			7
+40	george	uk	female			8
+60	george	uk	female			9
+80	george	uk	female			10
+-100	george	europe	male			36
+-80	george	europe	male			37
+-60	george	europe	male			38
+-40	george	europe	male			39
+-20	george	europe	male			41/s
+0	george	europe	male			42/s
+20	george	europe	male			43/m
+40	george	europe	male			44/m
+60	george	europe	male			45/l
+80	george	europe	male			46/l
+-100	george	uk	male			3
+-80	george	uk	male			4
+-60	george	uk	male			5
+-40	george	uk	male			6
+-20	george	uk	male			7/s
+0	george	uk	male			8/s
+20	george	uk	male			9/m
+40	george	uk	male			10/m
+60	george	uk	male			11/l
+80	george	uk	male			12/l
+-120	hobbs	europe	female			36
+-100	hobbs	europe	female			36.5
+-80	hobbs	europe	female			37
+-60	hobbs	europe	female			37.5
+-40	hobbs	europe	female			38
+-20	hobbs	europe	female			38.5
+0	hobbs	europe	female			39
+20	hobbs	europe	female			39.5
+40	hobbs	europe	female			40
+60	hobbs	europe	female			40.5
+80	hobbs	europe	female			41
+100	hobbs	europe	female			42
+-120	hobbs	canada	female			5
+-100	hobbs	canada	female			5.5
+-80	hobbs	canada	female			6
+-60	hobbs	canada	female			6.5
+-40	hobbs	canada	female			7
+-20	hobbs	canada	female			7.5
+0	hobbs	canada	female			8
+20	hobbs	canada	female			8.5
+40	hobbs	canada	female			9
+60	hobbs	canada	female			9.5
+80	hobbs	canada	female			10
+100	hobbs	canada	female			10.5
+-120	hobbs	australia	female			3.5
+-100	hobbs	australia	female			4
+-80	hobbs	australia	female			4.5
+-60	hobbs	australia	female			5
+-40	hobbs	australia	female			5.5
+-20	hobbs	australia	female			6
+0	hobbs	australia	female			6.5
+20	hobbs	australia	female			7
+40	hobbs	australia	female			7.5
+60	hobbs	australia	female			8
+80	hobbs	australia	female			8.5
+100	hobbs	australia	female			9
+-120	hobbs	us	female			5
+-100	hobbs	us	female			5.5
+-80	hobbs	us	female			6
+-60	hobbs	us	female			6.5
+-40	hobbs	us	female			7
+-20	hobbs	us	female			7.5
+0	hobbs	us	female			8
+20	hobbs	us	female			8.5
+40	hobbs	us	female			9
+60	hobbs	us	female			9.5
+80	hobbs	us	female			10
+100	hobbs	us	female			10.5
+-120	hobbs	uk	female			3
+-100	hobbs	uk	female			3.5
+-80	hobbs	uk	female			4
+-60	hobbs	uk	female			4.5
+-40	hobbs	uk	female			5
+-20	hobbs	uk	female			5.5
+0	hobbs	uk	female			6
+20	hobbs	uk	female			6.5
+40	hobbs	uk	female			7
+60	hobbs	uk	female			7.5
+80	hobbs	uk	female			8
+100	hobbs	uk	female			9
+-60	janenorman	europe	female			36
+-40	janenorman	europe	female			37
+-20	janenorman	europe	female			38
+0	janenorman	europe	female			39
+20	janenorman	europe	female			40
+40	janenorman	europe	female			41
+-60	janenorman	us	female			5.5
+-40	janenorman	us	female			6.5
+-20	janenorman	us	female			7.5
+0	janenorman	us	female			8.5
+20	janenorman	us	female			9.5
+40	janenorman	us	female			10.5
+-60	janenorman	uk	female			3
+-40	janenorman	uk	female			4
+-20	janenorman	uk	female			5
+0	janenorman	uk	female			6
+20	janenorman	uk	female			7
+40	janenorman	uk	female			8
+-60	jaquesvert	europe	female			37
+-40	jaquesvert	europe	female			38
+-20	jaquesvert	europe	female			39
+0	jaquesvert	europe	female			40
+20	jaquesvert	europe	female			41
+-60	jaquesvert	us	female			6.5
+-40	jaquesvert	us	female			7.5
+-20	jaquesvert	us	female			8.5
+0	jaquesvert	us	female			9.5
+20	jaquesvert	us	female			10
+-60	jaquesvert	uk	female			4
+-40	jaquesvert	uk	female			5
+-20	jaquesvert	uk	female			6
+0	jaquesvert	uk	female			7
+20	jaquesvert	uk	female			8
+-100	johnlewis	europe	female			35.5/s
+-80	johnlewis	europe	female			36/s
+-60	johnlewis	europe	female			37/s
+-40	johnlewis	europe	female			37.5/s
+-20	johnlewis	europe	female			38/m
+0	johnlewis	europe	female			38.5/m
+20	johnlewis	europe	female			39/m
+40	johnlewis	europe	female			40/m
+60	johnlewis	europe	female			41/l
+80	johnlewis	europe	female			43/l
+100	johnlewis	europe	female			44/l
+-100	johnlewis	canada	female			5/s
+-80	johnlewis	canada	female			5.5/s
+-60	johnlewis	canada	female			6/s
+-40	johnlewis	canada	female			6.5/s
+-20	johnlewis	canada	female			7/m
+0	johnlewis	canada	female			7.5/m
+20	johnlewis	canada	female			8/m
+40	johnlewis	canada	female			8.5/m
+60	johnlewis	canada	female			9/l
+80	johnlewis	canada	female			10/l
+100	johnlewis	canada	female			11/l
+-100	johnlewis	australia	female			4/s
+-80	johnlewis	australia	female			4.5/s
+-60	johnlewis	australia	female			5/s
+-40	johnlewis	australia	female			5.5/s
+-20	johnlewis	australia	female			6/m
+0	johnlewis	australia	female			6.5/m
+20	johnlewis	australia	female			7/m
+40	johnlewis	australia	female			7.5/m
+60	johnlewis	australia	female			8/l
+80	johnlewis	australia	female			9/l
+100	johnlewis	australia	female			10/l
+-100	johnlewis	mexico	female			s
+-80	johnlewis	mexico	female			s
+-60	johnlewis	mexico	female			s
+-40	johnlewis	mexico	female			s
+-20	johnlewis	mexico	female			4.5/m
+0	johnlewis	mexico	female			5/m
+20	johnlewis	mexico	female			5.5/m
+40	johnlewis	mexico	female			6/m
+60	johnlewis	mexico	female			6.5/l
+80	johnlewis	mexico	female			7/l
+100	johnlewis	mexico	female			l
+-100	johnlewis	us	female			5/s
+-80	johnlewis	us	female			5.5/s
+-60	johnlewis	us	female			6/s
+-40	johnlewis	us	female			6.5/s
+-20	johnlewis	us	female			7/m
+0	johnlewis	us	female			7.5/m
+20	johnlewis	us	female			8/m
+40	johnlewis	us	female			8.5/m
+60	johnlewis	us	female			9/l
+80	johnlewis	us	female			10/l
+100	johnlewis	us	female			11/l
+-100	johnlewis	china	female			36/s
+-80	johnlewis	china	female			37/s
+-60	johnlewis	china	female			37.5/s
+-40	johnlewis	china	female			38/s
+-20	johnlewis	china	female			39/m
+0	johnlewis	china	female			39.5/m
+20	johnlewis	china	female			40/m
+40	johnlewis	china	female			41/m
+60	johnlewis	china	female			41.5/l
+80	johnlewis	china	female			43/l
+100	johnlewis	china	female			l
+-100	johnlewis	uk	female			3/s
+-80	johnlewis	uk	female			3.5/s
+-60	johnlewis	uk	female			4/s
+-40	johnlewis	uk	female			4.5/s
+-20	johnlewis	uk	female			5/m
+0	johnlewis	uk	female			5.5/m
+20	johnlewis	uk	female			6/m
+40	johnlewis	uk	female			6.5/m
+60	johnlewis	uk	female			7/l
+80	johnlewis	uk	female			8/l
+100	johnlewis	uk	female			9/l
+-100	johnlewis	japan	female			21.5/s
+-80	johnlewis	japan	female			22/s
+-60	johnlewis	japan	female			22.5/s
+-40	johnlewis	japan	female			23/s
+-20	johnlewis	japan	female			23.5/m
+0	johnlewis	japan	female			24/m
+20	johnlewis	japan	female			24.5/m
+40	johnlewis	japan	female			25/m
+60	johnlewis	japan	female			25.5/l
+80	johnlewis	japan	female			27/l
+100	johnlewis	japan	female			l
+-60	karenmillen	europe	female			36
+-40	karenmillen	europe	female			37
+-20	karenmillen	europe	female			38
+0	karenmillen	europe	female			39
+20	karenmillen	europe	female			40
+40	karenmillen	europe	female			41
+-60	karenmillen	uk	female			3
+-40	karenmillen	uk	female			4
+-20	karenmillen	uk	female			5
+0	karenmillen	uk	female			6
+20	karenmillen	uk	female			7
+40	karenmillen	uk	female			8
+-60	karenmillen	us	female			5
+-40	karenmillen	us	female			6
+-20	karenmillen	us	female			7
+0	karenmillen	us	female			8
+20	karenmillen	us	female			9
+40	karenmillen	us	female			10
+-160	linea	europe	female			35.0
+-140	linea	europe	female			35.5
+-120	linea	europe	female			36.0
+-100	linea	europe	female			36.5
+-80	linea	europe	female			37.0
+-60	linea	europe	female			37.5
+-40	linea	europe	female			38.0
+-20	linea	europe	female			38.5
+0	linea	europe	female			39.0
+20	linea	europe	female			39.5
+40	linea	europe	female			40.0
+60	linea	europe	female			40.5
+80	linea	europe	female			41.0
+100	linea	europe	female			41.5
+120	linea	europe	female			42.0
+140	linea	europe	female			42.5
+160	linea	europe	female			43.0
+-160	linea	us	female			4.0
+-140	linea	us	female			4.5
+-120	linea	us	female			5.0
+-100	linea	us	female			5.5
+-80	linea	us	female			6.0
+-60	linea	us	female			6.5
+-40	linea	us	female			7.0
+-20	linea	us	female			7.5
+0	linea	us	female			8.0
+20	linea	us	female			8.5
+40	linea	us	female			9.0
+60	linea	us	female			9.5
+80	linea	us	female			10.0
+100	linea	us	female			10.5
+120	linea	us	female			11.0
+140	linea	us	female			11.5
+160	linea	us	female			12.0
+-160	linea	uk	female			2.0
+-140	linea	uk	female			2.5
+-120	linea	uk	female			3.0
+-100	linea	uk	female			3.5
+-80	linea	uk	female			4.0
+-60	linea	uk	female			4.5
+-40	linea	uk	female			5.0
+-20	linea	uk	female			5.5
+0	linea	uk	female			6.0
+20	linea	uk	female			6.5
+40	linea	uk	female			7.0
+60	linea	uk	female			7.5
+80	linea	uk	female			8.0
+100	linea	uk	female			8.5
+120	linea	uk	female			9.0
+140	linea	uk	female			9.5
+160	linea	uk	female			10.0
+-160	linea	europe	male			39.0
+-140	linea	europe	male			39.5
+-120	linea	europe	male			40.0
+-100	linea	europe	male			40.5
+-80	linea	europe	male			41.0
+-60	linea	europe	male			41.5
+-40	linea	europe	male			42.0
+-20	linea	europe	male			42.5
+0	linea	europe	male			43.0
+20	linea	europe	male			43.5
+40	linea	europe	male			44.0
+60	linea	europe	male			44.5
+80	linea	europe	male			45.0
+100	linea	europe	male			46.0
+120	linea	europe	male			47.0
+140	linea	europe	male			48.0
+160	linea	europe	male			49.0
+-160	linea	us	male			5.5
+-140	linea	us	male			6.0
+-120	linea	us	male			6.5
+-100	linea	us	male			7.0
+-80	linea	us	male			7.5
+-60	linea	us	male			8.0
+-40	linea	us	male			8.5
+-20	linea	us	male			9.0
+0	linea	us	male			9.5
+20	linea	us	male			10.0
+40	linea	us	male			10.5
+60	linea	us	male			11.0
+80	linea	us	male			11.5
+100	linea	us	male			12.5
+120	linea	us	male			13.5
+140	linea	us	male			14.5
+160	linea	us	male			15.5
+-160	linea	uk	male			5.0
+-140	linea	uk	male			5.5
+-120	linea	uk	male			6.0
+-100	linea	uk	male			6.5
+-80	linea	uk	male			7.0
+-60	linea	uk	male			7.5
+-40	linea	uk	male			8.0
+-20	linea	uk	male			8.5
+0	linea	uk	male			9.0
+20	linea	uk	male			9.5
+40	linea	uk	male			10.0
+60	linea	uk	male			10.5
+80	linea	uk	male			11.0
+100	linea	uk	male			12.0
+120	linea	uk	male			13.0
+140	linea	uk	male			14.0
+160	linea	uk	male			15.0
+-100	lkbennett	europe	female	22		35
+-80	lkbennett	europe	female	22.7		36
+-60	lkbennett	europe	female	23.3		37
+-40	lkbennett	europe	female	23.6		37.5
+-20	lkbennett	europe	female	24.0		38
+0	lkbennett	europe	female	24.3		38.5
+20	lkbennett	europe	female	24.7		39
+40	lkbennett	europe	female	25.0		39.5
+60	lkbennett	europe	female	25.3		40
+80	lkbennett	europe	female	26.0		41
+100	lkbennett	europe	female	26.7		42
+-100	lkbennett	canada	female	22		4.5
+-80	lkbennett	canada	female	22.7		5.5
+-60	lkbennett	canada	female	23.3		6.5
+-40	lkbennett	canada	female	23.6		7
+-20	lkbennett	canada	female	24.0		7.5
+0	lkbennett	canada	female	24.3		8
+20	lkbennett	canada	female	24.7		8.5
+40	lkbennett	canada	female	25.0		9
+60	lkbennett	canada	female	25.3		9.5
+80	lkbennett	canada	female	26.0		10.5
+100	lkbennett	canada	female	26.7		11.5
+-100	lkbennett	australia	female	22		4.5
+-80	lkbennett	australia	female	22.7		5.5
+-60	lkbennett	australia	female	23.3		6.5
+-40	lkbennett	australia	female	23.6		7
+-20	lkbennett	australia	female	24.0		7.5
+0	lkbennett	australia	female	24.3		8
+20	lkbennett	australia	female	24.7		8.5
+40	lkbennett	australia	female	25.0		9
+60	lkbennett	australia	female	25.3		9.5
+80	lkbennett	australia	female	26.0		10.5
+100	lkbennett	australia	female	26.7		11.5
+-100	lkbennett	us	female	22		4.5
+-80	lkbennett	us	female	22.7		5.5
+-60	lkbennett	us	female	23.3		6.5
+-40	lkbennett	us	female	23.6		7
+-20	lkbennett	us	female	24.0		7.5
+0	lkbennett	us	female	24.3		8
+20	lkbennett	us	female	24.7		8.5
+40	lkbennett	us	female	25.0		9
+60	lkbennett	us	female	25.3		9.5
+80	lkbennett	us	female	26.0		10.5
+100	lkbennett	us	female	26.7		11.5
+-100	lkbennett	uk	female	22		2
+-80	lkbennett	uk	female	22.7		3
+-60	lkbennett	uk	female	23.3		4
+-40	lkbennett	uk	female	23.6		4.5
+-20	lkbennett	uk	female	24.0		5
+0	lkbennett	uk	female	24.3		5.5
+20	lkbennett	uk	female	24.7		6
+40	lkbennett	uk	female	25.0		6.5
+60	lkbennett	uk	female	25.3		7
+80	lkbennett	uk	female	26.0		8
+100	lkbennett	uk	female	26.7		9
+-100	lkbennett	japan	female	22		21.5
+-80	lkbennett	japan	female	22.7		22.5
+-60	lkbennett	japan	female	23.3		23
+-40	lkbennett	japan	female	23.6		23.5
+-20	lkbennett	japan	female	24.0		24
+0	lkbennett	japan	female	24.3		24
+20	lkbennett	japan	female	24.7		24.5
+40	lkbennett	japan	female	25.0		25
+60	lkbennett	japan	female	25.3		25.5
+80	lkbennett	japan	female	26.0		26.5
+100	lkbennett	japan	female	26.7		27
+-80	mango	europe	female			35
+-60	mango	europe	female			36
+-40	mango	europe	female			37
+-20	mango	europe	female			38
+0	mango	europe	female			39
+20	mango	europe	female			40
+40	mango	europe	female			41
+60	mango	europe	female			42
+-80	mango	mexico	female			2
+-60	mango	mexico	female			3.5
+-40	mango	mexico	female			4
+-20	mango	mexico	female			5
+0	mango	mexico	female			6
+20	mango	mexico	female			6.5
+40	mango	mexico	female			7
+60	mango	mexico	female			8
+-80	mango	us	female			5
+-60	mango	us	female			6
+-40	mango	us	female			6.5
+-20	mango	us	female			7.5
+0	mango	us	female			8.5
+20	mango	us	female			9
+40	mango	us	female			9.5
+60	mango	us	female			10
+-80	mango	germany	female			35
+-60	mango	germany	female			36
+-40	mango	germany	female			37
+-20	mango	germany	female			38
+0	mango	germany	female			39
+20	mango	germany	female			40
+40	mango	germany	female			41
+60	mango	germany	female			42
+-80	mango	uk	female			2
+-60	mango	uk	female			3
+-40	mango	uk	female			4
+-20	mango	uk	female			5
+0	mango	uk	female			6
+20	mango	uk	female			7
+40	mango	uk	female			8
+60	mango	uk	female			9
+-60	mango	europe	male			39
+-40	mango	europe	male			40
+-20	mango	europe	male			41
+0	mango	europe	male			42
+20	mango	europe	male			43
+40	mango	europe	male			44
+60	mango	europe	male			45
+-60	mango	us	male			7
+-40	mango	us	male			7.5
+-20	mango	us	male			8
+0	mango	us	male			8.5
+20	mango	us	male			9
+40	mango	us	male			10.5
+60	mango	us	male			11.5
+-60	mango	uk	male			5.5
+-40	mango	uk	male			6
+-20	mango	uk	male			7
+0	mango	uk	male			8
+20	mango	uk	male			9
+40	mango	uk	male			10
+60	mango	uk	male			11
+-60	mango	mexico	male			5
+-40	mango	mexico	male			6
+-20	mango	mexico	male			7
+0	mango	mexico	male			8
+20	mango	mexico	male			9
+40	mango	mexico	male			10
+60	mango	mexico	male			11
+-160	mantaray	europe	female			35
+-140	mantaray	europe	female			35.5
+-120	mantaray	europe	female			36
+-100	mantaray	europe	female			36.5
+-80	mantaray	europe	female			37
+-60	mantaray	europe	female			37.5
+-40	mantaray	europe	female			38
+-20	mantaray	europe	female			38.5
+0	mantaray	europe	female			39
+20	mantaray	europe	female			39.5
+40	mantaray	europe	female			40
+60	mantaray	europe	female			40.5
+80	mantaray	europe	female			41
+100	mantaray	europe	female			41.5
+120	mantaray	europe	female			42
+140	mantaray	europe	female			42.5
+-160	mantaray	us	female			4
+-140	mantaray	us	female			4.5
+-120	mantaray	us	female			5
+-100	mantaray	us	female			5.5
+-80	mantaray	us	female			6
+-60	mantaray	us	female			6.5
+-40	mantaray	us	female			7
+-20	mantaray	us	female			7.5
+0	mantaray	us	female			8
+20	mantaray	us	female			8.5
+40	mantaray	us	female			9
+60	mantaray	us	female			9.5
+80	mantaray	us	female			10
+100	mantaray	us	female			10.5
+120	mantaray	us	female			11
+140	mantaray	us	female			11.5
+-160	mantaray	uk	female			2
+-140	mantaray	uk	female			2.5
+-120	mantaray	uk	female			3
+-100	mantaray	uk	female			3.5
+-80	mantaray	uk	female			4
+-60	mantaray	uk	female			4.5
+-40	mantaray	uk	female			5
+-20	mantaray	uk	female			5.5
+0	mantaray	uk	female			6
+20	mantaray	uk	female			6.5
+40	mantaray	uk	female			7
+60	mantaray	uk	female			7.5
+80	mantaray	uk	female			8
+100	mantaray	uk	female			8.5
+120	mantaray	uk	female			9
+140	mantaray	uk	female			9.5
+-60	mantaray	europe	male			39
+-40	mantaray	europe	male			41
+-20	mantaray	europe	male			42
+0	mantaray	europe	male			43
+20	mantaray	europe	male			44
+40	mantaray	europe	male			45
+-60	mantaray	uk	male			6
+-40	mantaray	uk	male			7
+-20	mantaray	uk	male			8
+0	mantaray	uk	male			9
+20	mantaray	uk	male			10
+40	mantaray	uk	male			11
+-120	marksspencer	europe	female	22		35.5/s
+-100	marksspencer	europe	female	22.5		36/s
+-80	marksspencer	europe	female	23		37/s
+-60	marksspencer	europe	female	23.5		37.5/s
+-40	marksspencer	europe	female	24		38/m
+-20	marksspencer	europe	female	24.5		39/m
+0	marksspencer	europe	female	25		39.5/m
+20	marksspencer	europe	female	25.5		40/m
+40	marksspencer	europe	female	26		40.5/l
+60	marksspencer	europe	female	26.5		41/l
+80	marksspencer	europe	female	27		42/l
+100	marksspencer	europe	female	27.5		42.5/xl
+120	marksspencer	europe	female	28		43/xl
+-120	marksspencer	us	female	22		5/s
+-100	marksspencer	us	female	22.5		5.5/s
+-80	marksspencer	us	female	23		6/s
+-60	marksspencer	us	female	23.5		6.5/s
+-40	marksspencer	us	female	24		7/m
+-20	marksspencer	us	female	24.5		7.5/m
+0	marksspencer	us	female	25		8/m
+20	marksspencer	us	female	25.5		8.5/m
+40	marksspencer	us	female	26		9/l
+60	marksspencer	us	female	26.5		9.5/l
+80	marksspencer	us	female	27		10/l
+100	marksspencer	us	female	27.5		10.5/xl
+120	marksspencer	us	female	28		11/xl
+-120	marksspencer	uk	female	22		3/s
+-100	marksspencer	uk	female	22.5		3.5/s
+-80	marksspencer	uk	female	23		4/s
+-60	marksspencer	uk	female	23.5		4.5/s
+-40	marksspencer	uk	female	24		5/m
+-20	marksspencer	uk	female	24.5		5.5/m
+0	marksspencer	uk	female	25		6/m
+20	marksspencer	uk	female	25.5		6.5/m
+40	marksspencer	uk	female	26		7/l
+60	marksspencer	uk	female	26.5		7.5/l
+80	marksspencer	uk	female	27		8/l
+100	marksspencer	uk	female	27.5		8.5/xl
+120	marksspencer	uk	female	28		9/xl
+-120	marksspencer	japan	female	22		22/s
+-100	marksspencer	japan	female	22.5		22.5/s
+-80	marksspencer	japan	female	23		23/s
+-60	marksspencer	japan	female	23.5		23.5/s
+-40	marksspencer	japan	female	24		24/m
+-20	marksspencer	japan	female	24.5		24.5/m
+0	marksspencer	japan	female	25		25/m
+20	marksspencer	japan	female	25.5		25.5/m
+40	marksspencer	japan	female	26		26/l
+60	marksspencer	japan	female	26.5		26.5/l
+80	marksspencer	japan	female	27		27/l
+100	marksspencer	japan	female	27.5		27.5/xl
+120	marksspencer	japan	female	28		28/xl
+-140	marksspencer	europe	male	24.5		39.5/s
+-120	marksspencer	europe	male	25		40/s
+-100	marksspencer	europe	male	25.5		40.5/s
+-80	marksspencer	europe	male	26		41/m
+-60	marksspencer	europe	male	26.5		42/m
+-40	marksspencer	europe	male	27		42.5/m
+-20	marksspencer	europe	male	27.5		43/m
+0	marksspencer	europe	male	28		43.5/l
+20	marksspencer	europe	male	28.5		44.5/l
+40	marksspencer	europe	male	29		45/l
+60	marksspencer	europe	male	29.5		46/l
+80	marksspencer	europe	male	30		46.5/xl
+100	marksspencer	europe	male	30.5		47/xl
+120	marksspencer	europe	male	32		48.5/xl
+-140	marksspencer	us	male	24.5		6/s
+-120	marksspencer	us	male	25		7/s
+-100	marksspencer	us	male	25.5		7.5/s
+-80	marksspencer	us	male	26		8/m
+-60	marksspencer	us	male	26.5		8.5/m
+-40	marksspencer	us	male	27		9/m
+-20	marksspencer	us	male	27.5		9.5/m
+0	marksspencer	us	male	28		10/l
+20	marksspencer	us	male	28.5		10.5/l
+40	marksspencer	us	male	29		11/l
+60	marksspencer	us	male	29.5		11.5/l
+80	marksspencer	us	male	30		12/xl
+100	marksspencer	us	male	30.5		12.5/xl
+120	marksspencer	us	male	32		13.5/xl
+-140	marksspencer	uk	male	24.5		6/s
+-120	marksspencer	uk	male	25		6.5/s
+-100	marksspencer	uk	male	25.5		7/s
+-80	marksspencer	uk	male	26		7.5/m
+-60	marksspencer	uk	male	26.5		8/m
+-40	marksspencer	uk	male	27		8.5/m
+-20	marksspencer	uk	male	27.5		9/m
+0	marksspencer	uk	male	28		9.5/l
+20	marksspencer	uk	male	28.5		10/l
+40	marksspencer	uk	male	29		10.5/l
+60	marksspencer	uk	male	29.5		11/l
+80	marksspencer	uk	male	30		11.5/xl
+100	marksspencer	uk	male	30.5		12/xl
+120	marksspencer	uk	male	32		13/xl
+-140	marksspencer	japan	male	24.5		24.5/s
+-120	marksspencer	japan	male	25		25/s
+-100	marksspencer	japan	male	25.5		25.5/s
+-80	marksspencer	japan	male	26		26/m
+-60	marksspencer	japan	male	26.5		26.5/m
+-40	marksspencer	japan	male	27		27/m
+-20	marksspencer	japan	male	27.5		27.5/m
+0	marksspencer	japan	male	28		28/l
+20	marksspencer	japan	male	28.5		28.5/l
+40	marksspencer	japan	male	29		29/l
+60	marksspencer	japan	male	29.5		29.5/l
+80	marksspencer	japan	male	30		30/xl
+100	marksspencer	japan	male	30.5		30.5/xl
+120	marksspencer	japan	male	32		32/xl
+-140	marksspencer	canada	male	24.5		7/s
+-120	marksspencer	canada	male	25		7.5/s
+-100	marksspencer	canada	male	25.5		8/s
+-80	marksspencer	canada	male	26		8.5/m
+-60	marksspencer	canada	male	26.5		9/m
+-40	marksspencer	canada	male	27		9.5/m
+-20	marksspencer	canada	male	27.5		10/m
+0	marksspencer	canada	male	28		10.5/l
+20	marksspencer	canada	male	28.5		11/l
+40	marksspencer	canada	male	29		11.5/l
+60	marksspencer	canada	male	29.5		12/l
+80	marksspencer	canada	male	30		12.5/xl
+100	marksspencer	canada	male	30.5		13/xl
+120	marksspencer	canada	male	32		14/xl
+-60	michaelkors	europe	female			36
+-40	michaelkors	europe	female			37
+-20	michaelkors	europe	female			38
+0	michaelkors	europe	female			39
+20	michaelkors	europe	female			40
+40	michaelkors	europe	female			41
+-60	michaelkors	us	female			6
+-40	michaelkors	us	female			7
+-20	michaelkors	us	female			8
+0	michaelkors	us	female			9
+20	michaelkors	us	female			10
+40	michaelkors	us	female			11
+-40	mintvelvet	europe	female			37
+-20	mintvelvet	europe	female			38
+0	mintvelvet	europe	female			39
+20	mintvelvet	europe	female			40
+40	mintvelvet	europe	female			41
+-40	mintvelvet	japan	female			23
+-20	mintvelvet	japan	female			24
+0	mintvelvet	japan	female			24.5
+20	mintvelvet	japan	female			25.5
+40	mintvelvet	japan	female			26
+-40	mintvelvet	us	female			6.5
+-20	mintvelvet	us	female			7.5
+0	mintvelvet	us	female			8.5
+20	mintvelvet	us	female			9.5
+40	mintvelvet	us	female			10.5
+-40	mintvelvet	uk	female			4
+-20	mintvelvet	uk	female			5
+0	mintvelvet	uk	female			6
+20	mintvelvet	uk	female			7
+40	mintvelvet	uk	female			8
+-60	monsoon	europe	female			36/s
+-40	monsoon	europe	female			37/s
+-20	monsoon	europe	female			38/m
+0	monsoon	europe	female			39/m
+20	monsoon	europe	female			40/l
+40	monsoon	europe	female			41/l
+60	monsoon	europe	female			42/l
+-60	monsoon	us	female			4.5/s
+-40	monsoon	us	female			5.5/s
+-20	monsoon	us	female			6.5/m
+0	monsoon	us	female			7.5/m
+20	monsoon	us	female			8/l
+40	monsoon	us	female			8.5/l
+60	monsoon	us	female			9.5/l
+-60	monsoon	uk	female			3/s
+-40	monsoon	uk	female			4/s
+-20	monsoon	uk	female			5/m
+0	monsoon	uk	female			6/m
+20	monsoon	uk	female			6.5/l
+40	monsoon	uk	female			7/l
+60	monsoon	uk	female			8/l
+-60	newlook	europe	female			36
+-40	newlook	europe	female			37
+-20	newlook	europe	female			38
+0	newlook	europe	female			39
+20	newlook	europe	female			40
+40	newlook	europe	female			41
+60	newlook	europe	female			42
+-60	newlook	us	female			5
+-40	newlook	us	female			6
+-20	newlook	us	female			7
+0	newlook	us	female			8
+20	newlook	us	female			9
+40	newlook	us	female			10
+60	newlook	us	female			11
+-60	newlook	uk	female			3
+-40	newlook	uk	female			4
+-20	newlook	uk	female			5
+0	newlook	uk	female			6
+20	newlook	uk	female			7
+40	newlook	uk	female			8
+60	newlook	uk	female			9
+-60	newlook	europe	male			40
+-40	newlook	europe	male			41
+-20	newlook	europe	male			42
+0	newlook	europe	male			43
+20	newlook	europe	male			44
+40	newlook	europe	male			45
+60	newlook	europe	male			46
+-60	newlook	us	male			7
+-40	newlook	us	male			8
+-20	newlook	us	male			9
+0	newlook	us	male			10
+20	newlook	us	male			11
+40	newlook	us	male			12
+60	newlook	us	male			13
+-60	newlook	uk	male			6
+-40	newlook	uk	male			7
+-20	newlook	uk	male			8
+0	newlook	uk	male			9
+20	newlook	uk	male			10
+40	newlook	uk	male			11
+60	newlook	uk	male			12
+-100	next	europe	female			s
+-80	next	europe	female			35.5/s
+-60	next	europe	female			36/s
+-40	next	europe	female			37/s
+-20	next	europe	female			37.5/m
+0	next	europe	female			38/m
+20	next	europe	female			38.5/m
+40	next	europe	female			39/m
+60	next	europe	female			40/l
+80	next	europe	female			41/l
+100	next	europe	female			42/l
+-100	next	australia	female			4/s
+-80	next	australia	female			4.5/s
+-60	next	australia	female			5/s
+-40	next	australia	female			5.5/s
+-20	next	australia	female			6/m
+0	next	australia	female			6.5/m
+20	next	australia	female			7/m
+40	next	australia	female			7.5/m
+60	next	australia	female			8/l
+80	next	australia	female			9/l
+100	next	australia	female			10/l
+-100	next	us	female			s
+-80	next	us	female			5/s
+-60	next	us	female			5.5/s
+-40	next	us	female			6/s
+-20	next	us	female			6.5/m
+0	next	us	female			7/m
+20	next	us	female			7.5/m
+40	next	us	female			8/m
+60	next	us	female			8.5/l
+80	next	us	female			9/l
+100	next	us	female			10/l
+-100	next	newzealand	female			4/s
+-80	next	newzealand	female			4.5/s
+-60	next	newzealand	female			5/s
+-40	next	newzealand	female			5.5/s
+-20	next	newzealand	female			6/m
+0	next	newzealand	female			6.5/m
+20	next	newzealand	female			7/m
+40	next	newzealand	female			7.5/m
+60	next	newzealand	female			8/l
+80	next	newzealand	female			9/l
+100	next	newzealand	female			10/l
+-100	next	uk	female			s
+-80	next	uk	female			3/s
+-60	next	uk	female			3.5/s
+-40	next	uk	female			4/s
+-20	next	uk	female			4.5/m
+0	next	uk	female			5/m
+20	next	uk	female			5.5/m
+40	next	uk	female			6/m
+60	next	uk	female			6.5/l
+80	next	uk	female			7/l
+100	next	uk	female			8/l
+-80	next	europe	male			40/s
+-60	next	europe	male			41/s
+-40	next	europe	male			42/m
+-20	next	europe	male			43/m
+0	next	europe	male			44/l
+20	next	europe	male			45/l
+40	next	europe	male			46/xl
+60	next	europe	male			47/xl
+-80	next	us	male			7.5/s
+-60	next	us	male			8/s
+-40	next	us	male			9/m
+-20	next	us	male			10/m
+0	next	us	male			11/l
+20	next	us	male			12/l
+40	next	us	male			12.5/xl
+60	next	us	male			13/xl
+-80	next	uk	male			6.5/s
+-60	next	uk	male			7/s
+-40	next	uk	male			8/m
+-20	next	uk	male			9/m
+0	next	uk	male			10/l
+20	next	uk	male			11/l
+40	next	uk	male			11.5/xl
+60	next	uk	male			12/xl
+-60	oasis	europe	female			36
+-40	oasis	europe	female			37
+-20	oasis	europe	female			38
+0	oasis	europe	female			39
+20	oasis	europe	female			40
+40	oasis	europe	female			41
+-60	oasis	us	female			5
+-40	oasis	us	female			6
+-20	oasis	us	female			7
+0	oasis	us	female			8
+20	oasis	us	female			9
+40	oasis	us	female			10
+-60	oasis	uk	female			3
+-40	oasis	uk	female			4
+-20	oasis	uk	female			5
+0	oasis	uk	female			6
+20	oasis	uk	female			7
+40	oasis	uk	female			8
+-60	phaseeight	europe	female			36
+-40	phaseeight	europe	female			37
+-20	phaseeight	europe	female			38
+0	phaseeight	europe	female			39
+20	phaseeight	europe	female			40
+40	phaseeight	europe	female			41
+-60	phaseeight	uk	female			3
+-40	phaseeight	uk	female			4
+-20	phaseeight	uk	female			5
+0	phaseeight	uk	female			6
+20	phaseeight	uk	female			7
+40	phaseeight	uk	female			8
+-60	piedaterre	europe	female			36
+-40	piedaterre	europe	female			37
+-20	piedaterre	europe	female			38
+0	piedaterre	europe	female			39
+20	piedaterre	europe	female			40
+40	piedaterre	europe	female			41
+-60	piedaterre	canada	female			5
+-40	piedaterre	canada	female			6
+-20	piedaterre	canada	female			7
+0	piedaterre	canada	female			8
+20	piedaterre	canada	female			9
+40	piedaterre	canada	female			10
+-60	piedaterre	australia	female			5
+-40	piedaterre	australia	female			6
+-20	piedaterre	australia	female			7
+0	piedaterre	australia	female			8
+20	piedaterre	australia	female			9
+40	piedaterre	australia	female			10
+-60	piedaterre	us	female			5
+-40	piedaterre	us	female			6
+-20	piedaterre	us	female			7
+0	piedaterre	us	female			8
+20	piedaterre	us	female			9
+40	piedaterre	us	female			10
+-60	piedaterre	uk	female			3
+-40	piedaterre	uk	female			4
+-20	piedaterre	uk	female			5
+0	piedaterre	uk	female			6
+20	piedaterre	uk	female			7
+40	piedaterre	uk	female			8
+-60	piedaterre	europe	male			40
+-40	piedaterre	europe	male			41
+-20	piedaterre	europe	male			42
+0	piedaterre	europe	male			43
+20	piedaterre	europe	male			44
+40	piedaterre	europe	male			45
+60	piedaterre	europe	male			46
+-60	piedaterre	canada	male			7
+-40	piedaterre	canada	male			8
+-20	piedaterre	canada	male			9
+0	piedaterre	canada	male			10
+20	piedaterre	canada	male			11
+40	piedaterre	canada	male			12
+60	piedaterre	canada	male			13
+-60	piedaterre	australia	male			7
+-40	piedaterre	australia	male			8
+-20	piedaterre	australia	male			9
+0	piedaterre	australia	male			10
+20	piedaterre	australia	male			11
+40	piedaterre	australia	male			12
+60	piedaterre	australia	male			13
+-60	piedaterre	us	male			7
+-40	piedaterre	us	male			8
+-20	piedaterre	us	male			9
+0	piedaterre	us	male			10
+20	piedaterre	us	male			11
+40	piedaterre	us	male			12
+60	piedaterre	us	male			13
+-60	piedaterre	uk	male			6
+-40	piedaterre	uk	male			7
+-20	piedaterre	uk	male			8
+0	piedaterre	uk	male			9
+20	piedaterre	uk	male			10
+40	piedaterre	uk	male			11
+60	piedaterre	uk	male			12
+-40	planet	europe	female			37
+-20	planet	europe	female			38
+0	planet	europe	female			39
+20	planet	europe	female			40
+40	planet	europe	female			41
+-40	planet	us	female			6.5
+-20	planet	us	female			7.5
+0	planet	us	female			8.5
+20	planet	us	female			9.5
+40	planet	us	female			10
+-40	planet	uk	female			4
+-20	planet	uk	female			5
+0	planet	uk	female			6
+20	planet	uk	female			7
+40	planet	uk	female			8
+-40	precis	europe	female			37
+-20	precis	europe	female			38
+0	precis	europe	female			39
+20	precis	europe	female			40
+40	precis	europe	female			41
+-40	precis	us	female			6.5
+-20	precis	us	female			7.5
+0	precis	us	female			8.5
+20	precis	us	female			9.5
+40	precis	us	female			10
+-40	precis	uk	female			4
+-20	precis	uk	female			5
+0	precis	uk	female			6
+20	precis	uk	female			7
+40	precis	uk	female			8
+-60	rare	europe	female			36
+-40	rare	europe	female			37
+-20	rare	europe	female			38
+0	rare	europe	female			39
+20	rare	europe	female			40
+40	rare	europe	female			41
+-60	rare	us	female			5
+-40	rare	us	female			6
+-20	rare	us	female			7
+0	rare	us	female			8
+20	rare	us	female			9
+40	rare	us	female			10
+-60	rare	uk	female			3
+-40	rare	uk	female			4
+-20	rare	uk	female			5
+0	rare	uk	female			6
+20	rare	uk	female			7
+40	rare	uk	female			8
+-160	redherring	europe	female			35
+-140	redherring	europe	female			35.5
+-120	redherring	europe	female			36
+-100	redherring	europe	female			36.5
+-80	redherring	europe	female			37
+-60	redherring	europe	female			37.5
+-40	redherring	europe	female			38
+-20	redherring	europe	female			38.5
+0	redherring	europe	female			39
+20	redherring	europe	female			39.5
+40	redherring	europe	female			40
+60	redherring	europe	female			40.5
+80	redherring	europe	female			41
+100	redherring	europe	female			41.5
+120	redherring	europe	female			42
+140	redherring	europe	female			42.5
+-160	redherring	us	female			4
+-140	redherring	us	female			4.5
+-120	redherring	us	female			5
+-100	redherring	us	female			5.5
+-80	redherring	us	female			6
+-60	redherring	us	female			6.5
+-40	redherring	us	female			7
+-20	redherring	us	female			7.5
+0	redherring	us	female			8
+20	redherring	us	female			8.5
+40	redherring	us	female			9
+60	redherring	us	female			9.5
+80	redherring	us	female			10
+100	redherring	us	female			10.5
+120	redherring	us	female			11
+140	redherring	us	female			11.5
+-160	redherring	uk	female			2
+-140	redherring	uk	female			2.5
+-120	redherring	uk	female			3
+-100	redherring	uk	female			3.5
+-80	redherring	uk	female			4
+-60	redherring	uk	female			4.5
+-40	redherring	uk	female			5
+-20	redherring	uk	female			5.5
+0	redherring	uk	female			6
+20	redherring	uk	female			6.5
+40	redherring	uk	female			7
+60	redherring	uk	female			7.5
+80	redherring	uk	female			8
+100	redherring	uk	female			8.5
+120	redherring	uk	female			9
+140	redherring	uk	female			9.5
+-60	reiss	europe	female			36
+-40	reiss	europe	female			37
+-20	reiss	europe	female			38
+0	reiss	europe	female			39
+20	reiss	europe	female			40
+40	reiss	europe	female			41
+-60	reiss	us	female			6
+-40	reiss	us	female			7
+-20	reiss	us	female			8
+0	reiss	us	female			9
+20	reiss	us	female			10
+40	reiss	us	female			11
+-60	reiss	uk	female			3
+-40	reiss	uk	female			4
+-20	reiss	uk	female			5
+0	reiss	uk	female			6
+20	reiss	uk	female			7
+40	reiss	uk	female			8
+-60	reiss	europe	male			41
+-40	reiss	europe	male			42
+-20	reiss	europe	male			43
+0	reiss	europe	male			44
+20	reiss	europe	male			45
+40	reiss	europe	male			46
+-60	reiss	us	male			8
+-40	reiss	us	male			9
+-20	reiss	us	male			10
+0	reiss	us	male			11
+20	reiss	us	male			12
+40	reiss	us	male			13
+-60	reiss	uk	male			7
+-40	reiss	uk	male			8
+-20	reiss	uk	male			9
+0	reiss	uk	male			10
+20	reiss	uk	male			11
+40	reiss	uk	male			12
+-80	tommyhilfiger	netherlands	female	22.00		35
+-60	tommyhilfiger	netherlands	female	22.70		36
+-40	tommyhilfiger	netherlands	female	23.35		37
+-20	tommyhilfiger	netherlands	female	24.00		38
+0	tommyhilfiger	netherlands	female	24.70		39
+20	tommyhilfiger	netherlands	female	25.40		40
+40	tommyhilfiger	netherlands	female	26.10		41
+60	tommyhilfiger	netherlands	female	26.75		42
+-80	tommyhilfiger	ireland	female	22.00		2.5
+-60	tommyhilfiger	ireland	female	22.70		3.5
+-40	tommyhilfiger	ireland	female	23.35		4
+-20	tommyhilfiger	ireland	female	24.00		5
+0	tommyhilfiger	ireland	female	24.70		6
+20	tommyhilfiger	ireland	female	25.40		6.5
+40	tommyhilfiger	ireland	female	26.10		7
+60	tommyhilfiger	ireland	female	26.75		7.5
+-80	tommyhilfiger	us	female	22.00		5.5
+-60	tommyhilfiger	us	female	22.70		6
+-40	tommyhilfiger	us	female	23.35		6.5
+-20	tommyhilfiger	us	female	24.00		7.5
+0	tommyhilfiger	us	female	24.70		8.5
+20	tommyhilfiger	us	female	25.40		9
+40	tommyhilfiger	us	female	26.10		9.5
+60	tommyhilfiger	us	female	26.75		10
+-80	tommyhilfiger	austria	female	22.00		35
+-60	tommyhilfiger	austria	female	22.70		36
+-40	tommyhilfiger	austria	female	23.35		37
+-20	tommyhilfiger	austria	female	24.00		38
+0	tommyhilfiger	austria	female	24.70		39
+20	tommyhilfiger	austria	female	25.40		40
+40	tommyhilfiger	austria	female	26.10		41
+60	tommyhilfiger	austria	female	26.75		42
+-80	tommyhilfiger	germany	female	22.00		35
+-60	tommyhilfiger	germany	female	22.70		36
+-40	tommyhilfiger	germany	female	23.35		37
+-20	tommyhilfiger	germany	female	24.00		38
+0	tommyhilfiger	germany	female	24.70		39
+20	tommyhilfiger	germany	female	25.40		40
+40	tommyhilfiger	germany	female	26.10		41
+60	tommyhilfiger	germany	female	26.75		42
+-80	tommyhilfiger	uk	female	22.00		2.5
+-60	tommyhilfiger	uk	female	22.70		3.5
+-40	tommyhilfiger	uk	female	23.35		4
+-20	tommyhilfiger	uk	female	24.00		5
+0	tommyhilfiger	uk	female	24.70		6
+20	tommyhilfiger	uk	female	25.40		6.5
+40	tommyhilfiger	uk	female	26.10		7
+60	tommyhilfiger	uk	female	26.75		7.5
+-80	tommyhilfiger	spain	female	22.00		35
+-60	tommyhilfiger	spain	female	22.70		36
+-40	tommyhilfiger	spain	female	23.35		37
+-20	tommyhilfiger	spain	female	24.00		38
+0	tommyhilfiger	spain	female	24.70		39
+20	tommyhilfiger	spain	female	25.40		40
+40	tommyhilfiger	spain	female	26.10		41
+60	tommyhilfiger	spain	female	26.75		42
+-60	topshop	europe	female			36
+-40	topshop	europe	female			37
+-20	topshop	europe	female			38
+0	topshop	europe	female			39
+20	topshop	europe	female			40
+40	topshop	europe	female			41
+-60	topshop	australia	female			6
+-40	topshop	australia	female			7
+-20	topshop	australia	female			8
+0	topshop	australia	female			9
+20	topshop	australia	female			10
+40	topshop	australia	female			11
+-60	topshop	us	female			5.5
+-40	topshop	us	female			6.5
+-20	topshop	us	female			7.5
+0	topshop	us	female			8.5
+20	topshop	us	female			9.5
+40	topshop	us	female			10.5
+-60	topshop	uk	female			3
+-40	topshop	uk	female			4
+-20	topshop	uk	female			5
+0	topshop	uk	female			6
+20	topshop	uk	female			7
+40	topshop	uk	female			8
+-60	tu	europe	female			36/s
+-40	tu	europe	female			37/s
+-20	tu	europe	female			38/m
+0	tu	europe	female			39/m
+20	tu	europe	female			41/l
+40	tu	europe	female			42/l
+-60	tu	uk	female			3/s
+-40	tu	uk	female			4/s
+-20	tu	uk	female			5/m
+0	tu	uk	female			6/m
+20	tu	uk	female			7/l
+40	tu	uk	female			8/l
+-60	tu	europe	male			41/s
+-40	tu	europe	male			42/s
+-20	tu	europe	male			43/m
+0	tu	europe	male			44/m
+20	tu	europe	male			45/l
+40	tu	europe	male			47/l
+-60	tu	uk	male			7/s
+-40	tu	uk	male			8/s
+-20	tu	uk	male			9/m
+0	tu	uk	male			10/m
+20	tu	uk	male			11/l
+40	tu	uk	male			12/l
+-100	urbanoutfitters	europe	female			35.5
+-80	urbanoutfitters	europe	female			36
+-60	urbanoutfitters	europe	female			37
+-40	urbanoutfitters	europe	female			37.5
+-20	urbanoutfitters	europe	female			38
+0	urbanoutfitters	europe	female			38.5
+20	urbanoutfitters	europe	female			39
+40	urbanoutfitters	europe	female			39.5
+60	urbanoutfitters	europe	female			40
+80	urbanoutfitters	europe	female			41
+100	urbanoutfitters	europe	female			42
+-100	urbanoutfitters	australia	female			6
+-80	urbanoutfitters	australia	female			6.5
+-60	urbanoutfitters	australia	female			7
+-40	urbanoutfitters	australia	female			7.5
+-20	urbanoutfitters	australia	female			8
+0	urbanoutfitters	australia	female			8.5
+20	urbanoutfitters	australia	female			9
+40	urbanoutfitters	australia	female			9.5
+60	urbanoutfitters	australia	female			10
+80	urbanoutfitters	australia	female			10.5
+100	urbanoutfitters	australia	female			11.5
+-100	urbanoutfitters	uk	female			2.5
+-80	urbanoutfitters	uk	female			3
+-60	urbanoutfitters	uk	female			3.5
+-40	urbanoutfitters	uk	female			4
+-20	urbanoutfitters	uk	female			4.5
+0	urbanoutfitters	uk	female			5
+20	urbanoutfitters	uk	female			5.5
+40	urbanoutfitters	uk	female			6
+60	urbanoutfitters	uk	female			6.5
+80	urbanoutfitters	uk	female			7
+100	urbanoutfitters	uk	female			8
+-100	urbanoutfitters	us	female			5.5
+-80	urbanoutfitters	us	female			6
+-60	urbanoutfitters	us	female			6.5
+-40	urbanoutfitters	us	female			7
+-20	urbanoutfitters	us	female			7.5
+0	urbanoutfitters	us	female			8
+20	urbanoutfitters	us	female			8.5
+40	urbanoutfitters	us	female			9
+60	urbanoutfitters	us	female			9.5
+80	urbanoutfitters	us	female			10
+100	urbanoutfitters	us	female			11
+-120	urbanoutfitters	europe	male			40
+-100	urbanoutfitters	europe	male			40.5
+-80	urbanoutfitters	europe	male			41
+-60	urbanoutfitters	europe	male			42
+-40	urbanoutfitters	europe	male			42.5
+-20	urbanoutfitters	europe	male			43
+0	urbanoutfitters	europe	male			44
+20	urbanoutfitters	europe	male			44.5
+40	urbanoutfitters	europe	male			45
+60	urbanoutfitters	europe	male			45.5
+80	urbanoutfitters	europe	male			46
+100	urbanoutfitters	europe	male			47.5
+-120	urbanoutfitters	us	male			7
+-100	urbanoutfitters	us	male			7.5
+-80	urbanoutfitters	us	male			8
+-60	urbanoutfitters	us	male			8.5
+-40	urbanoutfitters	us	male			9
+-20	urbanoutfitters	us	male			9.5
+0	urbanoutfitters	us	male			10
+20	urbanoutfitters	us	male			10.5
+40	urbanoutfitters	us	male			11
+60	urbanoutfitters	us	male			11.5
+80	urbanoutfitters	us	male			12
+100	urbanoutfitters	us	male			13
+-120	urbanoutfitters	uk	male			6
+-100	urbanoutfitters	uk	male			6.5
+-80	urbanoutfitters	uk	male			7
+-60	urbanoutfitters	uk	male			7.5
+-40	urbanoutfitters	uk	male			8
+-20	urbanoutfitters	uk	male			8.5
+0	urbanoutfitters	uk	male			9
+20	urbanoutfitters	uk	male			9.5
+40	urbanoutfitters	uk	male			10
+60	urbanoutfitters	uk	male			10.5
+80	urbanoutfitters	uk	male			11
+100	urbanoutfitters	uk	male			12
+-60	warehouse	europe	female			36
+-40	warehouse	europe	female			37
+-20	warehouse	europe	female			38
+0	warehouse	europe	female			39
+20	warehouse	europe	female			40
+40	warehouse	europe	female			41
+-60	warehouse	uk	female			3
+-40	warehouse	uk	female			4
+-20	warehouse	uk	female			5
+0	warehouse	uk	female			6
+20	warehouse	uk	female			7
+40	warehouse	uk	female			8
+-60	whistles	europe	female			36
+-40	whistles	europe	female			37
+-20	whistles	europe	female			38
+0	whistles	europe	female			39
+20	whistles	europe	female			40
+40	whistles	europe	female			41
+-60	whistles	us	female			05
+-40	whistles	us	female			06
+-20	whistles	us	female			07
+0	whistles	us	female			08
+20	whistles	us	female			09
+40	whistles	us	female			10
+-60	whistles	uk	female			3
+-40	whistles	uk	female			4
+-20	whistles	uk	female			5
+0	whistles	uk	female			6
+20	whistles	uk	female			7
+40	whistles	uk	female			8
+-60	whitestuff	europe	female			36
+-40	whitestuff	europe	female			37
+-20	whitestuff	europe	female			38
+0	whitestuff	europe	female			39
+20	whitestuff	europe	female			40
+40	whitestuff	europe	female			41
+-60	whitestuff	uk	female			3
+-40	whitestuff	uk	female			4
+-20	whitestuff	uk	female			5
+0	whitestuff	uk	female			6
+20	whitestuff	uk	female			7
+40	whitestuff	uk	female			8
+-60	whitestuff	europe	male			40
+-40	whitestuff	europe	male			41
+-20	whitestuff	europe	male			42
+0	whitestuff	europe	male			43
+20	whitestuff	europe	male			44
+40	whitestuff	europe	male			45
+-60	whitestuff	uk	male			6
+-40	whitestuff	uk	male			7
+-20	whitestuff	uk	male			8
+0	whitestuff	uk	male			9
+20	whitestuff	uk	male			10
+40	whitestuff	uk	male			11
+-80	zara	europe	female	22.35		35
+-60	zara	europe	female	22.99		36
+-40	zara	europe	female	23.63		37
+-20	zara	europe	female	24.27		38
+0	zara	europe	female	24.90		39
+20	zara	europe	female	25.54		40
+40	zara	europe	female	26.18		41
+60	zara	europe	female	26.82		42
+-80	zara	uk	female	22.35		2
+-60	zara	uk	female	22.99		3
+-40	zara	uk	female	23.63		4
+-20	zara	uk	female	24.27		5
+0	zara	uk	female	24.90		6
+20	zara	uk	female	25.54		7
+40	zara	uk	female	26.18		8
+60	zara	uk	female	26.82		9

@@ -1,0 +1,5 @@
+UK	S	M	L	XL	XXL
+US	S	M	L	XL	XXL
+EU	S	M	L	XL	XXL
+SizeId	-40	-20	0	20	40
+Waist	71	76	81	86	91

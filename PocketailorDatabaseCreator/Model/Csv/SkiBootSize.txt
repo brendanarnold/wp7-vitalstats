@@ -1,1 +1,1 @@
-Brand	Region	Gender	SizeId  RegionalSize	GeneralSize
+sizeid	brand	region	gender	footlength	footwidth	size

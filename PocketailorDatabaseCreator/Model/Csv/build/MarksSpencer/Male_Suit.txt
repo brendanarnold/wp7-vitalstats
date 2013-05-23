@@ -1,6 +1,0 @@
-#Unit:Inches
-TorsoLength	29	31	30	31	30	31	32	30	32	32	30	32	32	34	31	32	33	34	31	32	33	34	32	33	35	33	34	35
-SizeId	-280	-260	-240	-220	-200	-180	-160	-140	-120	-100	-80	-60	-40	-20	0	20	40	60	80	100	120	140	160	180	200	220	240	260
-Chest	36	36	38	38	40	40	40	42	42	42	44	44	44	44	46	46	46	46	48	48	48	48	50	50	50	52	52	52
-UK	36(Short)	36(Medium)	38(Short)	38(Medium)	40(Short)	40(Medium)	40(Long)	42(Short)	42(Medium)	42(Long)	44(Short)	44(Medium)	44(Long)	44(Extra Long)	46(Short)	46(Medium)	46(Long)	46(Extra Long)	48(Short)	48(Medium)	48(Long)	48(Extra Long)	50(Medium)	50(Long)	50(Extra Long)	52(Medium)	52(Long)	52(Extra Long)
-Europe	46(Short)	46(Medium)	48(Short)	48(Medium)	50(Short)	50(Medium)	50(Long)	52(Short)	52(Medium)	52(Long)	54(Short)	54(Medium)	54(Long)	54(Extra Long)	56(Short)	56(Medium)	56(Long)	56(Extra Long)	58(Short)	58(Medium)	58(Long)	58(Extra Long)	60(Medium)	60(Long)	60(Extra Long)	62(Medium)	62(Long)	62(Extra Long)

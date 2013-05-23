@@ -1,3 +1,0 @@
-SizeLetter	S/M	L/XL
-SizeId	-20	0
-Head	57	60

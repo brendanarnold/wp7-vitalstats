@@ -1,0 +1,7 @@
+#Unit:Inches
+SizeLetter	XS	S	M	L	XL	XXL
+SizeId	-60	-40	-20	0	20	40
+UK	36"-86cm	38"-96cm	40"-101cm	42"-106cm	44"-111cm	46"-116cm
+US	36"-86cm	38"-96cm	40"-101cm	42"-106cm	44"-111cm	46"-116cm
+Europe	46	48	52	52	54	56
+Chest	36"	38"	40"	42"	44"	46"

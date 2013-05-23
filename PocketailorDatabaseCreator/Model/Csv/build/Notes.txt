@@ -1,26 +1,28 @@
-o Allow auxilliary portion of filename to contain the country
+o Build the size as follows:
+    o '#/XX (xxxx)', '# (xxxx)', 'XX (xxxx)', '#/XX', '#', 'XX' 
+    o e.g. '10/M (regular)'
+o Convert the model .cs files to just have one size used for display
+o Change Retailer to Brand in .cs files
+x Allow auxilliary portion of filename to contain the country
 o Convention for multiple sizes: comma means between two sizes, (slash is likey given by manufactorer)
 x Need to compile in InsideLeg measurements for trousers too
 o Bra size cup is difficult - maybe just include band size
-o Inlcude range calculation
+x Include range calculation
 x  Some emasurements do not have SizeLetter, build this from measurements e.g. Waist insideleg for mens trousers
 x parse out 'cm'
 x parse out " and interpret as inch
-o Need to extract region from filename if not in file
 x Multiple same lines append to end of data e.g. Linea bra sizes
 o Format should be include country size then if SizeLetter include in brackets. If SizeLetter only, inlcude that e.g. Hats
 x Allow case insensitive
 x Allow hip as well as hips
+x Allow bust as well as chest
 x Allow eu as Europe
 x Include parser for Female_Bra_International e.g. FF
 x Allow Aus for Australia
 x Include parser for Female_Hosiery_Height e.g. Tu
-o Change Retailer to Brand
 x Instead of SizeLetter, should be GeneralSize in ouptut
 x Include RegionalSize column in output
 x Incldue Conversion in all output
 x Include Gender in all ouptut
 x Include Region
 x Include SizeID for each size e.g. -40, -20, 0, 20, 40 ...
-
-

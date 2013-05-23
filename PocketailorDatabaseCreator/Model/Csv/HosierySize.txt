@@ -1,1 +1,187 @@
-Brand	Region	SizeId  RegionalSize	GeneralSize
+sizeid	brand	region	gender	waist	hips	height	insideleg	size
+-100	axparis	europe	female	63	88.5			36
+-80	axparis	europe	female	68	93.5			38
+-60	axparis	europe	female	73	98.5			40
+-40	axparis	europe	female	78	103.5			42
+-20	axparis	europe	female	83	108.5			44
+0	axparis	europe	female	90.5	116			46
+20	axparis	europe	female	98	123.5			48
+40	axparis	europe	female	104	129.5			50
+60	axparis	europe	female	110	135.5			52
+80	axparis	europe	female	116	141.5			54
+-100	axparis	australia	female	63	88.5			8
+-80	axparis	australia	female	68	93.5			10
+-60	axparis	australia	female	73	98.5			12
+-40	axparis	australia	female	78	103.5			14
+-20	axparis	australia	female	83	108.5			16
+0	axparis	australia	female	90.5	116			18
+20	axparis	australia	female	98	123.5			20
+40	axparis	australia	female	104	129.5			22
+60	axparis	australia	female	110	135.5			24
+80	axparis	australia	female	116	141.5			26
+-100	axparis	us	female	63	88.5			4
+-80	axparis	us	female	68	93.5			6
+-60	axparis	us	female	73	98.5			8
+-40	axparis	us	female	78	103.5			10
+-20	axparis	us	female	83	108.5			12
+0	axparis	us	female	90.5	116			14
+20	axparis	us	female	98	123.5			16
+40	axparis	us	female	104	129.5			18
+60	axparis	us	female	110	135.5			20
+80	axparis	us	female	116	141.5			22
+-100	axparis	uk	female	63	88.5			8
+-80	axparis	uk	female	68	93.5			10
+-60	axparis	uk	female	73	98.5			12
+-40	axparis	uk	female	78	103.5			14
+-20	axparis	uk	female	83	108.5			16
+0	axparis	uk	female	90.5	116			18
+20	axparis	uk	female	98	123.5			20
+40	axparis	uk	female	104	129.5			22
+60	axparis	uk	female	110	135.5			24
+80	axparis	uk	female	116	141.5			26
+-20	bananarepublic	canada	female			161.00		s,m
+0	bananarepublic	canada	female			170		l,xl
+-20	bananarepublic	europe	female			161.00		s,m
+0	bananarepublic	europe	female			170		l,xl
+-20	bananarepublic	us	female			161.00		s,m
+0	bananarepublic	us	female			170		l,xl
+-20	bananarepublic	uk	female			161.00		s,m
+0	bananarepublic	uk	female			170		l,xl
+-20	dorothyperkins	uk	female		93.50	158.50		6,10/s,m
+0	dorothyperkins	uk	female		112.00	166.50		12,16/m,l
+20	dorothyperkins	uk	female		127.00	179.00		18,22/xl
+-260	ff	uk	female		90	160		s
+-240	ff	uk	female		90	168		s
+-220	ff	uk	female		90	178		m
+-200	ff	uk	female		94	160		s
+-180	ff	uk	female		94	168		s
+-160	ff	uk	female		94	178		m
+-140	ff	uk	female		98	160		s
+-120	ff	uk	female		98	168		m
+-100	ff	uk	female		98	178		m
+-80	ff	uk	female		102	160		s
+-60	ff	uk	female		102	168		m
+-40	ff	uk	female		102	178		m
+-20	ff	uk	female		107	160		m
+0	ff	uk	female		107	168		l
+20	ff	uk	female		107	178		l
+40	ff	uk	female		112	160		m
+60	ff	uk	female		112	168		l
+80	ff	uk	female		112	178		l
+100	ff	uk	female		119	160		l
+120	ff	uk	female		119	168		l
+140	ff	uk	female		119	178		xl
+160	ff	uk	female		126	160		l
+180	ff	uk	female		126	168		l
+200	ff	uk	female		126	178		xl
+220	ff	uk	female		134	160		xl
+240	ff	uk	female		134	168		xl
+260	ff	uk	female		134	178		xl
+-20	gap	us	female			159		s,m
+0	gap	us	female			171.5		m,l
+-20	gap	uk	female			159		s,m
+0	gap	uk	female			171.5		m,l
+-240	george	uk	female		91.00	155.00		s
+-220	george	uk	female		91.00	161.50		s
+-200	george	uk	female		91.00	166.50		m
+-180	george	uk	female		91.00	171.50		m
+-160	george	uk	female		91.00	176.50		l
+-140	george	uk	female		101.50	155.00		s
+-120	george	uk	female		101.50	161.50		m
+-100	george	uk	female		101.50	166.50		m
+-80	george	uk	female		101.50	171.50		l
+-60	george	uk	female		101.50	176.50		l
+-40	george	uk	female		114.50	155.00		m
+-20	george	uk	female		114.50	161.50		l
+0	george	uk	female		114.50	166.50		l
+20	george	uk	female		114.50	171.50		l
+40	george	uk	female		114.50	176.50		xl
+60	george	uk	female		129.50	155.00		l
+80	george	uk	female		129.50	161.50		xl
+100	george	uk	female		129.50	166.50		xl
+120	george	uk	female		129.50	171.50		xl
+140	george	uk	female		129.50	176.50		xxl
+160	george	uk	female		144.50	155.00		xxl
+180	george	uk	female		144.50	161.50		xxl
+200	george	uk	female		144.50	166.50		xxl
+220	george	uk	female		144.50	171.50		xxl
+240	george	uk	female		144.50	176.50		xxl
+-60	marksspencer	uk	female		92.71	156.21		s
+-40	marksspencer	uk	female		104.14	156.21		m
+-20	marksspencer	uk	female		92.71	170.18		m
+0	marksspencer	uk	female		104.14	170.18		l
+20	marksspencer	uk	female		92.71	180.34		l
+40	marksspencer	uk	female		115.57	165.10		xl
+-80	topshop	uk	female					s
+-60	topshop	uk	female		90.00	149.50		s
+-40	topshop	uk	female		96.50	149.50		s
+-20	topshop	uk	female		90.00	159.00		m
+0	topshop	uk	female		103.00	149.50		m
+20	topshop	uk	female		96.50	159.00		m
+40	topshop	uk	female		103.00	159.00		m
+60	topshop	uk	female		90.00	171.50		l
+80	topshop	uk	female		96.50	171.50		l
+-84	tu	uk	female	69	89	144.78		8 (extra short)
+-64	tu	uk	female	74	94	156.21		10 (extra short)
+-44	tu	uk	female	79	99	165.10		12 (extra short)
+-24	tu	uk	female	84	104	172.72		14 (extra short)
+-4	tu	uk	female	89	109	144.78		16 (extra short)
+16	tu	uk	female	94	114	156.21		18 (extra short)
+36	tu	uk	female	99	119	165.10		20 (extra short)
+56	tu	uk	female	104	124	172.72		22 (extra short)
+76	tu	uk	female	109	129	144.78		24 (extra short)
+-82	tu	uk	female	69	89	156.21		8 (short)
+-62	tu	uk	female	74	94	165.10		10 (short)
+-42	tu	uk	female	79	99	172.72		12 (short)
+-22	tu	uk	female	84	104	144.78		14 (short)
+-2	tu	uk	female	89	109	156.21		16 (short)
+18	tu	uk	female	94	114	165.10		18 (short)
+38	tu	uk	female	99	119	172.72		20 (short)
+58	tu	uk	female	104	124	144.78		22 (short)
+78	tu	uk	female	109	129	156.21		24 (short)
+-80	tu	uk	female	69	89	165.10		8 (regular)
+-60	tu	uk	female	74	94	172.72		10 (regular)
+-40	tu	uk	female	79	99	144.78		12 (regular)
+-20	tu	uk	female	84	104	156.21		14 (regular)
+0	tu	uk	female	89	109	165.10		16 (regular)
+20	tu	uk	female	94	114	172.72		18 (regular)
+40	tu	uk	female	99	119	144.78		20 (regular)
+60	tu	uk	female	104	124	156.21		22 (regular)
+80	tu	uk	female	109	129	165.10		24 (regular)
+-78	tu	uk	female	69	89	172.72		8 (long)
+-58	tu	uk	female	74	94	144.78		10 (long)
+-38	tu	uk	female	79	99	156.21		12 (long)
+-18	tu	uk	female	84	104	165.10		14 (long)
+2	tu	uk	female	89	109	172.72		16 (long)
+22	tu	uk	female	94	114	144.78		18 (long)
+42	tu	uk	female	99	119	156.21		20 (long)
+62	tu	uk	female	104	124	165.10		22 (long)
+82	tu	uk	female	109	129	172.72		24 (long)
+-260	whitestuff	uk	female	63		150		s
+-240	whitestuff	uk	female	63		164		s
+-220	whitestuff	uk	female	63		165		m
+-200	whitestuff	uk	female	63		176		m
+-180	whitestuff	uk	female	68		150		s
+-160	whitestuff	uk	female	68		164		s
+-140	whitestuff	uk	female	68		165		m
+-120	whitestuff	uk	female	68		176		m
+-100	whitestuff	uk	female	68		177		l
+-80	whitestuff	uk	female	68		183		l
+-60	whitestuff	uk	female	73		150		s
+-40	whitestuff	uk	female	73		164		s
+-20	whitestuff	uk	female	73		165		m
+0	whitestuff	uk	female	73		176		m
+20	whitestuff	uk	female	73		177		l
+40	whitestuff	uk	female	73		183		l
+60	whitestuff	uk	female	78		150		m
+80	whitestuff	uk	female	78		164		m
+100	whitestuff	uk	female	78		165		l
+120	whitestuff	uk	female	78		176		l
+140	whitestuff	uk	female	78		177		l
+160	whitestuff	uk	female	78		183		l
+180	whitestuff	uk	female	83		150		m
+200	whitestuff	uk	female	83		164		m
+220	whitestuff	uk	female	83		165		l
+240	whitestuff	uk	female	83		176		l
+-20	zara	uk	female			165.00		s,m
+0	zara	uk	female			172.50		m,l

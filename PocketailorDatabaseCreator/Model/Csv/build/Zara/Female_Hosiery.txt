@@ -1,5 +1,0 @@
-Size	S/M	M/L
-SizeId	-20	0
-Height	160-170	165-180
-Weight	45.4-64.9	54.4-79.8
-

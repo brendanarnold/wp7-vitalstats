@@ -1,4 +1,0 @@
-SizeLetter	Short	Regular	Long
-SizeId	-2	0	2
-InsideLeg	76	81	86
-

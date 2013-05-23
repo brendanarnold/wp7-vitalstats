@@ -1,6 +1,0 @@
-SizeLetter	S	M	L	XL
-SizeId	-40	-20	0	20
-Chest	97cm	102cm	107cm	112cm
-Neck	39cm	41cm	42cm	43cm
-Waist	76cm	81cm	86cm	91cm
-

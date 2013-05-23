@@ -36,6 +36,14 @@ namespace Pocketailor.Model
         Netherlands = 23,
         Belgium = 24,
         Portugal = 25,
+        Japan = 26,
+        Mexico = 27,
+        China = 28,
+        Korea = 29,
+        Russia = 30,
+        HongKong = 31,
+        Isreal = 32,
+        Brazil = 33,
 
     }
 
@@ -69,6 +77,14 @@ namespace Pocketailor.Model
             { RegionId.Netherlands, "Netherlands" },
             { RegionId.Belgium, "Belgium" },
             { RegionId.Portugal, "Portugal" },
+            { RegionId.Japan, "Japan" },
+            { RegionId.Mexico, "Mexico" },
+            { RegionId.China, "China" },
+            { RegionId.Korea, "Korea" },
+            { RegionId.Russia, "Russia" },
+            { RegionId.HongKong, "Hong Kong" },
+            { RegionId.Isreal, "Isreal" },
+            { RegionId.Brazil, "Brazil" },
         };
 
     }

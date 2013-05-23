@@ -1,0 +1,1 @@
+sizeid	brand	region	gender	size

@@ -1,3 +1,0 @@
-SizeLetter	M	L
-SizeId	-20	0
-Head	55	57

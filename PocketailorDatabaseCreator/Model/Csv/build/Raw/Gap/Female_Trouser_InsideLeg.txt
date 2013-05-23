@@ -1,0 +1,3 @@
+SizeLetter	Petite	Ankle	Regular	Long	Tall
+SizeId	-4	-2	0	2	4
+InsideLeg	73½	74.75	81	86	91.5

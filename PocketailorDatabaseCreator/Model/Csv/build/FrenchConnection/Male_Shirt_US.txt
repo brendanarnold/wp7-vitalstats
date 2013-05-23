@@ -1,6 +1,0 @@
-#Unit:Inches
-SizeLetter	XS	S	M	L	XL
-SizeId	-40	-20	0	20	40
-Chest	34"	38"	40"	40"	42"
-Waist	28"	32"	34"	34"	36"
-Neck	15.25"	16.25"	16.75"	16.75"	17.25"
