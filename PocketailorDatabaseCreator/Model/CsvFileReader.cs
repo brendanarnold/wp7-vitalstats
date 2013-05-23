@@ -37,30 +37,29 @@ namespace PocketailorDatabaseCreator.Model
                 // We make the assumption that data for a particular brand, gender, region, conversion are contiguous, 
                 // so when any one of these change, we change the object
                 CsvLine csvLine = new CsvLine();
+                csvLine.Conversion = conversionId;
                 for (int i = 0; i < els.Count; i++)
                 {
-                    switch (headers[i])
+                    els[i] = els[i].Trim();
+                    switch (headers[i].ToLower())
                     {
-                        case "Conversion":
-                            csvLine.Conversion = (ConversionId)Enum.Parse(typeof(ConversionId), els[i], true);
-                            continue;
-                        case "Brand":
+                        //case "conversion":
+                        //    csvLine.Conversion = (ConversionId)Enum.Parse(typeof(ConversionId), els[i], true);
+                        //    continue;
+                        case "brand":
                             csvLine.Brand = (BrandId)Enum.Parse(typeof(BrandId), els[i], true);
                             continue;
-                        case "Region":
+                        case "region":
                             csvLine.Region = (RegionId)Enum.Parse(typeof(RegionId), els[i], true);
                             continue;
-                        case "Gender":
+                        case "gender":
                             csvLine.Gender = (GenderId)Enum.Parse(typeof(GenderId), els[i], true);
                             continue;
-                        case "GeneralSize":
-                            csvLine.GeneralSize = els[i];
-                            continue;
-                        case "SizeId":
+                        case "sizeid":
                             csvLine.SizeId = Int32.Parse(els[i]);
                             continue;
-                        case "RegionalSize":
-                            csvLine.RegionalSize = els[i];
+                        case "size":
+                            csvLine.Size = els[i];
                             continue;
                         // Assume all remaining properties are numbers
                         default:
@@ -111,8 +110,7 @@ namespace PocketailorDatabaseCreator.Model
                         cd.Measurements.Add(mId, new List<double>());
                     cd.Measurements[mId].Add(csvLine.Measurements[mId]);
                 }
-                cd.RegionalSizes.Add(csvLine.RegionalSize);
-                cd.GeneralSizes.Add(csvLine.GeneralSize);
+                cd.Sizes.Add(csvLine.Size);
                 cd.SizeIds.Add(csvLine.SizeId);
 
                 // Write to db is obj count too high

@@ -16,8 +16,7 @@ namespace PocketailorDatabaseCreator.Model
         public BrandId Brand;
         public RegionId Region;
         public ConversionId Conversion;
-        public string RegionalSize;
-        public string GeneralSize;
+        public string Size;
         public int SizeId;
         public GenderId Gender;
         public double GetMeasurementOrNull(MeasurementId id)

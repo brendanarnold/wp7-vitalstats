@@ -86,7 +86,8 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 40	axparis	uk	female	104	129.5		22
 60	axparis	uk	female	110	135.5		24
 80	axparis	uk	female	116	141.5		26
--80	bananarepublic	europe	female	61  64	86  89	84  84	30  32/xs  xs
+-100	bananarepublic	europe	female	61	86	84	30/xs
+-80	bananarepublic	europe	female	64	89	84	32/xs
 -60	bananarepublic	europe	female	66	91	84	34/xs
 -40	bananarepublic	europe	female	69	94	84	36/s
 -20	bananarepublic	europe	female	71	97	84	38/s
@@ -95,7 +96,8 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 40	bananarepublic	europe	female	80	105	84	44/l
 60	bananarepublic	europe	female	84	109	84	46/l
 80	bananarepublic	europe	female	88	113	84	48/xl
--80	bananarepublic	us	female	61  64	86  89	84  84	00  0/xs  xs
+-100	bananarepublic	us	female	61	86	84	00/xs
+-80	bananarepublic	us	female	64	89	84	0/xs
 -60	bananarepublic	us	female	66	91	84	2/xs
 -40	bananarepublic	us	female	69	94	84	4/s
 -20	bananarepublic	us	female	71	97	84	6/s
@@ -104,7 +106,8 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 40	bananarepublic	us	female	80	105	84	12/l
 60	bananarepublic	us	female	84	109	84	14/l
 80	bananarepublic	us	female	88	113	84	16/xl
--80	bananarepublic	uk	female	61  64	86  89	84  84	2   4/xs  xs
+-100	bananarepublic	uk	female	61	86	84	2/xs
+-80	bananarepublic	uk	female	64	89	84	4/xs
 -60	bananarepublic	uk	female	66	91	84	6/xs
 -40	bananarepublic	uk	female	69	94	84	8/s
 -20	bananarepublic	uk	female	71	97	84	10/s

@@ -1,682 +1,682 @@
-sizeid	brand	region	chest	underbust	size
--420	ff	europe	83.82	69.85	70a
--360	ff	europe	86.36	69.85	70b
--340	ff	europe	86.36	74.93	75a
--280	ff	europe	88.90	69.85	70c
--260	ff	europe	88.90	74.93	75b
--240	ff	europe	88.90	80.01	80a
--200	ff	europe	91.44	69.85	70d
--180	ff	europe	91.44	74.93	75c
--160	ff	europe	91.44	80.01	80b
--140	ff	europe	91.44	85.09	85a
--100	ff	europe	93.98	69.85	70dd
--80	ff	europe	93.98	74.93	75d
--60	ff	europe	93.98	80.01	80c
--40	ff	europe	93.98	85.09	85b
-0	ff	europe	96.52	69.85	70e
-20	ff	europe	96.52	74.93	75dd
-40	ff	europe	96.52	80.01	80d
-60	ff	europe	96.52	85.09	85c
-100	ff	europe	99.06	69.85	70f
-120	ff	europe	99.06	74.93	75e
-140	ff	europe	99.06	80.01	80dd
-160	ff	europe	99.06	85.09	85d
-200	ff	europe	101.60	69.85	70g
-220	ff	europe	101.60	74.93	75f
-240	ff	europe	101.60	80.01	80e
-260	ff	europe	101.60	85.09	85dd
-300	ff	europe	104.14	74.93	75g
-320	ff	europe	104.14	80.01	80f
-340	ff	europe	104.14	85.09	85e
-380	ff	europe	106.68	80.01	80g
-400	ff	europe	106.68	85.09	85f
-440	ff	europe	109.22	85.09	85g
--420	ff	australia	83.82	69.85	10a
--360	ff	australia	86.36	69.85	10b
--340	ff	australia	86.36	74.93	12a
--280	ff	australia	88.90	69.85	10c
--260	ff	australia	88.90	74.93	12b
--240	ff	australia	88.90	80.01	14a
--200	ff	australia	91.44	69.85	10d
--180	ff	australia	91.44	74.93	12c
--160	ff	australia	91.44	80.01	14b
--140	ff	australia	91.44	85.09	16a
--100	ff	australia	93.98	69.85	10dd
--80	ff	australia	93.98	74.93	12d
--60	ff	australia	93.98	80.01	14c
--40	ff	australia	93.98	85.09	16b
-0	ff	australia	96.52	69.85	10e
-20	ff	australia	96.52	74.93	12dd
-40	ff	australia	96.52	80.01	14d
-60	ff	australia	96.52	85.09	16c
-100	ff	australia	99.06	69.85	10f
-120	ff	australia	99.06	74.93	12e
-140	ff	australia	99.06	80.01	14dd
-160	ff	australia	99.06	85.09	16d
-200	ff	australia	101.60	69.85	10g
-220	ff	australia	101.60	74.93	12f
-240	ff	australia	101.60	80.01	14e
-260	ff	australia	101.60	85.09	16dd
-300	ff	australia	104.14	74.93	12g
-320	ff	australia	104.14	80.01	14f
-340	ff	australia	104.14	85.09	16e
-380	ff	australia	106.68	80.01	14g
-400	ff	australia	106.68	85.09	16f
-440	ff	australia	109.22	85.09	16g
--420	ff	us	83.82	69.85	32aa
--360	ff	us	86.36	69.85	32a
--340	ff	us	86.36	74.93	34aa
--280	ff	us	88.90	69.85	32b
--260	ff	us	88.90	74.93	34a
--240	ff	us	88.90	80.01	36aa
--200	ff	us	91.44	69.85	32c
--180	ff	us	91.44	74.93	34b
--160	ff	us	91.44	80.01	36a
--140	ff	us	91.44	85.09	38aa
--100	ff	us	93.98	69.85	32d
--80	ff	us	93.98	74.93	34c
--60	ff	us	93.98	80.01	36b
--40	ff	us	93.98	85.09	38a
-0	ff	us	96.52	69.85	32dd
-20	ff	us	96.52	74.93	34d
-40	ff	us	96.52	80.01	36c
-60	ff	us	96.52	85.09	38b
-100	ff	us	99.06	69.85	32e
-120	ff	us	99.06	74.93	34dd
-140	ff	us	99.06	80.01	36d
-160	ff	us	99.06	85.09	38c
-200	ff	us	101.60	69.85	32f
-220	ff	us	101.60	74.93	34e
-240	ff	us	101.60	80.01	36dd
-260	ff	us	101.60	85.09	38d
-300	ff	us	104.14	74.93	34f
-320	ff	us	104.14	80.01	36e
-340	ff	us	104.14	85.09	38dd
-380	ff	us	106.68	80.01	36f
-400	ff	us	106.68	85.09	38e
-440	ff	us	109.22	85.09	38f
--480	ff	uk	81.28	64.77	30a
--460	ff	uk	81.28	69.85	32aa
--440	ff	uk	83.82	64.77	30b
--420	ff	uk	83.82	69.85	32a
--400	ff	uk	83.82	74.93	34aa
--380	ff	uk	86.36	64.77	30c
--360	ff	uk	86.36	69.85	32b
--340	ff	uk	86.36	74.93	34a
--320	ff	uk	86.36	80.01	36aa
--300	ff	uk	88.90	64.77	30d
--280	ff	uk	88.90	69.85	32c
--260	ff	uk	88.90	74.93	34b
--240	ff	uk	88.90	80.01	36a
--220	ff	uk	88.90	85.09	38aa
--200	ff	uk	91.44	69.85	32d
--180	ff	uk	91.44	74.93	34c
--160	ff	uk	91.44	80.01	36b
--140	ff	uk	91.44	85.09	38a
--120	ff	uk	91.44	90.17	40aa
--100	ff	uk	93.98	69.85	32dd
--80	ff	uk	93.98	74.93	34d
--60	ff	uk	93.98	80.01	36c
--40	ff	uk	93.98	85.09	38b
--20	ff	uk	93.98	90.17	40a
-0	ff	uk	96.52	69.85	32e
-20	ff	uk	96.52	74.93	34dd
-40	ff	uk	96.52	80.01	36d
-60	ff	uk	96.52	85.09	38c
-80	ff	uk	96.52	90.17	40b
-100	ff	uk	99.06	69.85	32f
-120	ff	uk	99.06	74.93	34e
-140	ff	uk	99.06	80.01	36dd
-160	ff	uk	99.06	85.09	38d
-180	ff	uk	99.06	90.17	40c
-200	ff	uk	101.60	69.85	32g
-220	ff	uk	101.60	74.93	34f
-240	ff	uk	101.60	80.01	36e
-260	ff	uk	101.60	85.09	38dd
-280	ff	uk	101.60	90.17	40d
-300	ff	uk	104.14	74.93	34g
-320	ff	uk	104.14	80.01	36f
-340	ff	uk	104.14	85.09	38e
-360	ff	uk	104.14	90.17	40dd
-380	ff	uk	106.68	80.01	36g
-400	ff	uk	106.68	85.09	38f
-420	ff	uk	106.68	90.17	40e
-440	ff	uk	109.22	85.09	38g
-460	ff	uk	109.22	90.17	40f
-480	ff	uk	111.76	90.17	40g
--580	george	uk	71.00	55.00	28aa
--560	george	uk	76.00	55.00	30aa
--540	george	uk	81.00	70.00	32aa
--520	george	uk	86.00	75.00	34aa
--500	george	uk	96.00	80.00	36aa
--480	george	uk	73.00	55.00	28a
--460	george	uk	78.00	55.00	30a
--440	george	uk	83.00	70.00	32a
--420	george	uk	88.00	75.00	34a
--400	george	uk	93.00	80.00	36a
--380	george	uk	98.00	85.00	38a
--360	george	uk	103.00	90.00	40a
--340	george	uk	108.00	95.00	42a
--320	george	uk	75.00	55.00	28b
--300	george	uk	80.00	55.00	30b
--280	george	uk	85.00	70.00	32b
--260	george	uk	90.00	75.00	34b
--240	george	uk	95.00	80.00	36b
--220	george	uk	100.00	85.00	38b
--200	george	uk	105.00	90.00	40b
--180	george	uk	110.00	95.00	42b
--160	george	uk	87.00	70.00	32c
--140	george	uk	92.00	75.00	34c
--120	george	uk	97.00	80.00	36c
--100	george	uk	102.00	85.00	38c
--80	george	uk	107.00	90.00	40c
--60	george	uk	112.00	95.00	42c
--40	george	uk	89.00	70.00	32d
--20	george	uk	94.00	75.00	34d
-0	george	uk	99.00	80.00	36d
-20	george	uk	104.00	85.00	38d
-40	george	uk	109.00	90.00	40d
-60	george	uk	114.00	95.00	42d
-80	george	uk	91.00	70.00	32dd
-100	george	uk	96.00	75.00	34dd
-120	george	uk	101.00	80.00	36dd
-140	george	uk	106.00	85.00	38dd
-160	george	uk	111.00	90.00	40dd
-180	george	uk	116.00	95.00	42dd
-200	george	uk	93.00	70.00	32e
-220	george	uk	98.00	75.00	34e
-240	george	uk	103.00	80.00	36e
-260	george	uk	108.00	85.00	38e
-280	george	uk	113.00	90.00	40e
-300	george	uk	118.00	95.00	42e
-320	george	uk	95.00	70.00	32f
-340	george	uk	100.00	75.00	34f
-360	george	uk	105.00	80.00	36f
-380	george	uk	110.00	85.00	38f
-400	george	uk	115.00	90.00	40f
-420	george	uk	120.00	95.00	42f
-460	george	uk	97.00	70.00	32g
-480	george	uk	102.00	75.00	34g
-500	george	uk	107.00	80.00	36g
-520	george	uk	112.00	85.00	38g
-540	george	uk	117.00	90.00	40g
-560	george	uk	160.50	95.00	42g
--660	linea	uk	76.00	65.00	30aa
--640	linea	uk	78.00	65.00	30a
--620	linea	uk	80.00	65.00	30b
--600	linea	uk	82.00	65.00	30c
--580	linea	uk	84.00	65.00	30d
--560	linea	uk	86.00	65.00	30d
--540	linea	uk	88.00	65.00	30e
--520	linea	uk	90.00	65.00	30f
--500	linea	uk	92.00	65.00	30ff
--480	linea	uk	94.00	65.00	30g
--460	linea	uk	96.00	65.00	30gg
--440	linea	uk	81.00	70.00	32aa
--420	linea	uk	83.00	70.00	32a
--400	linea	uk	85.00	70.00	32b
--380	linea	uk	87.00	70.00	32c
--360	linea	uk	89.00	70.00	32d
--340	linea	uk	91.00	70.00	32d
--320	linea	uk	93.00	70.00	32e
--300	linea	uk	95.00	70.00	32f
--280	linea	uk	97.00	70.00	32ff
--260	linea	uk	99.00	70.00	32g
--240	linea	uk	101.00	70.00	32gg
--220	linea	uk	86.00	75.00	34aa
--200	linea	uk	88.00	75.00	34a
--180	linea	uk	90.00	75.00	34b
--160	linea	uk	92.00	75.00	34c
--140	linea	uk	94.00	75.00	34d
--120	linea	uk	96.00	75.00	34d
--100	linea	uk	98.00	75.00	34e
--80	linea	uk	100.00	75.00	34f
--60	linea	uk	102.00	75.00	34ff
--40	linea	uk	104.00	75.00	34g
--20	linea	uk	106.00	75.00	34gg
-0	linea	uk	91.00	80.00	36aa
-20	linea	uk	93.00	80.00	36a
-40	linea	uk	95.00	80.00	36b
-60	linea	uk	97.00	80.00	36c
-80	linea	uk	99.00	80.00	36d
-100	linea	uk	101.00	80.00	36d
-120	linea	uk	103.00	80.00	36e
-140	linea	uk	105.00	80.00	36f
-160	linea	uk	107.00	80.00	36ff
-180	linea	uk	109.00	80.00	36g
-200	linea	uk	111.00	80.00	36gg
-220	linea	uk	96.00	85.00	38aa
-240	linea	uk	98.00	85.00	38a
-260	linea	uk	100.00	85.00	38b
-280	linea	uk	102.00	85.00	38c
-300	linea	uk	104.00	85.00	38d
-320	linea	uk	106.00	85.00	38d
-340	linea	uk	108.00	85.00	38e
-360	linea	uk	110.00	85.00	38f
-380	linea	uk	112.00	85.00	38ff
-400	linea	uk	114.00	85.00	38g
-420	linea	uk	116.00	85.00	38gg
-440	linea	uk	101.00	90.00	40aa
-460	linea	uk	103.00	90.00	40a
-480	linea	uk	105.00	90.00	40b
-500	linea	uk	107.00	90.00	40c
-520	linea	uk	109.00	90.00	40d
-540	linea	uk	111.00	90.00	40d
-560	linea	uk	113.00	90.00	40e
-580	linea	uk	115.00	90.00	40f
-600	linea	uk	117.00	90.00	40ff
-620	linea	uk	119.00	90.00	40g
-640	linea	uk	121.00	90.00	40gg
--660	marksspencer	uk	73.66	59.69	28aa
--640	marksspencer	uk	76.20	59.69	28a
--620	marksspencer	uk	76.20	64.77	30aa
--600	marksspencer	uk	78.74	59.69	28b
--580	marksspencer	uk	78.74	64.77	30a
--560	marksspencer	uk	78.74	69.85	32aa
--540	marksspencer	uk	81.28	64.77	30b
--520	marksspencer	uk	81.28	69.85	32a
--500	marksspencer	uk	81.28	74.93	34aa
--480	marksspencer	uk	83.82	64.77	30c
--460	marksspencer	uk	83.82	69.85	32b
--440	marksspencer	uk	83.82	74.93	34a
--420	marksspencer	uk	83.82	80.01	36aa
--400	marksspencer	uk	86.36	69.85	32c
--380	marksspencer	uk	86.36	74.93	34b
--360	marksspencer	uk	86.36	80.01	36a
--340	marksspencer	uk	86.36	85.09	38aa
--320	marksspencer	uk	88.90	69.85	32d
--300	marksspencer	uk	88.90	74.93	34c
--280	marksspencer	uk	88.90	80.01	36b
--260	marksspencer	uk	88.90	85.09	38a
--240	marksspencer	uk	91.44	69.85	32dd
--220	marksspencer	uk	91.44	74.93	34d
--200	marksspencer	uk	91.44	80.01	36c
--180	marksspencer	uk	91.44	85.09	38b
--160	marksspencer	uk	93.98	69.85	32e
--140	marksspencer	uk	93.98	74.93	34dd
--120	marksspencer	uk	93.98	80.01	36d
--100	marksspencer	uk	93.98	85.09	38c
--80	marksspencer	uk	96.52	69.85	32f
--60	marksspencer	uk	96.52	74.93	34e
--40	marksspencer	uk	96.52	80.01	36dd
--20	marksspencer	uk	96.52	85.09	38d
-0	marksspencer	uk	96.52	69.85	32f
-20	marksspencer	uk	96.52	74.93	34e
-40	marksspencer	uk	96.52	80.01	36dd
-60	marksspencer	uk	96.52	85.09	38d
-80	marksspencer	uk	96.52	90.17	40c
-100	marksspencer	uk	99.06	74.93	34f
-120	marksspencer	uk	99.06	80.01	36e
-140	marksspencer	uk	99.06	85.09	38dd
-160	marksspencer	uk	99.06	90.17	40d
-180	marksspencer	uk	99.06	95.25	42c
-200	marksspencer	uk	101.60	74.93	34g
-220	marksspencer	uk	101.60	80.01	36f
-240	marksspencer	uk	101.60	85.09	38e
-260	marksspencer	uk	101.60	90.17	40dd
-280	marksspencer	uk	101.60	95.25	42d
-300	marksspencer	uk	101.60	100.33	44c
-320	marksspencer	uk	104.14	80.01	36g
-340	marksspencer	uk	104.14	85.09	38f
-360	marksspencer	uk	104.14	90.17	40e
-380	marksspencer	uk	104.14	95.25	42dd
-400	marksspencer	uk	104.14	100.33	44d
-420	marksspencer	uk	104.14	105.41	46c
-440	marksspencer	uk	106.68	85.09	38g
-460	marksspencer	uk	106.68	90.17	40f
-480	marksspencer	uk	106.68	95.25	42e
-500	marksspencer	uk	106.68	100.33	44dd
-520	marksspencer	uk	106.68	105.41	46d
-540	marksspencer	uk	109.22	90.17	40g
-560	marksspencer	uk	109.22	95.25	42f
-580	marksspencer	uk	109.22	100.33	44e
-600	marksspencer	uk	109.22	105.41	46dd
-620	marksspencer	uk	111.76	95.25	42g
-640	marksspencer	uk	111.76	100.33	44f
-660	marksspencer	uk	111.76	105.41	46e
--720	newlook	uk	73.66	59.69	28aa
--700	newlook	uk	76.20	59.69	28a
--680	newlook	uk	76.20	64.77	30aa
--660	newlook	uk	78.74	59.69	28b
--640	newlook	uk	78.74	64.77	30a
--620	newlook	uk	78.74	69.85	32aa
--600	newlook	uk	81.28	64.77	30b
--580	newlook	uk	81.28	69.85	32a
--560	newlook	uk	81.28	74.93	34aa
--540	newlook	uk	83.82	64.77	30c
--520	newlook	uk	83.82	69.85	32b
--500	newlook	uk	83.82	74.93	34a
--480	newlook	uk	83.82	80.01	36aa
--460	newlook	uk	86.36	69.85	32c
--440	newlook	uk	86.36	74.93	34b
--420	newlook	uk	86.36	80.01	36a
--400	newlook	uk	86.36	85.09	38aa
--380	newlook	uk	88.90	69.85	32d
--360	newlook	uk	88.90	74.93	34c
--340	newlook	uk	88.90	80.01	36b
--320	newlook	uk	88.90	85.09	38a
--300	newlook	uk	91.44	69.85	32dd
--280	newlook	uk	91.44	74.93	34d
--260	newlook	uk	91.44	80.01	36c
--240	newlook	uk	91.44	85.09	38b
--220	newlook	uk	93.98	69.85	32e
--200	newlook	uk	93.98	74.93	34dd
--180	newlook	uk	93.98	80.01	36d
--160	newlook	uk	93.98	85.09	38c
--140	newlook	uk	96.52	69.85	32f
--120	newlook	uk	96.52	74.93	34e
--100	newlook	uk	96.52	80.01	36dd
--80	newlook	uk	96.52	85.09	38d
--60	newlook	uk	99.06	74.93	34f
--40	newlook	uk	99.06	80.01	36e
--20	newlook	uk	99.06	85.09	38dd
-0	newlook	uk	96.52	69.85	32f
-20	newlook	uk	96.52	74.93	34e
-40	newlook	uk	96.52	80.01	36dd
-60	newlook	uk	96.52	85.09	38d
-80	newlook	uk	96.52	90.17	40c
-100	newlook	uk	99.06	74.93	34f
-120	newlook	uk	99.06	80.01	36e
-140	newlook	uk	99.06	85.09	38dd
-160	newlook	uk	99.06	90.17	40d
-180	newlook	uk	99.06	95.25	42c
-200	newlook	uk	101.60	74.93	34g
-220	newlook	uk	101.60	80.01	36f
-240	newlook	uk	101.60	85.09	38e
-260	newlook	uk	101.60	90.17	40dd
-280	newlook	uk	101.60	95.25	42d
-300	newlook	uk	101.60	100.33	44c
-320	newlook	uk	104.14	80.01	36g
-340	newlook	uk	104.14	85.09	38f
-360	newlook	uk	104.14	90.17	40e
-380	newlook	uk	104.14	95.25	42dd
-400	newlook	uk	104.14	100.33	44d
-420	newlook	uk	104.14	105.41	46c
-440	newlook	uk	106.68	85.09	38g
-460	newlook	uk	106.68	90.17	40f
-480	newlook	uk	106.68	95.25	42e
-500	newlook	uk	106.68	100.33	44dd
-520	newlook	uk	106.68	105.41	46d
-540	newlook	uk	109.22	90.17	40g
-560	newlook	uk	109.22	95.25	42f
-580	newlook	uk	109.22	100.33	44e
-600	newlook	uk	109.22	105.41	46dd
-620	newlook	uk	111.76	95.25	42g
-640	newlook	uk	111.76	100.33	44f
-660	newlook	uk	111.76	105.41	46e
--360	next	europe	70.00	83.00	70a
--340	next	europe	70.00	85.00	70b
--320	next	europe	70.00	87.00	70c
--300	next	europe	70.00	89.00	70d
--280	next	europe	70.00	91.00	70dd
--260	next	europe	70.00	93.00	70e
--240	next	europe	70.00	95.00	70f
--200	next	europe	70.00	99.00	70g
--180	next	europe	75.00	87.50	75a
--160	next	europe	75.00	90.00	75b
--140	next	europe	75.00	92.00	75c
--120	next	europe	75.00	94.00	75d
--100	next	europe	75.00	97.00	75dd
--80	next	europe	75.00	100.00	75e
--60	next	europe	75.00	102.00	75f
--20	next	europe	75.00	106.00	75g
-0	next	europe	80.00	93.00	80a
-20	next	europe	80.00	95.00	80b
-40	next	europe	80.00	97.00	80c
-60	next	europe	80.00	99.00	80d
-80	next	europe	80.00	101.00	80dd
-100	next	europe	80.00	103.00	80e
-120	next	europe	80.00	105.00	80f
-160	next	europe	80.00	109.00	80g
-180	next	europe	45.50	97.50	85a
-200	next	europe	45.50	99.50	85b
-220	next	europe	45.50	102.00	85c
-240	next	europe	45.50	104.50	85d
-260	next	europe	45.50	107.00	85dd
-280	next	europe	45.50	109.00	85e
-300	next	europe	45.50	111.00	85f
-340	next	europe	45.50	115.00	85g
--360	next	australia	70.00	83.00	10a
--340	next	australia	70.00	85.00	10b
--320	next	australia	70.00	87.00	10c
--300	next	australia	70.00	89.00	10d
--280	next	australia	70.00	91.00	10dd
--260	next	australia	70.00	93.00	10e
--240	next	australia	70.00	95.00	10f
--200	next	australia	70.00	99.00	10g
--180	next	australia	75.00	87.50	12a
--160	next	australia	75.00	90.00	12b
--140	next	australia	75.00	92.00	12c
--120	next	australia	75.00	94.00	12d
--100	next	australia	75.00	97.00	12dd
--80	next	australia	75.00	100.00	12e
--60	next	australia	75.00	102.00	12f
--20	next	australia	75.00	106.00	12g
-0	next	australia	80.00	93.00	14a
-20	next	australia	80.00	95.00	14b
-40	next	australia	80.00	97.00	14c
-60	next	australia	80.00	99.00	14d
-80	next	australia	80.00	101.00	14dd
-100	next	australia	80.00	103.00	14e
-120	next	australia	80.00	105.00	14f
-160	next	australia	80.00	109.00	14g
-180	next	australia	45.50	97.50	16a
-200	next	australia	45.50	99.50	16b
-220	next	australia	45.50	102.00	16c
-240	next	australia	45.50	104.50	16d
-260	next	australia	45.50	107.00	16dd
-280	next	australia	45.50	109.00	16e
-300	next	australia	45.50	111.00	16f
-340	next	australia	45.50	115.00	16g
--360	next	us	70.00	83.00	32aa
--340	next	us	70.00	85.00	32a
--320	next	us	70.00	87.00	32b
--300	next	us	70.00	89.00	32c
--280	next	us	70.00	91.00	32d
--260	next	us	70.00	93.00	32dd
--240	next	us	70.00	95.00	32e
--200	next	us	70.00	99.00	32f
--180	next	us	75.00	87.50	34aa
--160	next	us	75.00	90.00	34a
--140	next	us	75.00	92.00	34b
--120	next	us	75.00	94.00	34c
--100	next	us	75.00	97.00	34d
--80	next	us	75.00	100.00	34dd
--60	next	us	75.00	102.00	34e
--20	next	us	75.00	106.00	34f
-0	next	us	80.00	93.00	36aa
-20	next	us	80.00	95.00	36a
-40	next	us	80.00	97.00	36b
-60	next	us	80.00	99.00	36c
-80	next	us	80.00	101.00	36d
-100	next	us	80.00	103.00	36dd
-120	next	us	80.00	105.00	36e
-160	next	us	80.00	109.00	36f
-180	next	us	45.50	97.50	38aa
-200	next	us	45.50	99.50	38a
-220	next	us	45.50	102.00	38b
-240	next	us	45.50	104.50	38c
-260	next	us	45.50	107.00	38d
-280	next	us	45.50	109.00	38dd
-300	next	us	45.50	111.00	38e
-340	next	us	45.50	115.00	38f
--360	next	uk	70.00	83.00	32a
--340	next	uk	70.00	85.00	32b
--320	next	uk	70.00	87.00	32c
--300	next	uk	70.00	89.00	32d
--280	next	uk	70.00	91.00	32dd
--260	next	uk	70.00	93.00	32e
--240	next	uk	70.00	95.00	32f
--220	next	uk	70.00	97.00	32ff
--200	next	uk	70.00	99.00	32g
--180	next	uk	75.00	87.50	34a
--160	next	uk	75.00	90.00	34b
--140	next	uk	75.00	92.00	34c
--120	next	uk	75.00	94.00	34d
--100	next	uk	75.00	97.00	34dd
--80	next	uk	75.00	100.00	34e
--60	next	uk	75.00	102.00	34f
--40	next	uk	75.00	104.00	34ff
--20	next	uk	75.00	106.00	34g
-0	next	uk	80.00	93.00	36a
-20	next	uk	80.00	95.00	36b
-40	next	uk	80.00	97.00	36c
-60	next	uk	80.00	99.00	36d
-80	next	uk	80.00	101.00	36dd
-100	next	uk	80.00	103.00	36e
-120	next	uk	80.00	105.00	36f
-140	next	uk	80.00	107.00	36ff
-160	next	uk	80.00	109.00	36g
-180	next	uk	45.50	97.50	38a
-200	next	uk	45.50	99.50	38b
-220	next	uk	45.50	102.00	38c
-240	next	uk	45.50	104.50	38d
-260	next	uk	45.50	107.00	38dd
-280	next	uk	45.50	109.00	38e
-300	next	uk	45.50	111.00	38f
-320	next	uk	45.50	113.00	38ff
-340	next	uk	45.50	115.00	38g
--60	rare	uk	78		28b,30a,32aa
--40	rare	uk	83		32b,30c,28d
--20	rare	uk	88		34b,32c,30d
-0	rare	uk	93		36c,34d,32dd
-20	rare	uk	98		38c,36d,34dd
-40	rare	uk	103		40d,38dd,36e
--120	tommyhilfiger	netherlands	83.00	70.00	70a
--100	tommyhilfiger	netherlands	85.00	70.00	70b
--80	tommyhilfiger	netherlands	87.00	70.00	70c
--60	tommyhilfiger	netherlands	88.00	75.00	75a
--40	tommyhilfiger	netherlands	90.00	75.00	75b
--20	tommyhilfiger	netherlands	92.00	75.00	75c
-0	tommyhilfiger	netherlands	93.00	80.00	80a
-20	tommyhilfiger	netherlands	95.00	80.00	80b
-40	tommyhilfiger	netherlands	97.00	80.00	80c
-60	tommyhilfiger	netherlands	98.00	85.00	85a
-80	tommyhilfiger	netherlands	100.00	85.00	85b
-100	tommyhilfiger	netherlands	102.00	85.00	85c
--120	tommyhilfiger	ireland	83.00	70.00	32a
--100	tommyhilfiger	ireland	85.00	70.00	32b
--80	tommyhilfiger	ireland	87.00	70.00	32c
--60	tommyhilfiger	ireland	88.00	75.00	34a
--40	tommyhilfiger	ireland	90.00	75.00	34b
--20	tommyhilfiger	ireland	92.00	75.00	34c
-0	tommyhilfiger	ireland	93.00	80.00	36a
-20	tommyhilfiger	ireland	95.00	80.00	36b
-40	tommyhilfiger	ireland	97.00	80.00	36c
-60	tommyhilfiger	ireland	98.00	85.00	38a
-80	tommyhilfiger	ireland	100.00	85.00	38b
-100	tommyhilfiger	ireland	102.00	85.00	38c
--120	tommyhilfiger	us	83.00	70.00	70a
--100	tommyhilfiger	us	85.00	70.00	70b
--80	tommyhilfiger	us	87.00	70.00	70c
--60	tommyhilfiger	us	88.00	75.00	75a
--40	tommyhilfiger	us	90.00	75.00	75b
--20	tommyhilfiger	us	92.00	75.00	75c
-0	tommyhilfiger	us	93.00	80.00	80a
-20	tommyhilfiger	us	95.00	80.00	80b
-40	tommyhilfiger	us	97.00	80.00	80c
-60	tommyhilfiger	us	98.00	85.00	85a
-80	tommyhilfiger	us	100.00	85.00	85b
-100	tommyhilfiger	us	102.00	85.00	85c
--120	tommyhilfiger	france	83.00	70.00	85a
--100	tommyhilfiger	france	85.00	70.00	85b
--80	tommyhilfiger	france	87.00	70.00	85c
--60	tommyhilfiger	france	88.00	75.00	90a
--40	tommyhilfiger	france	90.00	75.00	90b
--20	tommyhilfiger	france	92.00	75.00	90c
-0	tommyhilfiger	france	93.00	80.00	95a
-20	tommyhilfiger	france	95.00	80.00	95b
-40	tommyhilfiger	france	97.00	80.00	95c
-60	tommyhilfiger	france	98.00	85.00	100a
-80	tommyhilfiger	france	100.00	85.00	100b
-100	tommyhilfiger	france	102.00	85.00	100c
--120	tommyhilfiger	austria	83.00	70.00	70a
--100	tommyhilfiger	austria	85.00	70.00	70b
--80	tommyhilfiger	austria	87.00	70.00	70c
--60	tommyhilfiger	austria	88.00	75.00	75a
--40	tommyhilfiger	austria	90.00	75.00	75b
--20	tommyhilfiger	austria	92.00	75.00	75c
-0	tommyhilfiger	austria	93.00	80.00	80a
-20	tommyhilfiger	austria	95.00	80.00	80b
-40	tommyhilfiger	austria	97.00	80.00	80c
-60	tommyhilfiger	austria	98.00	85.00	85a
-80	tommyhilfiger	austria	100.00	85.00	85b
-100	tommyhilfiger	austria	102.00	85.00	85c
--120	tommyhilfiger	germany	83.00	70.00	70a
--100	tommyhilfiger	germany	85.00	70.00	70b
--80	tommyhilfiger	germany	87.00	70.00	70c
--60	tommyhilfiger	germany	88.00	75.00	75a
--40	tommyhilfiger	germany	90.00	75.00	75b
--20	tommyhilfiger	germany	92.00	75.00	75c
-0	tommyhilfiger	germany	93.00	80.00	80a
-20	tommyhilfiger	germany	95.00	80.00	80b
-40	tommyhilfiger	germany	97.00	80.00	80c
-60	tommyhilfiger	germany	98.00	85.00	85a
-80	tommyhilfiger	germany	100.00	85.00	85b
-100	tommyhilfiger	germany	102.00	85.00	85c
--120	tommyhilfiger	uk	83.00	70.00	32a
--100	tommyhilfiger	uk	85.00	70.00	32b
--80	tommyhilfiger	uk	87.00	70.00	32c
--60	tommyhilfiger	uk	88.00	75.00	34a
--40	tommyhilfiger	uk	90.00	75.00	34b
--20	tommyhilfiger	uk	92.00	75.00	34c
-0	tommyhilfiger	uk	93.00	80.00	36a
-20	tommyhilfiger	uk	95.00	80.00	36b
-40	tommyhilfiger	uk	97.00	80.00	36c
-60	tommyhilfiger	uk	98.00	85.00	38a
-80	tommyhilfiger	uk	100.00	85.00	38b
-100	tommyhilfiger	uk	102.00	85.00	38c
--120	tommyhilfiger	spain	83.00	70.00	70a
--100	tommyhilfiger	spain	85.00	70.00	70b
--80	tommyhilfiger	spain	87.00	70.00	70c
--60	tommyhilfiger	spain	88.00	75.00	75a
--40	tommyhilfiger	spain	90.00	75.00	75b
--20	tommyhilfiger	spain	92.00	75.00	75c
-0	tommyhilfiger	spain	93.00	80.00	80a
-20	tommyhilfiger	spain	95.00	80.00	80b
-40	tommyhilfiger	spain	97.00	80.00	80c
-60	tommyhilfiger	spain	98.00	85.00	85a
-80	tommyhilfiger	spain	100.00	85.00	85b
-100	tommyhilfiger	spain	102.00	85.00	85c
--420	topshop	uk	74.00	64.00	30a
--400	topshop	uk	77.00	64.00	30b
--380	topshop	uk	79.00	64.00	30c
--360	topshop	uk	82.00	64.00	30d
--340	topshop	uk	84.00	64.00	30dd
--320	topshop	uk	87.00	64.00	30e
--300	topshop	uk	89.00	64.00	30f
--280	topshop	uk	79.00	69.00	32a
--260	topshop	uk	82.00	69.00	32b
--240	topshop	uk	84.00	69.00	32c
--220	topshop	uk	87.00	69.00	32d
--200	topshop	uk	89.00	69.00	32dd
--180	topshop	uk	92.00	69.00	32e
--160	topshop	uk	94.00	69.00	32f
--140	topshop	uk	84.00	74.00	34a
--120	topshop	uk	87.00	74.00	34b
--100	topshop	uk	89.00	74.00	34c
--80	topshop	uk	92.00	74.00	34d
--60	topshop	uk	94.00	74.00	34dd
--40	topshop	uk	97.00	74.00	34e
--20	topshop	uk	99.00	74.00	34f
-0	topshop	uk	89.00	79.00	36a
-20	topshop	uk	92.00	79.00	36b
-40	topshop	uk	94.00	79.00	36c
-60	topshop	uk	97.00	79.00	36d
-80	topshop	uk	99.00	79.00	36dd
-100	topshop	uk	102.00	79.00	36e
-120	topshop	uk	104.00	79.00	36f
-140	topshop	uk	94.00	84.00	38a
-160	topshop	uk	97.00	84.00	38b
-180	topshop	uk	99.00	84.00	38c
-200	topshop	uk	102.00	84.00	38d
-220	topshop	uk	104.00	84.00	38dd
-240	topshop	uk	107.00	84.00	38e
-260	topshop	uk	109.00	84.00	38f
-280	topshop	uk	99.00	89.00	40a
-300	topshop	uk	102.00	89.00	40b
-320	topshop	uk	104.00	89.00	40c
-340	topshop	uk	107.00	89.00	40d
-360	topshop	uk	109.00	89.00	40dd
-380	topshop	uk	112.00	89.00	40e
-400	topshop	uk	114.00	89.00	40f
+sizeid	brand	region	gender	chest	underbust	size
+-420	ff	europe	female	83.82	69.85	70a
+-360	ff	europe	female	86.36	69.85	70b
+-340	ff	europe	female	86.36	74.93	75a
+-280	ff	europe	female	88.90	69.85	70c
+-260	ff	europe	female	88.90	74.93	75b
+-240	ff	europe	female	88.90	80.01	80a
+-200	ff	europe	female	91.44	69.85	70d
+-180	ff	europe	female	91.44	74.93	75c
+-160	ff	europe	female	91.44	80.01	80b
+-140	ff	europe	female	91.44	85.09	85a
+-100	ff	europe	female	93.98	69.85	70dd
+-80	ff	europe	female	93.98	74.93	75d
+-60	ff	europe	female	93.98	80.01	80c
+-40	ff	europe	female	93.98	85.09	85b
+0	ff	europe	female	96.52	69.85	70e
+20	ff	europe	female	96.52	74.93	75dd
+40	ff	europe	female	96.52	80.01	80d
+60	ff	europe	female	96.52	85.09	85c
+100	ff	europe	female	99.06	69.85	70f
+120	ff	europe	female	99.06	74.93	75e
+140	ff	europe	female	99.06	80.01	80dd
+160	ff	europe	female	99.06	85.09	85d
+200	ff	europe	female	101.60	69.85	70g
+220	ff	europe	female	101.60	74.93	75f
+240	ff	europe	female	101.60	80.01	80e
+260	ff	europe	female	101.60	85.09	85dd
+300	ff	europe	female	104.14	74.93	75g
+320	ff	europe	female	104.14	80.01	80f
+340	ff	europe	female	104.14	85.09	85e
+380	ff	europe	female	106.68	80.01	80g
+400	ff	europe	female	106.68	85.09	85f
+440	ff	europe	female	109.22	85.09	85g
+-420	ff	australia	female	83.82	69.85	10a
+-360	ff	australia	female	86.36	69.85	10b
+-340	ff	australia	female	86.36	74.93	12a
+-280	ff	australia	female	88.90	69.85	10c
+-260	ff	australia	female	88.90	74.93	12b
+-240	ff	australia	female	88.90	80.01	14a
+-200	ff	australia	female	91.44	69.85	10d
+-180	ff	australia	female	91.44	74.93	12c
+-160	ff	australia	female	91.44	80.01	14b
+-140	ff	australia	female	91.44	85.09	16a
+-100	ff	australia	female	93.98	69.85	10dd
+-80	ff	australia	female	93.98	74.93	12d
+-60	ff	australia	female	93.98	80.01	14c
+-40	ff	australia	female	93.98	85.09	16b
+0	ff	australia	female	96.52	69.85	10e
+20	ff	australia	female	96.52	74.93	12dd
+40	ff	australia	female	96.52	80.01	14d
+60	ff	australia	female	96.52	85.09	16c
+100	ff	australia	female	99.06	69.85	10f
+120	ff	australia	female	99.06	74.93	12e
+140	ff	australia	female	99.06	80.01	14dd
+160	ff	australia	female	99.06	85.09	16d
+200	ff	australia	female	101.60	69.85	10g
+220	ff	australia	female	101.60	74.93	12f
+240	ff	australia	female	101.60	80.01	14e
+260	ff	australia	female	101.60	85.09	16dd
+300	ff	australia	female	104.14	74.93	12g
+320	ff	australia	female	104.14	80.01	14f
+340	ff	australia	female	104.14	85.09	16e
+380	ff	australia	female	106.68	80.01	14g
+400	ff	australia	female	106.68	85.09	16f
+440	ff	australia	female	109.22	85.09	16g
+-420	ff	us	female	83.82	69.85	32aa
+-360	ff	us	female	86.36	69.85	32a
+-340	ff	us	female	86.36	74.93	34aa
+-280	ff	us	female	88.90	69.85	32b
+-260	ff	us	female	88.90	74.93	34a
+-240	ff	us	female	88.90	80.01	36aa
+-200	ff	us	female	91.44	69.85	32c
+-180	ff	us	female	91.44	74.93	34b
+-160	ff	us	female	91.44	80.01	36a
+-140	ff	us	female	91.44	85.09	38aa
+-100	ff	us	female	93.98	69.85	32d
+-80	ff	us	female	93.98	74.93	34c
+-60	ff	us	female	93.98	80.01	36b
+-40	ff	us	female	93.98	85.09	38a
+0	ff	us	female	96.52	69.85	32dd
+20	ff	us	female	96.52	74.93	34d
+40	ff	us	female	96.52	80.01	36c
+60	ff	us	female	96.52	85.09	38b
+100	ff	us	female	99.06	69.85	32e
+120	ff	us	female	99.06	74.93	34dd
+140	ff	us	female	99.06	80.01	36d
+160	ff	us	female	99.06	85.09	38c
+200	ff	us	female	101.60	69.85	32f
+220	ff	us	female	101.60	74.93	34e
+240	ff	us	female	101.60	80.01	36dd
+260	ff	us	female	101.60	85.09	38d
+300	ff	us	female	104.14	74.93	34f
+320	ff	us	female	104.14	80.01	36e
+340	ff	us	female	104.14	85.09	38dd
+380	ff	us	female	106.68	80.01	36f
+400	ff	us	female	106.68	85.09	38e
+440	ff	us	female	109.22	85.09	38f
+-480	ff	uk	female	81.28	64.77	30a
+-460	ff	uk	female	81.28	69.85	32aa
+-440	ff	uk	female	83.82	64.77	30b
+-420	ff	uk	female	83.82	69.85	32a
+-400	ff	uk	female	83.82	74.93	34aa
+-380	ff	uk	female	86.36	64.77	30c
+-360	ff	uk	female	86.36	69.85	32b
+-340	ff	uk	female	86.36	74.93	34a
+-320	ff	uk	female	86.36	80.01	36aa
+-300	ff	uk	female	88.90	64.77	30d
+-280	ff	uk	female	88.90	69.85	32c
+-260	ff	uk	female	88.90	74.93	34b
+-240	ff	uk	female	88.90	80.01	36a
+-220	ff	uk	female	88.90	85.09	38aa
+-200	ff	uk	female	91.44	69.85	32d
+-180	ff	uk	female	91.44	74.93	34c
+-160	ff	uk	female	91.44	80.01	36b
+-140	ff	uk	female	91.44	85.09	38a
+-120	ff	uk	female	91.44	90.17	40aa
+-100	ff	uk	female	93.98	69.85	32dd
+-80	ff	uk	female	93.98	74.93	34d
+-60	ff	uk	female	93.98	80.01	36c
+-40	ff	uk	female	93.98	85.09	38b
+-20	ff	uk	female	93.98	90.17	40a
+0	ff	uk	female	96.52	69.85	32e
+20	ff	uk	female	96.52	74.93	34dd
+40	ff	uk	female	96.52	80.01	36d
+60	ff	uk	female	96.52	85.09	38c
+80	ff	uk	female	96.52	90.17	40b
+100	ff	uk	female	99.06	69.85	32f
+120	ff	uk	female	99.06	74.93	34e
+140	ff	uk	female	99.06	80.01	36dd
+160	ff	uk	female	99.06	85.09	38d
+180	ff	uk	female	99.06	90.17	40c
+200	ff	uk	female	101.60	69.85	32g
+220	ff	uk	female	101.60	74.93	34f
+240	ff	uk	female	101.60	80.01	36e
+260	ff	uk	female	101.60	85.09	38dd
+280	ff	uk	female	101.60	90.17	40d
+300	ff	uk	female	104.14	74.93	34g
+320	ff	uk	female	104.14	80.01	36f
+340	ff	uk	female	104.14	85.09	38e
+360	ff	uk	female	104.14	90.17	40dd
+380	ff	uk	female	106.68	80.01	36g
+400	ff	uk	female	106.68	85.09	38f
+420	ff	uk	female	106.68	90.17	40e
+440	ff	uk	female	109.22	85.09	38g
+460	ff	uk	female	109.22	90.17	40f
+480	ff	uk	female	111.76	90.17	40g
+-580	george	uk	female	71.00	55.00	28aa
+-560	george	uk	female	76.00	55.00	30aa
+-540	george	uk	female	81.00	70.00	32aa
+-520	george	uk	female	86.00	75.00	34aa
+-500	george	uk	female	96.00	80.00	36aa
+-480	george	uk	female	73.00	55.00	28a
+-460	george	uk	female	78.00	55.00	30a
+-440	george	uk	female	83.00	70.00	32a
+-420	george	uk	female	88.00	75.00	34a
+-400	george	uk	female	93.00	80.00	36a
+-380	george	uk	female	98.00	85.00	38a
+-360	george	uk	female	103.00	90.00	40a
+-340	george	uk	female	108.00	95.00	42a
+-320	george	uk	female	75.00	55.00	28b
+-300	george	uk	female	80.00	55.00	30b
+-280	george	uk	female	85.00	70.00	32b
+-260	george	uk	female	90.00	75.00	34b
+-240	george	uk	female	95.00	80.00	36b
+-220	george	uk	female	100.00	85.00	38b
+-200	george	uk	female	105.00	90.00	40b
+-180	george	uk	female	110.00	95.00	42b
+-160	george	uk	female	87.00	70.00	32c
+-140	george	uk	female	92.00	75.00	34c
+-120	george	uk	female	97.00	80.00	36c
+-100	george	uk	female	102.00	85.00	38c
+-80	george	uk	female	107.00	90.00	40c
+-60	george	uk	female	112.00	95.00	42c
+-40	george	uk	female	89.00	70.00	32d
+-20	george	uk	female	94.00	75.00	34d
+0	george	uk	female	99.00	80.00	36d
+20	george	uk	female	104.00	85.00	38d
+40	george	uk	female	109.00	90.00	40d
+60	george	uk	female	114.00	95.00	42d
+80	george	uk	female	91.00	70.00	32dd
+100	george	uk	female	96.00	75.00	34dd
+120	george	uk	female	101.00	80.00	36dd
+140	george	uk	female	106.00	85.00	38dd
+160	george	uk	female	111.00	90.00	40dd
+180	george	uk	female	116.00	95.00	42dd
+200	george	uk	female	93.00	70.00	32e
+220	george	uk	female	98.00	75.00	34e
+240	george	uk	female	103.00	80.00	36e
+260	george	uk	female	108.00	85.00	38e
+280	george	uk	female	113.00	90.00	40e
+300	george	uk	female	118.00	95.00	42e
+320	george	uk	female	95.00	70.00	32f
+340	george	uk	female	100.00	75.00	34f
+360	george	uk	female	105.00	80.00	36f
+380	george	uk	female	110.00	85.00	38f
+400	george	uk	female	115.00	90.00	40f
+420	george	uk	female	120.00	95.00	42f
+460	george	uk	female	97.00	70.00	32g
+480	george	uk	female	102.00	75.00	34g
+500	george	uk	female	107.00	80.00	36g
+520	george	uk	female	112.00	85.00	38g
+540	george	uk	female	117.00	90.00	40g
+560	george	uk	female	160.50	95.00	42g
+-660	linea	uk	female	76.00	65.00	30aa
+-640	linea	uk	female	78.00	65.00	30a
+-620	linea	uk	female	80.00	65.00	30b
+-600	linea	uk	female	82.00	65.00	30c
+-580	linea	uk	female	84.00	65.00	30d
+-560	linea	uk	female	86.00	65.00	30d
+-540	linea	uk	female	88.00	65.00	30e
+-520	linea	uk	female	90.00	65.00	30f
+-500	linea	uk	female	92.00	65.00	30ff
+-480	linea	uk	female	94.00	65.00	30g
+-460	linea	uk	female	96.00	65.00	30gg
+-440	linea	uk	female	81.00	70.00	32aa
+-420	linea	uk	female	83.00	70.00	32a
+-400	linea	uk	female	85.00	70.00	32b
+-380	linea	uk	female	87.00	70.00	32c
+-360	linea	uk	female	89.00	70.00	32d
+-340	linea	uk	female	91.00	70.00	32d
+-320	linea	uk	female	93.00	70.00	32e
+-300	linea	uk	female	95.00	70.00	32f
+-280	linea	uk	female	97.00	70.00	32ff
+-260	linea	uk	female	99.00	70.00	32g
+-240	linea	uk	female	101.00	70.00	32gg
+-220	linea	uk	female	86.00	75.00	34aa
+-200	linea	uk	female	88.00	75.00	34a
+-180	linea	uk	female	90.00	75.00	34b
+-160	linea	uk	female	92.00	75.00	34c
+-140	linea	uk	female	94.00	75.00	34d
+-120	linea	uk	female	96.00	75.00	34d
+-100	linea	uk	female	98.00	75.00	34e
+-80	linea	uk	female	100.00	75.00	34f
+-60	linea	uk	female	102.00	75.00	34ff
+-40	linea	uk	female	104.00	75.00	34g
+-20	linea	uk	female	106.00	75.00	34gg
+0	linea	uk	female	91.00	80.00	36aa
+20	linea	uk	female	93.00	80.00	36a
+40	linea	uk	female	95.00	80.00	36b
+60	linea	uk	female	97.00	80.00	36c
+80	linea	uk	female	99.00	80.00	36d
+100	linea	uk	female	101.00	80.00	36d
+120	linea	uk	female	103.00	80.00	36e
+140	linea	uk	female	105.00	80.00	36f
+160	linea	uk	female	107.00	80.00	36ff
+180	linea	uk	female	109.00	80.00	36g
+200	linea	uk	female	111.00	80.00	36gg
+220	linea	uk	female	96.00	85.00	38aa
+240	linea	uk	female	98.00	85.00	38a
+260	linea	uk	female	100.00	85.00	38b
+280	linea	uk	female	102.00	85.00	38c
+300	linea	uk	female	104.00	85.00	38d
+320	linea	uk	female	106.00	85.00	38d
+340	linea	uk	female	108.00	85.00	38e
+360	linea	uk	female	110.00	85.00	38f
+380	linea	uk	female	112.00	85.00	38ff
+400	linea	uk	female	114.00	85.00	38g
+420	linea	uk	female	116.00	85.00	38gg
+440	linea	uk	female	101.00	90.00	40aa
+460	linea	uk	female	103.00	90.00	40a
+480	linea	uk	female	105.00	90.00	40b
+500	linea	uk	female	107.00	90.00	40c
+520	linea	uk	female	109.00	90.00	40d
+540	linea	uk	female	111.00	90.00	40d
+560	linea	uk	female	113.00	90.00	40e
+580	linea	uk	female	115.00	90.00	40f
+600	linea	uk	female	117.00	90.00	40ff
+620	linea	uk	female	119.00	90.00	40g
+640	linea	uk	female	121.00	90.00	40gg
+-660	marksspencer	uk	female	73.66	59.69	28aa
+-640	marksspencer	uk	female	76.20	59.69	28a
+-620	marksspencer	uk	female	76.20	64.77	30aa
+-600	marksspencer	uk	female	78.74	59.69	28b
+-580	marksspencer	uk	female	78.74	64.77	30a
+-560	marksspencer	uk	female	78.74	69.85	32aa
+-540	marksspencer	uk	female	81.28	64.77	30b
+-520	marksspencer	uk	female	81.28	69.85	32a
+-500	marksspencer	uk	female	81.28	74.93	34aa
+-480	marksspencer	uk	female	83.82	64.77	30c
+-460	marksspencer	uk	female	83.82	69.85	32b
+-440	marksspencer	uk	female	83.82	74.93	34a
+-420	marksspencer	uk	female	83.82	80.01	36aa
+-400	marksspencer	uk	female	86.36	69.85	32c
+-380	marksspencer	uk	female	86.36	74.93	34b
+-360	marksspencer	uk	female	86.36	80.01	36a
+-340	marksspencer	uk	female	86.36	85.09	38aa
+-320	marksspencer	uk	female	88.90	69.85	32d
+-300	marksspencer	uk	female	88.90	74.93	34c
+-280	marksspencer	uk	female	88.90	80.01	36b
+-260	marksspencer	uk	female	88.90	85.09	38a
+-240	marksspencer	uk	female	91.44	69.85	32dd
+-220	marksspencer	uk	female	91.44	74.93	34d
+-200	marksspencer	uk	female	91.44	80.01	36c
+-180	marksspencer	uk	female	91.44	85.09	38b
+-160	marksspencer	uk	female	93.98	69.85	32e
+-140	marksspencer	uk	female	93.98	74.93	34dd
+-120	marksspencer	uk	female	93.98	80.01	36d
+-100	marksspencer	uk	female	93.98	85.09	38c
+-80	marksspencer	uk	female	96.52	69.85	32f
+-60	marksspencer	uk	female	96.52	74.93	34e
+-40	marksspencer	uk	female	96.52	80.01	36dd
+-20	marksspencer	uk	female	96.52	85.09	38d
+0	marksspencer	uk	female	96.52	69.85	32f
+20	marksspencer	uk	female	96.52	74.93	34e
+40	marksspencer	uk	female	96.52	80.01	36dd
+60	marksspencer	uk	female	96.52	85.09	38d
+80	marksspencer	uk	female	96.52	90.17	40c
+100	marksspencer	uk	female	99.06	74.93	34f
+120	marksspencer	uk	female	99.06	80.01	36e
+140	marksspencer	uk	female	99.06	85.09	38dd
+160	marksspencer	uk	female	99.06	90.17	40d
+180	marksspencer	uk	female	99.06	95.25	42c
+200	marksspencer	uk	female	101.60	74.93	34g
+220	marksspencer	uk	female	101.60	80.01	36f
+240	marksspencer	uk	female	101.60	85.09	38e
+260	marksspencer	uk	female	101.60	90.17	40dd
+280	marksspencer	uk	female	101.60	95.25	42d
+300	marksspencer	uk	female	101.60	100.33	44c
+320	marksspencer	uk	female	104.14	80.01	36g
+340	marksspencer	uk	female	104.14	85.09	38f
+360	marksspencer	uk	female	104.14	90.17	40e
+380	marksspencer	uk	female	104.14	95.25	42dd
+400	marksspencer	uk	female	104.14	100.33	44d
+420	marksspencer	uk	female	104.14	105.41	46c
+440	marksspencer	uk	female	106.68	85.09	38g
+460	marksspencer	uk	female	106.68	90.17	40f
+480	marksspencer	uk	female	106.68	95.25	42e
+500	marksspencer	uk	female	106.68	100.33	44dd
+520	marksspencer	uk	female	106.68	105.41	46d
+540	marksspencer	uk	female	109.22	90.17	40g
+560	marksspencer	uk	female	109.22	95.25	42f
+580	marksspencer	uk	female	109.22	100.33	44e
+600	marksspencer	uk	female	109.22	105.41	46dd
+620	marksspencer	uk	female	111.76	95.25	42g
+640	marksspencer	uk	female	111.76	100.33	44f
+660	marksspencer	uk	female	111.76	105.41	46e
+-720	newlook	uk	female	73.66	59.69	28aa
+-700	newlook	uk	female	76.20	59.69	28a
+-680	newlook	uk	female	76.20	64.77	30aa
+-660	newlook	uk	female	78.74	59.69	28b
+-640	newlook	uk	female	78.74	64.77	30a
+-620	newlook	uk	female	78.74	69.85	32aa
+-600	newlook	uk	female	81.28	64.77	30b
+-580	newlook	uk	female	81.28	69.85	32a
+-560	newlook	uk	female	81.28	74.93	34aa
+-540	newlook	uk	female	83.82	64.77	30c
+-520	newlook	uk	female	83.82	69.85	32b
+-500	newlook	uk	female	83.82	74.93	34a
+-480	newlook	uk	female	83.82	80.01	36aa
+-460	newlook	uk	female	86.36	69.85	32c
+-440	newlook	uk	female	86.36	74.93	34b
+-420	newlook	uk	female	86.36	80.01	36a
+-400	newlook	uk	female	86.36	85.09	38aa
+-380	newlook	uk	female	88.90	69.85	32d
+-360	newlook	uk	female	88.90	74.93	34c
+-340	newlook	uk	female	88.90	80.01	36b
+-320	newlook	uk	female	88.90	85.09	38a
+-300	newlook	uk	female	91.44	69.85	32dd
+-280	newlook	uk	female	91.44	74.93	34d
+-260	newlook	uk	female	91.44	80.01	36c
+-240	newlook	uk	female	91.44	85.09	38b
+-220	newlook	uk	female	93.98	69.85	32e
+-200	newlook	uk	female	93.98	74.93	34dd
+-180	newlook	uk	female	93.98	80.01	36d
+-160	newlook	uk	female	93.98	85.09	38c
+-140	newlook	uk	female	96.52	69.85	32f
+-120	newlook	uk	female	96.52	74.93	34e
+-100	newlook	uk	female	96.52	80.01	36dd
+-80	newlook	uk	female	96.52	85.09	38d
+-60	newlook	uk	female	99.06	74.93	34f
+-40	newlook	uk	female	99.06	80.01	36e
+-20	newlook	uk	female	99.06	85.09	38dd
+0	newlook	uk	female	96.52	69.85	32f
+20	newlook	uk	female	96.52	74.93	34e
+40	newlook	uk	female	96.52	80.01	36dd
+60	newlook	uk	female	96.52	85.09	38d
+80	newlook	uk	female	96.52	90.17	40c
+100	newlook	uk	female	99.06	74.93	34f
+120	newlook	uk	female	99.06	80.01	36e
+140	newlook	uk	female	99.06	85.09	38dd
+160	newlook	uk	female	99.06	90.17	40d
+180	newlook	uk	female	99.06	95.25	42c
+200	newlook	uk	female	101.60	74.93	34g
+220	newlook	uk	female	101.60	80.01	36f
+240	newlook	uk	female	101.60	85.09	38e
+260	newlook	uk	female	101.60	90.17	40dd
+280	newlook	uk	female	101.60	95.25	42d
+300	newlook	uk	female	101.60	100.33	44c
+320	newlook	uk	female	104.14	80.01	36g
+340	newlook	uk	female	104.14	85.09	38f
+360	newlook	uk	female	104.14	90.17	40e
+380	newlook	uk	female	104.14	95.25	42dd
+400	newlook	uk	female	104.14	100.33	44d
+420	newlook	uk	female	104.14	105.41	46c
+440	newlook	uk	female	106.68	85.09	38g
+460	newlook	uk	female	106.68	90.17	40f
+480	newlook	uk	female	106.68	95.25	42e
+500	newlook	uk	female	106.68	100.33	44dd
+520	newlook	uk	female	106.68	105.41	46d
+540	newlook	uk	female	109.22	90.17	40g
+560	newlook	uk	female	109.22	95.25	42f
+580	newlook	uk	female	109.22	100.33	44e
+600	newlook	uk	female	109.22	105.41	46dd
+620	newlook	uk	female	111.76	95.25	42g
+640	newlook	uk	female	111.76	100.33	44f
+660	newlook	uk	female	111.76	105.41	46e
+-360	next	europe	female	70.00	83.00	70a
+-340	next	europe	female	70.00	85.00	70b
+-320	next	europe	female	70.00	87.00	70c
+-300	next	europe	female	70.00	89.00	70d
+-280	next	europe	female	70.00	91.00	70dd
+-260	next	europe	female	70.00	93.00	70e
+-240	next	europe	female	70.00	95.00	70f
+-200	next	europe	female	70.00	99.00	70g
+-180	next	europe	female	75.00	87.50	75a
+-160	next	europe	female	75.00	90.00	75b
+-140	next	europe	female	75.00	92.00	75c
+-120	next	europe	female	75.00	94.00	75d
+-100	next	europe	female	75.00	97.00	75dd
+-80	next	europe	female	75.00	100.00	75e
+-60	next	europe	female	75.00	102.00	75f
+-20	next	europe	female	75.00	106.00	75g
+0	next	europe	female	80.00	93.00	80a
+20	next	europe	female	80.00	95.00	80b
+40	next	europe	female	80.00	97.00	80c
+60	next	europe	female	80.00	99.00	80d
+80	next	europe	female	80.00	101.00	80dd
+100	next	europe	female	80.00	103.00	80e
+120	next	europe	female	80.00	105.00	80f
+160	next	europe	female	80.00	109.00	80g
+180	next	europe	female	45.50	97.50	85a
+200	next	europe	female	45.50	99.50	85b
+220	next	europe	female	45.50	102.00	85c
+240	next	europe	female	45.50	104.50	85d
+260	next	europe	female	45.50	107.00	85dd
+280	next	europe	female	45.50	109.00	85e
+300	next	europe	female	45.50	111.00	85f
+340	next	europe	female	45.50	115.00	85g
+-360	next	australia	female	70.00	83.00	10a
+-340	next	australia	female	70.00	85.00	10b
+-320	next	australia	female	70.00	87.00	10c
+-300	next	australia	female	70.00	89.00	10d
+-280	next	australia	female	70.00	91.00	10dd
+-260	next	australia	female	70.00	93.00	10e
+-240	next	australia	female	70.00	95.00	10f
+-200	next	australia	female	70.00	99.00	10g
+-180	next	australia	female	75.00	87.50	12a
+-160	next	australia	female	75.00	90.00	12b
+-140	next	australia	female	75.00	92.00	12c
+-120	next	australia	female	75.00	94.00	12d
+-100	next	australia	female	75.00	97.00	12dd
+-80	next	australia	female	75.00	100.00	12e
+-60	next	australia	female	75.00	102.00	12f
+-20	next	australia	female	75.00	106.00	12g
+0	next	australia	female	80.00	93.00	14a
+20	next	australia	female	80.00	95.00	14b
+40	next	australia	female	80.00	97.00	14c
+60	next	australia	female	80.00	99.00	14d
+80	next	australia	female	80.00	101.00	14dd
+100	next	australia	female	80.00	103.00	14e
+120	next	australia	female	80.00	105.00	14f
+160	next	australia	female	80.00	109.00	14g
+180	next	australia	female	45.50	97.50	16a
+200	next	australia	female	45.50	99.50	16b
+220	next	australia	female	45.50	102.00	16c
+240	next	australia	female	45.50	104.50	16d
+260	next	australia	female	45.50	107.00	16dd
+280	next	australia	female	45.50	109.00	16e
+300	next	australia	female	45.50	111.00	16f
+340	next	australia	female	45.50	115.00	16g
+-360	next	us	female	70.00	83.00	32aa
+-340	next	us	female	70.00	85.00	32a
+-320	next	us	female	70.00	87.00	32b
+-300	next	us	female	70.00	89.00	32c
+-280	next	us	female	70.00	91.00	32d
+-260	next	us	female	70.00	93.00	32dd
+-240	next	us	female	70.00	95.00	32e
+-200	next	us	female	70.00	99.00	32f
+-180	next	us	female	75.00	87.50	34aa
+-160	next	us	female	75.00	90.00	34a
+-140	next	us	female	75.00	92.00	34b
+-120	next	us	female	75.00	94.00	34c
+-100	next	us	female	75.00	97.00	34d
+-80	next	us	female	75.00	100.00	34dd
+-60	next	us	female	75.00	102.00	34e
+-20	next	us	female	75.00	106.00	34f
+0	next	us	female	80.00	93.00	36aa
+20	next	us	female	80.00	95.00	36a
+40	next	us	female	80.00	97.00	36b
+60	next	us	female	80.00	99.00	36c
+80	next	us	female	80.00	101.00	36d
+100	next	us	female	80.00	103.00	36dd
+120	next	us	female	80.00	105.00	36e
+160	next	us	female	80.00	109.00	36f
+180	next	us	female	45.50	97.50	38aa
+200	next	us	female	45.50	99.50	38a
+220	next	us	female	45.50	102.00	38b
+240	next	us	female	45.50	104.50	38c
+260	next	us	female	45.50	107.00	38d
+280	next	us	female	45.50	109.00	38dd
+300	next	us	female	45.50	111.00	38e
+340	next	us	female	45.50	115.00	38f
+-360	next	uk	female	70.00	83.00	32a
+-340	next	uk	female	70.00	85.00	32b
+-320	next	uk	female	70.00	87.00	32c
+-300	next	uk	female	70.00	89.00	32d
+-280	next	uk	female	70.00	91.00	32dd
+-260	next	uk	female	70.00	93.00	32e
+-240	next	uk	female	70.00	95.00	32f
+-220	next	uk	female	70.00	97.00	32ff
+-200	next	uk	female	70.00	99.00	32g
+-180	next	uk	female	75.00	87.50	34a
+-160	next	uk	female	75.00	90.00	34b
+-140	next	uk	female	75.00	92.00	34c
+-120	next	uk	female	75.00	94.00	34d
+-100	next	uk	female	75.00	97.00	34dd
+-80	next	uk	female	75.00	100.00	34e
+-60	next	uk	female	75.00	102.00	34f
+-40	next	uk	female	75.00	104.00	34ff
+-20	next	uk	female	75.00	106.00	34g
+0	next	uk	female	80.00	93.00	36a
+20	next	uk	female	80.00	95.00	36b
+40	next	uk	female	80.00	97.00	36c
+60	next	uk	female	80.00	99.00	36d
+80	next	uk	female	80.00	101.00	36dd
+100	next	uk	female	80.00	103.00	36e
+120	next	uk	female	80.00	105.00	36f
+140	next	uk	female	80.00	107.00	36ff
+160	next	uk	female	80.00	109.00	36g
+180	next	uk	female	45.50	97.50	38a
+200	next	uk	female	45.50	99.50	38b
+220	next	uk	female	45.50	102.00	38c
+240	next	uk	female	45.50	104.50	38d
+260	next	uk	female	45.50	107.00	38dd
+280	next	uk	female	45.50	109.00	38e
+300	next	uk	female	45.50	111.00	38f
+320	next	uk	female	45.50	113.00	38ff
+340	next	uk	female	45.50	115.00	38g
+-60	rare	uk	female	78		28b,30a,32aa
+-40	rare	uk	female	83		32b,30c,28d
+-20	rare	uk	female	88		34b,32c,30d
+0	rare	uk	female	93		36c,34d,32dd
+20	rare	uk	female	98		38c,36d,34dd
+40	rare	uk	female	103		40d,38dd,36e
+-120	tommyhilfiger	netherlands	female	83.00	70.00	70a
+-100	tommyhilfiger	netherlands	female	85.00	70.00	70b
+-80	tommyhilfiger	netherlands	female	87.00	70.00	70c
+-60	tommyhilfiger	netherlands	female	88.00	75.00	75a
+-40	tommyhilfiger	netherlands	female	90.00	75.00	75b
+-20	tommyhilfiger	netherlands	female	92.00	75.00	75c
+0	tommyhilfiger	netherlands	female	93.00	80.00	80a
+20	tommyhilfiger	netherlands	female	95.00	80.00	80b
+40	tommyhilfiger	netherlands	female	97.00	80.00	80c
+60	tommyhilfiger	netherlands	female	98.00	85.00	85a
+80	tommyhilfiger	netherlands	female	100.00	85.00	85b
+100	tommyhilfiger	netherlands	female	102.00	85.00	85c
+-120	tommyhilfiger	ireland	female	83.00	70.00	32a
+-100	tommyhilfiger	ireland	female	85.00	70.00	32b
+-80	tommyhilfiger	ireland	female	87.00	70.00	32c
+-60	tommyhilfiger	ireland	female	88.00	75.00	34a
+-40	tommyhilfiger	ireland	female	90.00	75.00	34b
+-20	tommyhilfiger	ireland	female	92.00	75.00	34c
+0	tommyhilfiger	ireland	female	93.00	80.00	36a
+20	tommyhilfiger	ireland	female	95.00	80.00	36b
+40	tommyhilfiger	ireland	female	97.00	80.00	36c
+60	tommyhilfiger	ireland	female	98.00	85.00	38a
+80	tommyhilfiger	ireland	female	100.00	85.00	38b
+100	tommyhilfiger	ireland	female	102.00	85.00	38c
+-120	tommyhilfiger	us	female	83.00	70.00	70a
+-100	tommyhilfiger	us	female	85.00	70.00	70b
+-80	tommyhilfiger	us	female	87.00	70.00	70c
+-60	tommyhilfiger	us	female	88.00	75.00	75a
+-40	tommyhilfiger	us	female	90.00	75.00	75b
+-20	tommyhilfiger	us	female	92.00	75.00	75c
+0	tommyhilfiger	us	female	93.00	80.00	80a
+20	tommyhilfiger	us	female	95.00	80.00	80b
+40	tommyhilfiger	us	female	97.00	80.00	80c
+60	tommyhilfiger	us	female	98.00	85.00	85a
+80	tommyhilfiger	us	female	100.00	85.00	85b
+100	tommyhilfiger	us	female	102.00	85.00	85c
+-120	tommyhilfiger	france	female	83.00	70.00	85a
+-100	tommyhilfiger	france	female	85.00	70.00	85b
+-80	tommyhilfiger	france	female	87.00	70.00	85c
+-60	tommyhilfiger	france	female	88.00	75.00	90a
+-40	tommyhilfiger	france	female	90.00	75.00	90b
+-20	tommyhilfiger	france	female	92.00	75.00	90c
+0	tommyhilfiger	france	female	93.00	80.00	95a
+20	tommyhilfiger	france	female	95.00	80.00	95b
+40	tommyhilfiger	france	female	97.00	80.00	95c
+60	tommyhilfiger	france	female	98.00	85.00	100a
+80	tommyhilfiger	france	female	100.00	85.00	100b
+100	tommyhilfiger	france	female	102.00	85.00	100c
+-120	tommyhilfiger	austria	female	83.00	70.00	70a
+-100	tommyhilfiger	austria	female	85.00	70.00	70b
+-80	tommyhilfiger	austria	female	87.00	70.00	70c
+-60	tommyhilfiger	austria	female	88.00	75.00	75a
+-40	tommyhilfiger	austria	female	90.00	75.00	75b
+-20	tommyhilfiger	austria	female	92.00	75.00	75c
+0	tommyhilfiger	austria	female	93.00	80.00	80a
+20	tommyhilfiger	austria	female	95.00	80.00	80b
+40	tommyhilfiger	austria	female	97.00	80.00	80c
+60	tommyhilfiger	austria	female	98.00	85.00	85a
+80	tommyhilfiger	austria	female	100.00	85.00	85b
+100	tommyhilfiger	austria	female	102.00	85.00	85c
+-120	tommyhilfiger	germany	female	83.00	70.00	70a
+-100	tommyhilfiger	germany	female	85.00	70.00	70b
+-80	tommyhilfiger	germany	female	87.00	70.00	70c
+-60	tommyhilfiger	germany	female	88.00	75.00	75a
+-40	tommyhilfiger	germany	female	90.00	75.00	75b
+-20	tommyhilfiger	germany	female	92.00	75.00	75c
+0	tommyhilfiger	germany	female	93.00	80.00	80a
+20	tommyhilfiger	germany	female	95.00	80.00	80b
+40	tommyhilfiger	germany	female	97.00	80.00	80c
+60	tommyhilfiger	germany	female	98.00	85.00	85a
+80	tommyhilfiger	germany	female	100.00	85.00	85b
+100	tommyhilfiger	germany	female	102.00	85.00	85c
+-120	tommyhilfiger	uk	female	83.00	70.00	32a
+-100	tommyhilfiger	uk	female	85.00	70.00	32b
+-80	tommyhilfiger	uk	female	87.00	70.00	32c
+-60	tommyhilfiger	uk	female	88.00	75.00	34a
+-40	tommyhilfiger	uk	female	90.00	75.00	34b
+-20	tommyhilfiger	uk	female	92.00	75.00	34c
+0	tommyhilfiger	uk	female	93.00	80.00	36a
+20	tommyhilfiger	uk	female	95.00	80.00	36b
+40	tommyhilfiger	uk	female	97.00	80.00	36c
+60	tommyhilfiger	uk	female	98.00	85.00	38a
+80	tommyhilfiger	uk	female	100.00	85.00	38b
+100	tommyhilfiger	uk	female	102.00	85.00	38c
+-120	tommyhilfiger	spain	female	83.00	70.00	70a
+-100	tommyhilfiger	spain	female	85.00	70.00	70b
+-80	tommyhilfiger	spain	female	87.00	70.00	70c
+-60	tommyhilfiger	spain	female	88.00	75.00	75a
+-40	tommyhilfiger	spain	female	90.00	75.00	75b
+-20	tommyhilfiger	spain	female	92.00	75.00	75c
+0	tommyhilfiger	spain	female	93.00	80.00	80a
+20	tommyhilfiger	spain	female	95.00	80.00	80b
+40	tommyhilfiger	spain	female	97.00	80.00	80c
+60	tommyhilfiger	spain	female	98.00	85.00	85a
+80	tommyhilfiger	spain	female	100.00	85.00	85b
+100	tommyhilfiger	spain	female	102.00	85.00	85c
+-420	topshop	uk	female	74.00	64.00	30a
+-400	topshop	uk	female	77.00	64.00	30b
+-380	topshop	uk	female	79.00	64.00	30c
+-360	topshop	uk	female	82.00	64.00	30d
+-340	topshop	uk	female	84.00	64.00	30dd
+-320	topshop	uk	female	87.00	64.00	30e
+-300	topshop	uk	female	89.00	64.00	30f
+-280	topshop	uk	female	79.00	69.00	32a
+-260	topshop	uk	female	82.00	69.00	32b
+-240	topshop	uk	female	84.00	69.00	32c
+-220	topshop	uk	female	87.00	69.00	32d
+-200	topshop	uk	female	89.00	69.00	32dd
+-180	topshop	uk	female	92.00	69.00	32e
+-160	topshop	uk	female	94.00	69.00	32f
+-140	topshop	uk	female	84.00	74.00	34a
+-120	topshop	uk	female	87.00	74.00	34b
+-100	topshop	uk	female	89.00	74.00	34c
+-80	topshop	uk	female	92.00	74.00	34d
+-60	topshop	uk	female	94.00	74.00	34dd
+-40	topshop	uk	female	97.00	74.00	34e
+-20	topshop	uk	female	99.00	74.00	34f
+0	topshop	uk	female	89.00	79.00	36a
+20	topshop	uk	female	92.00	79.00	36b
+40	topshop	uk	female	94.00	79.00	36c
+60	topshop	uk	female	97.00	79.00	36d
+80	topshop	uk	female	99.00	79.00	36dd
+100	topshop	uk	female	102.00	79.00	36e
+120	topshop	uk	female	104.00	79.00	36f
+140	topshop	uk	female	94.00	84.00	38a
+160	topshop	uk	female	97.00	84.00	38b
+180	topshop	uk	female	99.00	84.00	38c
+200	topshop	uk	female	102.00	84.00	38d
+220	topshop	uk	female	104.00	84.00	38dd
+240	topshop	uk	female	107.00	84.00	38e
+260	topshop	uk	female	109.00	84.00	38f
+280	topshop	uk	female	99.00	89.00	40a
+300	topshop	uk	female	102.00	89.00	40b
+320	topshop	uk	female	104.00	89.00	40c
+340	topshop	uk	female	107.00	89.00	40d
+360	topshop	uk	female	109.00	89.00	40dd
+380	topshop	uk	female	112.00	89.00	40e
+400	topshop	uk	female	114.00	89.00	40f

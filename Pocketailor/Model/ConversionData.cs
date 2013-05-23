@@ -76,28 +76,16 @@ namespace Pocketailor.Model
             }
         }
 
-        public List<string> GeneralSizes {
+        public List<string> Sizes {
             get
             {
-                if (this.Data.GeneralSizes == null) this.Data.GeneralSizes = new List<string>();
-                return this.Data.GeneralSizes;
+                if (this.Data.Sizes == null) this.Data.Sizes = new List<string>();
+                return this.Data.Sizes;
             }
             set 
             {
-                this.Data.GeneralSizes = value;
+                this.Data.Sizes = value;
             } 
-        }
-
-        public List<string> RegionalSizes {
-            get
-            {
-                if (this.Data.RegionalSizes == null) this.Data.RegionalSizes = new List<string>();
-                return this.Data.RegionalSizes;
-            }
-            set
-            {
-                this.Data.RegionalSizes = value;
-            }
         }
 
         public List<int> SizeIds
@@ -207,9 +195,7 @@ namespace Pocketailor.Model
                 int i = this.GetAdbsIndAdjustment();
                 if (i < 0) return "all too big";
                 if (i >= this.SizeIds.Count) return "all too small";
-                if (this.GeneralSizes[i] == String.Empty) return String.Format("{0}", this.RegionalSizes[i]);
-                if (this.RegionalSizes[i] == String.Empty) return String.Format("({0})", this.RegionalSizes[i]);
-                return String.Format("{0} ({1})", this.RegionalSizes[i], this.GeneralSizes[i]);
+                return this.Sizes[i];
             }
         }
 
@@ -409,8 +395,7 @@ namespace Pocketailor.Model
     public class JsonifiableDataContainer
     {
         public Dictionary<MeasurementId, List<double>> Measurements { get; set; }
-        public List<string> RegionalSizes { get; set; }
-        public List<string> GeneralSizes { get; set; }
+        public List<string> Sizes { get; set; }
         public List<int> SizeIds { get; set; }
 
     }

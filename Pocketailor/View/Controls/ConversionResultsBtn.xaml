@@ -87,8 +87,12 @@
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
+			<!-- 
+				The Fallback value is quite important since if is loading from fast scolling on e.g. 
+				a LongListSelector then the Fallback value will be displayed
+			-->
 			<TextBlock x:Name="brandNameTextBlock"
-				Text="{Binding Path=BtnBrandName, ElementName=thisConversionResultsBtn, FallbackValue=Some Brand}" 
+				Text="{Binding Path=BtnBrandName, ElementName=thisConversionResultsBtn, FallbackValue=Loading ...}" 
 				Grid.Column="0" FontFamily="Segoe WP"
 				FontSize="34.667" Foreground="{StaticResource PageTxtColor}"/>
 			<StackPanel x:Name="adjustmentSizeContainer" Grid.Column="1" Orientation="Horizontal">
@@ -96,7 +100,7 @@
 					<PlaneProjection/>
 				</StackPanel.Projection>
 				<TextBlock x:Name="clothingSizeTextBlock" 
-					Text="{Binding Path=BtnClothingSize, ElementName=thisConversionResultsBtn, FallbackValue=(XXXXXXXXL)}" 
+					Text="{Binding Path=BtnClothingSize, ElementName=thisConversionResultsBtn, FallbackValue=''}" 
 					Margin="7,0,-2,0" FontSize="34.667" Foreground="{StaticResource SubTitleColor}" 
 					FontFamily="Segoe WP">
 					<TextBlock.Projection>

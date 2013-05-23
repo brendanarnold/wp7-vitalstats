@@ -8,4 +8,4 @@ SuitSize	SizeId	Brand	Region	Gender	Waist	Shoulder	Sleeve	Chest	InsideLeg	Neck	T
 TennisGripSize	SizeId	Brand	Region	Gender	Size
 TrouserSize	SizeId	Brand	Region	Gender	Waist	Hips	InsideLeg	Size
 WetsuitSize	SizeId	Brand	Region	Gender	Height	Chest	Waist	Hips	Weight	Size
-BraSize	SizeId	Brand	Region	Chest	Underbust	Size
+BraSize	SizeId	Brand	Region	Gender	Chest	Underbust	Size

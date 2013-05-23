@@ -582,7 +582,7 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -40	gap	europe	female	87.5		66.5	36/s
 -20	gap	europe	female	90		69.5	38/s
 0	gap	europe	female	92.5		72	40/m
-20	gap	europe	female	95		74¾	42/m
+20	gap	europe	female	95		74.75	42/m
 40	gap	europe	female	99		78.5	44/l
 60	gap	europe	female	102.5		82.5	46/l
 80	gap	europe	female	106.5		87.5	48/xl
@@ -592,7 +592,7 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -40	gap	us	female	87.5		66.5	4/s
 -20	gap	us	female	90		69.5	6/s
 0	gap	us	female	92.5		72	8/m
-20	gap	us	female	95		74¾	10/m
+20	gap	us	female	95		74.75	10/m
 40	gap	us	female	99		78.5	12/l
 60	gap	us	female	102.5		82.5	14/l
 80	gap	us	female	106.5		87.5	16/xl
@@ -602,7 +602,7 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -40	gap	uk	female	87.5		66.5	8/s
 -20	gap	uk	female	90		69.5	10/s
 0	gap	uk	female	92.5		72	12/m
-20	gap	uk	female	95		74¾	14/m
+20	gap	uk	female	95		74.75	14/m
 40	gap	uk	female	99		78.5	16/l
 60	gap	uk	female	102.5		82.5	18/l
 80	gap	uk	female	106.5		87.5	20/xl
