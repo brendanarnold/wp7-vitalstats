@@ -25,12 +25,12 @@ namespace Pocketailor.View
 
         
 
-        private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
-        {
-            this.ToggleEditBlacklist();
-            ApplicationBarMenuItem mi = (ApplicationBarMenuItem)ApplicationBar.MenuItems[0];
-            mi.Text = (App.VM.ShowBlacklistedConversions) ? "hide hidden brands" : "edit hidden brands";
-        }
+        //private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
+        //{
+        //    this.ToggleEditBlacklist();
+        //    ApplicationBarMenuItem mi = (ApplicationBarMenuItem)ApplicationBar.MenuItems[0];
+        //    mi.Text = (App.VM.ShowBlacklistedConversions) ? "hide hidden brands" : "edit hidden brands";
+        //}
 
 
         private void ToggleEditBlacklist()
@@ -40,7 +40,7 @@ namespace Pocketailor.View
                 MessageBoxResult res = MessageBox.Show("Untick the boxes for all the brands that you are not interested in."
                     + Environment.NewLine
                     + Environment.NewLine
-                    + "When done, click the button at the bottom again to hide them",
+                    + "When done, tap the button under the title to hide them",
                     "Edit hidden brands", MessageBoxButton.OK);
                 if (res == MessageBoxResult.OK)
                 {
@@ -56,25 +56,35 @@ namespace Pocketailor.View
             this.ToggleEditBlacklist();
         }
 
-        private void editHiddenBrandsApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        //private void editHiddenBrandsApplicationBarIconButton_Click(object sender, System.EventArgs e)
+        //{
+        //    this.ToggleEditBlacklist();
+        //    ApplicationBarIconButton abBtn = (ApplicationBarIconButton)ApplicationBar.Buttons[0];
+        //    if (App.VM.ShowBlacklistedConversions)
+        //    {
+        //        abBtn.IconUri = new Uri("/Images/AppBar/appbar.save.png", UriKind.Relative);
+        //        abBtn.Text = "save hidden brands";
+        //    }
+        //    else
+        //    {
+        //        abBtn.IconUri = new Uri("/Images/AppBar/appbar.edit.png", UriKind.Relative);
+        //        abBtn.Text = "edit hidden brands";
+        //    }
+        //}
+
+        //private void changeRegionApplicationBarMenuItem_Click(object sender, System.EventArgs e)
+        //{
+        //    NavigationService.Navigate(new Uri("/View/EditRegionPage.xaml", UriKind.Relative));
+        //}
+
+        private void dismissHiddenBranEditBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            this.ToggleEditBlacklist();
-            ApplicationBarIconButton abBtn = (ApplicationBarIconButton)ApplicationBar.Buttons[0];
-            if (App.VM.ShowBlacklistedConversions)
-            {
-                abBtn.IconUri = new Uri("/Images/AppBar/appbar.save.png", UriKind.Relative);
-                abBtn.Text = "save hidden brands";
-            }
-            else
-            {
-                abBtn.IconUri = new Uri("/Images/AppBar/appbar.edit.png", UriKind.Relative);
-                abBtn.Text = "edit hidden brands";
-            }
+        	this.ToggleEditBlacklist();
         }
 
-        private void changeRegionApplicationBarMenuItem_Click(object sender, System.EventArgs e)
+        private void editHiddenBrandsBtn_Tap_1(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	NavigationService.Navigate(new Uri("/View/EditRegionPage.xaml", UriKind.Relative));
+        	this.ToggleEditBlacklist();
         }
 
 

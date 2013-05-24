@@ -102,6 +102,7 @@
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>
 
+	<!--
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
 			<shell:ApplicationBar.MenuItems>
@@ -110,7 +111,7 @@
 		    <shell:ApplicationBarIconButton x:Name="editHiddenBrandsApplicationBarIconButton" IconUri="/Images/AppBar/appbar.edit.png" Text="edit hidden brands" Click="editHiddenBrandsApplicationBarIconButton_Click"></shell:ApplicationBarIconButton>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
-	
+-->
 
 <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Margin="0,6,0,0" Background="{StaticResource PageBGColor}">
@@ -128,7 +129,7 @@
 
 
 			<Image x:Name="bgImage" 
-				Grid.RowSpan="2" 
+				Grid.RowSpan="3" 
 				VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
 			
 			<Grid x:Name="titleBarGrid"  
@@ -155,8 +156,56 @@
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
-				<TextBlock x:Name="regionTextBlock" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,24,0" FontSize="26.667" Text="{Binding SelectedRegionString}"/>
+				<Button x:Name="regionChangeBtn" Content="{Binding SelectedRegionString}" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,24,0" VerticalAlignment="Center">
+					<Button.Resources>
+						<Style x:Key="ButtonStyle1" TargetType="Button">
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Grid>
+											<TextBlock Text="{TemplateBinding Content}" FontFamily="Segoe WP" FontSize="32" />
+										</Grid>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+							<Setter Property="FontSize" Value="26.667"/>
+						</Style>
+					</Button.Resources>
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="Click">
+							<ec:NavigateToPageAction TargetPage="/View/EditRegionPage.xaml"/>
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+					<Button.Style>
+						<StaticResource ResourceKey="ButtonStyle1"/>
+					</Button.Style>
+				</Button>
 			</Grid>
+			<Button x:Name="dismissHiddenBranEditBtn" 
+				Grid.Row="1"
+				Content="Dismiss hidden brands" HorizontalAlignment="Right" Height="50" Width="320" Tap="dismissHiddenBranEditBtn_Tap" VerticalAlignment="Bottom">
+				<Button.Resources>
+					<Style x:Key="ButtonStyle1" TargetType="Button">
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="Button">
+									<Grid x:Name="quitEditHiddenBrandsContainer" Background="{StaticResource TileBGColor}" Visibility="Visible">
+										<TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP" FontSize="24" />
+									</Grid>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+						<Setter Property="FontSize" Value="26.667"/>
+					</Style>
+				</Button.Resources>
+				<Button.Visibility>
+					<Binding Converter="{StaticResource BoolToVisibility}" Path="ShowBlacklistedConversions"/>
+				</Button.Visibility>
+				<Button.Style>
+					<StaticResource ResourceKey="ButtonStyle1"/>
+				</Button.Style>
+			</Button>
+				
 			
 		</Grid>
 
@@ -235,20 +284,12 @@
 							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
 
-						<!--
-						<Controls:AboutButton x:Name="changeRegionBtn" 
+						<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
 							Grid.Row="0"
 							Margin="12,12,12,0"
-							VerticalAlignment="Top" TitleText="Change region"
-							IconImage="/Images/AppBar/appbar.globe.png" >
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Tap">
-									<ec:NavigateToPageAction TargetPage="/View/EditRegionPage.xaml"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
-						</Controls:AboutButton>
-						-->
-
+							VerticalAlignment="Top" TitleText="{Binding AppViewModel.ShowBlacklistedConversions, ConverterParameter=Dismiss hidden brands|Edit hidden brands, Converter={StaticResource BoolToStrings}, Source={StaticResource ViewModelLocator}}"
+							IconImage="/Images/AppBar/appbar.edit.png" Tap="editHiddenBrandsBtn_Tap_1" />
+						
 						<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
 							Grid.Row="1"
 							Margin="12,12,12,12" 
