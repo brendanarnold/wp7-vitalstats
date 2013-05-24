@@ -23,7 +23,13 @@ namespace Pocketailor.View
 
         }
 
-        
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            App.VM.SaveBlacklistedBrands();
+        }
+
 
         //private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
         //{

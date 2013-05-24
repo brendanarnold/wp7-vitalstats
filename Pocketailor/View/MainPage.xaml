@@ -428,7 +428,7 @@
                         <Controls:AboutButton  x:Name="facebookBtn" TitleText="Visit on Facebook" IconImage="/Images/AppBar/appbar.facebook.heart.png" Margin="0,0,0,10" Tap="facebookBtn_Tap" />
                         <Controls:AboutButton  x:Name="feedbackBtn" TitleText="Give feedback" IconImage="/Images/AppBar/appbar.chat.png" Margin="0,0,0,10"  Tap="feedbackBtn_Tap" />
                         <Controls:AboutButton  x:Name="legalBtn" TitleText="Legal and thanks" IconImage="/Images/AppBar/appbar.scale.unbalanced.png" Margin="0,0,0,10" Tap="legalBtn_Tap" />
-                        <Controls:AboutButton  x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/AppBar/appbar.globe.wire.png" Margin="0,0,0,10" Tap="websiteBtn_Tap" />
+                        <Controls:AboutButton  x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/AppBar/appbar.globe.wire.png" Margin="0,0,0,50" Tap="websiteBtn_Tap" />
 
 
 

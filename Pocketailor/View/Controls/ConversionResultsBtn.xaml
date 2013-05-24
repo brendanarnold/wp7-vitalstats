@@ -12,6 +12,7 @@
 	<UserControl.Resources>
 		<View:BoolToNotBool x:Key="BoolToNotBool"/>
 		<View:BoolToOpacity x:Key="BoolToOpacity"/>
+    <View:BoolToVisibility x:Key="BoolToVisibility" />
 		<View:BoolToNotCheckBox x:Key="BoolToNotCheckBox"/>
 		<Storyboard x:Name="AdjustmentAnimation">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)" Storyboard.TargetName="adjustmentSizeContainer" RepeatBehavior="Forever">
@@ -39,7 +40,9 @@
     <Grid x:Name="LayoutRoot"
 			DataContext="{Binding RelativeSource={RelativeSource Self}}">
 			-->
-	<Grid x:Name="LayoutRoot" toolkit:TiltEffect.IsTiltEnabled="False">
+	<Grid x:Name="LayoutRoot" 
+        Visibility="{Binding Path=BtnVisibility, ElementName=thisConversionResultsBtn}"
+        toolkit:TiltEffect.IsTiltEnabled="False">
 
 		<Grid.Resources>
 			<Style x:Key="bigSmallBtnStyle" TargetType="Button">
@@ -76,10 +79,7 @@
 			HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-12,-13,-6,-14"
 			IsChecked="{Binding Path=BtnIsBlacklisted, ElementName=thisConversionResultsBtn, Converter={StaticResource BoolToNotCheckBox}, Mode=TwoWay}" />
 		
-		<!--
-		TODO: The Tag and Content bindings do not actually work - it is only updated because of the 
-		propertychanged event handler
-		-->
+		
 		<Grid x:Name="conversionResultContainerGrid" Tap="conversionGrid_Tap"
 			Grid.Column="1" HorizontalAlignment="Left" 
 			Margin="0,0,0,10" Grid.Row="0" VerticalAlignment="Center">

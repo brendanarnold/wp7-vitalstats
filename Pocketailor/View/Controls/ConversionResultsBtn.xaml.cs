@@ -42,7 +42,7 @@ namespace Pocketailor.View.Controls
         {
             ConversionResultsBtn cBtn = (ConversionResultsBtn)d;
             bool val = (bool)e.NewValue;
-            if (val)
+            if (val == true)
             {
                 cBtn.conversionResultContainerGrid.Opacity = 0.5;
             }
@@ -51,6 +51,7 @@ namespace Pocketailor.View.Controls
                 cBtn.conversionResultContainerGrid.Opacity = 1.0;
             }
             cBtn.NotifyPropertyChanged("BtnIsBlacklisted");
+            cBtn.NotifyPropertyChanged("BtnVisibility");
         }
 
         public bool BtnIsBlacklisted
@@ -62,8 +63,8 @@ namespace Pocketailor.View.Controls
         // ShowBlacklistedPropertyChanged event is fired on instantiation only if the bound property is different to the default value
         // so need to design the button to be in the default value state at instantiation
         public static readonly DependencyProperty BtnShowBlacklistedProperty =
-            DependencyProperty.Register("BtnShowBlacklisted", typeof(bool), typeof(ConversionResultsBtn),
-            new PropertyMetadata(true, new PropertyChangedCallback(BtnShowBlacklistedPropertyChanged)));
+            DependencyProperty.Register("BtnShowBlacklisted", typeof(bool?), typeof(ConversionResultsBtn),
+            new PropertyMetadata(null, new PropertyChangedCallback(BtnShowBlacklistedPropertyChanged)));
 
         private static void BtnShowBlacklistedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -72,25 +73,42 @@ namespace Pocketailor.View.Controls
             if (val)
             {
                 cBtn.notBlacklistedCheckBox.Visibility = Visibility.Visible;
-                cBtn.Visibility = Visibility.Visible;
             }
             else
             {
                 cBtn.notBlacklistedCheckBox.Visibility = Visibility.Collapsed;
-                if ((bool)cBtn.BtnIsBlacklisted)
-                {
-                    cBtn.Visibility = Visibility.Collapsed;
-                }
             }
+            cBtn.NotifyPropertyChanged("BtnVisibility");
         }
 
-        public bool BtnShowBlacklisted
+        public bool? BtnShowBlacklisted
         {
-            get { return (bool)GetValue(BtnShowBlacklistedProperty); }
+            get { return (bool?)GetValue(BtnShowBlacklistedProperty); }
             set { SetValue(BtnShowBlacklistedProperty, value); }
         }
 
 
+        public Visibility BtnVisibility
+        {
+            get
+            {
+                if (this.BtnIsBlacklisted)
+                {
+                    if (this.BtnShowBlacklisted == true)
+                    {
+                        return Visibility.Visible;
+                    }
+                    else
+                    {
+                        return Visibility.Collapsed;
+                    }
+                }
+                else
+                {
+                    return Visibility.Visible;
+                }
+            }
+        }
 
 
         public static readonly DependencyProperty BtnBrandNameProperty =

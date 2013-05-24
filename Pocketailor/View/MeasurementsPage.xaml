@@ -347,7 +347,7 @@
 						</Grid>
 						-->
 
-						<TextBlock TextWrapping="Wrap" Text="unlock a conversion button by tapping and adding measurements" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}" TextAlignment="Center"/>
+						<TextBlock TextWrapping="Wrap" Text="unlock a conversion button by tapping and adding measurements" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}" TextAlignment="Center" Margin="0,0,0,20"/>
 						
 					</StackPanel>			
 				</ScrollViewer>
