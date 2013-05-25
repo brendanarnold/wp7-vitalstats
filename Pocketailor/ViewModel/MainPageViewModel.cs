@@ -16,7 +16,14 @@ namespace Pocketailor.ViewModel
         private ObservableCollection<Profile> _quickProfiles;
         public ObservableCollection<Profile> QuickProfiles
         {
-            get { return this._quickProfiles; }
+            get 
+            {
+                if (this._quickProfiles == null)
+                {
+                    this.LoadQuickProfilesFromDB();
+                }
+                return this._quickProfiles; 
+            }
             set
             {
                 this._quickProfiles = value;
@@ -34,7 +41,7 @@ namespace Pocketailor.ViewModel
         {
             // Load from memory if possible, quicker I imagine ...
             IEnumerable<Profile> profiles;
-            if (this.Profiles.Any())
+            if (this.Profiles != null)
             {
                 profiles = from Profile p in this.Profiles where p.IsQuickProfile == true select p;
             }
@@ -53,7 +60,14 @@ namespace Pocketailor.ViewModel
         private ObservableCollection<Profile> _profiles;
         public ObservableCollection<Profile> Profiles
         {
-            get { return this._profiles; }
+            get 
+            {
+                if (this._profiles == null)
+                {
+                    this.LoadProfilesFromDB();
+                }
+                return this._profiles; 
+            }
             set
             {
                 this._profiles = value;
@@ -114,11 +128,6 @@ namespace Pocketailor.ViewModel
             this.appDB.SubmitChanges();
             profile.NotifyPropertyChanged("Measurements");
         }
-
-        //public void ToggleIsProtected(Profile profile)
-        //{
-        //    profile.IsProtected = !profile.IsProtected; 
-        //}
 
         #endregion
 

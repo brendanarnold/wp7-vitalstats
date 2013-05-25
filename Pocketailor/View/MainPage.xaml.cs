@@ -17,14 +17,14 @@ namespace Pocketailor.View
         public MainPage()
         {
             InitializeComponent();
-            //this.lockedStateGroup.CurrentStateChanged += lockedStateGroup_StateChanged;
+            
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             this.DataContext = App.VM;
-            //this.UpdateUILockState();
+            
             
             // Hack to get QuickProfiles to update when modified off this page
             App.VM.NotifyPropertyChanged("QuickProfiles");
@@ -144,7 +144,7 @@ namespace Pocketailor.View
             Profile p = (sender as MenuItem).DataContext as Profile;
             //if (p.IsProtected && App.VM.IsLocked) return;
             App.VM.SelectedProfile = p;
-            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
         }
 
         //private void secondaryTileContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)

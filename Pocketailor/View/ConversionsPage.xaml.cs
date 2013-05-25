@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Pocketailor.Model;
 
 namespace Pocketailor.View
 {
@@ -16,13 +17,24 @@ namespace Pocketailor.View
         {
             InitializeComponent();
 
-            App.VM.LoadConversionsPageData();
             this.DataContext = App.VM;
-
-            
 
         }
 
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            
+            // Load up the data using a query string in case of tombstoning
+            string profileIdStr, conversionIdStr;
+            NavigationContext.QueryString.TryGetValue("ProfileId", out profileIdStr);
+            int profileId = System.Int32.Parse(profileIdStr);
+            NavigationContext.QueryString.TryGetValue("ConversionId", out conversionIdStr);
+            ConversionId conversionId = (ConversionId)Enum.Parse(typeof(ConversionId), conversionIdStr, true);
+            App.VM.LoadConversionsPageData(profileId, conversionId);
+
+        }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {

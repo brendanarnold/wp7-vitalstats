@@ -104,7 +104,7 @@ namespace Pocketailor.Model
         {
             { BrandId.AbercrombieAndFitch, "Abercrombie & Fitch" },
             { BrandId.AdriannaPapell, "Adrianna Papell" },
-            { BrandId.Aftershock, "Afatershock" },
+            { BrandId.Aftershock, "Aftershock" },
             { BrandId.Alexion, "Alexion" },
             { BrandId.Almari, "Almari" },
             { BrandId.AndreaJoen, "Andrea Joen" },

@@ -68,6 +68,7 @@ namespace Pocketailor
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+
             // Setup settings
             Settings = new SettingsHelpers();
             // Create DB if not there already
@@ -76,20 +77,13 @@ namespace Pocketailor
                 if (!db.DatabaseExists())
                     SetupDatabase.InitialiseDB(db);
             }
-
-
             // Load cache
             Cache = new Cache();
-
             // Load ViewModel
             VM = new AppViewModel(AppConstants.APP_DB_CONNECTION_STRING, AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
-            VM.LoadProfilesFromDB();
-            VM.LoadQuickProfilesFromDB();
-
             // Load and send feedback
             FeedbackAgent = new FeedbackAgent();
             FeedbackAgent.DeliverAdjustmentsTaskAsync();
-
 
         }
 
@@ -97,7 +91,6 @@ namespace Pocketailor
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            ViewState.IsLaunching = true;
 
         }
 
@@ -105,6 +98,7 @@ namespace Pocketailor
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            
         }
 
         // Code to execute when the application is deactivated (sent to background)

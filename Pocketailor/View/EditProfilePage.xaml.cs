@@ -11,17 +11,21 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Pocketailor.Model;
+using Microsoft.Phone.Shell;
 
 namespace Pocketailor
 {
     public partial class EditProfilePage : PhoneApplicationPage
     {
 
+        public EditProfilePageState State;
+
         public string Action;
 
         public EditProfilePage()
         {
             InitializeComponent();
+            this.State = new EditProfilePageState();
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -33,6 +37,13 @@ namespace Pocketailor
             else
                 this.Action = EditProfilePageActions.New;
 
+            if (NavigationContext.QueryString.ContainsKey("ProfileId"))
+            {
+                string profileIdStr = NavigationContext.QueryString["ProfileId"];
+                int profileId = System.Int32.Parse(profileIdStr);
+                if (App.VM.SelectedProfile == null || App.VM.SelectedProfile.Id != profileId)
+                    App.VM.SelectedProfile = (from Profile p in App.VM.Profiles where p.Id == profileId select p).FirstOrDefault();
+            }
             if (this.Action == EditProfilePageActions.Edit)
             {
                 this.titleTextBlock.Text = "edit profile";
@@ -40,99 +51,85 @@ namespace Pocketailor
             else 
             {
                 this.titleTextBlock.Text = "add profile";
-                App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = GenderId.Unspecified, IsProtected = false, IsQuickProfile = false };
+                App.VM.SelectedProfile = new Profile() { Name = String.Empty, Gender = GenderId.Female, IsQuickProfile = false };
             }
-            this.nameTextBox.Text = App.VM.SelectedProfile.Name;
-            //this.isProtectedCheckBox.IsChecked = App.VM.SelectedProfile.IsProtected;
-            this.IsQuickListCheckBox.IsChecked = App.VM.SelectedProfile.IsQuickProfile;
-            this.SetSelectedGender(App.VM.SelectedProfile.Gender);
+
+            if (!e.IsNavigationInitiator && PhoneApplicationService.Current.State.ContainsKey("EditProfilePageState"))
+            {
+                this.State = (EditProfilePageState)PhoneApplicationService.Current.State["EditProfilePageState"];
+                this.LoadFromState();
+            }
+            else
+            {
+                this.LoadFromSelectedProfile();
+            }
                 
         }
 
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            if (!e.IsNavigationInitiator)
+            {
+                this.TakeSnapshotState();
+                if (PhoneApplicationService.Current.State.ContainsKey("EditProfilePageState"))
+                {
+                    PhoneApplicationService.Current.State["EditProfilePageState"] = this.State;
+                }
+                else
+                {
+                    PhoneApplicationService.Current.State.Add("EditProfilePageState", this.State);
+                }
+            }
+        }
+
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+            if (this.IsUnsavedData())
+            {
+                MessageBoxResult m = MessageBox.Show("You have entered some profile data which will be lost if you leave this page. Are you sure you want to leave this page?",
+                "Confirm leave page", MessageBoxButton.OKCancel);
+                if (m == MessageBoxResult.OK)
+                {
+                    this.ResetPage();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        public void TakeSnapshotState()
+        {
+            this.State.Name = this.nameTextBox.Text;
+            this.State.IsQuickProfile = this.IsQuickListCheckBox.IsChecked;
+            this.State.Gender = this.GetSelectedGender();
+        }
+
+        public void LoadFromState()
+        {
+            this.nameTextBox.Text = this.State.Name;
+            this.IsQuickListCheckBox.IsChecked = this.State.IsQuickProfile;
+            this.SetSelectedGender(this.State.Gender);
+        }
+
+        public void LoadFromSelectedProfile()
+        {
+            this.nameTextBox.Text = App.VM.SelectedProfile.Name;
+            this.IsQuickListCheckBox.IsChecked = App.VM.SelectedProfile.IsQuickProfile;
+            this.SetSelectedGender(App.VM.SelectedProfile.Gender);
+        }
+
+
         private void SetSelectedGender(Model.GenderId gender)
         {
-            //if (gender == Model.Gender.Unspecified) this.unspecifiedRadioBtn.IsChecked = true;
             if (gender == Model.GenderId.Female) this.femaleRadioBtn.IsChecked = true;
             if (gender == Model.GenderId.Male) this.maleRadioBtn.IsChecked = true;
         }
-
-
-        private void saveBtn_Click(object sender, System.EventArgs e)
-        {
-            App.VM.SelectedProfile.Name = this.nameTextBox.Text;
-            //App.VM.SelectedProfile.IsProtected = (bool)this.isProtectedCheckBox.IsChecked;
-            App.VM.SelectedProfile.IsQuickProfile = (bool)this.IsQuickListCheckBox.IsChecked;
-            App.VM.SelectedProfile.Gender = this.GetSelectedGender();
-
-            if (this.Action == EditProfilePageActions.New)
-            {
-                App.VM.AddProfile(App.VM.SelectedProfile);
-            }
-            else
-            {
-                App.VM.UpdateProfile(App.VM.SelectedProfile);
-            }
-            this.ClearAddPopUp();
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-        }
-
-        private void cancelAddBtn_Click(object sender, System.EventArgs e)
-        {
-            if (this.DataChanged())
-            {
-                this.ConfirmExitPopUp();
-            }
-            else
-            {
-                if (NavigationService.CanGoBack)
-                {
-                    NavigationService.GoBack();
-                }
-            }
- 
-        }
-
-        private void ConfirmExitPopUp()
-        {
-            MessageBoxResult m = MessageBox.Show("You have entered some profile data which will be lost if you leave this page. Are you sure you want to leave this page?",
-                "Confirm leave page", MessageBoxButton.OKCancel);
-            if (m == MessageBoxResult.OK)
-            {
-                this.ClearAddPopUp();
-                if (NavigationService.CanGoBack)
-                {
-                    NavigationService.GoBack();
-                }
-            }
-        }
-
-        private bool DataChanged()
-        {
-
-            // Returns true if data has been changed
-            if (this.nameTextBox.Text != App.VM.SelectedProfile.Name)
-                return true;
-            //if ((bool)this.isProtectedCheckBox.IsChecked != App.VM.SelectedProfile.IsProtected)
-            //    return true;
-            if (this.GetSelectedGender() != App.VM.SelectedProfile.Gender)
-                return true;
-            if ((bool)this.IsQuickListCheckBox.IsChecked != App.VM.SelectedProfile.IsQuickProfile)
-                return true;
-            return false;
-        }
-
-        private void ClearAddPopUp()
-        {
-            this.nameTextBox.Text = String.Empty;
-            //this.isProtectedCheckBox.IsChecked = false;
-            this.IsQuickListCheckBox.IsChecked = false;
-            this.femaleRadioBtn.IsChecked = true;
-            //this.unspecifiedRadioBtn.IsChecked = true;
-        }
-
 
         private Model.GenderId GetSelectedGender()
         {
@@ -144,6 +141,46 @@ namespace Pocketailor
         }
 
 
+        private void saveBtn_Click(object sender, System.EventArgs e)
+        {
+            this.TakeSnapshotState();
+            App.VM.SelectedProfile.Name = this.State.Name;
+            App.VM.SelectedProfile.IsQuickProfile = (bool)this.State.IsQuickProfile;
+            App.VM.SelectedProfile.Gender = this.State.Gender;
+
+            if (this.Action == EditProfilePageActions.New)
+            {
+                App.VM.AddProfile(App.VM.SelectedProfile);
+            }
+            else
+            {
+                App.VM.UpdateProfile(App.VM.SelectedProfile);
+            }
+            this.ResetPage();
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+        }
+
+
+        
+        private bool IsUnsavedData()
+        {
+            this.TakeSnapshotState();
+            if (this.State.Name != App.VM.SelectedProfile.Name) return true;
+            if (this.State.IsQuickProfile != App.VM.SelectedProfile.IsQuickProfile) return true;
+            if (this.State.Gender != App.VM.SelectedProfile.Gender) return true;
+            return false;
+        }
+
+        private void ResetPage()
+        {
+            this.nameTextBox.Text = String.Empty;
+            this.IsQuickListCheckBox.IsChecked = false;
+            this.femaleRadioBtn.IsChecked = true;
+        }
+
 
 
     }
@@ -152,6 +189,13 @@ namespace Pocketailor
     {
         public const string New = "New";
         public const string Edit = "Edit";
+    }
+
+    public class EditProfilePageState
+    {
+        public string Name;
+        public GenderId Gender;
+        public bool? IsQuickProfile;
     }
 
 

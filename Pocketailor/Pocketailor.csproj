@@ -241,7 +241,6 @@
     <Compile Include="View\MeasurementsPage.xaml.cs">
       <DependentUpon>MeasurementsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewState.cs" />
     <Compile Include="ViewModel\AppViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

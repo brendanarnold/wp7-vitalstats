@@ -32,8 +32,8 @@ namespace Pocketailor.ViewModel
                     App.Settings.Save();
                     this.NotifyPropertyChanged("SelectedRegion");
                     this.NotifyPropertyChanged("SelectedRegionString");
-                    if (this.GroupedConversions != null)
-                        this.LoadConversionsPageData();
+                    //if (this.GroupedConversions != null)
+                    //    this.LoadConversionsPageData();
                 }
             }
         }

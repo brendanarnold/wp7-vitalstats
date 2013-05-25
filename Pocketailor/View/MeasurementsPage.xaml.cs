@@ -109,7 +109,7 @@ namespace Pocketailor.View
         // navigate to the edit profile page
         private void editProfileAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.Edit), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
         }
 
 
@@ -216,7 +216,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.TrouserSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}", 
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -232,7 +233,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.ShirtSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -246,7 +248,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.HatSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -268,7 +271,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.SuitSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -282,7 +286,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.DressSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -296,7 +301,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.BraSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -310,7 +316,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.HosierySize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -324,7 +331,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.ShoeSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -338,7 +346,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.SkiBootSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
@@ -374,7 +383,8 @@ namespace Pocketailor.View
             if (missingMeasurements.Count == 0)
             {
                 App.VM.SelectedConversionType = ConversionId.WetsuitSize;
-                NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {

@@ -83,8 +83,13 @@ namespace Pocketailor.ViewModel
 
 
 
-        public void LoadConversionsPageData()
+        public void LoadConversionsPageData(int profileId, ConversionId conversionId)
         {
+            // Load up the data in case of tombstone situation
+            if (App.VM.SelectedProfile == null || App.VM.SelectedProfile.Id != profileId)
+                App.VM.SelectedProfile = (from Profile p in App.VM.appDB.Profiles where p.Id == profileId select p).FirstOrDefault();
+            if (App.VM.SelectedConversionType != conversionId) 
+                App.VM.SelectedConversionType = conversionId;
             // TODO: If gender not specified, then return Female measurements. Note only perform gener query on tables that have 
             // Gender fields (even after casting) because it still generate SQL to query gender
             GenderId qGender = (this.SelectedProfile.Gender == GenderId.Unspecified) ? GenderId.Female : this.SelectedProfile.Gender; 

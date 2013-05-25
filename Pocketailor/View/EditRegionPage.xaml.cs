@@ -21,7 +21,49 @@ namespace Pocketailor.View
 
         }
 
-        
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            if (!e.IsNavigationInitiator)
+            {
+                RegionId rId = App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault();
+                if (PhoneApplicationService.Current.State.ContainsKey("EditRegionPageSelected"))
+                {
+                    PhoneApplicationService.Current.State["EditRegionPageSelected"] = rId;
+                }
+                else
+                {
+                    PhoneApplicationService.Current.State.Add("EditRegionPageSelected", rId);
+                }
+            }
+
+        }
+
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            if (!e.IsNavigationInitiator)
+            {
+                if (PhoneApplicationService.Current.State.ContainsKey("EditRegionPageSelected"))
+                {
+                    RegionId rId = (RegionId)PhoneApplicationService.Current.State["EditRegionPageSelected"];
+                    PhoneApplicationService.Current.State.Remove("EditRegionPageSelected");
+                    foreach (Pocketailor.ViewModel.AppViewModel.RegionContainer r in App.VM.Regions)
+                    {
+                        r.Selected = (r.Id == rId);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Pocketailor.ViewModel.AppViewModel.RegionContainer r in App.VM.Regions)
+                {
+                    r.Selected = (r.Id == App.VM.SelectedRegion);
+                }
+            }
+        }
+
 
         private void saveApplicationBarIconBtn_Click(object sender, System.EventArgs e)
         {
