@@ -114,14 +114,14 @@
 -->
 
 <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Margin="0,6,0,0" Background="{StaticResource PageBGColor}">
+	<Grid x:Name="LayoutRoot" Margin="0" Background="{StaticResource PageBGColor}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="80"/>
 		</Grid.RowDefinitions>
 
-		<Grid x:Name="headerGrid"  Grid.Row="0" Margin="0" VerticalAlignment="Top">
+		<Grid x:Name="headerGrid"  Grid.Row="0" Margin="0" VerticalAlignment="Top" Background="{StaticResource PageBGColor}">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="2*"/>
 				<RowDefinition Height="1*"/>
@@ -171,6 +171,9 @@
 							<Setter Property="FontSize" Value="26.667"/>
 						</Style>
 					</Button.Resources>
+					<Button.Foreground>
+						<StaticResource ResourceKey="PageTxtColor"/>
+					</Button.Foreground>
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Click">
 							<ec:NavigateToPageAction TargetPage="/View/EditRegionPage.xaml"/>
@@ -198,6 +201,9 @@
 						<Setter Property="FontSize" Value="26.667"/>
 					</Style>
 				</Button.Resources>
+				<Button.Foreground>
+					<StaticResource ResourceKey="PageTxtColor"/>
+				</Button.Foreground>
 				<Button.Visibility>
 					<Binding Converter="{StaticResource BoolToVisibility}" Path="ShowBlacklistedConversions"/>
 				</Button.Visibility>
@@ -215,7 +221,7 @@
 								Grid.Row="1" IsFlatList="False"
                                 d:DataContext="{StaticResource LongListSampleDataInstance}" 
 								ItemsSource="{Binding GroupedConversions}" 
-								DisplayAllGroups="True">
+								DisplayAllGroups="True" Background="Transparent">
 			<toolkit:LongListSelector.Resources>
 				<DataTemplate x:Key="groupHeaderTemplate">
 					<!-- The header for the group e.g. letter -->
