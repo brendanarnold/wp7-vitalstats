@@ -1,6 +1,5 @@
 ﻿using Pocketailor.Model;
 using Pocketailor.Model.Adjustments;
-using Pocketailor.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

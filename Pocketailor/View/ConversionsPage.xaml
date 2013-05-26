@@ -10,9 +10,9 @@
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
-    xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
+    xmlns:adRotator="cle-namespace:AdRotator"
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
 	toolkit:TiltEffect.IsTiltEnabled="True"
@@ -21,6 +21,10 @@
 	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
     shell:SystemTray.IsVisible="True">
 	
+	<!--
+	xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
+	-->
+
 	<toolkit:TransitionService.NavigationInTransition>
     <toolkit:NavigationInTransition>
         <toolkit:NavigationInTransition.Backward>
@@ -425,6 +429,7 @@
 			</TextBlock>
 		</Border>
 		-->
+		<!--
 		<Ads:AdControl x:Name="AdBasic"
 				Grid.Row="2"
 		        FallbackAdProviderName="AdDuplex"
@@ -447,18 +452,39 @@
 				<Smaato:SmaatoAdProvider AdSpace="65777443"
 											Publisher="923869561" />
 				<PubCenter:PubCenterAdProvider Application="1ac16da8-a326-47b2-b652-4ada4d3a1d3b"
-												AdUnit="126598" />
+												AdUnit="126598" />-->
 			<!--InnerActive is not really suitable for the Ad Rotation because it doesn't have any events to react on.-->
 			<!--<InnerActive:InnerActiveAdProvider App="" />-->
+			<!--
 		</Ads:AdControl.AdProviders>
 		<Ads:AdControl.AdProviderStrategy>
 			<Strategy:RemoteAdProviderStrategy xmlns:Strategy="clr-namespace:MC.Phone.Ads.Strategy;assembly=MC.Phone.Ads"
                                         LocalProviderSettingsUri="Ads/AdSettings.xml"
                                         RemoteProviderSettingsUri="http://www.lassiv.com/pocketailor/misc/AdSettings.xml" />
 		</Ads:AdControl.AdProviderStrategy>
-    
-
 </Ads:AdControl>
+		-->
+
+
+    <adRotator:AdRotatorControl x:Name="AdRotatorControl"
+          Grid.Row="2"
+          xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
+          Width="480" Height="80"
+          SettingsUrl="http://www.lassiv.com/pocketailor/misc/PocketailorWPAdConfig.xml"
+          DefaultAdType="PubCenter"
+          DefaultSettingsFileUri="/Pocketailor;component/Ads/RotatorAdSettings.xml"
+          PubCenterAdUnitId="126598"
+          PubCenterAppId="1ac16da8-a326-47b2-b652-4ada4d3a1d3b"
+          AdDuplexAppId="39175"
+          AdMobAdUnitId="a151711df5e2459"
+          MobFoxAppId="d8a881615506a0eaadcc6ddc6a20e2d3"
+          SmaatoPublisherId ="923869561"
+          SmaatoAppId="65777443"
+          SlidingAdDirection="Left"
+          SlidingAdDisplaySeconds="10"
+          SlidingAdHiddenSeconds="0" MobFoxIsTest="True"/>
+
+
 
 	</Grid>
 	

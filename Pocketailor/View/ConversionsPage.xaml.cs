@@ -19,6 +19,15 @@ namespace Pocketailor.View
 
             this.DataContext = App.VM;
 
+            this.Loaded += ConversionsPage_Loaded;
+
+            
+
+        }
+
+        void ConversionsPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.AdRotatorControl.Invalidate();
         }
 
 
