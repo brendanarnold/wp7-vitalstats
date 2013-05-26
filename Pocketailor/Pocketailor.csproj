@@ -310,7 +310,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ads\AdSettings.xml" />
+    <Content Include="Ads\AdSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ads\Ad.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\AppBar\appbar.check.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

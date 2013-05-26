@@ -1,0 +1,17 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Width="480"
+      Height="80"
+      Background="{StaticResource PhoneBackgroundBrush}">
+  <Border BorderBrush="{StaticResource PhoneAccentBrush}"
+          BorderThickness="1">
+    <Grid>
+      <TextBlock Text="Custom Ad"
+                 Foreground="{StaticResource PhoneAccentBrush}" Margin="0"
+                 VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35"/>
+      <HyperlinkButton NavigateUri="http://wpunifiedad.codeplex.com"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch">
+      </HyperlinkButton>
+    </Grid>
+  </Border>
+</Grid>

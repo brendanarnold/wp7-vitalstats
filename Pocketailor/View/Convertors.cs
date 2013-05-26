@@ -122,9 +122,11 @@ namespace Pocketailor.View
                 case ConversionId.DressSize:
                     return new BitmapImage(new Uri("/Images/dress-bg.jpg", UriKind.Relative));
                 case ConversionId.BraSize:
-                    return new BitmapImage(new Uri("/Images/bra-bg.jpg", UriKind.Relative));
+                    //return new BitmapImage(new Uri("/Images/bra-bg.jpg", UriKind.Relative));
+                    return new BitmapImage(new Uri("/Images/default-bg.png", UriKind.Relative));
                 case ConversionId.HosierySize:
-                    return new BitmapImage(new Uri("/Images/hosiery-bg.jpg", UriKind.Relative));
+                    //return new BitmapImage(new Uri("/Images/hosiery-bg.jpg", UriKind.Relative));
+                    return new BitmapImage(new Uri("/Images/default-bg.png", UriKind.Relative));
                 case ConversionId.ShoeSize:
                     return new BitmapImage(new Uri("/Images/shoes-bg.jpg", UriKind.Relative));
                 case ConversionId.SkiBootSize:

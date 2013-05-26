@@ -3,17 +3,17 @@
   <CountryDescriptors>
     <AdCountryDescriptor Country="US, GB" InitialAdProvider="PubCenter">
       <Probability Value="80" AdProvider="PubCenter" />
-      <Probability Value="10" AdProvider="AdDuplex" />
-      <Probability Value="10" AdProvider="Smaato" />
+      <Probability Value="15" AdProvider="AdDuplex" />
+      <Probability Value="15" AdProvider="Smaato" />
       <Probability Value="10" AdProvider="MobFox" />
-      <Probability Value="10" AdProvider="GenericAdProviderForXaml" />
+      <Probability Value="0" AdProvider="GenericAdProviderForXaml" />
     </AdCountryDescriptor>
     <AdCountryDescriptor InitialAdProvider="PubCenter">
-      <Probability Value="20" AdProvider="PubCenter" />
-      <Probability Value="20" AdProvider="AdDuplex" />
-      <Probability Value="20" AdProvider="Smaato" />
-      <Probability Value="20" AdProvider="MobFox" />
-      <Probability Value="20" AdProvider="GenericAdProviderForXaml" />
+      <Probability Value="25" AdProvider="PubCenter" />
+      <Probability Value="25" AdProvider="AdDuplex" />
+      <Probability Value="25" AdProvider="Smaato" />
+      <Probability Value="25" AdProvider="MobFox" />
+      <Probability Value="0" AdProvider="GenericAdProviderForXaml" />
     </AdCountryDescriptor>
   </CountryDescriptors>
 </AdSettings>

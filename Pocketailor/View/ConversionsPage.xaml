@@ -121,7 +121,7 @@
 			<RowDefinition Height="80"/>
 		</Grid.RowDefinitions>
 
-		<Grid x:Name="headerGrid"  Grid.Row="0" Margin="0" VerticalAlignment="Top" Background="{StaticResource PageBGColor}">
+		<Grid x:Name="headerGrid"  Grid.Row="0" Margin="0" VerticalAlignment="Top">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="2*"/>
 				<RowDefinition Height="1*"/>
@@ -150,7 +150,7 @@
 			
 			<Grid x:Name="pageTitleContainerGrid" 
 				Grid.Row="1"
-				Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
+				Background="#8ABE2D" VerticalAlignment="Top" >
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -171,6 +171,9 @@
 							<Setter Property="FontSize" Value="26.667"/>
 						</Style>
 					</Button.Resources>
+					<Button.Projection>
+						<PlaneProjection/>
+					</Button.Projection>
 					<Button.Foreground>
 						<StaticResource ResourceKey="PageTxtColor"/>
 					</Button.Foreground>
@@ -415,15 +418,47 @@
 			</toolkit:LongListSelector.GroupHeaderTemplate>
 		</toolkit:LongListSelector>
 
+		<!--
 		<Border Grid.Row="2"   Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
 			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
 				<Run Text="Advert here"/>
 			</TextBlock>
 		</Border>
-		<!--
-		<Ads:AdControl Grid.Row="2"  Content="AdControl" VerticalAlignment="Bottom"/>
 		-->
+		<Ads:AdControl x:Name="AdBasic"
+				Grid.Row="2"
+		        FallbackAdProviderName="AdDuplex"
+                IsTest="True"
+                xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
+                xmlns:PubCenter="clr-namespace:MC.Phone.Ads.PubCenter;assembly=MC.Phone.Ads.PubCenter"
+                xmlns:Smaato="clr-namespace:MC.Phone.Ads.Smaato;assembly=MC.Phone.Ads.Smaato"
+                xmlns:MobFox="clr-namespace:MC.Phone.Ads.MobFox;assembly=MC.Phone.Ads.MobFox"
+                xmlns:AdMob="clr-namespace:MC.Phone.Ads.AdMob;assembly=MC.Phone.Ads.AdMob"
+                xmlns:Provider="clr-namespace:MC.Phone.Ads.Provider;assembly=MC.Phone.Ads"
+                xmlns:AdDuplex="clr-namespace:MC.Phone.Ads.AdDuplex;assembly=MC.Phone.Ads.AdDuplex">
+			<Ads:AdControl.AdProviders>
+				<Provider:GenericAdProviderForXaml 
+					OfflineContent="Ads/Ad.xaml"
+					XamlUri="http://lassiv.com/pocketailor/Ad.xaml?AppId={0}&amp;Country={1}" />
+				<Provider:NoneAdProvider />
+				<AdDuplex:AdDuplexAdProvider App="39175" />
+				<AdMob:AdMobAdProvider AdUnit="a151711df5e2459" />
+				<MobFox:MobFoxAdProvider Publisher="d8a881615506a0eaadcc6ddc6a20e2d3" />
+				<Smaato:SmaatoAdProvider AdSpace="65777443"
+											Publisher="923869561" />
+				<PubCenter:PubCenterAdProvider Application="1ac16da8-a326-47b2-b652-4ada4d3a1d3b"
+												AdUnit="126598" />
+			<!--InnerActive is not really suitable for the Ad Rotation because it doesn't have any events to react on.-->
+			<!--<InnerActive:InnerActiveAdProvider App="" />-->
+		</Ads:AdControl.AdProviders>
+		<Ads:AdControl.AdProviderStrategy>
+			<Strategy:RemoteAdProviderStrategy xmlns:Strategy="clr-namespace:MC.Phone.Ads.Strategy;assembly=MC.Phone.Ads"
+                                        LocalProviderSettingsUri="Ads/AdSettings.xml"
+                                        RemoteProviderSettingsUri="http://www.lassiv.com/pocketailor/misc/AdSettings.xml" />
+		</Ads:AdControl.AdProviderStrategy>
+    
 
+</Ads:AdControl>
 
 	</Grid>
 	
