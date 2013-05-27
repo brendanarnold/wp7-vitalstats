@@ -4,36 +4,33 @@
     <AdCultureDescriptor CultureName="en-US">
       <Probabilities Probability="16" AdType="Smaato" AppID="65777443" SecondaryID="923869561"/>
       <Probabilities Probability="16" AdType="AdMob" AppID="a151711df5e2459"/>
-      <!--<Probabilities Probability="15" AdType="InnerActive" AppID="DavideCleopadre_ClockAlarmNightLight_WP7" />-->
-      <Probabilities Probability="15" AdType="MobFox" AppID="d8a881615506a0eaadcc6ddc6a20e2d3" IsTest="true"/>
+      <Probabilities Probability="15" AdType="MobFox" AppID="d8a881615506a0eaadcc6ddc6a20e2d3" IsTest="false"/>
       <Probabilities Probability="40" AdType="PubCenter" AppID="1ac16da8-a326-47b2-b652-4ada4d3a1d3b" SecondaryID="126598" />
       <Probabilities Probability="10" AdType="AdDuplex" AppID="39175"/>
-      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/Pocketailor/misc/RemoteAd.xaml"/>
+      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/pocketailor/misc/RemoteAd.xaml" SecondaryId="Pocketailor.LocalAd" />
     </AdCultureDescriptor>
     <AdCultureDescriptor CultureName="en-GB">
-      <Probabilities Probability="20" AdType="Smaato" AppID="65777443" SecondaryID="923869561"/>
-      <!--<Probabilities Probability="10" AdType="InnerActive" AppID="DavideCleopadre_ClockAlarmNightLight_WP7" />-->
-      <Probabilities Probability="10" AdType="MobFox" AppID="d8a881615506a0eaadcc6ddc6a20e2d3" IsTest="true"/>
-      <Probabilities Probability="10" AdType="AdDuplex" AppID="39175"/>
-      <Probabilities Probability="20" AdType="AdMob" AppID="a151711df5e2459"/>
-      <Probabilities Probability="20" AdType="PubCenter" AppID="1ac16da8-a326-47b2-b652-4ada4d3a1d3b" SecondaryID="126598" />
-      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/Pocketailor/misc/RemoteAd.xaml"/>
+      <Probabilities Probability="16" AdType="Smaato" AppID="65777443" SecondaryID="923869561"/>
+      <Probabilities Probability="16" AdType="MobFox" AppID="d8a881615506a0eaadcc6ddc6a20e2d3" IsTest="false"/>
+      <Probabilities Probability="15" AdType="AdDuplex" AppID="39175"/>
+      <Probabilities Probability="40" AdType="AdMob" AppID="a151711df5e2459"/>
+      <Probabilities Probability="10" AdType="PubCenter" AppID="1ac16da8-a326-47b2-b652-4ada4d3a1d3b" SecondaryID="126598" />
+      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/pocketailor/misc/RemoteAd.xaml" SecondaryId="Pocketailor.LocalAd" />
     </AdCultureDescriptor>
     <AdCultureDescriptor CultureName="de-DE">
       <Probabilities Probability="25" AdType="Smaato" AppID="65777443" SecondaryID="923869561"/>
       <Probabilities Probability="25" AdType="PubCenter" AppID="1ac16da8-a326-47b2-b652-4ada4d3a1d3b" SecondaryID="126598" />
       <Probabilities Probability="25" AdType="AdMob" AppID="a151711df5e2459"/>
       <Probabilities Probability="25" AdType="AdDuplex" AppID="39175"/>
-      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/Pocketailor/misc/RemoteAd.xaml"/>
+      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/pocketailor/misc/RemoteAd.xaml" SecondaryId="Pocketailor.LocalAd" />
     </AdCultureDescriptor>
 		<AdCultureDescriptor CultureName="default">
       <Probabilities Probability="20" AdType="Smaato" AppID="65777443" SecondaryID="923869561"/>
-      <!--<Probabilities Probability="10" AdType="InnerActive" AppID="DavideCleopadre_ClockAlarmNightLight_WP7" />-->
-      <Probabilities Probability="10" AdType="MobFox" AppID="d8a881615506a0eaadcc6ddc6a20e2d3" IsTest="true"/>
-      <Probabilities Probability="10" AdType="AdDuplex" AppID="39175"/>
+      <Probabilities Probability="20" AdType="MobFox" AppID="d8a881615506a0eaadcc6ddc6a20e2d3" IsTest="false"/>
+      <Probabilities Probability="20" AdType="AdDuplex" AppID="39175"/>
       <Probabilities Probability="20" AdType="AdMob" AppID="a151711df5e2459"/>
       <Probabilities Probability="20" AdType="PubCenter" AppID="1ac16da8-a326-47b2-b652-4ada4d3a1d3b" SecondaryID="126598" />
-      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/Pocketailor/misc/RemoteAd.xaml"/>
+      <Probabilities AdType="DefaultHouseAd" AppID="http://www.lassiv.com/pocketailor/misc/RemoteAd.xaml" SecondaryId="Pocketailor.LocalAd" />
     </AdCultureDescriptor>
 	</CultureDescriptors>
 </AdSettings>

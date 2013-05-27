@@ -1,0 +1,12 @@
+UK	S	M	L	XL
+SizeId	-40	-20	0	20
+US	S	M	L	XL
+Italy	S	M	L	XL
+France	S	M	L	XL
+Japan	S	M	L	XL
+Aus	S	M	L	XL
+Neck	14.5-15	15.5-16	16-16.5	17-17.5
+Chest	36-37	38-40	41-43	44-46
+Sleeve	33-34	34-35	35-36	36-37
+Waist	29-31	32-33	34-36	38
+InsideLeg	30-32	30-34	30-34	30-34

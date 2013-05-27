@@ -141,6 +141,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppConstants.cs" />
+    <Compile Include="Ads\LocalAd.xaml.cs">
+      <DependentUpon>LocalAd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Adjustments\FeedbackAdjustment.cs" />
     <Compile Include="Model\Adjustments\AdjustmentUtils.cs" />
     <Compile Include="Model\Adjustments\FeedbackAgent.cs" />
@@ -232,6 +235,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </DesignTimeOnly>
+    <Page Include="Ads\LocalAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\AboutButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -286,14 +293,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ads\Ad.xaml">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Ads\RotatorAdSettings.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <BlendEmbeddedFont Include="defaultAdSettings.xml" />
     <Content Include="Images\AppBar\appbar.check.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -1,6 +1,6 @@
 UK	M	L
+SizeId	-20	0
 EU	M	L
 US	M	L
 Aus	M	L
-SizeId	-20	0
-Head	55	57
+Head	56	58

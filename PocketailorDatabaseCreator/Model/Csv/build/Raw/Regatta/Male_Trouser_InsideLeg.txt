@@ -1,0 +1,4 @@
+#Unit:Inch
+SizeLetter	Short	Regular	Long
+SizeId	-20	0	20
+InsideLeg	29	31	33

@@ -27,12 +27,14 @@ namespace Pocketailor.View
 
         void ConversionsPage_Loaded(object sender, RoutedEventArgs e)
         {
+            this.AdRotatorControl.DefaultHouseAdBody = "Pocketailor.LocalAd";
             this.AdRotatorControl.Invalidate();
         }
 
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            this.AdRotatorControl.Invalidate();
             base.OnNavigatedTo(e);
             
             // Load up the data using a query string in case of tombstoning
@@ -47,6 +49,7 @@ namespace Pocketailor.View
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            this.AdRotatorControl.Dispose();
             base.OnNavigatedFrom(e);
             App.VM.SaveBlacklistedBrands();
         }
