@@ -13,42 +13,18 @@
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
     xmlns:adRotator="cle-namespace:AdRotator"
+    xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
 	toolkit:TiltEffect.IsTiltEnabled="True"
     mc:Ignorable="d"
-	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
-	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
-    shell:SystemTray.IsVisible="True">
-	
-	<!--
-	xmlns:Ads="clr-namespace:MC.Phone.Ads;assembly=MC.Phone.Ads"
-	-->
-
-	<toolkit:TransitionService.NavigationInTransition>
-    <toolkit:NavigationInTransition>
-        <toolkit:NavigationInTransition.Backward>
-            <toolkit:TurnstileTransition Mode="BackwardIn"/>
-        </toolkit:NavigationInTransition.Backward>
-        <toolkit:NavigationInTransition.Forward>
-            <toolkit:TurnstileTransition Mode="ForwardIn"/>
-        </toolkit:NavigationInTransition.Forward>
-    </toolkit:NavigationInTransition>
-</toolkit:TransitionService.NavigationInTransition>
-<toolkit:TransitionService.NavigationOutTransition>
-    <toolkit:NavigationOutTransition>
-        <toolkit:NavigationOutTransition.Backward>
-            <toolkit:TurnstileTransition Mode="BackwardOut"/>
-        </toolkit:NavigationOutTransition.Backward>
-        <toolkit:NavigationOutTransition.Forward>
-            <toolkit:TurnstileTransition Mode="ForwardOut"/>
-        </toolkit:NavigationOutTransition.Forward>
-    </toolkit:NavigationOutTransition>
-</toolkit:TransitionService.NavigationOutTransition>
+    shell:SystemTray.IsVisible="False">
 
 	
 
 	<phone:PhoneApplicationPage.Resources>
+		<Pocketailor_View:BoolToCollapsed x:Key="BoolToCollapsed"/>
+		<Pocketailor_View:BoolToNotBool x:Key="BoolToNotBool"/>
 		<Pocketailor_View:StringToNextString x:Key="StringToNextString"/>
 		<Pocketailor_View:VisibilityToOpposite x:Key="VisibilityToOpposite"/>
 		<Pocketailor_View:BoolToNotCheckBox x:Key="BoolToNotCheckBox"/>
@@ -57,7 +33,6 @@
 		<Pocketailor_View:SelectedConversionToBGImage x:Key="SelectedConversionToBGImage"/>
 		<Pocketailor_View:SelectedConversionToPageTitleString x:Key="SelectedConversionToPageTitleString"/>
 		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
-		<Pocketailor_View:IsHiddenToVisibility x:Key="IsHiddenToVisibility"/>
 		<Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
     
    
@@ -83,9 +58,62 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+		<Storyboard x:Name="animateLoadingPlaceholderStoryboard">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="textBlock" RepeatBehavior="Forever">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="8"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<ElasticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
 
 	</phone:PhoneApplicationPage.Resources>
-  
+	<i:Interaction.Triggers>
+		<ec:DataTrigger Binding="{Binding IsConversionDataLoading}" Value="true">
+			<eim:ControlStoryboardAction Storyboard="{StaticResource animateLoadingPlaceholderStoryboard}"/>
+		</ec:DataTrigger>
+		<ec:DataTrigger Binding="{Binding IsConversionDataLoading}" Value="false">
+			<eim:ControlStoryboardAction Storyboard="{StaticResource animateLoadingPlaceholderStoryboard}" ControlStoryboardOption="Stop"/>
+		</ec:DataTrigger>
+	</i:Interaction.Triggers>
+
+
+
+	<shell:SystemTray.BackgroundColor>
+		<StaticResource ResourceKey="SystemTrayBGColor"/>
+	</shell:SystemTray.BackgroundColor>
+	<shell:SystemTray.ForegroundColor>
+		<StaticResource ResourceKey="SystemTrayFGColor"/>
+	</shell:SystemTray.ForegroundColor>
+	
+
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+
+	
+
 	<phone:PhoneApplicationPage.Background>
 		<StaticResource ResourceKey="PageBGColor"/>
 	</phone:PhoneApplicationPage.Background>
@@ -106,18 +134,7 @@
 		<Binding Source="{StaticResource SampleDataSource}"/>
 	</d:DataContext>
 
-	<!--
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
-			<shell:ApplicationBar.MenuItems>
-				<shell:ApplicationBarMenuItem x:Name="changeRegionApplicationBarMenuItem" IsEnabled="True" Text="change region" Click="changeRegionApplicationBarMenuItem_Click"/>
-			</shell:ApplicationBar.MenuItems>
-		    <shell:ApplicationBarIconButton x:Name="editHiddenBrandsApplicationBarIconButton" IconUri="/Images/AppBar/appbar.edit.png" Text="edit hidden brands" Click="editHiddenBrandsApplicationBarIconButton_Click"></shell:ApplicationBarIconButton>
-		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
--->
-
-<!--LayoutRoot is the root grid where all page content is placed-->
+	<!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Margin="0" Background="{StaticResource PageBGColor}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -191,98 +208,210 @@
 					</Button.Style>
 				</Button>
 			</Grid>
-			<Button x:Name="dismissHiddenBranEditBtn" 
-				Grid.Row="1"
-				Content="Dismiss hidden brands" HorizontalAlignment="Right" Height="50" Width="320" Tap="dismissHiddenBranEditBtn_Tap" VerticalAlignment="Bottom">
-				<Button.Resources>
-					<Style x:Key="ButtonStyle1" TargetType="Button">
-						<Setter Property="Template">
-							<Setter.Value>
-								<ControlTemplate TargetType="Button">
-									<Grid x:Name="quitEditHiddenBrandsContainer" Background="{StaticResource TileBGColor}" Visibility="Visible">
-										<TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP" FontSize="24" />
-									</Grid>
-								</ControlTemplate>
-							</Setter.Value>
-						</Setter>
-						<Setter Property="FontSize" Value="26.667"/>
-					</Style>
-				</Button.Resources>
-				<Button.Foreground>
-					<StaticResource ResourceKey="PageTxtColor"/>
-				</Button.Foreground>
-				<Button.Visibility>
-					<Binding Converter="{StaticResource BoolToVisibility}" Path="ShowBlacklistedConversions"/>
-				</Button.Visibility>
-				<Button.Style>
-					<StaticResource ResourceKey="ButtonStyle1"/>
-				</Button.Style>
-			</Button>
 				
 			
 		</Grid>
 
-	
+		<Grid x:Name="loadingConversionDataPlaceHolderContainer"
+			Grid.Row="1"
+			Visibility="{Binding IsConversionDataLoading, Converter={StaticResource BoolToVisibility}}">
+			<TextBlock x:Name="textBlock" Grid.Row="1" 
+				FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" 
+				FontSize="{StaticResource HelpTxtFontSizeLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" 
+				>
+				<TextBlock.RenderTransform>
+					<CompositeTransform/>
+				</TextBlock.RenderTransform>Loading...</TextBlock>
+		</Grid>
+		
 		
 		<toolkit:LongListSelector x:Name="conversionsLongListSelector" 
-								Grid.Row="1" IsFlatList="False"
-                                d:DataContext="{StaticResource LongListSampleDataInstance}" 
-								ItemsSource="{Binding GroupedConversions}" 
-								DisplayAllGroups="True" Background="Transparent">
+			Grid.Row="1" IsFlatList="False" 
+			ItemsSource="{Binding GroupedConversions}"
+			GroupViewOpened="conversionsLongListSelector_GroupViewOpened"
+			GroupViewClosing="conversionsLongListSelector_GroupViewClosing"
+			DisplayAllGroups="True" Background="Transparent" BufferSize="1" d:IsHidden="True">
 			<toolkit:LongListSelector.Resources>
+				
 				<DataTemplate x:Key="groupHeaderTemplate">
 					<!-- The header for the group e.g. letter -->
-
-					<Border Background="Transparent" Margin="12,6,0,6" Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Left">
-                                <Border Background="{StaticResource TileBGColor}" 	
-                                        Padding="8,0,0,0" 
-										Width="62" Height="62" 				 
-                                        HorizontalAlignment="Left"
-										>
-                                    <TextBlock Text="{Binding Key}" 
-                                               Foreground="{StaticResource PageTxtColor}" 
-                                               FontSize="48"
-                                               FontFamily="{StaticResource PhoneFontFamilySemiLight}"
-                                               HorizontalAlignment="Left"
-                                               VerticalAlignment="Bottom"/>
-                                </Border>
-                            </Border>
-					
-					
+					<Border Background="Transparent" Margin="12,6,0,6" 
+						Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}" 
+						HorizontalAlignment="Left">
+						<Border Background="{StaticResource TileBGColor}" 	
+							Padding="8,0,0,0" 
+							Width="62" Height="62" 				 
+							HorizontalAlignment="Left">
+							<TextBlock Text="{Binding Key}" 
+								Foreground="{StaticResource PageTxtColor}" 
+								FontSize="48"
+								FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Bottom"/>
+						</Border>
+					</Border>
 				</DataTemplate>
+        
 				<DataTemplate x:Key="groupFooterTemplate">
 					<!-- The footer for each group -->
-					<!--
-					
-					-->
 				</DataTemplate>
+
 				<ItemsPanelTemplate x:Key="groupItemsPanelTemplate">
 					<!-- The selection dialog container -->
-					<toolkit:WrapPanel Orientation="Horizontal"></toolkit:WrapPanel>
+					<toolkit:WrapPanel Orientation="Horizontal"/>
 				</ItemsPanelTemplate>
+        
 				<DataTemplate x:Key="groupItemTemplate">
 					<!-- The individual item in the selector dialog -->
-					<Border Background="Black" Margin="6" IsHitTestVisible="{Binding HasItems}">
-						<Border Background="{StaticResource TileBGColor}" Width="99" Height="99"  
-							 Opacity="{Binding HasItems, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}">
-							<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" 
-							Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-				 />
-						</Border>
+					<Border Background="{StaticResource TileBGColor}"
+						Margin="6" 
+						IsHitTestVisible="{Binding HasItems}"
+						Width="99" Height="99"  
+						Opacity="{Binding HasItems, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}">
+						<Border.Projection>
+							<PlaneProjection RotationX="-60"/>
+						</Border.Projection>
+						<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" 
+								Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 					</Border>
 				</DataTemplate>
 
 				<DataTemplate x:Key="itemTemplate" toolkit:TiltEffect.SuppressTilt="True">
 					<!-- Applied to each item -->
-						<Controls:ConversionResultsBtn 
-							Margin="12,0,24,4" 
-							BtnClothingSize="{Binding FormattedValue}" 
-							BtnBrandName="{Binding BrandName}" 
-							BtnIsBlacklisted="{Binding IsBlacklisted, Mode=TwoWay}" 
-							BtnShowBlacklisted="{Binding AppViewModel.ShowBlacklistedConversions, Source={StaticResource ViewModelInstanceLocator}}"
-						 />
+					<!-- Uber simple, is  quick -->
+					<!--
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="6" FontSize="24" Text="{Binding BrandName, FallbackValue=Loading...}"></TextBlock>
+            <TextBlock Margin="6" FontSize="24" Text="{Binding FormattedValue}"></TextBlock>
+          </StackPanel>
+-->
+		 
+		 
+					<Grid x:Name="rootItemTemplateGrid" Margin="12,0,0,0">
+						<i:Interaction.Triggers>
+							<ec:DataTrigger Binding="{Binding IsAdjusting}" Value="true">
+								<ec:GoToStateAction StateName="adjustingVS"/>
+							</ec:DataTrigger>
+							<ec:DataTrigger Binding="{Binding IsAdjusting}" Value="false">
+								<ec:GoToStateAction StateName="defaultVS"/>
+							</ec:DataTrigger>
+						</i:Interaction.Triggers>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="adjustmentVSGroup">
+								<VisualState x:Name="defaultVS"/>
+								<VisualState x:Name="adjustingVS">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="adjustmentContainerGrid">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="adjustmentSizeContainer" RepeatBehavior="Forever">
+											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+											<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="7"/>
+											<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0">
+												<EasingDoubleKeyFrame.EasingFunction>
+													<ElasticEase EasingMode="EaseOut"/>
+												</EasingDoubleKeyFrame.EasingFunction>
+											</EasingDoubleKeyFrame>
+											<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+									
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<VisualStateManager.CustomVisualStateManager>
+							<ec:ExtendedVisualStateManager/>
+						</VisualStateManager.CustomVisualStateManager>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Grid x:Name="conversionResultContainerGrid"
+							Grid.Column="1" HorizontalAlignment="Left"
+							Margin="0,0,0,10" Grid.Row="0" VerticalAlignment="Center" Tap="conversionResultContainerGrid_Tap">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+
+							<!-- 
+					The Fallback value is quite important since if is loading from fast scolling on e.g. 
+					a LongListSelector then the Fallback value will be displayed
+				-->
+							<TextBlock x:Name="brandNameTextBlock"
+								Text="{Binding BrandName, FallbackValue=Loading ...}"
+								Grid.Column="0" FontFamily="Segoe WP"
+								FontSize="34.667" Foreground="{StaticResource PageTxtColor}"/>
+							<StackPanel x:Name="adjustmentSizeContainer" Grid.Column="1" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+								<StackPanel.RenderTransform>
+									<CompositeTransform/>
+								</StackPanel.RenderTransform>
+								<TextBlock x:Name="clothingSizeTextBlock"
+									Text="{Binding FormattedValue, FallbackValue=''}"
+									Margin="7,0,-2,0" FontSize="34.667" Foreground="{StaticResource SubTitleColor}"
+									FontFamily="Segoe WP"/>
+								<TextBlock x:Name="questionTextBlock"
+									Text="?" FontSize="34.667" Foreground="{StaticResource SubTitleColor}"
+									FontFamily="Segoe WP"
+									Visibility="Collapsed"/>
+							</StackPanel>
+						</Grid>
+
 						
-					</DataTemplate>
+						<Grid x:Name="adjustmentContainerGrid"
+							Margin="0,0,12,32"
+							Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
+							<Grid.Resources>
+								<Style x:Key="bigSmallBtnStyle" TargetType="Button">
+									<Setter Property="Template">
+										<Setter.Value>
+											<ControlTemplate TargetType="Button">
+												<Grid>
+													<TextBlock Padding="0,6,0,6" FontSize="28" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
+												</Grid>
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</Grid.Resources>
+
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*" />
+								<ColumnDefinition Width="1*" />
+								<ColumnDefinition Width="1*" />
+							</Grid.ColumnDefinitions>
+            
+							<Button x:Name="tooBigBtn" Content="too big" Grid.Column="0"
+								Style="{StaticResource bigSmallBtnStyle}"
+								HorizontalAlignment="Left"
+								Tap="tooBigBtn_Tap"
+								IsHitTestVisible="{Binding NoneSmaller, Converter={StaticResource BoolToNotBool}}"
+								Opacity="{Binding NoneSmaller, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"/>
+							<Button x:Name="rightSizeBtn" Content="confirm" Grid.Column="1"
+								Style="{StaticResource bigSmallBtnStyle}"
+								HorizontalAlignment="Center"
+								Tap="rightSizeBtn_Tap"
+								FontWeight="Bold" />
+							<Button x:Name="tooSmallBtn" Content="too small" Grid.Column="2"
+								Style="{StaticResource bigSmallBtnStyle}"
+								HorizontalAlignment="Right"
+								Tap="tooSmallBtn_Tap"
+								IsHitTestVisible="{Binding NoneBigger, Converter={StaticResource BoolToNotBool}}"
+								Opacity="{Binding NoneBigger, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"
+				
+					 />
+
+						</Grid>
+
+						
+					</Grid>
+          
+				</DataTemplate>
+
 				<DataTemplate x:Key="listFooterTemplate">
 					<!-- Bottom of whole control -->
 					<Grid/>
@@ -297,11 +426,19 @@
 							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
 
+						
+
 						<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
 							Grid.Row="0"
 							Margin="12,12,12,0"
-							VerticalAlignment="Top" TitleText="{Binding AppViewModel.ShowBlacklistedConversions, ConverterParameter=Dismiss hidden brands|Edit hidden brands, Converter={StaticResource BoolToStrings}, Source={StaticResource ViewModelLocator}}"
-							IconImage="/Images/AppBar/appbar.edit.png" Tap="editHiddenBrandsBtn_Tap_1" />
+							VerticalAlignment="Top" TitleText="Edit preferred brands"
+							IconImage="/Images/AppBar/appbar.edit.png" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Tap">
+									<ec:NavigateToPageAction TargetPage="/View/EditBlacklistedBrands.xaml"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</Controls:AboutButton>
 						
 						<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
 							Grid.Row="1"
@@ -318,17 +455,9 @@
 							</i:Interaction.Triggers>
 						</Controls:AboutButton>
 						
-						<!--
-						<TextBlock
-							Grid.Row="0" 
-							Text="KEY MEASUREMENTS" Style="{StaticResource SubTitleTextBoxStyle}"
-							Margin="12,12,0,8" />
-						-->
 						<ListBox x:Name="measurementsListBox"
 							Grid.Row="2"
 							Visibility="Collapsed"
-							ItemsSource="{Binding AppViewModel.ConversionMeasurements, Source={StaticResource ViewModelLocator}}" 
-							Style="{StaticResource noScrollListBoxStyle}"
 							Margin="12,0,12,8">
 							<ListBox.Resources>
 								<DataTemplate x:Key="DataTemplate1">
@@ -382,20 +511,30 @@
 									</Grid>
 								</DataTemplate>
 							</ListBox.Resources>
+							<ListBox.ItemsSource>
+								<Binding Path="AppViewModel.ConversionMeasurements" Source="{StaticResource ViewModelLocator}"/>
+							</ListBox.ItemsSource>
+							<ListBox.Style>
+								<StaticResource ResourceKey="noScrollListBoxStyle"/>
+							</ListBox.Style>
 							<ListBox.ItemTemplate>
 								<StaticResource ResourceKey="DataTemplate1"/>
 							</ListBox.ItemTemplate>
 						</ListBox>
-						<!--
-						<TextBlock 
-							Grid.Row="2"
-							Text="CONVERSIONS" Style="{StaticResource SubTitleTextBoxStyle}"
-							Margin="12,0,0,8" />
-						-->
+
+						
+
 					</Grid>
 					
 				</DataTemplate>
 			</toolkit:LongListSelector.Resources>
+			<toolkit:LongListSelector.Visibility>
+				<Binding Converter="{StaticResource BoolToCollapsed}" Path="IsConversionDataLoading"/>
+			</toolkit:LongListSelector.Visibility>
+
+			<d:DataContext>
+				<StaticResource ResourceKey="LongListSampleDataInstance"/>
+			</d:DataContext>
 
 			<toolkit:LongListSelector.ListHeaderTemplate>
 				<StaticResource ResourceKey="listHeaderTemplate"/>
@@ -431,21 +570,18 @@
 		-->
 	
 
-
-    <adRotator:AdRotatorControl x:Name="AdRotatorControl"
-          Grid.Row="2"
-          xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
-          Width="480" Height="80"
-          SettingsUrl="http://www.lassiv.com/pocketailor/misc/PocketailorWPAdConfig.xml"
-          DefaultAdType="PubCenter"
-          DefaultSettingsFileUri="/Pocketailor;component/Ads/RotatorAdSettings.xml"
-          SlidingAdDirection="Left"
-          SlidingAdDisplaySeconds="10"
-          SlidingAdHiddenSeconds="0"/>
-
-    
-    
-
+		<adRotator:AdRotatorControl
+			xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
+			x:Name="AdRotatorControl"
+			Grid.Row="2"
+			Width="480" Height="80"
+			SettingsUrl="http://www.lassiv.com/pocketailor/misc/PocketailorWPAdConfig.xml"
+			DefaultAdType="PubCenter"
+			DefaultSettingsFileUri="/Pocketailor;component/Ads/RotatorAdSettings.xml"
+			SlidingAdDirection="Left"
+			SlidingAdDisplaySeconds="10"
+			SlidingAdHiddenSeconds="0"/>
+	
 	</Grid>
 	
 

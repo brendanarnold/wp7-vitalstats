@@ -1,0 +1,109 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Pocketailor.View.EditBlacklistedBrands"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
+	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}">
+
+
+  <toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+      <toolkit:NavigationInTransition.Backward>
+        <toolkit:TurnstileTransition Mode="BackwardIn"/>
+      </toolkit:NavigationInTransition.Backward>
+      <toolkit:NavigationInTransition.Forward>
+        <toolkit:TurnstileTransition Mode="ForwardIn"/>
+      </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+  </toolkit:TransitionService.NavigationInTransition>
+  <toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+      <toolkit:NavigationOutTransition.Backward>
+        <toolkit:TurnstileTransition Mode="BackwardOut"/>
+      </toolkit:NavigationOutTransition.Backward>
+      <toolkit:NavigationOutTransition.Forward>
+        <toolkit:TurnstileTransition Mode="ForwardOut"/>
+      </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+  </toolkit:TransitionService.NavigationOutTransition>
+
+
+  <phone:PhoneApplicationPage.ApplicationBar>
+    <shell:ApplicationBar IsVisible="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
+      <shell:ApplicationBarIconButton x:Name="saveApplicationBarIconBtn" IconUri="/Images/AppBar/appbar.save.png" IsEnabled="True" Text="save" Click="saveApplicationBarIconBtn_Click" />
+    </shell:ApplicationBar>
+  </phone:PhoneApplicationPage.ApplicationBar>
+
+  <phone:PhoneApplicationPage.Resources>
+	<DataTemplate x:Key="DataTemplate1">
+      			<Grid>
+					<CheckBox
+						Grid.Column="0" 
+						IsChecked="{Binding Selected, Mode=TwoWay}"
+						Foreground="{StaticResource DialogTxtColor}" 
+						Background="{StaticResource UIBGColor}" 
+						FontSize="{StaticResource PhoneFontSizeMediumLarge}"
+						Content="{Binding Name, FallbackValue=Some Brand}"
+						></CheckBox>
+				</Grid>
+      		</DataTemplate>
+	<Style x:Key="ListBoxStyle1" TargetType="ListBox">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBox">
+					<ScrollViewer x:Name="ScrollViewer" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" Padding="{TemplateBinding Padding}">
+						<ItemsPresenter/>
+					</ScrollViewer>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+  </phone:PhoneApplicationPage.Resources>
+  
+  <phone:PhoneApplicationPage.Foreground>
+    <StaticResource ResourceKey="PageTxtColor"/>
+  </phone:PhoneApplicationPage.Foreground>
+  <phone:PhoneApplicationPage.Background>
+    <StaticResource ResourceKey="DialogBGColor"/>
+  </phone:PhoneApplicationPage.Background>
+
+  <d:DataContext>
+    <Binding Source="{StaticResource SampleDataSource}"/>
+  </d:DataContext>
+
+
+
+  <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
+    <Grid.RowDefinitions>
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="*" />
+	</Grid.RowDefinitions>
+      <TextBlock
+		Grid.Row="0" 
+		TextWrapping="Wrap" Text="select preferred brands" Margin="36,15,36,50" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
+      <ListBox
+		Grid.Row="1" 
+		BorderThickness="24,0,12,0" ItemsSource="{Binding Brands}" ItemTemplate="{StaticResource DataTemplate1}" Style="{StaticResource ListBoxStyle1}">
+      </ListBox>
+    
+  </Grid>
+
+</phone:PhoneApplicationPage>

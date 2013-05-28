@@ -333,4 +333,16 @@
     <SampleData:ConversionMeasurementsItem Name="Chest" FormattedValue="56 cm" />
     <SampleData:ConversionMeasurementsItem Name="Waist" FormattedValue="56 cm" />
   </SampleData:SampleDataSource.ConversionMeasurements>
+  <SampleData:SampleDataSource.Brands>
+    <SampleData:BrandsItem Name="Aliquam integer" Selected="True" />
+    <SampleData:BrandsItem Name="Aenean nam" Selected="False" />
+    <SampleData:BrandsItem Name="Class mauris" Selected="True" />
+    <SampleData:BrandsItem Name="Cras curae" Selected="False" />
+    <SampleData:BrandsItem Name="Duis nunc" Selected="True" />
+    <SampleData:BrandsItem Name="Sed amet" Selected="False" />
+    <SampleData:BrandsItem Name="Dis maecenas est hac" Selected="True" />
+    <SampleData:BrandsItem Name="Leo nullam aptent quisque" Selected="False" />
+    <SampleData:BrandsItem Name="Vivamus aliquam auctor" Selected="True" />
+    <SampleData:BrandsItem Name="Donec etiam praesent" Selected="False" />
+  </SampleData:SampleDataSource.Brands>
 </SampleData:SampleDataSource>

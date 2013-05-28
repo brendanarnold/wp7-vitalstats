@@ -162,6 +162,7 @@
     <Compile Include="Model\Static\UnitIds.cs" />
     <Compile Include="SampleData\SampleDataSource\LongListSampleData.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
+    <Compile Include="ViewModel\EditBlacklistedBrandsViewModel.cs" />
     <Compile Include="ViewModel\EditRegionsViewModel.cs" />
     <Compile Include="ViewModel\LongListSelectorGroup.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
@@ -172,6 +173,9 @@
     </Compile>
     <Compile Include="View\Controls\ConversionResultsBtn.xaml.cs">
       <DependentUpon>ConversionResultsBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditBlacklistedBrands.xaml.cs">
+      <DependentUpon>EditBlacklistedBrands.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HelpData.cs" />
     <Compile Include="Model\Static\BrandIds.cs" />
@@ -260,6 +264,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ConversionsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditBlacklistedBrands.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -355,6 +363,13 @@
     <Content Include="PocketailorConversions.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Pocketailor_2013_05_27_22_21_47.sap" />
+    <None Include="Pocketailor_2013_05_27_22_30_35.sap" />
+    <None Include="Pocketailor_2013_05_27_22_34_37.sap" />
+    <None Include="Pocketailor_2013_05_27_22_38_43.sap" />
+    <None Include="Pocketailor_2013_05_27_22_48_02.sap" />
+    <None Include="Pocketailor_2013_05_27_23_00_40.sap" />
+    <None Include="Pocketailor_2013_05_28_00_51_39.sap" />
     <None Include="ReadMe-AdRotator-XAML.txt" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

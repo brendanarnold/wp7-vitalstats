@@ -145,6 +145,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
+		private ConversionMeasurements _ConversionMeasurements = new ConversionMeasurements();
+
+		public ConversionMeasurements ConversionMeasurements
+		{
+			get
+			{
+				return this._ConversionMeasurements;
+			}
+		}
+
 		private bool _IsLocked = false;
 
 		public bool IsLocked
@@ -297,13 +307,13 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private ConversionMeasurements _ConversionMeasurements = new ConversionMeasurements();
+		private Brands _Brands = new Brands();
 
-		public ConversionMeasurements ConversionMeasurements
+		public Brands Brands
 		{
 			get
 			{
-				return this._ConversionMeasurements;
+				return this._Brands;
 			}
 		}
 	}
@@ -1977,6 +1987,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
+	public class ConversionMeasurements : System.Collections.ObjectModel.ObservableCollection<ConversionMeasurementsItem>
+	{ 
+	}
+
 	public class ConversionMeasurementsItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -2028,7 +2042,58 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class ConversionMeasurements : System.Collections.ObjectModel.ObservableCollection<ConversionMeasurementsItem>
+	public class BrandsItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private bool _Selected = false;
+
+		public bool Selected
+		{
+			get
+			{
+				return this._Selected;
+			}
+
+			set
+			{
+				if (this._Selected != value)
+				{
+					this._Selected = value;
+					this.OnPropertyChanged("Selected");
+				}
+			}
+		}
+	}
+
+	public class Brands : System.Collections.ObjectModel.ObservableCollection<BrandsItem>
 	{ 
 	}
 #endif

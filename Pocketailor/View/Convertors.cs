@@ -79,21 +79,7 @@ namespace Pocketailor.View
         
     }
 
-    public class IsHiddenToVisibility : System.Windows.Data.IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
-        {
-            bool b = (bool)value;
-            if (!b) return Visibility.Visible;
-            if (App.VM.ShowBlacklistedConversions) return Visibility.Visible;
-            return Visibility.Collapsed;
-        }
-
-        public object ConvertBack(object value, Type targetTYpe, object parameter, CultureInfo cultureInfo)
-        {
-            throw new NotImplementedException();
-        }
-    }
+    
 
     public class SelectedConversionToBGImage : System.Windows.Data.IValueConverter
     {
@@ -301,6 +287,30 @@ namespace Pocketailor.View
         }
 
     }
+
+    // Converters a boolean to a visibility enum
+    public class BoolToCollapsed : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            if ((bool)value)
+            {
+                return Visibility.Collapsed;
+            }
+            else
+            {
+                return Visibility.Visible;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            return (Visibility)value == Visibility.Collapsed;
+
+        }
+
+    }
+
 
     // Converter for profile tile text
     public class WordsOnNewlines : System.Windows.Data.IValueConverter

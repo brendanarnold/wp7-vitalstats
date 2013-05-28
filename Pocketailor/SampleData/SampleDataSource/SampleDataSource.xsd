@@ -17,6 +17,7 @@
       <xs:element name="QuickProfiles" type="tns:QuickProfiles" />
       <xs:element name="Regions" type="tns:Regions" />
       <xs:element name="ConversionMeasurements" type="tns:ConversionMeasurements" />
+      <xs:element name="Brands" type="tns:Brands" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
     <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
@@ -223,6 +224,15 @@
   <xs:complexType name="ConversionMeasurementsItem">
     <xs:attribute name="Name" type="xs:string" />
     <xs:attribute name="FormattedValue" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Brands">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="BrandsItem" type="tns:BrandsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BrandsItem">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Selected" type="xs:boolean" />
   </xs:complexType>
   <xs:simpleType name="Basic-Image">
     <xs:restriction base="xs:anyURI" />

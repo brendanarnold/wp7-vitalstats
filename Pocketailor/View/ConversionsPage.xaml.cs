@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Pocketailor.Model;
+using System.Windows.Media.Animation;
+using System.Windows.Media;
 
 namespace Pocketailor.View
 {
@@ -34,7 +36,7 @@ namespace Pocketailor.View
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.AdRotatorControl.Invalidate();
+            //this.AdRotatorControl.Invalidate();
             base.OnNavigatedTo(e);
             
             // Load up the data using a query string in case of tombstoning
@@ -43,7 +45,9 @@ namespace Pocketailor.View
             int profileId = System.Int32.Parse(profileIdStr);
             NavigationContext.QueryString.TryGetValue("ConversionId", out conversionIdStr);
             ConversionId conversionId = (ConversionId)Enum.Parse(typeof(ConversionId), conversionIdStr, true);
-            App.VM.LoadConversionsPageData(profileId, conversionId);
+           
+            // This should be async
+            App.VM.LoadConversionsPageDataAsyncTask(profileId, conversionId);
 
         }
 
@@ -55,69 +59,216 @@ namespace Pocketailor.View
         }
 
 
-        //private void showHiddenAppBarMenuItem_Click(object sender, System.EventArgs e)
-        //{
-        //    this.ToggleEditBlacklist();
-        //    ApplicationBarMenuItem mi = (ApplicationBarMenuItem)ApplicationBar.MenuItems[0];
-        //    mi.Text = (App.VM.ShowBlacklistedConversions) ? "hide hidden brands" : "edit hidden brands";
-        //}
+        #region Animation
 
+        private LongListSelector currentSelector;
 
-        private void ToggleEditBlacklist()
+        private void conversionsLongListSelector_GroupViewOpened(object sender, GroupViewOpenedEventArgs e)
         {
-            if (!App.VM.ShowBlacklistedConversions && App.Settings.GetValueOrDefault<bool>("ShowHiddenBrandsHelp", true))
+            //Hold a reference to the active long list selector.
+            currentSelector = sender as LongListSelector;
+
+               
+
+            //Dispatch the swivel animation for performance on the UI thread.
+            Dispatcher.BeginInvoke(() =>
             {
-                MessageBoxResult res = MessageBox.Show("Untick the boxes for all the brands that you are not interested in."
-                    + Environment.NewLine
-                    + Environment.NewLine
-                    + "When done, tap the button under the title to hide them",
-                    "Edit hidden brands", MessageBoxButton.OK);
-                if (res == MessageBoxResult.OK)
+                //Construct and begin a swivel animation to pop in the group view.
+                IEasingFunction quadraticEase = new QuadraticEase { EasingMode = EasingMode.EaseOut };
+                Storyboard _swivelShow = new Storyboard();
+                _swivelShow.SetValue(NameProperty, "_swivelShowStoryboard");
+                ItemsControl groupItems = e.ItemsControl;
+
+                foreach (var item in groupItems.Items)
                 {
-                    App.Settings.AddOrUpdateValue("ShowHiddenBrandsHelp", false);
-                    App.Settings.Save();
+                    UIElement container = groupItems.ItemContainerGenerator.ContainerFromItem(item) as UIElement;
+                    if (container != null)
+                    {
+                        Border content = VisualTreeHelper.GetChild(container, 0) as Border;
+                        if (content != null)
+                        {
+                            DoubleAnimationUsingKeyFrames showAnimation = new DoubleAnimationUsingKeyFrames();
+
+                            EasingDoubleKeyFrame showKeyFrame1 = new EasingDoubleKeyFrame();
+                            showKeyFrame1.KeyTime = TimeSpan.FromMilliseconds(0);
+                            showKeyFrame1.Value = -60;
+                            showKeyFrame1.EasingFunction = quadraticEase;
+
+                            EasingDoubleKeyFrame showKeyFrame2 = new EasingDoubleKeyFrame();
+                            showKeyFrame2.KeyTime = TimeSpan.FromMilliseconds(85);
+                            showKeyFrame2.Value = 0;
+                            showKeyFrame2.EasingFunction = quadraticEase;
+
+                            showAnimation.KeyFrames.Add(showKeyFrame1);
+                            showAnimation.KeyFrames.Add(showKeyFrame2);
+
+                            Storyboard.SetTargetProperty(showAnimation, new PropertyPath(PlaneProjection.RotationXProperty));
+                            Storyboard.SetTarget(showAnimation, content.Projection);
+
+                            _swivelShow.Children.Add(showAnimation);
+                        }
+                    }
                 }
+
+                _swivelShow.Begin();
+            });
+        }
+
+        private void conversionsLongListSelector_GroupViewClosing(object sender, GroupViewClosingEventArgs e)
+        {
+            //Cancelling automatic closing and scrolling to do it manually.
+            e.Cancel = true;
+            if (e.SelectedGroup != null)
+            {
+                currentSelector.ScrollToGroup(e.SelectedGroup);
             }
-            App.VM.ShowBlacklistedConversions = !App.VM.ShowBlacklistedConversions;
+
+            //Dispatch the swivel animation for performance on the UI thread.
+            Dispatcher.BeginInvoke(() =>
+            {
+                //Construct and begin a swivel animation to pop out the group view.
+                IEasingFunction quadraticEase = new QuadraticEase { EasingMode = EasingMode.EaseOut };
+                Storyboard _swivelHide = new Storyboard();
+                _swivelHide.SetValue(NameProperty, "_swivelHideStoryboard");
+                ItemsControl groupItems = e.ItemsControl;
+
+                foreach (var item in groupItems.Items)
+                {
+                    UIElement container = groupItems.ItemContainerGenerator.ContainerFromItem(item) as UIElement;
+                    if (container != null)
+                    {
+                        Border content = VisualTreeHelper.GetChild(container, 0) as Border;
+                        if (content != null)
+                        {
+                            DoubleAnimationUsingKeyFrames showAnimation = new DoubleAnimationUsingKeyFrames();
+
+                            EasingDoubleKeyFrame showKeyFrame1 = new EasingDoubleKeyFrame();
+                            showKeyFrame1.KeyTime = TimeSpan.FromMilliseconds(0);
+                            showKeyFrame1.Value = 0;
+                            showKeyFrame1.EasingFunction = quadraticEase;
+
+                            EasingDoubleKeyFrame showKeyFrame2 = new EasingDoubleKeyFrame();
+                            showKeyFrame2.KeyTime = TimeSpan.FromMilliseconds(125);
+                            showKeyFrame2.Value = 90;
+                            showKeyFrame2.EasingFunction = quadraticEase;
+
+                            showAnimation.KeyFrames.Add(showKeyFrame1);
+                            showAnimation.KeyFrames.Add(showKeyFrame2);
+
+                            Storyboard.SetTargetProperty(showAnimation, new PropertyPath(PlaneProjection.RotationXProperty));
+                            Storyboard.SetTarget(showAnimation, content.Projection);
+
+                            _swivelHide.Children.Add(showAnimation);
+                        }
+                    }
+                }
+
+                _swivelHide.Completed += _swivelHide_Completed;
+                _swivelHide.Begin();
+
+            });
         }
 
-        private void editHiddenBrandsBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void _swivelHide_Completed(object sender, EventArgs e)
         {
-            this.ToggleEditBlacklist();
+            //Close group view.
+            if (currentSelector != null)
+            {
+                currentSelector.CloseGroupView();
+                currentSelector = null;
+            }
         }
 
-        //private void editHiddenBrandsApplicationBarIconButton_Click(object sender, System.EventArgs e)
-        //{
-        //    this.ToggleEditBlacklist();
-        //    ApplicationBarIconButton abBtn = (ApplicationBarIconButton)ApplicationBar.Buttons[0];
-        //    if (App.VM.ShowBlacklistedConversions)
-        //    {
-        //        abBtn.IconUri = new Uri("/Images/AppBar/appbar.save.png", UriKind.Relative);
-        //        abBtn.Text = "save hidden brands";
-        //    }
-        //    else
-        //    {
-        //        abBtn.IconUri = new Uri("/Images/AppBar/appbar.edit.png", UriKind.Relative);
-        //        abBtn.Text = "edit hidden brands";
-        //    }
-        //}
 
-        //private void changeRegionApplicationBarMenuItem_Click(object sender, System.EventArgs e)
-        //{
-        //    NavigationService.Navigate(new Uri("/View/EditRegionPage.xaml", UriKind.Relative));
-        //}
+        #endregion
 
-        private void dismissHiddenBranEditBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+
+
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-        	this.ToggleEditBlacklist();
+            if (ConversionData.CurrentlyAdjustingConversionData != null)
+            {
+                e.Cancel = true;
+                ConversionData.CurrentlyAdjustingConversionData.DiscardTweaks();
+                ConversionData.CurrentlyAdjustingConversionData.IsAdjusting = false;
+            }
+            base.OnBackKeyPress(e);
         }
 
-        private void editHiddenBrandsBtn_Tap_1(object sender, System.Windows.Input.GestureEventArgs e)
+
+        #region Adjustments methods/properties
+
+        private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	this.ToggleEditBlacklist();
+            ConversionData c = (sender as Button).DataContext as ConversionData;
+            c.TweakSizeDown();
+        }
+
+        private void rightSizeBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (App.VM.AllowFeedBack == null) this.PromptForFeedbackPermission();
+            ConversionData c = (sender as Button).DataContext as ConversionData;
+            c.IsAdjusting = false;
+            c.AcceptTweaks();
+        }
+
+        private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            ConversionData c = (sender as Button).DataContext as ConversionData;
+            c.TweakSizeUp();
         }
 
 
+
+
+        private void conversionResultContainerGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            ConversionData c = (sender as Grid).DataContext as ConversionData;
+
+            // If leaving the adjusting state then cancel the tweaks
+            if (c.IsAdjusting) c.DiscardTweaks();
+            c.IsAdjusting = !c.IsAdjusting;
+            
+            // First time adjusting, give a prompt
+            if (c.IsAdjusting && App.Settings.GetValueOrDefault<bool>("ShowHelpAdjustment", true))
+            {
+                MessageBoxResult res = MessageBox.Show("Tap a brand name to adjust the sizes."
+                    + Environment.NewLine
+                    + Environment.NewLine
+                    + "If you don't want to make an adjustment, tap the brand name again or hit the back button.",
+                    "Making an adjustment", MessageBoxButton.OK);
+                App.Settings.AddOrUpdateValue("ShowHelpAdjustment", false);
+                App.Settings.Save();
+            }
+
+
+        }
+
+        private void PromptForFeedbackPermission()
+        {
+
+            MessageBoxResult res = MessageBox.Show("You can send your adjustments to the Pocketailor team anonymously over the web so we can make the results better next time. If you would like to help then click 'ok' below, if you would rather not then click 'cancel'."
+                    + Environment.NewLine + Environment.NewLine
+                    + "You can change this anytime in the settings.",
+                    "Allow feedback?",
+                    MessageBoxButton.OKCancel);
+            if (res == MessageBoxResult.OK)
+            {
+                App.VM.AllowFeedBack = true;
+            }
+            else
+            {
+                App.VM.AllowFeedBack = false;
+            }
+
+        }
+
+        
+
+
+
+        #endregion
 
     }
 }

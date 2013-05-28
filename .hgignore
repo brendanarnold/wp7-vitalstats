@@ -7,3 +7,5 @@ glob:Pocketailor/obj/*
 glob:PocketailorDatabaseCreator/Bin/*
 glob:PocketailorDatabaseCreator/obj/*
 glob:Testing/*
+glob:*/PerfLogs/*
+glob:*.sap

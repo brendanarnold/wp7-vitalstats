@@ -355,19 +355,6 @@ namespace Pocketailor.View
             }
         }
 
-        //private void tennisGripBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(Model.Conversions.TennisRaquetSizesUtils.RequiredMeasurements);
-        //    if (missingMeasurements.Count == 0)
-        //    {
-        //        App.VM.SelectedConversionType = ConversionId.TennisGripSize;
-        //        NavigationService.Navigate(new Uri("/View/ConversionsPage.xaml", UriKind.Relative));
-        //    }
-        //    else
-        //    {
-        //        this.PromptForMissingMeasurements(missingMeasurements, "tennis grip");
-        //    }
-        //}
 
         private void wetsuitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {

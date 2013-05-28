@@ -373,6 +373,46 @@ namespace Pocketailor.Model
 
 #endif
 
+        #region A terrible way to set the adjustment state which clearly belongs in the View
+
+        private bool _isAdjusting = false;
+        public bool IsAdjusting
+        {
+            get
+            {
+                return this._isAdjusting;
+            }
+            set
+            {
+                if (this._isAdjusting != value)
+                {
+                    this._isAdjusting = value;
+                    this.NotifyPropertyChanged("IsAdjusting");
+                    if (value)
+                    {
+                        if (CurrentlyAdjustingConversionData != null)
+                        {
+                            CurrentlyAdjustingConversionData.IsAdjusting = false;
+                        }
+                        CurrentlyAdjustingConversionData = this;
+                    }
+                    else
+                    {
+                        if (CurrentlyAdjustingConversionData != null)
+                        {
+                            CurrentlyAdjustingConversionData = null;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        public static ConversionData CurrentlyAdjustingConversionData { get; set; }
+
+        #endregion
+
+
 
         #region INotifyPropertyChanged members
 
