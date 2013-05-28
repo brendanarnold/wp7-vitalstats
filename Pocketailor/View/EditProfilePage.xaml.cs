@@ -18,14 +18,14 @@ namespace Pocketailor
     public partial class EditProfilePage : PhoneApplicationPage
     {
 
-        public EditProfilePageState State;
+        public EditProfilePageState PageState;
 
         public string Action;
 
         public EditProfilePage()
         {
             InitializeComponent();
-            this.State = new EditProfilePageState();
+            this.PageState = new EditProfilePageState();
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -56,7 +56,7 @@ namespace Pocketailor
 
             if (!e.IsNavigationInitiator && PhoneApplicationService.Current.State.ContainsKey("EditProfilePageState"))
             {
-                this.State = (EditProfilePageState)PhoneApplicationService.Current.State["EditProfilePageState"];
+                this.PageState = (EditProfilePageState)PhoneApplicationService.Current.State["EditProfilePageState"];
                 this.LoadFromState();
             }
             else
@@ -75,11 +75,11 @@ namespace Pocketailor
                 this.TakeSnapshotState();
                 if (PhoneApplicationService.Current.State.ContainsKey("EditProfilePageState"))
                 {
-                    PhoneApplicationService.Current.State["EditProfilePageState"] = this.State;
+                    PhoneApplicationService.Current.State["EditProfilePageState"] = this.PageState;
                 }
                 else
                 {
-                    PhoneApplicationService.Current.State.Add("EditProfilePageState", this.State);
+                    PhoneApplicationService.Current.State.Add("EditProfilePageState", this.PageState);
                 }
             }
         }
@@ -105,16 +105,16 @@ namespace Pocketailor
 
         public void TakeSnapshotState()
         {
-            this.State.Name = this.nameTextBox.Text;
-            this.State.IsQuickProfile = this.IsQuickListCheckBox.IsChecked;
-            this.State.Gender = this.GetSelectedGender();
+            this.PageState.Name = this.nameTextBox.Text;
+            this.PageState.IsQuickProfile = this.IsQuickListCheckBox.IsChecked;
+            this.PageState.Gender = this.GetSelectedGender();
         }
 
         public void LoadFromState()
         {
-            this.nameTextBox.Text = this.State.Name;
-            this.IsQuickListCheckBox.IsChecked = this.State.IsQuickProfile;
-            this.SetSelectedGender(this.State.Gender);
+            this.nameTextBox.Text = this.PageState.Name;
+            this.IsQuickListCheckBox.IsChecked = this.PageState.IsQuickProfile;
+            this.SetSelectedGender(this.PageState.Gender);
         }
 
         public void LoadFromSelectedProfile()
@@ -144,9 +144,9 @@ namespace Pocketailor
         private void saveBtn_Click(object sender, System.EventArgs e)
         {
             this.TakeSnapshotState();
-            App.VM.SelectedProfile.Name = this.State.Name;
-            App.VM.SelectedProfile.IsQuickProfile = (bool)this.State.IsQuickProfile;
-            App.VM.SelectedProfile.Gender = this.State.Gender;
+            App.VM.SelectedProfile.Name = this.PageState.Name;
+            App.VM.SelectedProfile.IsQuickProfile = (bool)this.PageState.IsQuickProfile;
+            App.VM.SelectedProfile.Gender = this.PageState.Gender;
 
             if (this.Action == EditProfilePageActions.New)
             {
@@ -168,9 +168,9 @@ namespace Pocketailor
         private bool IsUnsavedData()
         {
             this.TakeSnapshotState();
-            if (this.State.Name != App.VM.SelectedProfile.Name) return true;
-            if (this.State.IsQuickProfile != App.VM.SelectedProfile.IsQuickProfile) return true;
-            if (this.State.Gender != App.VM.SelectedProfile.Gender) return true;
+            if (this.PageState.Name != App.VM.SelectedProfile.Name) return true;
+            if (this.PageState.IsQuickProfile != App.VM.SelectedProfile.IsQuickProfile) return true;
+            if (this.PageState.Gender != App.VM.SelectedProfile.Gender) return true;
             return false;
         }
 

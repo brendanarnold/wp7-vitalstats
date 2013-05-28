@@ -387,7 +387,6 @@ namespace Pocketailor.Model
                 if (this._isAdjusting != value)
                 {
                     this._isAdjusting = value;
-                    this.NotifyPropertyChanged("IsAdjusting");
                     if (value)
                     {
                         if (CurrentlyAdjustingConversionData != null)
@@ -398,11 +397,9 @@ namespace Pocketailor.Model
                     }
                     else
                     {
-                        if (CurrentlyAdjustingConversionData != null)
-                        {
-                            CurrentlyAdjustingConversionData = null;
-                        }
+                        CurrentlyAdjustingConversionData = null;
                     }
+                    this.NotifyPropertyChanged("IsAdjusting");
                     
                 }
             }

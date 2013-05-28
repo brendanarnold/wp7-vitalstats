@@ -59,15 +59,9 @@
 			</Setter>
 		</Style>
 		<Storyboard x:Name="animateLoadingPlaceholderStoryboard">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="textBlock" RepeatBehavior="Forever">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="rulerImage" RepeatBehavior="Forever">
 				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="8"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<ElasticEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-35"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
 
@@ -214,14 +208,28 @@
 
 		<Grid x:Name="loadingConversionDataPlaceHolderContainer"
 			Grid.Row="1"
-			Visibility="{Binding IsConversionDataLoading, Converter={StaticResource BoolToVisibility}}">
-			<TextBlock x:Name="textBlock" Grid.Row="1" 
-				FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" 
-				FontSize="{StaticResource HelpTxtFontSizeLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" 
-				>
+			Visibility="{Binding IsConversionDataLoading, Converter={StaticResource BoolToVisibility}}" d:IsHidden="True">
+			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="230">
+				<Grid.Clip>
+					<RectangleGeometry Rect="0, 0, 230, 110"/>
+				 </Grid.Clip>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<TextBlock x:Name="textBlock" Grid.Row="0" 
+					FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" 
+					FontSize="{StaticResource HelpTxtFontSizeLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,6" 
+					>
 				<TextBlock.RenderTransform>
 					<CompositeTransform/>
 				</TextBlock.RenderTransform>Loading...</TextBlock>
+				<Canvas Grid.Row="1">
+					<Image x:Name="rulerImage" 
+						Canvas.Left="-30"
+						Source="/Images/ruler.jpg" Stretch="None" />
+				</Canvas>
+			</Grid>
 		</Grid>
 		
 		
@@ -230,7 +238,7 @@
 			ItemsSource="{Binding GroupedConversions}"
 			GroupViewOpened="conversionsLongListSelector_GroupViewOpened"
 			GroupViewClosing="conversionsLongListSelector_GroupViewClosing"
-			DisplayAllGroups="True" Background="Transparent" BufferSize="1" d:IsHidden="True">
+			DisplayAllGroups="True" Background="Transparent" BufferSize="1">
 			<toolkit:LongListSelector.Resources>
 				
 				<DataTemplate x:Key="groupHeaderTemplate">
@@ -279,135 +287,140 @@
 				<DataTemplate x:Key="itemTemplate" toolkit:TiltEffect.SuppressTilt="True">
 					<!-- Applied to each item -->
 					<!-- Uber simple, is  quick -->
-					<!--
+<!--
           <StackPanel Orientation="Horizontal">
             <TextBlock Margin="6" FontSize="24" Text="{Binding BrandName, FallbackValue=Loading...}"></TextBlock>
             <TextBlock Margin="6" FontSize="24" Text="{Binding FormattedValue}"></TextBlock>
           </StackPanel>
 -->
-		 
-		 
 					<Grid x:Name="rootItemTemplateGrid" Margin="12,0,0,0">
+						<Grid.Resources>
+							<Storyboard x:Key="animateAdjustmentStoryBoard">
+								<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="adjustmentSizeContainer" RepeatBehavior="Forever">
+									<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+									<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="7"/>
+									<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0">
+										<EasingDoubleKeyFrame.EasingFunction>
+											<ElasticEase EasingMode="EaseOut"/>
+										</EasingDoubleKeyFrame.EasingFunction>
+									</EasingDoubleKeyFrame>
+									<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+								</DoubleAnimationUsingKeyFrames>
+							</Storyboard>
+						</Grid.Resources>
 						<i:Interaction.Triggers>
 							<ec:DataTrigger Binding="{Binding IsAdjusting}" Value="true">
-								<ec:GoToStateAction StateName="adjustingVS"/>
+								<i:Interaction.Behaviors>
+									<ec:ConditionBehavior>
+										<ec:ConditionalExpression>
+											<ec:ComparisonCondition LeftOperand="{Binding Tag, ElementName=adjustmentContainerGrid}" RightOperand="loaded"/>
+										</ec:ConditionalExpression>
+									</ec:ConditionBehavior>
+								</i:Interaction.Behaviors>
+								<eim:ControlStoryboardAction x:Name="startAdjustmentAnimation" Storyboard="{StaticResource animateAdjustmentStoryBoard}"/>
 							</ec:DataTrigger>
 							<ec:DataTrigger Binding="{Binding IsAdjusting}" Value="false">
-								<ec:GoToStateAction StateName="defaultVS"/>
+								<i:Interaction.Behaviors>
+									<ec:ConditionBehavior>
+										<ec:ConditionalExpression>
+											<ec:ComparisonCondition LeftOperand="{Binding Tag, ElementName=adjustmentContainerGrid}" RightOperand="loaded"/>
+										</ec:ConditionalExpression>
+									</ec:ConditionBehavior>
+								</i:Interaction.Behaviors>
+								<eim:ControlStoryboardAction x:Name="stopAdjustmentAnimation" Storyboard="{StaticResource animateAdjustmentStoryBoard}" ControlStoryboardOption="Stop"/>
 							</ec:DataTrigger>
 						</i:Interaction.Triggers>
-						<VisualStateManager.VisualStateGroups>
-							<VisualStateGroup x:Name="adjustmentVSGroup">
-								<VisualState x:Name="defaultVS"/>
-								<VisualState x:Name="adjustingVS">
-									<Storyboard>
-										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="adjustmentContainerGrid">
-											<DiscreteObjectKeyFrame KeyTime="0">
-												<DiscreteObjectKeyFrame.Value>
-													<Visibility>Visible</Visibility>
-												</DiscreteObjectKeyFrame.Value>
-											</DiscreteObjectKeyFrame>
-										</ObjectAnimationUsingKeyFrames>
-										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="adjustmentSizeContainer" RepeatBehavior="Forever">
-											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-											<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="7"/>
-											<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0">
-												<EasingDoubleKeyFrame.EasingFunction>
-													<ElasticEase EasingMode="EaseOut"/>
-												</EasingDoubleKeyFrame.EasingFunction>
-											</EasingDoubleKeyFrame>
-											<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
-										</DoubleAnimationUsingKeyFrames>
-									</Storyboard>
-									
-								</VisualState>
-							</VisualStateGroup>
-						</VisualStateManager.VisualStateGroups>
-						<VisualStateManager.CustomVisualStateManager>
-							<ec:ExtendedVisualStateManager/>
-						</VisualStateManager.CustomVisualStateManager>
+						
 						<Grid.RowDefinitions>
 							<RowDefinition Height="Auto" />
 							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
+            
 						<Grid x:Name="conversionResultContainerGrid"
 							Grid.Column="1" HorizontalAlignment="Left"
-							Margin="0,0,0,10" Grid.Row="0" VerticalAlignment="Center" Tap="conversionResultContainerGrid_Tap">
-							<Grid.ColumnDefinitions>
+							Margin="0,0,0,10" Grid.Row="0" VerticalAlignment="Center" Tap="conversionResultContainerGrid_Tap" Height="50">
+						 	<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto"/>
 								<ColumnDefinition Width="Auto"/>
 							</Grid.ColumnDefinitions>
-
-							<!-- 
-					The Fallback value is quite important since if is loading from fast scolling on e.g. 
-					a LongListSelector then the Fallback value will be displayed
-				-->
+							<!-- The Fallback value is quite important since if is loading from fast scolling on e.g. 
+					         a LongListSelector then the Fallback value will be displayed -->
 							<TextBlock x:Name="brandNameTextBlock"
 								Text="{Binding BrandName, FallbackValue=Loading ...}"
 								Grid.Column="0" FontFamily="Segoe WP"
-								FontSize="34.667" Foreground="{StaticResource PageTxtColor}"/>
+								FontSize="32" Foreground="{StaticResource PageTxtColor}"/>
 							<StackPanel x:Name="adjustmentSizeContainer" Grid.Column="1" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
 								<StackPanel.RenderTransform>
 									<CompositeTransform/>
 								</StackPanel.RenderTransform>
 								<TextBlock x:Name="clothingSizeTextBlock"
 									Text="{Binding FormattedValue, FallbackValue=''}"
-									Margin="7,0,-2,0" FontSize="34.667" Foreground="{StaticResource SubTitleColor}"
+									Margin="7,0,-2,0" FontSize="32" Foreground="{StaticResource SubTitleColor}"
 									FontFamily="Segoe WP"/>
 								<TextBlock x:Name="questionTextBlock"
-									Text="?" FontSize="34.667" Foreground="{StaticResource SubTitleColor}"
+									Text="?" FontSize="32" Foreground="{StaticResource SubTitleColor}"
 									FontFamily="Segoe WP"
 									Visibility="Collapsed"/>
 							</StackPanel>
 						</Grid>
-
-						
-						<Grid x:Name="adjustmentContainerGrid"
-							Margin="0,0,12,32"
-							Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
-							<Grid.Resources>
-								<Style x:Key="bigSmallBtnStyle" TargetType="Button">
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="Button">
-												<Grid>
-													<TextBlock Padding="0,6,0,6" FontSize="28" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
-												</Grid>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-								</Style>
-							</Grid.Resources>
-
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="1*" />
-								<ColumnDefinition Width="1*" />
-								<ColumnDefinition Width="1*" />
-							</Grid.ColumnDefinitions>
             
-							<Button x:Name="tooBigBtn" Content="too big" Grid.Column="0"
-								Style="{StaticResource bigSmallBtnStyle}"
-								HorizontalAlignment="Left"
-								Tap="tooBigBtn_Tap"
-								IsHitTestVisible="{Binding NoneSmaller, Converter={StaticResource BoolToNotBool}}"
-								Opacity="{Binding NoneSmaller, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"/>
-							<Button x:Name="rightSizeBtn" Content="confirm" Grid.Column="1"
-								Style="{StaticResource bigSmallBtnStyle}"
-								HorizontalAlignment="Center"
-								Tap="rightSizeBtn_Tap"
-								FontWeight="Bold" />
-							<Button x:Name="tooSmallBtn" Content="too small" Grid.Column="2"
-								Style="{StaticResource bigSmallBtnStyle}"
-								HorizontalAlignment="Right"
-								Tap="tooSmallBtn_Tap"
-								IsHitTestVisible="{Binding NoneBigger, Converter={StaticResource BoolToNotBool}}"
-								Opacity="{Binding NoneBigger, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"
+			<Grid x:Name="adjustmentContainerGrid"
+				  Visibility="{Binding IsAdjusting, Converter={StaticResource BoolToVisibility}}"
+                  Margin="0,0,12,32"
+                  Grid.Row="1" Grid.Column="1" Tag="loaded">
+      
+      <Grid.Resources>
+        <Style x:Key="bigSmallBtnStyle" TargetType="Button">
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="Button">
+                <Grid>
+                  <TextBlock Padding="0,6,0,6" FontSize="28" HorizontalAlignment="Left" Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" />
+                </Grid>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+
+        <Pocketailor_View:BoolToNotBool x:Key="BoolToNotBool"/>
+        <Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
+
+      </Grid.Resources>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+
+      <Button x:Name="tooBigBtn" Content="too big" Grid.Column="0"
+        Style="{StaticResource bigSmallBtnStyle}"
+        HorizontalAlignment="Left"
+        Tap="tooBigBtn_Tap"
+        IsHitTestVisible="{Binding NoneSmaller, Converter={StaticResource BoolToNotBool}}"
+        Opacity="{Binding NoneSmaller, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"/>
+      <Button x:Name="rightSizeBtn" Content="confirm" Grid.Column="1"
+        Style="{StaticResource bigSmallBtnStyle}"
+        HorizontalAlignment="Center"
+        Tap="rightSizeBtn_Tap"
+        FontWeight="Bold" />
+      <Button x:Name="tooSmallBtn" Content="too small" Grid.Column="2"
+        Style="{StaticResource bigSmallBtnStyle}"
+        HorizontalAlignment="Right"
+        Tap="tooSmallBtn_Tap"
+        IsHitTestVisible="{Binding NoneBigger, Converter={StaticResource BoolToNotBool}}"
+        Opacity="{Binding NoneBigger, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"
 				
-					 />
+					/>
 
-						</Grid>
-
-						
+    </Grid>
+			
+			
+			
+			
+			
+			
+								
 					</Grid>
           
 				</DataTemplate>
@@ -425,8 +438,6 @@
 							<RowDefinition Height="Auto" />
 							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
-
-						
 
 						<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
 							Grid.Row="0"

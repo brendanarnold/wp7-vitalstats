@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using Pocketailor.Model;
 using System.Windows.Media.Animation;
 using System.Windows.Media;
+using Pocketailor.View.Controls;
 
 namespace Pocketailor.View
 {
@@ -21,16 +22,12 @@ namespace Pocketailor.View
 
             this.DataContext = App.VM;
 
-            this.Loaded += ConversionsPage_Loaded;
+            App.VM.ConversionDataLoaded += (s) =>
+            {
+                this.AdRotatorControl.DefaultHouseAdBody = "Pocketailor.LocalAd";
+                this.AdRotatorControl.Invalidate();
+            };
 
-            
-
-        }
-
-        void ConversionsPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.AdRotatorControl.DefaultHouseAdBody = "Pocketailor.LocalAd";
-            this.AdRotatorControl.Invalidate();
         }
 
 
@@ -45,9 +42,13 @@ namespace Pocketailor.View
             int profileId = System.Int32.Parse(profileIdStr);
             NavigationContext.QueryString.TryGetValue("ConversionId", out conversionIdStr);
             ConversionId conversionId = (ConversionId)Enum.Parse(typeof(ConversionId), conversionIdStr, true);
-           
-            // This should be async
-            App.VM.LoadConversionsPageDataAsyncTask(profileId, conversionId);
+            if (App.VM.GroupedConversions == null
+                || !App.VM.SkipLoadConversionPageData)
+            {
+                App.VM.LoadConversionsPageDataAsyncTask(profileId, conversionId);
+            }
+            if (App.VM.SkipLoadConversionPageData)
+                App.VM.SkipLoadConversionPageData = false;
 
         }
 
@@ -199,6 +200,36 @@ namespace Pocketailor.View
 
         #region Adjustments methods/properties
 
+        // Main set of methods for adjustments found in AdjustmentWidget.xaml.cs
+
+
+        private void conversionResultContainerGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            ConversionData c = (sender as Grid).DataContext as ConversionData;
+            c.IsAdjusting = !c.IsAdjusting;
+            if (c.IsAdjusting)
+            {
+                // First time adjusting, give a prompt
+                if (App.Settings.GetValueOrDefault<bool>("ShowHelpAdjustment", true))
+                {
+                    MessageBoxResult res = MessageBox.Show("Tap a brand name to adjust the sizes."
+                        + Environment.NewLine
+                        + Environment.NewLine
+                        + "If you don't want to make an adjustment, tap the brand name again or hit the back button.",
+                        "Making an adjustment", MessageBoxButton.OK);
+                    App.Settings.AddOrUpdateValue("ShowHelpAdjustment", false);
+                    App.Settings.Save();
+                }
+            }
+            else
+            {
+                c.DiscardTweaks();
+            }
+
+            
+        }
+
+
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             ConversionData c = (sender as Button).DataContext as ConversionData;
@@ -219,32 +250,6 @@ namespace Pocketailor.View
             c.TweakSizeUp();
         }
 
-
-
-
-        private void conversionResultContainerGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            ConversionData c = (sender as Grid).DataContext as ConversionData;
-
-            // If leaving the adjusting state then cancel the tweaks
-            if (c.IsAdjusting) c.DiscardTweaks();
-            c.IsAdjusting = !c.IsAdjusting;
-            
-            // First time adjusting, give a prompt
-            if (c.IsAdjusting && App.Settings.GetValueOrDefault<bool>("ShowHelpAdjustment", true))
-            {
-                MessageBoxResult res = MessageBox.Show("Tap a brand name to adjust the sizes."
-                    + Environment.NewLine
-                    + Environment.NewLine
-                    + "If you don't want to make an adjustment, tap the brand name again or hit the back button.",
-                    "Making an adjustment", MessageBoxButton.OK);
-                App.Settings.AddOrUpdateValue("ShowHelpAdjustment", false);
-                App.Settings.Save();
-            }
-
-
-        }
-
         private void PromptForFeedbackPermission()
         {
 
@@ -263,9 +268,6 @@ namespace Pocketailor.View
             }
 
         }
-
-        
-
 
 
         #endregion

@@ -172,6 +172,9 @@ namespace Pocketailor.ViewModel
             }
         }
 
+        // If this is set then the conversion page will not run the method below
+        public bool SkipLoadConversionPageData { get; set; }
+
         public async Task LoadConversionsPageDataAsyncTask(int profileId, ConversionId conversionId)
         {
             // Fire the event off

@@ -66,6 +66,12 @@ namespace Pocketailor.View
         }
 
 
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            App.VM.SkipLoadConversionPageData = true;
+            base.OnBackKeyPress(e);
+        }
+
 
         private void saveApplicationBarIconBtn_Click(object sender, System.EventArgs e)
         {
@@ -77,10 +83,12 @@ namespace Pocketailor.View
                 App.VM.BlacklistedBrands = newList;
                 App.VM.SaveBlacklistedBrands();
             }
-            if (NavigationService.CanGoBack)
+            else
             {
-                NavigationService.GoBack();
+                App.VM.SkipLoadConversionPageData = true;
             }
+            if (NavigationService.CanGoBack)
+                NavigationService.GoBack();
         }
     }
 }

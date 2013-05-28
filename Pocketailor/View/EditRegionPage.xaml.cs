@@ -61,13 +61,27 @@ namespace Pocketailor.View
                 {
                     r.Selected = (r.Id == App.VM.SelectedRegion);
                 }
+
             }
         }
 
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            App.VM.SkipLoadConversionPageData = true;
+            base.OnBackKeyPress(e);
+        }
 
         private void saveApplicationBarIconBtn_Click(object sender, System.EventArgs e)
         {
-            App.VM.SelectedRegion = (App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault());
+            RegionId rId = (App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault());
+            if (rId != App.VM.SelectedRegion)
+            {
+                App.VM.SelectedRegion = rId;
+            } 
+            else
+            {
+                App.VM.SkipLoadConversionPageData = true;
+            }
             if (NavigationService.CanGoBack)
             {
                 NavigationService.GoBack();
