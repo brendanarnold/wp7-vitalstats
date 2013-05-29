@@ -8,11 +8,34 @@ using System.Linq;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
 using System.Collections.Generic;
+using System.Windows.Media;
 
 
 namespace Pocketailor.View
 {
 
+    public class BoolToGroupItemBGColor : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            Color activeColor = Color.FromArgb(255, 86, 119, 28);
+            Color inactiveColor = Color.FromArgb(255, 138, 190, 45);
+            bool b = (bool)value;
+            if (b)
+            {
+                return new SolidColorBrush(inactiveColor);                
+            }
+            else
+            {
+                return new SolidColorBrush(activeColor);
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     public class StringToNextString : System.Windows.Data.IValueConverter
     {

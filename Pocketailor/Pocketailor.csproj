@@ -109,14 +109,17 @@
       <HintPath>..\packages\AdRotatorWP.1.0.3\lib\sl4-wp71\SOMAWP7.dll</HintPath>
     </Reference>
     <Reference Include="system.data.linq" />
-    <Reference Include="System.Net.Http">
-      <HintPath>..\packages\Microsoft.Net.Http.2.1.3-beta\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.6-rc\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\packages\Microsoft.Net.Http.2.1.3-beta\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.6-rc\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Primitives">
-      <HintPath>..\packages\Microsoft.Net.Http.2.1.3-beta\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.6-rc\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Observable" />
     <Reference Include="System.Runtime">
@@ -381,6 +384,11 @@
     <None Include="Pocketailor_2013_05_27_22_48_02.sap" />
     <None Include="Pocketailor_2013_05_27_23_00_40.sap" />
     <None Include="Pocketailor_2013_05_28_00_51_39.sap" />
+    <None Include="Pocketailor_2013_05_28_18_22_47.sap" />
+    <None Include="Pocketailor_2013_05_28_18_28_09.sap" />
+    <None Include="Pocketailor_2013_05_29_02_31_50.sap" />
+    <None Include="Pocketailor_2013_05_29_02_35_07.sap" />
+    <None Include="Pocketailor_2013_05_29_02_42_04.sap" />
     <None Include="ReadMe-AdRotator-XAML.txt" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

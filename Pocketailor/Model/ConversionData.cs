@@ -140,18 +140,18 @@ namespace Pocketailor.Model
         }
 
 
-        private int _relIndAdjustment;
+        private int _relativeIndAdjustment;
         public int RelativeIndAdjustment
         {
             get
             {
-                return this._relIndAdjustment;
+                return this._relativeIndAdjustment;
             }
             set
             {
-                if (this._relIndAdjustment != value)
+                if (this._relativeIndAdjustment != value)
                 {
-                    this._relIndAdjustment = value;
+                    this._relativeIndAdjustment = value;
                     this.NotifyPropertyChanged("RelativeIndAdjustment");
                     this.NotifyPropertyChanged("NoneBigger");
                     this.NotifyPropertyChanged("NoneSmaller");
@@ -225,7 +225,7 @@ namespace Pocketailor.Model
                 }
             }
             // Take care of case where all sizes were too small. Set to one above the indexes of the SizeIds
-            this.BestFitInd = (bestInd == null) ? 
+            this._bestFitInd = (bestInd == null) ? 
                 this.SizeIds.Count : (int)bestInd;
             // If there is an adjustment, also load this
             LocalAdjustment adj = App.Cache.Adjustments.FirstOrDefault(a =>
@@ -235,7 +235,7 @@ namespace Pocketailor.Model
                 && a.Brand == this.Brand
             );
             this.PersistedAdjustment = adj;
-            this.RelativeIndAdjustment = this.GetRelativeIndAdjustment();
+            this._relativeIndAdjustment = this.GetRelativeIndAdjustment();
         }
 
 

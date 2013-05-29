@@ -14,7 +14,7 @@
    id="svg3883"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 3">
+   sodipodi:docname="Ruler.svg">
   <defs
      id="defs3885" />
   <sodipodi:namedview
@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="434.49988"
-     inkscape:cy="496.95336"
+     inkscape:cx="366.17087"
+     inkscape:cy="528.47257"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -52,69 +52,147 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g6145-8"
-       transform="matrix(-1.1433264,-1.1433264,1.1433264,-1.1433264,1468.4668,1903.4959)">
+       id="g3932"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\ruler.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
       <g
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
-         transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1166.859,-729.65754)"
-         id="g4731-8"
-         style="fill:#fccd43;fill-opacity:1;display:inline">
-        <rect
-           y="5067.6558"
-           x="1997.75"
-           height="58.185001"
-           width="16"
-           id="rect4733-2"
-           style="fill:#fccd43;fill-opacity:1;stroke:none" />
-        <path
-           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
-           inkscape:export-ydpi="89.999985"
-           inkscape:export-xdpi="89.999985"
-           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
-           id="path4735-4"
-           d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
-           style="fill:#fccd43;fill-opacity:1;stroke:none"
-           inkscape:connector-curvature="0" />
-        <rect
-           style="fill:#fccd43;fill-opacity:1;stroke:none"
-           id="rect4737-5"
-           width="16"
-           height="58.185001"
-           x="1840.6687"
-           y="5067.6558" />
+         id="g3914"
+         transform="matrix(-1.1433264,-1.1433264,1.1433264,-1.1433264,1338.6622,1909.0517)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\ruler.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985">
+        <g
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+           transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1166.859,-729.65754)"
+           id="g3916"
+           style="fill:#fccd43;fill-opacity:1;display:inline">
+          <rect
+             y="5067.6558"
+             x="1997.75"
+             height="58.185001"
+             width="16"
+             id="rect3918"
+             style="fill:#fccd43;fill-opacity:1;stroke:none" />
+          <path
+             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
+             inkscape:export-ydpi="89.999985"
+             inkscape:export-xdpi="89.999985"
+             inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+             id="path3920"
+             d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             inkscape:connector-curvature="0" />
+          <rect
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             id="rect3922"
+             width="16"
+             height="58.185001"
+             x="1840.6687"
+             y="5067.6558" />
+        </g>
+        <g
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+           transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1121.6385,-774.87801)"
+           id="g3924"
+           style="fill:#fccd43;fill-opacity:1;display:inline">
+          <rect
+             y="5067.6558"
+             x="1997.75"
+             height="58.185001"
+             width="16"
+             id="rect3926"
+             style="fill:#fccd43;fill-opacity:1;stroke:none" />
+          <path
+             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
+             inkscape:export-ydpi="89.999985"
+             inkscape:export-xdpi="89.999985"
+             inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+             id="path3928"
+             d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             inkscape:connector-curvature="0" />
+          <rect
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             id="rect3930"
+             width="16"
+             height="58.185001"
+             x="1840.6687"
+             y="5067.6558" />
+        </g>
       </g>
       <g
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
-         transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1121.6385,-774.87801)"
-         id="g4739-5"
-         style="fill:#fccd43;fill-opacity:1;display:inline">
-        <rect
-           y="5067.6558"
-           x="1997.75"
-           height="58.185001"
-           width="16"
-           id="rect4741-1"
-           style="fill:#fccd43;fill-opacity:1;stroke:none" />
-        <path
-           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
-           inkscape:export-ydpi="89.999985"
-           inkscape:export-xdpi="89.999985"
-           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
-           id="path4743-7"
-           d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
-           style="fill:#fccd43;fill-opacity:1;stroke:none"
-           inkscape:connector-curvature="0" />
-        <rect
-           style="fill:#fccd43;fill-opacity:1;stroke:none"
-           id="rect4745-1"
-           width="16"
-           height="58.185001"
-           x="1840.6687"
-           y="5067.6558" />
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Resources\ruler.png"
+         transform="matrix(-1.1433264,-1.1433264,1.1433264,-1.1433264,1441.9503,1909.0517)"
+         id="g6145-8">
+        <g
+           style="fill:#fccd43;fill-opacity:1;display:inline"
+           id="g4731-8"
+           transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1166.859,-729.65754)"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <rect
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             id="rect4733-2"
+             width="16"
+             height="58.185001"
+             x="1997.75"
+             y="5067.6558" />
+          <path
+             inkscape:connector-curvature="0"
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+             id="path4735-4"
+             inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+             inkscape:export-xdpi="89.999985"
+             inkscape:export-ydpi="89.999985"
+             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+          <rect
+             y="5067.6558"
+             x="1840.6687"
+             height="58.185001"
+             width="16"
+             id="rect4737-5"
+             style="fill:#fccd43;fill-opacity:1;stroke:none" />
+        </g>
+        <g
+           style="fill:#fccd43;fill-opacity:1;display:inline"
+           id="g4739-5"
+           transform="matrix(0.33578506,-0.33578506,0.30399683,0.30399684,-1121.6385,-774.87801)"
+           inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\ConversionNotAvailableOverlay.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <rect
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             id="rect4741-1"
+             width="16"
+             height="58.185001"
+             x="1997.75"
+             y="5067.6558" />
+          <path
+             inkscape:connector-curvature="0"
+             style="fill:#fccd43;fill-opacity:1;stroke:none"
+             d="m 2009.2176,5067.6558 -161.7434,0 0,58.185 9.1489,0 10e-5,-31.2916 6.5062,0 0,31.2916 15.9368,0 0,-43.2791 6.5064,0 -10e-5,43.2791 15.9369,0 0,-31.2916 6.5062,0 0,31.2916 15.9369,0 -1e-4,-43.279 6.5064,-1e-4 0,43.2791 15.9368,0 0,-31.2915 6.5063,-10e-5 0,31.2916 15.937,0 -10e-5,-43.279 6.4927,-1e-4 0,43.2791 15.9504,0 0,-31.2916 6.4927,10e-5 0,31.2915 11.443,0 z"
+             id="path4743-7"
+             inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+             inkscape:export-xdpi="89.999985"
+             inkscape:export-ydpi="89.999985"
+             sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+          <rect
+             y="5067.6558"
+             x="1840.6687"
+             height="58.185001"
+             width="16"
+             id="rect4745-1"
+             style="fill:#fccd43;fill-opacity:1;stroke:none" />
+        </g>
       </g>
     </g>
   </g>

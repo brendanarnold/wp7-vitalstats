@@ -31,11 +31,12 @@ namespace Pocketailor.View
         }
 
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //this.AdRotatorControl.Invalidate();
+            this.AdRotatorControl.Invalidate();
             base.OnNavigatedTo(e);
             
+
             // Load up the data using a query string in case of tombstoning
             string profileIdStr, conversionIdStr;
             NavigationContext.QueryString.TryGetValue("ProfileId", out profileIdStr);
@@ -45,10 +46,16 @@ namespace Pocketailor.View
             if (App.VM.GroupedConversions == null
                 || !App.VM.SkipLoadConversionPageData)
             {
-                App.VM.LoadConversionsPageDataAsyncTask(profileId, conversionId);
+                if (App.VM.SkipLoadConversionPageData)
+                    App.VM.SkipLoadConversionPageData = false;
+                    await App.VM.LoadConversionsPageDataAsyncTask(profileId, conversionId);
             }
-            if (App.VM.SkipLoadConversionPageData)
-                App.VM.SkipLoadConversionPageData = false;
+            else
+            {
+                if (App.VM.SkipLoadConversionPageData)
+                    App.VM.SkipLoadConversionPageData = false;
+            }
+            
 
         }
 
