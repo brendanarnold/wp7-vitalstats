@@ -124,12 +124,14 @@ namespace Pocketailor.View
 
         private void conversionsLongListSelector_GroupViewClosing(object sender, GroupViewClosingEventArgs e)
         {
+
             //Cancelling automatic closing and scrolling to do it manually.
             e.Cancel = true;
             if (e.SelectedGroup != null)
             {
                 currentSelector.ScrollToGroup(e.SelectedGroup);
             }
+            
 
             //Dispatch the swivel animation for performance on the UI thread.
             Dispatcher.BeginInvoke(() =>
@@ -175,6 +177,9 @@ namespace Pocketailor.View
                 _swivelHide.Begin();
 
             });
+
+            
+
         }
 
         private void _swivelHide_Completed(object sender, EventArgs e)
