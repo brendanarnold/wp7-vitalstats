@@ -44,11 +44,13 @@ namespace Pocketailor.View
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.SelectedConversionData.TweakSizeDown();
+            this.sizeDownStoryboard.Begin();
         }
 
         private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.SelectedConversionData.TweakSizeUp();
+            this.sizeDownStoryboard.Begin();
         }
 
         private void PromptForFeedbackPermission()

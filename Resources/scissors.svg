@@ -15,7 +15,7 @@
    id="svg4897"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 14">
+   sodipodi:docname="scissors.svg">
   <defs
      id="defs4899" />
   <sodipodi:namedview
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="375"
+     inkscape:cx="146.42857"
      inkscape:cy="520"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -64,11 +64,14 @@
        id="rect4801"
        width="561.64484"
        height="407.09146"
-       x="-273.34573"
-       y="200.61061" />
+       x="-333.34573"
+       y="217.75346" />
     <g
-       transform="translate(-6662.8105,74.078616)"
-       id="g4845">
+       transform="matrix(0.726059,0,0,0.74010726,-4792.2552,135.98095)"
+       id="g4845"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\TailorShears.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
       <path
          sodipodi:nodetypes="csc"
          inkscape:connector-curvature="0"

@@ -134,13 +134,7 @@
 						x:Name="selectedSizeTextBlock"
 						Canvas.Left="0" Canvas.Top="0"
 						Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
-						Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP Semibold" FontSize="48">
-						<i:Interaction.Triggers>
-							<ec:PropertyChangedTrigger Binding="{Binding Text, ElementName=selectedSizeTextBlock}">
-								<eim:ControlStoryboardAction Storyboard="{StaticResource sizeDownStoryboard}"/>
-							</ec:PropertyChangedTrigger>
-						</i:Interaction.Triggers>
-					</TextBlock>
+						Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP Semibold" FontSize="48"/>
 				</Canvas>
 				<Grid Margin="36,0,36,6">
 					<Grid.ColumnDefinitions>

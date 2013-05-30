@@ -236,43 +236,94 @@
 								<RowDefinition Height="*" />
 							</Grid.RowDefinitions>
 						
-							<!-- The help arrow that is only displayed when there are no profiles -->
-							<Button x:Name="addProfileBtn" Content="Add a profile" HorizontalAlignment="Left" Height="125" Margin="12,0,0,12" Grid.Row="0" Width="412" Tap="addProfileBtn_Tap">
-								<Button.Resources>
-									<Style x:Key="ButtonStyle1" TargetType="Button">
-										<Setter Property="Template">
-											<Setter.Value>
-												<ControlTemplate TargetType="Button">
-													<Grid>
-														<Grid.Background>
-															<ImageBrush ImageSource="/Images/tape-btn.jpg" Stretch="Fill"/>
-														</Grid.Background>
-														<Grid.RowDefinitions>
-															<RowDefinition Height="Auto" />
-															<RowDefinition Height="*" />
-														</Grid.RowDefinitions>
-														<Border
-															Grid.Row="0" 
-															Background="{StaticResource ImgOverlayColor}"  >
-															<TextBlock
-																Margin="6,0,6,3"
-																Text="{TemplateBinding Content}" Foreground="{StaticResource TileTxtColor}" FontFamily="Segoe WP" />
-														</Border>
-													</Grid>
-												</ControlTemplate>
-											</Setter.Value>
-										</Setter>
-									</Style>
-								</Button.Resources>
-								<Button.Style>
-									<StaticResource ResourceKey="ButtonStyle1"/>
-								</Button.Style>
-							</Button>
-						
+							<Grid Width="412" Margin="12,0,0,0" HorizontalAlignment="Left">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="2*" />
+									<ColumnDefinition Width="1*" />
+								</Grid.ColumnDefinitions>
+								
+								<!-- The help arrow that is only displayed when there are no profiles -->
+								<Button x:Name="addProfileBtn" 
+									Grid.Column="0"
+									Content="Add a profile" Height="125" Margin="0,0,0,12" Grid.Row="0" Tap="addProfileBtn_Tap">
+									<Button.Resources>
+										<Style x:Key="ButtonStyle1" TargetType="Button">
+											<Setter Property="Template">
+												<Setter.Value>
+													<ControlTemplate TargetType="Button">
+														<Grid>
+															<Grid.Background>
+																<ImageBrush ImageSource="/Images/tape-btn.jpg" Stretch="Fill"/>
+															</Grid.Background>
+															<Grid.RowDefinitions>
+																<RowDefinition Height="Auto" />
+																<RowDefinition Height="*" />
+															</Grid.RowDefinitions>
+															<Border
+																Grid.Row="0" 
+																Background="{StaticResource ImgOverlayColor}"  >
+																<TextBlock
+																	Margin="6,0,6,3"
+																	Text="{TemplateBinding Content}" Foreground="{StaticResource TileTxtColor}" FontFamily="Segoe WP" />
+															</Border>
+														</Grid>
+													</ControlTemplate>
+												</Setter.Value>
+											</Setter>
+										</Style>
+									</Button.Resources>
+									<Button.Style>
+										<StaticResource ResourceKey="ButtonStyle1"/>
+									</Button.Style>
+								</Button>
+
+								<Button x:Name="settingsBtn" 
+									Grid.Column="1"
+									Content="Settings" Height="125" Margin="12,0,0,12" Grid.Row="0">
+									<Button.Resources>
+										<Style x:Key="ButtonStyle2" TargetType="Button">
+											<Setter Property="Template">
+												<Setter.Value>
+													<ControlTemplate TargetType="Button">
+														<Grid>
+															<Grid.Background>
+																<ImageBrush Stretch="Fill" ImageSource="/Images/settings-btn.jpg"/>
+															</Grid.Background>
+															<Grid.RowDefinitions>
+																<RowDefinition Height="Auto" />
+																<RowDefinition Height="*" />
+															</Grid.RowDefinitions>
+															<Border
+																Grid.Row="0" 
+																Background="{StaticResource ImgOverlayColor}"  >
+																<TextBlock
+																	Margin="6,0,6,3"
+																	Text="{TemplateBinding Content}" Foreground="{StaticResource TileTxtColor}" FontFamily="Segoe WP" />
+															</Border>
+														</Grid>
+													</ControlTemplate>
+												</Setter.Value>
+											</Setter>
+										</Style>
+									</Button.Resources>
+									<i:Interaction.Triggers>
+										<i:EventTrigger EventName="Tap">
+											<ec:NavigateToPageAction TargetPage="/View/SettingsPage.xaml"/>
+										</i:EventTrigger>
+									</i:Interaction.Triggers>
+									<Button.Style>
+										<StaticResource ResourceKey="ButtonStyle2"/>
+									</Button.Style>
+								</Button>
+
+
+							</Grid>
+
 							<!-- The help arrow that is only displayed when there are no profiles -->
 							<Grid x:Name="promptStartHereContainer"
 								Grid.Row="1" 
 								Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}">
+								
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
 									<RowDefinition Height="*" />
@@ -283,21 +334,24 @@
 									Width="55"
 									HorizontalAlignment="Center"
 									VerticalAlignment="Top"
-									Source="/Images/UpChalkArrow.png">
+									Source="/Images/UpChalkArrow.png" Margin="0,0,153,0" RenderTransformOrigin="0.5,0.5">
+									<Image.RenderTransform>
+										<CompositeTransform ScaleX="-1" Rotation="-22"/>
+									</Image.RenderTransform>
 								</Image>
 								<TextBlock 
 									Grid.Row="1"
-									TextWrapping="Wrap" Text="start here" 
+									TextWrapping="Wrap" Text="start by adding a profile" 
 									HorizontalAlignment="Center" VerticalAlignment="Top" 
 									FontFamily="{StaticResource HelpTxtFont}" 
-									FontSize="{StaticResource HelpTxtFontSizeLarge}"/>
+									FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
 								
 							</Grid>
 					
 							<!-- The profiles which are only displayed if there are any -->
 							<Grid x:Name="profileContainer"
 								Grid.Row="1"
-								Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
+								Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}" d:IsHidden="True">
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
 									<RowDefinition Height="Auto" />
