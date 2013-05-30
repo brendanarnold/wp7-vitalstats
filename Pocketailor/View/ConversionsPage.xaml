@@ -219,9 +219,8 @@
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
 				<TextBlock x:Name="loadingTextBlock" Grid.Row="0" 
-					FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" 
-					FontSize="{StaticResource HelpTxtFontSizeLarge}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,6" 
-					>calculating ...</TextBlock>
+					FontFamily="Segoe WP" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,6" FontSize="21.333" Foreground="{StaticResource SubTitleColor}" 
+					>CALCULATING ...</TextBlock>
 				<Canvas x:Name="loadingImageContainer" Grid.Row="1">
 					<Image x:Name="rulerImage" 
 						Canvas.Left="-30"

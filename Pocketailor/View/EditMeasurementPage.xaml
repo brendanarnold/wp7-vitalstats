@@ -79,6 +79,7 @@
 	</phone:PhoneApplicationPage.ApplicationBar>
 
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
+		
 		<ScrollViewer x:Name="containerScrollViewer">
 			<StackPanel x:Name="containerStackPanel">
 				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22" Foreground="{StaticResource PageTxtColor}"/>

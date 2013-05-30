@@ -9,6 +9,7 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace Pocketailor.Model
 {
@@ -119,7 +120,6 @@ namespace Pocketailor.Model
 
         // This is necessary since database create app has no reference to App.VM
         #if !IS_DATABASE_HELPER_APP
-        
 
         // Flag that indicates that there are no bigger sizes available
         public bool NoneBigger
@@ -186,6 +186,30 @@ namespace Pocketailor.Model
             }
         }
 
+        public string ConversionString
+        {
+            get
+            {
+                return Lookup.Conversions[this.Conversion];
+            }
+        }
+
+        public string RegionString
+        {
+            get
+            {
+                return Lookup.Regions[this.Region];
+            }
+        }
+
+
+        public bool IsPreviouslyAdjusted
+        {
+            get
+            {
+                return (this.PersistedAdjustment != null);
+            }
+        }
 
         // Returns the formatted string of the best fit
         public string FormattedValue

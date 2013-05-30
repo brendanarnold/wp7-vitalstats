@@ -14,6 +14,33 @@ using System.Windows.Media;
 namespace Pocketailor.View
 {
 
+    /// <summary>
+    /// Takes a pipe delimited string as a parameter and returns a string prefixed by the part before the pipe and suffixed y the part after the pipe
+    /// </summary>
+    public class StringToAffixedString : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            string[] components = (parameter as string).Split(new char[] { '|' });
+            if (components.Length == 1)
+            {
+                return (value as string) + components[1];
+            } 
+            else 
+            {
+                return components[0] + (value as string) + components[1];
+            }
+
+
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
+    // Used specifically to obtain the right colours in the GroupItem dialog on ConversionsPage.xaml
     public class BoolToGroupItemBGColor : System.Windows.Data.IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)

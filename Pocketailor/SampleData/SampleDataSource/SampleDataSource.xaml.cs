@@ -155,6 +155,35 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
+		private Brands _Brands = new Brands();
+
+		public Brands Brands
+		{
+			get
+			{
+				return this._Brands;
+			}
+		}
+
+		private SelectedConversionData _SelectedConversionData = new SelectedConversionData();
+
+		public SelectedConversionData SelectedConversionData
+		{
+			get
+			{
+				return this._SelectedConversionData;
+			}
+
+			set
+			{
+				if (this._SelectedConversionData != value)
+				{
+					this._SelectedConversionData = value;
+					this.OnPropertyChanged("SelectedConversionData");
+				}
+			}
+		}
+
 		private bool _IsLocked = false;
 
 		public bool IsLocked
@@ -304,16 +333,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._SelectedRegionString = value;
 					this.OnPropertyChanged("SelectedRegionString");
 				}
-			}
-		}
-
-		private Brands _Brands = new Brands();
-
-		public Brands Brands
-		{
-			get
-			{
-				return this._Brands;
 			}
 		}
 	}
@@ -2042,6 +2061,10 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
+	public class Brands : System.Collections.ObjectModel.ObservableCollection<BrandsItem>
+	{ 
+	}
+
 	public class BrandsItem : System.ComponentModel.INotifyPropertyChanged
 	{
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -2093,8 +2116,139 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class Brands : System.Collections.ObjectModel.ObservableCollection<BrandsItem>
+	public class SelectedConversionData : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private Notes _Notes = new Notes();
+
+		public Notes Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+		}
+
+		private string _FormattedValue = string.Empty;
+
+		public string FormattedValue
+		{
+			get
+			{
+				return this._FormattedValue;
+			}
+
+			set
+			{
+				if (this._FormattedValue != value)
+				{
+					this._FormattedValue = value;
+					this.OnPropertyChanged("FormattedValue");
+				}
+			}
+		}
+
+		private string _BrandName = string.Empty;
+
+		public string BrandName
+		{
+			get
+			{
+				return this._BrandName;
+			}
+
+			set
+			{
+				if (this._BrandName != value)
+				{
+					this._BrandName = value;
+					this.OnPropertyChanged("BrandName");
+				}
+			}
+		}
+
+		private double _ConversionString = 0;
+
+		public double ConversionString
+		{
+			get
+			{
+				return this._ConversionString;
+			}
+
+			set
+			{
+				if (this._ConversionString != value)
+				{
+					this._ConversionString = value;
+					this.OnPropertyChanged("ConversionString");
+				}
+			}
+		}
+
+		private bool _IsPreviouslyAdjusted = false;
+
+		public bool IsPreviouslyAdjusted
+		{
+			get
+			{
+				return this._IsPreviouslyAdjusted;
+			}
+
+			set
+			{
+				if (this._IsPreviouslyAdjusted != value)
+				{
+					this._IsPreviouslyAdjusted = value;
+					this.OnPropertyChanged("IsPreviouslyAdjusted");
+				}
+			}
+		}
+	}
+
+	public class Notes : System.Collections.ObjectModel.ObservableCollection<NotesItem>
 	{ 
+	}
+
+	public class NotesItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Text = string.Empty;
+
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+
+			set
+			{
+				if (this._Text != value)
+				{
+					this._Text = value;
+					this.OnPropertyChanged("Text");
+				}
+			}
+		}
 	}
 #endif
 }

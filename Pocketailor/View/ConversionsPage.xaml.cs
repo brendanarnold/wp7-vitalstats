@@ -215,31 +215,31 @@ namespace Pocketailor.View
         // Main set of methods for adjustments found in AdjustmentWidget.xaml.cs
 
 
-        private void conversionResultContainerGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            ConversionData c = (sender as Grid).DataContext as ConversionData;
-            c.IsAdjusting = !c.IsAdjusting;
-            if (c.IsAdjusting)
-            {
-                // First time adjusting, give a prompt
-                if (App.Settings.GetValueOrDefault<bool>("ShowHelpAdjustment", true))
-                {
-                    MessageBoxResult res = MessageBox.Show("Tap a brand name to adjust the sizes."
-                        + Environment.NewLine
-                        + Environment.NewLine
-                        + "If you don't want to make an adjustment, tap the brand name again or hit the back button.",
-                        "Making an adjustment", MessageBoxButton.OK);
-                    App.Settings.AddOrUpdateValue("ShowHelpAdjustment", false);
-                    App.Settings.Save();
-                }
-            }
-            else
-            {
-                c.DiscardTweaks();
-            }
+        //private void conversionResultContainerGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    ConversionData c = (sender as Grid).DataContext as ConversionData;
+        //    c.IsAdjusting = !c.IsAdjusting;
+        //    if (c.IsAdjusting)
+        //    {
+        //        // First time adjusting, give a prompt
+        //        if (App.Settings.GetValueOrDefault<bool>("ShowHelpAdjustment", true))
+        //        {
+        //            MessageBoxResult res = MessageBox.Show("Tap a brand name to adjust the sizes."
+        //                + Environment.NewLine
+        //                + Environment.NewLine
+        //                + "If you don't want to make an adjustment, tap the brand name again or hit the back button.",
+        //                "Making an adjustment", MessageBoxButton.OK);
+        //            App.Settings.AddOrUpdateValue("ShowHelpAdjustment", false);
+        //            App.Settings.Save();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        c.DiscardTweaks();
+        //    }
 
             
-        }
+        //}
 
 
         private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -279,6 +279,15 @@ namespace Pocketailor.View
                 App.VM.AllowFeedBack = false;
             }
 
+        }
+
+        private void conversionResultContainerGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            ConversionData c = (sender as Grid).DataContext as ConversionData;
+            App.VM.SelectedConversionData = c;
+            string uriStr = String.Format("/View/ConversionAdjustmentPage.xaml?GenderId={0}&BrandId={1}&ConversionId={2}&RegionId={3}&ProfileId={4}",
+                App.VM.SelectedProfile.Gender, c.Brand, c.Conversion, c.Region, App.VM.SelectedProfile.Id);
+            NavigationService.Navigate(new Uri(uriStr, UriKind.Relative));
         }
 
 

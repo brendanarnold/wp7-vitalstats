@@ -18,6 +18,7 @@
       <xs:element name="Regions" type="tns:Regions" />
       <xs:element name="ConversionMeasurements" type="tns:ConversionMeasurements" />
       <xs:element name="Brands" type="tns:Brands" />
+      <xs:element name="SelectedConversionData" type="tns:SelectedConversionData" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
     <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
@@ -233,6 +234,23 @@
   <xs:complexType name="BrandsItem">
     <xs:attribute name="Name" type="xs:string" />
     <xs:attribute name="Selected" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="SelectedConversionData">
+    <xs:sequence>
+      <xs:element name="Notes" type="tns:Notes" />
+    </xs:sequence>
+    <xs:attribute name="FormattedValue" type="xs:string" />
+    <xs:attribute name="BrandName" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1" name="ConversionString" type="xs:double" />
+    <xs:attribute name="IsPreviouslyAdjusted" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="Notes">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="NotesItem" type="tns:NotesItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NotesItem">
+    <xs:attribute name="Text" type="xs:string" />
   </xs:complexType>
   <xs:simpleType name="Basic-Image">
     <xs:restriction base="xs:anyURI" />

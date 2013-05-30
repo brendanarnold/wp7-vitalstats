@@ -164,6 +164,7 @@
     <Compile Include="Model\Static\UnitCultureIds.cs" />
     <Compile Include="Model\Static\UnitIds.cs" />
     <Compile Include="SampleData\SampleDataSource\LongListSampleData.cs" />
+    <Compile Include="ViewModel\ConversionAdjustmentViewModel.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
     <Compile Include="ViewModel\EditBlacklistedBrandsViewModel.cs" />
     <Compile Include="ViewModel\EditRegionsViewModel.cs" />
@@ -179,6 +180,9 @@
     </Compile>
     <Compile Include="View\Controls\ConversionResultsBtn.xaml.cs">
       <DependentUpon>ConversionResultsBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConversionAdjustmentPage.xaml.cs">
+      <DependentUpon>ConversionAdjustmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditBlacklistedBrands.xaml.cs">
       <DependentUpon>EditBlacklistedBrands.xaml</DependentUpon>
@@ -274,6 +278,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ConversionAdjustmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ConversionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -359,6 +367,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\suit-bg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TailorShears.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\tape-btn.jpg">
