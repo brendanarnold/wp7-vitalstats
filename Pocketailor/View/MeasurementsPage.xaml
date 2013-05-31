@@ -264,7 +264,7 @@
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="shirtConversionBtn" Title="Shirts" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HasShirtMeasurements}" Tap="shirtConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="shirtConversionBtn" Title="Shirts &amp; tops" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HasShirtMeasurements}" Tap="shirtConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/shirt-btn.jpg"/>
 								</Controls:ConversionBtn.Background>

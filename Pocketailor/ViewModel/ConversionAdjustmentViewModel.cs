@@ -26,8 +26,18 @@ namespace Pocketailor.ViewModel
             } 
         }
 
-        
-    
+        public void LoadSelectedConversionData(GenderId gender, ConversionId conversion, RegionId region, BrandId brand)
+        {
+            this.SelectedConversionData = this.conversiondsDB.ConversionData.Where(c => c.Gender == gender
+                && c.Conversion == conversion
+                && c.Region == region
+                && c.Brand == brand).FirstOrDefault();
+        }
+
+        public void LoadSelectedProfile(int profileId)
+        {
+            this.SelectedProfile = this.appDB.Profiles.Where(p => p.Id == profileId).FirstOrDefault();
+        }
     
     
     }

@@ -45,6 +45,19 @@
 </toolkit:TransitionService.NavigationOutTransition>
 
 	
+	<phone:PhoneApplicationPage.ApplicationBar>
+	<shell:ApplicationBar
+			IsVisible="True" IsMenuEnabled="True" 
+			ForegroundColor="{StaticResource ApplicationBarFGColor}" 
+			BackgroundColor="{StaticResource ApplicationBarBGColor}"
+			Mode="Minimized" >
+			<shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="settings" Click="settingsAppBarMenuItem_Click"/>
+            </shell:ApplicationBar.MenuItems>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
+	
     <phone:PhoneApplicationPage.Resources>
 
 
@@ -341,9 +354,9 @@
 									Width="55"
 									HorizontalAlignment="Center"
 									VerticalAlignment="Top"
-									Source="/Images/UpChalkArrow.png" Margin="0,0,153,0" RenderTransformOrigin="0.5,0.5">
+									Source="/Images/UpChalkArrow.png" Margin="0,5,92,0" RenderTransformOrigin="0,0.5">
 									<Image.RenderTransform>
-										<CompositeTransform ScaleX="-1" Rotation="-22"/>
+										<CompositeTransform ScaleX="-1" Rotation="-8" TranslateX="52.9976" TranslateY="-10.3017"/>
 									</Image.RenderTransform>
 								</Image>
 								<TextBlock 
@@ -358,7 +371,7 @@
 							<!-- The profiles which are only displayed if there are any -->
 							<Grid x:Name="profileContainer"
 								Grid.Row="1"
-								Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}" d:IsHidden="True">
+								Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
 									<RowDefinition Height="Auto" />
@@ -472,7 +485,7 @@
 								<Run Text="Enter your measurements to find the right size clothing for hundreds of brands worldwide."/>
                             </TextBlock>
 
-                            <Image  Grid.Column="1" Source="/Images/ChalkDesign.png" />
+                            <Image  Grid.Column="1" Source="/Images/ChalkDesign.png" RenderTransformOrigin="0.5,0.5" Margin="-5,0,-30,0" />
 
                         </Grid>
 
@@ -485,15 +498,12 @@
                         </TextBlock>
                         <Button  x:Name="contactAuthorBtn" Content="pocketailor@lassiv.com" Margin="0,0,0,24" Style="{StaticResource hyperlinkBtnStyle}" Tap="contactBtn_Tap" />
 
+                        <Controls:AboutButton  x:Name="feedbackBtn" TitleText="Give feedback" IconImage="/Images/AppBar/appbar.chat.png" Margin="0,0,0,10"  Tap="feedbackBtn_Tap" />
                         <Controls:AboutButton  x:Name="rateBtn" TitleText="Rate Pocketailor" IconImage="/Images/AppBar/appbar.heart.png" Margin="0,0,0,10" Tap="rateBtn_Tap" />
                         <Controls:AboutButton  x:Name="facebookBtn" TitleText="Visit on Facebook" IconImage="/Images/AppBar/appbar.facebook.heart.png" Margin="0,0,0,10" Tap="facebookBtn_Tap" />
-                        <Controls:AboutButton  x:Name="feedbackBtn" TitleText="Give feedback" IconImage="/Images/AppBar/appbar.chat.png" Margin="0,0,0,10"  Tap="feedbackBtn_Tap" />
-                        <Controls:AboutButton  x:Name="legalBtn" TitleText="Legal and thanks" IconImage="/Images/AppBar/appbar.scale.unbalanced.png" Margin="0,0,0,10" Tap="legalBtn_Tap" />
-                        <Controls:AboutButton  x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/AppBar/appbar.globe.wire.png" Margin="0,0,0,50" Tap="websiteBtn_Tap" />
-
-
-
-
+                        <Controls:AboutButton  x:Name="websiteBtn" TitleText="Visit website" IconImage="/Images/AppBar/appbar.globe.wire.png" Margin="0,0,0,10" Tap="websiteBtn_Tap" />
+						<Controls:AboutButton  x:Name="legalBtn" TitleText="Legal and thanks" IconImage="/Images/AppBar/appbar.scale.unbalanced.png" Margin="0,0,0,10" Tap="legalBtn_Tap" />
+                        
                     </StackPanel>
 
                 </ScrollViewer>

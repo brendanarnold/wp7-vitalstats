@@ -228,24 +228,24 @@ namespace Pocketailor.View
 
         private void Pivot_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            switch (this.mainPivot.SelectedIndex)
-            {
-                case 0:
-                    this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
-                    break;
-                case 1:
-                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
-                    break;
-                case 2:
-                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
-                    break;
-                default:
-                    break;
-                    //                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
-                    //this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
-                    //this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
+            //switch (this.mainPivot.SelectedIndex)
+            //{
+            //    case 0:
+            //        this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
+            //        break;
+            //    case 1:
+            //        this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
+            //        break;
+            //    case 2:
+            //        this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
+            //        break;
+            //    default:
+            //        break;
+            //        //                    this.ApplicationBar = (ApplicationBar)Resources["aboutApplicationBar"];
+            //        //this.ApplicationBar = (ApplicationBar)Resources["homeApplicationBar"];
+            //        //this.ApplicationBar = (ApplicationBar)Resources["peopleApplicationBar"];
 
-            }
+            //}
         }
 
         private void addProfileBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)

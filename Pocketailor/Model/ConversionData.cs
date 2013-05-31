@@ -211,6 +211,8 @@ namespace Pocketailor.Model
             }
         }
 
+       
+
         // Returns the formatted string of the best fit
         public string FormattedValue
         {
@@ -336,6 +338,14 @@ namespace Pocketailor.Model
             this.RelativeIndAdjustment = this.GetRelativeIndAdjustment();
         }
 
+
+        public bool IsUnsavedTweaks
+        {
+            get
+            {
+                return this.RelativeIndAdjustment != this.GetRelativeIndAdjustment();
+            }
+        }
 
         #endregion
 
