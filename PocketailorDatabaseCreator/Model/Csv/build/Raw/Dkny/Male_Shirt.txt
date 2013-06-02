@@ -1,3 +1,4 @@
+#Unit:Inch
 UK	S	M	L	XL
 SizeId	-40	-20	0	20
 US	S	M	L	XL

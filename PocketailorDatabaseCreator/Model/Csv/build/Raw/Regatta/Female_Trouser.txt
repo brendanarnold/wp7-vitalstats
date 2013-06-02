@@ -1,4 +1,4 @@
-GeneralSize	S	M	L	XL
+SizeLetter	S	M	L	XL
 SizeId	-40	-20	0	20
 Waist	66-71	76-81	86-92	97
 UK	8-10	12-14	16-18	20

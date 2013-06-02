@@ -1,7 +1,6 @@
-SizeLetter	Chesca 1	Chesca 1	Chesca 2	Chesca 2	Chesca 3	Chesca 4
-SizeId	-40	-20	0	20	40
+SizeLetter	Chesca 1	Chesca 1	Chesca 2	Chesca 2	Chesca 3	Chesca 3	Chesca 4
+SizeId	-60	-40	-20	0	20	40	60
 UK	12	14	16	18	20	22	24
 Chest	100	106	112	118	124	130	136
 Waist	82	88	94	100	106	112	118
 Hips	110	116	122	128	134	140	146
-

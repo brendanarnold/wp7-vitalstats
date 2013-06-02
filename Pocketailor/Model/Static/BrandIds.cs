@@ -11,7 +11,7 @@ namespace Pocketailor.Model
         AbercrombieAndFitch = 1,
         AdriannaPapell = 2,
         Aftershock = 3,
-        Alexion = 4,
+        Alexon = 4,
         Almari = 5,
         AndreaJoen = 6,
         AnnaGreenabelle = 7,
@@ -42,7 +42,7 @@ namespace Pocketailor.Model
         Hobbs = 32,
         IllustratedPeople = 33,
         IzabelLondon = 34,
-        JamesLakelend = 35,
+        JamesLakeland = 35,
         JaneNorman = 36,
         JaquesVert = 37,
         Jaeger = 38,
@@ -96,6 +96,19 @@ namespace Pocketailor.Model
         WhiteStuff = 86,
         Yumi = 87,
         Zara = 88,
+        
+        Raw = 89,
+        Barbour = 90,
+        Diesel = 91,
+        Dkny = 92,
+        Fossil = 93,
+        Gucci = 94,
+        Jag = 95,
+        Lacoste = 97,
+        Lacoste_Live = 98,
+        Lipsy = 99,
+        Regatta = 100,
+
     }
 
     public static partial class Lookup
@@ -105,7 +118,7 @@ namespace Pocketailor.Model
             { BrandId.AbercrombieAndFitch, "Abercrombie & Fitch" },
             { BrandId.AdriannaPapell, "Adrianna Papell" },
             { BrandId.Aftershock, "Aftershock" },
-            { BrandId.Alexion, "Alexion" },
+            { BrandId.Alexon, "Alexon" },
             { BrandId.Almari, "Almari" },
             { BrandId.AndreaJoen, "Andrea Joen" },
             { BrandId.AnnaGreenabelle, "Anna Greenabelle" },
@@ -137,7 +150,7 @@ namespace Pocketailor.Model
             { BrandId.IllustratedPeople, "Illustrated People" },
             { BrandId.IzabelLondon, "Izabel London" },
             { BrandId.Jaeger, "Jaeger" },
-            { BrandId.JamesLakelend, "James Lakeland" },
+            { BrandId.JamesLakeland, "James Lakeland" },
             { BrandId.JaneNorman, "Jane Norman" },
             { BrandId.JaquesVert, "Jaques Vert" },
             { BrandId.Jigsaw, "Jigsaw" },
@@ -190,6 +203,17 @@ namespace Pocketailor.Model
             { BrandId.WhiteStuff, "White Stuff" },
             { BrandId.Yumi, "Yumi" },
             { BrandId.Zara, "Zara" },
+            { BrandId.Raw, "Raw" },
+            { BrandId.Barbour, "Barbour" },
+            { BrandId.Diesel, "Diesel" },
+            { BrandId.Dkny, "DKNY" },
+            { BrandId.Fossil, "Fossil" },
+            { BrandId.Gucci, "Gucci" },
+            { BrandId.Jag, "Jag" },
+            { BrandId.Lacoste, "Lacoste" },
+            { BrandId.Lacoste_Live, "Lacoste - Live" },
+            { BrandId.Lipsy, "Lipsy" },
+            { BrandId.Regatta, "Regatta" },
         };
     }
 

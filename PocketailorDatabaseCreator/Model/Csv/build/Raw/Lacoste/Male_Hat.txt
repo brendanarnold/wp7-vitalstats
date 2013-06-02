@@ -1,0 +1,7 @@
+#Unit:Inch
+EU	1 (XS,S)	2 (S,M)	3 (M,L)
+SizeId	-20	0	20
+UK	1 (XS,S)	2 (S,M)	3 (M,L)
+US	XS,S	S,M	M,L
+Head	21.5	22.0	23.2
+

@@ -30,6 +30,7 @@ namespace Pocketailor.Model
             MeasurementId.Hips,
             MeasurementId.Waist,
             MeasurementId.InsideLeg,
+            MeasurementId.Height,
         };
 
         public static List<MeasurementId> ShirtMens = new List<MeasurementId>()

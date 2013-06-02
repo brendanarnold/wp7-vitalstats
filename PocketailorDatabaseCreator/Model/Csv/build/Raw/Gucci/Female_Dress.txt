@@ -1,0 +1,10 @@
+SizeLetter	xxs	xs	s	m	l	xl	xxl
+SizeId	-60	-40	-20	0	20	40	60
+Italy	36	38	40	42	44	46	48
+bust	81	84	87	90	94	98	102
+waist	63	66	69	72	74	78	82
+hips	88	91	94	97	101	105	109
+uk	4	6	8	10	12	14	16
+france	32	34	36	38	40	42	44
+
+

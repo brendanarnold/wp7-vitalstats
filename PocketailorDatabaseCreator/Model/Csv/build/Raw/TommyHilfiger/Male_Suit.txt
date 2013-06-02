@@ -7,7 +7,7 @@ Netherlands	48	50	52	54	56	94	98	102	104	106
 France	48 regular	50 regular	52 regular	54 regular	56 regular	48 long	50 long	52 long	54 long	56 long
 UK	38	40	42	44	46	38 long	40 long	42 long	44 long	46 long
 Ireland	38	40	42	44	46	38 long	40 long	42 long	44 long	46 long
-Waist	83 - 86	87 - 90	91 - 94	95 - 98	99 - 102	83 - 86	87 - 90	91 - 94	95 - 98	99 - 102
-InsideLeg		82	83	84	85	86	82	83	84	85	86
-Sleeve	63 - 65	65 - 67	67 - 68	68 - 69	69 - 70	63 - 65	65 - 67	67 - 68	68 - 69	69 - 70
+Waist	83-86	87-90	91-94	95-98	99-102	83-86	87-90	91-94	95-98	99-102
+InsideLeg	82	83	84	85	86	82	83	84	85	86
+Sleeve	63-65	65-67	67-68	68-69	69-70	63-65	65-67	67-68	68-69	69-70
 

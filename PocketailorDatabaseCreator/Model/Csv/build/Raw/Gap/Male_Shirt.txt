@@ -1,4 +1,4 @@
-US	XS	S	S	M	M	L	L	XL
+US	XS	S	M	L	XL
 UK	XS	S	M	L	XL
 SizeId	-40	-20	0	20	40
 Neck	33½-35½	35½-37	38-39	40½-42	43-44½

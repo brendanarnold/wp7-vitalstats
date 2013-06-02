@@ -1,0 +1,4 @@
+SizeLetter	XS	S	M	L	XL	XXL
+SizeId	-60	-40	-20	0	20	40
+UK	28	30	32	34	36	38
+Waist	71	76	81.5	86	91	96.5

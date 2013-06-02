@@ -1,0 +1,7 @@
+UK	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Italy	XS	S	M	L	XL
+France	XS	S	M	L	XL
+US	XS	S	M	L	XL
+Eu	XS	S	M	L	XL
+Head	 55	 56	 57	 58	 59

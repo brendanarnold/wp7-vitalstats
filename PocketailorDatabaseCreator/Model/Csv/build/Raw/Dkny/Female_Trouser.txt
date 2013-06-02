@@ -1,3 +1,4 @@
+#Unit:Inch
 SizeLetter	XP	P	S	S	M	M	L	L
 SizeId	-80	-60	-40	-20	0	20	40	60
 US	0	2	4	6	8	10	12	14

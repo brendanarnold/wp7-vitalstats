@@ -242,7 +242,8 @@ namespace Pocketailor.Model
                 {
                     vals.Add((this.Measurements[mID][i] != -1) ? (double)this.Measurements[mID][i] - measuredVals[mID] : 0.0);
                 }
-                if (vals.Any(x => x < 0)) continue;
+                //if (vals.Any(x => x < 0)) continue;
+                vals = vals.Where(x => x != -1).ToList();
                 double chiSq = vals.Sum(x => x * x);
                 if (chiSq < bestChiSq)
                 {

@@ -1,1405 +1,1951 @@
 sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
--40	abercrombieandfitch	europe	male	93.50		83.50				48/s
--20	abercrombieandfitch	europe	male	99.00		86.50				50/m
-0	abercrombieandfitch	europe	male	104.00		89.50				52/l
-20	abercrombieandfitch	europe	male	109.00		92.00				54/xl
-40	abercrombieandfitch	europe	male	114.00		94.50				56/xxl
--40	abercrombieandfitch	korea	male	93.50		83.50				90,95/s
--20	abercrombieandfitch	korea	male	99.00		86.50				95,100/m
-0	abercrombieandfitch	korea	male	104.00		89.50				100,105/l
-20	abercrombieandfitch	korea	male	109.00		92.00				105,110/xl
-40	abercrombieandfitch	korea	male	114.00		94.50				110,115/xxl
--40	abercrombieandfitch	china	male	93.50		83.50				175-92y/s
--20	abercrombieandfitch	china	male	99.00		86.50				180-100y/m
-0	abercrombieandfitch	china	male	104.00		89.50				185-104y/l
-20	abercrombieandfitch	china	male	109.00		92.00				185-108b/xl
-40	abercrombieandfitch	china	male	114.00		94.50				185-112b/xxl
--40	abercrombieandfitch	uk	male	93.50		83.50				38/s
--20	abercrombieandfitch	uk	male	99.00		86.50				40/m
-0	abercrombieandfitch	uk	male	104.00		89.50				42/l
-20	abercrombieandfitch	uk	male	109.00		92.00				44/xl
-40	abercrombieandfitch	uk	male	114.00		94.50				46/xxl
--80	bananarepublic	europe	female	81		75				32/xs
--60	bananarepublic	europe	female	81		76				34/xs
--40	bananarepublic	europe	female	84		77				36/s
--20	bananarepublic	europe	female	84		79				38/s
-0	bananarepublic	europe	female	86		80				40/m
-20	bananarepublic	europe	female	86		81				42/m
-40	bananarepublic	europe	female	89		83				44/l
-60	bananarepublic	europe	female	89		84				46/l
-80	bananarepublic	europe	female	90		85				48/xl
--80	bananarepublic	us	female	81		75				0/xs
--60	bananarepublic	us	female	81		76				2/xs
--40	bananarepublic	us	female	84		77				4/s
--20	bananarepublic	us	female	84		79				6/s
-0	bananarepublic	us	female	86		80				8/m
-20	bananarepublic	us	female	86		81				10/m
-40	bananarepublic	us	female	89		83				12/l
-60	bananarepublic	us	female	89		84				14/l
-80	bananarepublic	us	female	90		85				16/xl
--80	bananarepublic	uk	female	81		75				4/xs
--60	bananarepublic	uk	female	81		76				6/xs
--40	bananarepublic	uk	female	84		77				8/s
--20	bananarepublic	uk	female	84		79				10/s
-0	bananarepublic	uk	female	86		80				12/m
-20	bananarepublic	uk	female	86		81				14/m
-40	bananarepublic	uk	female	89		83				16/l
-60	bananarepublic	uk	female	89		84				18/l
-80	bananarepublic	uk	female	90		85				20/xl
--60	bananarepublic	canada	male	87.50	34	81			72.50	xs
--40	bananarepublic	canada	male	92.50	36.50	84			76.50	s
--20	bananarepublic	canada	male	99.50	37.50	86			82.50	m
-0	bananarepublic	canada	male	108.00	41.50	89			87.50	l
-20	bananarepublic	canada	male	118.00	43.50	90			92.50	xl
-40	bananarepublic	canada	male	128.00	46.50	91			98	xxl
--60	bananarepublic	europe	male	87.50	34	81			72.50	xs
--40	bananarepublic	europe	male	92.50	36.50	84			76.50	s
--20	bananarepublic	europe	male	99.50	37.50	86			82.50	m
-0	bananarepublic	europe	male	108.00	41.50	89			87.50	l
-20	bananarepublic	europe	male	118.00	43.50	90			92.50	xl
-40	bananarepublic	europe	male	128.00	46.50	91			98	xxl
--60	bananarepublic	us	male	87.50	34	81			72.50	xs
--40	bananarepublic	us	male	92.50	36.50	84			76.50	s
--20	bananarepublic	us	male	99.50	37.50	86			82.50	m
-0	bananarepublic	us	male	108.00	41.50	89			87.50	l
-20	bananarepublic	us	male	118.00	43.50	90			92.50	xl
-40	bananarepublic	us	male	128.00	46.50	91			98	xxl
--60	bananarepublic	uk	male	87.50	34	81			72.50	xs
--40	bananarepublic	uk	male	92.50	36.50	84			76.50	s
--20	bananarepublic	uk	male	99.50	37.50	86			82.50	m
-0	bananarepublic	uk	male	108.00	41.50	89			87.50	l
-20	bananarepublic	uk	male	118.00	43.50	90			92.50	xl
-40	bananarepublic	uk	male	128.00	46.50	91			98	xxl
--40	bench	europe	female	82					64	xs
--20	bench	europe	female	87					69	s
-0	bench	europe	female	92					74	m
-20	bench	europe	female	97					79	l
-40	bench	europe	female	102					84	xl
--40	bench	us	female	82					64	xs
--20	bench	us	female	87					69	s
-0	bench	us	female	92					74	m
-20	bench	us	female	97					79	l
-40	bench	us	female	102					84	xl
--40	bench	uk	female	82					64	8/xs
--20	bench	uk	female	87					69	10/s
-0	bench	uk	female	92					74	12/m
-20	bench	uk	female	97					79	14/l
-40	bench	uk	female	102					84	16/xl
--240	bench	europe	male	104	39.5					s/s
--220	bench	europe	male	110	39.5					m/s
--200	bench	europe	male	116	39.5					l/s
--180	bench	europe	male	122	39.5					xl/s
--160	bench	europe	male	131	39.5					xxl/s
--140	bench	europe	male	104	41					s/m
--120	bench	europe	male	110	41					m/m
--100	bench	europe	male	116	41					l/m
--80	bench	europe	male	122	41					xl/m
--60	bench	europe	male	131	41					xxl/m
--40	bench	europe	male	104	42.5					s/l
--20	bench	europe	male	110	42.5					m/l
-0	bench	europe	male	116	42.5					l/l
-20	bench	europe	male	122	42.5					xl/l
-40	bench	europe	male	131	42.5					xxl/l
-60	bench	europe	male	104	44					s/xl
-80	bench	europe	male	110	44					m/xl
-100	bench	europe	male	116	44					l/xl
-120	bench	europe	male	122	44					xl/xl
-140	bench	europe	male	131	44					xxl/xl
-160	bench	europe	male	104	46.5					s/xxl
-180	bench	europe	male	110	46.5					m/xxl
-200	bench	europe	male	116	46.5					l/xxl
-220	bench	europe	male	122	46.5					xl/xxl
-240	bench	europe	male	131	46.5					xxl/xxl
--240	bench	us	male	104	39.5					s/s
--220	bench	us	male	110	39.5					m/s
--200	bench	us	male	116	39.5					l/s
--180	bench	us	male	122	39.5					xl/s
--160	bench	us	male	131	39.5					xxl/s
--140	bench	us	male	104	41					s/m
--120	bench	us	male	110	41					m/m
--100	bench	us	male	116	41					l/m
--80	bench	us	male	122	41					xl/m
--60	bench	us	male	131	41					xxl/m
--40	bench	us	male	104	42.5					s/l
--20	bench	us	male	110	42.5					m/l
-0	bench	us	male	116	42.5					l/l
-20	bench	us	male	122	42.5					xl/l
-40	bench	us	male	131	42.5					xxl/l
-60	bench	us	male	104	44					s/xl
-80	bench	us	male	110	44					m/xl
-100	bench	us	male	116	44					l/xl
-120	bench	us	male	122	44					xl/xl
-140	bench	us	male	131	44					xxl/xl
-160	bench	us	male	104	46.5					s/xxl
-180	bench	us	male	110	46.5					m/xxl
-200	bench	us	male	116	46.5					l/xxl
-220	bench	us	male	122	46.5					xl/xxl
-240	bench	us	male	131	46.5					xxl/xxl
--240	bench	uk	male	104	39.5					s/s
--220	bench	uk	male	110	39.5					m/s
--200	bench	uk	male	116	39.5					l/s
--180	bench	uk	male	122	39.5					xl/s
--160	bench	uk	male	131	39.5					xxl/s
--140	bench	uk	male	104	41					s/m
--120	bench	uk	male	110	41					m/m
--100	bench	uk	male	116	41					l/m
--80	bench	uk	male	122	41					xl/m
--60	bench	uk	male	131	41					xxl/m
--40	bench	uk	male	104	42.5					s/l
--20	bench	uk	male	110	42.5					m/l
-0	bench	uk	male	116	42.5					l/l
-20	bench	uk	male	122	42.5					xl/l
-40	bench	uk	male	131	42.5					xxl/l
-60	bench	uk	male	104	44					s/xl
-80	bench	uk	male	110	44					m/xl
-100	bench	uk	male	116	44					l/xl
-120	bench	uk	male	122	44					xl/xl
-140	bench	uk	male	131	44					xxl/xl
-160	bench	uk	male	104	46.5					s/xxl
-180	bench	uk	male	110	46.5					m/xxl
-200	bench	uk	male	116	46.5					l/xxl
-220	bench	uk	male	122	46.5					xl/xxl
-240	bench	uk	male	131	46.5					xxl/xxl
--80	cutielondon	europe	female	80					62	36/s
--60	cutielondon	europe	female	84					66	38/s
--40	cutielondon	europe	female	88					70	40/m
--20	cutielondon	europe	female	92					74	42/m
-0	cutielondon	europe	female	96.5					79	44/l
-20	cutielondon	europe	female	102					84	46/l
-40	cutielondon	europe	female	110					92	48/xl
-60	cutielondon	europe	female	112					100	50/xl
--80	cutielondon	us	female	80					62	4/s
--60	cutielondon	us	female	84					66	6/s
--40	cutielondon	us	female	88					70	8/m
--20	cutielondon	us	female	92					74	10/m
-0	cutielondon	us	female	96.5					79	12/l
-20	cutielondon	us	female	102					84	14/l
-40	cutielondon	us	female	110					92	16/xl
-60	cutielondon	us	female	112					100	18/xl
--80	cutielondon	uk	female	80					62	6/s
--60	cutielondon	uk	female	84					66	8/s
--40	cutielondon	uk	female	88					70	10/m
--20	cutielondon	uk	female	92					74	12/m
-0	cutielondon	uk	female	96.5					79	14/l
-20	cutielondon	uk	female	102					84	16/l
-40	cutielondon	uk	female	110					92	18/xl
-60	cutielondon	uk	female	112					100	20/xl
--80	dorothyperkins	australia	female	80					62	6/xs
--60	dorothyperkins	australia	female	84					66	8/s
--40	dorothyperkins	australia	female	88					70	10/s
--20	dorothyperkins	australia	female	92					74	12/m
-0	dorothyperkins	australia	female	96.5					79	14/m
-20	dorothyperkins	australia	female	102					84	16/l
-40	dorothyperkins	australia	female	110					92	18/l
-60	dorothyperkins	australia	female	112					100	20/xl
-80	dorothyperkins	australia	female	116					108	22/xl
--80	dorothyperkins	italy	female	80					62	38/xs
--60	dorothyperkins	italy	female	84					66	40/s
--40	dorothyperkins	italy	female	88					70	42/s
--20	dorothyperkins	italy	female	92					74	44/m
-0	dorothyperkins	italy	female	96.5					79	46/m
-20	dorothyperkins	italy	female	102					84	48/l
-40	dorothyperkins	italy	female	110					92	50/l
-60	dorothyperkins	italy	female	112					100	52/xl
-80	dorothyperkins	italy	female	116					108	54/xl
--80	dorothyperkins	denmark	female	80					62	32/xs
--60	dorothyperkins	denmark	female	84					66	34/s
--40	dorothyperkins	denmark	female	88					70	36/s
--20	dorothyperkins	denmark	female	92					74	38/m
-0	dorothyperkins	denmark	female	96.5					79	40/m
-20	dorothyperkins	denmark	female	102					84	42/l
-40	dorothyperkins	denmark	female	110					92	44/l
-60	dorothyperkins	denmark	female	112					100	46/xl
-80	dorothyperkins	denmark	female	116					108	48/xl
--80	dorothyperkins	us	female	80					62	2/xs
--60	dorothyperkins	us	female	84					66	4/s
--40	dorothyperkins	us	female	88					70	6/s
--20	dorothyperkins	us	female	92					74	8/m
-0	dorothyperkins	us	female	96.5					79	10/m
-20	dorothyperkins	us	female	102					84	12/l
-40	dorothyperkins	us	female	110					92	14/l
-60	dorothyperkins	us	female	112					100	16/xl
-80	dorothyperkins	us	female	116					108	18/xl
--80	dorothyperkins	france	female	80					62	34/xs
--60	dorothyperkins	france	female	84					66	36/s
--40	dorothyperkins	france	female	88					70	38/s
--20	dorothyperkins	france	female	92					74	40/m
-0	dorothyperkins	france	female	96.5					79	42/m
-20	dorothyperkins	france	female	102					84	44/l
-40	dorothyperkins	france	female	110					92	46/l
-60	dorothyperkins	france	female	112					100	48/xl
-80	dorothyperkins	france	female	116					108	50/xl
--80	dorothyperkins	germany	female	80					62	32/xs
--60	dorothyperkins	germany	female	84					66	34/s
--40	dorothyperkins	germany	female	88					70	36/s
--20	dorothyperkins	germany	female	92					74	38/m
-0	dorothyperkins	germany	female	96.5					79	40/m
-20	dorothyperkins	germany	female	102					84	42/l
-40	dorothyperkins	germany	female	110					92	44/l
-60	dorothyperkins	germany	female	112					100	46/xl
-80	dorothyperkins	germany	female	116					108	48/xl
--80	dorothyperkins	uk	female	80					62	6/xs
--60	dorothyperkins	uk	female	84					66	8/s
--40	dorothyperkins	uk	female	88					70	10/s
--20	dorothyperkins	uk	female	92					74	12/m
-0	dorothyperkins	uk	female	96.5					79	14/m
-20	dorothyperkins	uk	female	102					84	16/l
-40	dorothyperkins	uk	female	110					92	18/l
-60	dorothyperkins	uk	female	112					100	20/xl
-80	dorothyperkins	uk	female	116					108	22/xl
--80	dorothyperkins	spain	female	80					62	34/xs
--60	dorothyperkins	spain	female	84					66	36/s
--40	dorothyperkins	spain	female	88					70	38/s
--20	dorothyperkins	spain	female	92					74	40/m
-0	dorothyperkins	spain	female	96.5					79	42/m
-20	dorothyperkins	spain	female	102					84	44/l
-40	dorothyperkins	spain	female	110					92	46/l
-60	dorothyperkins	spain	female	112					100	48/xl
-80	dorothyperkins	spain	female	116					108	50/xl
--60	fennwrightmanson	uk	female	83					63.5	8
--40	fennwrightmanson	uk	female	88					68.5	10
--20	fennwrightmanson	uk	female	93					73.5	12
-0	fennwrightmanson	uk	female	98					78.5	14
-20	fennwrightmanson	uk	female	103					83.5	16
-40	fennwrightmanson	uk	female	108					88.2	18
--80	ff	europe	female	79					62	34/xs
--60	ff	europe	female	81					64	36/s
--40	ff	europe	female	86					69	38/s
--20	ff	europe	female	91					74	40/m
-0	ff	europe	female	96					79	42/m
-20	ff	europe	female	101					84	44/l
-40	ff	europe	female	109					92	46/l
-60	ff	europe	female	114					97	48/xl
-80	ff	europe	female	119					102	50/xl
--80	ff	australia	female	79					62	4/xs
--60	ff	australia	female	81					64	6/s
--40	ff	australia	female	86					69	8/s
--20	ff	australia	female	91					74	10/m
-0	ff	australia	female	96					79	12/m
-20	ff	australia	female	101					84	14/l
-40	ff	australia	female	109					92	16/l
-60	ff	australia	female	114					97	18/xl
-80	ff	australia	female	119					102	20/xl
--80	ff	us	female	79					62	2/xs
--60	ff	us	female	81					64	4/s
--40	ff	us	female	86					69	6/s
--20	ff	us	female	91					74	8/m
-0	ff	us	female	96					79	10/m
-20	ff	us	female	101					84	12/l
-40	ff	us	female	109					92	14/l
-60	ff	us	female	114					97	16/xl
-80	ff	us	female	119					102	18/xl
--80	ff	uk	female	79					62	6/xs
--60	ff	uk	female	81					64	8/s
--40	ff	uk	female	86					69	10/s
--20	ff	uk	female	91					74	12/m
-0	ff	uk	female	96					79	14/m
-20	ff	uk	female	101					84	16/l
-40	ff	uk	female	109					92	18/l
-60	ff	uk	female	114					97	20/xl
-80	ff	uk	female	119					102	22/xl
--60	ff	uk	male	83.50						xs
--40	ff	uk	male	91.50						s
--20	ff	uk	male	99.50						m
-0	ff	uk	male	106.50						l
-20	ff	uk	male	114.50						xl
-40	ff	uk	male	121.50						xxl
--40	frenchconnection	australia	female	84				93	67	6/xs
--20	frenchconnection	australia	female	86				95	70	8/s
-0	frenchconnection	australia	female	90				99	74	10/m
-20	frenchconnection	australia	female	95				104	79	12/l
-40	frenchconnection	australia	female	100				109	84	14/xl
--40	frenchconnection	canada	female	83.82				92.71	67.31	0,2/xs
--20	frenchconnection	canada	female	86.36				95.25	69.85	4/s
-0	frenchconnection	canada	female	90.17				99.06	73.66	6,8/m
-20	frenchconnection	canada	female	95.25				104.14	78.74	10,12/l
--80	frenchconnection	uk	female	81				90	65	6
--60	frenchconnection	uk	female	84				93	67	8/xxs
--40	frenchconnection	uk	female	86				95	70	10/xs
--20	frenchconnection	uk	female	91				100	75	12/s
-0	frenchconnection	uk	female	96				105	80	14/m
-20	frenchconnection	uk	female	101				110	85	16/l
-40	frenchconnection	uk	female	106.5				115	90	18/xl
-60	frenchconnection	uk	female	112				120.5	95	20/xxl
--60	frenchconnection	us	female	76.84				85.72	60.33	0/xxs
--40	frenchconnection	us	female	80.01				90.17	64.77	2/xs
--20	frenchconnection	us	female	82.55				92.71	67.31	4/s
-0	frenchconnection	us	female	85.09				95.25	69.85	6/m
-20	frenchconnection	us	female	90.17				100.33	74.93	8/m
-40	frenchconnection	us	female	95.25				105.41	80.01	10/l
-60	frenchconnection	us	female	100.33				110.49	85.09	12/l
--40	frenchconnection	australia	male	97	39				76	s
--20	frenchconnection	australia	male	102	41				81	m
-0	frenchconnection	australia	male	107	42				86	l
-20	frenchconnection	australia	male	112	43				91	xl
--60	frenchconnection	uk	male	94	38.5				73.5	xs
--40	frenchconnection	uk	male	97	39				76	s
--20	frenchconnection	uk	male	102	41				81	m
-0	frenchconnection	uk	male	107	42				86	l
-20	frenchconnection	uk	male	112	43				91	xl
-40	frenchconnection	uk	male	117	44				96	xxl
--40	frenchconnection	us	male	86.36	38.73				71.12	15.25/xs
--20	frenchconnection	us	male	96.52	41.27				81.28	16.25/s
-0	frenchconnection	us	male	101.60	42.55				86.36	16.75/m
-20	frenchconnection	us	male	101.60	42.55				86.36	16.75/l
-40	frenchconnection	us	male	106.68	43.81				91.44	17.25/xl
--100	gap	europe	female	77.5		69.5				30/xxs
--80	gap	europe	female	80		71				32/xs
--60	gap	europe	female	85		75				34/xs
--40	gap	europe	female	87.5		76				36/s
--20	gap	europe	female	90		77.5				38/s
-0	gap	europe	female	92.5		78.5				40/m
-20	gap	europe	female	95		80				42/m
-40	gap	europe	female	98.5		81				44/l
-60	gap	europe	female	102.5		81.5				46/l
-80	gap	europe	female	106.5		82.5				48/xl
--100	gap	us	female	77.5		69.5				00/xxs
--80	gap	us	female	80		71				0/xs
--60	gap	us	female	85		75				2/xs
--40	gap	us	female	87.5		76				4/s
--20	gap	us	female	90		77.5				6/s
-0	gap	us	female	92.5		78.5				8/m
-20	gap	us	female	95		80				10/m
-40	gap	us	female	98.5		81				12/l
-60	gap	us	female	102.5		81.5				14/l
-80	gap	us	female	106.5		82.5				16/xl
--100	gap	uk	female	77.5		69.5				2/xxs
--80	gap	uk	female	80		71				4/xs
--60	gap	uk	female	85		75				6/xs
--40	gap	uk	female	87.5		76				8/s
--20	gap	uk	female	90		77.5				10/s
-0	gap	uk	female	92.5		78.5				12/m
-20	gap	uk	female	95		80				14/m
-40	gap	uk	female	98.5		81				16/l
-60	gap	uk	female	102.5		81.5				18/l
-80	gap	uk	female	106.5		82.5				20/xl
--40	gap	us	male	88.75	34.50	80	67.25			xs
--20	gap	us	male	94.00	36.25	82.5	69.75			s
-0	gap	us	male	101.50	38.50	85	72.25			s
-20	gap	us	male	109.00	41.25	87.5	74.75			m
-40	gap	us	male	116.50	43.75	90	77.25			m
--40	gap	uk	male	88.75	34.50	80	67.25			xs
--20	gap	uk	male	94.00	36.25	82.5	69.75			s
-0	gap	uk	male	101.50	38.50	85	72.25			m
-20	gap	uk	male	109.00	41.25	87.5	74.75			l
-40	gap	uk	male	116.50	43.75	90	77.25			xl
--120	george	europe	female	77.5				85.5	61.5	34
--100	george	europe	female	80				88	64	36
--80	george	europe	female	85				93	69	38
--60	george	europe	female	90				98	74	40
--40	george	europe	female	95				103	79	42
--20	george	europe	female	100				108	84	44
-0	george	europe	female	106				114	90	46
-20	george	europe	female	112				120	96	48
-40	george	europe	female	118				126	102	50
-60	george	europe	female	124				132	108	52
-80	george	europe	female	130				138	114	54
-100	george	europe	female	136				144	120	56
--120	george	uk	female	77.5				85.5	61.5	6
--100	george	uk	female	80				88	64	8
--80	george	uk	female	85				93	69	10
--60	george	uk	female	90				98	74	12
--40	george	uk	female	95				103	79	14
--20	george	uk	female	100				108	84	16
-0	george	uk	female	106				114	90	18
-20	george	uk	female	112				120	96	20
-40	george	uk	female	118				126	102	22
-60	george	uk	female	124				132	108	24
-80	george	uk	female	130				138	114	26
-100	george	uk	female	136				144	120	28
--80	george	uk	male	86.50					71.25	xs
--60	george	uk	male	93.50					78.50	s
--40	george	uk	male	101.50					86.50	m
--20	george	uk	male	106.50					93.50	l
-0	george	uk	male	116.50					101.50	xl
-20	george	uk	male	124.50					106.50	xxl
-40	george	uk	male	131.50					116.50	xxxl
-60	george	uk	male	139.50					124.50	xxxxl
--40	ghost	uk	female	81					63	8/xs
--20	ghost	uk	female	86					68	10/s
-0	ghost	uk	female	91					73	12/m
-20	ghost	uk	female	96					78	14/l
-40	ghost	uk	female	101					83	16/xl
--20	grab	australia	female	85						s/s
-0	grab	australia	female	90						m/m
-20	grab	australia	female	95						l/l
--100	hm	europe	male	84					72	42/xs
--80	hm	europe	male	88					76	44/s
--60	hm	europe	male	92					80	46/s
--40	hm	europe	male	96					84	48/m
--20	hm	europe	male	100					88	50/m
-0	hm	europe	male	104					92	52/l
-20	hm	europe	male	108					96	54/l
-40	hm	europe	male	112					100	56/xl
-60	hm	europe	male	116					104	58/xl
-80	hm	europe	male	120					108	60/xxl
-100	hm	europe	male	124					112	62/xxl
--100	hm	uk	male	84					72	32r/xs
--80	hm	uk	male	88					76	34r/s
--60	hm	uk	male	92					80	36r/s
--40	hm	uk	male	96					84	38r/m
--20	hm	uk	male	100					88	40r/m
-0	hm	uk	male	104					92	42r/l
-20	hm	uk	male	108					96	44r/l
-40	hm	uk	male	112					100	46r/xl
-60	hm	uk	male	116					104	48r/xl
-80	hm	uk	male	120					108	50r/xxl
-100	hm	uk	male	124					112	52r/xxl
--20	illustratedpeople	uk	female	48						6-8/s
-0	illustratedpeople	uk	female	50						10-12/m
--60	jaeger	europe	female	83.5				89.5	63.5	34/xs
--40	jaeger	europe	female	86				92	66	36/s
--20	jaeger	europe	female	91				97	71	38/s
-0	jaeger	europe	female	96				102	76	40/m
-20	jaeger	europe	female	102				108	82	42/l
-40	jaeger	europe	female	108				114	88	44/l
-60	jaeger	europe	female	114				120	94	46/xl
--60	jaeger	us	female	83.5				89.5	63.5	4/xs
--40	jaeger	us	female	86				92	66	6/s
--20	jaeger	us	female	91				97	71	8/s
-0	jaeger	us	female	96				102	76	10/m
-20	jaeger	us	female	102				108	82	12/l
-40	jaeger	us	female	108				114	88	14/l
-60	jaeger	us	female	114				120	94	16/xl
--60	jaeger	uk	female	83.5				89.5	63.5	6/xs
--40	jaeger	uk	female	86				92	66	8/s
--20	jaeger	uk	female	91				97	71	10/s
-0	jaeger	uk	female	96				102	76	12/m
-20	jaeger	uk	female	102				108	82	14/l
-40	jaeger	uk	female	108				114	88	16/l
-60	jaeger	uk	female	114				120	94	18/xl
--40	jigsaw	italy	female	83		60.4			64.5	40/xs
--20	jigsaw	italy	female	88		61			69.5	42/s
-0	jigsaw	italy	female	93		61.6			74.5	44/m
-20	jigsaw	italy	female	98		62.2			79.5	46/l
-40	jigsaw	italy	female	103		62.8			84.5	48/xl
--40	jigsaw	denmark	female	83		60.4			64.5	34/xs
--20	jigsaw	denmark	female	88		61			69.5	36/s
-0	jigsaw	denmark	female	93		61.6			74.5	38/m
-20	jigsaw	denmark	female	98		62.2			79.5	40/l
-40	jigsaw	denmark	female	103		62.8			84.5	42/xl
--40	jigsaw	us	female	83		60.4			64.5	4/xs
--20	jigsaw	us	female	88		61			69.5	6/s
-0	jigsaw	us	female	93		61.6			74.5	8/m
-20	jigsaw	us	female	98		62.2			79.5	10/l
-40	jigsaw	us	female	103		62.8			84.5	12/xl
--40	jigsaw	france	female	83		60.4			64.5	36/xs
--20	jigsaw	france	female	88		61			69.5	38/s
-0	jigsaw	france	female	93		61.6			74.5	40/m
-20	jigsaw	france	female	98		62.2			79.5	42/l
-40	jigsaw	france	female	103		62.8			84.5	44/xl
--40	jigsaw	uk	female	83		60.4			64.5	8/xs
--20	jigsaw	uk	female	88		61			69.5	10/s
-0	jigsaw	uk	female	93		61.6			74.5	12/m
-20	jigsaw	uk	female	98		62.2			79.5	14/l
-40	jigsaw	uk	female	103		62.8			84.5	16/xl
--60	jigsaw	europe	male	231.14	96.77	231.14				46/s
--40	jigsaw	europe	male	246.38	100.08	231.14				48/m
--20	jigsaw	europe	male	259.08	103.12	231.14				50/m
-0	jigsaw	europe	male	271.78	106.43	231.14				52/l
-20	jigsaw	europe	male	284.48	109.73	231.14				54/xl
-40	jigsaw	europe	male	297.18	113.03	231.14				56/xl
--60	jigsaw	italy	male	231.14	96.77	231.14				46/s
--40	jigsaw	italy	male	246.38	100.08	231.14				48/m
--20	jigsaw	italy	male	259.08	103.12	231.14				50/m
-0	jigsaw	italy	male	271.78	106.43	231.14				52/l
-20	jigsaw	italy	male	284.48	109.73	231.14				54/xl
-40	jigsaw	italy	male	297.18	113.03	231.14				56/xl
--60	jigsaw	france	male	231.14	96.77	231.14				46/s
--40	jigsaw	france	male	246.38	100.08	231.14				48/m
--20	jigsaw	france	male	259.08	103.12	231.14				50/m
-0	jigsaw	france	male	271.78	106.43	231.14				52/l
-20	jigsaw	france	male	284.48	109.73	231.14				54/xl
-40	jigsaw	france	male	297.18	113.03	231.14				56/xl
--60	jigsaw	uk	male	231.14	96.77	231.14				15/s
--40	jigsaw	uk	male	246.38	100.08	231.14				15.5/m
--20	jigsaw	uk	male	259.08	103.12	231.14				16/m
-0	jigsaw	uk	male	271.78	106.43	231.14				16.5/l
-20	jigsaw	uk	male	284.48	109.73	231.14				17/xl
-40	jigsaw	uk	male	297.18	113.03	231.14				17.5/xl
--120	johnlewis	europe	female	76					58	32/xs
--100	johnlewis	europe	female	78.5					60.5	34/xs
--80	johnlewis	europe	female	81					63	36/s
--60	johnlewis	europe	female	86					68	38/s
--40	johnlewis	europe	female	91					73	40/m
--20	johnlewis	europe	female	96					78	42/m
-0	johnlewis	europe	female	101					83	44/l
-20	johnlewis	europe	female	108.5					90.5	46/l
-40	johnlewis	europe	female	116					98	48/xl
-60	johnlewis	europe	female	122					104	50/xl
-80	johnlewis	europe	female	128					110	52/xxl
-100	johnlewis	europe	female	134					116	54/xxl
--120	johnlewis	us	female	76					58	1/xs
--100	johnlewis	us	female	78.5					60.5	2/xs
--80	johnlewis	us	female	81					63	4/s
--60	johnlewis	us	female	86					68	6/s
--40	johnlewis	us	female	91					73	8/m
--20	johnlewis	us	female	96					78	10/m
-0	johnlewis	us	female	101					83	12/l
-20	johnlewis	us	female	108.5					90.5	14/l
-40	johnlewis	us	female	116					98	16/xl
-60	johnlewis	us	female	122					104	18/xl
-80	johnlewis	us	female	128					110	20/xxl
-100	johnlewis	us	female	134					116	22/xxl
--120	johnlewis	uk	female	76					58	4/xs
--100	johnlewis	uk	female	78.5					60.5	6/xs
--80	johnlewis	uk	female	81					63	8/s
--60	johnlewis	uk	female	86					68	10/s
--40	johnlewis	uk	female	91					73	12/m
--20	johnlewis	uk	female	96					78	14/m
-0	johnlewis	uk	female	101					83	16/l
-20	johnlewis	uk	female	108.5					90.5	18/l
-40	johnlewis	uk	female	116					98	20/xl
-60	johnlewis	uk	female	122					104	22/xl
-80	johnlewis	uk	female	128					110	24/xxl
-100	johnlewis	uk	female	134					116	26/xxl
--60	johnlewis	europe	male	86.50						xs
--40	johnlewis	europe	male	94.00						s
--20	johnlewis	europe	male	101.50						m
-0	johnlewis	europe	male	109.50						l
-20	johnlewis	europe	male	116.75						xl
-40	johnlewis	europe	male	124.50						xxl
--60	johnlewis	us	male	86.50						xs
--40	johnlewis	us	male	94.00						s
--20	johnlewis	us	male	101.50						m
-0	johnlewis	us	male	109.50						l
-20	johnlewis	us	male	116.75						xl
-40	johnlewis	us	male	124.50						xxl
--60	johnlewis	uk	male	86.50						xs
--40	johnlewis	uk	male	94.00						s
--20	johnlewis	uk	male	101.50						m
-0	johnlewis	uk	male	109.50						l
-20	johnlewis	uk	male	116.75						xl
-40	johnlewis	uk	male	124.50						xxl
--60	kaliko	europe	female	85					66	36/s
--40	kaliko	europe	female	89					70	38/s
--20	kaliko	europe	female	93					74	40/m
-0	kaliko	europe	female	98					79	42/m
-20	kaliko	europe	female	103					84	44/l
-40	kaliko	europe	female	108					89	46/l
-60	kaliko	europe	female	113					94	48/xl
--60	kaliko	us	female	85					66	6/s
--40	kaliko	us	female	89					70	8/s
--20	kaliko	us	female	93					74	10/m
-0	kaliko	us	female	98					79	12/m
-20	kaliko	us	female	103					84	14/l
-40	kaliko	us	female	108					89	16/l
-60	kaliko	us	female	113					94	18/xl
--60	kaliko	uk	female	85					66	8/s
--40	kaliko	uk	female	89					70	10/s
--20	kaliko	uk	female	93					74	12/m
-0	kaliko	uk	female	98					79	14/m
-20	kaliko	uk	female	103					84	16/l
-40	kaliko	uk	female	108					89	18/l
-60	kaliko	uk	female	113					94	20/xl
--40	karenmillen	europe	female	82				90	64	34,36/1
--20	karenmillen	europe	female	86				94	68	38/2
-0	karenmillen	europe	female	92				100	74	40,42/3
-20	karenmillen	europe	female	98				106	80	44/4
--40	karenmillen	us	female	82				90	64	2,4/1
--20	karenmillen	us	female	86				94	68	6/2
-0	karenmillen	us	female	92				100	74	8,10/3
-20	karenmillen	us	female	98				106	80	12/4
--40	karenmillen	uk	female	82				90	64	6,8/1
--20	karenmillen	uk	female	86				94	68	10/2
-0	karenmillen	uk	female	92				100	74	12,14/3
-20	karenmillen	uk	female	98				106	80	16/4
--60	lkbennett	uk	female	80					61	6/xs
--40	lkbennett	uk	female	84					65	8/s
--20	lkbennett	uk	female	88					69	10/s
-0	lkbennett	uk	female	92					73	12/m
-20	lkbennett	uk	female	97					78	14/m
-40	lkbennett	uk	female	102					83	16/l
-60	lkbennett	uk	female	107					88	18/xl
--80	mantaray	uk	male	91.50						xs
--60	mantaray	uk	male	96.50						s
--40	mantaray	uk	male	103.00						m
--20	mantaray	uk	male	110.50						l
-0	mantaray	uk	male	118.00						xl
-20	mantaray	uk	male	126.00						xxl
-40	mantaray	uk	male	133.50						xxxl
--120	marksspencer	netherlands	female	78.74					63.50	32/xs
--100	marksspencer	netherlands	female	81.28					66.04	34/s
--80	marksspencer	netherlands	female	86.36					68.58	36/s
--60	marksspencer	netherlands	female	91.44					73.66	38/m
--40	marksspencer	netherlands	female	96.52					78.74	40/m
--20	marksspencer	netherlands	female	101.60					83.82	42/l
-0	marksspencer	netherlands	female	106.68					88.90	44/l
-20	marksspencer	netherlands	female	111.76					93.98	46/xl
-40	marksspencer	netherlands	female	116.84					101.60	48/xl
-60	marksspencer	netherlands	female	124.46					106.68	50/xxl
-80	marksspencer	netherlands	female	129.54					111.76	52/xxl
-100	marksspencer	netherlands	female	137.16					119.38	54/xxxl
-120	marksspencer	netherlands	female	142.24					124.46	56/xxxl
--120	marksspencer	italy	female	78.74					63.50	38/xs
--100	marksspencer	italy	female	81.28					66.04	40/s
--80	marksspencer	italy	female	86.36					68.58	42/s
--60	marksspencer	italy	female	91.44					73.66	44/m
--40	marksspencer	italy	female	96.52					78.74	46/m
--20	marksspencer	italy	female	101.60					83.82	48/l
-0	marksspencer	italy	female	106.68					88.90	50/l
-20	marksspencer	italy	female	111.76					93.98	52/xl
-40	marksspencer	italy	female	116.84					101.60	54/xl
-60	marksspencer	italy	female	124.46					106.68	56/xxl
-80	marksspencer	italy	female	129.54					111.76	58/xxl
-100	marksspencer	italy	female	137.16					119.38	60/xxxl
-120	marksspencer	italy	female	142.24					124.46	62/xxxl
--120	marksspencer	portugal	female	78.74					63.50	34/xs
--100	marksspencer	portugal	female	81.28					66.04	36/s
--80	marksspencer	portugal	female	86.36					68.58	38/s
--60	marksspencer	portugal	female	91.44					73.66	40/m
--40	marksspencer	portugal	female	96.52					78.74	42/m
--20	marksspencer	portugal	female	101.60					83.82	44/l
-0	marksspencer	portugal	female	106.68					88.90	46/l
-20	marksspencer	portugal	female	111.76					93.98	48/xl
-40	marksspencer	portugal	female	116.84					101.60	50/xl
-60	marksspencer	portugal	female	124.46					106.68	52/xxl
-80	marksspencer	portugal	female	129.54					111.76	54/xxl
-100	marksspencer	portugal	female	137.16					119.38	56/xxxl
-120	marksspencer	portugal	female	142.24					124.46	58/xxxl
--120	marksspencer	france	female	78.74					63.50	34/xs
--100	marksspencer	france	female	81.28					66.04	36/s
--80	marksspencer	france	female	86.36					68.58	38/s
--60	marksspencer	france	female	91.44					73.66	40/m
--40	marksspencer	france	female	96.52					78.74	42/m
--20	marksspencer	france	female	101.60					83.82	44/l
-0	marksspencer	france	female	106.68					88.90	46/l
-20	marksspencer	france	female	111.76					93.98	48/xl
-40	marksspencer	france	female	116.84					101.60	50/xl
-60	marksspencer	france	female	124.46					106.68	52/xxl
-80	marksspencer	france	female	129.54					111.76	54/xxl
-100	marksspencer	france	female	137.16					119.38	56/xxxl
-120	marksspencer	france	female	142.24					124.46	58/xxxl
--120	marksspencer	belgium	female	78.74					63.50	34/xs
--100	marksspencer	belgium	female	81.28					66.04	36/s
--80	marksspencer	belgium	female	86.36					68.58	38/s
--60	marksspencer	belgium	female	91.44					73.66	40/m
--40	marksspencer	belgium	female	96.52					78.74	42/m
--20	marksspencer	belgium	female	101.60					83.82	44/l
-0	marksspencer	belgium	female	106.68					88.90	46/l
-20	marksspencer	belgium	female	111.76					93.98	48/xl
-40	marksspencer	belgium	female	116.84					101.60	50/xl
-60	marksspencer	belgium	female	124.46					106.68	52/xxl
-80	marksspencer	belgium	female	129.54					111.76	54/xxl
-100	marksspencer	belgium	female	137.16					119.38	56/xxxl
-120	marksspencer	belgium	female	142.24					124.46	58/xxxl
--120	marksspencer	austria	female	78.74					63.50	32/xs
--100	marksspencer	austria	female	81.28					66.04	34/s
--80	marksspencer	austria	female	86.36					68.58	36/s
--60	marksspencer	austria	female	91.44					73.66	38/m
--40	marksspencer	austria	female	96.52					78.74	40/m
--20	marksspencer	austria	female	101.60					83.82	42/l
-0	marksspencer	austria	female	106.68					88.90	44/l
-20	marksspencer	austria	female	111.76					93.98	46/xl
-40	marksspencer	austria	female	116.84					101.60	48/xl
-60	marksspencer	austria	female	124.46					106.68	50/xxl
-80	marksspencer	austria	female	129.54					111.76	52/xxl
-100	marksspencer	austria	female	137.16					119.38	54/xxxl
-120	marksspencer	austria	female	142.24					124.46	56/xxxl
--120	marksspencer	germany	female	78.74					63.50	32/xs
--100	marksspencer	germany	female	81.28					66.04	34/s
--80	marksspencer	germany	female	86.36					68.58	36/s
--60	marksspencer	germany	female	91.44					73.66	38/m
--40	marksspencer	germany	female	96.52					78.74	40/m
--20	marksspencer	germany	female	101.60					83.82	42/l
-0	marksspencer	germany	female	106.68					88.90	44/l
-20	marksspencer	germany	female	111.76					93.98	46/xl
-40	marksspencer	germany	female	116.84					101.60	48/xl
-60	marksspencer	germany	female	124.46					106.68	50/xxl
-80	marksspencer	germany	female	129.54					111.76	52/xxl
-100	marksspencer	germany	female	137.16					119.38	54/xxxl
-120	marksspencer	germany	female	142.24					124.46	56/xxxl
--120	marksspencer	uk	female	78.74					63.50	6/xs
--100	marksspencer	uk	female	81.28					66.04	8/s
--80	marksspencer	uk	female	86.36					68.58	10/s
--60	marksspencer	uk	female	91.44					73.66	12/m
--40	marksspencer	uk	female	96.52					78.74	14/m
--20	marksspencer	uk	female	101.60					83.82	16/l
-0	marksspencer	uk	female	106.68					88.90	18/l
-20	marksspencer	uk	female	111.76					93.98	20/xl
-40	marksspencer	uk	female	116.84					101.60	22/xl
-60	marksspencer	uk	female	124.46					106.68	24/xxl
-80	marksspencer	uk	female	129.54					111.76	26/xxl
-100	marksspencer	uk	female	137.16					119.38	28/xxxl
-120	marksspencer	uk	female	142.24					124.46	30/xxxl
--120	marksspencer	switzerland	female	78.74					63.50	32/xs
--100	marksspencer	switzerland	female	81.28					66.04	34/s
--80	marksspencer	switzerland	female	86.36					68.58	36/s
--60	marksspencer	switzerland	female	91.44					73.66	38/m
--40	marksspencer	switzerland	female	96.52					78.74	40/m
--20	marksspencer	switzerland	female	101.60					83.82	42/l
-0	marksspencer	switzerland	female	106.68					88.90	44/l
-20	marksspencer	switzerland	female	111.76					93.98	46/xl
-40	marksspencer	switzerland	female	116.84					101.60	48/xl
-60	marksspencer	switzerland	female	124.46					106.68	50/xxl
-80	marksspencer	switzerland	female	129.54					111.76	52/xxl
-100	marksspencer	switzerland	female	137.16					119.38	54/xxxl
-120	marksspencer	switzerland	female	142.24					124.46	56/xxxl
--120	marksspencer	sweden	female	78.74					63.50	32/xs
--100	marksspencer	sweden	female	81.28					66.04	34/s
--80	marksspencer	sweden	female	86.36					68.58	36/s
--60	marksspencer	sweden	female	91.44					73.66	38/m
--40	marksspencer	sweden	female	96.52					78.74	40/m
--20	marksspencer	sweden	female	101.60					83.82	42/l
-0	marksspencer	sweden	female	106.68					88.90	44/l
-20	marksspencer	sweden	female	111.76					93.98	46/xl
-40	marksspencer	sweden	female	116.84					101.60	48/xl
-60	marksspencer	sweden	female	124.46					106.68	50/xxl
-80	marksspencer	sweden	female	129.54					111.76	52/xxl
-100	marksspencer	sweden	female	137.16					119.38	54/xxxl
-120	marksspencer	sweden	female	142.24					124.46	56/xxxl
--120	marksspencer	spain	female	78.74					63.50	34/xs
--100	marksspencer	spain	female	81.28					66.04	36/s
--80	marksspencer	spain	female	86.36					68.58	38/s
--60	marksspencer	spain	female	91.44					73.66	40/m
--40	marksspencer	spain	female	96.52					78.74	42/m
--20	marksspencer	spain	female	101.60					83.82	44/l
-0	marksspencer	spain	female	106.68					88.90	46/l
-20	marksspencer	spain	female	111.76					93.98	48/xl
-40	marksspencer	spain	female	116.84					101.60	50/xl
-60	marksspencer	spain	female	124.46					106.68	52/xxl
-80	marksspencer	spain	female	129.54					111.76	54/xxl
-100	marksspencer	spain	female	137.16					119.38	56/xxxl
-120	marksspencer	spain	female	142.24					124.46	58/xxxl
--40	marksspencer	uk	male	94	37.50					s
--20	marksspencer	uk	male	99.50	40.00					m
-0	marksspencer	uk	male	106.50	42.50					l
-20	marksspencer	uk	male	114.50	45.00					xl
-40	marksspencer	uk	male	122.00	47.50					xxl
--40	mela	europe	female	205.74					167.64	36/s
--20	mela	europe	female	218.44					173.99	38/s,m
-0	mela	europe	female	232.41					186.69	40/m,l
-20	mela	europe	female	245.11					199.39	42/l
-40	mela	europe	female	257.81					212.09	44
--40	mela	us	female	205.74					167.64	4/s
--20	mela	us	female	218.44					173.99	6/s,m
-0	mela	us	female	232.41					186.69	7/m,l
-20	mela	us	female	245.11					199.39	10/l
-40	mela	us	female	257.81					212.09	12
--40	mela	uk	female	205.74					167.64	8/s
--20	mela	uk	female	218.44					173.99	10/s,m
-0	mela	uk	female	232.41					186.69	12/m,l
-20	mela	uk	female	245.11					199.39	14/l
-40	mela	uk	female	257.81					212.09	16
--80	monsoon	europe	female	75					58	34/s
--60	monsoon	europe	female	82					63	36/s
--40	monsoon	europe	female	87					68	38/s
--20	monsoon	europe	female	92					73	40/m
-0	monsoon	europe	female	97					78	42/m
-20	monsoon	europe	female	102					83	44/l
-40	monsoon	europe	female	107					88	46/l
-60	monsoon	europe	female	112					95	48/xl
-80	monsoon	europe	female	117					102	50/xl
--80	monsoon	us	female	75					58	2/s
--60	monsoon	us	female	82					63	4/s
--40	monsoon	us	female	87					68	6/s
--20	monsoon	us	female	92					73	8/m
-0	monsoon	us	female	97					78	10/m
-20	monsoon	us	female	102					83	12/l
-40	monsoon	us	female	107					88	14/l
-60	monsoon	us	female	112					95	16/xl
-80	monsoon	us	female	117					102	18/xl
--80	monsoon	uk	female	75					58	6/s
--60	monsoon	uk	female	82					63	8/s
--40	monsoon	uk	female	87					68	10/s
--20	monsoon	uk	female	92					73	12/m
-0	monsoon	uk	female	97					78	14/m
-20	monsoon	uk	female	102					83	16/l
-40	monsoon	uk	female	107					88	18/l
-60	monsoon	uk	female	112					95	20/xl
-80	monsoon	uk	female	117					102	22/xl
--60	newlook	europe	female	80					62	34
--40	newlook	europe	female	84					66	36/s,m
--20	newlook	europe	female	88					70	38/s,m
-0	newlook	europe	female	93					75	40/s,m
-20	newlook	europe	female	98					80	42/m,l
-40	newlook	europe	female	104					87	44/m,l
-60	newlook	europe	female	112					94	46
--60	newlook	us	female	80					62	2
--40	newlook	us	female	84					66	4/s,m
--20	newlook	us	female	88					70	6/s,m
-0	newlook	us	female	93					75	8/s,m
-20	newlook	us	female	98					80	10/m,l
-40	newlook	us	female	104					87	12/m,l
-60	newlook	us	female	112					94	14
--60	newlook	uk	female	80					62	6
--40	newlook	uk	female	84					66	8/s,m
--20	newlook	uk	female	88					70	10/s,m
-0	newlook	uk	female	93					75	12/s,m
-20	newlook	uk	female	98					80	14/m,l
-40	newlook	uk	female	104					87	16/m,l
-60	newlook	uk	female	112					94	18
--60	newlook	uk	male	83.50	38.00				73.50	xs
--40	newlook	uk	male	91.50	40.00				78.50	s
--20	newlook	uk	male	49.50	41.00				83.50	m
-0	newlook	uk	male	106.50	44.00				88.50	l
-20	newlook	uk	male	114.50	46.25				93.50	xl
-40	newlook	uk	male	121.50	47.75				99.00	xxl
--120	next	europe	female	80					65	34/xs
--100	next	europe	female	84					67.5	36/s
--80	next	europe	female	86.5					71	38/s
--60	next	europe	female	90					74	40/m
--40	next	europe	female	94					79	42/m
--20	next	europe	female	99					84	44/l
-0	next	europe	female	104					91.5	46/l
-20	next	europe	female	109					99	48/xl
-40	next	europe	female	114					103	50/xl
-60	next	europe	female	123					109	52
-80	next	europe	female	128					116	54
-100	next	europe	female	133					123	56
--120	next	australia	female	80					65	4/xs
--100	next	australia	female	84					67.5	6/s
--80	next	australia	female	86.5					71	8/s
--60	next	australia	female	90					74	10/m
--40	next	australia	female	94					79	12/m
--20	next	australia	female	99					84	14/l
-0	next	australia	female	104					91.5	16/l
-20	next	australia	female	109					99	18/xl
-40	next	australia	female	114					103	20/xl
-60	next	australia	female	123					109	22
-80	next	australia	female	128					116	24
-100	next	australia	female	133					123	26
--120	next	us	female	80					65	2/xs
--100	next	us	female	84					67.5	4/s
--80	next	us	female	86.5					71	6/s
--60	next	us	female	90					74	8/m
--40	next	us	female	94					79	10/m
--20	next	us	female	99					84	12/l
-0	next	us	female	104					91.5	14/l
-20	next	us	female	109					99	16/xl
-40	next	us	female	114					103	18/xl
-60	next	us	female	123					109	20
-80	next	us	female	128					116	22
-100	next	us	female	133					123	24
--120	next	newzealand	female	80					65	4/xs
--100	next	newzealand	female	84					67.5	6/s
--80	next	newzealand	female	86.5					71	8/s
--60	next	newzealand	female	90					74	10/m
--40	next	newzealand	female	94					79	12/m
--20	next	newzealand	female	99					84	14/l
-0	next	newzealand	female	104					91.5	16/l
-20	next	newzealand	female	109					99	18/xl
-40	next	newzealand	female	114					103	20/xl
-60	next	newzealand	female	123					109	22
-80	next	newzealand	female	128					116	24
-100	next	newzealand	female	133					123	26
--120	next	uk	female	80					65	6/xs
--100	next	uk	female	84					67.5	8/s
--80	next	uk	female	86.5					71	10/s
--60	next	uk	female	90					74	12/m
--40	next	uk	female	94					79	14/m
--20	next	uk	female	99					84	16/l
-0	next	uk	female	104					91.5	18/l
-20	next	uk	female	109					99	20/xl
-40	next	uk	female	114					103	22/xl
-60	next	uk	female	123					109	24
-80	next	uk	female	128					116	26
-100	next	uk	female	133					123	28
--80	next	uk	male	86.36	35.56	84.45	73.03			xs
--60	next	uk	male	93.98	38.10	87.00	74.93			s
--40	next	uk	male	101.60	40.64	89.53	76.84			m
--20	next	uk	male	109.22	43.18	92.08	78.74			l
-0	next	uk	male	116.84	45.72	93.98	81.28			xl
-20	next	uk	male	124.46	48.26	97.16	83.19			2xl
-40	next	uk	male	132.08	50.80	99.70	85.09			3xl
-60	next	uk	male	139.70	53.34	102.23	87.00			4xl
--60	oasis	europe	female	80.5					62.5	32/xs
--40	oasis	europe	female	83					65	34/xs
--20	oasis	europe	female	88					70	36/s
-0	oasis	europe	female	92					74	38/m
-20	oasis	europe	female	97					79	40/l
-40	oasis	europe	female	102					84	42/l
-60	oasis	europe	female	107					89	44/xl
--60	oasis	us	female	80.5					62.5	4/xs
--40	oasis	us	female	83					65	6/xs
--20	oasis	us	female	88					70	8/s
-0	oasis	us	female	92					74	10/m
-20	oasis	us	female	97					79	12/l
-40	oasis	us	female	102					84	14/l
-60	oasis	us	female	107					89	16/xl
--60	oasis	uk	female	80.5					62.5	6/xs
--40	oasis	uk	female	83					65	8/xs
--20	oasis	uk	female	88					70	10/s
-0	oasis	uk	female	92					74	12/m
-20	oasis	uk	female	97					79	14/l
-40	oasis	uk	female	102					84	16/l
-60	oasis	uk	female	107					89	18/xl
--80	phaseeight	netherlands	female	76					59	32,34/xs
--60	phaseeight	netherlands	female	81					64	34,36/xs,s
--40	phaseeight	netherlands	female	86					69	36,38/s,m
--20	phaseeight	netherlands	female	91					74	38,40/m,l
-0	phaseeight	netherlands	female	96					79	40,42/l,xl
-20	phaseeight	netherlands	female	101					84	42,44/xl
-40	phaseeight	netherlands	female	106					89	44,46
-60	phaseeight	netherlands	female	111					94	46,48
--80	phaseeight	sweden	female	76					59	34/xs
--60	phaseeight	sweden	female	81					64	36/xs,s
--40	phaseeight	sweden	female	86					69	38/s,m
--20	phaseeight	sweden	female	91					74	40/m,l
-0	phaseeight	sweden	female	96					79	42/l,xl
-20	phaseeight	sweden	female	101					84	44/xl
-40	phaseeight	sweden	female	106					89	46
-60	phaseeight	sweden	female	111					94	48
--80	phaseeight	france	female	76					59	34/xs
--60	phaseeight	france	female	81					64	36/xs,s
--40	phaseeight	france	female	86					69	38/s,m
--20	phaseeight	france	female	91					74	40/m,l
-0	phaseeight	france	female	96					79	42/l,xl
-20	phaseeight	france	female	101					84	44/xl
-40	phaseeight	france	female	106					89	46
-60	phaseeight	france	female	111					94	48
--80	phaseeight	belgium	female	76					59	34/xs
--60	phaseeight	belgium	female	81					64	36/xs,s
--40	phaseeight	belgium	female	86					69	38/s,m
--20	phaseeight	belgium	female	91					74	40/m,l
-0	phaseeight	belgium	female	96					79	42/l,xl
-20	phaseeight	belgium	female	101					84	44/xl
-40	phaseeight	belgium	female	106					89	46
-60	phaseeight	belgium	female	111					94	48
--80	phaseeight	austria	female	76					59	32/xs
--60	phaseeight	austria	female	81					64	34/xs,s
--40	phaseeight	austria	female	86					69	36/s,m
--20	phaseeight	austria	female	91					74	38/m,l
-0	phaseeight	austria	female	96					79	40/l,xl
-20	phaseeight	austria	female	101					84	42/xl
-40	phaseeight	austria	female	106					89	44
-60	phaseeight	austria	female	111					94	46
--80	phaseeight	germany	female	76					59	32/xs
--60	phaseeight	germany	female	81					64	34/xs,s
--40	phaseeight	germany	female	86					69	36/s,m
--20	phaseeight	germany	female	91					74	38/m,l
-0	phaseeight	germany	female	96					79	40/l,xl
-20	phaseeight	germany	female	101					84	42/xl
-40	phaseeight	germany	female	106					89	44
-60	phaseeight	germany	female	111					94	46
--80	phaseeight	uk	female	76					59	6/xs
--60	phaseeight	uk	female	81					64	8/xs,s
--40	phaseeight	uk	female	86					69	10/s,m
--20	phaseeight	uk	female	91					74	12/m,l
-0	phaseeight	uk	female	96					79	14/l,xl
-20	phaseeight	uk	female	101					84	16/xl
-40	phaseeight	uk	female	106					89	18
-60	phaseeight	uk	female	111					94	20
--80	phaseeight	switzerland	female	76					59	32/xs
--60	phaseeight	switzerland	female	81					64	34/xs,s
--40	phaseeight	switzerland	female	86					69	36/s,m
--20	phaseeight	switzerland	female	91					74	38/m,l
-0	phaseeight	switzerland	female	96					79	40/l,xl
-20	phaseeight	switzerland	female	101					84	42/xl
-40	phaseeight	switzerland	female	106					89	44
-60	phaseeight	switzerland	female	111					94	46
--80	phaseeight	spain	female	76					59	34/xs
--60	phaseeight	spain	female	81					64	36/xs,s
--40	phaseeight	spain	female	86					69	38/s,m
--20	phaseeight	spain	female	91					74	40/m,l
-0	phaseeight	spain	female	96					79	42/l,xl
-20	phaseeight	spain	female	101					84	44/xl
-40	phaseeight	spain	female	106					89	46
-60	phaseeight	spain	female	111					94	48
--60	planet	europe	female	89					74	34/xs
--40	planet	europe	female	93					78	36/s
--20	planet	europe	female	97					82	38/m
-0	planet	europe	female	102					87	40/m
-20	planet	europe	female	107					92	42/l
-40	planet	europe	female	113					98	44/xl
-60	planet	europe	female	119					104	46/xl
--60	planet	us	female	89					74	6/xs
--40	planet	us	female	93					78	8/s
--20	planet	us	female	97					82	10/m
-0	planet	us	female	102					87	12/m
-20	planet	us	female	107					92	14/l
-40	planet	us	female	113					98	16/xl
-60	planet	us	female	119					104	18/xl
--60	planet	uk	female	89					74	8/xs
--40	planet	uk	female	93					78	10/s
--20	planet	uk	female	97					82	12/m
-0	planet	uk	female	102					87	14/m
-20	planet	uk	female	107					92	16/l
-40	planet	uk	female	113					98	18/xl
-60	planet	uk	female	119					104	20/xl
--60	precis	europe	female	81 					62  	32/xs
--40	precis	europe	female	85					66  	34/xs
--20	precis	europe	female	89					70	36/s
-0	precis	europe	female	93					74	38/m
-20	precis	europe	female	98					79	40/m
-40	precis	europe	female	103					84 	42/l
-60	precis	europe	female	108					89   	44/xl
--60	precis	us	female	81 					62  	4/xs
--40	precis	us	female	85					66  	6/xs
--20	precis	us	female	89					70	8/s
-0	precis	us	female	93					74	10/m
-20	precis	us	female	98					79	12/m
-40	precis	us	female	103					84 	14/l
-60	precis	us	female	108					89   	16/xl
--60	precis	uk	female	81 					62  	6/xs
--40	precis	uk	female	85					66  	8/xs
--20	precis	uk	female	89					70	10/s
-0	precis	uk	female	93					74	12/m
-20	precis	uk	female	98					79	14/m
-40	precis	uk	female	103					84 	16/l
-60	precis	uk	female	108					89   	18/xl
--60	quiz	europe	female	77				83		34/xs
--40	quiz	europe	female	82				88		36/xs,s
--20	quiz	europe	female	87				93		38/s,m
-0	quiz	europe	female	92				98		40/m,l
-20	quiz	europe	female	97				103		42/l,xl
-40	quiz	europe	female	102				108		44/xl
-60	quiz	europe	female	107						46
--60	quiz	us	female	77				83		2/xs
--40	quiz	us	female	82				88		4/xs,s
--20	quiz	us	female	87				93		6/s,m
-0	quiz	us	female	92				98		8/m,l
-20	quiz	us	female	97				103		10/l,xl
-40	quiz	us	female	102				108		12/xl
-60	quiz	us	female	107						14
--60	quiz	uk	female	77				83		6/xs
--40	quiz	uk	female	82				88		8/xs,s
--20	quiz	uk	female	87				93		10/s,m
-0	quiz	uk	female	92				98		12/m,l
-20	quiz	uk	female	97				103		14/l,xl
-40	quiz	uk	female	102				108		16/xl
-60	quiz	uk	female	107						18
--40	ralphloren	us	male	89.00	36.25	82.75			73.50	s
--20	ralphloren	us	male	99.00	38.75	85.25			82.50	m
-0	ralphloren	us	male	109.50	41.25	87.75			92.75	l
-20	ralphloren	us	male	119.50	43.75	90.25			104.00	xl
-40	ralphloren	us	male	129.50	46.25	92.75			111.75	xxl
--40	ralphloren	uk	male	89.00	36.25	82.75			73.50	34
--20	ralphloren	uk	male	99.00	38.75	85.25			82.50	36,38
-0	ralphloren	uk	male	109.50	41.25	87.75			92.75	40
-20	ralphloren	uk	male	119.50	43.75	90.25			104.00	42,44
-40	ralphloren	uk	male	129.50	46.25	92.75			111.75	46
--60	reiss	italy	female	78					59	36/xs
--40	reiss	italy	female	81					62	38/xs
--20	reiss	italy	female	84					65	40/s
-0	reiss	italy	female	88					69	42/s
-20	reiss	italy	female	93					74	44/m
-40	reiss	italy	female	99					80	46/l
-60	reiss	italy	female	104					85	48/xl
--60	reiss	us	female	78					59	0/xs
--40	reiss	us	female	81					62	2/xs
--20	reiss	us	female	84					65	4/s
-0	reiss	us	female	88					69	6/s
-20	reiss	us	female	93					74	8/m
-40	reiss	us	female	99					80	10/l
-60	reiss	us	female	104					85	12/xl
--60	reiss	france	female	78					59	32/xs
--40	reiss	france	female	81					62	34/xs
--20	reiss	france	female	84					65	36/s
-0	reiss	france	female	88					69	38/s
-20	reiss	france	female	93					74	40/m
-40	reiss	france	female	99					80	42/l
-60	reiss	france	female	104					85	44/xl
--60	reiss	uk	female	78					59	4/xs
--40	reiss	uk	female	81					62	6/xs
--20	reiss	uk	female	84					65	8/s
-0	reiss	uk	female	88					69	10/s
-20	reiss	uk	female	93					74	12/m
-40	reiss	uk	female	99					80	14/l
-60	reiss	uk	female	104					85	16/xl
--40	reiss	europe	male		38.10					46/s
--20	reiss	europe	male		39.37					48/m
-0	reiss	europe	male		40.64					50/l
-20	reiss	europe	male		41.91					52/xl
-40	reiss	europe	male		43.18					54/xxl
--40	reiss	uk	male		38.10					15/s
--20	reiss	uk	male		39.37					15.5/m
-0	reiss	uk	male		40.64					16/l
-20	reiss	uk	male		41.91					16.5/xl
-40	reiss	uk	male		43.18					17/xxl
--80	sodamix	europe	female	80					62	36/s
--60	sodamix	europe	female	84					66	38/s
--40	sodamix	europe	female	88					70	40/m
--20	sodamix	europe	female	92					74	42/m
-0	sodamix	europe	female	96.5					79	44/l
-20	sodamix	europe	female	102					84	46/l
-40	sodamix	europe	female	110					92	48/xl
-60	sodamix	europe	female	112					100	50/xl
--80	sodamix	us	female	80					62	4/s
--60	sodamix	us	female	84					66	6/s
--40	sodamix	us	female	88					70	8/m
--20	sodamix	us	female	92					74	10/m
-0	sodamix	us	female	96.5					79	12/l
-20	sodamix	us	female	102					84	14/l
-40	sodamix	us	female	110					92	16/xl
-60	sodamix	us	female	112					100	18/xl
--80	sodamix	uk	female	80					62	6/s
--60	sodamix	uk	female	84					66	8/s
--40	sodamix	uk	female	88					70	10/m
--20	sodamix	uk	female	92					74	12/m
-0	sodamix	uk	female	96.5					79	14/l
-20	sodamix	uk	female	102					84	16/l
-40	sodamix	uk	female	110					92	18/xl
-60	sodamix	uk	female	112					100	20/xl
--40	threadless	uk	female	83.20					62.25	s
--20	threadless	uk	female	88.30					67.30	m
-0	threadless	uk	female	93.35					72.40	l/unisize xs
-20	threadless	uk	female	98.40					77.45	xl/unisize s
-40	threadless	uk	female	104.80					82.55	xxl/unisize m
--40	threadless	us	female	83.20					62.25	s
--20	threadless	us	female	88.30					67.30	m
-0	threadless	us	female	93.35					72.40	l/unisize xs
-20	threadless	us	female	98.40					77.45	xl/unisize s
-40	threadless	us	female	104.80					82.55	xxl/unisize m
--60	threadless	us	male	93.95					74.95	xs
--40	threadless	us	male	99.05					80.05	s
--20	threadless	us	male	104.15					85.10	m
-0	threadless	us	male	109.25					90.15	l
-20	threadless	us	male	114.30					95.25	xl
-40	threadless	us	male	119.35						xxl
--60	threadless	uk	male	93.95					74.95	xs
--40	threadless	uk	male	99.05					80.05	s
--20	threadless	uk	male	104.15					85.10	m
-0	threadless	uk	male	109.25					90.15	l
-20	threadless	uk	male	114.30					95.25	xl
-40	threadless	uk	male	119.35						xxl
--60	tommyhilfiger	netherlands	female	83.50						34/xs
--40	tommyhilfiger	netherlands	female	87.50						36/s
--20	tommyhilfiger	netherlands	female	92.00						38/m
-0	tommyhilfiger	netherlands	female	96.00						40/l
-20	tommyhilfiger	netherlands	female	100.00						42/xl
-40	tommyhilfiger	netherlands	female	104.00						44/xxl
--60	tommyhilfiger	ireland	female	83.50						6/xs
--40	tommyhilfiger	ireland	female	87.50						8/s
--20	tommyhilfiger	ireland	female	92.00						10/m
-0	tommyhilfiger	ireland	female	96.00						12/l
-20	tommyhilfiger	ireland	female	100.00						14/xl
-40	tommyhilfiger	ireland	female	104.00						16/xxl
--60	tommyhilfiger	us	female	83.50						4/xs
--40	tommyhilfiger	us	female	87.50						6/s
--20	tommyhilfiger	us	female	92.00						8/m
-0	tommyhilfiger	us	female	96.00						10/l
-20	tommyhilfiger	us	female	100.00						12/xl
-40	tommyhilfiger	us	female	104.00						14/xxl
--60	tommyhilfiger	france	female	83.50						36/xs
--40	tommyhilfiger	france	female	87.50						38/s
--20	tommyhilfiger	france	female	92.00						40/m
-0	tommyhilfiger	france	female	96.00						42/l
-20	tommyhilfiger	france	female	100.00						44/xl
-40	tommyhilfiger	france	female	104.00						46/xxl
--60	tommyhilfiger	austria	female	83.50						34/xs
--40	tommyhilfiger	austria	female	87.50						36/s
--20	tommyhilfiger	austria	female	92.00						38/m
-0	tommyhilfiger	austria	female	96.00						40/l
-20	tommyhilfiger	austria	female	100.00						42/xl
-40	tommyhilfiger	austria	female	104.00						44/xxl
--60	tommyhilfiger	germany	female	83.50						34/xs
--40	tommyhilfiger	germany	female	87.50						36/s
--20	tommyhilfiger	germany	female	92.00						38/m
-0	tommyhilfiger	germany	female	96.00						40/l
-20	tommyhilfiger	germany	female	100.00						42/xl
-40	tommyhilfiger	germany	female	104.00						44/xxl
--60	tommyhilfiger	uk	female	83.50						6/xs
--40	tommyhilfiger	uk	female	87.50						8/s
--20	tommyhilfiger	uk	female	92.00						10/m
-0	tommyhilfiger	uk	female	96.00						12/l
-20	tommyhilfiger	uk	female	100.00						14/xl
-40	tommyhilfiger	uk	female	104.00						16/xxl
--60	tommyhilfiger	spain	female	83.50						34/xs
--40	tommyhilfiger	spain	female	87.50						36/s
--20	tommyhilfiger	spain	female	92.00						38/m
-0	tommyhilfiger	spain	female	96.00						40/l
-20	tommyhilfiger	spain	female	100.00						42/xl
-40	tommyhilfiger	spain	female	104.00						44/xxl
--40	tommyhilfiger	uk	male	96.00						s
--20	tommyhilfiger	uk	male	101.00						m
-0	tommyhilfiger	uk	male	106.00						l
-20	tommyhilfiger	uk	male	111.00						xl
-40	tommyhilfiger	uk	male	116.00						xxl
--40	tommyhilfiger	us	male	96.00						s
--20	tommyhilfiger	us	male	101.00						m
-0	tommyhilfiger	us	male	106.00						l
-20	tommyhilfiger	us	male	111.00						xl
-40	tommyhilfiger	us	male	116.00						xxl
--40	tommyhilfiger_denim	us	male	97.50						s
--20	tommyhilfiger_denim	us	male	101.50						m
-0	tommyhilfiger_denim	us	male	105.50						l
-20	tommyhilfiger_denim	us	male	109.50						xl
-40	tommyhilfiger_denim	us	male	113.50						xxl
--40	tommyhilfiger_denim	uk	male	97.50						s
--20	tommyhilfiger_denim	uk	male	101.50						m
-0	tommyhilfiger_denim	uk	male	105.50						l
-20	tommyhilfiger_denim	uk	male	109.50						xl
-40	tommyhilfiger_denim	uk	male	113.50						xxl
--60	topshop	australia	female	79.5					62.4	6
--40	topshop	australia	female	82.0					64.9	8
--20	topshop	australia	female	87.0					69.2	10
-0	topshop	australia	female	92.0					74.2	12
-20	topshop	australia	female	97.0					79.2	14
-40	topshop	australia	female	102.0					84.2	16
--60	topshop	italy	female	79.5					62.4	38
--40	topshop	italy	female	82.0					64.9	40
--20	topshop	italy	female	87.0					69.2	42
-0	topshop	italy	female	92.0					74.2	44
-20	topshop	italy	female	97.0					79.2	46
-40	topshop	italy	female	102.0					84.2	48
--60	topshop	denmark	female	79.5					62.4	32
--40	topshop	denmark	female	82.0					64.9	34
--20	topshop	denmark	female	87.0					69.2	36
-0	topshop	denmark	female	92.0					74.2	38
-20	topshop	denmark	female	97.0					79.2	40
-40	topshop	denmark	female	102.0					84.2	42
--60	topshop	us	female	79.5					62.4	2
--40	topshop	us	female	82.0					64.9	4
--20	topshop	us	female	87.0					69.2	6
-0	topshop	us	female	92.0					74.2	8
-20	topshop	us	female	97.0					79.2	10
-40	topshop	us	female	102.0					84.2	12
--60	topshop	france	female	79.5					62.4	34
--40	topshop	france	female	82.0					64.9	36
--20	topshop	france	female	87.0					69.2	38
-0	topshop	france	female	92.0					74.2	40
-20	topshop	france	female	97.0					79.2	42
-40	topshop	france	female	102.0					84.2	44
--60	topshop	uk	female	79.5					62.4	6
--40	topshop	uk	female	82.0					64.9	8
--20	topshop	uk	female	87.0					69.2	10
-0	topshop	uk	female	92.0					74.2	12
-20	topshop	uk	female	97.0					79.2	14
-40	topshop	uk	female	102.0					84.2	16
--80	tu	uk	female	86					69	8
--60	tu	uk	female	91					74	10
--40	tu	uk	female	96					79	12
--20	tu	uk	female	101					84	14
-0	tu	uk	female	106					89	16
-20	tu	uk	female	111					94	18
-40	tu	uk	female	116					99	20
-60	tu	uk	female	121					104	22
-80	tu	uk	female	126					109	24
--80	tu	uk	male	86	36				71	34
--60	tu	uk	male	91	38				76	36
--40	tu	uk	male	96	39.4				81	38
--20	tu	uk	male	102	40.6				86	40
-0	tu	uk	male	107	42				91	42
-20	tu	uk	male	112	43				96	44
-40	tu	uk	male	117	44.4				102	46
-60	tu	uk	male	127	46				107	48
-80	tu	uk	male	132	47				112	50
--40	urbanoutfitters	canada	male	87.6	33.0	80.0		86.4	71.1	28/xs
--20	urbanoutfitters	canada	male	92.7	36.2	81.9		91.4	76.2	30/s
-0	urbanoutfitters	canada	male	97.8	39.4	83.8		96.5	81.3	32/m
-20	urbanoutfitters	canada	male	105.4	42.5	86.4		104.1	88.9	34,36/l
-40	urbanoutfitters	canada	male	113.0	45.7	88.9		111.8	96.5	38/xl
--40	urbanoutfitters	italy	male	87.6	33.0	80.0		86.4	71.1	44/xs
--20	urbanoutfitters	italy	male	92.7	36.2	81.9		91.4	76.2	46/s
-0	urbanoutfitters	italy	male	97.8	39.4	83.8		96.5	81.3	48/m
-20	urbanoutfitters	italy	male	105.4	42.5	86.4		104.1	88.9	50,52/l
-40	urbanoutfitters	italy	male	113.0	45.7	88.9		111.8	96.5	54/xl
--40	urbanoutfitters	hongkong	male	87.6	33.0	80.0		86.4	71.1	28/xs
--20	urbanoutfitters	hongkong	male	92.7	36.2	81.9		91.4	76.2	30/s
-0	urbanoutfitters	hongkong	male	97.8	39.4	83.8		96.5	81.3	32/m
-20	urbanoutfitters	hongkong	male	105.4	42.5	86.4		104.1	88.9	34,36/l
-40	urbanoutfitters	hongkong	male	113.0	45.7	88.9		111.8	96.5	38/xl
--40	urbanoutfitters	brazil	male	87.6	33.0	80.0		86.4	71.1	71/xs
--20	urbanoutfitters	brazil	male	92.7	36.2	81.9		91.4	76.2	76/s
-0	urbanoutfitters	brazil	male	97.8	39.4	83.8		96.5	81.3	81/m
-20	urbanoutfitters	brazil	male	105.4	42.5	86.4		104.1	88.9	86,91/l
-40	urbanoutfitters	brazil	male	113.0	45.7	88.9		111.8	96.5	97/xl
--40	urbanoutfitters	europe	male	87.6	33.0	80.0		86.4	71.1	71/xs
--20	urbanoutfitters	europe	male	92.7	36.2	81.9		91.4	76.2	76/s
-0	urbanoutfitters	europe	male	97.8	39.4	83.8		96.5	81.3	81/m
-20	urbanoutfitters	europe	male	105.4	42.5	86.4		104.1	88.9	86,91/l
-40	urbanoutfitters	europe	male	113.0	45.7	88.9		111.8	96.5	97/xl
--40	urbanoutfitters	us	male	87.6	33.0	80.0		86.4	71.1	28/xs
--20	urbanoutfitters	us	male	92.7	36.2	81.9		91.4	76.2	30/s
-0	urbanoutfitters	us	male	97.8	39.4	83.8		96.5	81.3	32/m
-20	urbanoutfitters	us	male	105.4	42.5	86.4		104.1	88.9	34,36/l
-40	urbanoutfitters	us	male	113.0	45.7	88.9		111.8	96.5	38/xl
--40	urbanoutfitters	france	male	87.6	33.0	80.0		86.4	71.1	39/xs
--20	urbanoutfitters	france	male	92.7	36.2	81.9		91.4	76.2	41/s
-0	urbanoutfitters	france	male	97.8	39.4	83.8		96.5	81.3	43/m
-20	urbanoutfitters	france	male	105.4	42.5	86.4		104.1	88.9	45,47/l
-40	urbanoutfitters	france	male	113.0	45.7	88.9		111.8	96.5	48/xl
--40	urbanoutfitters	germany	male	87.6	33.0	80.0		86.4	71.1	39/xs
--20	urbanoutfitters	germany	male	92.7	36.2	81.9		91.4	76.2	41/s
-0	urbanoutfitters	germany	male	97.8	39.4	83.8		96.5	81.3	43/m
-20	urbanoutfitters	germany	male	105.4	42.5	86.4		104.1	88.9	45,47/l
-40	urbanoutfitters	germany	male	113.0	45.7	88.9		111.8	96.5	48/xl
--40	urbanoutfitters	uk	male	87.6	33.0	80.0		86.4	71.1	28/xs
--20	urbanoutfitters	uk	male	92.7	36.2	81.9		91.4	76.2	30/s
-0	urbanoutfitters	uk	male	97.8	39.4	83.8		96.5	81.3	32/m
-20	urbanoutfitters	uk	male	105.4	42.5	86.4		104.1	88.9	34,36/l
-40	urbanoutfitters	uk	male	113.0	45.7	88.9		111.8	96.5	38/xl
--40	urbanoutfitters	japan	male	87.6	33.0	80.0		86.4	71.1	71/xs
--20	urbanoutfitters	japan	male	92.7	36.2	81.9		91.4	76.2	76/s
-0	urbanoutfitters	japan	male	97.8	39.4	83.8		96.5	81.3	81/m
-20	urbanoutfitters	japan	male	105.4	42.5	86.4		104.1	88.9	86,91/l
-40	urbanoutfitters	japan	male	113.0	45.7	88.9		111.8	96.5	97/xl
--40	urbanoutfitters	russia	male	87.6	33.0	80.0		86.4	71.1	36/xs
--20	urbanoutfitters	russia	male	92.7	36.2	81.9		91.4	76.2	38/s
-0	urbanoutfitters	russia	male	97.8	39.4	83.8		96.5	81.3	41/m
-20	urbanoutfitters	russia	male	105.4	42.5	86.4		104.1	88.9	43,46/l
-40	urbanoutfitters	russia	male	113.0	45.7	88.9		111.8	96.5	48/xl
--40	uttamboutique	europe	female	205.74					167.64	36/s
--20	uttamboutique	europe	female	218.44					173.99	38/s,m
-0	uttamboutique	europe	female	232.41					186.69	40/m,l
-20	uttamboutique	europe	female	245.11					199.39	42/l
-40	uttamboutique	europe	female	257.81					212.09	44
--40	uttamboutique	us	female	205.74					167.64	4/s
--20	uttamboutique	us	female	218.44					173.99	6/s,m
-0	uttamboutique	us	female	232.41					186.69	7/m,l
-20	uttamboutique	us	female	245.11					199.39	10/l
-40	uttamboutique	us	female	257.81					212.09	12
--40	uttamboutique	uk	female	205.74					167.64	8/s
--20	uttamboutique	uk	female	218.44					173.99	10/s,m
-0	uttamboutique	uk	female	232.41					186.69	12/m,l
-20	uttamboutique	uk	female	245.11					199.39	14/l
-40	uttamboutique	uk	female	257.81					212.09	16
--60	whistles	australia	female	79		62.3				06/xs
--40	whistles	australia	female	82		62.6				08/s
--20	whistles	australia	female	86		63				10/m
-0	whistles	australia	female	91		63.5				12/m
-20	whistles	australia	female	96		64				14/l
-40	whistles	australia	female	101		64.5				16/l
--60	whistles	italy	female	79		62.3				38/xs
--40	whistles	italy	female	82		62.6				40/s
--20	whistles	italy	female	86		63				42/m
-0	whistles	italy	female	91		63.5				44/m
-20	whistles	italy	female	96		64				46/l
-40	whistles	italy	female	101		64.5				48/l
--60	whistles	us	female	79		62.3				2/xs
--40	whistles	us	female	82		62.6				4/s
--20	whistles	us	female	86		63				6/m
-0	whistles	us	female	91		63.5				8/m
-20	whistles	us	female	96		64				10/l
-40	whistles	us	female	101		64.5				12/l
--60	whistles	france	female	79		62.3				34/xs
--40	whistles	france	female	82		62.6				36/s
--20	whistles	france	female	86		63				38/m
-0	whistles	france	female	91		63.5				40/m
-20	whistles	france	female	96		64				42/l
-40	whistles	france	female	101		64.5				44/l
--60	whistles	uk	female	79		62.3				6/xs
--40	whistles	uk	female	82		62.6				8/s
--20	whistles	uk	female	86		63				10/m
-0	whistles	uk	female	91		63.5				12/m
-20	whistles	uk	female	96		64				14/l
-40	whistles	uk	female	101		64.5				16/l
--60	whitestuff	uk	female	81					61	6
--40	whitestuff	uk	female	83					63	8
--20	whitestuff	uk	female	88					68	10
-0	whitestuff	uk	female	93					73	12
-20	whitestuff	uk	female	98					78	14
-40	whitestuff	uk	female	103					83	16
-60	whitestuff	uk	female	108					88	18
--60	whitestuff	uk	male	95					75.5	xs
--40	whitestuff	uk	male	97.50					77.5	s
--20	whitestuff	uk	male	102.00					82.5	m
-0	whitestuff	uk	male	107.00					87.5	l
-20	whitestuff	uk	male	112.00					92.5	xl
-40	whitestuff	uk	male	117.00					97.5	xxl
--40	yumi	europe	female	205.74					167.64	36/s
--20	yumi	europe	female	218.44					173.99	38/s,m
-0	yumi	europe	female	232.41					186.69	40/m,l
-20	yumi	europe	female	245.11					199.39	42/l
-40	yumi	europe	female	257.81					212.09	44
--40	yumi	us	female	205.74					167.64	4/s
--20	yumi	us	female	218.44					173.99	6/s,m
-0	yumi	us	female	232.41					186.69	7/m,l
-20	yumi	us	female	245.11					199.39	10/l
-40	yumi	us	female	257.81					212.09	12
--40	yumi	uk	female	205.74					167.64	8/s
--20	yumi	uk	female	218.44					173.99	10/s,m
-0	yumi	uk	female	232.41					186.69	12/m,l
-20	yumi	uk	female	245.11					199.39	14/l
-40	yumi	uk	female	257.81					212.09	16
+-40	abercrombieandfitch	europe	male	0.9350		0.8350				48/S
+-20	abercrombieandfitch	europe	male	0.9900		0.8650				50/M
+0	abercrombieandfitch	europe	male	1.0400		0.8950				52/L
+20	abercrombieandfitch	europe	male	1.0900		0.9200				54/XL
+40	abercrombieandfitch	europe	male	1.1400		0.9450				56/XXL
+-40	abercrombieandfitch	korea	male	0.9350		0.8350				90,95/S
+-20	abercrombieandfitch	korea	male	0.9900		0.8650				95,100/M
+0	abercrombieandfitch	korea	male	1.0400		0.8950				100,105/L
+20	abercrombieandfitch	korea	male	1.0900		0.9200				105,110/XL
+40	abercrombieandfitch	korea	male	1.1400		0.9450				110,115/XXL
+-40	abercrombieandfitch	china	male	0.9350		0.8350				175-92Y/S
+-20	abercrombieandfitch	china	male	0.9900		0.8650				180-100Y/M
+0	abercrombieandfitch	china	male	1.0400		0.8950				185-104Y/L
+20	abercrombieandfitch	china	male	1.0900		0.9200				185-108B/XL
+40	abercrombieandfitch	china	male	1.1400		0.9450				185-112B/XXL
+-40	abercrombieandfitch	uk	male	0.9350		0.8350				38/S
+-20	abercrombieandfitch	uk	male	0.9900		0.8650				40/M
+0	abercrombieandfitch	uk	male	1.0400		0.8950				42/L
+20	abercrombieandfitch	uk	male	1.0900		0.9200				44/XL
+40	abercrombieandfitch	uk	male	1.1400		0.9450				46/XXL
+-80	bananarepublic	europe	female	0.8100		0.7500				32/XS
+-60	bananarepublic	europe	female	0.8100		0.7600				34/XS
+-40	bananarepublic	europe	female	0.8400		0.7700				36/S
+-20	bananarepublic	europe	female	0.8400		0.7900				38/S
+0	bananarepublic	europe	female	0.8600		0.8000				40/M
+20	bananarepublic	europe	female	0.8600		0.8100				42/M
+40	bananarepublic	europe	female	0.8900		0.8300				44/L
+60	bananarepublic	europe	female	0.8900		0.8400				46/L
+80	bananarepublic	europe	female	0.9000		0.8500				48/XL
+-80	bananarepublic	us	female	0.8100		0.7500				0/XS
+-60	bananarepublic	us	female	0.8100		0.7600				2/XS
+-40	bananarepublic	us	female	0.8400		0.7700				4/S
+-20	bananarepublic	us	female	0.8400		0.7900				6/S
+0	bananarepublic	us	female	0.8600		0.8000				8/M
+20	bananarepublic	us	female	0.8600		0.8100				10/M
+40	bananarepublic	us	female	0.8900		0.8300				12/L
+60	bananarepublic	us	female	0.8900		0.8400				14/L
+80	bananarepublic	us	female	0.9000		0.8500				16/XL
+-80	bananarepublic	uk	female	0.8100		0.7500				4/XS
+-60	bananarepublic	uk	female	0.8100		0.7600				6/XS
+-40	bananarepublic	uk	female	0.8400		0.7700				8/S
+-20	bananarepublic	uk	female	0.8400		0.7900				10/S
+0	bananarepublic	uk	female	0.8600		0.8000				12/M
+20	bananarepublic	uk	female	0.8600		0.8100				14/M
+40	bananarepublic	uk	female	0.8900		0.8300				16/L
+60	bananarepublic	uk	female	0.8900		0.8400				18/L
+80	bananarepublic	uk	female	0.9000		0.8500				20/XL
+-60	bananarepublic	canada	male	0.8750	0.3400	0.8100			0.7250	XS
+-40	bananarepublic	canada	male	0.9250	0.3650	0.8400			0.7650	S
+-20	bananarepublic	canada	male	0.9950	0.3750	0.8600			0.8250	M
+0	bananarepublic	canada	male	1.0800	0.4150	0.8900			0.8750	L
+20	bananarepublic	canada	male	1.1800	0.4350	0.9000			0.9250	XL
+40	bananarepublic	canada	male	1.2800	0.4650	0.9100			0.9800	XXL
+-60	bananarepublic	europe	male	0.8750	0.3400	0.8100			0.7250	XS
+-40	bananarepublic	europe	male	0.9250	0.3650	0.8400			0.7650	S
+-20	bananarepublic	europe	male	0.9950	0.3750	0.8600			0.8250	M
+0	bananarepublic	europe	male	1.0800	0.4150	0.8900			0.8750	L
+20	bananarepublic	europe	male	1.1800	0.4350	0.9000			0.9250	XL
+40	bananarepublic	europe	male	1.2800	0.4650	0.9100			0.9800	XXL
+-60	bananarepublic	us	male	0.8750	0.3400	0.8100			0.7250	XS
+-40	bananarepublic	us	male	0.9250	0.3650	0.8400			0.7650	S
+-20	bananarepublic	us	male	0.9950	0.3750	0.8600			0.8250	M
+0	bananarepublic	us	male	1.0800	0.4150	0.8900			0.8750	L
+20	bananarepublic	us	male	1.1800	0.4350	0.9000			0.9250	XL
+40	bananarepublic	us	male	1.2800	0.4650	0.9100			0.9800	XXL
+-60	bananarepublic	uk	male	0.8750	0.3400	0.8100			0.7250	XS
+-40	bananarepublic	uk	male	0.9250	0.3650	0.8400			0.7650	S
+-20	bananarepublic	uk	male	0.9950	0.3750	0.8600			0.8250	M
+0	bananarepublic	uk	male	1.0800	0.4150	0.8900			0.8750	L
+20	bananarepublic	uk	male	1.1800	0.4350	0.9000			0.9250	XL
+40	bananarepublic	uk	male	1.2800	0.4650	0.9100			0.9800	XXL
+-60	barbour	europe	male	0.9017	0.3493					42-44/XS
+-40	barbour	europe	male	0.9525	0.3747					46-48/S
+-20	barbour	europe	male	1.0033	0.4001					50-52/M
+0	barbour	europe	male	1.0922	0.4191					54-56/L
+20	barbour	europe	male	1.1938	0.4381					58-60/XL
+40	barbour	europe	male	1.2700	0.4572					62-64/XXL
+60	barbour	europe	male	1.3716	0.4826					63-65/XXXL
+-60	barbour	us	male	0.9017	0.3493					13½-14/XS
+-40	barbour	us	male	0.9525	0.3747					14½-15/S
+-20	barbour	us	male	1.0033	0.4001					15½-16/M
+0	barbour	us	male	1.0922	0.4191					16½/L
+20	barbour	us	male	1.1938	0.4381					17-17½/XL
+40	barbour	us	male	1.2700	0.4572					18/XXL
+60	barbour	us	male	1.3716	0.4826					19/XXXL
+-60	barbour	uk	male	0.9017	0.3493					13½-14/XS
+-40	barbour	uk	male	0.9525	0.3747					14½-15/S
+-20	barbour	uk	male	1.0033	0.4001					15½-16/M
+0	barbour	uk	male	1.0922	0.4191					16½/L
+20	barbour	uk	male	1.1938	0.4381					17-17½/XL
+40	barbour	uk	male	1.2700	0.4572					18/XXL
+60	barbour	uk	male	1.3716	0.4826					19/XXXL
+-40	bench	europe	female	0.8200					0.6400	XS
+-20	bench	europe	female	0.8700					0.6900	S
+0	bench	europe	female	0.9200					0.7400	M
+20	bench	europe	female	0.9700					0.7900	L
+40	bench	europe	female	1.0200					0.8400	XL
+-40	bench	us	female	0.8200					0.6400	XS
+-20	bench	us	female	0.8700					0.6900	S
+0	bench	us	female	0.9200					0.7400	M
+20	bench	us	female	0.9700					0.7900	L
+40	bench	us	female	1.0200					0.8400	XL
+-40	bench	uk	female	0.8200					0.6400	8/XS
+-20	bench	uk	female	0.8700					0.6900	10/S
+0	bench	uk	female	0.9200					0.7400	12/M
+20	bench	uk	female	0.9700					0.7900	14/L
+40	bench	uk	female	1.0200					0.8400	16/XL
+-240	bench	europe	male	1.0400	0.3950					S/S
+-220	bench	europe	male	1.1000	0.3950					M/S
+-200	bench	europe	male	1.1600	0.3950					L/S
+-180	bench	europe	male	1.2200	0.3950					XL/S
+-160	bench	europe	male	1.3100	0.3950					XXL/S
+-140	bench	europe	male	1.0400	0.4100					S/M
+-120	bench	europe	male	1.1000	0.4100					M/M
+-100	bench	europe	male	1.1600	0.4100					L/M
+-80	bench	europe	male	1.2200	0.4100					XL/M
+-60	bench	europe	male	1.3100	0.4100					XXL/M
+-40	bench	europe	male	1.0400	0.4250					S/L
+-20	bench	europe	male	1.1000	0.4250					M/L
+0	bench	europe	male	1.1600	0.4250					L/L
+20	bench	europe	male	1.2200	0.4250					XL/L
+40	bench	europe	male	1.3100	0.4250					XXL/L
+60	bench	europe	male	1.0400	0.4400					S/XL
+80	bench	europe	male	1.1000	0.4400					M/XL
+100	bench	europe	male	1.1600	0.4400					L/XL
+120	bench	europe	male	1.2200	0.4400					XL/XL
+140	bench	europe	male	1.3100	0.4400					XXL/XL
+160	bench	europe	male	1.0400	0.4650					S/XXL
+180	bench	europe	male	1.1000	0.4650					M/XXL
+200	bench	europe	male	1.1600	0.4650					L/XXL
+220	bench	europe	male	1.2200	0.4650					XL/XXL
+240	bench	europe	male	1.3100	0.4650					XXL/XXL
+-240	bench	us	male	1.0400	0.3950					S/S
+-220	bench	us	male	1.1000	0.3950					M/S
+-200	bench	us	male	1.1600	0.3950					L/S
+-180	bench	us	male	1.2200	0.3950					XL/S
+-160	bench	us	male	1.3100	0.3950					XXL/S
+-140	bench	us	male	1.0400	0.4100					S/M
+-120	bench	us	male	1.1000	0.4100					M/M
+-100	bench	us	male	1.1600	0.4100					L/M
+-80	bench	us	male	1.2200	0.4100					XL/M
+-60	bench	us	male	1.3100	0.4100					XXL/M
+-40	bench	us	male	1.0400	0.4250					S/L
+-20	bench	us	male	1.1000	0.4250					M/L
+0	bench	us	male	1.1600	0.4250					L/L
+20	bench	us	male	1.2200	0.4250					XL/L
+40	bench	us	male	1.3100	0.4250					XXL/L
+60	bench	us	male	1.0400	0.4400					S/XL
+80	bench	us	male	1.1000	0.4400					M/XL
+100	bench	us	male	1.1600	0.4400					L/XL
+120	bench	us	male	1.2200	0.4400					XL/XL
+140	bench	us	male	1.3100	0.4400					XXL/XL
+160	bench	us	male	1.0400	0.4650					S/XXL
+180	bench	us	male	1.1000	0.4650					M/XXL
+200	bench	us	male	1.1600	0.4650					L/XXL
+220	bench	us	male	1.2200	0.4650					XL/XXL
+240	bench	us	male	1.3100	0.4650					XXL/XXL
+-240	bench	uk	male	1.0400	0.3950					S/S
+-220	bench	uk	male	1.1000	0.3950					M/S
+-200	bench	uk	male	1.1600	0.3950					L/S
+-180	bench	uk	male	1.2200	0.3950					XL/S
+-160	bench	uk	male	1.3100	0.3950					XXL/S
+-140	bench	uk	male	1.0400	0.4100					S/M
+-120	bench	uk	male	1.1000	0.4100					M/M
+-100	bench	uk	male	1.1600	0.4100					L/M
+-80	bench	uk	male	1.2200	0.4100					XL/M
+-60	bench	uk	male	1.3100	0.4100					XXL/M
+-40	bench	uk	male	1.0400	0.4250					S/L
+-20	bench	uk	male	1.1000	0.4250					M/L
+0	bench	uk	male	1.1600	0.4250					L/L
+20	bench	uk	male	1.2200	0.4250					XL/L
+40	bench	uk	male	1.3100	0.4250					XXL/L
+60	bench	uk	male	1.0400	0.4400					S/XL
+80	bench	uk	male	1.1000	0.4400					M/XL
+100	bench	uk	male	1.1600	0.4400					L/XL
+120	bench	uk	male	1.2200	0.4400					XL/XL
+140	bench	uk	male	1.3100	0.4400					XXL/XL
+160	bench	uk	male	1.0400	0.4650					S/XXL
+180	bench	uk	male	1.1000	0.4650					M/XXL
+200	bench	uk	male	1.1600	0.4650					L/XXL
+220	bench	uk	male	1.2200	0.4650					XL/XXL
+240	bench	uk	male	1.3100	0.4650					XXL/XXL
+-80	cutielondon	europe	female	0.8000					0.6200	36/S
+-60	cutielondon	europe	female	0.8400					0.6600	38/S
+-40	cutielondon	europe	female	0.8800					0.7000	40/M
+-20	cutielondon	europe	female	0.9200					0.7400	42/M
+0	cutielondon	europe	female	0.9650					0.7900	44/L
+20	cutielondon	europe	female	1.0200					0.8400	46/L
+40	cutielondon	europe	female	1.1000					0.9200	48/XL
+60	cutielondon	europe	female	1.1200					1.0000	50/XL
+-80	cutielondon	us	female	0.8000					0.6200	4/S
+-60	cutielondon	us	female	0.8400					0.6600	6/S
+-40	cutielondon	us	female	0.8800					0.7000	8/M
+-20	cutielondon	us	female	0.9200					0.7400	10/M
+0	cutielondon	us	female	0.9650					0.7900	12/L
+20	cutielondon	us	female	1.0200					0.8400	14/L
+40	cutielondon	us	female	1.1000					0.9200	16/XL
+60	cutielondon	us	female	1.1200					1.0000	18/XL
+-80	cutielondon	uk	female	0.8000					0.6200	6/S
+-60	cutielondon	uk	female	0.8400					0.6600	8/S
+-40	cutielondon	uk	female	0.8800					0.7000	10/M
+-20	cutielondon	uk	female	0.9200					0.7400	12/M
+0	cutielondon	uk	female	0.9650					0.7900	14/L
+20	cutielondon	uk	female	1.0200					0.8400	16/L
+40	cutielondon	uk	female	1.1000					0.9200	18/XL
+60	cutielondon	uk	female	1.1200					1.0000	20/XL
+-80	diesel	italy	female	0.7620					0.5715	36-0/XXS
+-60	diesel	italy	female	0.8128					0.6223	38-I/XS
+-40	diesel	italy	female	0.8636					0.6731	40-II/S
+-20	diesel	italy	female	0.9144					0.7239	42-III/M
+0	diesel	italy	female	0.9652					0.7747	44-IV/L
+20	diesel	italy	female	1.0160					0.8255	46-V/XL
+40	diesel	italy	female	1.0668					0.8763	48-VI/XXL
+60	diesel	italy	female	1.1176					0.9398	50,52-VII/XXXL
+-80	diesel	us	female	0.7620					0.5715	0/XXS
+-60	diesel	us	female	0.8128					0.6223	2/XS
+-40	diesel	us	female	0.8636					0.6731	4/S
+-20	diesel	us	female	0.9144					0.7239	6/M
+0	diesel	us	female	0.9652					0.7747	8/L
+20	diesel	us	female	1.0160					0.8255	10/XL
+40	diesel	us	female	1.0668					0.8763	12/XXL
+60	diesel	us	female	1.1176					0.9398	14,16/XXXL
+-80	diesel	france	female	0.7620					0.5715	32/XXS
+-60	diesel	france	female	0.8128					0.6223	34/XS
+-40	diesel	france	female	0.8636					0.6731	36/S
+-20	diesel	france	female	0.9144					0.7239	38/M
+0	diesel	france	female	0.9652					0.7747	40/L
+20	diesel	france	female	1.0160					0.8255	42/XL
+40	diesel	france	female	1.0668					0.8763	44/XXL
+60	diesel	france	female	1.1176					0.9398	46/XXXL
+-80	diesel	uk	female	0.7620					0.5715	4/XXS
+-60	diesel	uk	female	0.8128					0.6223	6/XS
+-40	diesel	uk	female	0.8636					0.6731	8/S
+-20	diesel	uk	female	0.9144					0.7239	10/M
+0	diesel	uk	female	0.9652					0.7747	12/L
+20	diesel	uk	female	1.0160					0.8255	14/XL
+40	diesel	uk	female	1.0668					0.8763	16/XXL
+60	diesel	uk	female	1.1176					0.9398	18,20/XXXL
+-80	diesel	japan	female	0.7620					0.5715	5/XXS
+-60	diesel	japan	female	0.8128					0.6223	7/XS
+-40	diesel	japan	female	0.8636					0.6731	9/S
+-20	diesel	japan	female	0.9144					0.7239	11/M
+0	diesel	japan	female	0.9652					0.7747	13/L
+20	diesel	japan	female	1.0160					0.8255	15/XL
+40	diesel	japan	female	1.0668					0.8763	17/XXL
+60	diesel	japan	female	1.1176					0.9398	19,21/XXXL
+-80	diesel	italy	male	0.8128					0.6858	42/XXS
+-60	diesel	italy	male	0.8636	0.3556				0.7239	44/XS
+-40	diesel	italy	male	0.9144	0.3747				0.7747	46/S
+-20	diesel	italy	male	0.9652	0.3967				0.8255	48/M
+0	diesel	italy	male	1.0160	0.4128				0.8763	50/L
+20	diesel	italy	male	1.0668	0.4381				0.9271	52/XL
+40	diesel	italy	male	1.1176	0.4636				0.9779	54/XXL
+60	diesel	italy	male	1.1684	0.4890				1.0287	56/XXXL
+-80	diesel	us	male	0.8128					0.6858	32/XXS
+-60	diesel	us	male	0.8636	0.3556				0.7239	34/XS
+-40	diesel	us	male	0.9144	0.3747				0.7747	36/S
+-20	diesel	us	male	0.9652	0.3967				0.8255	38/M
+0	diesel	us	male	1.0160	0.4128				0.8763	40/L
+20	diesel	us	male	1.0668	0.4381				0.9271	42/XL
+40	diesel	us	male	1.1176	0.4636				0.9779	44/XXL
+60	diesel	us	male	1.1684	0.4890				1.0287	46/XXXL
+-80	diesel	france	male	0.8128					0.6858	38/XXS
+-60	diesel	france	male	0.8636	0.3556				0.7239	40/XS
+-40	diesel	france	male	0.9144	0.3747				0.7747	42/S
+-20	diesel	france	male	0.9652	0.3967				0.8255	44/M
+0	diesel	france	male	1.0160	0.4128				0.8763	46/L
+20	diesel	france	male	1.0668	0.4381				0.9271	48/XL
+40	diesel	france	male	1.1176	0.4636				0.9779	50/XXL
+60	diesel	france	male	1.1684	0.4890				1.0287	52/XXXL
+-80	diesel	uk	male	0.8128					0.6858	32/XXS
+-60	diesel	uk	male	0.8636	0.3556				0.7239	34/XS
+-40	diesel	uk	male	0.9144	0.3747				0.7747	36/S
+-20	diesel	uk	male	0.9652	0.3967				0.8255	38/M
+0	diesel	uk	male	1.0160	0.4128				0.8763	40/L
+20	diesel	uk	male	1.0668	0.4381				0.9271	42/XL
+40	diesel	uk	male	1.1176	0.4636				0.9779	44/XXL
+60	diesel	uk	male	1.1684	0.4890				1.0287	46/XXXL
+-80	dkny	australia	female	0.8128					0.5842	4/XP
+-60	dkny	australia	female	0.8382					0.6223	6/P
+-40	dkny	australia	female	0.8636					0.6731	8/S
+-20	dkny	australia	female	0.8890					0.6985	10/S
+0	dkny	australia	female	0.9144					0.7239	12/M
+20	dkny	australia	female	0.9398					0.7620	14/M
+40	dkny	australia	female	0.9779					0.7874	16/L
+60	dkny	australia	female	1.0160					0.8382	18/L
+-80	dkny	italy	female	0.8128					0.5842	34/XP
+-60	dkny	italy	female	0.8382					0.6223	36/P
+-40	dkny	italy	female	0.8636					0.6731	38/S
+-20	dkny	italy	female	0.8890					0.6985	40/S
+0	dkny	italy	female	0.9144					0.7239	42/M
+20	dkny	italy	female	0.9398					0.7620	44/M
+40	dkny	italy	female	0.9779					0.7874	46/L
+60	dkny	italy	female	1.0160					0.8382	48/L
+-80	dkny	us	female	0.8128					0.5842	0/XP
+-60	dkny	us	female	0.8382					0.6223	2/P
+-40	dkny	us	female	0.8636					0.6731	4/S
+-20	dkny	us	female	0.8890					0.6985	6/S
+0	dkny	us	female	0.9144					0.7239	8/M
+20	dkny	us	female	0.9398					0.7620	10/M
+40	dkny	us	female	0.9779					0.7874	12/L
+60	dkny	us	female	1.0160					0.8382	14/L
+-80	dkny	france	female	0.8128					0.5842	39/XP
+-60	dkny	france	female	0.8382					0.6223	32/P
+-40	dkny	france	female	0.8636					0.6731	34/S
+-20	dkny	france	female	0.8890					0.6985	36/S
+0	dkny	france	female	0.9144					0.7239	38/M
+20	dkny	france	female	0.9398					0.7620	40/M
+40	dkny	france	female	0.9779					0.7874	42/L
+60	dkny	france	female	1.0160					0.8382	44/L
+-80	dkny	uk	female	0.8128					0.5842	2/XP
+-60	dkny	uk	female	0.8382					0.6223	4/P
+-40	dkny	uk	female	0.8636					0.6731	6/S
+-20	dkny	uk	female	0.8890					0.6985	8/S
+0	dkny	uk	female	0.9144					0.7239	10/M
+20	dkny	uk	female	0.9398					0.7620	12/M
+40	dkny	uk	female	0.9779					0.7874	14/L
+60	dkny	uk	female	1.0160					0.8382	16/L
+-80	dkny	japan	female	0.8128					0.5842	3/XP
+-60	dkny	japan	female	0.8382					0.6223	5/P
+-40	dkny	japan	female	0.8636					0.6731	7/S
+-20	dkny	japan	female	0.8890					0.6985	9/S
+0	dkny	japan	female	0.9144					0.7239	11/M
+20	dkny	japan	female	0.9398					0.7620	13/M
+40	dkny	japan	female	0.9779					0.7874	15/L
+60	dkny	japan	female	1.0160					0.8382	17/L
+-40	dkny	australia	male	0.9271	0.3747	0.8509			0.7620	S
+-20	dkny	australia	male	0.9906	0.4001	0.8763			0.8255	M
+0	dkny	australia	male	1.0668	0.4128	0.9017			0.8890	L
+20	dkny	australia	male	1.1430	0.4381	0.9271			0.9652	XL
+-40	dkny	italy	male	0.9271	0.3747	0.8509			0.7620	S
+-20	dkny	italy	male	0.9906	0.4001	0.8763			0.8255	M
+0	dkny	italy	male	1.0668	0.4128	0.9017			0.8890	L
+20	dkny	italy	male	1.1430	0.4381	0.9271			0.9652	XL
+-40	dkny	us	male	0.9271	0.3747	0.8509			0.7620	S
+-20	dkny	us	male	0.9906	0.4001	0.8763			0.8255	M
+0	dkny	us	male	1.0668	0.4128	0.9017			0.8890	L
+20	dkny	us	male	1.1430	0.4381	0.9271			0.9652	XL
+-40	dkny	france	male	0.9271	0.3747	0.8509			0.7620	S
+-20	dkny	france	male	0.9906	0.4001	0.8763			0.8255	M
+0	dkny	france	male	1.0668	0.4128	0.9017			0.8890	L
+20	dkny	france	male	1.1430	0.4381	0.9271			0.9652	XL
+-40	dkny	uk	male	0.9271	0.3747	0.8509			0.7620	S
+-20	dkny	uk	male	0.9906	0.4001	0.8763			0.8255	M
+0	dkny	uk	male	1.0668	0.4128	0.9017			0.8890	L
+20	dkny	uk	male	1.1430	0.4381	0.9271			0.9652	XL
+-40	dkny	japan	male	0.9271	0.3747	0.8509			0.7620	S
+-20	dkny	japan	male	0.9906	0.4001	0.8763			0.8255	M
+0	dkny	japan	male	1.0668	0.4128	0.9017			0.8890	L
+20	dkny	japan	male	1.1430	0.4381	0.9271			0.9652	XL
+-80	dorothyperkins	australia	female	0.8000					0.6200	6/XS
+-60	dorothyperkins	australia	female	0.8400					0.6600	8/S
+-40	dorothyperkins	australia	female	0.8800					0.7000	10/S
+-20	dorothyperkins	australia	female	0.9200					0.7400	12/M
+0	dorothyperkins	australia	female	0.9650					0.7900	14/M
+20	dorothyperkins	australia	female	1.0200					0.8400	16/L
+40	dorothyperkins	australia	female	1.1000					0.9200	18/L
+60	dorothyperkins	australia	female	1.1200					1.0000	20/XL
+80	dorothyperkins	australia	female	1.1600					1.0800	22/XL
+-80	dorothyperkins	italy	female	0.8000					0.6200	38/XS
+-60	dorothyperkins	italy	female	0.8400					0.6600	40/S
+-40	dorothyperkins	italy	female	0.8800					0.7000	42/S
+-20	dorothyperkins	italy	female	0.9200					0.7400	44/M
+0	dorothyperkins	italy	female	0.9650					0.7900	46/M
+20	dorothyperkins	italy	female	1.0200					0.8400	48/L
+40	dorothyperkins	italy	female	1.1000					0.9200	50/L
+60	dorothyperkins	italy	female	1.1200					1.0000	52/XL
+80	dorothyperkins	italy	female	1.1600					1.0800	54/XL
+-80	dorothyperkins	denmark	female	0.8000					0.6200	32/XS
+-60	dorothyperkins	denmark	female	0.8400					0.6600	34/S
+-40	dorothyperkins	denmark	female	0.8800					0.7000	36/S
+-20	dorothyperkins	denmark	female	0.9200					0.7400	38/M
+0	dorothyperkins	denmark	female	0.9650					0.7900	40/M
+20	dorothyperkins	denmark	female	1.0200					0.8400	42/L
+40	dorothyperkins	denmark	female	1.1000					0.9200	44/L
+60	dorothyperkins	denmark	female	1.1200					1.0000	46/XL
+80	dorothyperkins	denmark	female	1.1600					1.0800	48/XL
+-80	dorothyperkins	us	female	0.8000					0.6200	2/XS
+-60	dorothyperkins	us	female	0.8400					0.6600	4/S
+-40	dorothyperkins	us	female	0.8800					0.7000	6/S
+-20	dorothyperkins	us	female	0.9200					0.7400	8/M
+0	dorothyperkins	us	female	0.9650					0.7900	10/M
+20	dorothyperkins	us	female	1.0200					0.8400	12/L
+40	dorothyperkins	us	female	1.1000					0.9200	14/L
+60	dorothyperkins	us	female	1.1200					1.0000	16/XL
+80	dorothyperkins	us	female	1.1600					1.0800	18/XL
+-80	dorothyperkins	france	female	0.8000					0.6200	34/XS
+-60	dorothyperkins	france	female	0.8400					0.6600	36/S
+-40	dorothyperkins	france	female	0.8800					0.7000	38/S
+-20	dorothyperkins	france	female	0.9200					0.7400	40/M
+0	dorothyperkins	france	female	0.9650					0.7900	42/M
+20	dorothyperkins	france	female	1.0200					0.8400	44/L
+40	dorothyperkins	france	female	1.1000					0.9200	46/L
+60	dorothyperkins	france	female	1.1200					1.0000	48/XL
+80	dorothyperkins	france	female	1.1600					1.0800	50/XL
+-80	dorothyperkins	germany	female	0.8000					0.6200	32/XS
+-60	dorothyperkins	germany	female	0.8400					0.6600	34/S
+-40	dorothyperkins	germany	female	0.8800					0.7000	36/S
+-20	dorothyperkins	germany	female	0.9200					0.7400	38/M
+0	dorothyperkins	germany	female	0.9650					0.7900	40/M
+20	dorothyperkins	germany	female	1.0200					0.8400	42/L
+40	dorothyperkins	germany	female	1.1000					0.9200	44/L
+60	dorothyperkins	germany	female	1.1200					1.0000	46/XL
+80	dorothyperkins	germany	female	1.1600					1.0800	48/XL
+-80	dorothyperkins	uk	female	0.8000					0.6200	6/XS
+-60	dorothyperkins	uk	female	0.8400					0.6600	8/S
+-40	dorothyperkins	uk	female	0.8800					0.7000	10/S
+-20	dorothyperkins	uk	female	0.9200					0.7400	12/M
+0	dorothyperkins	uk	female	0.9650					0.7900	14/M
+20	dorothyperkins	uk	female	1.0200					0.8400	16/L
+40	dorothyperkins	uk	female	1.1000					0.9200	18/L
+60	dorothyperkins	uk	female	1.1200					1.0000	20/XL
+80	dorothyperkins	uk	female	1.1600					1.0800	22/XL
+-80	dorothyperkins	spain	female	0.8000					0.6200	34/XS
+-60	dorothyperkins	spain	female	0.8400					0.6600	36/S
+-40	dorothyperkins	spain	female	0.8800					0.7000	38/S
+-20	dorothyperkins	spain	female	0.9200					0.7400	40/M
+0	dorothyperkins	spain	female	0.9650					0.7900	42/M
+20	dorothyperkins	spain	female	1.0200					0.8400	44/L
+40	dorothyperkins	spain	female	1.1000					0.9200	46/L
+60	dorothyperkins	spain	female	1.1200					1.0000	48/XL
+80	dorothyperkins	spain	female	1.1600					1.0800	50/XL
+-60	fennwrightmanson	uk	female	0.8300					0.6350	8
+-40	fennwrightmanson	uk	female	0.8800					0.6850	10
+-20	fennwrightmanson	uk	female	0.9300					0.7350	12
+0	fennwrightmanson	uk	female	0.9800					0.7850	14
+20	fennwrightmanson	uk	female	1.0300					0.8350	16
+40	fennwrightmanson	uk	female	1.0800					0.8820	18
+-80	ff	europe	female	0.7900					0.6200	34/XS
+-60	ff	europe	female	0.8100					0.6400	36/S
+-40	ff	europe	female	0.8600					0.6900	38/S
+-20	ff	europe	female	0.9100					0.7400	40/M
+0	ff	europe	female	0.9600					0.7900	42/M
+20	ff	europe	female	1.0100					0.8400	44/L
+40	ff	europe	female	1.0900					0.9200	46/L
+60	ff	europe	female	1.1400					0.9700	48/XL
+80	ff	europe	female	1.1900					1.0200	50/XL
+-80	ff	australia	female	0.7900					0.6200	4/XS
+-60	ff	australia	female	0.8100					0.6400	6/S
+-40	ff	australia	female	0.8600					0.6900	8/S
+-20	ff	australia	female	0.9100					0.7400	10/M
+0	ff	australia	female	0.9600					0.7900	12/M
+20	ff	australia	female	1.0100					0.8400	14/L
+40	ff	australia	female	1.0900					0.9200	16/L
+60	ff	australia	female	1.1400					0.9700	18/XL
+80	ff	australia	female	1.1900					1.0200	20/XL
+-80	ff	us	female	0.7900					0.6200	2/XS
+-60	ff	us	female	0.8100					0.6400	4/S
+-40	ff	us	female	0.8600					0.6900	6/S
+-20	ff	us	female	0.9100					0.7400	8/M
+0	ff	us	female	0.9600					0.7900	10/M
+20	ff	us	female	1.0100					0.8400	12/L
+40	ff	us	female	1.0900					0.9200	14/L
+60	ff	us	female	1.1400					0.9700	16/XL
+80	ff	us	female	1.1900					1.0200	18/XL
+-80	ff	uk	female	0.7900					0.6200	6/XS
+-60	ff	uk	female	0.8100					0.6400	8/S
+-40	ff	uk	female	0.8600					0.6900	10/S
+-20	ff	uk	female	0.9100					0.7400	12/M
+0	ff	uk	female	0.9600					0.7900	14/M
+20	ff	uk	female	1.0100					0.8400	16/L
+40	ff	uk	female	1.0900					0.9200	18/L
+60	ff	uk	female	1.1400					0.9700	20/XL
+80	ff	uk	female	1.1900					1.0200	22/XL
+-60	ff	uk	male	0.8350						XS
+-40	ff	uk	male	0.9150						S
+-20	ff	uk	male	0.9950						M
+0	ff	uk	male	1.0650						L
+20	ff	uk	male	1.1450						XL
+40	ff	uk	male	1.2150						XXL
+-60	fossil	us	female	0.8382					0.6477	0/XS
+-40	fossil	us	female	0.8636					0.6731	2/XS
+-20	fossil	us	female	0.8890					0.6985	4/S
+0	fossil	us	female	0.9144					0.7239	6/S
+20	fossil	us	female	0.9398					0.7493	8/M
+40	fossil	us	female	0.9779					0.7874	10/M
+60	fossil	us	female	1.0160					0.8255	12/L
+-60	fossil	uk	female	0.8382					0.6477	4/XS
+-40	fossil	uk	female	0.8636					0.6731	6/XS
+-20	fossil	uk	female	0.8890					0.6985	8/S
+0	fossil	uk	female	0.9144					0.7239	10/S
+20	fossil	uk	female	0.9398					0.7493	12/M
+40	fossil	uk	female	0.9779					0.7874	14/M
+60	fossil	uk	female	1.0160					0.8255	16/L
+-80	fossil	us	male	0.9144				0.9144	0.7112	34/S
+-60	fossil	us	male	0.9398				0.9398	0.7366	36/S
+-40	fossil	us	male	0.9652				0.9652	0.7620	38/M
+-20	fossil	us	male	0.9906				0.9906	0.7874	40/M
+0	fossil	us	male	1.0160				1.0160	0.8128	42/L
+20	fossil	us	male	1.0541				1.0414	0.8382	44/L
+40	fossil	us	male	1.1049				1.0668	0.8636	46/XL
+60	fossil	us	male	1.1176				1.1176	0.9144	48/XL
+80	fossil	us	male	1.1557				1.1684	0.9652	50/XL
+-80	fossil	uk	male	0.9144				0.9144	0.7112	34/S
+-60	fossil	uk	male	0.9398				0.9398	0.7366	36/S
+-40	fossil	uk	male	0.9652				0.9652	0.7620	38/M
+-20	fossil	uk	male	0.9906				0.9906	0.7874	40/M
+0	fossil	uk	male	1.0160				1.0160	0.8128	42/L
+20	fossil	uk	male	1.0541				1.0414	0.8382	44/L
+40	fossil	uk	male	1.1049				1.0668	0.8636	46/XL
+60	fossil	uk	male	1.1176				1.1176	0.9144	48/XL
+80	fossil	uk	male	1.1557				1.1684	0.9652	50/XL
+-40	frenchconnection	australia	female	0.8400				0.9300	0.6700	6/XS
+-20	frenchconnection	australia	female	0.8600				0.9500	0.7000	8/S
+0	frenchconnection	australia	female	0.9000				0.9900	0.7400	10/M
+20	frenchconnection	australia	female	0.9500				1.0400	0.7900	12/L
+40	frenchconnection	australia	female	1.0000				1.0900	0.8400	14/XL
+-40	frenchconnection	canada	female	0.8382				0.9271	0.6731	0,2/XS
+-20	frenchconnection	canada	female	0.8636				0.9525	0.6985	4/S
+0	frenchconnection	canada	female	0.9017				0.9906	0.7366	6,8/M
+20	frenchconnection	canada	female	0.9525				1.0414	0.7874	10,12/L
+-80	frenchconnection	uk	female	0.8100				0.9000	0.6500	6/XXS
+-60	frenchconnection	uk	female	0.8400				0.9300	0.6700	8/XS
+-40	frenchconnection	uk	female	0.8600				0.9500	0.7000	10/S
+-20	frenchconnection	uk	female	0.9100				1.0000	0.7500	12/M
+0	frenchconnection	uk	female	0.9600				1.0500	0.8000	14/L
+20	frenchconnection	uk	female	1.0100				1.1000	0.8500	16/XL
+40	frenchconnection	uk	female	1.0650				1.1500	0.9000	18/XXL
+60	frenchconnection	uk	female	1.1200				1.2050	0.9500	20
+-60	frenchconnection	us	female	0.7684				0.8572	0.6033	0/XXS
+-40	frenchconnection	us	female	0.8001				0.9017	0.6477	2/XS
+-20	frenchconnection	us	female	0.8255				0.9271	0.6731	4/S
+0	frenchconnection	us	female	0.8509				0.9525	0.6985	6/M
+20	frenchconnection	us	female	0.9017				1.0033	0.7493	8/M
+40	frenchconnection	us	female	0.9525				1.0541	0.8001	10/L
+60	frenchconnection	us	female	1.0033				1.1049	0.8509	12/L
+-40	frenchconnection	australia	male	0.9700	0.3900				0.7600	S
+-20	frenchconnection	australia	male	1.0200	0.4100				0.8100	M
+0	frenchconnection	australia	male	1.0700	0.4200				0.8600	L
+20	frenchconnection	australia	male	1.1200	0.4300				0.9100	XL
+-60	frenchconnection	uk	male	0.9400	0.3850				0.7350	XS
+-40	frenchconnection	uk	male	0.9700	0.3900				0.7600	S
+-20	frenchconnection	uk	male	1.0200	0.4100				0.8100	M
+0	frenchconnection	uk	male	1.0700	0.4200				0.8600	L
+20	frenchconnection	uk	male	1.1200	0.4300				0.9100	XL
+40	frenchconnection	uk	male	1.1700	0.4400				0.9600	XXL
+-40	frenchconnection	us	male	0.8636	0.3874				0.7112	15.25/XS
+-20	frenchconnection	us	male	0.9652	0.4128				0.8128	16.25/S
+0	frenchconnection	us	male	1.0160	0.4255				0.8636	16.75/M
+20	frenchconnection	us	male	1.0160	0.4255				0.8636	16.75/L
+40	frenchconnection	us	male	1.0668	0.4381				0.9144	17.25/XL
+-100	gap	europe	female	0.7750		0.6950				30/XXS
+-80	gap	europe	female	0.8000		0.7100				32/XS
+-60	gap	europe	female	0.8500		0.7500				34/XS
+-40	gap	europe	female	0.8750		0.7600				36/S
+-20	gap	europe	female	0.9000		0.7750				38/S
+0	gap	europe	female	0.9250		0.7850				40/M
+20	gap	europe	female	0.9500		0.8000				42/M
+40	gap	europe	female	0.9850		0.8100				44/L
+60	gap	europe	female	1.0250		0.8150				46/L
+80	gap	europe	female	1.0650		0.8250				48/XL
+-100	gap	us	female	0.7750		0.6950				00/XXS
+-80	gap	us	female	0.8000		0.7100				0/XS
+-60	gap	us	female	0.8500		0.7500				2/XS
+-40	gap	us	female	0.8750		0.7600				4/S
+-20	gap	us	female	0.9000		0.7750				6/S
+0	gap	us	female	0.9250		0.7850				8/M
+20	gap	us	female	0.9500		0.8000				10/M
+40	gap	us	female	0.9850		0.8100				12/L
+60	gap	us	female	1.0250		0.8150				14/L
+80	gap	us	female	1.0650		0.8250				16/XL
+-100	gap	uk	female	0.7750		0.6950				2/XXS
+-80	gap	uk	female	0.8000		0.7100				4/XS
+-60	gap	uk	female	0.8500		0.7500				6/XS
+-40	gap	uk	female	0.8750		0.7600				8/S
+-20	gap	uk	female	0.9000		0.7750				10/S
+0	gap	uk	female	0.9250		0.7850				12/M
+20	gap	uk	female	0.9500		0.8000				14/M
+40	gap	uk	female	0.9850		0.8100				16/L
+60	gap	uk	female	1.0250		0.8150				18/L
+80	gap	uk	female	1.0650		0.8250				20/XL
+-40	gap	us	male	0.8875	0.3450	0.8000	0.6725			XS
+-20	gap	us	male	0.9400	0.3625	0.8250	0.6975			S
+0	gap	us	male	1.0150	0.3850	0.8500	0.7225			M
+20	gap	us	male	1.0900	0.4125	0.8750	0.7475			L
+40	gap	us	male	1.1650	0.4375	0.9000	0.7725			XL
+-40	gap	uk	male	0.8875	0.3450	0.8000	0.6725			XS
+-20	gap	uk	male	0.9400	0.3625	0.8250	0.6975			S
+0	gap	uk	male	1.0150	0.3850	0.8500	0.7225			M
+20	gap	uk	male	1.0900	0.4125	0.8750	0.7475			L
+40	gap	uk	male	1.1650	0.4375	0.9000	0.7725			XL
+-120	george	europe	female	0.7750				0.8550	0.6150	34
+-100	george	europe	female	0.8000				0.8800	0.6400	36
+-80	george	europe	female	0.8500				0.9300	0.6900	38
+-60	george	europe	female	0.9000				0.9800	0.7400	40
+-40	george	europe	female	0.9500				1.0300	0.7900	42
+-20	george	europe	female	1.0000				1.0800	0.8400	44
+0	george	europe	female	1.0600				1.1400	0.9000	46
+20	george	europe	female	1.1200				1.2000	0.9600	48
+40	george	europe	female	1.1800				1.2600	1.0200	50
+60	george	europe	female	1.2400				1.3200	1.0800	52
+80	george	europe	female	1.3000				1.3800	1.1400	54
+100	george	europe	female	1.3600				1.4400	1.2000	56
+-120	george	uk	female	0.7750				0.8550	0.6150	6
+-100	george	uk	female	0.8000				0.8800	0.6400	8
+-80	george	uk	female	0.8500				0.9300	0.6900	10
+-60	george	uk	female	0.9000				0.9800	0.7400	12
+-40	george	uk	female	0.9500				1.0300	0.7900	14
+-20	george	uk	female	1.0000				1.0800	0.8400	16
+0	george	uk	female	1.0600				1.1400	0.9000	18
+20	george	uk	female	1.1200				1.2000	0.9600	20
+40	george	uk	female	1.1800				1.2600	1.0200	22
+60	george	uk	female	1.2400				1.3200	1.0800	24
+80	george	uk	female	1.3000				1.3800	1.1400	26
+100	george	uk	female	1.3600				1.4400	1.2000	28
+-80	george	uk	male	0.8650					0.7125	XS
+-60	george	uk	male	0.9350					0.7850	S
+-40	george	uk	male	1.0150					0.8650	M
+-20	george	uk	male	1.0650					0.9350	L
+0	george	uk	male	1.1650					1.0150	XL
+20	george	uk	male	1.2450					1.0650	XXL
+40	george	uk	male	1.3150					1.1650	XXXL
+60	george	uk	male	1.3950					1.2450	XXXXL
+-40	ghost	uk	female	0.8100					0.6300	8/XS
+-20	ghost	uk	female	0.8600					0.6800	10/S
+0	ghost	uk	female	0.9100					0.7300	12/M
+20	ghost	uk	female	0.9600					0.7800	14/L
+40	ghost	uk	female	1.0100					0.8300	16/XL
+-20	grab	australia	female	0.8500						S/S
+0	grab	australia	female	0.9000						M/M
+20	grab	australia	female	0.9500						L/L
+-60	gucci	italy	female	0.8100					0.6300	36/xxs
+-40	gucci	italy	female	0.8400					0.6600	38/xs
+-20	gucci	italy	female	0.8700					0.6900	40/s
+0	gucci	italy	female	0.9000					0.7200	42/m
+20	gucci	italy	female	0.9400					0.7400	44/l
+40	gucci	italy	female	0.9800					0.7800	46/xl
+60	gucci	italy	female	1.0200					0.8200	48/xxl
+-60	gucci	france	female	0.8100					0.6300	32/xxs
+-40	gucci	france	female	0.8400					0.6600	34/xs
+-20	gucci	france	female	0.8700					0.6900	36/s
+0	gucci	france	female	0.9000					0.7200	38/m
+20	gucci	france	female	0.9400					0.7400	40/l
+40	gucci	france	female	0.9800					0.7800	42/xl
+60	gucci	france	female	1.0200					0.8200	44/xxl
+-60	gucci	uk	female	0.8100					0.6300	4/xxs
+-40	gucci	uk	female	0.8400					0.6600	6/xs
+-20	gucci	uk	female	0.8700					0.6900	8/s
+0	gucci	uk	female	0.9000					0.7200	10/m
+20	gucci	uk	female	0.9400					0.7400	12/l
+40	gucci	uk	female	0.9800					0.7800	14/xl
+60	gucci	uk	female	1.0200					0.8200	16/xxl
+-80	gucci	europe	male		0.3683					14.5 (37)
+-60	gucci	europe	male		0.3810					15 (38)
+-40	gucci	europe	male		0.3937					15.5 (39)
+-20	gucci	europe	male		0.4064					16 (40)
+0	gucci	europe	male		0.4191					16.5 (41)
+20	gucci	europe	male		0.4318					17 (42)
+40	gucci	europe	male		0.4445					17.5 (43)
+60	gucci	europe	male		0.4572					18 (44)
+-80	gucci	italy	male		0.3683					14.5 (37)
+-60	gucci	italy	male		0.3810					15 (38)
+-40	gucci	italy	male		0.3937					15.5 (39)
+-20	gucci	italy	male		0.4064					16 (40)
+0	gucci	italy	male		0.4191					16.5 (41)
+20	gucci	italy	male		0.4318					17 (42)
+40	gucci	italy	male		0.4445					17.5 (43)
+60	gucci	italy	male		0.4572					18 (44)
+-80	gucci	us	male		0.3683					14.5 (37)
+-60	gucci	us	male		0.3810					15 (38)
+-40	gucci	us	male		0.3937					15.5 (39)
+-20	gucci	us	male		0.4064					16 (40)
+0	gucci	us	male		0.4191					16.5 (41)
+20	gucci	us	male		0.4318					17 (42)
+40	gucci	us	male		0.4445					17.5 (43)
+60	gucci	us	male		0.4572					18 (44)
+-80	gucci	france	male		0.3683					14.5 (37)
+-60	gucci	france	male		0.3810					15 (38)
+-40	gucci	france	male		0.3937					15.5 (39)
+-20	gucci	france	male		0.4064					16 (40)
+0	gucci	france	male		0.4191					16.5 (41)
+20	gucci	france	male		0.4318					17 (42)
+40	gucci	france	male		0.4445					17.5 (43)
+60	gucci	france	male		0.4572					18 (44)
+-80	gucci	uk	male		0.3683					14.5 (37)
+-60	gucci	uk	male		0.3810					15 (38)
+-40	gucci	uk	male		0.3937					15.5 (39)
+-20	gucci	uk	male		0.4064					16 (40)
+0	gucci	uk	male		0.4191					16.5 (41)
+20	gucci	uk	male		0.4318					17 (42)
+40	gucci	uk	male		0.4445					17.5 (43)
+60	gucci	uk	male		0.4572					18 (44)
+-40	guess	europe	female	0.8200					0.6400	XS
+-20	guess	europe	female	0.8600					0.6850	S
+0	guess	europe	female	0.9050					0.7350	M
+20	guess	europe	female	0.9550					0.7850	L
+40	guess	europe	female	1.0050					0.8400	XL
+-40	guess	australia	female	0.8200					0.6400	XS
+-20	guess	australia	female	0.8600					0.6850	S
+0	guess	australia	female	0.9050					0.7350	M
+20	guess	australia	female	0.9550					0.7850	L
+40	guess	australia	female	1.0050					0.8400	XL
+-40	guess	us	female	0.8200					0.6400	XS
+-20	guess	us	female	0.8600					0.6850	S
+0	guess	us	female	0.9050					0.7350	M
+20	guess	us	female	0.9550					0.7850	L
+40	guess	us	female	1.0050					0.8400	XL
+-40	guess	uk	female	0.8200					0.6400	XS
+-20	guess	uk	female	0.8600					0.6850	S
+0	guess	uk	female	0.9050					0.7350	M
+20	guess	uk	female	0.9550					0.7850	L
+40	guess	uk	female	1.0050					0.8400	XL
+-60	guess	europe	male	0.9200	0.3650					XS/14½
+-40	guess	europe	male	0.9600	0.3850					S/15-15½
+-20	guess	europe	male	1.0000	0.4050					M/16
+0	guess	europe	male	1.0450	0.4250					L/16½
+20	guess	europe	male	1.0950	0.4450					XL/17-17½
+40	guess	europe	male	1.1500	0.4650					XXL/18-18½
+-60	guess	us	male	0.9200	0.3650					XS/14½
+-40	guess	us	male	0.9600	0.3850					S/15-15½
+-20	guess	us	male	1.0000	0.4050					M/16
+0	guess	us	male	1.0450	0.4250					L/16½
+20	guess	us	male	1.0950	0.4450					XL/17-17½
+40	guess	us	male	1.1500	0.4650					XXL/18-18½
+-60	guess	uk	male	0.9200	0.3650					XS/14½
+-40	guess	uk	male	0.9600	0.3850					S/15-15½
+-20	guess	uk	male	1.0000	0.4050					M/16
+0	guess	uk	male	1.0450	0.4250					L/16½
+20	guess	uk	male	1.0950	0.4450					XL/17-17½
+40	guess	uk	male	1.1500	0.4650					XXL/18-18½
+-100	hm	europe	male	0.8400					0.7200	42/XS
+-80	hm	europe	male	0.8800					0.7600	44/S
+-60	hm	europe	male	0.9200					0.8000	46/S
+-40	hm	europe	male	0.9600					0.8400	48/M
+-20	hm	europe	male	1.0000					0.8800	50/M
+0	hm	europe	male	1.0400					0.9200	52/L
+20	hm	europe	male	1.0800					0.9600	54/L
+40	hm	europe	male	1.1200					1.0000	56/XL
+60	hm	europe	male	1.1600					1.0400	58/XL
+80	hm	europe	male	1.2000					1.0800	60/XXL
+100	hm	europe	male	1.2400					1.1200	62/XXL
+-100	hm	uk	male	0.8400					0.7200	32R/XS
+-80	hm	uk	male	0.8800					0.7600	34R/S
+-60	hm	uk	male	0.9200					0.8000	36R/S
+-40	hm	uk	male	0.9600					0.8400	38R/M
+-20	hm	uk	male	1.0000					0.8800	40R/M
+0	hm	uk	male	1.0400					0.9200	42R/L
+20	hm	uk	male	1.0800					0.9600	44R/L
+40	hm	uk	male	1.1200					1.0000	46R/XL
+60	hm	uk	male	1.1600					1.0400	48R/XL
+80	hm	uk	male	1.2000					1.0800	50R/XXL
+100	hm	uk	male	1.2400					1.1200	52R/XXL
+-20	illustratedpeople	uk	female	0.4800						6-8/S
+0	illustratedpeople	uk	female	0.5000						10-12/M
+-60	jaeger	europe	female	0.8350				0.8950	0.6350	34/XS
+-40	jaeger	europe	female	0.8600				0.9200	0.6600	36/S
+-20	jaeger	europe	female	0.9100				0.9700	0.7100	38/S
+0	jaeger	europe	female	0.9600				1.0200	0.7600	40/M
+20	jaeger	europe	female	1.0200				1.0800	0.8200	42/L
+40	jaeger	europe	female	1.0800				1.1400	0.8800	44/L
+60	jaeger	europe	female	1.1400				1.2000	0.9400	46/XL
+-60	jaeger	us	female	0.8350				0.8950	0.6350	4/XS
+-40	jaeger	us	female	0.8600				0.9200	0.6600	6/S
+-20	jaeger	us	female	0.9100				0.9700	0.7100	8/S
+0	jaeger	us	female	0.9600				1.0200	0.7600	10/M
+20	jaeger	us	female	1.0200				1.0800	0.8200	12/L
+40	jaeger	us	female	1.0800				1.1400	0.8800	14/L
+60	jaeger	us	female	1.1400				1.2000	0.9400	16/XL
+-60	jaeger	uk	female	0.8350				0.8950	0.6350	6/XS
+-40	jaeger	uk	female	0.8600				0.9200	0.6600	8/S
+-20	jaeger	uk	female	0.9100				0.9700	0.7100	10/S
+0	jaeger	uk	female	0.9600				1.0200	0.7600	12/M
+20	jaeger	uk	female	1.0200				1.0800	0.8200	14/L
+40	jaeger	uk	female	1.0800				1.1400	0.8800	16/L
+60	jaeger	uk	female	1.1400				1.2000	0.9400	18/XL
+-60	jag	australia	male	0.9100	0.3810					XS
+-40	jag	australia	male	0.9600	0.3937					S
+-20	jag	australia	male	1.0100	0.4064					M
+0	jag	australia	male	1.0600	0.4191					L
+20	jag	australia	male	1.1100	0.4318					XL
+40	jag	australia	male	1.1600	0.4445					XXL
+-60	jameslakeland	europe	female	0.8100					0.7100	40
+-40	jameslakeland	europe	female	0.8600					0.7600	42
+-20	jameslakeland	europe	female	0.9100					0.8100	44
+0	jameslakeland	europe	female	0.9600					0.8600	46
+20	jameslakeland	europe	female	1.0100					0.9100	48
+40	jameslakeland	europe	female	1.0600					0.9700	50
+60	jameslakeland	europe	female	1.1100					1.0200	52
+-60	jameslakeland	us	female	0.8100					0.7100	4
+-40	jameslakeland	us	female	0.8600					0.7600	6
+-20	jameslakeland	us	female	0.9100					0.8100	8
+0	jameslakeland	us	female	0.9600					0.8600	10
+20	jameslakeland	us	female	1.0100					0.9100	12
+40	jameslakeland	us	female	1.0600					0.9700	14
+60	jameslakeland	us	female	1.1100					1.0200	16
+-60	jameslakeland	uk	female	0.8100					0.7100	8
+-40	jameslakeland	uk	female	0.8600					0.7600	10
+-20	jameslakeland	uk	female	0.9100					0.8100	12
+0	jameslakeland	uk	female	0.9600					0.8600	14
+20	jameslakeland	uk	female	1.0100					0.9100	16
+40	jameslakeland	uk	female	1.0600					0.9700	18
+60	jameslakeland	uk	female	1.1100					1.0200	20
+-40	jigsaw	italy	female	0.8300		0.6040			0.6450	40/XS
+-20	jigsaw	italy	female	0.8800		0.6100			0.6950	42/S
+0	jigsaw	italy	female	0.9300		0.6160			0.7450	44/M
+20	jigsaw	italy	female	0.9800		0.6220			0.7950	46/L
+40	jigsaw	italy	female	1.0300		0.6280			0.8450	48/XL
+-40	jigsaw	denmark	female	0.8300		0.6040			0.6450	34/XS
+-20	jigsaw	denmark	female	0.8800		0.6100			0.6950	36/S
+0	jigsaw	denmark	female	0.9300		0.6160			0.7450	38/M
+20	jigsaw	denmark	female	0.9800		0.6220			0.7950	40/L
+40	jigsaw	denmark	female	1.0300		0.6280			0.8450	42/XL
+-40	jigsaw	us	female	0.8300		0.6040			0.6450	4/XS
+-20	jigsaw	us	female	0.8800		0.6100			0.6950	6/S
+0	jigsaw	us	female	0.9300		0.6160			0.7450	8/M
+20	jigsaw	us	female	0.9800		0.6220			0.7950	10/L
+40	jigsaw	us	female	1.0300		0.6280			0.8450	12/XL
+-40	jigsaw	france	female	0.8300		0.6040			0.6450	36/XS
+-20	jigsaw	france	female	0.8800		0.6100			0.6950	38/S
+0	jigsaw	france	female	0.9300		0.6160			0.7450	40/M
+20	jigsaw	france	female	0.9800		0.6220			0.7950	42/L
+40	jigsaw	france	female	1.0300		0.6280			0.8450	44/XL
+-40	jigsaw	uk	female	0.8300		0.6040			0.6450	8/XS
+-20	jigsaw	uk	female	0.8800		0.6100			0.6950	10/S
+0	jigsaw	uk	female	0.9300		0.6160			0.7450	12/M
+20	jigsaw	uk	female	0.9800		0.6220			0.7950	14/L
+40	jigsaw	uk	female	1.0300		0.6280			0.8450	16/XL
+-60	jigsaw	europe	male	0.9100	0.3810	0.9100				46/S
+-40	jigsaw	europe	male	0.9700	0.3940	0.9100				48/M
+-20	jigsaw	europe	male	1.0200	0.4060	0.9100				50/M
+0	jigsaw	europe	male	1.0700	0.4190	0.9100				52/L
+20	jigsaw	europe	male	1.1200	0.4320	0.9100				54/XL
+40	jigsaw	europe	male	1.1700	0.4450	0.9100				56/XL
+-60	jigsaw	italy	male	0.9100	0.3810	0.9100				46/S
+-40	jigsaw	italy	male	0.9700	0.3940	0.9100				48/M
+-20	jigsaw	italy	male	1.0200	0.4060	0.9100				50/M
+0	jigsaw	italy	male	1.0700	0.4190	0.9100				52/L
+20	jigsaw	italy	male	1.1200	0.4320	0.9100				54/XL
+40	jigsaw	italy	male	1.1700	0.4450	0.9100				56/XL
+-60	jigsaw	france	male	0.9100	0.3810	0.9100				46/S
+-40	jigsaw	france	male	0.9700	0.3940	0.9100				48/M
+-20	jigsaw	france	male	1.0200	0.4060	0.9100				50/M
+0	jigsaw	france	male	1.0700	0.4190	0.9100				52/L
+20	jigsaw	france	male	1.1200	0.4320	0.9100				54/XL
+40	jigsaw	france	male	1.1700	0.4450	0.9100				56/XL
+-60	jigsaw	uk	male	0.9100	0.3810	0.9100				15/S
+-40	jigsaw	uk	male	0.9700	0.3940	0.9100				15.5/M
+-20	jigsaw	uk	male	1.0200	0.4060	0.9100				16/M
+0	jigsaw	uk	male	1.0700	0.4190	0.9100				16.5/L
+20	jigsaw	uk	male	1.1200	0.4320	0.9100				17/XL
+40	jigsaw	uk	male	1.1700	0.4450	0.9100				17.5/XL
+-120	johnlewis	europe	female	0.7600					0.5800	32/XS
+-100	johnlewis	europe	female	0.7850					0.6050	34/XS
+-80	johnlewis	europe	female	0.8100					0.6300	36/S
+-60	johnlewis	europe	female	0.8600					0.6800	38/S
+-40	johnlewis	europe	female	0.9100					0.7300	40/M
+-20	johnlewis	europe	female	0.9600					0.7800	42/M
+0	johnlewis	europe	female	1.0100					0.8300	44/L
+20	johnlewis	europe	female	1.0850					0.9050	46/L
+40	johnlewis	europe	female	1.1600					0.9800	48/XL
+60	johnlewis	europe	female	1.2200					1.0400	50/XL
+80	johnlewis	europe	female	1.2800					1.1000	52/XXL
+100	johnlewis	europe	female	1.3400					1.1600	54/XXL
+-120	johnlewis	us	female	0.7600					0.5800	1/XS
+-100	johnlewis	us	female	0.7850					0.6050	2/XS
+-80	johnlewis	us	female	0.8100					0.6300	4/S
+-60	johnlewis	us	female	0.8600					0.6800	6/S
+-40	johnlewis	us	female	0.9100					0.7300	8/M
+-20	johnlewis	us	female	0.9600					0.7800	10/M
+0	johnlewis	us	female	1.0100					0.8300	12/L
+20	johnlewis	us	female	1.0850					0.9050	14/L
+40	johnlewis	us	female	1.1600					0.9800	16/XL
+60	johnlewis	us	female	1.2200					1.0400	18/XL
+80	johnlewis	us	female	1.2800					1.1000	20/XXL
+100	johnlewis	us	female	1.3400					1.1600	22/XXL
+-120	johnlewis	uk	female	0.7600					0.5800	4/XS
+-100	johnlewis	uk	female	0.7850					0.6050	6/XS
+-80	johnlewis	uk	female	0.8100					0.6300	8/S
+-60	johnlewis	uk	female	0.8600					0.6800	10/S
+-40	johnlewis	uk	female	0.9100					0.7300	12/M
+-20	johnlewis	uk	female	0.9600					0.7800	14/M
+0	johnlewis	uk	female	1.0100					0.8300	16/L
+20	johnlewis	uk	female	1.0850					0.9050	18/L
+40	johnlewis	uk	female	1.1600					0.9800	20/XL
+60	johnlewis	uk	female	1.2200					1.0400	22/XL
+80	johnlewis	uk	female	1.2800					1.1000	24/XXL
+100	johnlewis	uk	female	1.3400					1.1600	26/XXL
+-60	johnlewis	europe	male	0.8650						XS
+-40	johnlewis	europe	male	0.9400						S
+-20	johnlewis	europe	male	1.0150						M
+0	johnlewis	europe	male	1.0950						L
+20	johnlewis	europe	male	1.1675						XL
+40	johnlewis	europe	male	1.2450						XXL
+-60	johnlewis	us	male	0.8650						XS
+-40	johnlewis	us	male	0.9400						S
+-20	johnlewis	us	male	1.0150						M
+0	johnlewis	us	male	1.0950						L
+20	johnlewis	us	male	1.1675						XL
+40	johnlewis	us	male	1.2450						XXL
+-60	johnlewis	uk	male	0.8650						XS
+-40	johnlewis	uk	male	0.9400						S
+-20	johnlewis	uk	male	1.0150						M
+0	johnlewis	uk	male	1.0950						L
+20	johnlewis	uk	male	1.1675						XL
+40	johnlewis	uk	male	1.2450						XXL
+-60	kaliko	europe	female	0.8500					0.6600	36/S
+-40	kaliko	europe	female	0.8900					0.7000	38/S
+-20	kaliko	europe	female	0.9300					0.7400	40/M
+0	kaliko	europe	female	0.9800					0.7900	42/M
+20	kaliko	europe	female	1.0300					0.8400	44/L
+40	kaliko	europe	female	1.0800					0.8900	46/L
+60	kaliko	europe	female	1.1300					0.9400	48/XL
+-60	kaliko	us	female	0.8500					0.6600	6/S
+-40	kaliko	us	female	0.8900					0.7000	8/S
+-20	kaliko	us	female	0.9300					0.7400	10/M
+0	kaliko	us	female	0.9800					0.7900	12/M
+20	kaliko	us	female	1.0300					0.8400	14/L
+40	kaliko	us	female	1.0800					0.8900	16/L
+60	kaliko	us	female	1.1300					0.9400	18/XL
+-60	kaliko	uk	female	0.8500					0.6600	8/S
+-40	kaliko	uk	female	0.8900					0.7000	10/S
+-20	kaliko	uk	female	0.9300					0.7400	12/M
+0	kaliko	uk	female	0.9800					0.7900	14/M
+20	kaliko	uk	female	1.0300					0.8400	16/L
+40	kaliko	uk	female	1.0800					0.8900	18/L
+60	kaliko	uk	female	1.1300					0.9400	20/XL
+-40	karenmillen	europe	female	0.8200				0.9000	0.6400	34,36/1
+-20	karenmillen	europe	female	0.8600				0.9400	0.6800	38/2
+0	karenmillen	europe	female	0.9200				1.0000	0.7400	40,42/3
+20	karenmillen	europe	female	0.9800				1.0600	0.8000	44/4
+-40	karenmillen	us	female	0.8200				0.9000	0.6400	2,4/1
+-20	karenmillen	us	female	0.8600				0.9400	0.6800	6/2
+0	karenmillen	us	female	0.9200				1.0000	0.7400	8,10/3
+20	karenmillen	us	female	0.9800				1.0600	0.8000	12/4
+-40	karenmillen	uk	female	0.8200				0.9000	0.6400	6,8/1
+-20	karenmillen	uk	female	0.8600				0.9400	0.6800	10/2
+0	karenmillen	uk	female	0.9200				1.0000	0.7400	12,14/3
+20	karenmillen	uk	female	0.9800				1.0600	0.8000	16/4
+-80	lacoste	uk	female	0.8000						32
+-60	lacoste	uk	female	0.8200						34
+-40	lacoste	uk	female	0.8400						36
+-20	lacoste	uk	female	0.8800						38
+0	lacoste	uk	female	0.9200						40
+20	lacoste	uk	female	0.9600						42
+40	lacoste	uk	female	1.0000						44
+60	lacoste	uk	female	1.0400						46
+80	lacoste	uk	female	1.0800						48
+-80	lacoste	europe	male	0.9144	0.3747	0.5994				2/XXS
+-60	lacoste	europe	male	0.9652	0.3874	0.6096				3/XS
+-40	lacoste	europe	male	1.0033	0.4001	0.6198				4-38/S
+-20	lacoste	europe	male	1.0414	0.4128	0.6299				5-40/M
+0	lacoste	europe	male	1.0795	0.4191	0.6401				6-42/L
+20	lacoste	europe	male	1.1176	0.4381	0.6502				744/XL
+40	lacoste	europe	male	1.1684	0.4509	0.6604				8-45/XXL
+60	lacoste	europe	male	1.2065	0.4636	0.6706				9-46/3XL
+-60	linea	uk	female	0.8200					0.6500	8/S
+-40	linea	uk	female	0.8700					0.7000	10/S
+-20	linea	uk	female	0.9200					0.7500	12/M
+0	linea	uk	female	0.9700					0.8000	14/M
+20	linea	uk	female	1.0200					0.8500	16/L
+40	linea	uk	female	1.0700					0.9000	18/L
+-60	linea	uk	male	0.8350	0.3400					XS/Formal XS,S
+-40	linea	uk	male	0.9150	0.3700					S/Formal S,M
+-20	linea	uk	male	0.9900	0.3900					M/Formal M,L
+0	linea	uk	male	1.0650	0.4200					L/Formal M,L
+20	linea	uk	male	1.1450	0.4400					XL/Formal L,XL
+40	linea	uk	male	1.2250	0.4700					XXL/Formal XL,XXL
+-60	lkbennett	uk	female	0.8000					0.6100	6/XS
+-40	lkbennett	uk	female	0.8400					0.6500	8/S
+-20	lkbennett	uk	female	0.8800					0.6900	10/S
+0	lkbennett	uk	female	0.9200					0.7300	12/M
+20	lkbennett	uk	female	0.9700					0.7800	14/M
+40	lkbennett	uk	female	1.0200					0.8300	16/L
+60	lkbennett	uk	female	1.0700					0.8800	18/XL
+-60	mantaray	uk	male	0.9150						XS
+-40	mantaray	uk	male	0.9650						S
+-20	mantaray	uk	male	1.0300						M
+0	mantaray	uk	male	1.1050						L
+20	mantaray	uk	male	1.1800						XL
+40	mantaray	uk	male	1.2600						XXL
+60	mantaray	uk	male	1.3350						XXXL
+-120	marksspencer	netherlands	female	0.7874					0.6350	32/XS
+-100	marksspencer	netherlands	female	0.8128					0.6604	34/S
+-80	marksspencer	netherlands	female	0.8636					0.6858	36/S
+-60	marksspencer	netherlands	female	0.9144					0.7366	38/M
+-40	marksspencer	netherlands	female	0.9652					0.7874	40/M
+-20	marksspencer	netherlands	female	1.0160					0.8382	42/L
+0	marksspencer	netherlands	female	1.0668					0.8890	44/L
+20	marksspencer	netherlands	female	1.1176					0.9398	46/XL
+40	marksspencer	netherlands	female	1.1684					1.0160	48/XL
+60	marksspencer	netherlands	female	1.2446					1.0668	50/XXL
+80	marksspencer	netherlands	female	1.2954					1.1176	52/XXL
+100	marksspencer	netherlands	female	1.3716					1.1938	54/XXXL
+120	marksspencer	netherlands	female	1.4224					1.2446	56/XXXL
+-120	marksspencer	italy	female	0.7874					0.6350	38/XS
+-100	marksspencer	italy	female	0.8128					0.6604	40/S
+-80	marksspencer	italy	female	0.8636					0.6858	42/S
+-60	marksspencer	italy	female	0.9144					0.7366	44/M
+-40	marksspencer	italy	female	0.9652					0.7874	46/M
+-20	marksspencer	italy	female	1.0160					0.8382	48/L
+0	marksspencer	italy	female	1.0668					0.8890	50/L
+20	marksspencer	italy	female	1.1176					0.9398	52/XL
+40	marksspencer	italy	female	1.1684					1.0160	54/XL
+60	marksspencer	italy	female	1.2446					1.0668	56/XXL
+80	marksspencer	italy	female	1.2954					1.1176	58/XXL
+100	marksspencer	italy	female	1.3716					1.1938	60/XXXL
+120	marksspencer	italy	female	1.4224					1.2446	62/XXXL
+-120	marksspencer	portugal	female	0.7874					0.6350	34/XS
+-100	marksspencer	portugal	female	0.8128					0.6604	36/S
+-80	marksspencer	portugal	female	0.8636					0.6858	38/S
+-60	marksspencer	portugal	female	0.9144					0.7366	40/M
+-40	marksspencer	portugal	female	0.9652					0.7874	42/M
+-20	marksspencer	portugal	female	1.0160					0.8382	44/L
+0	marksspencer	portugal	female	1.0668					0.8890	46/L
+20	marksspencer	portugal	female	1.1176					0.9398	48/XL
+40	marksspencer	portugal	female	1.1684					1.0160	50/XL
+60	marksspencer	portugal	female	1.2446					1.0668	52/XXL
+80	marksspencer	portugal	female	1.2954					1.1176	54/XXL
+100	marksspencer	portugal	female	1.3716					1.1938	56/XXXL
+120	marksspencer	portugal	female	1.4224					1.2446	58/XXXL
+-120	marksspencer	france	female	0.7874					0.6350	34/XS
+-100	marksspencer	france	female	0.8128					0.6604	36/S
+-80	marksspencer	france	female	0.8636					0.6858	38/S
+-60	marksspencer	france	female	0.9144					0.7366	40/M
+-40	marksspencer	france	female	0.9652					0.7874	42/M
+-20	marksspencer	france	female	1.0160					0.8382	44/L
+0	marksspencer	france	female	1.0668					0.8890	46/L
+20	marksspencer	france	female	1.1176					0.9398	48/XL
+40	marksspencer	france	female	1.1684					1.0160	50/XL
+60	marksspencer	france	female	1.2446					1.0668	52/XXL
+80	marksspencer	france	female	1.2954					1.1176	54/XXL
+100	marksspencer	france	female	1.3716					1.1938	56/XXXL
+120	marksspencer	france	female	1.4224					1.2446	58/XXXL
+-120	marksspencer	belgium	female	0.7874					0.6350	34/XS
+-100	marksspencer	belgium	female	0.8128					0.6604	36/S
+-80	marksspencer	belgium	female	0.8636					0.6858	38/S
+-60	marksspencer	belgium	female	0.9144					0.7366	40/M
+-40	marksspencer	belgium	female	0.9652					0.7874	42/M
+-20	marksspencer	belgium	female	1.0160					0.8382	44/L
+0	marksspencer	belgium	female	1.0668					0.8890	46/L
+20	marksspencer	belgium	female	1.1176					0.9398	48/XL
+40	marksspencer	belgium	female	1.1684					1.0160	50/XL
+60	marksspencer	belgium	female	1.2446					1.0668	52/XXL
+80	marksspencer	belgium	female	1.2954					1.1176	54/XXL
+100	marksspencer	belgium	female	1.3716					1.1938	56/XXXL
+120	marksspencer	belgium	female	1.4224					1.2446	58/XXXL
+-120	marksspencer	austria	female	0.7874					0.6350	32/XS
+-100	marksspencer	austria	female	0.8128					0.6604	34/S
+-80	marksspencer	austria	female	0.8636					0.6858	36/S
+-60	marksspencer	austria	female	0.9144					0.7366	38/M
+-40	marksspencer	austria	female	0.9652					0.7874	40/M
+-20	marksspencer	austria	female	1.0160					0.8382	42/L
+0	marksspencer	austria	female	1.0668					0.8890	44/L
+20	marksspencer	austria	female	1.1176					0.9398	46/XL
+40	marksspencer	austria	female	1.1684					1.0160	48/XL
+60	marksspencer	austria	female	1.2446					1.0668	50/XXL
+80	marksspencer	austria	female	1.2954					1.1176	52/XXL
+100	marksspencer	austria	female	1.3716					1.1938	54/XXXL
+120	marksspencer	austria	female	1.4224					1.2446	56/XXXL
+-120	marksspencer	germany	female	0.7874					0.6350	32/XS
+-100	marksspencer	germany	female	0.8128					0.6604	34/S
+-80	marksspencer	germany	female	0.8636					0.6858	36/S
+-60	marksspencer	germany	female	0.9144					0.7366	38/M
+-40	marksspencer	germany	female	0.9652					0.7874	40/M
+-20	marksspencer	germany	female	1.0160					0.8382	42/L
+0	marksspencer	germany	female	1.0668					0.8890	44/L
+20	marksspencer	germany	female	1.1176					0.9398	46/XL
+40	marksspencer	germany	female	1.1684					1.0160	48/XL
+60	marksspencer	germany	female	1.2446					1.0668	50/XXL
+80	marksspencer	germany	female	1.2954					1.1176	52/XXL
+100	marksspencer	germany	female	1.3716					1.1938	54/XXXL
+120	marksspencer	germany	female	1.4224					1.2446	56/XXXL
+-120	marksspencer	uk	female	0.7874					0.6350	6/XS
+-100	marksspencer	uk	female	0.8128					0.6604	8/S
+-80	marksspencer	uk	female	0.8636					0.6858	10/S
+-60	marksspencer	uk	female	0.9144					0.7366	12/M
+-40	marksspencer	uk	female	0.9652					0.7874	14/M
+-20	marksspencer	uk	female	1.0160					0.8382	16/L
+0	marksspencer	uk	female	1.0668					0.8890	18/L
+20	marksspencer	uk	female	1.1176					0.9398	20/XL
+40	marksspencer	uk	female	1.1684					1.0160	22/XL
+60	marksspencer	uk	female	1.2446					1.0668	24/XXL
+80	marksspencer	uk	female	1.2954					1.1176	26/XXL
+100	marksspencer	uk	female	1.3716					1.1938	28/XXXL
+120	marksspencer	uk	female	1.4224					1.2446	30/XXXL
+-120	marksspencer	switzerland	female	0.7874					0.6350	32/XS
+-100	marksspencer	switzerland	female	0.8128					0.6604	34/S
+-80	marksspencer	switzerland	female	0.8636					0.6858	36/S
+-60	marksspencer	switzerland	female	0.9144					0.7366	38/M
+-40	marksspencer	switzerland	female	0.9652					0.7874	40/M
+-20	marksspencer	switzerland	female	1.0160					0.8382	42/L
+0	marksspencer	switzerland	female	1.0668					0.8890	44/L
+20	marksspencer	switzerland	female	1.1176					0.9398	46/XL
+40	marksspencer	switzerland	female	1.1684					1.0160	48/XL
+60	marksspencer	switzerland	female	1.2446					1.0668	50/XXL
+80	marksspencer	switzerland	female	1.2954					1.1176	52/XXL
+100	marksspencer	switzerland	female	1.3716					1.1938	54/XXXL
+120	marksspencer	switzerland	female	1.4224					1.2446	56/XXXL
+-120	marksspencer	sweden	female	0.7874					0.6350	32/XS
+-100	marksspencer	sweden	female	0.8128					0.6604	34/S
+-80	marksspencer	sweden	female	0.8636					0.6858	36/S
+-60	marksspencer	sweden	female	0.9144					0.7366	38/M
+-40	marksspencer	sweden	female	0.9652					0.7874	40/M
+-20	marksspencer	sweden	female	1.0160					0.8382	42/L
+0	marksspencer	sweden	female	1.0668					0.8890	44/L
+20	marksspencer	sweden	female	1.1176					0.9398	46/XL
+40	marksspencer	sweden	female	1.1684					1.0160	48/XL
+60	marksspencer	sweden	female	1.2446					1.0668	50/XXL
+80	marksspencer	sweden	female	1.2954					1.1176	52/XXL
+100	marksspencer	sweden	female	1.3716					1.1938	54/XXXL
+120	marksspencer	sweden	female	1.4224					1.2446	56/XXXL
+-120	marksspencer	spain	female	0.7874					0.6350	34/XS
+-100	marksspencer	spain	female	0.8128					0.6604	36/S
+-80	marksspencer	spain	female	0.8636					0.6858	38/S
+-60	marksspencer	spain	female	0.9144					0.7366	40/M
+-40	marksspencer	spain	female	0.9652					0.7874	42/M
+-20	marksspencer	spain	female	1.0160					0.8382	44/L
+0	marksspencer	spain	female	1.0668					0.8890	46/L
+20	marksspencer	spain	female	1.1176					0.9398	48/XL
+40	marksspencer	spain	female	1.1684					1.0160	50/XL
+60	marksspencer	spain	female	1.2446					1.0668	52/XXL
+80	marksspencer	spain	female	1.2954					1.1176	54/XXL
+100	marksspencer	spain	female	1.3716					1.1938	56/XXXL
+120	marksspencer	spain	female	1.4224					1.2446	58/XXXL
+-40	marksspencer	uk	male	0.9400	0.3750					S
+-20	marksspencer	uk	male	0.9950	0.4000					M
+0	marksspencer	uk	male	1.0650	0.4250					L
+20	marksspencer	uk	male	1.1450	0.4500					XL
+40	marksspencer	uk	male	1.2200	0.4750					XXL
+-40	mela	europe	female	0.8100					0.6600	36/S
+-20	mela	europe	female	0.8600					0.6850	38/S,M
+0	mela	europe	female	0.9150					0.7350	40/M,L
+20	mela	europe	female	0.9650					0.7850	42/L
+40	mela	europe	female	1.0150					0.8350	44
+-40	mela	us	female	0.8100					0.6600	4/S
+-20	mela	us	female	0.8600					0.6850	6/S,M
+0	mela	us	female	0.9150					0.7350	7/M,L
+20	mela	us	female	0.9650					0.7850	10/L
+40	mela	us	female	1.0150					0.8350	12
+-40	mela	uk	female	0.8100					0.6600	8/S
+-20	mela	uk	female	0.8600					0.6850	10/S,M
+0	mela	uk	female	0.9150					0.7350	12/M,L
+20	mela	uk	female	0.9650					0.7850	14/L
+40	mela	uk	female	1.0150					0.8350	16
+-80	monsoon	europe	female	0.7500					0.5800	34/S
+-60	monsoon	europe	female	0.8200					0.6300	36/S
+-40	monsoon	europe	female	0.8700					0.6800	38/S
+-20	monsoon	europe	female	0.9200					0.7300	40/M
+0	monsoon	europe	female	0.9700					0.7800	42/M
+20	monsoon	europe	female	1.0200					0.8300	44/L
+40	monsoon	europe	female	1.0700					0.8800	46/L
+60	monsoon	europe	female	1.1200					0.9500	48/XL
+80	monsoon	europe	female	1.1700					1.0200	50/XL
+-80	monsoon	us	female	0.7500					0.5800	2/S
+-60	monsoon	us	female	0.8200					0.6300	4/S
+-40	monsoon	us	female	0.8700					0.6800	6/S
+-20	monsoon	us	female	0.9200					0.7300	8/M
+0	monsoon	us	female	0.9700					0.7800	10/M
+20	monsoon	us	female	1.0200					0.8300	12/L
+40	monsoon	us	female	1.0700					0.8800	14/L
+60	monsoon	us	female	1.1200					0.9500	16/XL
+80	monsoon	us	female	1.1700					1.0200	18/XL
+-80	monsoon	uk	female	0.7500					0.5800	6/S
+-60	monsoon	uk	female	0.8200					0.6300	8/S
+-40	monsoon	uk	female	0.8700					0.6800	10/S
+-20	monsoon	uk	female	0.9200					0.7300	12/M
+0	monsoon	uk	female	0.9700					0.7800	14/M
+20	monsoon	uk	female	1.0200					0.8300	16/L
+40	monsoon	uk	female	1.0700					0.8800	18/L
+60	monsoon	uk	female	1.1200					0.9500	20/XL
+80	monsoon	uk	female	1.1700					1.0200	22/XL
+-60	newlook	europe	female	0.8000					0.6200	34
+-40	newlook	europe	female	0.8400					0.6600	36/S,M
+-20	newlook	europe	female	0.8800					0.7000	38/S,M
+0	newlook	europe	female	0.9300					0.7500	40/S,M
+20	newlook	europe	female	0.9800					0.8000	42/M,L
+40	newlook	europe	female	1.0400					0.8700	44/M,L
+60	newlook	europe	female	1.1200					0.9400	46
+-60	newlook	us	female	0.8000					0.6200	2
+-40	newlook	us	female	0.8400					0.6600	4/S,M
+-20	newlook	us	female	0.8800					0.7000	6/S,M
+0	newlook	us	female	0.9300					0.7500	8/S,M
+20	newlook	us	female	0.9800					0.8000	10/M,L
+40	newlook	us	female	1.0400					0.8700	12/M,L
+60	newlook	us	female	1.1200					0.9400	14
+-60	newlook	uk	female	0.8000					0.6200	6
+-40	newlook	uk	female	0.8400					0.6600	8/S,M
+-20	newlook	uk	female	0.8800					0.7000	10/S,M
+0	newlook	uk	female	0.9300					0.7500	12/S,M
+20	newlook	uk	female	0.9800					0.8000	14/M,L
+40	newlook	uk	female	1.0400					0.8700	16/M,L
+60	newlook	uk	female	1.1200					0.9400	18
+-60	newlook	uk	male	0.8350	0.3800				0.7350	XS
+-40	newlook	uk	male	0.9150	0.4000				0.7850	S
+-20	newlook	uk	male	0.4950	0.4100				0.8350	M
+0	newlook	uk	male	1.0650	0.4400				0.8850	L
+20	newlook	uk	male	1.1450	0.4625				0.9350	XL
+40	newlook	uk	male	1.2150	0.4775				0.9900	XXL
+-120	next	europe	female	0.8000					0.6500	34/XS
+-100	next	europe	female	0.8400					0.6750	36/S
+-80	next	europe	female	0.8650					0.7100	38/S
+-60	next	europe	female	0.9000					0.7400	40/M
+-40	next	europe	female	0.9400					0.7900	42/M
+-20	next	europe	female	0.9900					0.8400	44/L
+0	next	europe	female	1.0400					0.9150	46/L
+20	next	europe	female	1.0900					0.9900	48/XL
+40	next	europe	female	1.1400					1.0300	50/XL
+60	next	europe	female	1.2300					1.0900	52
+80	next	europe	female	1.2800					1.1600	54
+100	next	europe	female	1.3300					1.2300	56
+-120	next	australia	female	0.8000					0.6500	4/XS
+-100	next	australia	female	0.8400					0.6750	6/S
+-80	next	australia	female	0.8650					0.7100	8/S
+-60	next	australia	female	0.9000					0.7400	10/M
+-40	next	australia	female	0.9400					0.7900	12/M
+-20	next	australia	female	0.9900					0.8400	14/L
+0	next	australia	female	1.0400					0.9150	16/L
+20	next	australia	female	1.0900					0.9900	18/XL
+40	next	australia	female	1.1400					1.0300	20/XL
+60	next	australia	female	1.2300					1.0900	22
+80	next	australia	female	1.2800					1.1600	24
+100	next	australia	female	1.3300					1.2300	26
+-120	next	us	female	0.8000					0.6500	2/XS
+-100	next	us	female	0.8400					0.6750	4/S
+-80	next	us	female	0.8650					0.7100	6/S
+-60	next	us	female	0.9000					0.7400	8/M
+-40	next	us	female	0.9400					0.7900	10/M
+-20	next	us	female	0.9900					0.8400	12/L
+0	next	us	female	1.0400					0.9150	14/L
+20	next	us	female	1.0900					0.9900	16/XL
+40	next	us	female	1.1400					1.0300	18/XL
+60	next	us	female	1.2300					1.0900	20
+80	next	us	female	1.2800					1.1600	22
+100	next	us	female	1.3300					1.2300	24
+-120	next	newzealand	female	0.8000					0.6500	4/XS
+-100	next	newzealand	female	0.8400					0.6750	6/S
+-80	next	newzealand	female	0.8650					0.7100	8/S
+-60	next	newzealand	female	0.9000					0.7400	10/M
+-40	next	newzealand	female	0.9400					0.7900	12/M
+-20	next	newzealand	female	0.9900					0.8400	14/L
+0	next	newzealand	female	1.0400					0.9150	16/L
+20	next	newzealand	female	1.0900					0.9900	18/XL
+40	next	newzealand	female	1.1400					1.0300	20/XL
+60	next	newzealand	female	1.2300					1.0900	22
+80	next	newzealand	female	1.2800					1.1600	24
+100	next	newzealand	female	1.3300					1.2300	26
+-120	next	uk	female	0.8000					0.6500	6/XS
+-100	next	uk	female	0.8400					0.6750	8/S
+-80	next	uk	female	0.8650					0.7100	10/S
+-60	next	uk	female	0.9000					0.7400	12/M
+-40	next	uk	female	0.9400					0.7900	14/M
+-20	next	uk	female	0.9900					0.8400	16/L
+0	next	uk	female	1.0400					0.9150	18/L
+20	next	uk	female	1.0900					0.9900	20/XL
+40	next	uk	female	1.1400					1.0300	22/XL
+60	next	uk	female	1.2300					1.0900	24
+80	next	uk	female	1.2800					1.1600	26
+100	next	uk	female	1.3300					1.2300	28
+-80	next	uk	male	0.8636	0.3556	0.8446	0.7303			XS
+-60	next	uk	male	0.9398	0.3810	0.8700	0.7493			S
+-40	next	uk	male	1.0160	0.4064	0.8953	0.7684			M
+-20	next	uk	male	1.0922	0.4318	0.9208	0.7874			L
+0	next	uk	male	1.1684	0.4572	0.9398	0.8128			XL
+20	next	uk	male	1.2446	0.4826	0.9716	0.8319			2XL
+40	next	uk	male	1.3208	0.5080	0.9970	0.8509			3XL
+60	next	uk	male	1.3970	0.5334	1.0224	0.8700			4XL
+-60	oasis	europe	female	0.8050					0.6250	32/XS
+-40	oasis	europe	female	0.8300					0.6500	34/XS
+-20	oasis	europe	female	0.8800					0.7000	36/S
+0	oasis	europe	female	0.9200					0.7400	38/M
+20	oasis	europe	female	0.9700					0.7900	40/L
+40	oasis	europe	female	1.0200					0.8400	42/L
+60	oasis	europe	female	1.0700					0.8900	44/XL
+-60	oasis	us	female	0.8050					0.6250	4/XS
+-40	oasis	us	female	0.8300					0.6500	6/XS
+-20	oasis	us	female	0.8800					0.7000	8/S
+0	oasis	us	female	0.9200					0.7400	10/M
+20	oasis	us	female	0.9700					0.7900	12/L
+40	oasis	us	female	1.0200					0.8400	14/L
+60	oasis	us	female	1.0700					0.8900	16/XL
+-60	oasis	uk	female	0.8050					0.6250	6/XS
+-40	oasis	uk	female	0.8300					0.6500	8/XS
+-20	oasis	uk	female	0.8800					0.7000	10/S
+0	oasis	uk	female	0.9200					0.7400	12/M
+20	oasis	uk	female	0.9700					0.7900	14/L
+40	oasis	uk	female	1.0200					0.8400	16/L
+60	oasis	uk	female	1.0700					0.8900	18/XL
+-80	phaseeight	netherlands	female	0.7600					0.5900	32,34/XS
+-60	phaseeight	netherlands	female	0.8100					0.6400	34,36/XS,S
+-40	phaseeight	netherlands	female	0.8600					0.6900	36,38/S,M
+-20	phaseeight	netherlands	female	0.9100					0.7400	38,40/M,L
+0	phaseeight	netherlands	female	0.9600					0.7900	40,42/L,XL
+20	phaseeight	netherlands	female	1.0100					0.8400	42,44/XL
+40	phaseeight	netherlands	female	1.0600					0.8900	44,46
+60	phaseeight	netherlands	female	1.1100					0.9400	46,48
+-80	phaseeight	sweden	female	0.7600					0.5900	34/XS
+-60	phaseeight	sweden	female	0.8100					0.6400	36/XS,S
+-40	phaseeight	sweden	female	0.8600					0.6900	38/S,M
+-20	phaseeight	sweden	female	0.9100					0.7400	40/M,L
+0	phaseeight	sweden	female	0.9600					0.7900	42/L,XL
+20	phaseeight	sweden	female	1.0100					0.8400	44/XL
+40	phaseeight	sweden	female	1.0600					0.8900	46
+60	phaseeight	sweden	female	1.1100					0.9400	48
+-80	phaseeight	france	female	0.7600					0.5900	34/XS
+-60	phaseeight	france	female	0.8100					0.6400	36/XS,S
+-40	phaseeight	france	female	0.8600					0.6900	38/S,M
+-20	phaseeight	france	female	0.9100					0.7400	40/M,L
+0	phaseeight	france	female	0.9600					0.7900	42/L,XL
+20	phaseeight	france	female	1.0100					0.8400	44/XL
+40	phaseeight	france	female	1.0600					0.8900	46
+60	phaseeight	france	female	1.1100					0.9400	48
+-80	phaseeight	belgium	female	0.7600					0.5900	34/XS
+-60	phaseeight	belgium	female	0.8100					0.6400	36/XS,S
+-40	phaseeight	belgium	female	0.8600					0.6900	38/S,M
+-20	phaseeight	belgium	female	0.9100					0.7400	40/M,L
+0	phaseeight	belgium	female	0.9600					0.7900	42/L,XL
+20	phaseeight	belgium	female	1.0100					0.8400	44/XL
+40	phaseeight	belgium	female	1.0600					0.8900	46
+60	phaseeight	belgium	female	1.1100					0.9400	48
+-80	phaseeight	austria	female	0.7600					0.5900	32/XS
+-60	phaseeight	austria	female	0.8100					0.6400	34/XS,S
+-40	phaseeight	austria	female	0.8600					0.6900	36/S,M
+-20	phaseeight	austria	female	0.9100					0.7400	38/M,L
+0	phaseeight	austria	female	0.9600					0.7900	40/L,XL
+20	phaseeight	austria	female	1.0100					0.8400	42/XL
+40	phaseeight	austria	female	1.0600					0.8900	44
+60	phaseeight	austria	female	1.1100					0.9400	46
+-80	phaseeight	germany	female	0.7600					0.5900	32/XS
+-60	phaseeight	germany	female	0.8100					0.6400	34/XS,S
+-40	phaseeight	germany	female	0.8600					0.6900	36/S,M
+-20	phaseeight	germany	female	0.9100					0.7400	38/M,L
+0	phaseeight	germany	female	0.9600					0.7900	40/L,XL
+20	phaseeight	germany	female	1.0100					0.8400	42/XL
+40	phaseeight	germany	female	1.0600					0.8900	44
+60	phaseeight	germany	female	1.1100					0.9400	46
+-80	phaseeight	uk	female	0.7600					0.5900	6/XS
+-60	phaseeight	uk	female	0.8100					0.6400	8/XS,S
+-40	phaseeight	uk	female	0.8600					0.6900	10/S,M
+-20	phaseeight	uk	female	0.9100					0.7400	12/M,L
+0	phaseeight	uk	female	0.9600					0.7900	14/L,XL
+20	phaseeight	uk	female	1.0100					0.8400	16/XL
+40	phaseeight	uk	female	1.0600					0.8900	18
+60	phaseeight	uk	female	1.1100					0.9400	20
+-80	phaseeight	switzerland	female	0.7600					0.5900	32/XS
+-60	phaseeight	switzerland	female	0.8100					0.6400	34/XS,S
+-40	phaseeight	switzerland	female	0.8600					0.6900	36/S,M
+-20	phaseeight	switzerland	female	0.9100					0.7400	38/M,L
+0	phaseeight	switzerland	female	0.9600					0.7900	40/L,XL
+20	phaseeight	switzerland	female	1.0100					0.8400	42/XL
+40	phaseeight	switzerland	female	1.0600					0.8900	44
+60	phaseeight	switzerland	female	1.1100					0.9400	46
+-80	phaseeight	spain	female	0.7600					0.5900	34/XS
+-60	phaseeight	spain	female	0.8100					0.6400	36/XS,S
+-40	phaseeight	spain	female	0.8600					0.6900	38/S,M
+-20	phaseeight	spain	female	0.9100					0.7400	40/M,L
+0	phaseeight	spain	female	0.9600					0.7900	42/L,XL
+20	phaseeight	spain	female	1.0100					0.8400	44/XL
+40	phaseeight	spain	female	1.0600					0.8900	46
+60	phaseeight	spain	female	1.1100					0.9400	48
+-60	planet	europe	female	0.8900					0.7400	34/XS
+-40	planet	europe	female	0.9300					0.7800	36/S
+-20	planet	europe	female	0.9700					0.8200	38/M
+0	planet	europe	female	1.0200					0.8700	40/M
+20	planet	europe	female	1.0700					0.9200	42/L
+40	planet	europe	female	1.1300					0.9800	44/XL
+60	planet	europe	female	1.1900					1.0400	46/XL
+-60	planet	us	female	0.8900					0.7400	6/XS
+-40	planet	us	female	0.9300					0.7800	8/S
+-20	planet	us	female	0.9700					0.8200	10/M
+0	planet	us	female	1.0200					0.8700	12/M
+20	planet	us	female	1.0700					0.9200	14/L
+40	planet	us	female	1.1300					0.9800	16/XL
+60	planet	us	female	1.1900					1.0400	18/XL
+-60	planet	uk	female	0.8900					0.7400	8/XS
+-40	planet	uk	female	0.9300					0.7800	10/S
+-20	planet	uk	female	0.9700					0.8200	12/M
+0	planet	uk	female	1.0200					0.8700	14/M
+20	planet	uk	female	1.0700					0.9200	16/L
+40	planet	uk	female	1.1300					0.9800	18/XL
+60	planet	uk	female	1.1900					1.0400	20/XL
+-60	precis	europe	female	0.8100					0.6200	32/XS
+-40	precis	europe	female	0.8500					0.6600	34/XS
+-20	precis	europe	female	0.8900					0.7000	36/S
+0	precis	europe	female	0.9300					0.7400	38/M
+20	precis	europe	female	0.9800					0.7900	40/M
+40	precis	europe	female	1.0300					0.8400	42/L
+60	precis	europe	female	1.0800					0.8900	44/XL
+-60	precis	us	female	0.8100					0.6200	4/XS
+-40	precis	us	female	0.8500					0.6600	6/XS
+-20	precis	us	female	0.8900					0.7000	8/S
+0	precis	us	female	0.9300					0.7400	10/M
+20	precis	us	female	0.9800					0.7900	12/M
+40	precis	us	female	1.0300					0.8400	14/L
+60	precis	us	female	1.0800					0.8900	16/XL
+-60	precis	uk	female	0.8100					0.6200	6/XS
+-40	precis	uk	female	0.8500					0.6600	8/XS
+-20	precis	uk	female	0.8900					0.7000	10/S
+0	precis	uk	female	0.9300					0.7400	12/M
+20	precis	uk	female	0.9800					0.7900	14/M
+40	precis	uk	female	1.0300					0.8400	16/L
+60	precis	uk	female	1.0800					0.8900	18/XL
+-60	quiz	europe	female	0.7700				0.8300		34/XS
+-40	quiz	europe	female	0.8200				0.8800		36/XS,S
+-20	quiz	europe	female	0.8700				0.9300		38/S,M
+0	quiz	europe	female	0.9200				0.9800		40/M,L
+20	quiz	europe	female	0.9700				1.0300		42/L,XL
+40	quiz	europe	female	1.0200				1.0800		44/XL
+60	quiz	europe	female	1.0700				1.1300		46
+-60	quiz	us	female	0.7700				0.8300		2/XS
+-40	quiz	us	female	0.8200				0.8800		4/XS,S
+-20	quiz	us	female	0.8700				0.9300		6/S,M
+0	quiz	us	female	0.9200				0.9800		8/M,L
+20	quiz	us	female	0.9700				1.0300		10/L,XL
+40	quiz	us	female	1.0200				1.0800		12/XL
+60	quiz	us	female	1.0700				1.1300		14
+-60	quiz	uk	female	0.7700				0.8300		6/XS
+-40	quiz	uk	female	0.8200				0.8800		8/XS,S
+-20	quiz	uk	female	0.8700				0.9300		10/S,M
+0	quiz	uk	female	0.9200				0.9800		12/M,L
+20	quiz	uk	female	0.9700				1.0300		14/L,XL
+40	quiz	uk	female	1.0200				1.0800		16/XL
+60	quiz	uk	female	1.0700				1.1300		18
+-40	ralphloren	us	male	0.8900	0.3625	0.8275			0.7350	S
+-20	ralphloren	us	male	0.9900	0.3875	0.8525			0.8250	M
+0	ralphloren	us	male	1.0950	0.4125	0.8775			0.9275	L
+20	ralphloren	us	male	1.1950	0.4375	0.9025			1.0400	XL
+40	ralphloren	us	male	1.2950	0.4625	0.9275			1.1175	XXL
+-40	ralphloren	uk	male	0.8900	0.3625	0.8275			0.7350	34
+-20	ralphloren	uk	male	0.9900	0.3875	0.8525			0.8250	36,38
+0	ralphloren	uk	male	1.0950	0.4125	0.8775			0.9275	40
+20	ralphloren	uk	male	1.1950	0.4375	0.9025			1.0400	42,44
+40	ralphloren	uk	male	1.2950	0.4625	0.9275			1.1175	46
+-160	regatta	netherlands	female	0.7600					0.5800	32
+-140	regatta	netherlands	female	0.8100					0.6300	34
+-120	regatta	netherlands	female	0.8600					0.6800	36
+-100	regatta	netherlands	female	0.9200					0.7400	38
+-80	regatta	netherlands	female	0.9700					0.7900	40
+-60	regatta	netherlands	female	1.0200					0.8400	42
+-40	regatta	netherlands	female	1.0900					0.9100	44
+-20	regatta	netherlands	female	1.1400					0.9600	46
+0	regatta	netherlands	female	1.2200					1.0400	48
+20	regatta	netherlands	female	1.2700					1.0900	50
+40	regatta	netherlands	female	1.3200					1.1400	52
+60	regatta	netherlands	female	1.3700					1.1900	54
+80	regatta	netherlands	female	1.4200					1.2400	56
+100	regatta	netherlands	female	1.4700					1.2900	58
+120	regatta	netherlands	female	1.5200					1.3500	60
+140	regatta	netherlands	female	1.5800					1.4000	62
+-160	regatta	italy	female	0.7600					0.5800	38
+-140	regatta	italy	female	0.8100					0.6300	40
+-120	regatta	italy	female	0.8600					0.6800	42
+-100	regatta	italy	female	0.9200					0.7400	44
+-80	regatta	italy	female	0.9700					0.7900	46
+-60	regatta	italy	female	1.0200					0.8400	48
+-40	regatta	italy	female	1.0900					0.9100	50
+-20	regatta	italy	female	1.1400					0.9600	52
+0	regatta	italy	female	1.2200					1.0400	54
+20	regatta	italy	female	1.2700					1.0900	56
+40	regatta	italy	female	1.3200					1.1400	58
+60	regatta	italy	female	1.3700					1.1900	60
+80	regatta	italy	female	1.4200					1.2400	62
+100	regatta	italy	female	1.4700					1.2900	64
+120	regatta	italy	female	1.5200					1.3500	66
+140	regatta	italy	female	1.5800					1.4000	68
+-160	regatta	portugal	female	0.7600					0.5800	34
+-140	regatta	portugal	female	0.8100					0.6300	36
+-120	regatta	portugal	female	0.8600					0.6800	38
+-100	regatta	portugal	female	0.9200					0.7400	40
+-80	regatta	portugal	female	0.9700					0.7900	42
+-60	regatta	portugal	female	1.0200					0.8400	44
+-40	regatta	portugal	female	1.0900					0.9100	46
+-20	regatta	portugal	female	1.1400					0.9600	48
+0	regatta	portugal	female	1.2200					1.0400	50
+20	regatta	portugal	female	1.2700					1.0900	52
+40	regatta	portugal	female	1.3200					1.1400	54
+60	regatta	portugal	female	1.3700					1.1900	56
+80	regatta	portugal	female	1.4200					1.2400	58
+100	regatta	portugal	female	1.4700					1.2900	60
+120	regatta	portugal	female	1.5200					1.3500	62
+140	regatta	portugal	female	1.5800					1.4000	64
+-160	regatta	france	female	0.7600					0.5800	34
+-140	regatta	france	female	0.8100					0.6300	36
+-120	regatta	france	female	0.8600					0.6800	38
+-100	regatta	france	female	0.9200					0.7400	40
+-80	regatta	france	female	0.9700					0.7900	42
+-60	regatta	france	female	1.0200					0.8400	44
+-40	regatta	france	female	1.0900					0.9100	46
+-20	regatta	france	female	1.1400					0.9600	48
+0	regatta	france	female	1.2200					1.0400	50
+20	regatta	france	female	1.2700					1.0900	52
+40	regatta	france	female	1.3200					1.1400	54
+60	regatta	france	female	1.3700					1.1900	56
+80	regatta	france	female	1.4200					1.2400	58
+100	regatta	france	female	1.4700					1.2900	60
+120	regatta	france	female	1.5200					1.3500	62
+140	regatta	france	female	1.5800					1.4000	64
+-160	regatta	belgium	female	0.7600					0.5800	32
+-140	regatta	belgium	female	0.8100					0.6300	34
+-120	regatta	belgium	female	0.8600					0.6800	36
+-100	regatta	belgium	female	0.9200					0.7400	38
+-80	regatta	belgium	female	0.9700					0.7900	40
+-60	regatta	belgium	female	1.0200					0.8400	42
+-40	regatta	belgium	female	1.0900					0.9100	44
+-20	regatta	belgium	female	1.1400					0.9600	46
+0	regatta	belgium	female	1.2200					1.0400	48
+20	regatta	belgium	female	1.2700					1.0900	50
+40	regatta	belgium	female	1.3200					1.1400	52
+60	regatta	belgium	female	1.3700					1.1900	54
+80	regatta	belgium	female	1.4200					1.2400	56
+100	regatta	belgium	female	1.4700					1.2900	58
+120	regatta	belgium	female	1.5200					1.3500	60
+140	regatta	belgium	female	1.5800					1.4000	62
+-160	regatta	austria	female	0.7600					0.5800	32
+-140	regatta	austria	female	0.8100					0.6300	34
+-120	regatta	austria	female	0.8600					0.6800	36
+-100	regatta	austria	female	0.9200					0.7400	38
+-80	regatta	austria	female	0.9700					0.7900	40
+-60	regatta	austria	female	1.0200					0.8400	42
+-40	regatta	austria	female	1.0900					0.9100	44
+-20	regatta	austria	female	1.1400					0.9600	46
+0	regatta	austria	female	1.2200					1.0400	48
+20	regatta	austria	female	1.2700					1.0900	50
+40	regatta	austria	female	1.3200					1.1400	52
+60	regatta	austria	female	1.3700					1.1900	54
+80	regatta	austria	female	1.4200					1.2400	56
+100	regatta	austria	female	1.4700					1.2900	58
+120	regatta	austria	female	1.5200					1.3500	60
+140	regatta	austria	female	1.5800					1.4000	62
+-160	regatta	germany	female	0.7600					0.5800	32
+-140	regatta	germany	female	0.8100					0.6300	34
+-120	regatta	germany	female	0.8600					0.6800	36
+-100	regatta	germany	female	0.9200					0.7400	38
+-80	regatta	germany	female	0.9700					0.7900	40
+-60	regatta	germany	female	1.0200					0.8400	42
+-40	regatta	germany	female	1.0900					0.9100	44
+-20	regatta	germany	female	1.1400					0.9600	46
+0	regatta	germany	female	1.2200					1.0400	48
+20	regatta	germany	female	1.2700					1.0900	50
+40	regatta	germany	female	1.3200					1.1400	52
+60	regatta	germany	female	1.3700					1.1900	54
+80	regatta	germany	female	1.4200					1.2400	56
+100	regatta	germany	female	1.4700					1.2900	58
+120	regatta	germany	female	1.5200					1.3500	60
+140	regatta	germany	female	1.5800					1.4000	62
+-160	regatta	uk	female	0.7600					0.5800	6
+-140	regatta	uk	female	0.8100					0.6300	8
+-120	regatta	uk	female	0.8600					0.6800	10
+-100	regatta	uk	female	0.9200					0.7400	12
+-80	regatta	uk	female	0.9700					0.7900	14
+-60	regatta	uk	female	1.0200					0.8400	16
+-40	regatta	uk	female	1.0900					0.9100	18
+-20	regatta	uk	female	1.1400					0.9600	20
+0	regatta	uk	female	1.2200					1.0400	22
+20	regatta	uk	female	1.2700					1.0900	24
+40	regatta	uk	female	1.3200					1.1400	26
+60	regatta	uk	female	1.3700					1.1900	28
+80	regatta	uk	female	1.4200					1.2400	30
+100	regatta	uk	female	1.4700					1.2900	32
+120	regatta	uk	female	1.5200					1.3500	34
+140	regatta	uk	female	1.5800					1.4000	36
+-160	regatta	switzerland	female	0.7600					0.5800	32
+-140	regatta	switzerland	female	0.8100					0.6300	34
+-120	regatta	switzerland	female	0.8600					0.6800	36
+-100	regatta	switzerland	female	0.9200					0.7400	38
+-80	regatta	switzerland	female	0.9700					0.7900	40
+-60	regatta	switzerland	female	1.0200					0.8400	42
+-40	regatta	switzerland	female	1.0900					0.9100	44
+-20	regatta	switzerland	female	1.1400					0.9600	46
+0	regatta	switzerland	female	1.2200					1.0400	48
+20	regatta	switzerland	female	1.2700					1.0900	50
+40	regatta	switzerland	female	1.3200					1.1400	52
+60	regatta	switzerland	female	1.3700					1.1900	54
+80	regatta	switzerland	female	1.4200					1.2400	56
+100	regatta	switzerland	female	1.4700					1.2900	58
+120	regatta	switzerland	female	1.5200					1.3500	60
+140	regatta	switzerland	female	1.5800					1.4000	62
+-160	regatta	sweden	female	0.7600					0.5800	32
+-140	regatta	sweden	female	0.8100					0.6300	34
+-120	regatta	sweden	female	0.8600					0.6800	36
+-100	regatta	sweden	female	0.9200					0.7400	38
+-80	regatta	sweden	female	0.9700					0.7900	40
+-60	regatta	sweden	female	1.0200					0.8400	42
+-40	regatta	sweden	female	1.0900					0.9100	44
+-20	regatta	sweden	female	1.1400					0.9600	46
+0	regatta	sweden	female	1.2200					1.0400	48
+20	regatta	sweden	female	1.2700					1.0900	50
+40	regatta	sweden	female	1.3200					1.1400	52
+60	regatta	sweden	female	1.3700					1.1900	54
+80	regatta	sweden	female	1.4200					1.2400	56
+100	regatta	sweden	female	1.4700					1.2900	58
+120	regatta	sweden	female	1.5200					1.3500	60
+140	regatta	sweden	female	1.5800					1.4000	62
+-160	regatta	spain	female	0.7600					0.5800	34
+-140	regatta	spain	female	0.8100					0.6300	36
+-120	regatta	spain	female	0.8600					0.6800	38
+-100	regatta	spain	female	0.9200					0.7400	40
+-80	regatta	spain	female	0.9700					0.7900	42
+-60	regatta	spain	female	1.0200					0.8400	44
+-40	regatta	spain	female	1.0900					0.9100	46
+-20	regatta	spain	female	1.1400					0.9600	48
+0	regatta	spain	female	1.2200					1.0400	50
+20	regatta	spain	female	1.2700					1.0900	52
+40	regatta	spain	female	1.3200					1.1400	54
+60	regatta	spain	female	1.3700					1.1900	56
+80	regatta	spain	female	1.4200					1.2400	58
+100	regatta	spain	female	1.4700					1.2900	60
+120	regatta	spain	female	1.5200					1.3500	62
+140	regatta	spain	female	1.5800					1.4000	64
+-80	regatta	europe	male	0.9017						46/XS
+-60	regatta	europe	male	0.9525						48/S
+-40	regatta	europe	male	1.0033						50/M
+-20	regatta	europe	male	1.0541						52,54/L
+0	regatta	europe	male	1.1049						56/XL
+20	regatta	europe	male	1.1938						58,60/XXL
+40	regatta	europe	male	1.2700						62/XXXL
+60	regatta	europe	male	1.3462						64/XXXXL
+80	regatta	europe	male	1.4224						66/XXXXXL
+-80	regatta	uk	male	0.9017						XS
+-60	regatta	uk	male	0.9525						S
+-40	regatta	uk	male	1.0033						M
+-20	regatta	uk	male	1.0541						L
+0	regatta	uk	male	1.1049						XL
+20	regatta	uk	male	1.1938						XXL
+40	regatta	uk	male	1.2700						XXXL
+60	regatta	uk	male	1.3462						XXXXL
+80	regatta	uk	male	1.4224						XXXXXL
+-60	reiss	italy	female	0.7800					0.5900	36/XS
+-40	reiss	italy	female	0.8100					0.6200	38/XS
+-20	reiss	italy	female	0.8400					0.6500	40/S
+0	reiss	italy	female	0.8800					0.6900	42/S
+20	reiss	italy	female	0.9300					0.7400	44/M
+40	reiss	italy	female	0.9900					0.8000	46/L
+60	reiss	italy	female	1.0400					0.8500	48/XL
+-60	reiss	us	female	0.7800					0.5900	0/XS
+-40	reiss	us	female	0.8100					0.6200	2/XS
+-20	reiss	us	female	0.8400					0.6500	4/S
+0	reiss	us	female	0.8800					0.6900	6/S
+20	reiss	us	female	0.9300					0.7400	8/M
+40	reiss	us	female	0.9900					0.8000	10/L
+60	reiss	us	female	1.0400					0.8500	12/XL
+-60	reiss	france	female	0.7800					0.5900	32/XS
+-40	reiss	france	female	0.8100					0.6200	34/XS
+-20	reiss	france	female	0.8400					0.6500	36/S
+0	reiss	france	female	0.8800					0.6900	38/S
+20	reiss	france	female	0.9300					0.7400	40/M
+40	reiss	france	female	0.9900					0.8000	42/L
+60	reiss	france	female	1.0400					0.8500	44/XL
+-60	reiss	uk	female	0.7800					0.5900	4/XS
+-40	reiss	uk	female	0.8100					0.6200	6/XS
+-20	reiss	uk	female	0.8400					0.6500	8/S
+0	reiss	uk	female	0.8800					0.6900	10/S
+20	reiss	uk	female	0.9300					0.7400	12/M
+40	reiss	uk	female	0.9900					0.8000	14/L
+60	reiss	uk	female	1.0400					0.8500	16/XL
+-40	reiss	europe	male		0.3810					46/S
+-20	reiss	europe	male		0.3937					48/M
+0	reiss	europe	male		0.4064					50/L
+20	reiss	europe	male		0.4191					52/XL
+40	reiss	europe	male		0.4318					54/XXL
+-40	reiss	uk	male		0.3810					15/S
+-20	reiss	uk	male		0.3937					15.5/M
+0	reiss	uk	male		0.4064					16/L
+20	reiss	uk	male		0.4191					16.5/XL
+40	reiss	uk	male		0.4318					17/XXL
+-80	sodamix	europe	female	0.8000					0.6200	36/S
+-60	sodamix	europe	female	0.8400					0.6600	38/S
+-40	sodamix	europe	female	0.8800					0.7000	40/M
+-20	sodamix	europe	female	0.9200					0.7400	42/M
+0	sodamix	europe	female	0.9650					0.7900	44/L
+20	sodamix	europe	female	1.0200					0.8400	46/L
+40	sodamix	europe	female	1.1000					0.9200	48/XL
+60	sodamix	europe	female	1.1200					1.0000	50/XL
+-80	sodamix	us	female	0.8000					0.6200	4/S
+-60	sodamix	us	female	0.8400					0.6600	6/S
+-40	sodamix	us	female	0.8800					0.7000	8/M
+-20	sodamix	us	female	0.9200					0.7400	10/M
+0	sodamix	us	female	0.9650					0.7900	12/L
+20	sodamix	us	female	1.0200					0.8400	14/L
+40	sodamix	us	female	1.1000					0.9200	16/XL
+60	sodamix	us	female	1.1200					1.0000	18/XL
+-80	sodamix	uk	female	0.8000					0.6200	6/S
+-60	sodamix	uk	female	0.8400					0.6600	8/S
+-40	sodamix	uk	female	0.8800					0.7000	10/M
+-20	sodamix	uk	female	0.9200					0.7400	12/M
+0	sodamix	uk	female	0.9650					0.7900	14/L
+20	sodamix	uk	female	1.0200					0.8400	16/L
+40	sodamix	uk	female	1.1000					0.9200	18/XL
+60	sodamix	uk	female	1.1200					1.0000	20/XL
+-40	threadless	uk	female	0.8320					0.6225	S
+-20	threadless	uk	female	0.8830					0.6730	M
+0	threadless	uk	female	0.9335					0.7240	L/Unisize XS
+20	threadless	uk	female	0.9840					0.7745	XL/Unisize S
+40	threadless	uk	female	1.0480					0.8255	XXL/Unisize M
+-40	threadless	us	female	0.8320					0.6225	S
+-20	threadless	us	female	0.8830					0.6730	M
+0	threadless	us	female	0.9335					0.7240	L/Unisize XS
+20	threadless	us	female	0.9840					0.7745	XL/Unisize S
+40	threadless	us	female	1.0480					0.8255	XXL/Unisize M
+-60	threadless	us	male	0.9395					0.7495	XS
+-40	threadless	us	male	0.9905					0.8005	S
+-20	threadless	us	male	1.0415					0.8510	M
+0	threadless	us	male	1.0925					0.9015	L
+20	threadless	us	male	1.1430					0.9525	XL
+40	threadless	us	male	1.1935						XXL
+-60	threadless	uk	male	0.9395					0.7495	XS
+-40	threadless	uk	male	0.9905					0.8005	S
+-20	threadless	uk	male	1.0415					0.8510	M
+0	threadless	uk	male	1.0925					0.9015	L
+20	threadless	uk	male	1.1430					0.9525	XL
+40	threadless	uk	male	1.1935						XXL
+-60	tommyhilfiger	netherlands	female	0.8350						34/XS
+-40	tommyhilfiger	netherlands	female	0.8750						36/S
+-20	tommyhilfiger	netherlands	female	0.9200						38/M
+0	tommyhilfiger	netherlands	female	0.9600						40/L
+20	tommyhilfiger	netherlands	female	1.0000						42/XL
+40	tommyhilfiger	netherlands	female	1.0400						44/XXL
+-60	tommyhilfiger	ireland	female	0.8350						6/XS
+-40	tommyhilfiger	ireland	female	0.8750						8/S
+-20	tommyhilfiger	ireland	female	0.9200						10/M
+0	tommyhilfiger	ireland	female	0.9600						12/L
+20	tommyhilfiger	ireland	female	1.0000						14/XL
+40	tommyhilfiger	ireland	female	1.0400						16/XXL
+-60	tommyhilfiger	us	female	0.8350						4/XS
+-40	tommyhilfiger	us	female	0.8750						6/S
+-20	tommyhilfiger	us	female	0.9200						8/M
+0	tommyhilfiger	us	female	0.9600						10/L
+20	tommyhilfiger	us	female	1.0000						12/XL
+40	tommyhilfiger	us	female	1.0400						14/XXL
+-60	tommyhilfiger	france	female	0.8350						36/XS
+-40	tommyhilfiger	france	female	0.8750						38/S
+-20	tommyhilfiger	france	female	0.9200						40/M
+0	tommyhilfiger	france	female	0.9600						42/L
+20	tommyhilfiger	france	female	1.0000						44/XL
+40	tommyhilfiger	france	female	1.0400						46/XXL
+-60	tommyhilfiger	austria	female	0.8350						34/XS
+-40	tommyhilfiger	austria	female	0.8750						36/S
+-20	tommyhilfiger	austria	female	0.9200						38/M
+0	tommyhilfiger	austria	female	0.9600						40/L
+20	tommyhilfiger	austria	female	1.0000						42/XL
+40	tommyhilfiger	austria	female	1.0400						44/XXL
+-60	tommyhilfiger	germany	female	0.8350						34/XS
+-40	tommyhilfiger	germany	female	0.8750						36/S
+-20	tommyhilfiger	germany	female	0.9200						38/M
+0	tommyhilfiger	germany	female	0.9600						40/L
+20	tommyhilfiger	germany	female	1.0000						42/XL
+40	tommyhilfiger	germany	female	1.0400						44/XXL
+-60	tommyhilfiger	uk	female	0.8350						6/XS
+-40	tommyhilfiger	uk	female	0.8750						8/S
+-20	tommyhilfiger	uk	female	0.9200						10/M
+0	tommyhilfiger	uk	female	0.9600						12/L
+20	tommyhilfiger	uk	female	1.0000						14/XL
+40	tommyhilfiger	uk	female	1.0400						16/XXL
+-60	tommyhilfiger	spain	female	0.8350						34/XS
+-40	tommyhilfiger	spain	female	0.8750						36/S
+-20	tommyhilfiger	spain	female	0.9200						38/M
+0	tommyhilfiger	spain	female	0.9600						40/L
+20	tommyhilfiger	spain	female	1.0000						42/XL
+40	tommyhilfiger	spain	female	1.0400						44/XXL
+-40	tommyhilfiger	uk	male	0.9600						S
+-20	tommyhilfiger	uk	male	1.0100						M
+0	tommyhilfiger	uk	male	1.0600						L
+20	tommyhilfiger	uk	male	1.1100						XL
+40	tommyhilfiger	uk	male	1.1600						XXL
+-40	tommyhilfiger	us	male	0.9600						S
+-20	tommyhilfiger	us	male	1.0100						M
+0	tommyhilfiger	us	male	1.0600						L
+20	tommyhilfiger	us	male	1.1100						XL
+40	tommyhilfiger	us	male	1.1600						XXL
+-40	tommyhilfiger_denim	us	male	0.9750						S
+-20	tommyhilfiger_denim	us	male	1.0150						M
+0	tommyhilfiger_denim	us	male	1.0550						L
+20	tommyhilfiger_denim	us	male	1.0950						XL
+40	tommyhilfiger_denim	us	male	1.1350						XXL
+-40	tommyhilfiger_denim	uk	male	0.9750						S
+-20	tommyhilfiger_denim	uk	male	1.0150						M
+0	tommyhilfiger_denim	uk	male	1.0550						L
+20	tommyhilfiger_denim	uk	male	1.0950						XL
+40	tommyhilfiger_denim	uk	male	1.1350						XXL
+-60	topshop	australia	female	0.7950					0.6240	6
+-40	topshop	australia	female	0.8200					0.6490	8
+-20	topshop	australia	female	0.8700					0.6920	10
+0	topshop	australia	female	0.9200					0.7420	12
+20	topshop	australia	female	0.9700					0.7920	14
+40	topshop	australia	female	1.0200					0.8420	16
+-60	topshop	italy	female	0.7950					0.6240	38
+-40	topshop	italy	female	0.8200					0.6490	40
+-20	topshop	italy	female	0.8700					0.6920	42
+0	topshop	italy	female	0.9200					0.7420	44
+20	topshop	italy	female	0.9700					0.7920	46
+40	topshop	italy	female	1.0200					0.8420	48
+-60	topshop	denmark	female	0.7950					0.6240	32
+-40	topshop	denmark	female	0.8200					0.6490	34
+-20	topshop	denmark	female	0.8700					0.6920	36
+0	topshop	denmark	female	0.9200					0.7420	38
+20	topshop	denmark	female	0.9700					0.7920	40
+40	topshop	denmark	female	1.0200					0.8420	42
+-60	topshop	us	female	0.7950					0.6240	2
+-40	topshop	us	female	0.8200					0.6490	4
+-20	topshop	us	female	0.8700					0.6920	6
+0	topshop	us	female	0.9200					0.7420	8
+20	topshop	us	female	0.9700					0.7920	10
+40	topshop	us	female	1.0200					0.8420	12
+-60	topshop	france	female	0.7950					0.6240	34
+-40	topshop	france	female	0.8200					0.6490	36
+-20	topshop	france	female	0.8700					0.6920	38
+0	topshop	france	female	0.9200					0.7420	40
+20	topshop	france	female	0.9700					0.7920	42
+40	topshop	france	female	1.0200					0.8420	44
+-60	topshop	uk	female	0.7950					0.6240	6
+-40	topshop	uk	female	0.8200					0.6490	8
+-20	topshop	uk	female	0.8700					0.6920	10
+0	topshop	uk	female	0.9200					0.7420	12
+20	topshop	uk	female	0.9700					0.7920	14
+40	topshop	uk	female	1.0200					0.8420	16
+-80	tu	uk	female	0.8600					0.6900	8
+-60	tu	uk	female	0.9100					0.7400	10
+-40	tu	uk	female	0.9600					0.7900	12
+-20	tu	uk	female	1.0100					0.8400	14
+0	tu	uk	female	1.0600					0.8900	16
+20	tu	uk	female	1.1100					0.9400	18
+40	tu	uk	female	1.1600					0.9900	20
+60	tu	uk	female	1.2100					1.0400	22
+80	tu	uk	female	1.2600					1.0900	24
+-80	tu	uk	male	0.8600	0.3600				0.7100	34
+-60	tu	uk	male	0.9100	0.3800				0.7600	36
+-40	tu	uk	male	0.9600	0.3940				0.8100	38
+-20	tu	uk	male	1.0200	0.4060				0.8600	40
+0	tu	uk	male	1.0700	0.4200				0.9100	42
+20	tu	uk	male	1.1200	0.4300				0.9600	44
+40	tu	uk	male	1.1700	0.4440				1.0200	46
+60	tu	uk	male	1.2700	0.4600				1.0700	48
+80	tu	uk	male	1.3200	0.4700				1.1200	50
+-40	urbanoutfitters	canada	male	0.8760	0.3300	0.8000		0.8640	0.7110	28/XS
+-20	urbanoutfitters	canada	male	0.9270	0.3620	0.8190		0.9140	0.7620	30/S
+0	urbanoutfitters	canada	male	0.9780	0.3940	0.8380		0.9650	0.8130	32/M
+20	urbanoutfitters	canada	male	1.0540	0.4250	0.8640		1.0410	0.8890	34,36/L
+40	urbanoutfitters	canada	male	1.1300	0.4570	0.8890		1.1180	0.9650	38/XL
+-40	urbanoutfitters	italy	male	0.8760	0.3300	0.8000		0.8640	0.7110	44/XS
+-20	urbanoutfitters	italy	male	0.9270	0.3620	0.8190		0.9140	0.7620	46/S
+0	urbanoutfitters	italy	male	0.9780	0.3940	0.8380		0.9650	0.8130	48/M
+20	urbanoutfitters	italy	male	1.0540	0.4250	0.8640		1.0410	0.8890	50,52/L
+40	urbanoutfitters	italy	male	1.1300	0.4570	0.8890		1.1180	0.9650	54/XL
+-40	urbanoutfitters	hongkong	male	0.8760	0.3300	0.8000		0.8640	0.7110	28/XS
+-20	urbanoutfitters	hongkong	male	0.9270	0.3620	0.8190		0.9140	0.7620	30/S
+0	urbanoutfitters	hongkong	male	0.9780	0.3940	0.8380		0.9650	0.8130	32/M
+20	urbanoutfitters	hongkong	male	1.0540	0.4250	0.8640		1.0410	0.8890	34,36/L
+40	urbanoutfitters	hongkong	male	1.1300	0.4570	0.8890		1.1180	0.9650	38/XL
+-40	urbanoutfitters	brazil	male	0.8760	0.3300	0.8000		0.8640	0.7110	71/XS
+-20	urbanoutfitters	brazil	male	0.9270	0.3620	0.8190		0.9140	0.7620	76/S
+0	urbanoutfitters	brazil	male	0.9780	0.3940	0.8380		0.9650	0.8130	81/M
+20	urbanoutfitters	brazil	male	1.0540	0.4250	0.8640		1.0410	0.8890	86,91/L
+40	urbanoutfitters	brazil	male	1.1300	0.4570	0.8890		1.1180	0.9650	97/XL
+-40	urbanoutfitters	europe	male	0.8760	0.3300	0.8000		0.8640	0.7110	71/XS
+-20	urbanoutfitters	europe	male	0.9270	0.3620	0.8190		0.9140	0.7620	76/S
+0	urbanoutfitters	europe	male	0.9780	0.3940	0.8380		0.9650	0.8130	81/M
+20	urbanoutfitters	europe	male	1.0540	0.4250	0.8640		1.0410	0.8890	86,91/L
+40	urbanoutfitters	europe	male	1.1300	0.4570	0.8890		1.1180	0.9650	97/XL
+-40	urbanoutfitters	us	male	0.8760	0.3300	0.8000		0.8640	0.7110	28/XS
+-20	urbanoutfitters	us	male	0.9270	0.3620	0.8190		0.9140	0.7620	30/S
+0	urbanoutfitters	us	male	0.9780	0.3940	0.8380		0.9650	0.8130	32/M
+20	urbanoutfitters	us	male	1.0540	0.4250	0.8640		1.0410	0.8890	34,36/L
+40	urbanoutfitters	us	male	1.1300	0.4570	0.8890		1.1180	0.9650	38/XL
+-40	urbanoutfitters	france	male	0.8760	0.3300	0.8000		0.8640	0.7110	39/XS
+-20	urbanoutfitters	france	male	0.9270	0.3620	0.8190		0.9140	0.7620	41/S
+0	urbanoutfitters	france	male	0.9780	0.3940	0.8380		0.9650	0.8130	43/M
+20	urbanoutfitters	france	male	1.0540	0.4250	0.8640		1.0410	0.8890	45,47/L
+40	urbanoutfitters	france	male	1.1300	0.4570	0.8890		1.1180	0.9650	48/XL
+-40	urbanoutfitters	germany	male	0.8760	0.3300	0.8000		0.8640	0.7110	39/XS
+-20	urbanoutfitters	germany	male	0.9270	0.3620	0.8190		0.9140	0.7620	41/S
+0	urbanoutfitters	germany	male	0.9780	0.3940	0.8380		0.9650	0.8130	43/M
+20	urbanoutfitters	germany	male	1.0540	0.4250	0.8640		1.0410	0.8890	45,47/L
+40	urbanoutfitters	germany	male	1.1300	0.4570	0.8890		1.1180	0.9650	48/XL
+-40	urbanoutfitters	uk	male	0.8760	0.3300	0.8000		0.8640	0.7110	28/XS
+-20	urbanoutfitters	uk	male	0.9270	0.3620	0.8190		0.9140	0.7620	30/S
+0	urbanoutfitters	uk	male	0.9780	0.3940	0.8380		0.9650	0.8130	32/M
+20	urbanoutfitters	uk	male	1.0540	0.4250	0.8640		1.0410	0.8890	34,36/L
+40	urbanoutfitters	uk	male	1.1300	0.4570	0.8890		1.1180	0.9650	38/XL
+-40	urbanoutfitters	japan	male	0.8760	0.3300	0.8000		0.8640	0.7110	71/XS
+-20	urbanoutfitters	japan	male	0.9270	0.3620	0.8190		0.9140	0.7620	76/S
+0	urbanoutfitters	japan	male	0.9780	0.3940	0.8380		0.9650	0.8130	81/M
+20	urbanoutfitters	japan	male	1.0540	0.4250	0.8640		1.0410	0.8890	86,91/L
+40	urbanoutfitters	japan	male	1.1300	0.4570	0.8890		1.1180	0.9650	97/XL
+-40	urbanoutfitters	russia	male	0.8760	0.3300	0.8000		0.8640	0.7110	36/XS
+-20	urbanoutfitters	russia	male	0.9270	0.3620	0.8190		0.9140	0.7620	38/S
+0	urbanoutfitters	russia	male	0.9780	0.3940	0.8380		0.9650	0.8130	41/M
+20	urbanoutfitters	russia	male	1.0540	0.4250	0.8640		1.0410	0.8890	43,46/L
+40	urbanoutfitters	russia	male	1.1300	0.4570	0.8890		1.1180	0.9650	48/XL
+-40	uttamboutique	europe	female	0.8100					0.6600	36/S
+-20	uttamboutique	europe	female	0.8600					0.6850	38/S,M
+0	uttamboutique	europe	female	0.9150					0.7350	40/M,L
+20	uttamboutique	europe	female	0.9650					0.7850	42/L
+40	uttamboutique	europe	female	1.0150					0.8350	44
+-40	uttamboutique	us	female	0.8100					0.6600	4/S
+-20	uttamboutique	us	female	0.8600					0.6850	6/S,M
+0	uttamboutique	us	female	0.9150					0.7350	7/M,L
+20	uttamboutique	us	female	0.9650					0.7850	10/L
+40	uttamboutique	us	female	1.0150					0.8350	12
+-40	uttamboutique	uk	female	0.8100					0.6600	8/S
+-20	uttamboutique	uk	female	0.8600					0.6850	10/S,M
+0	uttamboutique	uk	female	0.9150					0.7350	12/M,L
+20	uttamboutique	uk	female	0.9650					0.7850	14/L
+40	uttamboutique	uk	female	1.0150					0.8350	16
+-60	whistles	australia	female	0.7900		0.6230				06/XS
+-40	whistles	australia	female	0.8200		0.6260				08/S
+-20	whistles	australia	female	0.8600		0.6300				10/M
+0	whistles	australia	female	0.9100		0.6350				12/M
+20	whistles	australia	female	0.9600		0.6400				14/L
+40	whistles	australia	female	1.0100		0.6450				16/L
+-60	whistles	italy	female	0.7900		0.6230				38/XS
+-40	whistles	italy	female	0.8200		0.6260				40/S
+-20	whistles	italy	female	0.8600		0.6300				42/M
+0	whistles	italy	female	0.9100		0.6350				44/M
+20	whistles	italy	female	0.9600		0.6400				46/L
+40	whistles	italy	female	1.0100		0.6450				48/L
+-60	whistles	us	female	0.7900		0.6230				2/XS
+-40	whistles	us	female	0.8200		0.6260				4/S
+-20	whistles	us	female	0.8600		0.6300				6/M
+0	whistles	us	female	0.9100		0.6350				8/M
+20	whistles	us	female	0.9600		0.6400				10/L
+40	whistles	us	female	1.0100		0.6450				12/L
+-60	whistles	france	female	0.7900		0.6230				34/XS
+-40	whistles	france	female	0.8200		0.6260				36/S
+-20	whistles	france	female	0.8600		0.6300				38/M
+0	whistles	france	female	0.9100		0.6350				40/M
+20	whistles	france	female	0.9600		0.6400				42/L
+40	whistles	france	female	1.0100		0.6450				44/L
+-60	whistles	uk	female	0.7900		0.6230				6/XS
+-40	whistles	uk	female	0.8200		0.6260				8/S
+-20	whistles	uk	female	0.8600		0.6300				10/M
+0	whistles	uk	female	0.9100		0.6350				12/M
+20	whistles	uk	female	0.9600		0.6400				14/L
+40	whistles	uk	female	1.0100		0.6450				16/L
+-60	whitestuff	uk	female	0.8100					0.6100	6
+-40	whitestuff	uk	female	0.8300					0.6300	8
+-20	whitestuff	uk	female	0.8800					0.6800	10
+0	whitestuff	uk	female	0.9300					0.7300	12
+20	whitestuff	uk	female	0.9800					0.7800	14
+40	whitestuff	uk	female	1.0300					0.8300	16
+60	whitestuff	uk	female	1.0800					0.8800	18
+-60	whitestuff	uk	male	0.9500					0.7550	XS
+-40	whitestuff	uk	male	0.9750					0.7750	S
+-20	whitestuff	uk	male	1.0200					0.8250	M
+0	whitestuff	uk	male	1.0700					0.8750	L
+20	whitestuff	uk	male	1.1200					0.9250	XL
+40	whitestuff	uk	male	1.1700					0.9750	XXL
+-40	yumi	europe	female	0.8100					0.6600	36/S
+-20	yumi	europe	female	0.8600					0.6850	38/S,M
+0	yumi	europe	female	0.9150					0.7350	40/M,L
+20	yumi	europe	female	0.9650					0.7850	42/L
+40	yumi	europe	female	1.0150					0.8350	44
+-40	yumi	us	female	0.8100					0.6600	4/S
+-20	yumi	us	female	0.8600					0.6850	6/S,M
+0	yumi	us	female	0.9150					0.7350	7/M,L
+20	yumi	us	female	0.9650					0.7850	10/L
+40	yumi	us	female	1.0150					0.8350	12
+-40	yumi	uk	female	0.8100					0.6600	8/S
+-20	yumi	uk	female	0.8600					0.6850	10/S,M
+0	yumi	uk	female	0.9150					0.7350	12/M,L
+20	yumi	uk	female	0.9650					0.7850	14/L
+40	yumi	uk	female	1.0150					0.8350	16

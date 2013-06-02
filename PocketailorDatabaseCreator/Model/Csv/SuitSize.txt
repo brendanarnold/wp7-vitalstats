@@ -1,185 +1,185 @@
 sizeid	brand	region	gender	waist	shoulder	sleeve	chest	insideleg	neck	torsolength	hips	size
--60	johnlewis	europe	male				91.44					46/xs
--40	johnlewis	europe	male				96.52					48/s
--20	johnlewis	europe	male				101.60					52/m
-0	johnlewis	europe	male				106.68					52/l
-20	johnlewis	europe	male				111.76					54/xl
-40	johnlewis	europe	male				116.84					56/xxl
--60	johnlewis	us	male				91.44					36-86/xs
--40	johnlewis	us	male				96.52					38-96/s
--20	johnlewis	us	male				101.60					40-101/m
-0	johnlewis	us	male				106.68					42-106/l
-20	johnlewis	us	male				111.76					44-111/xl
-40	johnlewis	us	male				116.84					46-116/xxl
--60	johnlewis	uk	male				91.44					36-86/xs
--40	johnlewis	uk	male				96.52					38-96/s
--20	johnlewis	uk	male				101.60					40-101/m
-0	johnlewis	uk	male				106.68					42-106/l
-20	johnlewis	uk	male				111.76					44-111/xl
-40	johnlewis	uk	male				116.84					46-116/xxl
--280	marksspencer	europe	male				91.44			73.66		46 (short)
--260	marksspencer	europe	male				91.44			78.74		46 (medium)
--240	marksspencer	europe	male				96.52			76.20		48 (short)
--220	marksspencer	europe	male				96.52			78.74		48 (medium)
--200	marksspencer	europe	male				101.60			76.20		50 (short)
--180	marksspencer	europe	male				101.60			78.74		50 (medium)
--160	marksspencer	europe	male				101.60			81.28		50 (long)
--140	marksspencer	europe	male				106.68			76.20		52 (short)
--120	marksspencer	europe	male				106.68			81.28		52 (medium)
--100	marksspencer	europe	male				106.68			81.28		52 (long)
--80	marksspencer	europe	male				111.76			76.20		54 (short)
--60	marksspencer	europe	male				111.76			81.28		54 (medium)
--40	marksspencer	europe	male				111.76			81.28		54 (long)
--20	marksspencer	europe	male				111.76			86.36		54 (extra long)
-0	marksspencer	europe	male				116.84			78.74		56 (short)
-20	marksspencer	europe	male				116.84			81.28		56 (medium)
-40	marksspencer	europe	male				116.84			83.82		56 (long)
-60	marksspencer	europe	male				116.84			86.36		56 (extra long)
-80	marksspencer	europe	male				121.92			78.74		58 (short)
-100	marksspencer	europe	male				121.92			81.28		58 (medium)
-120	marksspencer	europe	male				121.92			83.82		58 (long)
-140	marksspencer	europe	male				121.92			86.36		58 (extra long)
-160	marksspencer	europe	male				127.00			81.28		60 (medium)
-180	marksspencer	europe	male				127.00			83.82		60 (long)
-200	marksspencer	europe	male				127.00			88.90		60 (extra long)
-220	marksspencer	europe	male				132.08			83.82		62 (medium)
-240	marksspencer	europe	male				132.08			86.36		62 (long)
-260	marksspencer	europe	male				132.08			88.90		62 (extra long)
--280	marksspencer	uk	male				91.44			73.66		36 (short)
--260	marksspencer	uk	male				91.44			78.74		36 (medium)
--240	marksspencer	uk	male				96.52			76.20		38 (short)
--220	marksspencer	uk	male				96.52			78.74		38 (medium)
--200	marksspencer	uk	male				101.60			76.20		40 (short)
--180	marksspencer	uk	male				101.60			78.74		40 (medium)
--160	marksspencer	uk	male				101.60			81.28		40 (long)
--140	marksspencer	uk	male				106.68			76.20		42 (short)
--120	marksspencer	uk	male				106.68			81.28		42 (medium)
--100	marksspencer	uk	male				106.68			81.28		42 (long)
--80	marksspencer	uk	male				111.76			76.20		44 (short)
--60	marksspencer	uk	male				111.76			81.28		44 (medium)
--40	marksspencer	uk	male				111.76			81.28		44 (long)
--20	marksspencer	uk	male				111.76			86.36		44 (extra long)
-0	marksspencer	uk	male				116.84			78.74		46 (short)
-20	marksspencer	uk	male				116.84			81.28		46 (medium)
-40	marksspencer	uk	male				116.84			83.82		46 (long)
-60	marksspencer	uk	male				116.84			86.36		46 (extra long)
-80	marksspencer	uk	male				121.92			78.74		48 (short)
-100	marksspencer	uk	male				121.92			81.28		48 (medium)
-120	marksspencer	uk	male				121.92			83.82		48 (long)
-140	marksspencer	uk	male				121.92			86.36		48 (extra long)
-160	marksspencer	uk	male				127.00			81.28		50 (medium)
-180	marksspencer	uk	male				127.00			83.82		50 (long)
-200	marksspencer	uk	male				127.00			88.90		50 (extra long)
-220	marksspencer	uk	male				132.08			83.82		52 (medium)
-240	marksspencer	uk	male				132.08			86.36		52 (long)
-260	marksspencer	uk	male				132.08			88.90		52 (extra long)
--280	next	uk	male				86.36			75.56		34 (short)
--260	next	uk	male				91.44			76.20		36 (short)
--240	next	uk	male				96.52			77.47		38 (short)
--220	next	uk	male				101.60			78.74		40 (short)
--200	next	uk	male				106.68			79.63		42 (short)
--180	next	uk	male				111.76			80.64		44 (short)
--160	next	uk	male				86.36			78.11		34 (regular)
--140	next	uk	male				91.44			78.74		36 (regular)
--120	next	uk	male				96.52			80.01		38 (regular)
--100	next	uk	male				101.60			81.28		40 (regular)
--80	next	uk	male				106.68			81.92		42 (regular)
--60	next	uk	male				111.76			83.19		44 (regular)
--40	next	uk	male				116.84			83.82		46 (regular)
--20	next	uk	male				121.92			85.09		48 (regular)
-0	next	uk	male				127.00			85.72		50 (regular)
-20	next	uk	male				132.08			87.00		52 (regular)
-40	next	uk	male				96.52			82.55		38 (long)
-60	next	uk	male				101.60			83.82		40 (long)
-80	next	uk	male				106.68			84.45		42 (long)
-100	next	uk	male				111.76			85.72		44 (long)
-120	next	uk	male				116.84			86.36		46 (long)
-140	next	uk	male				121.92			87.63		48 (long)
-160	next	uk	male				127.00			88.27		50 (long)
-180	next	uk	male				132.08			88.90		52 (long)
-200	next	uk	male				106.68			87.00		42 (extra long)
-220	next	uk	male				111.76			88.27		44 (extra long)
-240	next	uk	male				116.84			88.90		46 (extra long)
-260	next	uk	male				121.92			90.17		48 (extra long)
--60	reiss	europe	male	76.20			91.44				95.25	46
--40	reiss	europe	male	81.28			96.52				100.33	48
--20	reiss	europe	male	86.36			101.60				105.41	50
-0	reiss	europe	male	91.44			106.68				110.49	52
-20	reiss	europe	male	96.52			121.92				115.57	54
-40	reiss	europe	male	101.60			116.84				120.65	56
--60	reiss	uk	male	76.20			91.44				95.25	36
--40	reiss	uk	male	81.28			96.52				100.33	38
--20	reiss	uk	male	86.36			101.60				105.41	40
-0	reiss	uk	male	91.44			106.68				110.49	42
-20	reiss	uk	male	96.52			121.92				115.57	44
-40	reiss	uk	male	101.60			116.84				120.65	46
--100	tommyhilfiger	netherlands	male	84.50		64.00						48/48
--80	tommyhilfiger	netherlands	male	88.50		66.00		82				50/50
--60	tommyhilfiger	netherlands	male	92.50		67.50		83				52/52
--40	tommyhilfiger	netherlands	male	96.50		68.50		84				54/54
--20	tommyhilfiger	netherlands	male	100.50		69.50		85				56/56
-0	tommyhilfiger	netherlands	male	84.50		64.00		86				94/94
-20	tommyhilfiger	netherlands	male	88.50		66.00		82				98/98
-40	tommyhilfiger	netherlands	male	92.50		67.50		83				102/102
-60	tommyhilfiger	netherlands	male	96.50		68.50		84				104/104
-80	tommyhilfiger	netherlands	male	100.50		69.50		85				106/106
--100	tommyhilfiger	ireland	male	84.50		64.00						38/48
--80	tommyhilfiger	ireland	male	88.50		66.00		82				40/50
--60	tommyhilfiger	ireland	male	92.50		67.50		83				42/52
--40	tommyhilfiger	ireland	male	96.50		68.50		84				44/54
--20	tommyhilfiger	ireland	male	100.50		69.50		85				46/56
-0	tommyhilfiger	ireland	male	84.50		64.00		86				38 long/94
-20	tommyhilfiger	ireland	male	88.50		66.00		82				40 long/98
-40	tommyhilfiger	ireland	male	92.50		67.50		83				42 long/102
-60	tommyhilfiger	ireland	male	96.50		68.50		84				44 long/104
-80	tommyhilfiger	ireland	male	100.50		69.50		85				46 long/106
--100	tommyhilfiger	france	male	84.50		64.00						48 regular/48
--80	tommyhilfiger	france	male	88.50		66.00		82				50 regular/50
--60	tommyhilfiger	france	male	92.50		67.50		83				52 regular/52
--40	tommyhilfiger	france	male	96.50		68.50		84				54 regular/54
--20	tommyhilfiger	france	male	100.50		69.50		85				56 regular/56
-0	tommyhilfiger	france	male	84.50		64.00		86				48 long/94
-20	tommyhilfiger	france	male	88.50		66.00		82				50 long/98
-40	tommyhilfiger	france	male	92.50		67.50		83				52 long/102
-60	tommyhilfiger	france	male	96.50		68.50		84				54 long/104
-80	tommyhilfiger	france	male	100.50		69.50		85				56 long/106
--100	tommyhilfiger	austria	male	84.50		64.00						48/48
--80	tommyhilfiger	austria	male	88.50		66.00		82				50/50
--60	tommyhilfiger	austria	male	92.50		67.50		83				52/52
--40	tommyhilfiger	austria	male	96.50		68.50		84				54/54
--20	tommyhilfiger	austria	male	100.50		69.50		85				56/56
-0	tommyhilfiger	austria	male	84.50		64.00		86				94/94
-20	tommyhilfiger	austria	male	88.50		66.00		82				98/98
-40	tommyhilfiger	austria	male	92.50		67.50		83				102/102
-60	tommyhilfiger	austria	male	96.50		68.50		84				104/104
-80	tommyhilfiger	austria	male	100.50		69.50		85				106/106
--100	tommyhilfiger	germany	male	84.50		64.00						48/48
--80	tommyhilfiger	germany	male	88.50		66.00		82				50/50
--60	tommyhilfiger	germany	male	92.50		67.50		83				52/52
--40	tommyhilfiger	germany	male	96.50		68.50		84				54/54
--20	tommyhilfiger	germany	male	100.50		69.50		85				56/56
-0	tommyhilfiger	germany	male	84.50		64.00		86				94/94
-20	tommyhilfiger	germany	male	88.50		66.00		82				98/98
-40	tommyhilfiger	germany	male	92.50		67.50		83				102/102
-60	tommyhilfiger	germany	male	96.50		68.50		84				104/104
-80	tommyhilfiger	germany	male	100.50		69.50		85				106/106
--100	tommyhilfiger	uk	male	84.50		64.00						38/48
--80	tommyhilfiger	uk	male	88.50		66.00		82				40/50
--60	tommyhilfiger	uk	male	92.50		67.50		83				42/52
--40	tommyhilfiger	uk	male	96.50		68.50		84				44/54
--20	tommyhilfiger	uk	male	100.50		69.50		85				46/56
-0	tommyhilfiger	uk	male	84.50		64.00		86				38 long/94
-20	tommyhilfiger	uk	male	88.50		66.00		82				40 long/98
-40	tommyhilfiger	uk	male	92.50		67.50		83				42 long/102
-60	tommyhilfiger	uk	male	96.50		68.50		84				44 long/104
-80	tommyhilfiger	uk	male	100.50		69.50		85				46 long/106
--100	tommyhilfiger	spain	male	84.50		64.00						48/48
--80	tommyhilfiger	spain	male	88.50		66.00		82				50/50
--60	tommyhilfiger	spain	male	92.50		67.50		83				52/52
--40	tommyhilfiger	spain	male	96.50		68.50		84				54/54
--20	tommyhilfiger	spain	male	100.50		69.50		85				56/56
-0	tommyhilfiger	spain	male	84.50		64.00		86				94/94
-20	tommyhilfiger	spain	male	88.50		66.00		82				98/98
-40	tommyhilfiger	spain	male	92.50		67.50		83				102/102
-60	tommyhilfiger	spain	male	96.50		68.50		84				104/104
-80	tommyhilfiger	spain	male	100.50		69.50		85				106/106
+-60	johnlewis	europe	male				0.9144					46/XS
+-40	johnlewis	europe	male				0.9652					48/S
+-20	johnlewis	europe	male				1.0160					52/M
+0	johnlewis	europe	male				1.0668					52/L
+20	johnlewis	europe	male				1.1176					54/XL
+40	johnlewis	europe	male				1.1684					56/XXL
+-60	johnlewis	us	male				0.9144					36-86/XS
+-40	johnlewis	us	male				0.9652					38-96/S
+-20	johnlewis	us	male				1.0160					40-101/M
+0	johnlewis	us	male				1.0668					42-106/L
+20	johnlewis	us	male				1.1176					44-111/XL
+40	johnlewis	us	male				1.1684					46-116/XXL
+-60	johnlewis	uk	male				0.9144					36-86/XS
+-40	johnlewis	uk	male				0.9652					38-96/S
+-20	johnlewis	uk	male				1.0160					40-101/M
+0	johnlewis	uk	male				1.0668					42-106/L
+20	johnlewis	uk	male				1.1176					44-111/XL
+40	johnlewis	uk	male				1.1684					46-116/XXL
+-280	marksspencer	europe	male				0.9144			0.7366		46 (Short)
+-260	marksspencer	europe	male				0.9144			0.7874		46 (Medium)
+-240	marksspencer	europe	male				0.9652			0.7620		48 (Short)
+-220	marksspencer	europe	male				0.9652			0.7874		48 (Medium)
+-200	marksspencer	europe	male				1.0160			0.7620		50 (Short)
+-180	marksspencer	europe	male				1.0160			0.7874		50 (Medium)
+-160	marksspencer	europe	male				1.0160			0.8128		50 (Long)
+-140	marksspencer	europe	male				1.0668			0.7620		52 (Short)
+-120	marksspencer	europe	male				1.0668			0.8128		52 (Medium)
+-100	marksspencer	europe	male				1.0668			0.8128		52 (Long)
+-80	marksspencer	europe	male				1.1176			0.7620		54 (Short)
+-60	marksspencer	europe	male				1.1176			0.8128		54 (Medium)
+-40	marksspencer	europe	male				1.1176			0.8128		54 (Long)
+-20	marksspencer	europe	male				1.1176			0.8636		54 (Extra Long)
+0	marksspencer	europe	male				1.1684			0.7874		56 (Short)
+20	marksspencer	europe	male				1.1684			0.8128		56 (Medium)
+40	marksspencer	europe	male				1.1684			0.8382		56 (Long)
+60	marksspencer	europe	male				1.1684			0.8636		56 (Extra Long)
+80	marksspencer	europe	male				1.2192			0.7874		58 (Short)
+100	marksspencer	europe	male				1.2192			0.8128		58 (Medium)
+120	marksspencer	europe	male				1.2192			0.8382		58 (Long)
+140	marksspencer	europe	male				1.2192			0.8636		58 (Extra Long)
+160	marksspencer	europe	male				1.2700			0.8128		60 (Medium)
+180	marksspencer	europe	male				1.2700			0.8382		60 (Long)
+200	marksspencer	europe	male				1.2700			0.8890		60 (Extra Long)
+220	marksspencer	europe	male				1.3208			0.8382		62 (Medium)
+240	marksspencer	europe	male				1.3208			0.8636		62 (Long)
+260	marksspencer	europe	male				1.3208			0.8890		62 (Extra Long)
+-280	marksspencer	uk	male				0.9144			0.7366		36 (Short)
+-260	marksspencer	uk	male				0.9144			0.7874		36 (Medium)
+-240	marksspencer	uk	male				0.9652			0.7620		38 (Short)
+-220	marksspencer	uk	male				0.9652			0.7874		38 (Medium)
+-200	marksspencer	uk	male				1.0160			0.7620		40 (Short)
+-180	marksspencer	uk	male				1.0160			0.7874		40 (Medium)
+-160	marksspencer	uk	male				1.0160			0.8128		40 (Long)
+-140	marksspencer	uk	male				1.0668			0.7620		42 (Short)
+-120	marksspencer	uk	male				1.0668			0.8128		42 (Medium)
+-100	marksspencer	uk	male				1.0668			0.8128		42 (Long)
+-80	marksspencer	uk	male				1.1176			0.7620		44 (Short)
+-60	marksspencer	uk	male				1.1176			0.8128		44 (Medium)
+-40	marksspencer	uk	male				1.1176			0.8128		44 (Long)
+-20	marksspencer	uk	male				1.1176			0.8636		44 (Extra Long)
+0	marksspencer	uk	male				1.1684			0.7874		46 (Short)
+20	marksspencer	uk	male				1.1684			0.8128		46 (Medium)
+40	marksspencer	uk	male				1.1684			0.8382		46 (Long)
+60	marksspencer	uk	male				1.1684			0.8636		46 (Extra Long)
+80	marksspencer	uk	male				1.2192			0.7874		48 (Short)
+100	marksspencer	uk	male				1.2192			0.8128		48 (Medium)
+120	marksspencer	uk	male				1.2192			0.8382		48 (Long)
+140	marksspencer	uk	male				1.2192			0.8636		48 (Extra Long)
+160	marksspencer	uk	male				1.2700			0.8128		50 (Medium)
+180	marksspencer	uk	male				1.2700			0.8382		50 (Long)
+200	marksspencer	uk	male				1.2700			0.8890		50 (Extra Long)
+220	marksspencer	uk	male				1.3208			0.8382		52 (Medium)
+240	marksspencer	uk	male				1.3208			0.8636		52 (Long)
+260	marksspencer	uk	male				1.3208			0.8890		52 (Extra Long)
+-280	next	uk	male				0.8636			0.7557		34 (Short)
+-260	next	uk	male				0.9144			0.7620		36 (Short)
+-240	next	uk	male				0.9652			0.7747		38 (Short)
+-220	next	uk	male				1.0160			0.7874		40 (Short)
+-200	next	uk	male				1.0668			0.7963		42 (Short)
+-180	next	uk	male				1.1176			0.8065		44 (Short)
+-160	next	uk	male				0.8636			0.7811		34 (Regular)
+-140	next	uk	male				0.9144			0.7874		36 (Regular)
+-120	next	uk	male				0.9652			0.8001		38 (Regular)
+-100	next	uk	male				1.0160			0.8128		40 (Regular)
+-80	next	uk	male				1.0668			0.8192		42 (Regular)
+-60	next	uk	male				1.1176			0.8319		44 (Regular)
+-40	next	uk	male				1.1684			0.8382		46 (Regular)
+-20	next	uk	male				1.2192			0.8509		48 (Regular)
+0	next	uk	male				1.2700			0.8572		50 (Regular)
+20	next	uk	male				1.3208			0.8700		52 (Regular)
+40	next	uk	male				0.9652			0.8255		38 (Long)
+60	next	uk	male				1.0160			0.8382		40 (Long)
+80	next	uk	male				1.0668			0.8446		42 (Long)
+100	next	uk	male				1.1176			0.8572		44 (Long)
+120	next	uk	male				1.1684			0.8636		46 (Long)
+140	next	uk	male				1.2192			0.8763		48 (Long)
+160	next	uk	male				1.2700			0.8827		50 (Long)
+180	next	uk	male				1.3208			0.8890		52 (Long)
+200	next	uk	male				1.0668			0.8700		42 (Extra Long)
+220	next	uk	male				1.1176			0.8827		44 (Extra Long)
+240	next	uk	male				1.1684			0.8890		46 (Extra Long)
+260	next	uk	male				1.2192			0.9017		48 (Extra Long)
+-60	reiss	europe	male	0.7620			0.9144				0.9525	46
+-40	reiss	europe	male	0.8128			0.9652				1.0033	48
+-20	reiss	europe	male	0.8636			1.0160				1.0541	50
+0	reiss	europe	male	0.9144			1.0668				1.1049	52
+20	reiss	europe	male	0.9652			1.2192				1.1557	54
+40	reiss	europe	male	1.0160			1.1684				1.2065	56
+-60	reiss	uk	male	0.7620			0.9144				0.9525	36
+-40	reiss	uk	male	0.8128			0.9652				1.0033	38
+-20	reiss	uk	male	0.8636			1.0160				1.0541	40
+0	reiss	uk	male	0.9144			1.0668				1.1049	42
+20	reiss	uk	male	0.9652			1.2192				1.1557	44
+40	reiss	uk	male	1.0160			1.1684				1.2065	46
+-100	tommyhilfiger	netherlands	male	0.8450		0.6400		0.8200				48/48
+-80	tommyhilfiger	netherlands	male	0.8850		0.6600		0.8300				50/50
+-60	tommyhilfiger	netherlands	male	0.9250		0.6750		0.8400				52/52
+-40	tommyhilfiger	netherlands	male	0.9650		0.6850		0.8500				54/54
+-20	tommyhilfiger	netherlands	male	1.0050		0.6950		0.8600				56/56
+0	tommyhilfiger	netherlands	male	0.8450		0.6400		0.8200				94/94
+20	tommyhilfiger	netherlands	male	0.8850		0.6600		0.8300				98/98
+40	tommyhilfiger	netherlands	male	0.9250		0.6750		0.8400				102/102
+60	tommyhilfiger	netherlands	male	0.9650		0.6850		0.8500				104/104
+80	tommyhilfiger	netherlands	male	1.0050		0.6950		0.8600				106/106
+-100	tommyhilfiger	ireland	male	0.8450		0.6400		0.8200				38/48
+-80	tommyhilfiger	ireland	male	0.8850		0.6600		0.8300				40/50
+-60	tommyhilfiger	ireland	male	0.9250		0.6750		0.8400				42/52
+-40	tommyhilfiger	ireland	male	0.9650		0.6850		0.8500				44/54
+-20	tommyhilfiger	ireland	male	1.0050		0.6950		0.8600				46/56
+0	tommyhilfiger	ireland	male	0.8450		0.6400		0.8200				38 long/94
+20	tommyhilfiger	ireland	male	0.8850		0.6600		0.8300				40 long/98
+40	tommyhilfiger	ireland	male	0.9250		0.6750		0.8400				42 long/102
+60	tommyhilfiger	ireland	male	0.9650		0.6850		0.8500				44 long/104
+80	tommyhilfiger	ireland	male	1.0050		0.6950		0.8600				46 long/106
+-100	tommyhilfiger	france	male	0.8450		0.6400		0.8200				48 regular/48
+-80	tommyhilfiger	france	male	0.8850		0.6600		0.8300				50 regular/50
+-60	tommyhilfiger	france	male	0.9250		0.6750		0.8400				52 regular/52
+-40	tommyhilfiger	france	male	0.9650		0.6850		0.8500				54 regular/54
+-20	tommyhilfiger	france	male	1.0050		0.6950		0.8600				56 regular/56
+0	tommyhilfiger	france	male	0.8450		0.6400		0.8200				48 long/94
+20	tommyhilfiger	france	male	0.8850		0.6600		0.8300				50 long/98
+40	tommyhilfiger	france	male	0.9250		0.6750		0.8400				52 long/102
+60	tommyhilfiger	france	male	0.9650		0.6850		0.8500				54 long/104
+80	tommyhilfiger	france	male	1.0050		0.6950		0.8600				56 long/106
+-100	tommyhilfiger	austria	male	0.8450		0.6400		0.8200				48/48
+-80	tommyhilfiger	austria	male	0.8850		0.6600		0.8300				50/50
+-60	tommyhilfiger	austria	male	0.9250		0.6750		0.8400				52/52
+-40	tommyhilfiger	austria	male	0.9650		0.6850		0.8500				54/54
+-20	tommyhilfiger	austria	male	1.0050		0.6950		0.8600				56/56
+0	tommyhilfiger	austria	male	0.8450		0.6400		0.8200				94/94
+20	tommyhilfiger	austria	male	0.8850		0.6600		0.8300				98/98
+40	tommyhilfiger	austria	male	0.9250		0.6750		0.8400				102/102
+60	tommyhilfiger	austria	male	0.9650		0.6850		0.8500				104/104
+80	tommyhilfiger	austria	male	1.0050		0.6950		0.8600				106/106
+-100	tommyhilfiger	germany	male	0.8450		0.6400		0.8200				48/48
+-80	tommyhilfiger	germany	male	0.8850		0.6600		0.8300				50/50
+-60	tommyhilfiger	germany	male	0.9250		0.6750		0.8400				52/52
+-40	tommyhilfiger	germany	male	0.9650		0.6850		0.8500				54/54
+-20	tommyhilfiger	germany	male	1.0050		0.6950		0.8600				56/56
+0	tommyhilfiger	germany	male	0.8450		0.6400		0.8200				94/94
+20	tommyhilfiger	germany	male	0.8850		0.6600		0.8300				98/98
+40	tommyhilfiger	germany	male	0.9250		0.6750		0.8400				102/102
+60	tommyhilfiger	germany	male	0.9650		0.6850		0.8500				104/104
+80	tommyhilfiger	germany	male	1.0050		0.6950		0.8600				106/106
+-100	tommyhilfiger	uk	male	0.8450		0.6400		0.8200				38/48
+-80	tommyhilfiger	uk	male	0.8850		0.6600		0.8300				40/50
+-60	tommyhilfiger	uk	male	0.9250		0.6750		0.8400				42/52
+-40	tommyhilfiger	uk	male	0.9650		0.6850		0.8500				44/54
+-20	tommyhilfiger	uk	male	1.0050		0.6950		0.8600				46/56
+0	tommyhilfiger	uk	male	0.8450		0.6400		0.8200				38 long/94
+20	tommyhilfiger	uk	male	0.8850		0.6600		0.8300				40 long/98
+40	tommyhilfiger	uk	male	0.9250		0.6750		0.8400				42 long/102
+60	tommyhilfiger	uk	male	0.9650		0.6850		0.8500				44 long/104
+80	tommyhilfiger	uk	male	1.0050		0.6950		0.8600				46 long/106
+-100	tommyhilfiger	spain	male	0.8450		0.6400		0.8200				48/48
+-80	tommyhilfiger	spain	male	0.8850		0.6600		0.8300				50/50
+-60	tommyhilfiger	spain	male	0.9250		0.6750		0.8400				52/52
+-40	tommyhilfiger	spain	male	0.9650		0.6850		0.8500				54/54
+-20	tommyhilfiger	spain	male	1.0050		0.6950		0.8600				56/56
+0	tommyhilfiger	spain	male	0.8450		0.6400		0.8200				94/94
+20	tommyhilfiger	spain	male	0.8850		0.6600		0.8300				98/98
+40	tommyhilfiger	spain	male	0.9250		0.6750		0.8400				102/102
+60	tommyhilfiger	spain	male	0.9650		0.6850		0.8500				104/104
+80	tommyhilfiger	spain	male	1.0050		0.6950		0.8600				106/106

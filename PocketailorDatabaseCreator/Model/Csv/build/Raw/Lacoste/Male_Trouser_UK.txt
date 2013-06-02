@@ -1,0 +1,4 @@
+SizeLetter	Denim 30	Denim 32	Denim 33	Denim 34	Denim 36	Denim 38	Denim 40	Denim 42	
+SizeId	-80	-60	-40	-20	0	20	40	60	80
+UK	38-2	40-3	42-4	44-5	46-6	48-7	50-8	52	54
+WAIST	76	80	84	88	92	96	100	104	108

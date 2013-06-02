@@ -501,7 +501,7 @@ namespace Pocketailor.View
         public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
         {
             string p = (string)parameter;
-            ICollection i = (ICollection)value;
+            ICollection i = (value != null) ? (ICollection)value : new int[] {};
             if (i.Count == 0)
             {
                 if (p == "VisibleIfEmpty")

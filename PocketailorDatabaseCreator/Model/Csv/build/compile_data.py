@@ -72,6 +72,11 @@ def main():
             regions = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in REGION_IDS]]
             if not len(regions):
                 print "WARNING: No region data for: " + in_dir + fn
+                continue
+            measurements = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in MEASUREMENT_IDS]]
+            if not len(measurements):
+                print "WARNING: No measurement data for: " + in_dir + fn
+                continue
             for region in regions:
                 write_csv_output(data, format_dict[conversion], build_fns[conversion], gender, region, brand)
     # Finally copy the temporary files to the deployment area
@@ -171,7 +176,7 @@ def write_csv_output(data, fmt, fn, gender, region, brand):
 
 def read_csv_input(fn, is_aux):
     '''Read the data into a dictionary'''
-    print fn
+    # print fn
     data = {}
     is_metric = True
     with open(fn, 'r') as fh:
@@ -206,15 +211,14 @@ def read_csv_input(fn, is_aux):
             if header == 'aus':
                 header = 'australia'
             # Common element replacements
-            els = [el.strip().lower() for el in els[1:]]
-            for el in els:
-                if '"' in el:
-                    is_metric = False
-            els = [el.replace('"', '') for el in els]
+            els = [el.strip() for el in els[1:]]
             els = [el.replace("cm", "").strip() for el in els]
             if header in [x.lower() for x in MEASUREMENT_IDS]:
                 # Some sizes use these weird unicddes for space reasons e.g. M&S Male Hats
                 els = [el.replace("½", ".5") for el in els]
+                if '"' in el:
+                    is_metric = False
+            els = [el.replace('"', '').strip() for el in els]
             # Process the measurements
             if header in [x.lower() for x in MEASUREMENT_IDS]:
                 # Deal with ranges
@@ -229,16 +233,30 @@ def read_csv_input(fn, is_aux):
                         buff.append(el)
                         continue
                     buff.append("%.2f" % ((rng[0] + rng[1]) / 2.0))
-                els = buff                    
-                # Convert to metric if appropriate
-                if not is_metric: 
-                    els = ["%.2f" % (float(el) * 2.54) for el in els]
+                els = buff
+                # Convert to metres
+                buff = []
+                for el in els:
+                    if el.strip() == '':
+                        buff.append(el.strip())
+                    elif is_metric:
+                        buff.append("%.4f" % (float(el) * 0.01))
+                    else:
+                        buff.append("%.4f" % (float(el) * 2.54 * 0.01))
+                els = buff
             # Finally raise a warning if a weird header is found 
             if header in OK_HEADERS:
                 data[header] = els
             else:
                 raise Exception("WARNING: Unrecognised header: '" + header + "' in file: " + fn)
-                
+    # Raise a warning if there is a mismatch in the size of the
+    # measurements
+    num_els = None
+    for key in data.keys():
+        if num_els == None:
+            num_els = len(data[key])
+        elif num_els != len(data[key]):
+            raise Exception("WARNING: Uneven data table")
     # Combine the regional size and the size letter into a single size of format 
     # '#/XX', 'X' or '#'. e.g. '10/M' or 'M' n.b. will add the auxialliary 
     # measurements later e.g (short)
