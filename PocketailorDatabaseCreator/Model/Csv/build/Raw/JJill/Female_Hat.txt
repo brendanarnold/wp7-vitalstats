@@ -1,0 +1,4 @@
+#Unit:Inch
+US	S,M	M,L
+SizeId	-20	0
+Head	21.5-22.25	22.5-23.25

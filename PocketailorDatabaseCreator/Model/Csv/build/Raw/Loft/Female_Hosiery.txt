@@ -1,0 +1,4 @@
+SizeLetter	Small	Medium	Large
+SizeId	-20	0	20
+HEIGHT	147-163	163-173	173-183
+WEIGHT	41-54	54-66	66-73

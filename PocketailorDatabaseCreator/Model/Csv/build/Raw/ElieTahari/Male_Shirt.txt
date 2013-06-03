@@ -1,0 +1,6 @@
+#Unit:Inch
+US	S	M	L	XL	XXL
+SizeId	-40	-20	0	20	40
+Chest	40.25	42.25	45.25	48.25	51.25
+Waist	38.5	40.5	43.5	46.5	49.5
+Sleeve	35.6	36	36.5	37	37.5

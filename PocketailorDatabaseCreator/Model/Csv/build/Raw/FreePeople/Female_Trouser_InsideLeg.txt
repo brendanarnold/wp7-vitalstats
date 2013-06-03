@@ -1,0 +1,4 @@
+#Unit:Inch
+SizeLetter	Short	Regular	Tall
+SizeId	-2	0	2
+InsideLeg	29	32	35

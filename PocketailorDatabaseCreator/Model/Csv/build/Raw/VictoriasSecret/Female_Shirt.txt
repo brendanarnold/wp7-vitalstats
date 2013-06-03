@@ -1,0 +1,6 @@
+#Unit:Inch
+SizeLetter	XS	XS	S	S	M	M	L	L	XL
+SizeId	-80	-60	-40	-20	0	20	40	60	80
+US	0	2	4	6	8	10	12	14	16
+Bust	32.5	33	34.5	35.5	36.5	37.5	39	40.5	42.5
+Waist	24	25	26	27	28	29	30.5	32	34

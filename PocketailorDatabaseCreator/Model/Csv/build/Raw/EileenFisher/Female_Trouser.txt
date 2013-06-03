@@ -1,0 +1,5 @@
+SizeLetter	XS	XS	S	S	M	M	L	L	XL
+SizeId	-80	-60	-40	-20	0	20	40	60	80
+US  	2	4	6	8	10	12	14	16	18
+Waist  	66cm	69cm	71cm	74cm	76cm	80cm	84cm	89cm	94cm
+Hip  	93cm	95cm	98cm	100cm	103cm	108cm	110cm	116cm	121cm

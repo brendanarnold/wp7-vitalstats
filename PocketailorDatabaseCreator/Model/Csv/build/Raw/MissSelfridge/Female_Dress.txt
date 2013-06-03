@@ -1,0 +1,13 @@
+SizeLetter	S (Denim 25)	S (Denim 26)	M (Denim 28)	M (Denim 30)	L (Denim 32)	L (Denim 34)
+SizeId	-60	-40	-20	0	20	40
+UK	6	8	10	12	14	16
+France	34	36	38	40	42	44
+Eu	34	36	38	40	42	44
+US	2	4	6	8	10	12
+Italy	38	40	42	44	46	48
+Denmark	32	34	36	38	40	42
+Germany	32	34	36	38	40	42
+Aus	6	8	10	12	14	16
+Bust	79.5	82	87	92	97	102
+Waist	61.5	64	69	74	79	84
+Hip	84	86.5	91.5	96.5	101.5	106.5
