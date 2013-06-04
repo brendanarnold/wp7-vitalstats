@@ -3,7 +3,7 @@
 import os
 import shutil
 
-START_DIR = 'Raw\\EileenFisher'
+START_DIR = 'Raw\\Firetrap'
 
 for path, dirs, fns in os.walk(START_DIR):
     if os.path.basename(path) in ['.', 'test', 'Backup']:

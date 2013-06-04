@@ -1,0 +1,4 @@
+#Unit:Inch
+US	XXS	XS	S	M	L	XL
+SizeId	-60	-40	-20	0	20	40
+Bust	32.5	34	35.5	37.5	40.5	41.5

@@ -1,0 +1,5 @@
+#Unit:Inch
+US	P,S	M,L
+SizeId	-20	0
+Height	61-67	67-72
+Weight	95-145	145-175
