@@ -45,6 +45,16 @@ def main():
         if brand not in [b.lower() for b in BRAND_IDS]:
             print "WARNING: No brand in BrandId called: " + brand
             continue
+        # See if countries are defined
+        countries = None
+        if 'Countries.txt' in in_fns:
+            in_fns.remove('Countries.txt')
+            with open(os.path.join(in_dir, 'Countries.txt'), 'r') as fh:
+                countries = []
+                for line in fh:
+                    if line.strip() == '':
+                        continue
+                    countries.append(line.strip().lower())
         # Create a list of filenames and auxialliary filenames
         fns = []
         aux_fns = []
@@ -244,6 +254,12 @@ def read_csv_input(fn, is_aux):
                     else:
                         buff.append("%.4f" % (float(el) * 2.54 * 0.01))
                 els = buff
+            # If is the general placeholder, sub in the country names
+            if header == 'general':
+                if countries is None:
+                    raise Exception("Expected a Countries.txt file but none found")
+                for country in countries:
+                    # TODO
             # Finally raise a warning if a weird header is found 
             if header in OK_HEADERS:
                 data[header] = els

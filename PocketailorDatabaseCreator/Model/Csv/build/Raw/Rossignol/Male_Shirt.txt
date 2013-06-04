@@ -1,0 +1,20 @@
+#Unit:Inch
+US	S	M	L	XL
+SizeId	-40	-20	0	20
+UK	S	M	L	XL
+EU	S	M	L	XL
+France	S	M	L	XL
+Germany	S	M	L	XL
+Switzerland	S	M	L	XL
+Italy	S	M	L	XL
+UK	S	M	L	XL
+Canada	S	M	L	XL
+Argentina	S	M	L	XL
+Chile	S	M	L	XL
+Korea	S	M	L	XL
+Lebanon	M	L	XL
+China	S	M	L	XL
+Japan	S	M	L	XL
+Aus	S	M	L	XL
+NewZealand	S	M	L	XL
+Chest	34-36	38-40	42-44	46-48

@@ -15,13 +15,17 @@ namespace Pocketailor
 {
     public static class AppConstants
     {
+        // TODO: These need to be changed on each release
+        public static int ADJUSTMENT_FORMAT_VERSION = 1;
+        public static string APP_VERSION = "0.1.1";
+
+
         // These are the 'magic' SizeId values which signify that all the sizes are too big or small
         public static int ADJUSTMENT_SIZEID_ALL_TOO_BIG = -1000;
         public static int ADJUSTMENT_SIZEID_ALL_TOO_SMALL = 1000;
         // The name of the fields in the POST request
         public static string ADJUSTMENT_REQUEST_POST_FIELD = "adjustment";
         public static string SECRET_REQUEST_POST_FIELD = "pocketailor_adjustments_secret";
-
 #if DEBUG
         // If there are more than this number of items queued for delivey, dump the feedback
         public static int MAX_FEEDBACK_ITEMS_FOR_DELIVERY = 15;
@@ -38,8 +42,6 @@ namespace Pocketailor
         public static string POCKETAILOR_ADJUSTMENTS_SECRET = "7f1f830c-18fa-4e49-af6f-5ea4c2c85f62";
 #endif
 
-
-        public static string APP_VERSION = "0.1.1";
         // TODO: Fill in the paid app GUID
         public static string PAID_APP_GUID = "";
         public static string[] VALUE_DELIMITERS = { "|" };
@@ -55,10 +57,6 @@ namespace Pocketailor
         public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
         public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
         public static bool? DEFAULT_ALLOW_FEEDBACK = null;
-
-        // This app generates adjustmnts of this version
-        public static int ADJUSTMENT_FORMAT_VERSION = 1;
-
         
     }
 }

@@ -23,4 +23,4 @@ BRAND_IDS = get_csharp_enums(BRANDID_FN, 'BrandId')
 CONVERSION_IDS = get_csharp_enums(CONVERSIONID_FN, 'ConversionId')
 
 # Compile a list of acceptable headers 
-OK_HEADERS = [x.lower() for x in MEASUREMENT_IDS] + [x.lower() for x in REGION_IDS] + ['sizeletter', 'sizeid']
+OK_HEADERS = [x.lower() for x in MEASUREMENT_IDS] + [x.lower() for x in REGION_IDS] + ['sizeletter', 'sizeid', 'general']

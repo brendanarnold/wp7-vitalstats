@@ -1,0 +1,7 @@
+UK	XS	S	M	L	XL	XXL
+SizeId	-60	-40	-20	0	20	40
+Neck	36.8cm	38.0cm	39.2cm	40.4cm	41.6cm	42.8cm
+Chest	91.5cm	96.5cm	101.5cm	106.5cm	111.5cm	116.5cm
+EU	34	36	38	40	42	44
+JAPAN	0	1	2	3	4	5
+

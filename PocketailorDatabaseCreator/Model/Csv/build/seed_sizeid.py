@@ -3,12 +3,14 @@
 import os
 import shutil
 
-START_DIR = 'Raw\\Firetrap'
+START_DIR = 'Raw\\Quicksilver'
 
 for path, dirs, fns in os.walk(START_DIR):
     if os.path.basename(path) in ['.', 'test', 'Backup']:
         continue
     for fn in fns:
+        if fn.startswith('Countries.txt'):
+            continue
         if not fn.endswith('.txt'):
             continue
         if fn.split('.')[0].split('_')[-1] in ['Height', 'InsideLeg', 'InternationalConversions']:  
