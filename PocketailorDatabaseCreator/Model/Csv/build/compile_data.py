@@ -52,9 +52,13 @@ def main():
             with open(os.path.join(in_dir, 'Countries.txt'), 'r') as fh:
                 countries = []
                 for line in fh:
-                    if line.strip() == '':
+                    c = line.strip().lower()
+                    if c == '':
                         continue
-                    countries.append(line.strip().lower())
+                    if c not in [r.lower() for r in REGION_IDS]:
+                        print "Skipping country: " + c)
+                    if c not in countries:
+                        countries.append(line.strip().lower())
         # Create a list of filenames and auxialliary filenames
         fns = []
         aux_fns = []
@@ -184,7 +188,7 @@ def write_csv_output(data, fmt, fn, gender, region, brand):
             out_fh.write('\t'.join(row) + '\n')
 
 
-def read_csv_input(fn, is_aux):
+def read_csv_input(fn, is_aux, countries):
     '''Read the data into a dictionary'''
     # print fn
     data = {}
@@ -259,9 +263,9 @@ def read_csv_input(fn, is_aux):
                 if countries is None:
                     raise Exception("Expected a Countries.txt file but none found")
                 for country in countries:
-                    # TODO
+                    data[country] = els
             # Finally raise a warning if a weird header is found 
-            if header in OK_HEADERS:
+            elif header in OK_HEADERS:
                 data[header] = els
             else:
                 raise Exception("WARNING: Unrecognised header: '" + header + "' in file: " + fn)

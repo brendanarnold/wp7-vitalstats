@@ -441,25 +441,39 @@
 					<DataTemplate x:Key="itemTemplate" toolkit:TiltEffect.SuppressTilt="True">
 						<!-- Applied to each item -->
 
-						<Grid x:Name="conversionResultContainerGrid" 
-							HorizontalAlignment="Left"
+						<Grid x:Name="conversionResultContainerGrid"
 							Tap="conversionResultContainerGrid_Tap"
-							Margin="12,0,0,0" Height="50">
+							Margin="12,0,0,0" HorizontalAlignment="Left" Height="95">
+							<!--
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto"/>
 								<ColumnDefinition Width="Auto"/>
 							</Grid.ColumnDefinitions>
-							
+							-->
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+
 							<TextBlock x:Name="brandNameTextBlock"
 								Text="{Binding BrandName, FallbackValue=Loading ...}"
-								Grid.Column="0" 
+								Grid.Row="0" 
 								FontFamily="Segoe WP"
-								FontSize="32" Foreground="{StaticResource PageTxtColor}" VerticalAlignment="Top"/>
-							<TextBlock x:Name="clothingSizeTextBlock"
-								Grid.Column="1"
-								Text="{Binding FormattedValue, FallbackValue=''}"
-								Margin="7,0,0,0" FontSize="32" Foreground="{StaticResource SubTitleColor}"
-								FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+								FontSize="34.667" Foreground="{StaticResource PageTxtColor}" VerticalAlignment="Top"/>
+							
+							<StackPanel 
+								Grid.Row="1"
+								Orientation="Horizontal">
+								<TextBlock x:Name="regionTextBlock"
+									Text="{Binding RegionString, Converter={StaticResource StringToUpper}}"
+									Margin="0" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"
+									FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+								<TextBlock x:Name="clothingSizeTextBlock"
+									Text="{Binding FormattedValue, FallbackValue=''}"
+									Margin="6,0,0,0" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"
+									FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+							</StackPanel>
 						</Grid>
 			
 					</DataTemplate>

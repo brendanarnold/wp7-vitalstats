@@ -209,15 +209,25 @@ namespace Pocketailor.ViewModel
 
             this.GroupedConversions = await TaskEx.Run(() =>
             {
-                // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsList
-                List<ConversionData> conversions = (from d in this.conversiondsDB.ConversionData
-                                                    where d is ConversionData
-                                                        // Filter to specific region, gender, conversion
-                                                    && d.Region == selectedRegion
-                                                    && d.Gender == qGender
-                                                    && d.Conversion == conversion
-                                                    && !blacklistedBrands.Contains(d.Brand)
-                                                    select d).ToList();
+                RegionId r = selectedRegion;
+                List<ConversionData> conversions = new List<ConversionData>();
+                IEnumerable<BrandId> collectedBrands = new List<BrandId>();
+                while (true) // I know ...
+                {
+                    // Do database (Linq-to-sql) stuff first, so this should translate to SQL and run SQL with AsList
+                    conversions.AddRange(from d in this.conversiondsDB.ConversionData
+                                         where d is ConversionData
+                                             // Filter to specific region, gender, conversion
+                                         && d.Region == r
+                                         && d.Gender == qGender
+                                         && d.Conversion == conversion
+                                         && !blacklistedBrands.Contains(d.Brand)
+                                         && !collectedBrands.Contains(d.Brand)
+                                         select d);
+                    collectedBrands = from d in conversions select d.Brand;
+                    if (r == RegionId.Worldwide) break;
+                    r = Static.RegionParents[r];
+                }
                 conversions.Sort((a, b) => { return a.BrandName.CompareTo(b.BrandName); });
                 // Group up the brand names
                 string groupKeys = "#abcdefghijklmnopqrstuvwxyz";

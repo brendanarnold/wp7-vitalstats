@@ -15,27 +15,33 @@ namespace Expression.Blend.SampleData.SampleDataSource
             List<MockConversionData> conversions = new List<MockConversionData>() {
                     new MockConversionData() {
                         FormattedValue = "10 (L)",
+                        RegionString = "Europe",
                         BrandName = "ASOS",
                     },
                     new MockConversionData() {
                         FormattedValue = "10 (M)",
                         BrandName = "Abercrombie & Fitch",
+                        RegionString = "US",
                     },
                     new MockConversionData() {
                         FormattedValue = "8",
                         BrandName = "Abcdef",
+                        RegionString = "Europe",
                     },
                     new MockConversionData() {
                         FormattedValue = "18 (XXL)",
                         BrandName = "Some long named retailer",
+                        RegionString = "Europe",
                     },
                     new MockConversionData() {
                         FormattedValue = "12",
                         BrandName = "Marks & Spencers",
+                        RegionString = "Europe",
                     },
                     new MockConversionData() {
                         FormattedValue = "12",
                         BrandName = "Jaeger",
+                        RegionString = "Europe",
                     },
                 };
 
@@ -59,6 +65,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
     {
         public string FormattedValue { get; set; }
         public string BrandName { get; set; }
+        public string RegionString { get; set; }
 
     }
 
