@@ -87,5 +87,14 @@ namespace Pocketailor.View
                 NavigationService.GoBack();
             }
         }
+
+        private void RadioButton_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ViewModel.AppViewModel.RegionContainer checkedContainer = (sender as RadioButton).DataContext as ViewModel.AppViewModel.RegionContainer;
+            foreach (ViewModel.AppViewModel.RegionContainer r in App.VM.Regions)
+            {
+                r.Selected = (r == checkedContainer);
+            }
+        }
     }
 }

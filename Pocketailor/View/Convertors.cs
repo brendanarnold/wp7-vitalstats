@@ -109,7 +109,6 @@ namespace Pocketailor.View
             bool b = (bool)value;
             return !b;
         }
-
     }
 
     public class BoolToNotCheckBox : System.Windows.Data.IValueConverter
@@ -126,9 +125,23 @@ namespace Pocketailor.View
             return !b;
         }
 
-        
     }
 
+    public class BoolToCheckBox : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return (bool?)b;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            bool b = (bool)value;
+            return b;
+        }
+
+    }
     
 
     public class SelectedConversionToBGImage : System.Windows.Data.IValueConverter

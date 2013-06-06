@@ -83,11 +83,41 @@ namespace Pocketailor.ViewModel
             this._regions = new ObservableCollection<RegionContainer>(this._regions.OrderBy(r => r.Name));
         }
 
-        public class RegionContainer
+        public class RegionContainer: INotifyPropertyChanged
         {
             public string Name { get; set; }
             public string Id { get; set; }
-            public bool Selected { get; set; }
+            public bool? _selected = null;
+            public bool Selected
+            {
+                get
+                {
+                    return (bool)this._selected;
+                }
+                set
+                {
+                    if (this._selected != value)
+                    {
+                        this._selected = value;
+                        this.NotifyPropertyChanged("Selected");
+                    }
+                }
+            }
+
+            #region INotifyPropertyChanged members
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            public void NotifyPropertyChanged(string propertyName)
+            {
+                if (this.PropertyChanged != null)
+                {
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
+            }
+
+            #endregion
+
         }
 
     }

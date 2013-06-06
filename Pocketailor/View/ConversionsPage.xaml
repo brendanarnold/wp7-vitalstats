@@ -328,7 +328,7 @@
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
-				<Button x:Name="regionChangeBtn" Content="{Binding SelectedRegionString}" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,24,0" VerticalAlignment="Center">
+				<Button x:Name="regionChangeBtn" Content="{Binding SelectedRegionString}" Grid.Column="1" HorizontalAlignment="Right" Margin="24,0" VerticalAlignment="Center">
 					<Button.Resources>
 						<Style x:Key="ButtonStyle1" TargetType="Button">
 							<Setter Property="Template">
