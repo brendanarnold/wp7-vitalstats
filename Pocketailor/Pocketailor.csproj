@@ -147,6 +147,8 @@
     <Compile Include="Ads\LocalAd.xaml.cs">
       <DependentUpon>LocalAd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Globalisation\CustomRegions.cs" />
+    <Compile Include="Globalisation\Helpers.cs" />
     <Compile Include="Model\Adjustments\FeedbackAdjustment.cs" />
     <Compile Include="Model\Adjustments\AdjustmentUtils.cs" />
     <Compile Include="Model\Adjustments\FeedbackAgent.cs" />
@@ -155,7 +157,7 @@
     <Compile Include="Model\Cache.cs" />
     <Compile Include="Model\ConversionsDataContext.cs" />
     <Compile Include="Model\ConversionData.cs" />
-    <Compile Include="Model\Static\RegionTree.cs" />
+    <Compile Include="Globalisation\RegionTree.cs" />
     <Compile Include="Model\Static\RequiredMeasurements.cs" />
     <Compile Include="Model\Static\ConversionIds.cs" />
     <Compile Include="Model\Static\GenderIds.cs" />
@@ -192,7 +194,6 @@
     <Compile Include="Model\Static\BrandIds.cs" />
     <Compile Include="Model\MeasurementType.cs" />
     <Compile Include="Model\Static\MeasurementTemplates.cs" />
-    <Compile Include="Model\Static\RegionIds.cs" />
     <Compile Include="Model\UnitTypes\SingleValueUnit.cs" />
     <Compile Include="Model\UnitTypes\IUnit.cs" />
     <Compile Include="Model\UnitTypes\DoubleValueUnit.cs" />

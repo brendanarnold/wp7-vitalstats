@@ -50,7 +50,7 @@ namespace PocketailorDatabaseCreator.Model
                             csvLine.Brand = (BrandId)Enum.Parse(typeof(BrandId), els[i], true);
                             continue;
                         case "region":
-                            csvLine.Region = (RegionId)Enum.Parse(typeof(RegionId), els[i], true);
+                            csvLine.Region = els[i];
                             continue;
                         case "gender":
                             csvLine.Gender = (GenderId)Enum.Parse(typeof(GenderId), els[i], true);

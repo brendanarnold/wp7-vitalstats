@@ -122,9 +122,6 @@
     <Compile Include="..\Pocketailor\Model\Static\MeasurementTypeIds.cs">
       <Link>Model\Static\MeasurementTypeIds.cs</Link>
     </Compile>
-    <Compile Include="..\Pocketailor\Model\Static\RegionIds.cs">
-      <Link>Model\Static\RegionIds.cs</Link>
-    </Compile>
     <Compile Include="..\Pocketailor\Model\Static\RequiredMeasurements.cs">
       <Link>Model\Static\RequiredMeasurements.cs</Link>
     </Compile>

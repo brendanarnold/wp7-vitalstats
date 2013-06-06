@@ -26,7 +26,7 @@ namespace Pocketailor.View
             base.OnNavigatedFrom(e);
             if (!e.IsNavigationInitiator)
             {
-                RegionId rId = App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault();
+                string rId = App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault();
                 if (PhoneApplicationService.Current.State.ContainsKey("EditRegionPageSelected"))
                 {
                     PhoneApplicationService.Current.State["EditRegionPageSelected"] = rId;
@@ -47,7 +47,7 @@ namespace Pocketailor.View
             {
                 if (PhoneApplicationService.Current.State.ContainsKey("EditRegionPageSelected"))
                 {
-                    RegionId rId = (RegionId)PhoneApplicationService.Current.State["EditRegionPageSelected"];
+                    string rId = (string)PhoneApplicationService.Current.State["EditRegionPageSelected"];
                     PhoneApplicationService.Current.State.Remove("EditRegionPageSelected");
                     foreach (Pocketailor.ViewModel.AppViewModel.RegionContainer r in App.VM.Regions)
                     {
@@ -73,7 +73,7 @@ namespace Pocketailor.View
 
         private void saveApplicationBarIconBtn_Click(object sender, System.EventArgs e)
         {
-            RegionId rId = (App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault());
+            string rId = (App.VM.Regions.Where(x => x.Selected == true).Select(x => x.Id).FirstOrDefault());
             if (rId != App.VM.SelectedRegion)
             {
                 App.VM.SelectedRegion = rId;

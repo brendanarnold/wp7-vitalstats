@@ -14,7 +14,7 @@ namespace PocketailorDatabaseCreator.Model
         }
         public Dictionary<MeasurementId, double> Measurements;
         public BrandId Brand;
-        public RegionId Region;
+        public string Region;
         public ConversionId Conversion;
         public string Size;
         public int SizeId;

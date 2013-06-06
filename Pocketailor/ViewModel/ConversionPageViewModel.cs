@@ -202,14 +202,14 @@ namespace Pocketailor.ViewModel
             // Check we have all the necessary measurements
             if (measuredVals == null) return;
             // Build up by regions
-            RegionId selectedRegion = this.SelectedRegion;
+            string selectedRegion = this.SelectedRegion;
             // Await the resolution of BlacklistedBrands
             BrandId[] blacklistedBrands = App.VM.BlacklistedBrands.ToArray();
             ConversionId conversion = App.VM.SelectedConversionType;
 
             this.GroupedConversions = await TaskEx.Run(() =>
             {
-                RegionId r = selectedRegion;
+                string r = selectedRegion;
                 List<ConversionData> conversions = new List<ConversionData>();
                 IEnumerable<BrandId> collectedBrands = new List<BrandId>();
                 while (true) // I know ...
@@ -225,8 +225,8 @@ namespace Pocketailor.ViewModel
                                          && !collectedBrands.Contains(d.Brand)
                                          select d);
                     collectedBrands = from d in conversions select d.Brand;
-                    if (r == RegionId.Worldwide) break;
-                    r = Static.RegionParents[r];
+                    if (r == Globalisation.CustomRegions.GlobalRegion) break;
+                    r = Globalisation.CustomRegions.RegionParents[r];
                 }
                 conversions.Sort((a, b) => { return a.BrandName.CompareTo(b.BrandName); });
                 // Group up the brand names

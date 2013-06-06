@@ -2,10 +2,12 @@
 SizeLetter	XS	S	M	L
 SizeId	-40	-20	0	20
 UK	2	4,6	8,10	12,14
+Global				
 HongKong	2	4,6	8,10	12,14
 Australia	4	6,8	10,12	14,16
 NewZealand	4	6,8	10,12	14,16
 Germany	28	30,32	34,36	38,40
+Europe	28	30,32	34,36	38,40
 Austria	28	30,32	34,36	38,40
 Switzerland	28	30,32	34,36	38,40
 Netherlands	28	30,32	34,36	38,40

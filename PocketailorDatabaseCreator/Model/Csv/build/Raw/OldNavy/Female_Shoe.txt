@@ -1,3 +1,4 @@
-SIZE	S	S	S	M	M	M	M	L	L	XL
+SizeLetter	S	S	S	M	M	M	M	L	L	XL
 SizeId	-100	-80	-60	-40	-20	0	20	40	60	80
 US	5	6	6½	7	7½	8	8½	9	10	11
+Global										

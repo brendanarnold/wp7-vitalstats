@@ -1,5 +1,6 @@
 #Unit:Inch
 US	XS	S	M	L	XL
+Global	XS	S	M	L	XL
 SizeId	-40	-20	0	20	40
 UK	XS	S	M	L	XL
 Eu	XS	S	M	L	XL

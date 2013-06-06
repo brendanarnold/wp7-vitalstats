@@ -1,4 +1,5 @@
 UK	XS	S	M	L	XL
+Global	XS	S	M	L	XL
 SizeId	-40	-20	0	20	40
 Italy	XS	S	M	L	XL
 France	XS	S	M	L	XL

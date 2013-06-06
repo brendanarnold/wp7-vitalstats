@@ -1,9 +1,5 @@
 #Unit:Inch
-US	XS	S	M	L	
-SizeId	-40	-20	0	20	40
+US	XS	S	M	L
+SizeId	-40	-20	0	20
 Height	57-61	60-67	61-71	62-71
-Weight 80-110	90-135	115-165	155-200
-				
-				
-				
-
+Weight	80-110	90-135	115-165	155-200

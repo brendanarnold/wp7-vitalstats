@@ -26,7 +26,7 @@ namespace Pocketailor.ViewModel
             } 
         }
 
-        public void LoadSelectedConversionData(GenderId gender, ConversionId conversion, RegionId region, BrandId brand)
+        public void LoadSelectedConversionData(GenderId gender, ConversionId conversion, string region, BrandId brand)
         {
             this.SelectedConversionData = this.conversiondsDB.ConversionData.Where(c => c.Gender == gender
                 && c.Conversion == conversion

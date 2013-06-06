@@ -1,5 +1,5 @@
 US	S	M	L	XL	XXL
-UK	S	M	L	XL	XXL
+Global	S	M	L	XL	XXL
 SizeId	-40	-20	0	20	40
 Chest	94 - 98	99 - 103	104 - 108	109 - 113	114 - 118
 

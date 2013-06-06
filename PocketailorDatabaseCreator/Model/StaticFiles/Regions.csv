@@ -1,123 +1,258 @@
-ID	Include	PartOf	RegionId	Name
+AA	AA	Global
 
-1	y	Worldwide	Worldwide	Worldwide
-2	y	Worldwide	Europe	Europe
-3	y	Worldwide	NorthAmerica	North America
-4	y	Worldwide	Australasia	Australasia
-5	y	Worldwide	Asia	Asia
-6	y	Worldwide	SouthAmerica	South America
-7	y	Worldwide	Africa	Africa
+AA	XA	Europe
+AA	XB	North America
+AA	XC	South America
+AA	XD	Asia
+AA	XE	Australasia
+AA	XF	Africa
 
-8	y	UK	Ireland	Ireland
-9	y	Europe	UK	UK
-10	y	Europe	France	France
-11	y	Europe	Italy	Italy
-12	y	Europe	Germany	Germany
-13	y	Europe	Denmark	Denmark
-14	y	Europe	Sweden	Sweden
-15	y	Europe	Norway	Norway
-16	y	Europe	Finland	Finland
-17	y	Europe	Spain	Spain
-18	y	Europe	Austria	Austria
-19	y	Europe	Switzerland	Switzerland
-20	y	Europe	Netherlands	Netherlands
-21	y	Europe	Belgium	Belgium
-22	y	Europe	Portugal	Portugal
-23	y	Europe	Russia	Russia
-25	y	Europe	Iceland	Iceland
-26	y	Europe	Poland	Poland
-27	y	Europe	Latvia	Latvia
-28	y	Europe	Slovakia	Slovakia
-29	y	Europe	CzechRepublic	Czech Republic
-30	y	Europe	Croatia	Croatia
-31	y	Europe	Slovenia	Slovenia
-32	y	Europe	Greece	Greece
-33	y	Europe	Turkey	Turkey
-34	y	Europe	Bulgaria	Bulgaria
-35	y	Europe	Romania	Romania
-36	y	Europe	Hungary	Hungary
-37	y	Europe	Lithuania	Lithuania
-38	y	Europe	Liechtenstein	Liechtenstein
-39	y	Europe	Luxembourg	Luxembourg
-40	y	Europe	Albania	Albania
-41	y	Europe	Balarus	Belarus
-42	y	Europe	Estonia	Estonia
-43	y	Europe	FaroeIslands	Islands
-44	y	Europe	Serbia	Serbia
-45	y	Europe	Ukraine	Ukraine
-		
-46	y	NorthAmerica	US	United States
-47	y	NorthAmerica	Canada	Canada
-
-48	y	SouthAmerica	Mexico	Mexico
-49	y	SouthAmerica	Brazil	Brazil
-50	y	SouthAmerica	Belize	Belize
-51	y	SouthAmerica	Jamaica	Jamaica
-52	y	SouthAmerica	Argentina	Argentina
-53	y	SouthAmerica	Bolivia	Bolivia
-54	y	SouthAmerica	Chile	Chile
-55	y	SouthAmerica	Colombia	Colombia
-56	y	SouthAmerica	CostaRica	Rica
-57	y	SouthAmerica	DominicanRepublic	Republic
-58	y	SouthAmerica	Ecuador	Ecuador
-59	y	SouthAmerica	ElSalvador	Salvador
-60	y	SouthAmerica	Guatemala	Guatemala
-61	y	SouthAmerica	Honduras	Honduras
-62	y	SouthAmerica	Nicaragua	Nicaragua
-63	y	SouthAmerica	Panama	Panama
-64	y	SouthAmerica	Praguay	Paraguay
-65	y	SouthAmerica	Peru	Peru
-66	y	SouthAmerica	PuertoRico	Rico
-67	y	SouthAmerica	Uraguay	Uraguay
-68	y	SouthAmerica	Venezuela	Venezuela
-			
-
-69	y	Africa	Zimbabwe	Zimbabwe
-70	y	Africa	SouthAfrica	South Africa
-71	y	Africa	Egypt	Egypt
-72	y	Africa	Tunisia	Tunisia
-73	y	Africa	Morocco	Morocco
-74	y	Africa	Algeria	Algeria
-75	y	Africa	Libya	Libya
-76	y	Africa	Kenya	Kenya
-		
-77	y	Asia	Japan	Japan
-78	y	Asia	China	China
-79	y	Asia	Korea	Korea
-80	y	Asia	HongKong	Hong Kong
-81	y	Asia	Bahrain	Bahrain
-82	y	Asia	Iraq	Iraq
-83	y	Asia	Jordan	Jordan
-84	y	Asia	Kuwait	Kuwait
-85	y	Asia	Lebanon	Lebanon
-86	y	Asia	Oman	Oman
-87	y	Asia	Qatar	Qatar
-88	y	Asia	SaudiArabia	Arabia
-89	y	Asia	Syria	Syria
-90	y	Asia	UnitedArabEmirates	Arab Emirates
-91	y	Asia	Yemen	Yemen
-92	y	Asia	Armenia	Armenia
-93	y	Asia	Azerbaijan	Azerbaijan
-94	y	Asia	Macau	Macau
-95	y	Asia	Singapore	Singapore
-96	y	Asia	Taiwan	Taiwan
-97	y	Asia	Maldives	Maldives
-98	y	Asia	Philippines	Philippines
-99	y	Asia	TrinidadTobago	Trinidad and Tobago
-100	y	Asia	Iran	Iran
-101	y	Asia	Georgia	Georgia
-102	y	Asia	India	India
-103	y	Asia	Isreal	Isreal
-104	y	Asia	Kazakhstan	Kazakhstan
-105	y	Asia	Brunei	Brunei
-106	y	Asia	Malaysia	Malaysia
-107	y	Asia	Mongolia	Mongolia
-108	y	Asia	Thailand	Thailand
-109	y	Asia	Pakistan	Pakistan
-110	y	Asia	Uzbekistan	Uzbekistan
-111	y	Asia	Vietnam	Vietnam
-112	y	Asia	SriLanka	Sri Lanka
-113	y	Asia	Bangladesh	Bangladesh
-		
-114	y	Australasia	Australia	Australia
-115	y	Australasia	NewZealand	New Zealand
+FR	AD	Andorra
+XD	AE	United Arab Emirates
+XD	AF	Afghanistan
+XC	AG	Antigua and Barbuda
+XC	AI	Anguilla
+XA	AL	Albania
+XD	AM	Armenia
+XF	AO	Angola
+XA	AQ	Antarctica
+XC	AR	Argentina
+XE	AS	American Samoa
+XA	AT	Austria
+XE	AU	Australia
+XC	AW	Aruba
+FI	AX	Åland Islands
+XD	AZ	Azerbaijan
+XA	BA	Bosnia and Herzegovina
+XC	BB	Barbados
+XD	BD	Bangladesh
+XA	BE	Belgium
+XF	BF	Burkina Faso
+XA	BG	Bulgaria
+XD	BH	Bahrain
+XF	BI	Burundi
+XF	BJ	Benin
+XC	BL	Saint Barthélemy
+XC	BM	Bermuda
+XD	BN	Brunei Darussalam
+XC	BO	Bolivia, Plurinational State of
+XC	BQ	Bonaire, Sint Eustatius and Saba
+XC	BR	Brazil
+XC	BS	Bahamas
+XD	BT	Bhutan
+XA	BV	Bouvet Island
+XF	BW	Botswana
+XA	BY	Belarus
+XC	BZ	Belize
+XB	CA	Canada
+AU	CC	Cocos (Keeling) Islands
+XF	CD	Congo, the Democratic Republic of the
+XF	CF	Central African Republic
+XF	CG	Congo
+XA	CH	Switzerland
+XF	CI	Côte d'Ivoire
+NZ	CK	Cook Islands
+XC	CL	Chile
+XF	CM	Cameroon
+XD	CN	China
+XC	CO	Colombia
+XC	CR	Costa Rica
+XC	CU	Cuba
+XF	CV	Cape Verde
+XC	CW	Curaçao
+AU	CX	Christmas Island
+XA	CY	Cyprus
+XA	CZ	Czech Republic
+XA	DE	Germany
+XF	DJ	Djibouti
+XA	DK	Denmark
+XC	DM	Dominica
+XC	DO	Dominican Republic
+XF	DZ	Algeria
+XC	EC	Ecuador
+XA	EE	Estonia
+XF	EG	Egypt
+XF	EH	Western Sahara
+XF	ER	Eritrea
+XA	ES	Spain
+XF	ET	Ethiopia
+XA	FI	Finland
+XE	FJ	Fiji
+GB	FK	Falkland Islands (Malvinas)
+XE	FM	Micronesia, Federated States of
+XA	FO	Faroe Islands
+XA	FR	France
+XF	GA	Gabon
+XA	GB	United Kingdom
+XC	GD	Grenada
+XD	GE	Georgia
+FR	GF	French Guiana
+GB	GG	Guernsey
+XF	GH	Ghana
+GB	GI	Gibraltar
+DK	GL	Greenland
+XF	GM	Gambia
+XE	GN	Guinea
+XC	GP	Guadeloupe
+XE	GQ	Equatorial Guinea
+XA	GR	Greece
+GB	GS	South Georgia and the South Sandwich Islands
+XC	GT	Guatemala
+XE	GU	Guam
+XE	GW	Guinea-Bissau
+FR	GY	Guyana
+XD	HK	Hong Kong
+XE	HM	Heard Island and McDonald Islands
+XC	HN	Honduras
+XA	HR	Croatia
+XC	HT	Haiti
+XA	HU	Hungary
+XD	ID	Indonesia
+GB	IE	Ireland
+XD	IL	Israel
+GB	IM	Isle of Man
+XD	IN	India
+GB	IO	British Indian Ocean Territory
+XD	IQ	Iraq
+XD	IR	Iran, Islamic Republic of
+XA	IS	Iceland
+XA	IT	Italy
+GB	JE	Jersey
+XC	JM	Jamaica
+XD	JO	Jordan
+XD	JP	Japan
+XF	KE	Kenya
+XD	KG	Kyrgyzstan
+XD	KH	Cambodia
+XE	KI	Kiribati
+XF	KM	Comoros
+XC	KN	Saint Kitts and Nevis
+XD	KP	Korea, Democratic People's Republic of
+XD	KR	Korea, Republic of
+XD	KW	Kuwait
+XC	KY	Cayman Islands
+XD	KZ	Kazakhstan
+XC	LA	Lao People's Democratic Republic
+XD	LB	Lebanon
+XC	LC	Saint Lucia
+XA	LI	Liechtenstein
+XD	LK	Sri Lanka
+XF	LR	Liberia
+XF	LS	Lesotho
+XA	LT	Lithuania
+XA	LU	Luxembourg
+XA	LV	Latvia
+XF	LY	Libya
+XF	MA	Morocco
+FR	MC	Monaco
+XA	MD	Moldova, Republic of
+XA	ME	Montenegro
+XC	MF	Saint Martin (French part)
+XF	MG	Madagascar
+XE	MH	Marshall Islands
+XA	MK	Macedonia, the former Yugoslav Republic of
+XF	ML	Mali
+XD	MM	Myanmar
+XD	MN	Mongolia
+XD	MO	Macao
+XD	MP	Northern Mariana Islands
+XC	MQ	Martinique
+XF	MR	Mauritania
+XC	MS	Montserrat
+XA	MT	Malta
+XD	MU	Mauritius
+XD	MV	Maldives
+XF	MW	Malawi
+XC	MX	Mexico
+XD	MY	Malaysia
+XF	MZ	Mozambique
+XF	NA	Namibia
+XE	NC	New Caledonia
+XF	NE	Niger
+XE	NF	Norfolk Island
+XF	NG	Nigeria
+XC	NI	Nicaragua
+XA	NL	Netherlands
+XA	NO	Norway
+XD	NP	Nepal
+XE	NR	Nauru
+XE	NU	Niue
+XE	NZ	New Zealand
+XD	OM	Oman
+XC	PA	Panama
+XC	PE	Peru
+XE	PF	French Polynesia
+XE	PG	Papua New Guinea
+XD	PH	Philippines
+XD	PK	Pakistan
+XA	PL	Poland
+CA	PM	Saint Pierre and Miquelon
+XE	PN	Pitcairn
+XC	PR	Puerto Rico
+XD	PS	Palestine, State of
+XA	PT	Portugal
+XD	PW	Palau
+XC	PY	Paraguay
+XD	QA	Qatar
+XD	RE	Réunion
+XA	RO	Romania
+XA	RS	Serbia
+XA	RU	Russian Federation
+XF	RW	Rwanda
+XD	SA	Saudi Arabia
+XE	SB	Solomon Islands
+XF	SC	Seychelles
+XF	SD	Sudan
+XA	SE	Sweden
+XD	SG	Singapore
+GB	SH	Saint Helena, Ascension and Tristan da Cunha
+XA	SI	Slovenia
+NO	SJ	Svalbard and Jan Mayen
+XA	SK	Slovakia
+XF	SL	Sierra Leone
+IT	SM	San Marino
+XF	SN	Senegal
+XF	SO	Somalia
+XC	SR	Suriname
+XF	SS	South Sudan
+XF	ST	Sao Tome and Principe
+XC	SV	El Salvador
+XC	SX	Sint Maarten (Dutch part)
+XD	SY	Syrian Arab Republic
+XF	SZ	Swaziland
+XC	TC	Turks and Caicos Islands
+XF	TD	Chad
+FR	TF	French Southern Territories
+XF	TG	Togo
+XD	TH	Thailand
+XD	TJ	Tajikistan
+NZ	TK	Tokelau
+XE	TL	Timor-Leste
+XD	TM	Turkmenistan
+XF	TN	Tunisia
+XE	TO	Tonga
+XA	TR	Turkey
+XC	TT	Trinidad and Tobago
+XE	TV	Tuvalu
+XD	TW	Taiwan, Province of China
+XF	TZ	Tanzania, United Republic of
+XA	UA	Ukraine
+XF	UG	Uganda
+XB	UM	United States Minor Outlying Islands
+XB	US	United States
+XC	UY	Uruguay
+XD	UZ	Uzbekistan
+IT	VA	Holy See (Vatican City State)
+XC	VC	Saint Vincent and the Grenadines
+XC	VE	Venezuela, Bolivarian Republic of
+XC	VG	Virgin Islands, British
+XC	VI	Virgin Islands, U.S.
+XD	VN	Viet Nam
+XE	VU	Vanuatu
+XE	WF	Wallis and Futuna
+XE	WS	Samoa
+XD	YE	Yemen
+XF	YT	Mayotte
+XF	ZA	South Africa
+XF	ZM	Zambia
+XF	ZW	Zimbabwe

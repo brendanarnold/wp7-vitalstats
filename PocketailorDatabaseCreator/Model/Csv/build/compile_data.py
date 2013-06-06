@@ -2,6 +2,7 @@
 # Above is necessary for the half substitution
 
 
+from iso3166 import countries
 from python_constants import *
 import os
 
@@ -45,20 +46,6 @@ def main():
         if brand not in [b.lower() for b in BRAND_IDS]:
             print "WARNING: No brand in BrandId called: " + brand
             continue
-        # See if countries are defined
-        countries = None
-        if 'Countries.txt' in in_fns:
-            in_fns.remove('Countries.txt')
-            with open(os.path.join(in_dir, 'Countries.txt'), 'r') as fh:
-                countries = []
-                for line in fh:
-                    c = line.strip().lower()
-                    if c == '':
-                        continue
-                    if c not in [r.lower() for r in REGION_IDS]:
-                        print "Skipping country: " + c)
-                    if c not in countries:
-                        countries.append(line.strip().lower())
         # Create a list of filenames and auxialliary filenames
         fns = []
         aux_fns = []
@@ -83,13 +70,14 @@ def main():
             # Write the data for each region in the file  n.b. files with a
             # region in the filename also have the region in the file in the
             # usual place so no need to extract from the filename
-            regions = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in REGION_IDS]]
+            # regions = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in REGION_IDS]]
+            regions = [r for r in data.keys() if (get_two_letter_iso_code(r) is not None)]
             if not len(regions):
                 print "WARNING: No region data for: " + in_dir + fn
                 continue
             measurements = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in MEASUREMENT_IDS]]
             if not len(measurements):
-                print "WARNING: No measurement data for: " + in_dir + fn
+                print "WARNING: No measurement data for: " + os.path.join(in_dir,fn)
                 continue
             for region in regions:
                 write_csv_output(data, format_dict[conversion], build_fns[conversion], gender, region, brand)
@@ -106,7 +94,7 @@ def combine_aux_data(data, aux_data):
     num_data_els = len(data['sizeid'])
     num_aux_data_els = len(aux_data['sizeid'])
     for dk in data.keys():
-        if dk in [r.lower() for r in REGION_IDS]:
+        if get_two_letter_iso_code(dk) is not None:
             all_sizes = []
             for aux_sz in aux_data['aux_size']:
                 all_sizes = all_sizes + [ sz + ' (%s)' % aux_sz for sz in data[dk]]
@@ -154,7 +142,9 @@ def parse_fn(fn):
         raise Exception("Gender not recognised: " + str(gender))
     if conversion not in [c.lower() for c in CONVERSION_IDS]:
         raise Exception("No conversion in ConversionIds called: " + str(conversion))
-    if (aux != None) and (aux not in REGION_IDS + ['', 'InternationalConversions', 'InsideLeg', 'Height']):
+    if (aux != None) \
+        and (get_two_letter_iso_code(correct_common_header_typos(aux.lower())) is None) \
+        and (aux not in ['', 'InternationalConversions', 'InsideLeg', 'Height']):
         raise Exception("No extra filefeature called: " + str(aux))
     return (gender, conversion, aux)
 
@@ -188,7 +178,7 @@ def write_csv_output(data, fmt, fn, gender, region, brand):
             out_fh.write('\t'.join(row) + '\n')
 
 
-def read_csv_input(fn, is_aux, countries):
+def read_csv_input(fn, is_aux):
     '''Read the data into a dictionary'''
     # print fn
     data = {}
@@ -212,18 +202,7 @@ def read_csv_input(fn, is_aux, countries):
                 continue                        
             header = els[0].lower().strip()
             # Common header replacements
-            if header == 'sizeletters':
-                header = 'sizeletter'
-            if header == 'hip':
-                header = 'hips'
-            if header == 'bust':
-                header = 'chest'
-            if header == 'eu':
-                header = 'europe'
-            if header == 'usa':
-                header = 'us'
-            if header == 'aus':
-                header = 'australia'
+            header = correct_common_header_typos(header)
             # Common element replacements
             els = [el.strip() for el in els[1:]]
             els = [el.replace("cm", "").strip() for el in els]
@@ -254,18 +233,21 @@ def read_csv_input(fn, is_aux, countries):
                     if el.strip() == '':
                         buff.append(el.strip())
                     elif is_metric:
-                        buff.append("%.4f" % (float(el) * 0.01))
+                        if header != 'weight':
+                            buff.append("%.4f" % (float(el) * 0.01))
+                        else:
+                            buff.append(el)
                     else:
-                        buff.append("%.4f" % (float(el) * 2.54 * 0.01))
+                        if header != 'weight':
+                            buff.append("%.4f" % (float(el) * 2.54 * 0.01))
+                        else:
+                            buff.append("%.4f" % (float(el) * 0.45))
                 els = buff
-            # If is the general placeholder, sub in the country names
-            if header == 'general':
-                if countries is None:
-                    raise Exception("Expected a Countries.txt file but none found")
-                for country in countries:
-                    data[country] = els
             # Finally raise a warning if a weird header is found 
-            elif header in OK_HEADERS:
+            if header in OK_HEADERS:
+                data[header] = els
+            elif get_two_letter_iso_code(header) is not None:
+                header = get_two_letter_iso_code(header)
                 data[header] = els
             else:
                 raise Exception("WARNING: Unrecognised header: '" + header + "' in file: " + fn)
@@ -283,7 +265,7 @@ def read_csv_input(fn, is_aux, countries):
     if is_aux:
         data['aux_size'] = data['sizeletter']
     else:
-        regions = [x.lower() for x in data.keys() if x.lower() in [y.lower() for y in REGION_IDS]]
+        regions = [r for r in data.keys() if (get_two_letter_iso_code(r) is not None)]
         if not regions:
             raise Exception('WARNING: No region data for file: ' + fn)
         region_data = {}
@@ -309,6 +291,56 @@ def read_csv_input(fn, is_aux, countries):
     # All done
     return data
 
+def get_two_letter_iso_code(s):
+    s = s.lower()
+    try:
+        tmp = countries.get(s)
+        return tmp.alpha2
+    except:
+        pass
+    if s == 'global':
+        return "AA"
+    if s in ['europe', 'eu']:
+        return "XA"
+    if s == 'northamerica':
+        return 'XB'
+    if s == 'southamerica':
+        return 'XC'
+    if s == 'asia':
+        return 'XD'
+    if s == 'australasia':
+        return 'XE'
+    if s == 'africa':
+        return 'XF'
+    if s.upper() in ['AA', 'XA', 'XB', 'XC', 'XD', 'XE', 'XF']:
+        return s
+    return None
+    
+    
+def correct_common_header_typos(s):
+    if s == 'sizeletters':
+        return 'sizeletter'
+    if s == 'hip':
+        return 'hips'
+    if s == 'bust':
+        return 'chest'
+    if s == 'uk':
+        return 'gb'
+    if s == 'korea':
+        return 'kr'
+    if s == 'hongkong':
+        return 'hk'
+    if s == 'isreal':
+        return 'israel'
+    if s == 'newzealand':
+        return 'nz'
+    if s == 'southafrica':
+        return 'za'
+    if s == 'russia':
+        return 'ru'
+    return s
+            
+    
 
 if __name__ == '__main__':
     main()

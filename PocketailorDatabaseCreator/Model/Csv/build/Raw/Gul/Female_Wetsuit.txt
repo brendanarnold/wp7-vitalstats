@@ -1,0 +1,7 @@
+UK	8	10	10T	12	12T	Dec-14	14	16	
+SizeId	-80	-60	-40	-20	0	20	40	60	80
+Global	8	10	10T	12	12T	Dec-14	14	16	
+Height	160 - 165cm 	165 - 167cm 	167 - 170cm 	160 - 170cm 	170 - 173cm 	167 - 170cm 	170 - 173cm 	173 - 176cm 	
+Waist	56 - 61cm	61 - 66cm	61 - 66cm 	66 - 71cm 	66cm - 71cm 	66 - 71cm 	71 - 76cm 	76cm - 81cm 	
+Chest	76 - 81cm 	81 - 86cm 	81 - 86cm 	86cm - 91cm 	86 - 91cm 	86 - 91cm 	91 - 97cm 	97 - 102cm 	
+Hips	81 - 86cm 	86 - 91cm 	86 - 91cm 	91 - 97cm 	91 - 97cm 	97 - 102cm 	97 - 102cm 	102 - 107cm	

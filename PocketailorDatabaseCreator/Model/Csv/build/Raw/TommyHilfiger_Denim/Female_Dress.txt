@@ -2,6 +2,8 @@ SizeLetter	XS	S	M	L	XL
 SizeId	-40	-20	0	20	40
 US	4	6	8	10	12
 Austria	34	36	38	40	42
+Eu	34	36	38	40	42
+Global					
 Germany	34	36	38	40	42
 Spain	34	36	38	40	42
 Netherlands	34	36	38	40	42

@@ -49,7 +49,7 @@ namespace PocketailorDatabaseCreator
                     {MeasurementId.Waist, new List<double>() {1, 2, 3, 4, 5 }},
                 },
                 Conversion = ConversionId.DressSize,
-                Region = RegionId.UK,
+                Region = "GB",
                 Brand = BrandId.MarksSpencer,
                 Gender = GenderId.Female,
                 Sizes = new List<string>() { "XS", "S", "M", "L", "XL" },

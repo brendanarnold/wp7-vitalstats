@@ -1,5 +1,5 @@
 US	S	M	L/Unisize XS	XL/Unisize S	XXL/Unisize M
-UK	S	M	L/Unisize XS	XL/Unisize S	XXL/Unisize M
+Global	S	M	L/Unisize XS	XL/Unisize S	XXL/Unisize M
 SizeId	-40	-20	0	20	40
 Chest	81.3-85.1	86.4-90.2	91.4-95.3	96.5-100.3	101.6-108
 Waist	61-63.5	66-68.6	71.1-73.7	76.2-78.7	81.3-83.8

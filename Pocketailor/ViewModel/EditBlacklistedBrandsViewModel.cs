@@ -62,12 +62,13 @@ namespace Pocketailor.ViewModel
 
         public void LoadBrandContainers()
         {
-            this._brands = new ObservableCollection<BrandContainer>();
+            List<BrandContainer> brands = new List<BrandContainer>();
 
             foreach (BrandId b in typeof(BrandId).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(BrandId))).Cast<BrandId>())
             {
-                this._brands.Add(new BrandContainer { Name = Lookup.Brand[b], Id = b, Selected = !this.BlacklistedBrands.Contains(b) });
+                brands.Add(new BrandContainer { Name = Lookup.Brand[b], Id = b, Selected = !this.BlacklistedBrands.Contains(b) });
             }
+            this._brands = new ObservableCollection<BrandContainer>(brands.OrderBy(b => b.Name));
         }
 
         public class BrandContainer

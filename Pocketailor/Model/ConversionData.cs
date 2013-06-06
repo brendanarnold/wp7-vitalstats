@@ -103,7 +103,7 @@ namespace Pocketailor.Model
         }
 
         [Column]
-        public RegionId Region { get; set; }
+        public string Region { get; set; }
 
         [Column]
         public BrandId Brand { get; set; }
@@ -198,7 +198,7 @@ namespace Pocketailor.Model
         {
             get
             {
-                return Lookup.Regions[this.Region];
+                return Globalisation.Helpers.GetRegionNameFromIso(this.Region);
             }
         }
 

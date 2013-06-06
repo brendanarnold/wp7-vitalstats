@@ -4,5 +4,5 @@ EU	34	36	38	40	42	44	46
 US	2	4	6	8	10	12	14
 AUs	8	10	12	14	16	18	20
 NewZealand	8	10	12	14	16	18	20
-Bust	78cm	83cm	88cm	93cm    98cm	103cm	108cm
+Bust	78cm	83cm	88cm	93cm	98cm	103cm	108cm
 Waist	62cm	67cm	72cm	77cm	82cm	87cm	92cm

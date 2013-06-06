@@ -1,4 +1,5 @@
 UK	XS	S	M	L	XL	XXL
+Global	XS	S	M	L	XL	XXL
 SizeId	-60	-40	-20	0	20	40
 Chest	94cm	97cm	102cm	107cm	112cm	117cm
 Neck	38.5cm	39cm	41cm	42cm	43cm	44cm

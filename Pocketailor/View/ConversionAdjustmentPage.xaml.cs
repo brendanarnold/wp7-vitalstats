@@ -24,7 +24,7 @@ namespace Pocketailor.View
         public ConversionId ConversionId { get; set; }
         public BrandId BrandId { get; set; }
         public GenderId GenderId { get; set; }
-        public RegionId RegionId { get; set; }
+        public string RegionId { get; set; }
         public int ProfileId { get; set; }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -56,7 +56,7 @@ namespace Pocketailor.View
             this.ProfileId = int.Parse(NavigationContext.QueryString["ProfileId"]);
             this.GenderId = (GenderId)Enum.Parse(typeof(GenderId), NavigationContext.QueryString["GenderId"], true);
             this.ConversionId = (ConversionId)Enum.Parse(typeof(ConversionId), NavigationContext.QueryString["ConversionId"], true);
-            this.RegionId = (RegionId)Enum.Parse(typeof(RegionId), NavigationContext.QueryString["RegionId"], true);
+            this.RegionId = NavigationContext.QueryString["RegionId"];
             this.BrandId = (BrandId)Enum.Parse(typeof(BrandId), NavigationContext.QueryString["BrandId"], true);
         }
 
@@ -67,7 +67,7 @@ namespace Pocketailor.View
                 MessageBoxResult res = MessageBox.Show("You have made an adjustment but have not saved it."
                     + Environment.NewLine
                     + Environment.NewLine
-                    + "To discard the changes hit 'OK'. To save the adjustment hit cancel and then the save icon at the bottom", "Discard adjustment?", MessageBoxButton.OKCancel);
+                    + "To save the changes hit 'cancel' and then the save icon at the bottom. To discard the changes hit 'ok", "Discard adjustment?", MessageBoxButton.OKCancel);
                 if (res != MessageBoxResult.OK)
                 {
                     e.Cancel = true;

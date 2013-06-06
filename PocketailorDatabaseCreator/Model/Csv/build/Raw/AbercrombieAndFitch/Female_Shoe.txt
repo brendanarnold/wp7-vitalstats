@@ -1,6 +1,7 @@
 SizeLetter	XS	S	M	L
 SizeId	-40	-20	0	20
 US	6,7	7,8	8,9	9,10
+Global				
 Europe	38	39,40	41	42
 UK	5	6	7	8
 JAPAN	24.8	25.6	26.4	27.2

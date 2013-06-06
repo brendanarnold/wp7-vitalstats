@@ -46,7 +46,7 @@ namespace Pocketailor
         public static string PAID_APP_GUID = "";
         public static string[] VALUE_DELIMITERS = { "|" };
         public static string FORMATTED_NAME_SEPARATOR = "/";
-        public static RegionId DEFAULT_REGION = RegionId.Worldwide;
+        public static string DEFAULT_REGION = Globalisation.CustomRegions.GlobalRegion;
         public static string CONVERSIONS_DB_CONNECTION_STRING = "Data Source = 'appdata:/PocketailorConversions.sdf'; File Mode = read only;";
         public static string APP_DB_CONNECTION_STRING = "Data Source=isostore:/Pocketailor.sdf";
         public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";

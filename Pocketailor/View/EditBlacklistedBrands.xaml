@@ -94,13 +94,17 @@
   <Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
     <Grid.RowDefinitions>
 		<RowDefinition Height="Auto" />
+		<RowDefinition Height="Auto" />
 		<RowDefinition Height="*" />
 	</Grid.RowDefinitions>
       <TextBlock
 		Grid.Row="0" 
-		TextWrapping="Wrap" Text="select preferred brands" Margin="36,15,36,50" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
-      <ListBox
-		Grid.Row="1" 
+		TextWrapping="Wrap" Text="select preferred brands" Margin="36,15,36,0" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
+	  <TextBlock
+		Grid.Row="1"
+		TextWrapping="Wrap" Text="Uncheck any brands that you do not want to appear in the main list." Margin="36,0,36,10" Foreground="{StaticResource PageTxtColor}" FontSize="21.333" />
+	  <ListBox
+		Grid.Row="2" 
 		BorderThickness="24,0,12,0" ItemsSource="{Binding Brands}" ItemTemplate="{StaticResource DataTemplate1}" Style="{StaticResource ListBoxStyle1}">
       </ListBox>
     

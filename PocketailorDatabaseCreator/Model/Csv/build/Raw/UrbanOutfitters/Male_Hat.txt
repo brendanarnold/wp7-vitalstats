@@ -1,4 +1,5 @@
 #Unit:Inches
 UK	S,M	L,XL
+Global	S,M	L,XL
 SizeId	-20	0
 Head	22.5	23.75

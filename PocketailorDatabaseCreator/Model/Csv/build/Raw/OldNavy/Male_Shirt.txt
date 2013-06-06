@@ -1,5 +1,6 @@
 #Unit:inch
 US	S (Reg. Sleeve)	M (Reg. Sleeve)	L (Reg. Sleeve)	XL (Reg. Sleeve)	XXL (Reg. Sleeve)	XXXL (Reg. Sleeve)	S (Tall Sleeve)	M (Tall Sleeve)	L (Tall Sleeve)	XL (Tall Sleeve)	XXL (Tall Sleeve)	XXXL (Tall Sleeve)
+Global	S (Reg. Sleeve)	M (Reg. Sleeve)	L (Reg. Sleeve)	XL (Reg. Sleeve)	XXL (Reg. Sleeve)	XXXL (Reg. Sleeve)	S (Tall Sleeve)	M (Tall Sleeve)	L (Tall Sleeve)	XL (Tall Sleeve)	XXL (Tall Sleeve)	XXXL (Tall Sleeve)
 SizeId	-120	-100	-80	-60	-40	-20	0	20	40	60	80	100
 NECK	14-14½	15-15½	16-16½	17-17½	18-18½	19-19½	14-14½	15-15½	16-16½	17-17½	18-18½	19-19½
 SLEEVE	32½-33	33½-34	34½-35	35½-36	36½-37	37½-38	33½-34	34½-35	35½-36	36½-37	37½-38	38½-39

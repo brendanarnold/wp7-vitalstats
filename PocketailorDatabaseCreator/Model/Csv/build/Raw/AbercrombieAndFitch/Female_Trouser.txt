@@ -1,6 +1,7 @@
 SizeLetter	XS	S	M	L
 SizeId	-40	-20	0	20
 US	000-0	2-4	6-8	10-12
+Global				
 Waist	58-63	66-68	71-73	76-79
 France	34,36	38	40	42,44
 ITALY	38,40	42	44	46,48

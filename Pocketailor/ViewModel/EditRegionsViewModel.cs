@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -12,16 +13,22 @@ namespace Pocketailor.ViewModel
     {
 
 
-        private RegionId? _selectedRegion;
-        public RegionId SelectedRegion
+        private string _selectedRegion;
+        public string SelectedRegion
         {
             get
             {
                 if (this._selectedRegion == null)
                 {
-                    this._selectedRegion = App.Settings.GetValueOrDefault<RegionId>("SelectedRegion", AppConstants.DEFAULT_REGION);
+                    // Set if it exists already, otherwise try to get from the environment, otherwise revert to the default
+                    this._selectedRegion = App.Settings.GetValueOrDefault<string>("SelectedRegion", null);
+                    if (this._selectedRegion == null)
+                    {
+                        string[] els = CultureInfo.CurrentCulture.Name.Split(new char[] { '-' });
+                        this._selectedRegion = (els.Length == 2) ? els[1] : AppConstants.DEFAULT_REGION;
+                    }
                 }
-                return  (RegionId)this._selectedRegion;
+                return  (string)this._selectedRegion;
             }
             set 
             {
@@ -42,7 +49,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                return Lookup.Regions[this.SelectedRegion];
+                return Globalisation.Helpers.GetRegionNameFromIso(this.SelectedRegion);
             }
         }
         
@@ -68,17 +75,18 @@ namespace Pocketailor.ViewModel
         public void LoadRegionContainers()
         {
             this._regions = new ObservableCollection<RegionContainer>();
-            RegionId selectedRegion = this.SelectedRegion;
-            foreach (RegionId r in typeof(RegionId).GetFields().Where(x => x.IsLiteral).Select(x => x.GetValue(typeof(RegionId))).Cast<RegionId>())
+            string selectedRegion = this.SelectedRegion;
+            foreach (string r in Globalisation.CustomRegions.RegionParents.Keys)
             {
-                this._regions.Add(new RegionContainer { Name = Lookup.Regions[r], Id = r, Selected = (selectedRegion == r) });
+                this._regions.Add(new RegionContainer { Name = Globalisation.Helpers.GetRegionNameFromIso(r), Id = r, Selected = (selectedRegion == r) });
             }
+            this._regions = new ObservableCollection<RegionContainer>(this._regions.OrderBy(r => r.Name));
         }
 
         public class RegionContainer
         {
             public string Name { get; set; }
-            public RegionId Id { get; set; }
+            public string Id { get; set; }
             public bool Selected { get; set; }
         }
 

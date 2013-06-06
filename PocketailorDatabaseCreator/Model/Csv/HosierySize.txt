@@ -1,217 +1,275 @@
 sizeid	brand	region	gender	waist	hips	height	insideleg	size
--100	axparis	europe	female	0.6300	0.8850			36
--80	axparis	europe	female	0.6800	0.9350			38
--60	axparis	europe	female	0.7300	0.9850			40
--40	axparis	europe	female	0.7800	1.0350			42
--20	axparis	europe	female	0.8300	1.0850			44
-0	axparis	europe	female	0.9050	1.1600			46
-20	axparis	europe	female	0.9800	1.2350			48
-40	axparis	europe	female	1.0400	1.2950			50
-60	axparis	europe	female	1.1000	1.3550			52
-80	axparis	europe	female	1.1600	1.4150			54
--100	axparis	australia	female	0.6300	0.8850			8
--80	axparis	australia	female	0.6800	0.9350			10
--60	axparis	australia	female	0.7300	0.9850			12
--40	axparis	australia	female	0.7800	1.0350			14
--20	axparis	australia	female	0.8300	1.0850			16
-0	axparis	australia	female	0.9050	1.1600			18
-20	axparis	australia	female	0.9800	1.2350			20
-40	axparis	australia	female	1.0400	1.2950			22
-60	axparis	australia	female	1.1000	1.3550			24
-80	axparis	australia	female	1.1600	1.4150			26
--100	axparis	us	female	0.6300	0.8850			4
--80	axparis	us	female	0.6800	0.9350			6
--60	axparis	us	female	0.7300	0.9850			8
--40	axparis	us	female	0.7800	1.0350			10
--20	axparis	us	female	0.8300	1.0850			12
-0	axparis	us	female	0.9050	1.1600			14
-20	axparis	us	female	0.9800	1.2350			16
-40	axparis	us	female	1.0400	1.2950			18
-60	axparis	us	female	1.1000	1.3550			20
-80	axparis	us	female	1.1600	1.4150			22
--100	axparis	uk	female	0.6300	0.8850			8
--80	axparis	uk	female	0.6800	0.9350			10
--60	axparis	uk	female	0.7300	0.9850			12
--40	axparis	uk	female	0.7800	1.0350			14
--20	axparis	uk	female	0.8300	1.0850			16
-0	axparis	uk	female	0.9050	1.1600			18
-20	axparis	uk	female	0.9800	1.2350			20
-40	axparis	uk	female	1.0400	1.2950			22
-60	axparis	uk	female	1.1000	1.3550			24
-80	axparis	uk	female	1.1600	1.4150			26
--20	bananarepublic	canada	female			1.6100		S,M
-0	bananarepublic	canada	female			1.7000		L,XL
--20	bananarepublic	europe	female			1.6100		S,M
-0	bananarepublic	europe	female			1.7000		L,XL
--20	bananarepublic	us	female			1.6100		S,M
-0	bananarepublic	us	female			1.7000		L,XL
--20	bananarepublic	uk	female			1.6100		S,M
-0	bananarepublic	uk	female			1.7000		L,XL
--20	dorothyperkins	uk	female		0.9350	1.5850		6,10/S,M
-0	dorothyperkins	uk	female		1.1200	1.6650		12,16/M,L
-20	dorothyperkins	uk	female		1.2700	1.7900		18,22/XL
--260	ff	uk	female		0.9000	1.6000		S
--240	ff	uk	female		0.9000	1.6800		S
--220	ff	uk	female		0.9000	1.7800		M
--200	ff	uk	female		0.9400	1.6000		S
--180	ff	uk	female		0.9400	1.6800		S
--160	ff	uk	female		0.9400	1.7800		M
--140	ff	uk	female		0.9800	1.6000		S
--120	ff	uk	female		0.9800	1.6800		M
--100	ff	uk	female		0.9800	1.7800		M
--80	ff	uk	female		1.0200	1.6000		S
--60	ff	uk	female		1.0200	1.6800		M
--40	ff	uk	female		1.0200	1.7800		M
--20	ff	uk	female		1.0700	1.6000		M
-0	ff	uk	female		1.0700	1.6800		L
-20	ff	uk	female		1.0700	1.7800		L
-40	ff	uk	female		1.1200	1.6000		M
-60	ff	uk	female		1.1200	1.6800		L
-80	ff	uk	female		1.1200	1.7800		L
-100	ff	uk	female		1.1900	1.6000		L
-120	ff	uk	female		1.1900	1.6800		L
-140	ff	uk	female		1.1900	1.7800		XL
-160	ff	uk	female		1.2600	1.6000		L
-180	ff	uk	female		1.2600	1.6800		L
-200	ff	uk	female		1.2600	1.7800		XL
-220	ff	uk	female		1.3400	1.6000		XL
-240	ff	uk	female		1.3400	1.6800		XL
-260	ff	uk	female		1.3400	1.7800		XL
--20	gap	us	female			1.5900		S,M
-0	gap	us	female			1.7150		M,L
--20	gap	uk	female			1.5900		S,M
-0	gap	uk	female			1.7150		M,L
--240	george	uk	female		0.9100	1.5500		S
--220	george	uk	female		0.9100	1.6150		S
--200	george	uk	female		0.9100	1.6650		M
--180	george	uk	female		0.9100	1.7150		M
--160	george	uk	female		0.9100	1.7650		L
--140	george	uk	female		1.0150	1.5500		S
--120	george	uk	female		1.0150	1.6150		M
--100	george	uk	female		1.0150	1.6650		M
--80	george	uk	female		1.0150	1.7150		L
--60	george	uk	female		1.0150	1.7650		L
--40	george	uk	female		1.1450	1.5500		M
--20	george	uk	female		1.1450	1.6150		L
-0	george	uk	female		1.1450	1.6650		L
-20	george	uk	female		1.1450	1.7150		L
-40	george	uk	female		1.1450	1.7650		XL
-60	george	uk	female		1.2950	1.5500		L
-80	george	uk	female		1.2950	1.6150		XL
-100	george	uk	female		1.2950	1.6650		XL
-120	george	uk	female		1.2950	1.7150		XL
-140	george	uk	female		1.2950	1.7650		XXL
-160	george	uk	female		1.4450	1.5500		XXL
-180	george	uk	female		1.4450	1.6150		XXL
-200	george	uk	female		1.4450	1.6650		XXL
-220	george	uk	female		1.4450	1.7150		XXL
-240	george	uk	female		1.4450	1.7650		XXL
--40	guess	europe	female	0.6400	0.9000			XS
--20	guess	europe	female	0.6850	0.9450			S
-0	guess	europe	female	0.7350	0.9950			M
-20	guess	europe	female	0.7850	1.0450			L
-40	guess	europe	female	0.8400	1.1000			XL
--40	guess	australia	female	0.6400	0.9000			XS
--20	guess	australia	female	0.6850	0.9450			S
-0	guess	australia	female	0.7350	0.9950			M
-20	guess	australia	female	0.7850	1.0450			L
-40	guess	australia	female	0.8400	1.1000			XL
--40	guess	italy	female	0.6400	0.9000			1
--20	guess	italy	female	0.6850	0.9450			2
-0	guess	italy	female	0.7350	0.9950			3
-20	guess	italy	female	0.7850	1.0450			4
-40	guess	italy	female	0.8400	1.1000			5
--40	guess	us	female	0.6400	0.9000			XS
--20	guess	us	female	0.6850	0.9450			S
-0	guess	us	female	0.7350	0.9950			M
-20	guess	us	female	0.7850	1.0450			L
-40	guess	us	female	0.8400	1.1000			XL
--40	guess	france	female	0.6400	0.9000			38
--20	guess	france	female	0.6850	0.9450			40
-0	guess	france	female	0.7350	0.9950			42
-20	guess	france	female	0.7850	1.0450			44
-40	guess	france	female	0.8400	1.1000			46
--40	guess	uk	female	0.6400	0.9000			XS
--20	guess	uk	female	0.6850	0.9450			S
-0	guess	uk	female	0.7350	0.9950			M
-20	guess	uk	female	0.7850	1.0450			L
-40	guess	uk	female	0.8400	1.1000			XL
--60	marksspencer	uk	female		0.9271	1.5621		S
--40	marksspencer	uk	female		1.0414	1.5621		M
--20	marksspencer	uk	female		0.9271	1.7018		M
-0	marksspencer	uk	female		1.0414	1.7018		L
-20	marksspencer	uk	female		0.9271	1.8034		L
-40	marksspencer	uk	female		1.1557	1.6510		XL
--80	topshop	uk	female		0.9000	1.4950		S
--60	topshop	uk	female		0.9650	1.4950		S
--40	topshop	uk	female		0.9000	1.5900		S
--20	topshop	uk	female		1.0300	1.4950		M
-0	topshop	uk	female		0.9650	1.5900		M
-20	topshop	uk	female		1.0300	1.5900		M
-40	topshop	uk	female		0.9000	1.7150		M
-60	topshop	uk	female		0.9650	1.7150		L
-80	topshop	uk	female		1.0300	1.7150		L
--84	tu	uk	female	0.6900	0.8900	1.4478		8 (Extra Short)
--64	tu	uk	female	0.7400	0.9400	1.5621		10 (Extra Short)
--44	tu	uk	female	0.7900	0.9900	1.6510		12 (Extra Short)
--24	tu	uk	female	0.8400	1.0400	1.7272		14 (Extra Short)
--4	tu	uk	female	0.8900	1.0900	1.4478		16 (Extra Short)
-16	tu	uk	female	0.9400	1.1400	1.5621		18 (Extra Short)
-36	tu	uk	female	0.9900	1.1900	1.6510		20 (Extra Short)
-56	tu	uk	female	1.0400	1.2400	1.7272		22 (Extra Short)
-76	tu	uk	female	1.0900	1.2900	1.4478		24 (Extra Short)
--82	tu	uk	female	0.6900	0.8900	1.5621		8 (Short)
--62	tu	uk	female	0.7400	0.9400	1.6510		10 (Short)
--42	tu	uk	female	0.7900	0.9900	1.7272		12 (Short)
--22	tu	uk	female	0.8400	1.0400	1.4478		14 (Short)
--2	tu	uk	female	0.8900	1.0900	1.5621		16 (Short)
-18	tu	uk	female	0.9400	1.1400	1.6510		18 (Short)
-38	tu	uk	female	0.9900	1.1900	1.7272		20 (Short)
-58	tu	uk	female	1.0400	1.2400	1.4478		22 (Short)
-78	tu	uk	female	1.0900	1.2900	1.5621		24 (Short)
--80	tu	uk	female	0.6900	0.8900	1.6510		8 (Regular)
--60	tu	uk	female	0.7400	0.9400	1.7272		10 (Regular)
--40	tu	uk	female	0.7900	0.9900	1.4478		12 (Regular)
--20	tu	uk	female	0.8400	1.0400	1.5621		14 (Regular)
-0	tu	uk	female	0.8900	1.0900	1.6510		16 (Regular)
-20	tu	uk	female	0.9400	1.1400	1.7272		18 (Regular)
-40	tu	uk	female	0.9900	1.1900	1.4478		20 (Regular)
-60	tu	uk	female	1.0400	1.2400	1.5621		22 (Regular)
-80	tu	uk	female	1.0900	1.2900	1.6510		24 (Regular)
--78	tu	uk	female	0.6900	0.8900	1.7272		8 (Long)
--58	tu	uk	female	0.7400	0.9400	1.4478		10 (Long)
--38	tu	uk	female	0.7900	0.9900	1.5621		12 (Long)
--18	tu	uk	female	0.8400	1.0400	1.6510		14 (Long)
-2	tu	uk	female	0.8900	1.0900	1.7272		16 (Long)
-22	tu	uk	female	0.9400	1.1400	1.4478		18 (Long)
-42	tu	uk	female	0.9900	1.1900	1.5621		20 (Long)
-62	tu	uk	female	1.0400	1.2400	1.6510		22 (Long)
-82	tu	uk	female	1.0900	1.2900	1.7272		24 (Long)
--260	whitestuff	uk	female	0.6300		1.5000		S
--240	whitestuff	uk	female	0.6300		1.6400		S
--220	whitestuff	uk	female	0.6300		1.6500		M
--200	whitestuff	uk	female	0.6300		1.7600		M
--180	whitestuff	uk	female	0.6800		1.5000		S
--160	whitestuff	uk	female	0.6800		1.6400		S
--140	whitestuff	uk	female	0.6800		1.6500		M
--120	whitestuff	uk	female	0.6800		1.7600		M
--100	whitestuff	uk	female	0.6800		1.7700		L
--80	whitestuff	uk	female	0.6800		1.8300		L
--60	whitestuff	uk	female	0.7300		1.5000		S
--40	whitestuff	uk	female	0.7300		1.6400		S
--20	whitestuff	uk	female	0.7300		1.6500		M
-0	whitestuff	uk	female	0.7300		1.7600		M
-20	whitestuff	uk	female	0.7300		1.7700		L
-40	whitestuff	uk	female	0.7300		1.8300		L
-60	whitestuff	uk	female	0.7800		1.5000		M
-80	whitestuff	uk	female	0.7800		1.6400		M
-100	whitestuff	uk	female	0.7800		1.6500		L
-120	whitestuff	uk	female	0.7800		1.7600		L
-140	whitestuff	uk	female	0.7800		1.7700		L
-160	whitestuff	uk	female	0.7800		1.8300		L
-180	whitestuff	uk	female	0.8300		1.5000		M
-200	whitestuff	uk	female	0.8300		1.6400		M
-220	whitestuff	uk	female	0.8300		1.6500		L
-240	whitestuff	uk	female	0.8300		1.7600		L
--20	zara	uk	female			1.6500		S,M
-0	zara	uk	female			1.7250		M,L
+-100	axparis	XA	female	0.6300	0.8850			36
+-80	axparis	XA	female	0.6800	0.9350			38
+-60	axparis	XA	female	0.7300	0.9850			40
+-40	axparis	XA	female	0.7800	1.0350			42
+-20	axparis	XA	female	0.8300	1.0850			44
+0	axparis	XA	female	0.9050	1.1600			46
+20	axparis	XA	female	0.9800	1.2350			48
+40	axparis	XA	female	1.0400	1.2950			50
+60	axparis	XA	female	1.1000	1.3550			52
+80	axparis	XA	female	1.1600	1.4150			54
+-100	axparis	US	female	0.6300	0.8850			4
+-80	axparis	US	female	0.6800	0.9350			6
+-60	axparis	US	female	0.7300	0.9850			8
+-40	axparis	US	female	0.7800	1.0350			10
+-20	axparis	US	female	0.8300	1.0850			12
+0	axparis	US	female	0.9050	1.1600			14
+20	axparis	US	female	0.9800	1.2350			16
+40	axparis	US	female	1.0400	1.2950			18
+60	axparis	US	female	1.1000	1.3550			20
+80	axparis	US	female	1.1600	1.4150			22
+-100	axparis	AU	female	0.6300	0.8850			8
+-80	axparis	AU	female	0.6800	0.9350			10
+-60	axparis	AU	female	0.7300	0.9850			12
+-40	axparis	AU	female	0.7800	1.0350			14
+-20	axparis	AU	female	0.8300	1.0850			16
+0	axparis	AU	female	0.9050	1.1600			18
+20	axparis	AU	female	0.9800	1.2350			20
+40	axparis	AU	female	1.0400	1.2950			22
+60	axparis	AU	female	1.1000	1.3550			24
+80	axparis	AU	female	1.1600	1.4150			26
+-100	axparis	GB	female	0.6300	0.8850			8
+-80	axparis	GB	female	0.6800	0.9350			10
+-60	axparis	GB	female	0.7300	0.9850			12
+-40	axparis	GB	female	0.7800	1.0350			14
+-20	axparis	GB	female	0.8300	1.0850			16
+0	axparis	GB	female	0.9050	1.1600			18
+20	axparis	GB	female	0.9800	1.2350			20
+40	axparis	GB	female	1.0400	1.2950			22
+60	axparis	GB	female	1.1000	1.3550			24
+80	axparis	GB	female	1.1600	1.4150			26
+-20	bananarepublic	AA	female			1.6100		S,M
+0	bananarepublic	AA	female			1.7000		L,XL
+-20	bananarepublic	XA	female			1.6100		S,M
+0	bananarepublic	XA	female			1.7000		L,XL
+-20	bananarepublic	US	female			1.6100		S,M
+0	bananarepublic	US	female			1.7000		L,XL
+-20	bananarepublic	GB	female			1.6100		S,M
+0	bananarepublic	GB	female			1.7000		L,XL
+-20	bananarepublic	CA	female			1.6100		S,M
+0	bananarepublic	CA	female			1.7000		L,XL
+-20	bebe	US	female			1.6256		P,S
+0	bebe	US	female			1.7653		M,L
+-20	dorothyperkins	GB	female		0.9350	1.5850		6,10/S,M
+0	dorothyperkins	GB	female		1.1200	1.6650		12,16/M,L
+20	dorothyperkins	GB	female		1.2700	1.7900		18,22/XL
+-40	eileenfisher	US	female			1.5350		Small
+-20	eileenfisher	US	female			1.6450		Medium
+0	eileenfisher	US	female			1.7400		Large
+20	eileenfisher	US	female			1.8150		X-Large
+-260	ff	GB	female		0.9000	1.6000		S
+-240	ff	GB	female		0.9000	1.6800		S
+-220	ff	GB	female		0.9000	1.7800		M
+-200	ff	GB	female		0.9400	1.6000		S
+-180	ff	GB	female		0.9400	1.6800		S
+-160	ff	GB	female		0.9400	1.7800		M
+-140	ff	GB	female		0.9800	1.6000		S
+-120	ff	GB	female		0.9800	1.6800		M
+-100	ff	GB	female		0.9800	1.7800		M
+-80	ff	GB	female		1.0200	1.6000		S
+-60	ff	GB	female		1.0200	1.6800		M
+-40	ff	GB	female		1.0200	1.7800		M
+-20	ff	GB	female		1.0700	1.6000		M
+0	ff	GB	female		1.0700	1.6800		L
+20	ff	GB	female		1.0700	1.7800		L
+40	ff	GB	female		1.1200	1.6000		M
+60	ff	GB	female		1.1200	1.6800		L
+80	ff	GB	female		1.1200	1.7800		L
+100	ff	GB	female		1.1900	1.6000		L
+120	ff	GB	female		1.1900	1.6800		L
+140	ff	GB	female		1.1900	1.7800		XL
+160	ff	GB	female		1.2600	1.6000		L
+180	ff	GB	female		1.2600	1.6800		L
+200	ff	GB	female		1.2600	1.7800		XL
+220	ff	GB	female		1.3400	1.6000		XL
+240	ff	GB	female		1.3400	1.6800		XL
+260	ff	GB	female		1.3400	1.7800		XL
+-20	gap	GB	female			1.5900		S,M
+0	gap	GB	female			1.7150		M,L
+-20	gap	US	female			1.5900		S,M
+0	gap	US	female			1.7150		M,L
+-240	george	GB	female		0.9100	1.5500		S
+-220	george	GB	female		0.9100	1.6150		S
+-200	george	GB	female		0.9100	1.6650		M
+-180	george	GB	female		0.9100	1.7150		M
+-160	george	GB	female		0.9100	1.7650		L
+-140	george	GB	female		1.0150	1.5500		S
+-120	george	GB	female		1.0150	1.6150		M
+-100	george	GB	female		1.0150	1.6650		M
+-80	george	GB	female		1.0150	1.7150		L
+-60	george	GB	female		1.0150	1.7650		L
+-40	george	GB	female		1.1450	1.5500		M
+-20	george	GB	female		1.1450	1.6150		L
+0	george	GB	female		1.1450	1.6650		L
+20	george	GB	female		1.1450	1.7150		L
+40	george	GB	female		1.1450	1.7650		XL
+60	george	GB	female		1.2950	1.5500		L
+80	george	GB	female		1.2950	1.6150		XL
+100	george	GB	female		1.2950	1.6650		XL
+120	george	GB	female		1.2950	1.7150		XL
+140	george	GB	female		1.2950	1.7650		XXL
+160	george	GB	female		1.4450	1.5500		XXL
+180	george	GB	female		1.4450	1.6150		XXL
+200	george	GB	female		1.4450	1.6650		XXL
+220	george	GB	female		1.4450	1.7150		XXL
+240	george	GB	female		1.4450	1.7650		XXL
+-40	guess	FR	female	0.6400	0.9000			38
+-20	guess	FR	female	0.6850	0.9450			40
+0	guess	FR	female	0.7350	0.9950			42
+20	guess	FR	female	0.7850	1.0450			44
+40	guess	FR	female	0.8400	1.1000			46
+-40	guess	XA	female	0.6400	0.9000			XS
+-20	guess	XA	female	0.6850	0.9450			S
+0	guess	XA	female	0.7350	0.9950			M
+20	guess	XA	female	0.7850	1.0450			L
+40	guess	XA	female	0.8400	1.1000			XL
+-40	guess	IT	female	0.6400	0.9000			1
+-20	guess	IT	female	0.6850	0.9450			2
+0	guess	IT	female	0.7350	0.9950			3
+20	guess	IT	female	0.7850	1.0450			4
+40	guess	IT	female	0.8400	1.1000			5
+-40	guess	US	female	0.6400	0.9000			XS
+-20	guess	US	female	0.6850	0.9450			S
+0	guess	US	female	0.7350	0.9950			M
+20	guess	US	female	0.7850	1.0450			L
+40	guess	US	female	0.8400	1.1000			XL
+-40	guess	AU	female	0.6400	0.9000			XS
+-20	guess	AU	female	0.6850	0.9450			S
+0	guess	AU	female	0.7350	0.9950			M
+20	guess	AU	female	0.7850	1.0450			L
+40	guess	AU	female	0.8400	1.1000			XL
+-40	guess	GB	female	0.6400	0.9000			XS
+-20	guess	GB	female	0.6850	0.9450			S
+0	guess	GB	female	0.7350	0.9950			M
+20	guess	GB	female	0.7850	1.0450			L
+40	guess	GB	female	0.8400	1.1000			XL
+-20	loft	AA	female			1.5500		Small
+0	loft	AA	female			1.6800		Medium
+20	loft	AA	female			1.7800		Large
+-60	marksspencer	AA	female		0.9271	1.5621		S
+-40	marksspencer	AA	female		1.0414	1.5621		M
+-20	marksspencer	AA	female		0.9271	1.7018		M
+0	marksspencer	AA	female		1.0414	1.7018		L
+20	marksspencer	AA	female		0.9271	1.8034		L
+40	marksspencer	AA	female		1.1557	1.6510		XL
+-60	marksspencer	XA	female		0.9271	1.5621		S
+-40	marksspencer	XA	female		1.0414	1.5621		M
+-20	marksspencer	XA	female		0.9271	1.7018		M
+0	marksspencer	XA	female		1.0414	1.7018		L
+20	marksspencer	XA	female		0.9271	1.8034		L
+40	marksspencer	XA	female		1.1557	1.6510		XL
+-60	marksspencer	GB	female		0.9271	1.5621		S
+-40	marksspencer	GB	female		1.0414	1.5621		M
+-20	marksspencer	GB	female		0.9271	1.7018		M
+0	marksspencer	GB	female		1.0414	1.7018		L
+20	marksspencer	GB	female		0.9271	1.8034		L
+40	marksspencer	GB	female		1.1557	1.6510		XL
+-100	oldnavy	AA	female	0.6096				XS
+-80	oldnavy	AA	female	0.6350				XS
+-60	oldnavy	AA	female	0.6604				S
+-40	oldnavy	AA	female	0.6858				S
+-20	oldnavy	AA	female	0.7112				M
+0	oldnavy	AA	female	0.7493				M
+20	oldnavy	AA	female	0.7874				L
+40	oldnavy	AA	female	0.8255				L
+60	oldnavy	AA	female	0.8636				XL
+80	oldnavy	AA	female	0.9144				XL
+100	oldnavy	AA	female	0.9652				XXL
+-100	oldnavy	US	female	0.6096				1/XS
+-80	oldnavy	US	female	0.6350				2/XS
+-60	oldnavy	US	female	0.6604				4/S
+-40	oldnavy	US	female	0.6858				6/S
+-20	oldnavy	US	female	0.7112				8/M
+0	oldnavy	US	female	0.7493				10/M
+20	oldnavy	US	female	0.7874				12/L
+40	oldnavy	US	female	0.8255				14/L
+60	oldnavy	US	female	0.8636				16/XL
+80	oldnavy	US	female	0.9144				18/XL
+100	oldnavy	US	female	0.9652				20/XXL
+-80	topshop	AA	female		0.9000	1.4950		S
+-60	topshop	AA	female		0.9650	1.4950		S
+-40	topshop	AA	female		0.9000	1.5900		S
+-20	topshop	AA	female		1.0300	1.4950		M
+0	topshop	AA	female		0.9650	1.5900		M
+20	topshop	AA	female		1.0300	1.5900		M
+40	topshop	AA	female		0.9000	1.7150		M
+60	topshop	AA	female		0.9650	1.7150		L
+80	topshop	AA	female		1.0300	1.7150		L
+-80	topshop	GB	female		0.9000	1.4950		S
+-60	topshop	GB	female		0.9650	1.4950		S
+-40	topshop	GB	female		0.9000	1.5900		S
+-20	topshop	GB	female		1.0300	1.4950		M
+0	topshop	GB	female		0.9650	1.5900		M
+20	topshop	GB	female		1.0300	1.5900		M
+40	topshop	GB	female		0.9000	1.7150		M
+60	topshop	GB	female		0.9650	1.7150		L
+80	topshop	GB	female		1.0300	1.7150		L
+-84	tu	GB	female	0.6900	0.8900	1.4478		8 (Extra Short)
+-64	tu	GB	female	0.7400	0.9400	1.5621		10 (Extra Short)
+-44	tu	GB	female	0.7900	0.9900	1.6510		12 (Extra Short)
+-24	tu	GB	female	0.8400	1.0400	1.7272		14 (Extra Short)
+-4	tu	GB	female	0.8900	1.0900	1.4478		16 (Extra Short)
+16	tu	GB	female	0.9400	1.1400	1.5621		18 (Extra Short)
+36	tu	GB	female	0.9900	1.1900	1.6510		20 (Extra Short)
+56	tu	GB	female	1.0400	1.2400	1.7272		22 (Extra Short)
+76	tu	GB	female	1.0900	1.2900	1.4478		24 (Extra Short)
+-82	tu	GB	female	0.6900	0.8900	1.5621		8 (Short)
+-62	tu	GB	female	0.7400	0.9400	1.6510		10 (Short)
+-42	tu	GB	female	0.7900	0.9900	1.7272		12 (Short)
+-22	tu	GB	female	0.8400	1.0400	1.4478		14 (Short)
+-2	tu	GB	female	0.8900	1.0900	1.5621		16 (Short)
+18	tu	GB	female	0.9400	1.1400	1.6510		18 (Short)
+38	tu	GB	female	0.9900	1.1900	1.7272		20 (Short)
+58	tu	GB	female	1.0400	1.2400	1.4478		22 (Short)
+78	tu	GB	female	1.0900	1.2900	1.5621		24 (Short)
+-80	tu	GB	female	0.6900	0.8900	1.6510		8 (Regular)
+-60	tu	GB	female	0.7400	0.9400	1.7272		10 (Regular)
+-40	tu	GB	female	0.7900	0.9900	1.4478		12 (Regular)
+-20	tu	GB	female	0.8400	1.0400	1.5621		14 (Regular)
+0	tu	GB	female	0.8900	1.0900	1.6510		16 (Regular)
+20	tu	GB	female	0.9400	1.1400	1.7272		18 (Regular)
+40	tu	GB	female	0.9900	1.1900	1.4478		20 (Regular)
+60	tu	GB	female	1.0400	1.2400	1.5621		22 (Regular)
+80	tu	GB	female	1.0900	1.2900	1.6510		24 (Regular)
+-78	tu	GB	female	0.6900	0.8900	1.7272		8 (Long)
+-58	tu	GB	female	0.7400	0.9400	1.4478		10 (Long)
+-38	tu	GB	female	0.7900	0.9900	1.5621		12 (Long)
+-18	tu	GB	female	0.8400	1.0400	1.6510		14 (Long)
+2	tu	GB	female	0.8900	1.0900	1.7272		16 (Long)
+22	tu	GB	female	0.9400	1.1400	1.4478		18 (Long)
+42	tu	GB	female	0.9900	1.1900	1.5621		20 (Long)
+62	tu	GB	female	1.0400	1.2400	1.6510		22 (Long)
+82	tu	GB	female	1.0900	1.2900	1.7272		24 (Long)
+-40	victoriassecret	US	female			1.4986		XS
+-20	victoriassecret	US	female			1.6129		S
+0	victoriassecret	US	female			1.6764		M
+20	victoriassecret	US	female			1.6891		L
+-260	whitestuff	GB	female	0.6300		1.5000		S
+-240	whitestuff	GB	female	0.6300		1.6400		S
+-220	whitestuff	GB	female	0.6300		1.6500		M
+-200	whitestuff	GB	female	0.6300		1.7600		M
+-180	whitestuff	GB	female	0.6800		1.5000		S
+-160	whitestuff	GB	female	0.6800		1.6400		S
+-140	whitestuff	GB	female	0.6800		1.6500		M
+-120	whitestuff	GB	female	0.6800		1.7600		M
+-100	whitestuff	GB	female	0.6800		1.7700		L
+-80	whitestuff	GB	female	0.6800		1.8300		L
+-60	whitestuff	GB	female	0.7300		1.5000		S
+-40	whitestuff	GB	female	0.7300		1.6400		S
+-20	whitestuff	GB	female	0.7300		1.6500		M
+0	whitestuff	GB	female	0.7300		1.7600		M
+20	whitestuff	GB	female	0.7300		1.7700		L
+40	whitestuff	GB	female	0.7300		1.8300		L
+60	whitestuff	GB	female	0.7800		1.5000		M
+80	whitestuff	GB	female	0.7800		1.6400		M
+100	whitestuff	GB	female	0.7800		1.6500		L
+120	whitestuff	GB	female	0.7800		1.7600		L
+140	whitestuff	GB	female	0.7800		1.7700		L
+160	whitestuff	GB	female	0.7800		1.8300		L
+180	whitestuff	GB	female	0.8300		1.5000		M
+200	whitestuff	GB	female	0.8300		1.6400		M
+220	whitestuff	GB	female	0.8300		1.6500		L
+240	whitestuff	GB	female	0.8300		1.7600		L
+-20	zara	GB	female			1.6500		S,M
+0	zara	GB	female			1.7250		M,L

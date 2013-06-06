@@ -14,7 +14,7 @@ DEPLOY_DIR = "..\\"
 
 
 # Read in the region ids
-REGION_IDS = get_csharp_enums(REGIONID_FN, 'RegionId')
+# REGION_IDS = get_csharp_enums(REGIONID_FN, 'RegionId')
 # Get measurement ids
 MEASUREMENT_IDS = get_csharp_enums(MEASUREMENTID_FN, 'MeasurementId')
 # Get retail ids
@@ -23,4 +23,5 @@ BRAND_IDS = get_csharp_enums(BRANDID_FN, 'BrandId')
 CONVERSION_IDS = get_csharp_enums(CONVERSIONID_FN, 'ConversionId')
 
 # Compile a list of acceptable headers 
-OK_HEADERS = [x.lower() for x in MEASUREMENT_IDS] + [x.lower() for x in REGION_IDS] + ['sizeletter', 'sizeid', 'general']
+# OK_HEADERS = [x.lower() for x in MEASUREMENT_IDS] + [x.lower() for x in REGION_IDS] + ['sizeletter', 'sizeid', 'general']
+OK_HEADERS = [x.lower() for x in MEASUREMENT_IDS] + ['sizeletter', 'sizeid', 'general']

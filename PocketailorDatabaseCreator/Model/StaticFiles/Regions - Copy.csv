@@ -1,0 +1,123 @@
+ID	Include	PartOf	RegionId	Name
+
+1	y	Global	Global	Global
+2	y	Global	Europe	Europe
+3	y	Global	NorthAmerica	North America
+4	y	Global	Australasia	Australasia
+5	y	Global	Asia	Asia
+6	y	Global	SouthAmerica	South America
+7	y	Global	Africa	Africa
+
+8	y	UK	Ireland	Ireland
+9	y	Europe	UK	UK
+10	y	Europe	France	France
+11	y	Europe	Italy	Italy
+12	y	Europe	Germany	Germany
+13	y	Europe	Denmark	Denmark
+14	y	Europe	Sweden	Sweden
+15	y	Europe	Norway	Norway
+16	y	Europe	Finland	Finland
+17	y	Europe	Spain	Spain
+18	y	Europe	Austria	Austria
+19	y	Europe	Switzerland	Switzerland
+20	y	Europe	Netherlands	Netherlands
+21	y	Europe	Belgium	Belgium
+22	y	Europe	Portugal	Portugal
+23	y	Europe	Russia	Russia
+25	y	Europe	Iceland	Iceland
+26	y	Europe	Poland	Poland
+27	y	Europe	Latvia	Latvia
+28	y	Europe	Slovakia	Slovakia
+29	y	Europe	CzechRepublic	Czech Republic
+30	y	Europe	Croatia	Croatia
+31	y	Europe	Slovenia	Slovenia
+32	y	Europe	Greece	Greece
+33	y	Europe	Turkey	Turkey
+34	y	Europe	Bulgaria	Bulgaria
+35	y	Europe	Romania	Romania
+36	y	Europe	Hungary	Hungary
+37	y	Europe	Lithuania	Lithuania
+38	y	Europe	Liechtenstein	Liechtenstein
+39	y	Europe	Luxembourg	Luxembourg
+40	y	Europe	Albania	Albania
+41	y	Europe	Balarus	Belarus
+42	y	Europe	Estonia	Estonia
+43	y	Europe	FaroeIslands	Islands
+44	y	Europe	Serbia	Serbia
+45	y	Europe	Ukraine	Ukraine
+		
+46	y	NorthAmerica	US	United States
+47	y	NorthAmerica	Canada	Canada
+
+48	y	SouthAmerica	Mexico	Mexico
+49	y	SouthAmerica	Brazil	Brazil
+50	y	SouthAmerica	Belize	Belize
+51	y	SouthAmerica	Jamaica	Jamaica
+52	y	SouthAmerica	Argentina	Argentina
+53	y	SouthAmerica	Bolivia	Bolivia
+54	y	SouthAmerica	Chile	Chile
+55	y	SouthAmerica	Colombia	Colombia
+56	y	SouthAmerica	CostaRica	Rica
+57	y	SouthAmerica	DominicanRepublic	Republic
+58	y	SouthAmerica	Ecuador	Ecuador
+59	y	SouthAmerica	ElSalvador	Salvador
+60	y	SouthAmerica	Guatemala	Guatemala
+61	y	SouthAmerica	Honduras	Honduras
+62	y	SouthAmerica	Nicaragua	Nicaragua
+63	y	SouthAmerica	Panama	Panama
+64	y	SouthAmerica	Praguay	Paraguay
+65	y	SouthAmerica	Peru	Peru
+66	y	SouthAmerica	PuertoRico	Rico
+67	y	SouthAmerica	Uraguay	Uraguay
+68	y	SouthAmerica	Venezuela	Venezuela
+			
+
+69	y	Africa	Zimbabwe	Zimbabwe
+70	y	Africa	SouthAfrica	South Africa
+71	y	Africa	Egypt	Egypt
+72	y	Africa	Tunisia	Tunisia
+73	y	Africa	Morocco	Morocco
+74	y	Africa	Algeria	Algeria
+75	y	Africa	Libya	Libya
+76	y	Africa	Kenya	Kenya
+		
+77	y	Asia	Japan	Japan
+78	y	Asia	China	China
+79	y	Asia	Korea	Korea
+80	y	Asia	HongKong	Hong Kong
+81	y	Asia	Bahrain	Bahrain
+82	y	Asia	Iraq	Iraq
+83	y	Asia	Jordan	Jordan
+84	y	Asia	Kuwait	Kuwait
+85	y	Asia	Lebanon	Lebanon
+86	y	Asia	Oman	Oman
+87	y	Asia	Qatar	Qatar
+88	y	Asia	SaudiArabia	Arabia
+89	y	Asia	Syria	Syria
+90	y	Asia	UnitedArabEmirates	Arab Emirates
+91	y	Asia	Yemen	Yemen
+92	y	Asia	Armenia	Armenia
+93	y	Asia	Azerbaijan	Azerbaijan
+94	y	Asia	Macau	Macau
+95	y	Asia	Singapore	Singapore
+96	y	Asia	Taiwan	Taiwan
+97	y	Asia	Maldives	Maldives
+98	y	Asia	Philippines	Philippines
+99	y	Asia	TrinidadTobago	Trinidad and Tobago
+100	y	Asia	Iran	Iran
+101	y	Asia	Georgia	Georgia
+102	y	Asia	India	India
+103	y	Asia	Isreal	Isreal
+104	y	Asia	Kazakhstan	Kazakhstan
+105	y	Asia	Brunei	Brunei
+106	y	Asia	Malaysia	Malaysia
+107	y	Asia	Mongolia	Mongolia
+108	y	Asia	Thailand	Thailand
+109	y	Asia	Pakistan	Pakistan
+110	y	Asia	Uzbekistan	Uzbekistan
+111	y	Asia	Vietnam	Vietnam
+112	y	Asia	SriLanka	Sri Lanka
+113	y	Asia	Bangladesh	Bangladesh
+		
+114	y	Australasia	Australia	Australia
+115	y	Australasia	NewZealand	New Zealand

@@ -1,5 +1,6 @@
 #Unit:Inch
-SIZE	XS	XS	S	S	M	M	L	L	XL	XL	XXL
+SizeLetter	XS	XS	S	S	M	M	L	L	XL	XL	XXL
 SizeId	-100	-80	-60	-40	-20	0	20	40	60	80	100
 US	1	2	4	6	8	10	12	14	16	18	20
+Global											
 WAIST	24	25	26	27	28	29½	31	32½	34	36	38
