@@ -24,6 +24,56 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	abercrombieandfitch	GB	male	1.0400		0.8950				42/L
 20	abercrombieandfitch	GB	male	1.0900		0.9200				44/XL
 40	abercrombieandfitch	GB	male	1.1400		0.9450				46/XXL
+-60	adidas	AA	female	0.7874					0.6350	XS
+-40	adidas	AA	female	0.8636					0.6985	S
+-20	adidas	AA	female	0.9271					0.7620	M
+0	adidas	AA	female	0.9906					0.8382	L
+20	adidas	AA	female	1.0668					0.9144	XL
+40	adidas	AA	female	1.1430					1.0033	2XL
+-60	adidas	FR	female	0.7874					0.6350	32,34/XS
+-40	adidas	FR	female	0.8636					0.6985	36,38/S
+-20	adidas	FR	female	0.9271					0.7620	40,42/M
+0	adidas	FR	female	0.9906					0.8382	44,46/L
+20	adidas	FR	female	1.0668					0.9144	48,50/XL
+40	adidas	FR	female	1.1430					1.0033	52,54/2XL
+-60	adidas	XA	female	0.7874					0.6350	30,32/XS
+-40	adidas	XA	female	0.8636					0.6985	34,36/S
+-20	adidas	XA	female	0.9271					0.7620	38,40/M
+0	adidas	XA	female	0.9906					0.8382	42,44/L
+20	adidas	XA	female	1.0668					0.9144	46,48/XL
+40	adidas	XA	female	1.1430					1.0033	50,52/2XL
+-60	adidas	DE	female	0.7874					0.6350	30,32/XS
+-40	adidas	DE	female	0.8636					0.6985	34,36/S
+-20	adidas	DE	female	0.9271					0.7620	38,40/M
+0	adidas	DE	female	0.9906					0.8382	42,44/L
+20	adidas	DE	female	1.0668					0.9144	46,48/XL
+40	adidas	DE	female	1.1430					1.0033	50,52/2XL
+-60	adidas	US	female	0.7874					0.6350	0,2/XS
+-40	adidas	US	female	0.8636					0.6985	4,6/S
+-20	adidas	US	female	0.9271					0.7620	8,10/M
+0	adidas	US	female	0.9906					0.8382	12,14/L
+20	adidas	US	female	1.0668					0.9144	16,18/XL
+40	adidas	US	female	1.1430					1.0033	20,22/2XL
+-60	adidas	GB	female	0.7874					0.6350	4,6/XS
+-40	adidas	GB	female	0.8636					0.6985	8,10/S
+-20	adidas	GB	female	0.9271					0.7620	12,14/M
+0	adidas	GB	female	0.9906					0.8382	16,18/L
+20	adidas	GB	female	1.0668					0.9144	20,22/XL
+40	adidas	GB	female	1.1430					1.0033	24,26/2XL
+-140	adidas	AA	male	0.8128					0.7112	30,32/XS (Sport 2)
+-120	adidas	AA	male	0.8128					0.7112	32,34/XS (Sport 2)
+-100	adidas	AA	male	0.9017					0.7874	34,36/S (Sport 3,4)
+-80	adidas	AA	male	0.9017					0.7874	36,38/S (Sport 3,4)
+-60	adidas	AA	male	0.9779					0.8509	38,40/M (Sport 5,6)
+-40	adidas	AA	male	0.9779					0.8509	40,42/M (Sport 5,6)
+-20	adidas	AA	male	1.0668					0.9398	42,44/L (Sport 7,8)
+0	adidas	AA	male	1.0668					0.9398	44,46/L (Sport 7,8)
+20	adidas	AA	male	1.1684					1.0414	46,48/XL (Sport 9,10)
+40	adidas	AA	male	1.1684					1.0414	48,50/XL (Sport 9,10)
+60	adidas	AA	male	1.2700					1.1430	50,52/2XL (Sport 11,12)
+80	adidas	AA	male	1.2700					1.1430	52,54/2XL (Sport 11,12)
+100	adidas	AA	male	1.4097					1.2827	54,56/3XL (Sport 13,14)
+120	adidas	AA	male	1.4097					1.2827	56,58/3XL (Sport 13,14)
 -60	allsaints	FR	female	0.7600					0.5850	32/XS
 -40	allsaints	FR	female	0.7850					0.6100	34/XS
 -20	allsaints	FR	female	0.8100					0.6350	36/S
@@ -607,6 +657,69 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 200	bench	GB	male	1.1600	0.4650					L/XXL
 220	bench	GB	male	1.2200	0.4650					XL/XXL
 240	bench	GB	male	1.3100	0.4650					XXL/XXL
+-40	billabong	AA	female	0.8200					0.6200	XS
+-20	billabong	AA	female	0.4600					0.6600	S
+0	billabong	AA	female	0.9000					0.7000	M
+20	billabong	AA	female	0.9400					0.7400	L
+40	billabong	AA	female	0.9800					0.7800	XL
+-40	billabong	FR	female	0.8200					0.6200	34,36/XS
+-20	billabong	FR	female	0.4600					0.6600	36,38/S
+0	billabong	FR	female	0.9000					0.7000	38,40/M
+20	billabong	FR	female	0.9400					0.7400	40,42/L
+40	billabong	FR	female	0.9800					0.7800	42,44/XL
+-40	billabong	XA	female	0.8200					0.6200	32,34/XS
+-20	billabong	XA	female	0.4600					0.6600	34,36/S
+0	billabong	XA	female	0.9000					0.7000	36,38/M
+20	billabong	XA	female	0.9400					0.7400	38,40/L
+40	billabong	XA	female	0.9800					0.7800	40,42/XL
+-40	billabong	DE	female	0.8200					0.6200	32,34/XS
+-20	billabong	DE	female	0.4600					0.6600	34,36/S
+0	billabong	DE	female	0.9000					0.7000	36,38/M
+20	billabong	DE	female	0.9400					0.7400	38,40/L
+40	billabong	DE	female	0.9800					0.7800	40,42/XL
+-40	billabong	IT	female	0.8200					0.6200	36,38/XS
+-20	billabong	IT	female	0.4600					0.6600	38,40/S
+0	billabong	IT	female	0.9000					0.7000	40,42/M
+20	billabong	IT	female	0.9400					0.7400	42,44/L
+40	billabong	IT	female	0.9800					0.7800	44,46/XL
+-40	billabong	GB	female	0.8200					0.6200	6,8/XS
+-20	billabong	GB	female	0.4600					0.6600	8,10/S
+0	billabong	GB	female	0.9000					0.7000	10,12/M
+20	billabong	GB	female	0.9400					0.7400	12,14/L
+40	billabong	GB	female	0.9800					0.7800	14,16/XL
+-40	billabong	ES	female	0.8200					0.6200	34,36/XS
+-20	billabong	ES	female	0.4600					0.6600	36,38/S
+0	billabong	ES	female	0.9000					0.7000	38,40/M
+20	billabong	ES	female	0.9400					0.7400	40,42/L
+40	billabong	ES	female	0.9800					0.7800	42,44/XL
+-40	billabong	AA	male	0.9350					0.7600	S
+-20	billabong	AA	male	1.0150					0.8250	M
+0	billabong	AA	male	1.0950					0.8900	L
+20	billabong	AA	male	1.2550					1.0300	XL
+-40	billabong	FR	male	0.9350					0.7600	40/S
+-20	billabong	FR	male	1.0150					0.8250	42/M
+0	billabong	FR	male	1.0950					0.8900	44/L
+20	billabong	FR	male	1.2550					1.0300	48/XL
+-40	billabong	XA	male	0.9350					0.7600	46/S
+-20	billabong	XA	male	1.0150					0.8250	48/M
+0	billabong	XA	male	1.0950					0.8900	50/L
+20	billabong	XA	male	1.2550					1.0300	54/XL
+-40	billabong	DE	male	0.9350					0.7600	46/S
+-20	billabong	DE	male	1.0150					0.8250	48/M
+0	billabong	DE	male	1.0950					0.8900	50/L
+20	billabong	DE	male	1.2550					1.0300	54/XL
+-40	billabong	IT	male	0.9350					0.7600	39,5/S
+-20	billabong	IT	male	1.0150					0.8250	41,5/M
+0	billabong	IT	male	1.0950					0.8900	43,5/L
+20	billabong	IT	male	1.2550					1.0300	47,5/XL
+-40	billabong	GB	male	0.9350					0.7600	30/S
+-20	billabong	GB	male	1.0150					0.8250	32/M
+0	billabong	GB	male	1.0950					0.8900	34/L
+20	billabong	GB	male	1.2550					1.0300	38/XL
+-40	billabong	ES	male	0.9350					0.7600	40/S
+-20	billabong	ES	male	1.0150					0.8250	42/M
+0	billabong	ES	male	1.0950					0.8900	44/L
+20	billabong	ES	male	1.2550					1.0300	48/XL
 -80	cache	US	female	0.3250					0.2550	0/XS
 -60	cache	US	female	0.3350					0.2650	2/S
 -40	cache	US	female	0.3450					0.2750	4/S
@@ -1309,6 +1422,48 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	ghost	GB	female	0.9100					0.7300	12/M
 20	ghost	GB	female	0.9600					0.7800	14/L
 40	ghost	GB	female	1.0100					0.8300	16/XL
+-60	gill	AA	female	0.8150					0.6450	8
+-40	gill	AA	female	0.8550					0.6750	10
+-20	gill	AA	female	0.9050					0.7250	12
+0	gill	AA	female	0.9450					0.7750	14
+20	gill	AA	female	0.9800					0.8250	16
+40	gill	AA	female	1.0300					0.8800	18
+60	gill	AA	female	1.0800					0.9300	20
+-60	gill	XA	female	0.8150					0.6450	34
+-40	gill	XA	female	0.8550					0.6750	36
+-20	gill	XA	female	0.9050					0.7250	38
+0	gill	XA	female	0.9450					0.7750	40
+20	gill	XA	female	0.9800					0.8250	42
+40	gill	XA	female	1.0300					0.8800	44
+60	gill	XA	female	1.0800					0.9300	46
+-60	gill	US	female	0.8150					0.6450	4
+-40	gill	US	female	0.8550					0.6750	6
+-20	gill	US	female	0.9050					0.7250	8
+0	gill	US	female	0.9450					0.7750	10
+20	gill	US	female	0.9800					0.8250	12
+40	gill	US	female	1.0300					0.8800	14
+60	gill	US	female	1.0800					0.9300	16
+-60	gill	GB	female	0.8150					0.6450	8
+-40	gill	GB	female	0.8550					0.6750	10
+-20	gill	GB	female	0.9050					0.7250	12
+0	gill	GB	female	0.9450					0.7750	14
+20	gill	GB	female	0.9800					0.8250	16
+40	gill	GB	female	1.0300					0.8800	18
+60	gill	GB	female	1.0800					0.9300	20
+-60	gill	AA	male	0.8950					0.7100	XS
+-40	gill	AA	male	0.9450					0.7500	S
+-20	gill	AA	male	0.9950					0.8150	M
+0	gill	AA	male	1.0650					0.9050	L
+20	gill	AA	male	1.1550					0.9950	XL
+40	gill	AA	male	1.2250					1.0650	XXL
+60	gill	AA	male	1.2950					1.1350	XXXL
+-60	gill	GB	male	0.8950					0.7100	XS
+-40	gill	GB	male	0.9450					0.7500	S
+-20	gill	GB	male	0.9950					0.8150	M
+0	gill	GB	male	1.0650					0.9050	L
+20	gill	GB	male	1.1550					0.9950	XL
+40	gill	GB	male	1.2250					1.0650	XXL
+60	gill	GB	male	1.2950					1.1350	XXXL
 -20	grab	AU	female	0.8500						S/S
 0	grab	AU	female	0.9000						M/M
 20	grab	AU	female	0.9500						L/L
@@ -1426,6 +1581,19 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	guess	GB	male	1.0450	0.4250					L/16½
 20	guess	GB	male	1.0950	0.4450					XL/17-17½
 40	guess	GB	male	1.1500	0.4650					XXL/18-18½
+-60	hellyhansen	AA	female	0.8000				0.8600	0.6200	XS
+-40	hellyhansen	AA	female	0.8600				0.9200	0.6800	S
+-20	hellyhansen	AA	female	0.9200				0.9800	0.7400	M
+0	hellyhansen	AA	female	0.9800				1.0400	0.8000	L
+20	hellyhansen	AA	female	1.0400				1.1000	0.8600	XL
+40	hellyhansen	AA	female	1.1000				1.1600	0.9200	XXL
+-60	hellyhansen	AA	male	0.9000					0.7600	XS
+-40	hellyhansen	AA	male	0.9600					0.8200	S
+-20	hellyhansen	AA	male	1.0200					0.8800	M
+0	hellyhansen	AA	male	1.0800					0.9400	L
+20	hellyhansen	AA	male	1.1600					1.0000	XL
+40	hellyhansen	AA	male	1.2400					1.0600	XXL
+60	hellyhansen	AA	male	1.3200					1.1200	XXXL
 -100	hm	AA	male	0.8400					0.7200	XS
 -80	hm	AA	male	0.8800					0.7600	S
 -60	hm	AA	male	0.9200					0.8000	S
@@ -2498,6 +2666,88 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 60	oldnavy	US	male	1.2192	0.4381	0.9335				XL (Tall Sleeve)
 80	oldnavy	US	male	1.3208	0.4636	0.9589				XXL (Tall Sleeve)
 100	oldnavy	US	male	1.4224	0.4890	0.9842				XXXL (Tall Sleeve)
+-40	patagonia	AA	female	0.8250				0.8900	0.6250	XS
+-20	patagonia	AA	female	0.8750				0.9400	0.6750	S
+0	patagonia	AA	female	0.9250				0.9900	0.7250	M
+20	patagonia	AA	female	1.0000				1.0600	0.7900	L
+40	patagonia	AA	female	1.0500				1.1200	0.8500	XL
+-40	patagonia	FR	female	0.8250				0.8900	0.6250	34,36/XS
+-20	patagonia	FR	female	0.8750				0.9400	0.6750	36,38/S
+0	patagonia	FR	female	0.9250				0.9900	0.7250	38,40/M
+20	patagonia	FR	female	1.0000				1.0600	0.7900	42,44/L
+40	patagonia	FR	female	1.0500				1.1200	0.8500	44,46/XL
+-40	patagonia	XA	female	0.8250				0.8900	0.6250	32/XS
+-20	patagonia	XA	female	0.8750				0.9400	0.6750	34,36/S
+0	patagonia	XA	female	0.9250				0.9900	0.7250	38,40/M
+20	patagonia	XA	female	1.0000				1.0600	0.7900	42,44/L
+40	patagonia	XA	female	1.0500				1.1200	0.8500	46/XL
+-40	patagonia	DE	female	0.8250				0.8900	0.6250	32/XS
+-20	patagonia	DE	female	0.8750				0.9400	0.6750	34,36/S
+0	patagonia	DE	female	0.9250				0.9900	0.7250	38,40/M
+20	patagonia	DE	female	1.0000				1.0600	0.7900	42,44/L
+40	patagonia	DE	female	1.0500				1.1200	0.8500	46/XL
+-40	patagonia	IT	female	0.8250				0.8900	0.6250	36/XS
+-20	patagonia	IT	female	0.8750				0.9400	0.6750	38,40/S
+0	patagonia	IT	female	0.9250				0.9900	0.7250	42,44/M
+20	patagonia	IT	female	1.0000				1.0600	0.7900	46,48/L
+40	patagonia	IT	female	1.0500				1.1200	0.8500	50/XL
+-40	patagonia	US	female	0.8250				0.8900	0.6250	0,2/XS
+-20	patagonia	US	female	0.8750				0.9400	0.6750	4,6/S
+0	patagonia	US	female	0.9250				0.9900	0.7250	8,10/M
+20	patagonia	US	female	1.0000				1.0600	0.7900	12,14/L
+40	patagonia	US	female	1.0500				1.1200	0.8500	16/XL
+-40	patagonia	GB	female	0.8250				0.8900	0.6250	4,6/XS
+-20	patagonia	GB	female	0.8750				0.9400	0.6750	8,10/S
+0	patagonia	GB	female	0.9250				0.9900	0.7250	12,14/M
+20	patagonia	GB	female	1.0000				1.0600	0.7900	16,18/L
+40	patagonia	GB	female	1.0500				1.1200	0.8500	20/XL
+-40	patagonia	ES	female	0.8250				0.8900	0.6250	32/XS
+-20	patagonia	ES	female	0.8750				0.9400	0.6750	34,36/S
+0	patagonia	ES	female	0.9250				0.9900	0.7250	38,40/M
+20	patagonia	ES	female	1.0000				1.0600	0.7900	42,44/L
+40	patagonia	ES	female	1.0500				1.1200	0.8500	46/XL
+-60	patagonia	AA	male	0.8750	0.3750	0.8100			0.7100	XS
+-40	patagonia	AA	male	0.9400	0.3850	0.8400			0.7500	S
+-20	patagonia	AA	male	1.0150	0.4000	0.8600			0.8150	M
+0	patagonia	AA	male	1.1050	0.4250	0.8900			0.8850	L
+20	patagonia	AA	male	1.1950	0.4350	0.9100			0.9700	XL
+40	patagonia	AA	male	1.2700	0.4500	0.9400			1.0450	XXL
+-60	patagonia	FR	male	0.8750	0.3750	0.8100			0.7100	36/XS
+-40	patagonia	FR	male	0.9400	0.3850	0.8400			0.7500	38,40/S
+-20	patagonia	FR	male	1.0150	0.4000	0.8600			0.8150	40,42/M
+0	patagonia	FR	male	1.1050	0.4250	0.8900			0.8850	44,46/L
+20	patagonia	FR	male	1.1950	0.4350	0.9100			0.9700	48/XL
+40	patagonia	FR	male	1.2700	0.4500	0.9400			1.0450	50/XXL
+-60	patagonia	DE	male	0.8750	0.3750	0.8100			0.7100	42/XS
+-40	patagonia	DE	male	0.9400	0.3850	0.8400			0.7500	44,46/S
+-20	patagonia	DE	male	1.0150	0.4000	0.8600			0.8150	48/M
+0	patagonia	DE	male	1.1050	0.4250	0.8900			0.8850	50,52/L
+20	patagonia	DE	male	1.1950	0.4350	0.9100			0.9700	54/XL
+40	patagonia	DE	male	1.2700	0.4500	0.9400			1.0450	56/XXL
+-60	patagonia	IT	male	0.8750	0.3750	0.8100			0.7100	42/XS
+-40	patagonia	IT	male	0.9400	0.3850	0.8400			0.7500	44,46/S
+-20	patagonia	IT	male	1.0150	0.4000	0.8600			0.8150	48/M
+0	patagonia	IT	male	1.1050	0.4250	0.8900			0.8850	50,52/L
+20	patagonia	IT	male	1.1950	0.4350	0.9100			0.9700	54/XL
+40	patagonia	IT	male	1.2700	0.4500	0.9400			1.0450	56/XXL
+-60	patagonia	US	male	0.8750	0.3750	0.8100			0.7100	28/XS
+-40	patagonia	US	male	0.9400	0.3850	0.8400			0.7500	30,31/S
+-20	patagonia	US	male	1.0150	0.4000	0.8600			0.8150	32,33/M
+0	patagonia	US	male	1.1050	0.4250	0.8900			0.8850	34,35/L
+20	patagonia	US	male	1.1950	0.4350	0.9100			0.9700	36/XL
+40	patagonia	US	male	1.2700	0.4500	0.9400			1.0450	38/XXL
+-60	patagonia	GB	male	0.8750	0.3750	0.8100			0.7100	28/XS
+-40	patagonia	GB	male	0.9400	0.3850	0.8400			0.7500	30,31/S
+-20	patagonia	GB	male	1.0150	0.4000	0.8600			0.8150	32,33/M
+0	patagonia	GB	male	1.1050	0.4250	0.8900			0.8850	34,35/L
+20	patagonia	GB	male	1.1950	0.4350	0.9100			0.9700	36/XL
+40	patagonia	GB	male	1.2700	0.4500	0.9400			1.0450	38/XXL
+-60	patagonia	ES	male	0.8750	0.3750	0.8100			0.7100	36/XS
+-40	patagonia	ES	male	0.9400	0.3850	0.8400			0.7500	38,40/S
+-20	patagonia	ES	male	1.0150	0.4000	0.8600			0.8150	40,42/M
+0	patagonia	ES	male	1.1050	0.4250	0.8900			0.8850	44,46/L
+20	patagonia	ES	male	1.1950	0.4350	0.9100			0.9700	48/XL
+40	patagonia	ES	male	1.2700	0.4500	0.9400			1.0450	50/XXL
 -80	phaseeight	FR	female	0.7600					0.5900	34/XS
 -60	phaseeight	FR	female	0.8100					0.6400	36/XS,S
 -40	phaseeight	FR	female	0.8600					0.6900	38/S,M
@@ -2959,6 +3209,12 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	reiss	GB	male		0.4064					16/L
 20	reiss	GB	male		0.4191					16.5/XL
 40	reiss	GB	male		0.4318					17/XXL
+-60	ripcurl	AA	male	0.8625						XS
+-40	ripcurl	AA	male	0.9125						S
+-20	ripcurl	AA	male	0.9625						M
+0	ripcurl	AA	male	1.0125						L
+20	ripcurl	AA	male	1.0750						XL
+40	ripcurl	AA	male	1.1750						XXL
 -40	robertafreymann	US	female	0.8382					0.6350	0,2/XS
 -20	robertafreymann	US	female	0.9017					0.6985	4,6/S
 0	robertafreymann	US	female	0.9525					0.7493	8,10/M

@@ -31,6 +31,42 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -20	abercrombieandfitch	GB	female	0.8750			10/S
 0	abercrombieandfitch	GB	female	0.9250			12/M
 20	abercrombieandfitch	GB	female	0.9650			14/L
+-60	adidas	AA	female	0.7874	0.6350	0.8890	XS
+-40	adidas	AA	female	0.8636	0.6985	0.9525	S
+-20	adidas	AA	female	0.9271	0.7620	1.0160	M
+0	adidas	AA	female	0.9906	0.8382	1.0795	L
+20	adidas	AA	female	1.0668	0.9144	1.1430	XL
+40	adidas	AA	female	1.1430	1.0033	1.2192	2XL
+-60	adidas	FR	female	0.7874	0.6350	0.8890	32,34/XS
+-40	adidas	FR	female	0.8636	0.6985	0.9525	36,38/S
+-20	adidas	FR	female	0.9271	0.7620	1.0160	40,42/M
+0	adidas	FR	female	0.9906	0.8382	1.0795	44,46/L
+20	adidas	FR	female	1.0668	0.9144	1.1430	48,50/XL
+40	adidas	FR	female	1.1430	1.0033	1.2192	52,54/2XL
+-60	adidas	XA	female	0.7874	0.6350	0.8890	30,32/XS
+-40	adidas	XA	female	0.8636	0.6985	0.9525	34,36/S
+-20	adidas	XA	female	0.9271	0.7620	1.0160	38,40/M
+0	adidas	XA	female	0.9906	0.8382	1.0795	42,44/L
+20	adidas	XA	female	1.0668	0.9144	1.1430	46,48/XL
+40	adidas	XA	female	1.1430	1.0033	1.2192	50,52/2XL
+-60	adidas	DE	female	0.7874	0.6350	0.8890	30,32/XS
+-40	adidas	DE	female	0.8636	0.6985	0.9525	34,36/S
+-20	adidas	DE	female	0.9271	0.7620	1.0160	38,40/M
+0	adidas	DE	female	0.9906	0.8382	1.0795	42,44/L
+20	adidas	DE	female	1.0668	0.9144	1.1430	46,48/XL
+40	adidas	DE	female	1.1430	1.0033	1.2192	50,52/2XL
+-60	adidas	US	female	0.7874	0.6350	0.8890	0,2/XS
+-40	adidas	US	female	0.8636	0.6985	0.9525	4,6/S
+-20	adidas	US	female	0.9271	0.7620	1.0160	8,10/M
+0	adidas	US	female	0.9906	0.8382	1.0795	12,14/L
+20	adidas	US	female	1.0668	0.9144	1.1430	16,18/XL
+40	adidas	US	female	1.1430	1.0033	1.2192	20,22/2XL
+-60	adidas	GB	female	0.7874	0.6350	0.8890	4,6/XS
+-40	adidas	GB	female	0.8636	0.6985	0.9525	8,10/S
+-20	adidas	GB	female	0.9271	0.7620	1.0160	12,14/M
+0	adidas	GB	female	0.9906	0.8382	1.0795	16,18/L
+20	adidas	GB	female	1.0668	0.9144	1.1430	20,22/XL
+40	adidas	GB	female	1.1430	1.0033	1.2192	24,26/2XL
 -100	adriannapapell	XA	female	0.8260	0.6220	0.8760	32/XS
 -80	adriannapapell	XA	female	0.8510	0.6480	0.9020	34/XS
 -60	adriannapapell	XA	female	0.8760	0.6730	0.9270	36/S

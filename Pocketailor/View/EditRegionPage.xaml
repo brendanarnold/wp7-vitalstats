@@ -6,19 +6,32 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    
+    xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource"
     xmlns:local="clr-namespace:Pocketailor.View"
     x:Class="Pocketailor.View.EditRegionPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
 	>
+	
+	
+  
+ 
 
 	<phone:PhoneApplicationPage.Resources>
+
+		<local:BoolToGroupItemBGColor x:Key="BoolToGroupItemBGColor"/>
+
+		<SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
+
+		
+
 		<local:BoolToCheckBox x:Key="BoolToCheckBox"/>
 		<DataTemplate x:Key="RegionItemTemplate">
 			<Grid>
-				<RadioButton Content="{Binding Name}" IsChecked="{Binding Selected}" Foreground="{StaticResource DialogTxtColor}" Background="{StaticResource UIBGColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="regionGroup" Checked="RadioButton_Checked" />
+				<RadioButton
+					Margin="24,0,0,0"
+					Content="{Binding Name}" IsChecked="{Binding Selected}" Foreground="{StaticResource DialogTxtColor}" Background="{StaticResource UIBGColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" GroupName="regionGroup" Checked="RadioButton_Checked" />
 			</Grid>
 		</DataTemplate>
 	</phone:PhoneApplicationPage.Resources>
@@ -74,7 +87,7 @@
 	</d:DataContext>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}" d:DataContext="{Binding Source={StaticResource LongListSampleDataInstance}}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
@@ -86,9 +99,61 @@
 		<TextBlock
 			Grid.Row="1"
 			TextWrapping="Wrap" Text="If you cannot find your favourite brand, try the region where the brand was founded." Margin="36,0,36,10" Foreground="{StaticResource PageTxtColor}" FontSize="21.333" />
-		<ListBox 
+		<toolkit:LongListSelector
 			Grid.Row="2"
-			BorderThickness="24,0,12,0" ItemsSource="{Binding Regions}" ItemTemplate="{StaticResource RegionItemTemplate}"/>
+			Margin="0"
+			Background="Transparent"
+			ItemsSource="{Binding GroupedRegions}"
+			ItemTemplate="{StaticResource RegionItemTemplate}" GroupViewClosing="LongListSelector_GroupViewClosing" GroupViewOpened="LongListSelector_GroupViewOpened"
+			
+			>
+			<toolkit:LongListSelector.Resources>
+				<DataTemplate x:Key="groupHeaderTemplate">
+					<Border 
+						Width="62" Height="62"
+						HorizontalAlignment="Left"
+						Margin="34,0,0,0"
+						Background="Transparent">
+						<TextBlock 
+							Text="{Binding Key}" 
+							Foreground="{StaticResource PageTxtColor}" 
+							FontSize="48"
+							FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Bottom" />
+					</Border>
+				</DataTemplate>
+				<ItemsPanelTemplate x:Key="GroupItemsPanelTemplate">
+						<toolkit:WrapPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+				<DataTemplate x:Key="GroupItemTemplate">
+					<Border 
+							Margin="6" 
+							IsHitTestVisible="{Binding HasItems}"
+							Width="99" Height="99" Background="{Binding HasItems, Converter={StaticResource BoolToGroupItemBGColor}}"  
+							>
+							<Border.Projection>
+								<PlaneProjection RotationX="-60"/>
+							</Border.Projection>
+							<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" 
+								Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+						</Border>
+				</DataTemplate>
+			</toolkit:LongListSelector.Resources>
+			<toolkit:LongListSelector.GroupItemTemplate>
+				<StaticResource ResourceKey="GroupItemTemplate"/>
+			</toolkit:LongListSelector.GroupItemTemplate>
+			<toolkit:LongListSelector.GroupItemsPanel>
+				<StaticResource ResourceKey="GroupItemsPanelTemplate"/>
+			</toolkit:LongListSelector.GroupItemsPanel>
+			<toolkit:LongListSelector.GroupHeaderTemplate>
+				<StaticResource ResourceKey="groupHeaderTemplate"/>
+			</toolkit:LongListSelector.GroupHeaderTemplate>
+			
+		</toolkit:LongListSelector>
+		
+		
+		
 	</Grid>
 
 </phone:PhoneApplicationPage>

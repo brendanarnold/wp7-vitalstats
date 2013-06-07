@@ -42,7 +42,7 @@
 	
 	
   
-  <SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
+		<SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
 
 
 

@@ -149,6 +149,18 @@ namespace Pocketailor.Model
         Wallis = 140,
         Xscape = 141,
         WhitehouseBlackmarket = 142,
+        TwoXu = 143,
+        Adidas = 144,
+        Billabong = 145,
+        BodyGlove = 146,
+        Gill = 147,
+        Gul = 148,
+        HellyHansen = 149,
+        Nordica = 150,
+        ONeill = 151,
+        Patagonia = 152,
+        RipCurl = 153,
+        Xcel = 154,
     }
 
     public static partial class Lookup
@@ -296,6 +308,19 @@ namespace Pocketailor.Model
             { BrandId.Wallis, "Wallis" },
             { BrandId.Xscape, "XScape" },
             { BrandId.WhitehouseBlackmarket, "Whitehouse/Blackmarket" },
+            { BrandId.TwoXu, "2XU" },
+            { BrandId.Adidas, "Adidas" },
+            { BrandId.Billabong, "Billabong" },
+            { BrandId.BodyGlove, "Body Glove" },
+            { BrandId.Gill, "Gill" },
+            { BrandId.Gul, "Gul" },
+            { BrandId.HellyHansen, "Helly Hansen" },
+            { BrandId.Nordica, "Nordica" },
+            { BrandId.ONeill, "O'Neill" },
+            { BrandId.Patagonia, "Patagonia" },
+            { BrandId.RipCurl, "Rip Curl" },
+            { BrandId.Xcel, "Xcel" },
+            
         };
     }
 

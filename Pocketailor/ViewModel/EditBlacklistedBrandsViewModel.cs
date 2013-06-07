@@ -69,6 +69,31 @@ namespace Pocketailor.ViewModel
                 brands.Add(new BrandContainer { Name = Lookup.Brand[b], Id = b, Selected = !this.BlacklistedBrands.Contains(b) });
             }
             this._brands = new ObservableCollection<BrandContainer>(brands.OrderBy(b => b.Name));
+
+            // Now group for use in the LongListSelector
+            string groupKeys = "#abcdefghijklmnopqrstuvwxyz";
+            // Initially store in a dictionary
+            Dictionary<string, List<BrandContainer>> groupDict = new Dictionary<string, List<BrandContainer>>();
+            foreach (char c in groupKeys)
+            {
+                groupDict.Add(c.ToString(), new List<BrandContainer>());
+            }
+            foreach (BrandContainer b in this.Brands)
+            {
+                // Add to the right group according to the first letter of the brand name
+                char key = char.ToLower(b.Name[0]);
+                if (key < 'a' || key > 'z') key = '#';
+                groupDict[key.ToString()].Add(b);
+            }
+            List<LongListSelectorGroup<BrandContainer>> buff = new List<LongListSelectorGroup<BrandContainer>>();
+            foreach (char key in groupKeys)
+            {
+                string k = key.ToString();
+                buff.Add(new LongListSelectorGroup<BrandContainer>(k, groupDict[k]));
+            }
+            this.GroupedBrands = new ObservableCollection<LongListSelectorGroup<BrandContainer>>(buff);
+
+
         }
 
         public class BrandContainer
@@ -76,6 +101,21 @@ namespace Pocketailor.ViewModel
             public string Name { get; set; }
             public BrandId Id { get; set; }
             public bool Selected { get; set; }
+        }
+
+
+        private ObservableCollection<LongListSelectorGroup<BrandContainer>> _groupedBrands;
+        public ObservableCollection<LongListSelectorGroup<BrandContainer>> GroupedBrands
+        {
+            get { return this._groupedBrands; }
+            set
+            {
+                if (this._groupedBrands != value)
+                {
+                    this._groupedBrands = value;
+                    this.NotifyPropertyChanged("GroupedBrands");
+                }
+            }
         }
 
     }

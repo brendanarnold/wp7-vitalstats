@@ -29,14 +29,14 @@ Measure from floor to the top of the head along the wall." },
 
 For women this will likely be across the top of the breasts, for men this will likely be the highest the tape measure will go under the arms." },
                 { MeasurementId.Hips, @"Measure around the hips at the widest part." },
-                { MeasurementId.Waist, @"Wrap tape measure around the lower torso.
+                { MeasurementId.Waist, @"Wrap tape measure around the mid/lower torso.
 
-For women, take the measurement just above the belly button. For men, take the measurement just below the belly button."},
+For women, take the measurement just above the belly button at the narrowest part. For men, take the measurement just below the belly button."},
                 { MeasurementId.InsideLeg, @"Stand upright and measure from the crotch to where you expect the trouser seam to stop."},
                 { MeasurementId.Neck, @"Wrap the tape around the neck, over the Adam's apple.
 
 Tuck in four fingers as you make the measurement to allow breathing space." },
-                { MeasurementId.UnderBust, @"Measure around the upper torso so that crosses just below the breasts" },
+                { MeasurementId.UnderBust, @"Measure around the upper torso so that crosses just below the breasts." },
                 { MeasurementId.Head, @"Measure around the head at the level where you expect a hat to sit."},
                 { MeasurementId.FootWidth, @"Draw around the foot on a piece of paper.
 
@@ -51,7 +51,7 @@ Measure from the base of the back of the collar down to where you expect the bot
 
 The seam should lie just past the corner of the shoulder." },
                 { MeasurementId.OutsideLeg, @"Stand upright and measure from where you typically wear the top of your trousers down to where you expect the trouser seam to stop." },
-                { MeasurementId.Weight, @"Stand evenly on the scales and read off the value!" },
+                { MeasurementId.Weight, @"Stand evenly on the scales and read off the value." },
             };
 
             this.HelpImgMale = new Dictionary<MeasurementId, string>()

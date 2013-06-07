@@ -72,6 +72,21 @@ namespace Pocketailor.ViewModel
             }
         }
 
+        private ObservableCollection<LongListSelectorGroup<RegionContainer>> _groupedRegions;
+        public ObservableCollection<LongListSelectorGroup<RegionContainer>> GroupedRegions
+        {
+            get { return this._groupedRegions; }
+            set
+            {
+                if (this._groupedRegions != value)
+                {
+                    this._groupedRegions = value;
+                    this.NotifyPropertyChanged("GroupedRegions");
+                }
+            }
+        }
+
+
         public void LoadRegionContainers()
         {
             this._regions = new ObservableCollection<RegionContainer>();
@@ -81,6 +96,30 @@ namespace Pocketailor.ViewModel
                 this._regions.Add(new RegionContainer { Name = Globalisation.Helpers.GetRegionNameFromIso(r), Id = r, Selected = (selectedRegion == r) });
             }
             this._regions = new ObservableCollection<RegionContainer>(this._regions.OrderBy(r => r.Name));
+            
+            // Now group for use in the LongListSelector
+            string groupKeys = "#abcdefghijklmnopqrstuvwxyz";
+            // Initially store in a dictionary
+            Dictionary<string, List<RegionContainer>> groupDict = new Dictionary<string, List<RegionContainer>>();
+            foreach (char c in groupKeys)
+            {
+                groupDict.Add(c.ToString(), new List<RegionContainer>());
+            }
+            foreach (RegionContainer r in this.Regions)
+            {
+                // Add to the right group according to the first letter of the brand name
+                char key = char.ToLower(r.Name[0]);
+                if (key < 'a' || key > 'z') key = '#';
+                groupDict[key.ToString()].Add(r);
+            }
+            List<LongListSelectorGroup<RegionContainer>> buff = new List<LongListSelectorGroup<RegionContainer>>();
+            foreach (char key in groupKeys)
+            {
+                string k = key.ToString();
+                buff.Add(new LongListSelectorGroup<RegionContainer>(k, groupDict[k]));
+            }
+            this.GroupedRegions = new ObservableCollection<LongListSelectorGroup<RegionContainer>>(buff);
+
         }
 
         public class RegionContainer: INotifyPropertyChanged

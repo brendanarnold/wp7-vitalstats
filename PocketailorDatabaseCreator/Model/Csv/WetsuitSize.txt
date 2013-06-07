@@ -1,4 +1,219 @@
 sizeid	brand	region	gender	height	chest	waist	hips	weight	size
+-60	billabong	AA	female	1.5750	0.7650	0.6050	0.8650		6
+-40	billabong	AA	female	1.6500	0.7850	0.6350	0.8850		8
+-20	billabong	AA	female	1.6800	0.8350	0.6850	0.9400		10
+0	billabong	AA	female	1.7200	0.8850	0.7350	0.9950		12
+20	billabong	AA	female	1.7350	0.9650	0.7850	1.0450		14
+40	billabong	AA	female	1.7350	1.0150	0.8350	1.0950		16
+-60	billabong	AU	female	1.5750	0.7650	0.6050	0.8650		6
+-40	billabong	AU	female	1.6500	0.7850	0.6350	0.8850		8
+-20	billabong	AU	female	1.6800	0.8350	0.6850	0.9400		10
+0	billabong	AU	female	1.7200	0.8850	0.7350	0.9950		12
+20	billabong	AU	female	1.7350	0.9650	0.7850	1.0450		14
+40	billabong	AU	female	1.7350	1.0150	0.8350	1.0950		16
+-60	billabong	GB	female	1.5750	0.7650	0.6050	0.8650		6
+-40	billabong	GB	female	1.6500	0.7850	0.6350	0.8850		8
+-20	billabong	GB	female	1.6800	0.8350	0.6850	0.9400		10
+0	billabong	GB	female	1.7200	0.8850	0.7350	0.9950		12
+20	billabong	GB	female	1.7350	0.9650	0.7850	1.0450		14
+40	billabong	GB	female	1.7350	1.0150	0.8350	1.0950		16
+-80	billabong	US	female	1.5113	0.7239	0.5588		39.3750	0
+-60	billabong	US	female	1.5748	0.7747	0.6096		43.8750	2
+-40	billabong	US	female	1.6256	0.8001	0.6350		48.3750	4
+-20	billabong	US	female	1.6510	0.8255	0.6604		52.8750	6
+0	billabong	US	female	1.6764	0.8509	0.6858		57.3750	8
+20	billabong	US	female	1.7018	0.8890	0.7112		63.0000	10
+40	billabong	US	female	1.7272	0.9271	0.7620		67.5000	12
+60	billabong	US	female	1.7780	0.9716	0.9017		72.0000	14
+80	billabong	US	female	1.7907	1.0033	0.8382		78.7500	16
+-120	billabong	AA	male	1.6900	0.8850	0.7150	0.8650	60.50	XS
+-100	billabong	AA	male	1.7200	0.9350	0.7650	0.8850	65.50	S
+-80	billabong	AA	male	1.7500	0.9350	0.7650	0.8850	68.50	ST
+-60	billabong	AA	male	1.7200	0.9850	0.8150	0.9150	73.50	MS
+-40	billabong	AA	male	1.7800	0.9850	0.8150	0.9150	72.50	M
+-20	billabong	AA	male	1.8300	0.9850	0.8150	0.9150	77.50	MT
+0	billabong	AA	male	1.7800	1.0350	0.8650	0.9650	77.50	LS
+20	billabong	AA	male	1.8300	1.0350	0.8650	0.9650	81.50	L
+40	billabong	AA	male	1.8500	1.0350	0.8650	0.9650	86.50	LT
+60	billabong	AA	male	1.8900	1.0850	0.9150	1.0150	90.50	XL
+80	billabong	AA	male	1.9200	1.0850	0.9150	1.0650	99.50	XXL
+100	billabong	AA	male	1.9200	1.0850	0.9150	1.0850	108.50	XXXL
+-120	billabong	AU	male	1.6900	0.8850	0.7150	0.8650	60.50	XS
+-100	billabong	AU	male	1.7200	0.9350	0.7650	0.8850	65.50	S
+-80	billabong	AU	male	1.7500	0.9350	0.7650	0.8850	68.50	ST
+-60	billabong	AU	male	1.7200	0.9850	0.8150	0.9150	73.50	MS
+-40	billabong	AU	male	1.7800	0.9850	0.8150	0.9150	72.50	M
+-20	billabong	AU	male	1.8300	0.9850	0.8150	0.9150	77.50	MT
+0	billabong	AU	male	1.7800	1.0350	0.8650	0.9650	77.50	LS
+20	billabong	AU	male	1.8300	1.0350	0.8650	0.9650	81.50	L
+40	billabong	AU	male	1.8500	1.0350	0.8650	0.9650	86.50	LT
+60	billabong	AU	male	1.8900	1.0850	0.9150	1.0150	90.50	XL
+80	billabong	AU	male	1.9200	1.0850	0.9150	1.0650	99.50	XXL
+100	billabong	AU	male	1.9200	1.0850	0.9150	1.0850	108.50	XXXL
+-120	billabong	GB	male	1.6900	0.8850	0.7150	0.8650	60.50	XS
+-100	billabong	GB	male	1.7200	0.9350	0.7650	0.8850	65.50	S
+-80	billabong	GB	male	1.7500	0.9350	0.7650	0.8850	68.50	ST
+-60	billabong	GB	male	1.7200	0.9850	0.8150	0.9150	73.50	MS
+-40	billabong	GB	male	1.7800	0.9850	0.8150	0.9150	72.50	M
+-20	billabong	GB	male	1.8300	0.9850	0.8150	0.9150	77.50	MT
+0	billabong	GB	male	1.7800	1.0350	0.8650	0.9650	77.50	LS
+20	billabong	GB	male	1.8300	1.0350	0.8650	0.9650	81.50	L
+40	billabong	GB	male	1.8500	1.0350	0.8650	0.9650	86.50	LT
+60	billabong	GB	male	1.8900	1.0850	0.9150	1.0150	90.50	XL
+80	billabong	GB	male	1.9200	1.0850	0.9150	1.0650	99.50	XXL
+100	billabong	GB	male	1.9200	1.0850	0.9150	1.0850	108.50	XXXL
+-120	billabong	US	male	1.7272	0.9017	0.7366		59.6250	XS
+-100	billabong	US	male	1.7526	0.9525	0.7620		65.2500	S
+-80	billabong	US	male	1.7780	1.0033	0.8001		72.0000	M
+-60	billabong	US	male	1.7145	0.9970	0.8001		67.5000	MS
+-40	billabong	US	male	1.8796	1.0033	0.8001		76.5000	MT
+-20	billabong	US	male	1.8034	1.0541	0.8509		81.0000	L
+0	billabong	US	male	1.7399	1.0541	0.8509		76.5000	LS
+20	billabong	US	male	1.8796	1.0541	0.8509		81.0000	LT
+40	billabong	US	male	1.8288	1.1049	0.9017		90.0000	XL
+60	billabong	US	male	1.7653	1.1049	0.9017		85.5000	XLS
+80	billabong	US	male	1.8542	1.1557	0.9525		99.0000	XXL
+100	billabong	US	male	1.8542	1.6002	1.0414		108.0000	XXXL
+-60	bodyglove	AA	female	1.5494				43.8750	3,4
+-40	bodyglove	AA	female	1.6002				50.6250	5,6
+-20	bodyglove	AA	female	1.6637				56.2500	7,8
+0	bodyglove	AA	female	1.7145				60.7500	9,10
+20	bodyglove	AA	female	1.7399				63.0000	11,12
+-100	bodyglove	AA	male	1.6764				56.2500	XS
+-80	bodyglove	AA	male	1.7018				63.0000	S
+-60	bodyglove	AA	male	1.6891				85.5000	ML
+-40	bodyglove	AA	male	1.7272				69.7500	MS
+-20	bodyglove	AA	male	1.7653				70.8750	M
+0	bodyglove	AA	male	1.8669				74.2500	MT
+20	bodyglove	AA	male	1.7145				87.7500	L
+40	bodyglove	AA	male	1.7653				83.2500	LS
+60	bodyglove	AA	male	1.8923				90.0000	LT
+80	bodyglove	AA	male	1.8415				92.2500	XL
+-60	gill	AA	female		0.8150	0.6450	0.8950		8
+-40	gill	AA	female		0.8550	0.6750	0.9300		10
+-20	gill	AA	female		0.9050	0.7250	0.9550		12
+0	gill	AA	female		0.9450	0.7750	1.0050		14
+20	gill	AA	female		0.9800	0.8250	1.0550		16
+40	gill	AA	female		1.0300	0.8800	1.1050		18
+60	gill	AA	female		1.0800	0.9300	1.1550		20
+-60	gill	XA	female		0.8150	0.6450	0.8950		34
+-40	gill	XA	female		0.8550	0.6750	0.9300		36
+-20	gill	XA	female		0.9050	0.7250	0.9550		38
+0	gill	XA	female		0.9450	0.7750	1.0050		40
+20	gill	XA	female		0.9800	0.8250	1.0550		42
+40	gill	XA	female		1.0300	0.8800	1.1050		44
+60	gill	XA	female		1.0800	0.9300	1.1550		46
+-60	gill	US	female		0.8150	0.6450	0.8950		4
+-40	gill	US	female		0.8550	0.6750	0.9300		6
+-20	gill	US	female		0.9050	0.7250	0.9550		8
+0	gill	US	female		0.9450	0.7750	1.0050		10
+20	gill	US	female		0.9800	0.8250	1.0550		12
+40	gill	US	female		1.0300	0.8800	1.1050		14
+60	gill	US	female		1.0800	0.9300	1.1550		16
+-60	gill	GB	female		0.8150	0.6450	0.8950		8
+-40	gill	GB	female		0.8550	0.6750	0.9300		10
+-20	gill	GB	female		0.9050	0.7250	0.9550		12
+0	gill	GB	female		0.9450	0.7750	1.0050		14
+20	gill	GB	female		0.9800	0.8250	1.0550		16
+40	gill	GB	female		1.0300	0.8800	1.1050		18
+60	gill	GB	female		1.0800	0.9300	1.1550		20
+-60	gill	AA	male	1.6050	0.8950	0.7100			XS
+-40	gill	AA	male	1.6650	0.9450	0.7500			S
+-20	gill	AA	male	1.7400	0.9950	0.8150			M
+0	gill	AA	male	1.8200	1.0650	0.9050			L
+20	gill	AA	male	1.8700	1.1550	0.9950			XL
+40	gill	AA	male	1.8950	1.2250	1.0650			XXL
+60	gill	AA	male	1.8950	1.2950	1.1350			XXXL
+-80	gul	AA	female	1.6250	0.7850	0.5850	0.8350		8
+-60	gul	AA	female	1.6600	0.8350	0.6350	0.8850		10
+-40	gul	AA	female	1.6850	0.8350	0.6350	0.8850		10T
+-20	gul	AA	female	1.6500	0.8850	0.6850	0.9400		12
+0	gul	AA	female	1.7150	0.8850	0.6850	0.9400		12T
+20	gul	AA	female	1.6850	0.8850	0.6850	0.9950		12/14
+40	gul	AA	female	1.7150	0.9400	0.7350	0.9950		14
+60	gul	AA	female	1.7450	0.9950	0.7850	1.0450		16
+-80	gul	GB	female	1.6250	0.7850	0.5850	0.8350		8
+-60	gul	GB	female	1.6600	0.8350	0.6350	0.8850		10
+-40	gul	GB	female	1.6850	0.8350	0.6350	0.8850		10T
+-20	gul	GB	female	1.6500	0.8850	0.6850	0.9400		12
+0	gul	GB	female	1.7150	0.8850	0.6850	0.9400		12T
+20	gul	GB	female	1.6850	0.8850	0.6850	0.9950		12/14
+40	gul	GB	female	1.7150	0.9400	0.7350	0.9950		14
+60	gul	GB	female	1.7450	0.9950	0.7850	1.0450		16
+-140	gul	AA	male	1.6450	0.8850	0.7150	0.8350		S
+-120	gul	AA	male	1.6950	0.9400	0.7650	0.8350		MS
+-100	gul	AA	male	1.7950	0.9400	0.7650	0.8350		MST
+-80	gul	AA	male	1.7450	0.9950	0.8150	0.9400		M
+-60	gul	AA	male	1.7950	0.9950	0.8150	0.9400		MT
+-40	gul	AA	male	1.7950	1.0450	0.8650	0.9950		ML
+-20	gul	AA	male	1.7450	1.1450	0.9150	1.0450		LS
+0	gul	AA	male	1.7950	1.0950	0.8700	1.0700		L
+20	gul	AA	male	1.9350	1.0950	0.8700	1.0450		LT
+40	gul	AA	male	1.8250	1.1450	0.9650	1.0950		XL
+60	gul	AA	male	1.9250	1.1450	0.9650	1.0950		XLT
+80	gul	AA	male	1.8550	1.1950	1.0050	1.1450		XXL
+100	gul	AA	male	1.9250	1.1950	1.0050	1.1450		XXLT
+-140	gul	GB	male	1.6450	0.8850	0.7150	0.8350		S
+-120	gul	GB	male	1.6950	0.9400	0.7650	0.8350		MS
+-100	gul	GB	male	1.7950	0.9400	0.7650	0.8350		MST
+-80	gul	GB	male	1.7450	0.9950	0.8150	0.9400		M
+-60	gul	GB	male	1.7950	0.9950	0.8150	0.9400		MT
+-40	gul	GB	male	1.7950	1.0450	0.8650	0.9950		ML
+-20	gul	GB	male	1.7450	1.1450	0.9150	1.0450		LS
+0	gul	GB	male	1.7950	1.0950	0.8700	1.0700		L
+20	gul	GB	male	1.9350	1.0950	0.8700	1.0450		LT
+40	gul	GB	male	1.8250	1.1450	0.9650	1.0950		XL
+60	gul	GB	male	1.9250	1.1450	0.9650	1.0950		XLT
+80	gul	GB	male	1.8550	1.1950	1.0050	1.1450		XXL
+100	gul	GB	male	1.9250	1.1950	1.0050	1.1450		XXLT
+-120	oneill	AA	female	1.5750	0.7750	0.6050		44.00	2
+-100	oneill	AA	female	1.6250	0.8000	0.6300		48.50	4
+-80	oneill	AA	female	1.6150	0.8250	0.6550		51.50	6S
+-60	oneill	AA	female	1.6550	0.8250	0.6550		53.50	6
+-40	oneill	AA	female	1.6350	0.8550	0.6850		55.50	8S
+-20	oneill	AA	female	1.6750	0.8550	0.6850		58.00	8
+0	oneill	AA	female	1.7150	0.8550	0.6850		60.50	8T
+20	oneill	AA	female	1.6650	0.8850	0.7050		61.50	10S
+40	oneill	AA	female	1.7050	0.8850	0.7050		63.50	10
+60	oneill	AA	female	1.7400	0.8850	0.7050		66.50	10T
+80	oneill	AA	female	1.7250	0.9250	0.7550		68.50	12
+100	oneill	AA	female	1.7600	0.9650	0.7850		72.50	14
+120	oneill	AA	female	1.7900	1.0000	0.8350		79.50	16
+-140	oneill	AA	male	1.7050	0.8550	0.7150		52.00	2XS
+-120	oneill	AA	male	1.7250	0.9050	0.7350		60.50	XS
+-100	oneill	AA	male	1.7550	0.9550	0.7650		65.50	S
+-80	oneill	AA	male	1.8550	0.9550	0.7650		70.50	ST
+-60	oneill	AA	male	1.7750	1.0050	0.8000		72.50	M
+-40	oneill	AA	male	1.7150	1.0050	0.8000		68.50	MS
+-20	oneill	AA	male	1.8800	1.0050	0.8000		77.50	MT
+0	oneill	AA	male	1.8050	1.0550	0.8550		81.50	L
+20	oneill	AA	male	1.7400	1.0550	0.8550		77.50	LS
+40	oneill	AA	male	1.9050	1.0550	0.8550		86.50	LT
+60	oneill	AA	male	1.8250	1.1050	0.9050		90.50	XL
+80	oneill	AA	male	1.7650	1.1050	0.9050		86.50	XLS
+100	oneill	AA	male	1.9300	1.1050	0.9050		95.50	XLT
+120	oneill	AA	male	1.8550	1.1550	0.9550		99.50	2XL
+140	oneill	AA	male	1.8700	1.2150	1.0400		108.50	3XL
+-80	patagonia	AA	female	1.5750	0.8050	0.6050	0.8650	49.50	4
+-60	patagonia	AA	female	1.6250	0.8250	0.6350	0.8850	52.50	6
+-40	patagonia	AA	female	1.6500	0.8550	0.6550	0.9150	54.50	8
+-20	patagonia	AA	female	1.7050	0.8550	0.6550	0.9550	59.50	8T
+0	patagonia	AA	female	1.6750	0.8850	0.6950	0.9550	59.50	10
+20	patagonia	AA	female	1.7250	0.8850	0.6950	0.9900	63.50	10T
+40	patagonia	AA	female	1.7250	0.9250	0.7350	0.9900	63.50	12
+60	patagonia	AA	female	1.7750	0.9650	0.7750	1.0250	68.50	14
+-120	patagonia	AA	male	1.7550	0.9450	0.7650	0.8900	65.50	S
+-100	patagonia	AA	male	1.7250	0.9950	0.8000	0.9250	68.50	MS
+-80	patagonia	AA	male	1.7800	0.9950	0.8000	0.9250	72.50	M
+-60	patagonia	AA	male	1.8800	0.9950	0.8000	0.9250	77.50	MT
+-40	patagonia	AA	male	1.7450	1.0450	0.8450	0.9750	77.50	LS
+-20	patagonia	AA	male	1.8050	1.0450	0.8450	0.9750	81.50	L
+0	patagonia	AA	male	1.9050	1.0450	0.8450	0.9750	86.50	LT
+20	patagonia	AA	male	1.7650	1.1000	0.8950	1.0250	86.50	XLS
+40	patagonia	AA	male	1.8300	1.1000	0.8950	1.0250	90.50	XL
+60	patagonia	AA	male	1.9500	1.1000	0.8950	1.0250	95.50	XLT
+80	patagonia	AA	male	1.8550	1.1250	0.9450	1.0750	99.50	XXL
+100	patagonia	AA	male	1.9300	1.1800	1.0000	1.1300	109.00	XXL
 -140	quiksilver	AA	female	1.7018	0.8890	0.7112	0.8636	59.6250	XS
 -120	quiksilver	AA	female	1.7399	0.9398	0.7620	0.8890	65.2500	S
 -100	quiksilver	AA	female	1.7780	0.9398	0.7620	0.8890	67.5000	ST
@@ -27,3 +242,88 @@ sizeid	brand	region	gender	height	chest	waist	hips	weight	size
 80	quiksilver	AA	male	1.8796	1.0922	0.9144	1.0160	94.5000	XLT
 100	quiksilver	AA	male	1.8796	1.1430	0.9652	1.0668	99.0000	XXL
 120	quiksilver	AA	male	1.8796	1.1938	1.0160	1.1430	103.5000	XXXL
+-60	ripcurl	AA	female	1.5500	0.7800	0.6100			4
+-40	ripcurl	AA	female	1.6000	0.8200	0.6350			6
+-20	ripcurl	AA	female	1.6500	0.8600	0.6600			8
+0	ripcurl	AA	female	1.7000	0.9000	0.6850			10
+20	ripcurl	AA	female	1.7500	0.9400	0.7100			12
+40	ripcurl	AA	female	1.7800	0.9600	0.7350			14
+-60	ripcurl	AU	female	1.5500	0.7800	0.6100			4
+-40	ripcurl	AU	female	1.6000	0.8200	0.6350			6
+-20	ripcurl	AU	female	1.6500	0.8600	0.6600			8
+0	ripcurl	AU	female	1.7000	0.9000	0.6850			10
+20	ripcurl	AU	female	1.7500	0.9400	0.7100			12
+40	ripcurl	AU	female	1.7800	0.9600	0.7350			14
+-100	ripcurl	AA	male	1.6900	0.8800	0.7400			XS
+-80	ripcurl	AA	male	1.7200	0.9300	0.7800			S
+-60	ripcurl	AA	male	1.7200	0.9300	0.7800			MS
+-40	ripcurl	AA	male	1.7800	0.9900	0.8100			M
+-20	ripcurl	AA	male	1.8300	0.9900	0.8100			MT
+0	ripcurl	AA	male	1.7800	1.0300	0.8500			LS
+20	ripcurl	AA	male	1.8300	1.0300	0.8500			L
+40	ripcurl	AA	male	1.8800	1.0900	0.8900			XL
+60	ripcurl	AA	male	1.9200	1.1300	0.9600			XXL
+80	ripcurl	AA	male	1.9200	1.1900	0.9600			XXL
+-100	ripcurl	AU	male	1.6900	0.8800	0.7400			XS
+-80	ripcurl	AU	male	1.7200	0.9300	0.7800			S
+-60	ripcurl	AU	male	1.7200	0.9300	0.7800			MS
+-40	ripcurl	AU	male	1.7800	0.9900	0.8100			M
+-20	ripcurl	AU	male	1.8300	0.9900	0.8100			MT
+0	ripcurl	AU	male	1.7800	1.0300	0.8500			LS
+20	ripcurl	AU	male	1.8300	1.0300	0.8500			L
+40	ripcurl	AU	male	1.8800	1.0900	0.8900			XL
+60	ripcurl	AU	male	1.9200	1.1300	0.9600			XXL
+80	ripcurl	AU	male	1.9200	1.1900	0.9600			XXL
+-60	twoxu	AA	female	1.5200				45.00	XS
+-40	twoxu	AA	female	1.5750				52.00	S
+-20	twoxu	AA	female	1.6950				53.50	ST
+0	twoxu	AA	female	1.6500				60.50	SM
+20	twoxu	AA	female	1.6750				68.00	M
+40	twoxu	AA	female	1.7250				74.00	L
+60	twoxu	AA	female	1.7650				82.00	XL
+-120	twoxu	AA	male	1.6400				60.00	XS
+-100	twoxu	AA	male	1.6600				66.50	S
+-80	twoxu	AA	male	1.7800				68.00	ST
+-60	twoxu	AA	male	1.7200				71.50	SM
+-40	twoxu	AA	male	1.7700				76.00	M
+-20	twoxu	AA	male	1.8550				78.50	MT
+0	twoxu	AA	male	1.7000				83.00	MS
+20	twoxu	AA	male	1.8150				89.50	L
+40	twoxu	AA	male	1.8750				89.00	LT
+60	twoxu	AA	male	1.9000				101.00	XL
+80	twoxu	AA	male	1.9500				112.50	XXL
+100	twoxu	AA	male	1.9500				127.50	XXXL
+-140	xcel	AA	female	1.5600	0.8250	0.6200	0.8500	45.50	4/XS
+-120	xcel	AA	female	1.6100	0.8600	0.6600	0.8900	50.00	6/S
+-100	xcel	AA	female	1.6900	0.8600	0.6600	0.8900	55.50	6/T
+-80	xcel	AA	female	1.6000	0.9000	0.7000	0.9300	51.00	8/S
+-60	xcel	AA	female	1.6650	0.9000	0.7000	0.9300	55.50	8/M
+-40	xcel	AA	female	1.7400	0.9000	0.7000	0.9300	57.50	8/T
+-20	xcel	AA	female	1.6400	0.9500	0.7500	0.9800	57.50	10/S
+0	xcel	AA	female	1.6900	0.9500	0.7500	0.9800	62.50	10/L
+20	xcel	AA	female	1.7900	0.9500	0.7500	0.9800	67.00	10/T
+40	xcel	AA	female	1.6650	1.0300	0.8250	1.0550	67.00	12/S
+60	xcel	AA	female	1.7150	1.0300	0.8250	1.0550	71.50	12/XL
+80	xcel	AA	female	1.6650	1.1200	0.9150	1.1400	72.50	14/S
+100	xcel	AA	female	1.7150	1.1200	0.9150	1.1400	77.50	14/2XL
+120	xcel	AA	female	1.7400	1.2100	1.0000	1.2300	86.50	16
+-200	xcel	AA	male	1.6550	0.9000	0.7350		59.00	XS
+-180	xcel	AA	male	1.7050	0.9400	0.7750		64.50	S
+-160	xcel	AA	male	1.7900	0.9400	0.7750		69.50	ST
+-140	xcel	AA	male	1.7250	0.9650	0.8000		69.50	MS
+-120	xcel	AA	male	1.7550	0.9900	0.8250		73.50	M
+-100	xcel	AA	male	1.8150	0.9900	0.8250		78.50	MT
+-80	xcel	AA	male	1.7050	1.0150	0.8500		73.50	MLS
+-60	xcel	AA	male	1.7750	1.0150	0.8500		78.50	ML
+-40	xcel	AA	male	1.7250	1.0400	0.8750		83.50	LS
+-20	xcel	AA	male	1.8050	1.0400	0.8750		82.50	L
+0	xcel	AA	male	1.8800	1.0400	0.8750		87.50	LT
+20	xcel	AA	male	1.7550	1.0900	0.9300		82.50	XLS
+40	xcel	AA	male	1.8400	1.0900	0.9300		89.50	XL
+60	xcel	AA	male	1.9450	1.0900	0.9300		96.50	XLT
+80	xcel	AA	male	1.7900	1.1400	0.9800		91.50	2XLS
+100	xcel	AA	male	1.8700	1.1400	0.9800		96.50	2XL
+120	xcel	AA	male	1.9150	1.2400	1.0800		104.50	3XLS
+140	xcel	AA	male	1.9150	1.2400	1.0800		111.00	3XL
+160	xcel	AA	male	1.9150	1.3500	1.1800		131.50	4XL
+180	xcel	AA	male	1.9150	1.4500	1.2800		140.50	5XL
