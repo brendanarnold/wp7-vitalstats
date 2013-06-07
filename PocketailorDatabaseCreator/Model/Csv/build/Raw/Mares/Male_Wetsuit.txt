@@ -1,0 +1,7 @@
+#unit:Inch
+Global	2	3	4	5	6	7
+SizeId	-60	-40	-20	0	20	40
+SizeLetter	S	M	M,L	L	XL	XXL
+chest	35-36	37-39	40-41	42-43	44-45	46-48
+waist	31-32	33-34	35-37	38-39	40-42	43-44
+height	65	67	71	73	75	77

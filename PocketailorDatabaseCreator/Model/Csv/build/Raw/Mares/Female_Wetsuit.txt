@@ -1,0 +1,8 @@
+#Unit:Inch
+Gloabl	1	2	3	4
+SizeId	-40	-20	0	20
+SizeLetter	8	10	12	 14
+bust	30-32	33-34	34-36	36-38
+waist	22-24	24-26	26-28	28-30
+hips	32-34	34-35	36-37	37-38
+height	63	65	67	69
