@@ -36,10 +36,14 @@
 	-->
 	<Color x:Key="ApplicationBarBGColor">#313131</Color>
 	<Color x:Key="ApplicationBarFGColor">#feffff</Color>
+	<!-- Can't be exactly white for the light theme -->
 	
-	<Color x:Key="SystemTrayFGColor">#feffff</Color> <!-- Can't be exactly white for the light theme -->
+	<Color x:Key="SystemTrayFGColor">#feffff</Color> 
 	<Color x:Key="SystemTrayBGColor">#000000</Color>
-
+	<!--
+	<Color x:Key="SystemTrayFGColor">#313131</Color> 
+	<Color x:Key="SystemTrayBGColor">#FCCD43</Color>
+	-->
 	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
 	<System:Double x:Key="TileTxtFontSize">19.0</System:Double>

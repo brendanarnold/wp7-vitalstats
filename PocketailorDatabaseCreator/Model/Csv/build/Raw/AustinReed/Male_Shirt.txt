@@ -1,6 +1,6 @@
 #Unit:Inch
-SizeLetter XS (Regular)	XS (Long)	S (Regular)	S (Long)	M (Regular)	M (Long)	L (Regular)	L (Long)	XL (Regular)	XL (Long)	XXL (Regular)	XXL (Long)	(Regular)	(Long)	(Regular)	(Long)	(Regular)	(Long)
-SizeId	-160	-140	-120	-100	-80	-60	-40	-20	0	20	40	60	80	100	120	140	160
+SizeLetter	XS (Regular)	XS (Long)	S (Regular)	S (Long)	M (Regular)	M (Long)	L (Regular)	L (Long)	XL (Regular)	XL (Long)	XXL (Regular)	XXL (Long)	(Regular)	(Long)	(Regular)	(Long)	(Regular)	(Long)
+SizeId	-180	-160	-140	-120	-100	-80	-60	-40	-20	0	20	40	60	80	100	120	140	160
 UK	14½ 	14½ 	15 	15	15½	15½	16	16	16½	16½	17	17	17½	17½	18	18	18½	18½
 Global	14½ 	14½ 	15 	15	15½	15½	16	16	16½	16½	17	17	17½	17½	18	18	18½	18½
 Neck	14½ 	14½ 	15 	15	15½	15½	16	16	16½	16½	17	17	17½	17½	18	18	18½	18½

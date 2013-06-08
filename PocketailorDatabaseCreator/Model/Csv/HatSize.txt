@@ -127,6 +127,12 @@ sizeid	brand	region	gender	head	size
 0	gap	US	male	0.6000	L,XL
 -20	george	GB	male	0.5800	S/M
 0	george	GB	male	0.6000	L/XL
+-20	greenswear	GB	female	0.5600	S
+0	greenswear	GB	female	0.5700	M
+20	greenswear	GB	female	0.5800	L
+-20	greenswear	GB	male	0.5600	S
+0	greenswear	GB	male	0.5700	M
+20	greenswear	GB	male	0.5800	L
 -40	gucci	AA	female	0.5500	XS
 -20	gucci	AA	female	0.5600	S
 0	gucci	AA	female	0.5700	M

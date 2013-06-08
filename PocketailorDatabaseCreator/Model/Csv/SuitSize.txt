@@ -1,4 +1,48 @@
 sizeid	brand	region	gender	waist	shoulder	sleeve	chest	insideleg	neck	torsolength	hips	size
+-60	austinreed	AA	female	0.6096			0.8128				0.8636	6
+-40	austinreed	AA	female	0.6604			0.8636				0.9144	8
+-20	austinreed	AA	female	0.7112			0.9144				0.9652	10
+0	austinreed	AA	female	0.7620			0.9652				1.0160	12
+20	austinreed	AA	female	0.8128			1.0160				1.0668	14
+40	austinreed	AA	female	0.8636			1.0668				1.1176	16
+60	austinreed	AA	female	0.9144			1.1176				1.1684	18
+-60	austinreed	XA	female	0.6096			0.8128				0.8636	34
+-40	austinreed	XA	female	0.6604			0.8636				0.9144	36
+-20	austinreed	XA	female	0.7112			0.9144				0.9652	38
+0	austinreed	XA	female	0.7620			0.9652				1.0160	40
+20	austinreed	XA	female	0.8128			1.0160				1.0668	42
+40	austinreed	XA	female	0.8636			1.0668				1.1176	44
+60	austinreed	XA	female	0.9144			1.1176				1.1684	46
+-60	austinreed	US	female	0.6096			0.8128				0.8636	2
+-40	austinreed	US	female	0.6604			0.8636				0.9144	4
+-20	austinreed	US	female	0.7112			0.9144				0.9652	6
+0	austinreed	US	female	0.7620			0.9652				1.0160	8
+20	austinreed	US	female	0.8128			1.0160				1.0668	10
+40	austinreed	US	female	0.8636			1.0668				1.1176	12
+60	austinreed	US	female	0.9144			1.1176				1.1684	14
+-60	austinreed	GB	female	0.6096			0.8128				0.8636	6
+-40	austinreed	GB	female	0.6604			0.8636				0.9144	8
+-20	austinreed	GB	female	0.7112			0.9144				0.9652	10
+0	austinreed	GB	female	0.7620			0.9652				1.0160	12
+20	austinreed	GB	female	0.8128			1.0160				1.0668	14
+40	austinreed	GB	female	0.8636			1.0668				1.1176	16
+60	austinreed	GB	female	0.9144			1.1176				1.1684	18
+-80	austinreed	AA	male	0.7620			0.9144					36
+-60	austinreed	AA	male	0.8128			0.9652					38
+-40	austinreed	AA	male	0.8636			1.0160					40
+-20	austinreed	AA	male	0.9144			1.0668					42
+0	austinreed	AA	male	0.9652			1.1176					44
+20	austinreed	AA	male	1.0160			1.1684					46
+40	austinreed	AA	male	1.0668			1.2192					48
+60	austinreed	AA	male	1.1176			1.2700					50
+-80	austinreed	GB	male	0.7620			0.9144					36
+-60	austinreed	GB	male	0.8128			0.9652					38
+-40	austinreed	GB	male	0.8636			1.0160					40
+-20	austinreed	GB	male	0.9144			1.0668					42
+0	austinreed	GB	male	0.9652			1.1176					44
+20	austinreed	GB	male	1.0160			1.1684					46
+40	austinreed	GB	male	1.0668			1.2192					48
+60	austinreed	GB	male	1.1176			1.2700					50
 -80	hugoboss_boss	AA	female	0.6000		0.7800	0.7800	0.8500			0.8600	32
 -60	hugoboss_boss	AA	female	0.6400		0.7850	0.8200	0.8500			0.9000	34
 -40	hugoboss_boss	AA	female	0.6800		0.7900	0.8600	0.8500			0.9400	36
@@ -374,6 +418,166 @@ sizeid	brand	region	gender	waist	shoulder	sleeve	chest	insideleg	neck	torsolengt
 20	tedbaker	GB	male	0.9150			1.0650		0.4200			42/XL, TB5
 40	tedbaker	GB	male	0.9650			1.1150		0.4300			44/2XL, TB6
 60	tedbaker	GB	male	1.0150			1.1700		0.4450			46/3XL, TB7
+-80	tmlewin	SG	female	0.6350			0.8130					6
+-60	tmlewin	SG	female	0.6860			0.8640					8
+-40	tmlewin	SG	female	0.7370			0.9140					10
+-20	tmlewin	SG	female	0.7870			0.9650					12
+0	tmlewin	SG	female	0.8380			1.0160					14
+20	tmlewin	SG	female	0.8890			1.0670					16
+40	tmlewin	SG	female	0.9400			1.1180					18
+60	tmlewin	SG	female	0.9910			1.1680					20
+-80	tmlewin	XA	female	0.6350			0.8130					6
+-60	tmlewin	XA	female	0.6860			0.8640					8
+-40	tmlewin	XA	female	0.7370			0.9140					10
+-20	tmlewin	XA	female	0.7870			0.9650					12
+0	tmlewin	XA	female	0.8380			1.0160					14
+20	tmlewin	XA	female	0.8890			1.0670					16
+40	tmlewin	XA	female	0.9400			1.1180					18
+60	tmlewin	XA	female	0.9910			1.1680					20
+-80	tmlewin	AU	female	0.6350			0.8130					6
+-60	tmlewin	AU	female	0.6860			0.8640					8
+-40	tmlewin	AU	female	0.7370			0.9140					10
+-20	tmlewin	AU	female	0.7870			0.9650					12
+0	tmlewin	AU	female	0.8380			1.0160					14
+20	tmlewin	AU	female	0.8890			1.0670					16
+40	tmlewin	AU	female	0.9400			1.1180					18
+60	tmlewin	AU	female	0.9910			1.1680					20
+-80	tmlewin	GB	female	0.6350			0.8130					6
+-60	tmlewin	GB	female	0.6860			0.8640					8
+-40	tmlewin	GB	female	0.7370			0.9140					10
+-20	tmlewin	GB	female	0.7870			0.9650					12
+0	tmlewin	GB	female	0.8380			1.0160					14
+20	tmlewin	GB	female	0.8890			1.0670					16
+40	tmlewin	GB	female	0.9400			1.1180					18
+60	tmlewin	GB	female	0.9910			1.1680					20
+-80	tmlewin	MY	female	0.6350			0.8130					6
+-60	tmlewin	MY	female	0.6860			0.8640					8
+-40	tmlewin	MY	female	0.7370			0.9140					10
+-20	tmlewin	MY	female	0.7870			0.9650					12
+0	tmlewin	MY	female	0.8380			1.0160					14
+20	tmlewin	MY	female	0.8890			1.0670					16
+40	tmlewin	MY	female	0.9400			1.1180					18
+60	tmlewin	MY	female	0.9910			1.1680					20
+-240	tmlewin	MY	male	0.9140			1.0290					36S
+-220	tmlewin	MY	male	0.9140			1.0290					36R
+-200	tmlewin	MY	male	0.9650			1.0800					38S
+-180	tmlewin	MY	male	0.9650			1.0800					38R
+-160	tmlewin	MY	male	0.9910			1.1240					38L
+-140	tmlewin	MY	male	0.9910			1.1240					39R
+-120	tmlewin	MY	male	1.0160			1.1300					40S
+-100	tmlewin	MY	male	1.0160			1.1300					40R
+-80	tmlewin	MY	male	1.0410			1.1750					40L
+-60	tmlewin	MY	male	1.0410			1.1750					41R
+-40	tmlewin	MY	male	1.0670			1.1810					42S
+-20	tmlewin	MY	male	1.0670			1.1810					42R
+0	tmlewin	MY	male	1.0920			1.2260					42L
+20	tmlewin	MY	male	1.0920			1.2260					43R
+40	tmlewin	MY	male	1.1180			1.2320					44S
+60	tmlewin	MY	male	1.1180			1.2320					44R
+80	tmlewin	MY	male	1.1680			1.2830					44L
+100	tmlewin	MY	male	1.1680			1.2830					46S
+120	tmlewin	MY	male	1.2190			1.3340					46R
+140	tmlewin	MY	male	1.2190			1.3340					46L
+160	tmlewin	MY	male	1.2700			1.3780					48R
+180	tmlewin	MY	male	1.2700			1.3780					48L
+200	tmlewin	MY	male	1.3210			1.4350					50R
+220	tmlewin	MY	male	1.3210			1.4350					52R
+-240	tmlewin	XA	male	0.9140			1.0290					36S
+-220	tmlewin	XA	male	0.9140			1.0290					36R
+-200	tmlewin	XA	male	0.9650			1.0800					38S
+-180	tmlewin	XA	male	0.9650			1.0800					38R
+-160	tmlewin	XA	male	0.9910			1.1240					38L
+-140	tmlewin	XA	male	0.9910			1.1240					39R
+-120	tmlewin	XA	male	1.0160			1.1300					40S
+-100	tmlewin	XA	male	1.0160			1.1300					40R
+-80	tmlewin	XA	male	1.0410			1.1750					40L
+-60	tmlewin	XA	male	1.0410			1.1750					41R
+-40	tmlewin	XA	male	1.0670			1.1810					42S
+-20	tmlewin	XA	male	1.0670			1.1810					42R
+0	tmlewin	XA	male	1.0920			1.2260					42L
+20	tmlewin	XA	male	1.0920			1.2260					43R
+40	tmlewin	XA	male	1.1180			1.2320					44S
+60	tmlewin	XA	male	1.1180			1.2320					44R
+80	tmlewin	XA	male	1.1680			1.2830					44L
+100	tmlewin	XA	male	1.1680			1.2830					46S
+120	tmlewin	XA	male	1.2190			1.3340					46R
+140	tmlewin	XA	male	1.2190			1.3340					46L
+160	tmlewin	XA	male	1.2700			1.3780					48R
+180	tmlewin	XA	male	1.2700			1.3780					48L
+200	tmlewin	XA	male	1.3210			1.4350					50R
+220	tmlewin	XA	male	1.3210			1.4350					52R
+-240	tmlewin	AU	male	0.9140			1.0290					36S
+-220	tmlewin	AU	male	0.9140			1.0290					36R
+-200	tmlewin	AU	male	0.9650			1.0800					38S
+-180	tmlewin	AU	male	0.9650			1.0800					38R
+-160	tmlewin	AU	male	0.9910			1.1240					38L
+-140	tmlewin	AU	male	0.9910			1.1240					39R
+-120	tmlewin	AU	male	1.0160			1.1300					40S
+-100	tmlewin	AU	male	1.0160			1.1300					40R
+-80	tmlewin	AU	male	1.0410			1.1750					40L
+-60	tmlewin	AU	male	1.0410			1.1750					41R
+-40	tmlewin	AU	male	1.0670			1.1810					42S
+-20	tmlewin	AU	male	1.0670			1.1810					42R
+0	tmlewin	AU	male	1.0920			1.2260					42L
+20	tmlewin	AU	male	1.0920			1.2260					43R
+40	tmlewin	AU	male	1.1180			1.2320					44S
+60	tmlewin	AU	male	1.1180			1.2320					44R
+80	tmlewin	AU	male	1.1680			1.2830					44L
+100	tmlewin	AU	male	1.1680			1.2830					46S
+120	tmlewin	AU	male	1.2190			1.3340					46R
+140	tmlewin	AU	male	1.2190			1.3340					46L
+160	tmlewin	AU	male	1.2700			1.3780					48R
+180	tmlewin	AU	male	1.2700			1.3780					48L
+200	tmlewin	AU	male	1.3210			1.4350					50R
+220	tmlewin	AU	male	1.3210			1.4350					52R
+-240	tmlewin	GB	male	0.9140			1.0290					36S
+-220	tmlewin	GB	male	0.9140			1.0290					36R
+-200	tmlewin	GB	male	0.9650			1.0800					38S
+-180	tmlewin	GB	male	0.9650			1.0800					38R
+-160	tmlewin	GB	male	0.9910			1.1240					38L
+-140	tmlewin	GB	male	0.9910			1.1240					39R
+-120	tmlewin	GB	male	1.0160			1.1300					40S
+-100	tmlewin	GB	male	1.0160			1.1300					40R
+-80	tmlewin	GB	male	1.0410			1.1750					40L
+-60	tmlewin	GB	male	1.0410			1.1750					41R
+-40	tmlewin	GB	male	1.0670			1.1810					42S
+-20	tmlewin	GB	male	1.0670			1.1810					42R
+0	tmlewin	GB	male	1.0920			1.2260					42L
+20	tmlewin	GB	male	1.0920			1.2260					43R
+40	tmlewin	GB	male	1.1180			1.2320					44S
+60	tmlewin	GB	male	1.1180			1.2320					44R
+80	tmlewin	GB	male	1.1680			1.2830					44L
+100	tmlewin	GB	male	1.1680			1.2830					46S
+120	tmlewin	GB	male	1.2190			1.3340					46R
+140	tmlewin	GB	male	1.2190			1.3340					46L
+160	tmlewin	GB	male	1.2700			1.3780					48R
+180	tmlewin	GB	male	1.2700			1.3780					48L
+200	tmlewin	GB	male	1.3210			1.4350					50R
+220	tmlewin	GB	male	1.3210			1.4350					52R
+-240	tmlewin	SG	male	0.9140			1.0290					36S
+-220	tmlewin	SG	male	0.9140			1.0290					36R
+-200	tmlewin	SG	male	0.9650			1.0800					38S
+-180	tmlewin	SG	male	0.9650			1.0800					38R
+-160	tmlewin	SG	male	0.9910			1.1240					38L
+-140	tmlewin	SG	male	0.9910			1.1240					39R
+-120	tmlewin	SG	male	1.0160			1.1300					40S
+-100	tmlewin	SG	male	1.0160			1.1300					40R
+-80	tmlewin	SG	male	1.0410			1.1750					40L
+-60	tmlewin	SG	male	1.0410			1.1750					41R
+-40	tmlewin	SG	male	1.0670			1.1810					42S
+-20	tmlewin	SG	male	1.0670			1.1810					42R
+0	tmlewin	SG	male	1.0920			1.2260					42L
+20	tmlewin	SG	male	1.0920			1.2260					43R
+40	tmlewin	SG	male	1.1180			1.2320					44S
+60	tmlewin	SG	male	1.1180			1.2320					44R
+80	tmlewin	SG	male	1.1680			1.2830					44L
+100	tmlewin	SG	male	1.1680			1.2830					46S
+120	tmlewin	SG	male	1.2190			1.3340					46R
+140	tmlewin	SG	male	1.2190			1.3340					46L
+160	tmlewin	SG	male	1.2700			1.3780					48R
+180	tmlewin	SG	male	1.2700			1.3780					48L
+200	tmlewin	SG	male	1.3210			1.4350					50R
+220	tmlewin	SG	male	1.3210			1.4350					52R
 -100	tommyhilfiger	AA	male	0.8450		0.6400		0.8200				48
 -80	tommyhilfiger	AA	male	0.8850		0.6600		0.8300				50
 -60	tommyhilfiger	AA	male	0.9250		0.6750		0.8400				52

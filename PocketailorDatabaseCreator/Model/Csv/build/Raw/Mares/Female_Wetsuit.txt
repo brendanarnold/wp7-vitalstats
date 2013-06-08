@@ -1,5 +1,5 @@
 #Unit:Inch
-Gloabl	1	2	3	4
+Global	1	2	3	4
 SizeId	-40	-20	0	20
 SizeLetter	8	10	12	 14
 bust	30-32	33-34	34-36	36-38

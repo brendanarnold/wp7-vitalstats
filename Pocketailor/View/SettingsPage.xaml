@@ -37,6 +37,13 @@
 </toolkit:TransitionService.NavigationOutTransition>
 
 
+	<shell:SystemTray.BackgroundColor>
+		<StaticResource ResourceKey="SystemTrayBGColor"/>
+	</shell:SystemTray.BackgroundColor>
+	<shell:SystemTray.ForegroundColor>
+		<StaticResource ResourceKey="SystemTrayFGColor"/>
+	</shell:SystemTray.ForegroundColor>
+
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" ForegroundColor="{StaticResource ApplicationBarFGColor}" BackgroundColor="{StaticResource ApplicationBarBGColor}">
 		    <shell:ApplicationBarIconButton x:Name="saveAppBarIconBtn" IconUri="/Images/AppBar/appbar.save.png" Text="save" Click="saveAppBarIconBtn_Click"></shell:ApplicationBarIconButton>

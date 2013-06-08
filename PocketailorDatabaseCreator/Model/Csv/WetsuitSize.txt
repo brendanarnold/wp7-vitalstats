@@ -166,6 +166,48 @@ sizeid	brand	region	gender	height	chest	waist	hips	weight	size
 60	gul	GB	male	1.9250	1.1450	0.9650	1.0950		XLT
 80	gul	GB	male	1.8550	1.1950	1.0050	1.1450		XXL
 100	gul	GB	male	1.9250	1.1950	1.0050	1.1450		XXLT
+-60	henderson	AA	female	1.6510	0.7620	0.6350	0.8382	49.5000	XS-4
+-40	henderson	AA	female	1.6764	0.8128	0.6858	0.8890	51.7500	SM-6
+-20	henderson	AA	female	1.7018	0.8636	0.7112	0.9398	54.0000	MD-8
+0	henderson	AA	female	1.7272	0.9144	0.7874	0.9906	58.5000	LG-10
+20	henderson	AA	female	1.7526	0.9652	0.8382	1.0414	63.0000	XL-12
+40	henderson	AA	female	1.7780	1.0160	0.8890	1.0922	67.5000	XXL-14
+-100	henderson	AA	male	1.6764	0.8890	0.7620		58.5000	XS
+-80	henderson	AA	male	1.7272	0.9398	0.8128		64.1250	SM
+-60	henderson	AA	male	1.7780	0.9906	0.8636		72.0000	MD
+-40	henderson	AA	male	1.7907	1.0160	0.8890		74.2500	M LG
+-20	henderson	AA	male	1.8034	1.0414	0.9144		81.0000	LG
+0	henderson	AA	male	1.9050	1.0414	0.9144		83.2500	L Long
+20	henderson	AA	male	1.8288	1.0922	0.9652		90.0000	XL
+40	henderson	AA	male	1.9304	1.0922	0.9652		92.2500	XL Long
+60	henderson	AA	male	1.8542	1.1430	1.0160		99.0000	XXL
+80	henderson	AA	male	1.8796	1.1938	1.0795		108.0000	3XL
+-40	mares	AA	female	1.6002	0.7874	0.5842	0.8382		1/8
+-20	mares	AA	female	1.6510	0.8509	0.6350	0.8763		2/10
+0	mares	AA	female	1.7018	0.8890	0.6858	0.9271		3/12
+20	mares	AA	female	1.7526	0.9398	0.7366	0.9525		4/14
+-60	mares	AA	male	1.6510	0.9017	0.8001			2/S
+-40	mares	AA	male	1.7018	0.9652	0.8509			3/M
+-20	mares	AA	male	1.8034	1.0287	0.9144			4/M,L
+0	mares	AA	male	1.8542	1.0795	0.9779			5/L
+20	mares	AA	male	1.9050	1.1303	1.0414			6/XL
+40	mares	AA	male	1.9558	1.1938	1.1049			7/XXL
+-60	neosport	AA	female	1.6510	0.7620	0.6350	0.8382	49.5000	4
+-40	neosport	AA	female	1.6764	0.8128	0.6858	0.8890	51.7500	6
+-20	neosport	AA	female	1.7018	0.8636	0.7366	0.9398	54.0000	8
+0	neosport	AA	female	1.7272	0.9144	0.7874	0.9906	58.5000	10
+20	neosport	AA	female	1.7526	0.9652	0.8382	1.0414	63.0000	12
+40	neosport	AA	female	1.7780	1.0160	0.8890	1.0922	67.5000	14
+-100	neosport	AA	male	1.6764	0.8890	0.7620		58.5000	XS
+-80	neosport	AA	male	1.7272	0.9398	0.8128		64.1250	SM
+-60	neosport	AA	male	1.7780	0.9906	0.8636		72.0000	MD
+-40	neosport	AA	male	1.5240	1.0160	0.8890		74.2500	ML
+-20	neosport	AA	male	1.8034	1.0414	0.9144		81.0000	LG
+0	neosport	AA	male	1.8034	1.0414	0.9144		83.2500	LT
+20	neosport	AA	male	1.5240	1.0922	0.9652		90.0000	XLS
+40	neosport	AA	male	1.8288	1.0922	0.9652		90.0000	XL
+60	neosport	AA	male	1.8542	1.1430	1.0160		99.0000	XXL
+80	neosport	AA	male	1.8796	1.1938	1.0795		108.0000	3XL
 -120	oneill	AA	female	1.5750	0.7750	0.6050		44.00	2
 -100	oneill	AA	female	1.6250	0.8000	0.6300		48.50	4
 -80	oneill	AA	female	1.6150	0.8250	0.6550		51.50	6S

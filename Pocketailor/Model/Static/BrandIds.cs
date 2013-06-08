@@ -161,6 +161,14 @@ namespace Pocketailor.Model
         Patagonia = 152,
         RipCurl = 153,
         Xcel = 154,
+        AustinReed = 155,
+        Greenswear = 156,
+        Henderson = 157,
+        Howick = 158,
+        Mares = 159,
+        Neosport = 160,
+        TMLewin = 161,
+
     }
 
     public static partial class Lookup
@@ -320,7 +328,14 @@ namespace Pocketailor.Model
             { BrandId.Patagonia, "Patagonia" },
             { BrandId.RipCurl, "Rip Curl" },
             { BrandId.Xcel, "Xcel" },
-            
+            { BrandId.AustinReed, "Austin Reed" },
+            { BrandId.Greenswear, "Greenswear" },
+            { BrandId.Henderson, "Henderson" },
+            { BrandId.Howick, "Howick" },
+            { BrandId.Mares, "Mares" },
+            { BrandId.Neosport, "Neosport" },
+            { BrandId.TMLewin, "T.M.Lewin" },
+
         };
     }
 
