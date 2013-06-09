@@ -1,0 +1,3 @@
+SizeLetter	Short	Regulat	Tall
+SizeId	-2	0	2
+InsideLeg	79	84	89

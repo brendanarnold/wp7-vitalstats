@@ -106,7 +106,7 @@ namespace Pocketailor.View
         private void PromptForFeedbackPermission()
         {
 
-            MessageBoxResult res = MessageBox.Show("You can send your adjustments to the Pocketailor team anonymously over the web so we can make the results better next time. If you would like to help then click 'ok' below, if you would rather not then click 'cancel'."
+            MessageBoxResult res = MessageBox.Show("You can send your adjustments to the Pocketailor team anonymously over the web so we can make the results better next time. If you would like to contribute then click 'ok' below, if you would rather not then click 'cancel'."
                     + Environment.NewLine + Environment.NewLine
                     + "You can change this anytime in the settings.",
                     "Allow feedback?",

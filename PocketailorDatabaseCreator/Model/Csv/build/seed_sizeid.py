@@ -3,7 +3,7 @@
 import os
 import shutil
 
-START_DIR = 'Raw\\Mares'
+START_DIR = 'Raw\\Puma'
 
 for path, dirs, fns in os.walk(START_DIR):
     if os.path.basename(path) in ['.', 'test', 'Backup']:

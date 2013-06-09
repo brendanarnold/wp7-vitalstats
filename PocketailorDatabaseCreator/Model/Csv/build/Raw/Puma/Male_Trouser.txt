@@ -1,0 +1,13 @@
+SizeLetter	XXS	XS	S	M	L	XL	XXL	3XL
+SizeId	-80	-60	-40	-20	0	20	40	60
+US								
+Global								
+WAIST	70cm	76cm	82cm	88cm	96cm	104cm	114cm	124cm
+SLEEVES	82cm	84cm	86cm	88cm	90cm	92cm	94cm	96cm
+InsideLeg	78cm	79cm	80cm	81cm	82cm	83cm	84cm	85cm
+DE	38	42	46	50	54	58	62	66
+IT	38	42	46	50	54	58	62	66
+ES	38	42	46	50	54	58	62	66
+FR	38	42	46	50	54	58	62	66
+UK		32	36	40	44	48	52	
+CN	TTP	TP	P	M	G	TG	TTG	3TG

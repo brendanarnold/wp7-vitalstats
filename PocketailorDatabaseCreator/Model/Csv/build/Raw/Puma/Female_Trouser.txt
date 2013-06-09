@@ -1,0 +1,12 @@
+SizeLetter	XXS	XS	S	M	L	XL	XXL	3XL
+SizeId	-80	-60	-40	-20	0	20	40	60
+HIPS	90cm	93cm	96cm	101cm	106cm	112cm	118cm	124cm
+InsideLeg	78cm	78.5cm	79cm	79.5cm	80cm	80.5cm	81cm	81.5cm
+US								
+Global								
+DE	32	34	36	38	40	42	44	46
+IT	36	38	40	42	44	46	48	
+ES	36	38	40	42	44	46	48	
+FR	34	36	38	40	42	44	46	48
+UK	6	8	10	12	14	16	18	20
+CN	TTP	TP	P	M	G	TG	TTG	3TG
