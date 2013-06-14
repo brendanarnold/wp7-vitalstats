@@ -1,0 +1,4 @@
+UK	S	M	L	XL
+Global	S	M	L	XL
+SizeId	-40	-20	0	20
+Head	56	57	58	59

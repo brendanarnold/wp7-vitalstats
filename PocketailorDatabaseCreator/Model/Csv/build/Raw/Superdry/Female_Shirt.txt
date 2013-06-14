@@ -1,0 +1,8 @@
+#Unit:Inch
+SizeLetter	XS	S	M	L
+SizeId	-40	-20	0	20
+UK	8	10	12	14
+Global				
+US	4	6	8	10
+Chest	34	34	35	36
+Waist	25.5	26.5	27.5	28.5

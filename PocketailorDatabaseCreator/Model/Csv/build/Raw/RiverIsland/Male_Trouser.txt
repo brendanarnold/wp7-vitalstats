@@ -1,0 +1,5 @@
+SizeLetter	28	30	32	34	36	38
+SizeId	-60	-40	-20	0	20	40
+UK						
+Global						
+Waist	71	76	81	86	92	97

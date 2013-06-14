@@ -1,0 +1,8 @@
+SizeLetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+UK					
+US					
+HK					
+KW					
+AE					
+Waist	71cm	76cm	81cm	86cm	91cm

@@ -222,6 +222,39 @@ sizeid	brand	region	gender	chest	waist	hips	size
 0	anneklein	GB	female	0.9525	0.7620	1.0414	10,12/M
 20	anneklein	GB	female	1.0224	0.8319	1.1113	14,16/L
 40	anneklein	GB	female	1.0922	0.9017	1.1811	18/XL
+-100	annsummers	XA	female	0.7600	0.5700	0.8400	34
+-80	annsummers	XA	female	0.7850	0.6000	0.8650	36/S
+-60	annsummers	XA	female	0.8100	0.6250	0.8900	38/S
+-40	annsummers	XA	female	0.8600	0.6750	0.9400	40/M
+-20	annsummers	XA	female	0.9100	0.7250	0.9900	42/M
+0	annsummers	XA	female	0.9600	0.7750	1.0400	44/L
+20	annsummers	XA	female	1.0100	0.8250	1.0900	46/L
+40	annsummers	XA	female	1.0600	0.8750	1.1400	48/XL
+60	annsummers	XA	female	1.1100	0.9300	1.1900	50/XXL
+80	annsummers	XA	female	1.1600	0.9800	1.2400	52/XXL
+100	annsummers	XA	female	1.2100	1.0300	1.2900	54/XXXL
+-100	annsummers	US	female	0.7600	0.5700	0.8400	2
+-80	annsummers	US	female	0.7850	0.6000	0.8650	4/S
+-60	annsummers	US	female	0.8100	0.6250	0.8900	6/S
+-40	annsummers	US	female	0.8600	0.6750	0.9400	8/M
+-20	annsummers	US	female	0.9100	0.7250	0.9900	10/M
+0	annsummers	US	female	0.9600	0.7750	1.0400	12/L
+20	annsummers	US	female	1.0100	0.8250	1.0900	14/L
+40	annsummers	US	female	1.0600	0.8750	1.1400	16/XL
+60	annsummers	US	female	1.1100	0.9300	1.1900	18/XXL
+80	annsummers	US	female	1.1600	0.9800	1.2400	20/XXL
+100	annsummers	US	female	1.2100	1.0300	1.2900	22/XXXL
+-100	annsummers	GB	female	0.7600	0.5700	0.8400	6
+-80	annsummers	GB	female	0.7850	0.6000	0.8650	8/S
+-60	annsummers	GB	female	0.8100	0.6250	0.8900	10/S
+-40	annsummers	GB	female	0.8600	0.6750	0.9400	12/M
+-20	annsummers	GB	female	0.9100	0.7250	0.9900	14/M
+0	annsummers	GB	female	0.9600	0.7750	1.0400	16/L
+20	annsummers	GB	female	1.0100	0.8250	1.0900	18/L
+40	annsummers	GB	female	1.0600	0.8750	1.1400	20/XL
+60	annsummers	GB	female	1.1100	0.9300	1.1900	22/XXL
+80	annsummers	GB	female	1.1600	0.9800	1.2400	24/XXL
+100	annsummers	GB	female	1.2100	1.0300	1.2900	26/XXXL
 -100	anntaylor	FR	female	0.7874	0.5969		30/XXS
 -80	anntaylor	FR	female	0.8128	0.6223		32/XS
 -60	anntaylor	FR	female	0.8382	0.6477		34/XS
@@ -565,6 +598,42 @@ sizeid	brand	region	gender	chest	waist	hips	size
 0	bench	GB	female	0.9200	0.7400	0.9700	12/M
 20	bench	GB	female	0.9700	0.7900	1.0200	14/L
 40	bench	GB	female	1.0200	0.8400	1.0700	16/XL
+-120	benetton	AA	female	0.8200	0.6200	0.8800	XS
+-100	benetton	AA	female	0.8400	0.6400	0.9000	XS
+-80	benetton	AA	female	0.8600	0.6600	0.9200	XS
+-60	benetton	AA	female	0.8800	0.6800	0.9400	S
+-40	benetton	AA	female	0.9000	0.7000	0.9600	S
+-20	benetton	AA	female	0.9200	0.7200	0.9800	S
+0	benetton	AA	female	0.9400	0.7400	1.0000	M
+20	benetton	AA	female	0.9600	0.7600	1.0200	M
+40	benetton	AA	female	0.9800	0.7800	1.0400	M
+60	benetton	AA	female	1.0000	0.8000	1.0600	L
+80	benetton	AA	female	1.0200	0.8200	1.0800	L
+100	benetton	AA	female	1.0400	0.8400	1.1000	L
+-120	benetton	XA	female	0.8200	0.6200	0.8800	38/XS
+-100	benetton	XA	female	0.8400	0.6400	0.9000	39/XS
+-80	benetton	XA	female	0.8600	0.6600	0.9200	40/XS
+-60	benetton	XA	female	0.8800	0.6800	0.9400	41/S
+-40	benetton	XA	female	0.9000	0.7000	0.9600	42/S
+-20	benetton	XA	female	0.9200	0.7200	0.9800	43/S
+0	benetton	XA	female	0.9400	0.7400	1.0000	44/M
+20	benetton	XA	female	0.9600	0.7600	1.0200	45/M
+40	benetton	XA	female	0.9800	0.7800	1.0400	46/M
+60	benetton	XA	female	1.0000	0.8000	1.0600	47/L
+80	benetton	XA	female	1.0200	0.8200	1.0800	48/L
+100	benetton	XA	female	1.0400	0.8400	1.1000	49/L
+-120	benetton	US	female	0.8200	0.6200	0.8800	25/XS
+-100	benetton	US	female	0.8400	0.6400	0.9000	26/XS
+-80	benetton	US	female	0.8600	0.6600	0.9200	27/XS
+-60	benetton	US	female	0.8800	0.6800	0.9400	27.5/S
+-40	benetton	US	female	0.9000	0.7000	0.9600	28/S
+-20	benetton	US	female	0.9200	0.7200	0.9800	29/S
+0	benetton	US	female	0.9400	0.7400	1.0000	30/M
+20	benetton	US	female	0.9600	0.7600	1.0200	31/M
+40	benetton	US	female	0.9800	0.7800	1.0400	32/M
+60	benetton	US	female	1.0000	0.8000	1.0600	32.5/L
+80	benetton	US	female	1.0200	0.8200	1.0800	33/L
+100	benetton	US	female	1.0400	0.8400	1.1000	34/L
 -60	biba	GB	female	0.7950	0.6150	0.8750	6/XS
 -40	biba	GB	female	0.8200	0.6500	0.9200	8/S
 -20	biba	GB	female	0.8700	0.7000	0.9700	10/S
@@ -935,6 +1004,26 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	dkny	GB	female	0.9398	0.7620	1.0160	12/M
 40	dkny	GB	female	0.9779	0.7874	1.0541	14/L
 60	dkny	GB	female	1.0160	0.8382	1.0922	16/L
+-40	docmartens	AA	female	0.8400	0.6600		XS
+-20	docmartens	AA	female	0.8800	0.7000		S
+0	docmartens	AA	female	0.9200	0.7400		M
+20	docmartens	AA	female	0.9800	0.8000		L
+40	docmartens	AA	female	1.0400	0.8600		XL
+-40	docmartens	JP	female	0.8400	0.6600		7/XS
+-20	docmartens	JP	female	0.8800	0.7000		9/S
+0	docmartens	JP	female	0.9200	0.7400		11/M
+20	docmartens	JP	female	0.9800	0.8000		13/L
+40	docmartens	JP	female	1.0400	0.8600		15/XL
+-40	docmartens	US	female	0.8400	0.6600		4/XS
+-20	docmartens	US	female	0.8800	0.7000		6/S
+0	docmartens	US	female	0.9200	0.7400		8/M
+20	docmartens	US	female	0.9800	0.8000		10/L
+40	docmartens	US	female	1.0400	0.8600		12/XL
+-40	docmartens	GB	female	0.8400	0.6600		8/XS
+-20	docmartens	GB	female	0.8800	0.7000		10/S
+0	docmartens	GB	female	0.9200	0.7400		12/M
+20	docmartens	GB	female	0.9800	0.8000		14/L
+40	docmartens	GB	female	1.0400	0.8600		16/XL
 -80	dorothyperkins	FR	female	0.8000	0.6200	0.8650	34/XS
 -60	dorothyperkins	FR	female	0.8400	0.6600	0.9050	36/S
 -40	dorothyperkins	FR	female	0.8800	0.7000	0.9450	38/S
@@ -1166,6 +1255,81 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	fossil	GB	female	0.9398	0.7493	1.0033	12/M
 40	fossil	GB	female	0.9779	0.7874	1.0414	14/M
 60	fossil	GB	female	1.0160	0.8255	1.0795	16/L
+-40	fredperry	AA	female	0.8400			8
+-20	fredperry	AA	female	0.8800			10
+0	fredperry	AA	female	0.9200			12
+20	fredperry	AA	female	0.9800			14
+40	fredperry	AA	female	1.0400			16
+-40	fredperry	BE	female	0.8400			36
+-20	fredperry	BE	female	0.8800			38
+0	fredperry	BE	female	0.9200			40
+20	fredperry	BE	female	0.9800			42
+40	fredperry	BE	female	1.0400			44
+-40	fredperry	FR	female	0.8400			36
+-20	fredperry	FR	female	0.8800			38
+0	fredperry	FR	female	0.9200			40
+20	fredperry	FR	female	0.9800			42
+40	fredperry	FR	female	1.0400			44
+-40	fredperry	DE	female	0.8400			34
+-20	fredperry	DE	female	0.8800			36
+0	fredperry	DE	female	0.9200			38
+20	fredperry	DE	female	0.9800			40
+40	fredperry	DE	female	1.0400			42
+-40	fredperry	NL	female	0.8400			34
+-20	fredperry	NL	female	0.8800			36
+0	fredperry	NL	female	0.9200			38
+20	fredperry	NL	female	0.9800			40
+40	fredperry	NL	female	1.0400			42
+-40	fredperry	PT	female	0.8400			36
+-20	fredperry	PT	female	0.8800			38
+0	fredperry	PT	female	0.9200			40
+20	fredperry	PT	female	0.9800			42
+40	fredperry	PT	female	1.0400			44
+-40	fredperry	XA	female	0.8400			34
+-20	fredperry	XA	female	0.8800			36
+0	fredperry	XA	female	0.9200			38
+20	fredperry	XA	female	0.9800			40
+40	fredperry	XA	female	1.0400			42
+-40	fredperry	IT	female	0.8400			40
+-20	fredperry	IT	female	0.8800			42
+0	fredperry	IT	female	0.9200			44
+20	fredperry	IT	female	0.9800			46
+40	fredperry	IT	female	1.0400			48
+-40	fredperry	US	female	0.8400			4
+-20	fredperry	US	female	0.8800			6
+0	fredperry	US	female	0.9200			8
+20	fredperry	US	female	0.9800			10
+40	fredperry	US	female	1.0400			12
+-40	fredperry	CH	female	0.8400			34
+-20	fredperry	CH	female	0.8800			36
+0	fredperry	CH	female	0.9200			38
+20	fredperry	CH	female	0.9800			40
+40	fredperry	CH	female	1.0400			42
+-40	fredperry	AU	female	0.8400			8
+-20	fredperry	AU	female	0.8800			10
+0	fredperry	AU	female	0.9200			12
+20	fredperry	AU	female	0.9800			14
+40	fredperry	AU	female	1.0400			16
+-40	fredperry	GB	female	0.8400			8
+-20	fredperry	GB	female	0.8800			10
+0	fredperry	GB	female	0.9200			12
+20	fredperry	GB	female	0.9800			14
+40	fredperry	GB	female	1.0400			16
+-40	fredperry	ES	female	0.8400			36
+-20	fredperry	ES	female	0.8800			38
+0	fredperry	ES	female	0.9200			40
+20	fredperry	ES	female	0.9800			42
+40	fredperry	ES	female	1.0400			44
+-40	fredperry	SE	female	0.8400			34
+-20	fredperry	SE	female	0.8800			36
+0	fredperry	SE	female	0.9200			38
+20	fredperry	SE	female	0.9800			40
+40	fredperry	SE	female	1.0400			42
+-40	fredperry	AT	female	0.8400			34
+-20	fredperry	AT	female	0.8800			36
+0	fredperry	AT	female	0.9200			38
+20	fredperry	AT	female	0.9800			40
+40	fredperry	AT	female	1.0400			42
 -40	freepeople	CN	female	0.8382	0.6350	0.9017	160-84,165-86/XS
 -20	freepeople	CN	female	0.9017	0.6985	0.9525	165-88,170-90/S
 0	freepeople	CN	female	0.9525	0.7493	1.0033	167-92,172-96/M
@@ -1292,6 +1456,13 @@ sizeid	brand	region	gender	chest	waist	hips	size
 0	goldie	GB	female	0.9000	0.7450	1.0000	M
 20	goldie	GB	female	0.8100	0.6800	0.9150	SM
 40	goldie	GB	female	0.8850	0.7300	0.9950	ML
+-80	gossard	GB	female			0.9000	8,10/XS
+-60	gossard	GB	female			0.9500	10,12/S
+-40	gossard	GB	female			1.0000	12,14/M
+-20	gossard	GB	female			1.0500	14,16/L
+0	gossard	GB	female			1.1000	16,18/XL
+20	gossard	GB	female			1.1500	18,20/XXL
+40	gossard	GB	female			1.2000	20,22/XXXL
 -20	grab	AU	female	0.8500			S
 0	grab	AU	female	0.9000			M
 20	grab	AU	female	0.9500			L
@@ -1515,6 +1686,36 @@ sizeid	brand	region	gender	chest	waist	hips	size
 0	izabellondon	GB	female	0.9700	0.7800	1.0400	12/L
 20	izabellondon	GB	female	1.0200	0.8300	1.0900	14/XL
 40	izabellondon	GB	female	1.0700	0.8800	1.1400	16/XXL
+-40	jackwills	AE	female	0.7850	0.6250	0.8650	6
+-20	jackwills	AE	female	0.8100	0.6500	0.8900	8
+0	jackwills	AE	female	0.8600	0.7000	0.9400	10
+20	jackwills	AE	female	0.9100	0.7500	0.9900	12
+40	jackwills	AE	female	0.9600	0.8000	1.0100	14
+-40	jackwills	XA	female	0.7850	0.6250	0.8650	34
+-20	jackwills	XA	female	0.8100	0.6500	0.8900	36
+0	jackwills	XA	female	0.8600	0.7000	0.9400	38
+20	jackwills	XA	female	0.9100	0.7500	0.9900	40
+40	jackwills	XA	female	0.9600	0.8000	1.0100	42
+-40	jackwills	US	female	0.7850	0.6250	0.8650	2
+-20	jackwills	US	female	0.8100	0.6500	0.8900	4
+0	jackwills	US	female	0.8600	0.7000	0.9400	6
+20	jackwills	US	female	0.9100	0.7500	0.9900	8
+40	jackwills	US	female	0.9600	0.8000	1.0100	10
+-40	jackwills	HK	female	0.7850	0.6250	0.8650	6
+-20	jackwills	HK	female	0.8100	0.6500	0.8900	8
+0	jackwills	HK	female	0.8600	0.7000	0.9400	10
+20	jackwills	HK	female	0.9100	0.7500	0.9900	12
+40	jackwills	HK	female	0.9600	0.8000	1.0100	14
+-40	jackwills	KW	female	0.7850	0.6250	0.8650	6
+-20	jackwills	KW	female	0.8100	0.6500	0.8900	8
+0	jackwills	KW	female	0.8600	0.7000	0.9400	10
+20	jackwills	KW	female	0.9100	0.7500	0.9900	12
+40	jackwills	KW	female	0.9600	0.8000	1.0100	14
+-40	jackwills	GB	female	0.7850	0.6250	0.8650	6
+-20	jackwills	GB	female	0.8100	0.6500	0.8900	8
+0	jackwills	GB	female	0.8600	0.7000	0.9400	10
+20	jackwills	GB	female	0.9100	0.7500	0.9900	12
+40	jackwills	GB	female	0.9600	0.8000	1.0100	14
 -60	jaeger	XA	female	0.8350	0.6350	0.8950	34/XS
 -40	jaeger	XA	female	0.8600	0.6600	0.9200	36/S
 -20	jaeger	XA	female	0.9100	0.7100	0.9700	38/S
@@ -2504,6 +2705,16 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -20	motel	GB	female	0.8600	0.6800	0.9350	10/S
 0	motel	GB	female	0.9100	0.7300	0.9350	12/M
 20	motel	GB	female	0.9600	0.7800	1.0350	14/L
+-40	newbalance	AA	female	0.8382	0.6096	0.9144	2/XS
+-20	newbalance	AA	female	0.8890	0.6604	0.9652	4-6/S
+0	newbalance	AA	female	0.9398	0.7112	1.0160	8-10/M
+20	newbalance	AA	female	1.0160	0.7874	1.0922	12-14/L
+40	newbalance	AA	female	1.0922	0.8636	1.1684	16-18/XL
+-40	newbalance	US	female	0.8382	0.6096	0.9144	2/XS
+-20	newbalance	US	female	0.8890	0.6604	0.9652	4-6/S
+0	newbalance	US	female	0.9398	0.7112	1.0160	8-10/M
+20	newbalance	US	female	1.0160	0.7874	1.0922	12-14/L
+40	newbalance	US	female	1.0922	0.8636	1.1684	16-18/XL
 -60	newlook	XA	female	0.8000	0.6200	0.8600	34
 -40	newlook	XA	female	0.8400	0.6600	0.9000	36/S,M
 -20	newlook	XA	female	0.8800	0.7000	0.9400	38/S,M
@@ -2748,6 +2959,70 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	precis	GB	female	0.9800	0.7900	1.0600	14/M
 40	precis	GB	female	1.0300	0.8400	1.1100	16/L
 60	precis	GB	female	1.0800	0.8900	1.1600	18/XL
+-80	puma	AA	female	0.7800	0.6200	0.9000	XXS
+-60	puma	AA	female	0.8200	0.6500	0.9300	XS
+-40	puma	AA	female	0.8600	0.6800	0.9600	S
+-20	puma	AA	female	0.9100	0.7400	1.0100	M
+0	puma	AA	female	0.9600	0.8000	1.0600	L
+20	puma	AA	female	1.0100	0.8600	1.1200	XL
+40	puma	AA	female	1.0700	0.9200	1.1800	XXL
+60	puma	AA	female	1.1300	0.9800	1.2400	3XL
+-80	puma	FR	female	0.7800	0.6200	0.9000	34/XXS
+-60	puma	FR	female	0.8200	0.6500	0.9300	36/XS
+-40	puma	FR	female	0.8600	0.6800	0.9600	38/S
+-20	puma	FR	female	0.9100	0.7400	1.0100	40/M
+0	puma	FR	female	0.9600	0.8000	1.0600	42/L
+20	puma	FR	female	1.0100	0.8600	1.1200	44/XL
+40	puma	FR	female	1.0700	0.9200	1.1800	46/XXL
+60	puma	FR	female	1.1300	0.9800	1.2400	48/3XL
+-80	puma	CN	female	0.7800	0.6200	0.9000	TTP/XXS
+-60	puma	CN	female	0.8200	0.6500	0.9300	TP/XS
+-40	puma	CN	female	0.8600	0.6800	0.9600	P/S
+-20	puma	CN	female	0.9100	0.7400	1.0100	M/M
+0	puma	CN	female	0.9600	0.8000	1.0600	G/L
+20	puma	CN	female	1.0100	0.8600	1.1200	TG/XL
+40	puma	CN	female	1.0700	0.9200	1.1800	TTG/XXL
+60	puma	CN	female	1.1300	0.9800	1.2400	3TG/3XL
+-80	puma	DE	female	0.7800	0.6200	0.9000	32/XXS
+-60	puma	DE	female	0.8200	0.6500	0.9300	34/XS
+-40	puma	DE	female	0.8600	0.6800	0.9600	36/S
+-20	puma	DE	female	0.9100	0.7400	1.0100	38/M
+0	puma	DE	female	0.9600	0.8000	1.0600	40/L
+20	puma	DE	female	1.0100	0.8600	1.1200	42/XL
+40	puma	DE	female	1.0700	0.9200	1.1800	44/XXL
+60	puma	DE	female	1.1300	0.9800	1.2400	46/3XL
+-80	puma	IT	female	0.7800	0.6200	0.9000	36/XXS
+-60	puma	IT	female	0.8200	0.6500	0.9300	38/XS
+-40	puma	IT	female	0.8600	0.6800	0.9600	40/S
+-20	puma	IT	female	0.9100	0.7400	1.0100	42/M
+0	puma	IT	female	0.9600	0.8000	1.0600	44/L
+20	puma	IT	female	1.0100	0.8600	1.1200	46/XL
+40	puma	IT	female	1.0700	0.9200	1.1800	48/XXL
+60	puma	IT	female	1.1300	0.9800	1.2400	3XL
+-80	puma	US	female	0.7800	0.6200	0.9000	XXS
+-60	puma	US	female	0.8200	0.6500	0.9300	XS
+-40	puma	US	female	0.8600	0.6800	0.9600	S
+-20	puma	US	female	0.9100	0.7400	1.0100	M
+0	puma	US	female	0.9600	0.8000	1.0600	L
+20	puma	US	female	1.0100	0.8600	1.1200	XL
+40	puma	US	female	1.0700	0.9200	1.1800	XXL
+60	puma	US	female	1.1300	0.9800	1.2400	3XL
+-80	puma	ES	female	0.7800	0.6200	0.9000	36/XXS
+-60	puma	ES	female	0.8200	0.6500	0.9300	38/XS
+-40	puma	ES	female	0.8600	0.6800	0.9600	40/S
+-20	puma	ES	female	0.9100	0.7400	1.0100	42/M
+0	puma	ES	female	0.9600	0.8000	1.0600	44/L
+20	puma	ES	female	1.0100	0.8600	1.1200	46/XL
+40	puma	ES	female	1.0700	0.9200	1.1800	48/XXL
+60	puma	ES	female	1.1300	0.9800	1.2400	3XL
+-80	puma	GB	female	0.7800	0.6200	0.9000	6/XXS
+-60	puma	GB	female	0.8200	0.6500	0.9300	8/XS
+-40	puma	GB	female	0.8600	0.6800	0.9600	10/S
+-20	puma	GB	female	0.9100	0.7400	1.0100	12/M
+0	puma	GB	female	0.9600	0.8000	1.0600	14/L
+20	puma	GB	female	1.0100	0.8600	1.1200	16/XL
+40	puma	GB	female	1.0700	0.9200	1.1800	18/XXL
+60	puma	GB	female	1.1300	0.9800	1.2400	20/3XL
 -20	pussycat	FR	female	0.8450	0.6650	0.8900	36,38/S
 0	pussycat	FR	female	0.8950	0.7150	0.9400	38,40/M
 20	pussycat	FR	female	0.9950	0.8150	1.0400	40,42/L
@@ -3023,6 +3298,18 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	sodamix	GB	female	1.0200	0.8400	1.1050	16/L
 40	sodamix	GB	female	1.1000	0.9200	1.1650	18/XL
 60	sodamix	GB	female	1.1200	1.0000	1.2450	20/XL
+-40	superdry	AA	female	0.8636	0.6477	0.9271	XS
+-20	superdry	AA	female	0.8636	0.6731	0.9525	S
+0	superdry	AA	female	0.8890	0.6985	0.9779	M
+20	superdry	AA	female	0.9144	0.7239	1.0033	L
+-40	superdry	US	female	0.8636	0.6477	0.9271	4/XS
+-20	superdry	US	female	0.8636	0.6731	0.9525	6/S
+0	superdry	US	female	0.8890	0.6985	0.9779	8/M
+20	superdry	US	female	0.9144	0.7239	1.0033	10/L
+-40	superdry	GB	female	0.8636	0.6477	0.9271	8/XS
+-20	superdry	GB	female	0.8636	0.6731	0.9525	10/S
+0	superdry	GB	female	0.8890	0.6985	0.9779	12/M
+20	superdry	GB	female	0.9144	0.7239	1.0033	14/L
 -60	tedbaker	AA	female	0.7900	0.6350	0.8550	XXS, TB0
 -40	tedbaker	AA	female	0.8400	0.6600	0.8800	XS, TB1
 -20	tedbaker	AA	female	0.8900	0.7100	0.9300	S, TB2
@@ -3350,6 +3637,20 @@ sizeid	brand	region	gender	chest	waist	hips	size
 0	uttamboutique	GB	female	0.9150	0.7350	0.9900	12/M,L
 20	uttamboutique	GB	female	0.9650	0.7850	1.0400	14/L
 40	uttamboutique	GB	female	1.0150	0.8350	1.0900	16
+-60	veromoda	XA	female	0.8000	0.6200	0.8800	32/XXS
+-40	veromoda	XA	female	0.8300	0.6500	0.9100	34/XXS,XXS
+-20	veromoda	XA	female	0.8600	0.6800	0.9400	36/XS
+0	veromoda	XA	female	0.9000	0.7200	0.9800	38/S
+20	veromoda	XA	female	0.9400	0.7600	1.0200	40/M
+40	veromoda	XA	female	0.9900	0.8100	1.0700	42/L
+60	veromoda	XA	female	1.0400	0.8600	1.1200	44/XL
+-60	veromoda	GB	female	0.8000	0.6200	0.8800	4/XXS
+-40	veromoda	GB	female	0.8300	0.6500	0.9100	6/XXS,XXS
+-20	veromoda	GB	female	0.8600	0.6800	0.9400	8/XS
+0	veromoda	GB	female	0.9000	0.7200	0.9800	10/S
+20	veromoda	GB	female	0.9400	0.7600	1.0200	12/M
+40	veromoda	GB	female	0.9900	0.8100	1.0700	14/L
+60	veromoda	GB	female	1.0400	0.8600	1.1200	16/XL
 -80	victoriassecret	US	female	0.8255	0.6096	0.8763	0/XS
 -60	victoriassecret	US	female	0.8382	0.6350	0.9017	2/XS
 -40	victoriassecret	US	female	0.8763	0.6604	0.9271	4/S

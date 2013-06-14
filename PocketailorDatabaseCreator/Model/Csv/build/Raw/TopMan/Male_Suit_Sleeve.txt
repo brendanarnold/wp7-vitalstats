@@ -1,0 +1,3 @@
+SizeLetter	Short	Long
+SizeId	-2	0
+Sleeve	68	69.5

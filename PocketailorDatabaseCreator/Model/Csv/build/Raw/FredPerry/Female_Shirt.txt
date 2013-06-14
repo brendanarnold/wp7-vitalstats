@@ -1,0 +1,17 @@
+UK	8	10	12	14	16
+SizeId	-40	-20	0	20	40
+Global	8	10	12	14	16
+Aus	8	10	12	14	16
+US	4	6	8	10	12
+Austria	34	36	38	40	42
+EU	34	36	38	40	42
+Germany	34	36	38	40	42
+Netherlands	34	36	38	40	42
+Sweden	34	36	38	40	42
+Switzerland	34	36	38	40	42
+France	36	38	40	42	44
+Belgium	36	38	40	42	44
+Spain	36	38	40	42	44
+Portugal	36	38	40	42	44
+Italy	40	42	44	46	48
+Bust	84	88	92	98	104

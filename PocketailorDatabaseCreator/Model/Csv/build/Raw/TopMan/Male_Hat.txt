@@ -1,0 +1,7 @@
+SizeLetter	S/M	M/L
+SizeId	-20	0
+EU	58	60
+Global	58	60
+US	7½	7½
+UK	7½	7½
+Head	58	60

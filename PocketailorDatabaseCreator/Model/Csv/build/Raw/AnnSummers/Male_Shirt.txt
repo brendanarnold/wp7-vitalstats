@@ -1,0 +1,4 @@
+UK	S	M	L	XL
+SizeId	-40	-20	0	20
+Chest	38	40	42	44
+Waist	32	34	36	38

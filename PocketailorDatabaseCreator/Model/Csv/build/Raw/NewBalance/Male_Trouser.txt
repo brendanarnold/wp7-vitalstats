@@ -1,0 +1,5 @@
+#Unit:Inch
+Global	XXS	XS	S	M	L	XL
+SizeId	-60	-40	-20	0	20	40
+WAIST	26-28	28-30	30-32	32-34	34-36	38-40
+InsideLeg	29	29	30	31	32	33

@@ -1,0 +1,6 @@
+#Unit:Inch
+UK	30	32	34	36
+SizeId	-40	-20	0	20
+Global	30	32	34	36
+Waist	30	32	34	36
+

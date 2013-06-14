@@ -1,0 +1,3 @@
+SizeLetter	Regular	Long
+SizeId	-2	0
+InsideLeg	82	86

@@ -168,6 +168,19 @@ namespace Pocketailor.Model
         Mares = 159,
         Neosport = 160,
         TMLewin = 161,
+        AnnSummers = 162,
+        Benetton = 163,
+        BurtonsLondon = 164,
+        DocMartens = 165,
+        FredPerry = 166,
+        Gossard = 167,
+        JackWills = 168,
+        NewBalance = 169,
+        Nike = 170,
+        Puma = 171,
+        Superdry = 172,
+        TopMan = 173,
+        VeroModa = 174,
 
     }
 
@@ -335,6 +348,21 @@ namespace Pocketailor.Model
             { BrandId.Mares, "Mares" },
             { BrandId.Neosport, "Neosport" },
             { BrandId.TMLewin, "T.M.Lewin" },
+            { BrandId.AnnSummers, "Ann Summers" },
+            { BrandId.Benetton, "Benetton" },
+            { BrandId.BurtonsLondon, "Burtons London" },
+            { BrandId.DocMartens, "Doc Marten's" },
+            { BrandId.FredPerry, "Fred Perry" },
+            { BrandId.Gossard, "Gossard" },
+            { BrandId.JackWills, "Jack Wills" },
+            { BrandId.NewBalance, "New Balance" },
+            { BrandId.Nike, "Nike" },
+            { BrandId.Puma, "Puma" },
+            { BrandId.Superdry, "Superdry" },
+            { BrandId.TopMan, "TopMan" },
+            { BrandId.VeroModa, "Vero Moda" },
+            
+
 
         };
     }

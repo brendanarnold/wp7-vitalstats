@@ -15,9 +15,9 @@ namespace Pocketailor
 {
     public static class AppConstants
     {
-        // TODO: These need to be changed on each release
+        // TODO: These need to be changed on each release and in the XAP file too
         public static int ADJUSTMENT_FORMAT_VERSION = 1;
-        public static string APP_VERSION = "0.1.1";
+        public static string APP_VERSION = "1.0.1";
 
 
         // These are the 'magic' SizeId values which signify that all the sizes are too big or small
@@ -57,6 +57,6 @@ namespace Pocketailor
         public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
         public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
         public static bool? DEFAULT_ALLOW_FEEDBACK = null;
-        
+        public static int NUM_BOOTS_TIL_READY_TO_RATE = 3;
     }
 }

@@ -1,3 +1,4 @@
+#Unit:Inch
 SizeLetter	XS	S	M	L	XL
 SizeId	-40	-20	0	20	40
 UK	28	30	32	34	36

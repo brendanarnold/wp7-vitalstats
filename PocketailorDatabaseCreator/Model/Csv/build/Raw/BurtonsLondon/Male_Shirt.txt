@@ -1,0 +1,6 @@
+#Unit:Inch
+SizeLetter	XXS	XS	S	M	L	XL	XXL	XXXL
+UK								
+Global								
+SizeId	-80	-60	-40	-20	0	20	40	60
+Chest	29-32	32-35	35-38	38-41	41-44	44-47	47-50	50-53

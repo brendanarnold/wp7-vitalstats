@@ -84,6 +84,8 @@ namespace Pocketailor
             // Load and send feedback
             FeedbackAgent = new FeedbackAgent();
             FeedbackAgent.DeliverAdjustmentsTaskAsync();
+            //  Check if ready to rate
+            VM.AddALaunch();
 
         }
 

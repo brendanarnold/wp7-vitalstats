@@ -1,0 +1,3 @@
+SizeLetter	Short (Formal Short/Reg.)	Reg. (Formal Reg./Large)	Large
+SizeId	-2	0	2
+InsideLeg	76	81	86

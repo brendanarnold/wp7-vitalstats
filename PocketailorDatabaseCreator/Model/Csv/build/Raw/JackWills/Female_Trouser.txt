@@ -1,0 +1,9 @@
+UK	6	8	10	12	14
+SizeId	-40	-20	0	20	40
+HK	6	8	10	12	14
+KW	6	8	10	12	14
+AE	6	8	10	12	14
+US	2	4	6	8	10
+Eu	34	36	38	40	42
+Waist	62.5cm	65cm	70cm	75cm	80cm
+Hips	86.5cm	89cm	94cm	99cm	101cm

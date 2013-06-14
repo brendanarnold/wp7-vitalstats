@@ -1,0 +1,8 @@
+SizeLetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Global					
+UK	8	10	12	14	16
+US	4	6	8	10	12
+JAPAN	7	9	11	13	15
+Chest	84	88	92	98	104
+Waist	66	70	74	80	86

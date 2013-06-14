@@ -58,7 +58,38 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
-        
+
+        #region NumberOfLaunches methods/properties
+
+
+        public bool ReadyToRate
+        {
+            get { return this.NumberOfLaunches > AppConstants.NUM_BOOTS_TIL_READY_TO_RATE; }
+        }
+
+        public int NumberOfLaunches { get; set; }
+
+        public void AddALaunch() 
+        {
+            int count = App.Settings.GetValueOrDefault<int>("NumberOfLaunches", -1);
+            if (count == -1)
+            {
+                App.Settings.AddOrUpdateValue("NumberOfLaunches", 0);
+            }
+            else
+            {
+                if (count >= Int32.MaxValue)
+                {
+                    count = AppConstants.NUM_BOOTS_TIL_READY_TO_RATE + 1;
+                }
+                App.Settings.AddOrUpdateValue("NumberOfLaunches", count + 1);
+                this.NumberOfLaunches = count;
+            }
+        }
+
+        #endregion
+
+
         #region AllowFeedback property
 
         private bool? _allowFeedback = null;

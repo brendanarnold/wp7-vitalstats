@@ -10,14 +10,8 @@ import os
 
 COPY_TO_DEPLOY = True
 
-#IN_DIR = r'Raw\\Tu'
-#IN_DIR = r'Raw\\MarksSpencer'
-#IN_DIR = r'Raw\\George'
-#IN_DIR = r'Raw\\WhiteStuff'
-#IN_DIR = r'Raw\Warehouse'
-
-
 IN_DIR = r'Raw'
+
 
 def main():
     # Read in the formats indexed by MeasurementId
@@ -54,7 +48,7 @@ def main():
                 continue
             # Parse and sanity check filename
             gender, conversion, aux = parse_fn(fn)
-            if (aux == None) or aux.lower() not in ['insideleg', 'height']:
+            if (aux == None) or aux.lower() not in ['sleeve', 'insideleg', 'height']:
                 fns.append(fn)
             else:
                 aux_fns.append(fn)
@@ -144,7 +138,7 @@ def parse_fn(fn):
         raise Exception("No conversion in ConversionIds called: " + str(conversion))
     if (aux != None) \
         and (get_two_letter_iso_code(correct_common_header_typos(aux.lower())) is None) \
-        and (aux not in ['', 'InternationalConversions', 'InsideLeg', 'Height']):
+        and (aux not in ['', 'InternationalConversions', 'InsideLeg', 'Height', 'Sleeve']):
         raise Exception("No extra filefeature called: " + str(aux))
     return (gender, conversion, aux)
 

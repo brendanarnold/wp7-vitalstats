@@ -1,0 +1,5 @@
+UK	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Global	XS	S	M	L	XL
+Chest	92	97	102	107	112
+Waist	66	70	74	80	86

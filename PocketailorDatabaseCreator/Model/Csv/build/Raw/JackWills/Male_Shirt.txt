@@ -1,0 +1,9 @@
+SizeLetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+UK					
+US					
+HK					
+KW					
+AE					
+Chest	89-92cm	94-97cm	99-102cm	104-107cm	109-112cm
+Waist	71cm	76cm	81cm	86cm	91cm

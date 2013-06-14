@@ -1,0 +1,18 @@
+
+Version 1.0.1
+
+  * Fixed: sizes for Billabong hats, AllSaints trousers
+  * Added:
+  	* River Island
+	* Puma
+	* TopMan
+	* Jack Wills
+	* Superdry
+	* Benetton
+	* Doc Martens
+	* Fred Perry
+	* Ann Summers
+	* Gossard
+	* Vero Moda
+	* New Balance
+	* Nike

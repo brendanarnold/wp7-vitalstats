@@ -89,6 +89,20 @@ namespace Pocketailor.View
                 messageBox.Show();
             }
 
+            if (App.VM.NumberOfLaunches == AppConstants.NUM_BOOTS_TIL_READY_TO_RATE)
+            {
+                MessageBoxResult res = MessageBox.Show("You have used Pocketailor a few times now and hopefully have got a feel for what it is like. Would you like to leave a review?"
+                    + Environment.NewLine
+                    + Environment.NewLine
+                    + "You can do this later using the button on the 'About' panel.", "Rate Pocketailor on the Marketplace?", MessageBoxButton.OKCancel);
+
+                if (res == MessageBoxResult.OK)
+                {
+                    App.VM.RateApp();
+                }
+            }
+
+
         }
 
 

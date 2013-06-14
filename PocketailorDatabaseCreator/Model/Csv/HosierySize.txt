@@ -1,4 +1,6 @@
 sizeid	brand	region	gender	weight	waist	hips	height	insideleg	size
+-20	annsummers	GB	female		0.6625	0.9775	1.5650		S,M
+0	annsummers	GB	female		1.0325	1.2150	1.7000		L,XL
 -100	axparis	XA	female		0.6300	0.8850			36
 -80	axparis	XA	female		0.6800	0.9350			38
 -60	axparis	XA	female		0.7300	0.9850			40
@@ -114,6 +116,13 @@ sizeid	brand	region	gender	weight	waist	hips	height	insideleg	size
 200	george	GB	female			1.4450	1.6650		XXL
 220	george	GB	female			1.4450	1.7150		XXL
 240	george	GB	female			1.4450	1.7650		XXL
+-80	gossard	GB	female			0.9000			8,10/XS
+-60	gossard	GB	female			0.9500			10,12/S
+-40	gossard	GB	female			1.0000			12,14/M
+-20	gossard	GB	female			1.0500			14,16/L
+0	gossard	GB	female			1.1000			16,18/XL
+20	gossard	GB	female			1.1500			18,20/XXL
+40	gossard	GB	female			1.2000			20,22/XXXL
 -40	guess	FR	female		0.6400	0.9000			38
 -20	guess	FR	female		0.6850	0.9450			40
 0	guess	FR	female		0.7350	0.9950			42
