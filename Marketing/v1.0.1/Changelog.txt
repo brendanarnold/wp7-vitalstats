@@ -1,18 +1,7 @@
 
 Version 1.0.1
 
-  * Fixed: sizes for Billabong hats, AllSaints trousers
-  * Added:
-  	* River Island
-	* Puma
-	* TopMan
-	* Jack Wills
-	* Superdry
-	* Benetton
-	* Doc Martens
-	* Fred Perry
-	* Ann Summers
-	* Gossard
-	* Vero Moda
-	* New Balance
-	* Nike
+  * Added the following brands: Ann Summers, River Island, Puma, TopMan,
+  Jack Wills, Superdry, Benetton, Doc Martens, Fred Perry, Gossard, Vero
+  Moda, New Balance, Nike
+  * Fixed some errors in sizes for All Saints and Billabong
