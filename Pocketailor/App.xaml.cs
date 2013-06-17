@@ -128,6 +128,14 @@ namespace Pocketailor
         // Code to execute on Unhandled Exceptions
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            // I'm not logging the Nokia Ad Exchange's shitty exceptions
+            if (e.ExceptionObject.StackTrace.Contains("Inneractive.Ad.InneractiveAdControl"))
+            {
+                e.Handled = true;
+                return;
+            }
+
+
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 // An unhandled exception has occurred; break into the debugger

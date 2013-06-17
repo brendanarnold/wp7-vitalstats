@@ -82,8 +82,8 @@
 		
 		<ScrollViewer x:Name="containerScrollViewer">
 			<StackPanel x:Name="containerStackPanel">
-				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22" Foreground="{StaticResource PageTxtColor}"/>
-				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="title here" Margin="36,0,0,0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
+				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
+				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="title here" Margin="36,0,0,0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
 
 				<toolkit:ListPicker x:Name="preferredUnitListPicker" 
 					Header="UNITS"
@@ -120,7 +120,7 @@
 						<ColumnDefinition Width="1*"/>
 						<ColumnDefinition Width="1*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,0,0,0" FontSize="21.333" Foreground="{StaticResource PageTxtColor}">
+					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,0,0,0" FontSize="21.333" Foreground="{StaticResource DialogSecondaryTxtColor}">
 						<Run Text="Lorum ipsum dolor sit insitam. "/>
 						<LineBreak />
 						<LineBreak />

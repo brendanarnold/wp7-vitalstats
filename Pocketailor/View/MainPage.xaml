@@ -121,15 +121,60 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Canvas toolkit:TiltEffect.IsTiltEnabled="True" x:Name="profileCanvas" Tap="profileButton_Tap">
+                        <Grid x:Name="profileCanvas" 
+							Tap="profileButton_Tap" Background="{StaticResource TileBGColor}">
                             <!--  -->
                             <Image Source="{Binding Gender, ConverterParameter=/Images/MaleProfileIcon.png|/Images/FemaleProfileIcon.png, Converter={StaticResource GenderToImage}}" Height="130" Width="200"/>
-							<TextBlock Text="{TemplateBinding Property=Content}" Margin="12,6,0,0" Width="110" Style="{StaticResource TileFontStyle}"/>
-                        </Canvas>
+							<TextBlock Text="{TemplateBinding Property=Content}" Margin="12,6,0,0" Width="110" Style="{StaticResource TileFontStyle}" HorizontalAlignment="Left"/>
+                        </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
+		<Style x:Key="MaleProfileBtnStyle" TargetType="Button">
+			<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+						<Grid Background="{StaticResource TileBGColor}" Margin="0,0,4,0">
+        					<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{TemplateBinding Content}" VerticalAlignment="Top" Foreground="{StaticResource TileTxtColor}" FontFamily="Segoe WP" Margin="12,6,0,0"/>
+        					<Image Source="/Images/MaleProfileIcon.png" Margin="0,10,-20,10" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+        						<Image.RenderTransform>
+        							<CompositeTransform Rotation="25"/>
+        						</Image.RenderTransform>
+							</Image>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="FemaleProfileBtnStyle" TargetType="Button">
+			<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+						<Grid Background="{StaticResource TileBGColor}" Margin="0">
+        					<TextBlock HorizontalAlignment="Left" 
+								TextWrapping="Wrap" 
+								Text="{TemplateBinding Content}" 
+								VerticalAlignment="Top" 
+								Foreground="{StaticResource TileTxtColor}" 
+								FontFamily="Segoe WP" 
+								Margin="12,6,0,0"/>
+        					<Image Source="/Images/FemaleProfileIcon.png" 
+								Margin="0,10,-20,10" 
+								HorizontalAlignment="Right" 
+								RenderTransformOrigin="0.5,0.5">
+        						<Image.RenderTransform>
+        							<CompositeTransform Rotation="25"/>
+        						</Image.RenderTransform>
+							</Image>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
 
 		<shell:ApplicationBar x:Key="homeApplicationBar" 
 			IsVisible="True" IsMenuEnabled="True" 
@@ -163,6 +208,8 @@
             <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
             <Setter Property="Foreground" Value="{StaticResource PageTxtColor}"/>
         </Style>
+        
+        
 
     </phone:PhoneApplicationPage.Resources>
     <shell:SystemTray.BackgroundColor>
@@ -387,9 +434,9 @@
 									Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}"
 									Text="QUICKLIST"/>
                      
-								 <ItemsControl x:Name="quicklistItemsControl" 
-									Grid.Row="1" Margin="12,0,12,0"
+								 <ItemsControl x:Name="quicklistItemsControl" Margin="6,0,6,6"
 									ItemsSource="{Binding QuickProfiles}" 
+									Grid.Row="1"
 									Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToCollapsed}}">
 									<ItemsControl.ItemsPanel>
 										<ItemsPanelTemplate>
@@ -397,12 +444,18 @@
 										</ItemsPanelTemplate>
 									</ItemsControl.ItemsPanel>
 									<ItemsControl.ItemTemplate>
-
 										<DataTemplate>
 											<Button 
-												 Width="200" Height="130" Margin="0,0,12,14" 
-												 Style="{StaticResource ProfileButtonStyle}"
-												Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}">
+												 Width="200" Height="130" Margin="2,0,10,12"
+												Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Style="{StaticResource MaleProfileBtnStyle}">
+												<i:Interaction.Triggers>
+													<ec:DataTrigger Binding="{Binding Gender}" Value="Female">
+														<ec:ChangePropertyAction PropertyName="Style" Value="{StaticResource FemaleProfileBtnStyle}"/>
+													</ec:DataTrigger>
+													<ec:DataTrigger Binding="{Binding Gender}" Value="Male">
+														<ec:ChangePropertyAction PropertyName="Style" Value="{StaticResource MaleProfileBtnStyle}"/>
+													</ec:DataTrigger>
+												</i:Interaction.Triggers>
 												<toolkit:ContextMenuService.ContextMenu>
 													<toolkit:ContextMenu>
 														<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
@@ -412,7 +465,6 @@
 												</toolkit:ContextMenuService.ContextMenu>
 											</Button>
 										</DataTemplate>
-
 									</ItemsControl.ItemTemplate>
 								</ItemsControl>    
 
@@ -433,7 +485,7 @@
 									<ItemsControl.ItemTemplate>
 
 										<DataTemplate>
-											<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource ProfileButtonStyle}" Width="200">
+											<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Height="130" Margin="0,0,12,14" Style="{StaticResource FemaleProfileBtnStyle}" Width="200">
 												<toolkit:ContextMenuService.ContextMenu>
 													<toolkit:ContextMenu>
 														<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|add to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
@@ -441,6 +493,14 @@
 														<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
 													</toolkit:ContextMenu>
 												</toolkit:ContextMenuService.ContextMenu>
+												<i:Interaction.Triggers>
+													<ec:DataTrigger Binding="{Binding Gender}" Value="Female">
+														<ec:ChangePropertyAction PropertyName="Style" Value="{StaticResource FemaleProfileBtnStyle}"/>
+													</ec:DataTrigger>
+													<ec:DataTrigger Binding="{Binding Gender}" Value="Male">
+														<ec:ChangePropertyAction PropertyName="Style" Value="{StaticResource MaleProfileBtnStyle}"/>
+													</ec:DataTrigger>
+												</i:Interaction.Triggers>
 											</Button>
 										</DataTemplate>
 

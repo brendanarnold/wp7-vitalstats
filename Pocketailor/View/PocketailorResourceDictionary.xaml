@@ -9,6 +9,8 @@
 	Banana #FCCD43
 	DarkGrey #313131
 	-->
+
+	<!--
 	<SolidColorBrush x:Key="PivotTitleColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="PivotHeaderColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
@@ -17,14 +19,30 @@
 	<SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#FFFFFF</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
-
+	-->
+	<SolidColorBrush x:Key="PivotTitleColor">#DB6842</SolidColorBrush>
+	<SolidColorBrush x:Key="PivotHeaderColor">#5E6669</SolidColorBrush>
+	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="PageTxtColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="SubTitleColor">#DB6842</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
+	<SolidColorBrush x:Key="TileBGColor">#EED978</SolidColorBrush>
+	<SolidColorBrush x:Key="TileTxtColor">#5E6669</SolidColorBrush>
+	<SolidColorBrush x:Key="ImgOverlayColor">#EED978</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogBGColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#FFFFFF</SolidColorBrush>
+	
 	<!-- Background for text over an image -->
 	<!--
 	<SolidColorBrush x:Key="ImgOverlayColor">#99000000</SolidColorBrush>
-	-->
 	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
+	-->
+	
 
 	<SolidColorBrush x:Key="UIBGColor">#aaffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="UIFGColor">#313131</SolidColorBrush>
@@ -44,8 +62,11 @@
 	<Color x:Key="SystemTrayFGColor">#313131</Color> 
 	<Color x:Key="SystemTrayBGColor">#FCCD43</Color>
 	-->
+
+	<!--
 	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
+	-->
 	<System:Double x:Key="TileTxtFontSize">19.0</System:Double>
 	<FontFamily x:Key="TileTxtFont">Segoe WP</FontFamily>
 
@@ -53,6 +74,10 @@
     <System:Double x:Key="HelpTxtFontSizeNormal">28</System:Double>
     <FontFamily x:Key="HelpTxtFont">/Pocketailor;component/Fonts/Fonts.zip#EraserDust</FontFamily>
     
+	
+	
+
+
     <FontFamily x:Key="ScriptFont">/Pocketailor;component/Fonts/Fonts.zip#Lobster</FontFamily>
     <Style x:Key="TileFontStyle" TargetType="TextBlock">
     	<Setter Property="Foreground" Value="{StaticResource TileTxtColor}"/>

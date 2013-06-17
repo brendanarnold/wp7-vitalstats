@@ -95,10 +95,10 @@
 		</Grid.RowDefinitions>
 		<TextBlock 
 			Grid.Row="0"
-			TextWrapping="Wrap" Text="select region" Margin="36,15,36,10" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource PageTxtColor}"/>
+			TextWrapping="Wrap" Text="select region" Margin="36,15,36,10" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
 		<TextBlock
 			Grid.Row="1"
-			TextWrapping="Wrap" Text="If you cannot find your favourite brand, try the region where the brand was founded." Margin="36,0,36,10" Foreground="{StaticResource PageTxtColor}" FontSize="21.333" />
+			TextWrapping="Wrap" Text="If you cannot find your favourite brand, try the region where the brand was founded." Margin="36,0,36,10" Foreground="{StaticResource DialogSecondaryTxtColor}" FontSize="21.333" />
 		<toolkit:LongListSelector
 			Grid.Row="2"
 			Margin="0"
@@ -116,7 +116,7 @@
 						Background="Transparent">
 						<TextBlock 
 							Text="{Binding Key}" 
-							Foreground="{StaticResource PageTxtColor}" 
+							Foreground="{StaticResource DialogSecondaryTxtColor}" 
 							FontSize="48"
 							FontFamily="{StaticResource PhoneFontFamilySemiLight}"
 							HorizontalAlignment="Left"
@@ -135,7 +135,7 @@
 							<Border.Projection>
 								<PlaneProjection RotationX="-60"/>
 							</Border.Projection>
-							<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" 
+							<TextBlock Text="{Binding Key}" Foreground="{StaticResource DialogSecondaryTxtColor}" FontSize="48" 
 								Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 						</Border>
 				</DataTemplate>

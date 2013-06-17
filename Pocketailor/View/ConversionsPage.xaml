@@ -306,7 +306,7 @@
 			
 			<Grid x:Name="titleBarGrid"  
 				Grid.Row="0" 
-				Margin="0" Background="Black" VerticalAlignment="Top">
+				Margin="0" Background="{StaticResource PageBGColor}" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -322,12 +322,12 @@
 			
 			<Grid x:Name="pageTitleContainerGrid" 
 				Grid.Row="1"
-				Background="#8ABE2D" VerticalAlignment="Top" >
+				Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
-				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageTxtColor}" />
+				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageBGColor}" />
 				<Button x:Name="regionChangeBtn" Content="{Binding SelectedRegionString}" Grid.Column="1" HorizontalAlignment="Right" Margin="24,0" VerticalAlignment="Center">
 					<Button.Resources>
 						<Style x:Key="ButtonStyle1" TargetType="Button">
@@ -347,7 +347,7 @@
 						<PlaneProjection/>
 					</Button.Projection>
 					<Button.Foreground>
-						<StaticResource ResourceKey="PageTxtColor"/>
+						<StaticResource ResourceKey="PageBGColor"/>
 					</Button.Foreground>
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Click">
@@ -518,6 +518,23 @@
 			</toolkit:LongListSelector>
 			
 		</Grid>
+		<Border
+			Grid.Row="2"
+			Width="480" Height="80" BorderThickness="0,2,0,0" BorderBrush="{StaticResource PageTxtColor}"
+			>
+	
+			<adRotator:AdRotatorControl
+				xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
+				x:Name="AdRotatorControl"
+				SettingsUrl="http://www.lassiv.com/pocketailor/misc/PocketailorWPAdConfig.xml"
+				DefaultAdType="PubCenter"
+				DefaultSettingsFileUri="/Pocketailor;component/Ads/RotatorAdSettings.xml"
+				SlidingAdDirection="Left"
+				SlidingAdDisplaySeconds="10"
+				SlidingAdHiddenSeconds="0"/>
+			
+	
+		</Border>
 
 		<!--
 		<Border Grid.Row="2"   Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
@@ -526,18 +543,6 @@
 			</TextBlock>
 		</Border>
 		-->
-	
-		<adRotator:AdRotatorControl
-			xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
-			x:Name="AdRotatorControl"
-			Grid.Row="2"
-			Width="480" Height="80"
-			SettingsUrl="http://www.lassiv.com/pocketailor/misc/PocketailorWPAdConfig.xml"
-			DefaultAdType="PubCenter"
-			DefaultSettingsFileUri="/Pocketailor;component/Ads/RotatorAdSettings.xml"
-			SlidingAdDirection="Left"
-			SlidingAdDisplaySeconds="10"
-			SlidingAdHiddenSeconds="0"/>
 			
 	
 	</Grid>
