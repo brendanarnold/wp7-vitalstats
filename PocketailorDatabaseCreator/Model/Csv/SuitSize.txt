@@ -388,6 +388,24 @@ sizeid	brand	region	gender	waist	shoulder	sleeve	chest	insideleg	neck	torsolengt
 0	reiss	GB	male	0.9144			1.0668				1.1049	42
 20	reiss	GB	male	0.9652			1.2192				1.1557	44
 40	reiss	GB	male	1.0160			1.1684				1.2065	46
+-180	riverisland	AA	male			0.7569	0.9144					36 (Short)
+-160	riverisland	AA	male			0.7696	0.9652					38 (Short)
+-140	riverisland	AA	male			0.7849	1.0160					40 (Short)
+-120	riverisland	AA	male			0.7976	1.0668					42 (Short)
+-100	riverisland	AA	male			0.8103	1.1176					44 (Short)
+-80	riverisland	AA	male			0.8230	1.1684					46 (Short)
+-60	riverisland	AA	male			0.7823	0.9144					36 (Regular)
+-40	riverisland	AA	male			0.7950	0.9652					38 (Regular)
+-20	riverisland	AA	male			0.8077	1.0160					40 (Regular)
+0	riverisland	AA	male			0.8230	1.0668					42 (Regular)
+20	riverisland	AA	male			0.8357	1.1176					44 (Regular)
+40	riverisland	AA	male			0.8484	1.1684					46 (Regular)
+60	riverisland	AA	male			0.8077	0.9144					36 (Long)
+80	riverisland	AA	male			0.8204	0.9652					38 (Long)
+100	riverisland	AA	male			0.8331	1.0160					40 (Long)
+120	riverisland	AA	male			0.8458	1.0668					42 (Long)
+140	riverisland	AA	male			0.8585	1.1176					44 (Long)
+160	riverisland	AA	male			0.8738	1.1684					46 (Long)
 -60	tedbaker	AA	female	0.6350			0.7900				0.8550	XXS, TB0
 -40	tedbaker	AA	female	0.6600			0.8400				0.8800	XS, TB1
 -20	tedbaker	AA	female	0.7100			0.8900				0.9300	S, TB2

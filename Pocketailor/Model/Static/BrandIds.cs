@@ -181,6 +181,7 @@ namespace Pocketailor.Model
         Superdry = 172,
         TopMan = 173,
         VeroModa = 174,
+        RiverIsland = 175,
 
     }
 
@@ -361,7 +362,7 @@ namespace Pocketailor.Model
             { BrandId.Superdry, "Superdry" },
             { BrandId.TopMan, "TopMan" },
             { BrandId.VeroModa, "Vero Moda" },
-            
+            { BrandId.RiverIsland, "River Island" },
 
 
         };

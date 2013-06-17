@@ -196,6 +196,16 @@ sizeid	brand	region	gender	weight	waist	hips	height	insideleg	size
 60	oldnavy	US	female		0.8636				16/XL
 80	oldnavy	US	female		0.9144				18/XL
 100	oldnavy	US	female		0.9652				20/XXL
+-40	riverisland	AA	female		0.6350	0.8950			XS
+-20	riverisland	AA	female		0.6950	0.9550			S
+0	riverisland	AA	female		0.7550	1.0150			M
+20	riverisland	AA	female		0.8250	1051.1200			L
+40	riverisland	AA	female		0.9050	1.1650			XL
+-40	riverisland	XA	female		0.6350	0.8950			1/XS
+-20	riverisland	XA	female		0.6950	0.9550			2/S
+0	riverisland	XA	female		0.7550	1.0150			3/M
+20	riverisland	XA	female		0.8250	1051.1200			4/L
+40	riverisland	XA	female		0.9050	1.1650			5/XL
 -80	topshop	AA	female			0.9000	1.4950		S
 -60	topshop	AA	female			0.9650	1.4950		S
 -40	topshop	AA	female			0.9000	1.5900		S
