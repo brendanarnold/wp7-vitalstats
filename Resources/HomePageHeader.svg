@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg5974"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="HomePageHeader.svg">
+  <defs
+     id="defs5976" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="508.01781"
+     inkscape:cy="445.24601"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5979">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:2.43563867;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6511"
+       width="2023.91"
+       height="761.21936"
+       x="-410.40921"
+       y="341.69257" />
+    <g
+       id="g4356"
+       transform="matrix(1.6989574,0,0,1.7501678,-18.578361,-1126.5681)"
+       style="fill:#ffffff;stroke:none;display:inline"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
+      <g
+         transform="translate(116.05082,400.53572)"
+         id="g4358"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'">
+        <path
+           sodipodi:nodetypes="ccsccscccccc"
+           inkscape:connector-curvature="0"
+           id="path4360"
+           d="m 209.00289,471.38278 c -0.82135,-0.0746 -1.67467,-0.11729 -2.55997,-0.128 -3.64205,0.0479 -7.43895,0.0931 -10.94121,0.72686 -3.01768,0.54605 -8.58471,1.26341 -10.80453,3.77632 1.23622,3.36237 6.09758,5.3179 8.39412,5.26608 2.96445,-7.72109 4.86549,-7.35654 6.23654,-6.17783 4.32055,3.71445 0.65116,37.59292 0.65116,44.40795 l 9.72788,0 17.79177,-47.67939 -4.47994,0 -13.43983,39.1675 z"
+           style="fill:#ffffff;stroke:none" />
+      </g>
+      <text
+         sodipodi:linespacing="100%"
+         id="text4362"
+         y="920.48822"
+         x="186.69893"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         xml:space="preserve"><tspan
+           y="920.48822"
+           x="186.69893"
+           id="tspan4364"
+           sodipodi:role="line">Lassi</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:61.72800826999999700px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="594.59442"
+       y="481.65787"
+       id="text3010"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985"><tspan
+         sodipodi:role="line"
+         id="tspan3012"
+         x="594.59442"
+         y="481.65787"
+         style="font-size:102.88002014000000000px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Segoe UI;-inkscape-font-specification:Segoe UI;fill:#fccd43;fill-opacity:1">POCKETAILOR</tspan></text>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:5.31263542;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 582.87738,391.14538 0,116.99128"
+       id="path3016"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <g
+       id="g4356-3"
+       transform="matrix(1.2284802,0,0,1.2655093,756.87324,-501.97471)"
+       style="fill:#ffffff;stroke:none;display:inline"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
+      <g
+         transform="translate(116.05082,400.53572)"
+         id="g4358-1"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'">
+        <path
+           sodipodi:nodetypes="ccsccscccccc"
+           inkscape:connector-curvature="0"
+           id="path4360-3"
+           d="m 209.00289,471.38278 c -0.82135,-0.0746 -1.67467,-0.11729 -2.55997,-0.128 -3.64205,0.0479 -7.43895,0.0931 -10.94121,0.72686 -3.01768,0.54605 -8.58471,1.26341 -10.80453,3.77632 1.23622,3.36237 6.09758,5.3179 8.39412,5.26608 2.96445,-7.72109 4.86549,-7.35654 6.23654,-6.17783 4.32055,3.71445 0.65116,37.59292 0.65116,44.40795 l 9.72788,0 17.79177,-47.67939 -4.47994,0 -13.43983,39.1675 z"
+           style="fill:#ffffff;stroke:none" />
+      </g>
+      <text
+         sodipodi:linespacing="100%"
+         id="text4362-3"
+         y="920.48822"
+         x="186.69893"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         xml:space="preserve"><tspan
+           y="920.48822"
+           x="186.69893"
+           id="tspan4364-4"
+           sodipodi:role="line">Lassi</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:61.72800827px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="305.23151"
+       y="658.00195"
+       id="text3010-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985"><tspan
+         sodipodi:role="line"
+         id="tspan3012-5"
+         x="305.23151"
+         y="658.00195"
+         style="font-size:102.88002014px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#fccd43;fill-opacity:1;font-family:Segoe UI;-inkscape-font-specification:Segoe UI">POCKETAILOR</tspan></text>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:5.17164373;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 970.21862,565.41897 0,113.88645"
+       id="path3016-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+    <g
+       id="g4356-1"
+       transform="matrix(1.0139632,0,0,1.0445264,157.67085,-699.93961)"
+       style="fill:#ffffff;stroke:none;display:inline"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985">
+      <g
+         transform="translate(116.05082,400.53572)"
+         id="g4358-6"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'">
+        <path
+           sodipodi:nodetypes="ccsccscccccc"
+           inkscape:connector-curvature="0"
+           id="path4360-9"
+           d="m 209.00289,471.38278 c -0.82135,-0.0746 -1.67467,-0.11729 -2.55997,-0.128 -3.64205,0.0479 -7.43895,0.0931 -10.94121,0.72686 -3.01768,0.54605 -8.58471,1.26341 -10.80453,3.77632 1.23622,3.36237 6.09758,5.3179 8.39412,5.26608 2.96445,-7.72109 4.86549,-7.35654 6.23654,-6.17783 4.32055,3.71445 0.65116,37.59292 0.65116,44.40795 l 9.72788,0 17.79177,-47.67939 -4.47994,0 -13.43983,39.1675 z"
+           style="fill:#ffffff;stroke:none" />
+      </g>
+      <text
+         sodipodi:linespacing="100%"
+         id="text4362-8"
+         y="920.48822"
+         x="186.69893"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         xml:space="preserve"><tspan
+           y="920.48822"
+           x="186.69893"
+           id="tspan4364-8"
+           sodipodi:role="line">Lassi</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:49.83369827px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fccd43;fill-opacity:1;stroke:none;font-family:Lobster;-inkscape-font-specification:Lobster"
+       x="525.78558"
+       y="266.78891"
+       id="text3010-4"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985"><tspan
+         sodipodi:role="line"
+         id="tspan3012-1"
+         x="525.78558"
+         y="266.78891"
+         style="font-size:83.0561676px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#fccd43;fill-opacity:1;font-family:Segoe UI;-inkscape-font-specification:Segoe UI">POCKETAILOR</tspan></text>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3.92617154;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 518.00037,194.2352 0,86.4595"
+       id="path3016-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\LassivTitle.png"
+       inkscape:export-xdpi="89.999985"
+       inkscape:export-ydpi="89.999985" />
+  </g>
+</svg>

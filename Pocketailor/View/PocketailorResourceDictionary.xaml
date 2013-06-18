@@ -10,22 +10,27 @@
 	DarkGrey #313131
 	-->
 
-	<!--
 	<SolidColorBrush x:Key="PivotTitleColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="PivotHeaderColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
-
 	<SolidColorBrush x:Key="PageTxtColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
+	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#FFFFFF</SolidColorBrush>
-	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
-	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
-	-->
+	
+	
+	
+
+	<!--
 	<SolidColorBrush x:Key="PivotTitleColor">#DB6842</SolidColorBrush>
 	<SolidColorBrush x:Key="PivotHeaderColor">#5E6669</SolidColorBrush>
-	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="PageBGColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="PageTxtColor">#000000</SolidColorBrush>
 	<SolidColorBrush x:Key="SubTitleColor">#DB6842</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
@@ -36,12 +41,13 @@
 	<SolidColorBrush x:Key="DialogBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#FFFFFF</SolidColorBrush>
-	
+	-->
 	<!-- Background for text over an image -->
 	<!--
 	<SolidColorBrush x:Key="ImgOverlayColor">#99000000</SolidColorBrush>
-	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
 	-->
+	
+	
 	
 
 	<SolidColorBrush x:Key="UIBGColor">#aaffffff</SolidColorBrush>
@@ -64,8 +70,7 @@
 	-->
 
 	<!--
-	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
-	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
+	
 	-->
 	<System:Double x:Key="TileTxtFontSize">19.0</System:Double>
 	<FontFamily x:Key="TileTxtFont">Segoe WP</FontFamily>
