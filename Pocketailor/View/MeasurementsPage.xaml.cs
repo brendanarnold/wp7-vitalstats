@@ -24,9 +24,6 @@ namespace Pocketailor.View
         public MeasurementsPage()
         {
             InitializeComponent();
-
-           
-
         }
 
         
@@ -38,10 +35,8 @@ namespace Pocketailor.View
             this.DataContext = App.VM;
 
             // Find the selected profile and assign it  
-            int id = Convert.ToInt32(NavigationContext.QueryString["Id"]);
-            App.VM.SelectedProfile = (from Profile p in App.VM.Profiles where p.Id == id select p).First();
-
-            
+            int id = Convert.ToInt32(NavigationContext.QueryString["ProfileId"]);
+            App.VM.LoadMeasurementsPageData(id);
         }
 
         #endregion

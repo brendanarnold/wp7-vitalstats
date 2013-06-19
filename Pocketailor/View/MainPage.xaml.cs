@@ -227,7 +227,7 @@ namespace Pocketailor.View
 
         private void facebookBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            App.VM.GotoFacebook();
+            App.VM.ViewFacebook();
         }
 
         private void feedbackBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -264,8 +264,9 @@ namespace Pocketailor.View
 
         private void addProfileBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
         }
+
 
         
 

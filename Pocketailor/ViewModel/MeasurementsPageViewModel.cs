@@ -9,7 +9,14 @@ namespace Pocketailor.ViewModel
     public partial class AppViewModel
     {
 
-       
+        // Helper method for tombstoning
+        public void LoadMeasurementsPageData(int profileId)
+        {
+            if (this.SelectedProfile == null || this.SelectedProfile.Id != profileId)
+            {
+                this.SelectedProfile = (from Profile p in this.Profiles where p.Id == profileId select p).First();
+            }
+        }
 
         // Helkper method to notify the View of possible updates to HasMeasurement properties
         internal void RefreshRequiredMeasurement()

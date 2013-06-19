@@ -38,7 +38,7 @@ namespace Pocketailor
         public static int MAX_ADJUSTMENTS_PER_REQUEST = 50;
         public static int MAX_DELIVERY_ATTEMPTS = 3;
         // This is a random string used by the server to verify that it is a Pocketailor app talking to it 
-        public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "https://pocketailor_adjustments.eu01.aws.af.cm/";
+        public static string POCKETAILOR_ADJUSTMENTS_WEBSERVICE_URL = "https://pocketailor_adjustments.eu01.aws.af.cm";
         public static string POCKETAILOR_ADJUSTMENTS_SECRET = "7f1f830c-18fa-4e49-af6f-5ea4c2c85f62";
 #endif
 
@@ -51,12 +51,15 @@ namespace Pocketailor
         public static string APP_DB_CONNECTION_STRING = "Data Source=isostore:/Pocketailor.sdf";
         public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";
         public static string AUTHOR_EMAIL = "brendanarnold@outlook.com";
-        public static string WEBSITE_URL = "http://www.lassiv.com/pocketailor/";
-        public static string LEGAL_URL = "http://www.lassiv.com/pocketailor/legal.html";
-        public static string FACEBOOK_LIKE_URL = "http://facebook.com/Pocketailor";
-        public static string FEEDBACK_URL = "http://lassiv.uservoice.com";
         public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
         public static bool? DEFAULT_ALLOW_FEEDBACK = null;
         public static int NUM_BOOTS_TIL_READY_TO_RATE = 3;
+
+        public static string WEBSITE_URL = "http://bit.ly/190LBuj";
+        public static string LEGAL_URL = "http://bit.ly/16K1ukL";
+        public static string FEEDBACK_URL = "http://bit.ly/1at8chu";
+        public static string FACEBOOK_URL = "http://on.fb.me/17mPyJh";
+        public static string TWITTER_URL = "http://bit.ly/17mPLMB";
+
     }
 }

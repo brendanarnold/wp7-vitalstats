@@ -23,6 +23,7 @@
     shell:SystemTray.IsVisible="True"
 	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
+	
 	<toolkit:TransitionService.NavigationInTransition>
     <toolkit:NavigationInTransition>
         <toolkit:NavigationInTransition.Backward>

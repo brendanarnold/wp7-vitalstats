@@ -11,6 +11,21 @@ namespace Pocketailor.ViewModel
     public partial class AppViewModel
     {
 
+
+        public void LoadMainPageData()
+        {
+            if (this.Profiles == null)
+            {
+                this.LoadProfilesFromDB();
+            }
+            if (this.QuickProfiles == null)
+            {
+                this.LoadQuickProfilesFromDB();
+            }
+        }
+
+
+
         #region QuickProfile methods
 
         private ObservableCollection<Profile> _quickProfiles;
@@ -171,13 +186,6 @@ namespace Pocketailor.ViewModel
             reviewTask.Show();
         }
 
-        public void GotoFacebook()
-        {
-            WebBrowserTask wbTask = new WebBrowserTask();
-            wbTask.Uri = new Uri(AppConstants.FACEBOOK_LIKE_URL, UriKind.Absolute);
-            wbTask.Show();
-        }
-
         public void GiveFeedback()
         {
             WebBrowserTask wbTask = new WebBrowserTask();
@@ -185,6 +193,20 @@ namespace Pocketailor.ViewModel
             wbTask.Show();
         }
 
+
+        internal void ViewTwitter()
+        {
+            WebBrowserTask wbTask = new WebBrowserTask();
+            wbTask.Uri = new Uri(AppConstants.TWITTER_URL, UriKind.Absolute);
+            wbTask.Show();
+        }
+
+        internal void ViewFacebook()
+        {
+            WebBrowserTask wbTask = new WebBrowserTask();
+            wbTask.Uri = new Uri(AppConstants.FACEBOOK_URL, UriKind.Absolute);
+            wbTask.Show();
+        }
 
         //public void BuyApp()
         //{
