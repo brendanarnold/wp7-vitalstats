@@ -19,26 +19,14 @@ namespace Pocketailor.View
 {
     public partial class EditMeasurementPage : PhoneApplicationPage
     {
-        // Determines whether page should render for a new masurement or editing an existing measurement
-        public string PageAction;
-
+       
         // Long list selector triggers the OnNavigatedToEvent again, use a flag to avoid triggering the reinitialisation of the measurement
         public bool MeasurementInitialised = false;
-
-        // A container for comparison when submitting to check if data has been entered
-        EditMeasurementFormSnapshot FormSnapshot;
-
-        // Store the help text
-        public HelpData HelpData;
 
         public EditMeasurementPage()
         {
             InitializeComponent();
-
             this.DataContext = App.VM;
-            this.HelpData = new HelpData();
-
-
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -47,16 +35,18 @@ namespace Pocketailor.View
 
             if (this.MeasurementInitialised) return;
 
-            if (!NavigationContext.QueryString.TryGetValue("Action", out this.PageAction))
-            {
-                // Default action is add a new item
-                this.PageAction = EditMeasurementPageActions.New;
-            }
+            // Parse out the URI and send to the ViewModel
+            string s = String.Empty;
+            NavigationContext.QueryString.TryGetValue("ProfileId", out s);
+            int profileId = int.Parse(s);
+            NavigationContext.QueryString.TryGetValue("MeasurementId", out s);
+            MeasurementId mId = (MeasurementId)Enum.Parse(typeof(MeasurementId), s, true);
+            App.VM.LoadEditMeasurementData(profileId, mId);
 
-
-            // Load values into the page
+            // Load values into the page from ViewModel
             this.LoadMeasurementIntoPage();
-            // Take a snapshot to determine if changes have been made
+
+            // Take a snapshot to determine if changes have been made later
             this.TakeSnapshotOfForm();
 
             this.MeasurementInitialised = true;
@@ -67,22 +57,14 @@ namespace Pocketailor.View
         {
             // Set the unit name from the selected measurement
             this.pageTitleTextBlock.Text = (App.VM.SelectedMeasurement.Name == null) ? String.Empty : App.VM.SelectedMeasurement.Name.ToLower();
-            // Hide the unit selection if the unit type is custom
-            if (App.VM.SelectedMeasurement.MeasurementType == null)
+            this.preferredUnitListPicker.ItemsSource = App.VM.SelectedMeasurement.MeasurementType.Units;
+            if (App.VM.SelectedMeasurement.PreferredUnit != null)
             {
-                this.preferredUnitListPicker.Visibility = Visibility.Collapsed;
-            } 
-            else 
+                this.preferredUnitListPicker.SelectedItem = App.VM.SelectedMeasurement.PreferredUnit;
+            }
+            else
             {
-                this.preferredUnitListPicker.ItemsSource = App.VM.SelectedMeasurement.MeasurementType.Units;
-                if (App.VM.SelectedMeasurement.PreferredUnit != null)
-                {
-                    this.preferredUnitListPicker.SelectedItem = App.VM.SelectedMeasurement.PreferredUnit;
-                }
-                else
-                {
-                    this.preferredUnitListPicker.SelectedItem = App.VM.SelectedMeasurement.MeasurementType.DefaultUnit;
-                }
+                this.preferredUnitListPicker.SelectedItem = App.VM.SelectedMeasurement.MeasurementType.DefaultUnit;
             }
             // Load up the value
             if (App.VM.SelectedMeasurement.Value != null) this.LoadValueToTextBox();
@@ -94,8 +76,7 @@ namespace Pocketailor.View
         // Save a snapshot of the form into FormSnapshot
         private void TakeSnapshotOfForm() 
         {
-            this.FormSnapshot = new EditMeasurementFormSnapshot() {
-                //Name = this.nameTitledTextBox.Text,
+            App.VM.EditMeasurementFormSnapshot = new ViewModel.EditMeasurementFormSnapshot() {
                 Value = this.ReadValueFromTextBox(),
                 PreferredUnitIndex = this.preferredUnitListPicker.SelectedIndex,
             };
@@ -104,14 +85,15 @@ namespace Pocketailor.View
         // Use the FormSnaptshot to determine if there is unsaved data entered
         public bool IsUnsavedData()
         {
-            //if (this.nameTitledTextBox.Text != this.FormSnapshot.Name) return true;
+            if (App.VM.EditMeasurementFormSnapshot == null) return true;
             List<string> a = this.ReadValueFromTextBox();
-            List<string> b = this.FormSnapshot.Value;
+            List<string> b = App.VM.EditMeasurementFormSnapshot.Value;
             if (a == null && b != null) return true;
             if (a != null && b == null) return true;
             if (a != null && b != null && !a.SequenceEqual(b)) return true;
-            if (this.preferredUnitListPicker.SelectedIndex != this.FormSnapshot.PreferredUnitIndex) return true;
+            if (this.preferredUnitListPicker.SelectedIndex != App.VM.EditMeasurementFormSnapshot.PreferredUnitIndex) return true;
             return false;
+            
         }
 
 
@@ -137,12 +119,6 @@ namespace Pocketailor.View
         // Also raises error to the user via messageboxes
         public bool ValidateInput()
         {
-            //if (this.nameTitledTextBox.Text == String.Empty)
-            //{
-            //    MessageBox.Show("The statistic label cannot be empty. Please enter a value.", "Label missing", MessageBoxButton.OK);
-            //    return false;
-            //}
-
             if (this.ReadValueFromTextBox() == null)
             {
                 MessageBox.Show("The measurement must be number and cannot be empty. Please enter a valid value.", "Value empty or invalid", MessageBoxButton.OK);
@@ -160,7 +136,7 @@ namespace Pocketailor.View
             List<string> valStr = this.ReadValueFromTextBox();
             App.VM.SelectedMeasurement.PreferredUnit = (this.preferredUnitListPicker.SelectedItem as IUnit);
             App.VM.SelectedMeasurement.Value = App.VM.SelectedMeasurement.PreferredUnit.ConvertToDBString(valStr);
-            if (this.PageAction == EditMeasurementPageActions.Edit) 
+            if (App.VM.EditMeasurementsPageAction == ViewModel.EditMeasurementPageActions.Edit) 
             {
                 App.VM.SaveChangesToAppDB();
             }
@@ -239,13 +215,13 @@ namespace Pocketailor.View
 
         public BitmapImage GetHelpImg(MeasurementId measurementId, GenderId gender)
         {
-            string fn = (gender == GenderId.Male) ? this.HelpData.HelpImgMale[measurementId] : this.HelpData.HelpImgFemale[measurementId];
+            string fn = (gender == GenderId.Male) ? App.VM.HelpData.HelpImgMale[measurementId] : App.VM.HelpData.HelpImgFemale[measurementId];
             return new BitmapImage(new Uri(AppConstants.HELP_IMAGE_DIRECTORY + fn, UriKind.Relative));
         }
 
         public string GetHelpText(MeasurementId measurementId, GenderId gender)
         {
-            return this.HelpData.HelpText[measurementId];
+            return App.VM.HelpData.HelpText[measurementId];
         }
 
 
@@ -291,19 +267,12 @@ namespace Pocketailor.View
 
     }
 
-    public struct EditMeasurementFormSnapshot 
-    {
-        //public string Name;
-        public List<string> Value;
-        public int? PreferredUnitIndex;
-    }
+    
 
 
-    public static class EditMeasurementPageActions
-    {
-        public const string New = "New";
-        public const string Edit = "Edit";
-    }
+    
+
+
 
 
 }

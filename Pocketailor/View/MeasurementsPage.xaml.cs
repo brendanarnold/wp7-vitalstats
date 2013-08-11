@@ -13,6 +13,8 @@ using Microsoft.Phone.Controls;
 using System.Globalization;
 using Pocketailor.Model;
 using Microsoft.Phone.Shell;
+using Pocketailor.ViewModel;
+using Pocketailor.View.Controls;
 
 namespace Pocketailor.View
 {
@@ -66,11 +68,11 @@ namespace Pocketailor.View
 
 
         // User declined to select a measurement type, custom measurement type has been selected instead, move on to new measurement page
-        private void customMeasurementTypeTextBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}",
-                EditMeasurementPageActions.New), UriKind.Relative));
-        }
+        //private void customMeasurementTypeTextBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}",
+        //        EditMeasurementPageActions.New), UriKind.Relative));
+        //}
 
         #endregion
 
@@ -78,24 +80,24 @@ namespace Pocketailor.View
 
         
         // Delete a measurement from the context menu
-        private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            if (sender != null)
-            {
-                Measurement s = (sender as MenuItem).DataContext as Measurement;
-                this.ConfirmAndDeleteMeasurement(s);
-            }
-        }
+        //private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    if (sender != null)
+        //    {
+        //        Measurement s = (sender as MenuItem).DataContext as Measurement;
+        //        this.ConfirmAndDeleteMeasurement(s);
+        //    }
+        //}
 
-        private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            if (sender != null)
-            {
-                Measurement s = (sender as MenuItem).DataContext as Measurement;
-                App.VM.SelectedMeasurement = s;
-                NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}", EditMeasurementPageActions.Edit), UriKind.Relative));
-            }
-        }
+        //private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    if (sender != null)
+        //    {
+        //        Measurement s = (sender as MenuItem).DataContext as Measurement;
+        //        App.VM.SelectedMeasurement = s;
+        //        NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}", EditMeasurementPageActions.Edit), UriKind.Relative));
+        //    }
+        //}
 
         //private void secondaryTileAppBarMenuItem_Click(object sender, System.EventArgs e)
         //{
@@ -113,112 +115,68 @@ namespace Pocketailor.View
 
         private void Pivot_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            switch ((sender as Pivot).SelectedIndex)
-            {
-                case 0:
-                    this.ApplicationBar = this.Resources["conversionsAppBar"] as ApplicationBar;
-                    break;
-                case 1:
-                    this.ApplicationBar = this.Resources["measurementsAppBar"] as ApplicationBar;
-                    break;
-                default:
-                    break;
-            }
+            //switch ((sender as Pivot).SelectedIndex)
+            //{
+            //    case 0:
+            //        this.ApplicationBar = this.Resources["conversionsAppBar"] as ApplicationBar;
+            //        break;
+            //    case 1:
+            //        this.ApplicationBar = this.Resources["measurementsAppBar"] as ApplicationBar;
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
 
 
 
 
 
-        private void EditMeasurementFromTemplate(MeasurementId id)
-        {
-            MeasurementTemplate st = App.VM.MeasurementTemplates.Where(x => x.Id == id).First();
-            App.VM.SelectedMeasurement = new Measurement()
-            {
-                Name = st.Name,
-                MeasurementType = st.MeasurementType,
-                MeasurementId = st.Id,
-            };
-            NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}",
-                EditMeasurementPageActions.New), UriKind.Relative));
-        }
+        //private void EditMeasurementFromTemplate(MeasurementId id)
+        //{
+        //    MeasurementTemplate st = App.VM.MeasurementTemplates.Where(x => x.Id == id).First();
+        //    App.VM.SelectedMeasurement = new Measurement()
+        //    {
+        //        Name = st.Name,
+        //        MeasurementType = st.MeasurementType,
+        //        MeasurementId = st.Id,
+        //    };
+        //    NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}",
+        //        EditMeasurementPageActions.New), UriKind.Relative));
+        //}
 
         
 
 
-        private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
+        //private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
+        //{
+        //    string s = String.Empty;
+        //    foreach (MeasurementId id in missingIds)
+        //    {
+        //        s += Environment.NewLine + "  \u2022 " +  Lookup.Measurements[id].ToLower();
+        //    }
+        //    string measurementName = Lookup.Measurements[missingIds[0]];
+        //    string msg = String.Format("To calculate {0} conversions the following measurements need to be entered,{1}",
+        //        conversionName, s);
+        //    string title = String.Format("Add {0} measurement?", measurementName.ToLower());
+        //    string btnTitle = String.Format("add {0} measurement", measurementName.ToLower());
+
+            
+        //    MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
+        //    if (result == MessageBoxResult.OK)
+        //    {
+        //        this.EditMeasurementFromTemplate(missingIds[0]);
+        //    }
+        //}
+
+        private void JumpToMeasurements()
         {
-            string s = String.Empty;
-            foreach (MeasurementId id in missingIds)
-            {
-                s += Environment.NewLine + "  \u2022 " +  Lookup.Measurements[id].ToLower();
-            }
-            string measurementName = Lookup.Measurements[missingIds[0]];
-            string msg = String.Format("To calculate {0} conversions the following measurements need to be entered,{1}",
-                conversionName, s);
-            string title = String.Format("Add {0} measurement?", measurementName.ToLower());
-            string btnTitle = String.Format("add {0} measurement", measurementName.ToLower());
-
-            //CustomMessageBox cMb = new CustomMessageBox()
-            //{
-            //    Caption = title,
-            //    Message = msg,
-            //    LeftButtonContent = "add",
-            //    RightButtonContent = "cancel",
-            //    IsFullScreen = false,
-            //};
-            // Add this so have access in the callback
-            //cMb.Tag = missingIds[0];
-
-            //cMb.Dismissed += (s1, e) =>
-            //{
-            //    switch (e.Result)
-            //    {
-            //        case CustomMessageBoxResult.LeftButton:
-            //            this.EditStatFromTemplate((MeasurementId)((s1 as CustomMessageBox).Tag));
-            //            break;
-            //        case CustomMessageBoxResult.RightButton:
-            //        case CustomMessageBoxResult.None:
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //};
-
-            //cMb.Show();
-
-            MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
-            if (result == MessageBoxResult.OK)
-            {
-                this.EditMeasurementFromTemplate(missingIds[0]);
-            }
+            this.mainPivot.SelectedIndex = 1;
         }
 
 
         private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            /*
-            List<MeasurementId> missingMeasurements;
-            if (App.VM.SelectedProfile.Gender == GenderId.Male)
-            {
-                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.TrousersMens);
-            }
-            else
-            {
-                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.TrousersWomens);
-            
-            }
-            if (missingMeasurements.Count == 0)
-            {
-                App.VM.SelectedConversionType = ConversionId.TrouserSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}", 
-                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
-            }
-            else
-            {
-                this.PromptForMissingMeasurements(missingMeasurements, "trouser");
-            }
-             */
             if (App.VM.TrouserConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.TrouserSize;
@@ -227,6 +185,7 @@ namespace Pocketailor.View
             }
             else
             {
+                this.JumpToMeasurements();
                 App.VM.NominateRequiredMeasurements(App.VM.TrouserConversion.MissingMeasurements);
             }
 
@@ -234,25 +193,21 @@ namespace Pocketailor.View
 
         private void shirtConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> required = (App.VM.SelectedProfile.Gender == GenderId.Male) ? RequiredMeasurements.ShirtMens
-                : RequiredMeasurements.ShirtWomens;
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(required);
-            if (missingMeasurements.Count == 0)
-            {
+            if (App.VM.ShirtConversion.HasRequiredMeasurements) {
                 App.VM.SelectedConversionType = ConversionId.ShirtSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "shirt");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.ShirtConversion.MissingMeasurements);
             }
         }
 
         private void hatConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Hat);
-            if (missingMeasurements.Count == 0)
+            if (App.VM.HatConversion.HasRequiredMeasurements) 
             {
                 App.VM.SelectedConversionType = ConversionId.HatSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -260,22 +215,14 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "hat");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.HatConversion.MissingMeasurements);
             }
         }
 
         private void suitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements;
-            if (App.VM.SelectedProfile.Gender == Model.GenderId.Male)
-            {
-                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SuitMens);
-            }
-            else
-            {
-                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SuitWomens);
-            }
-            if (missingMeasurements.Count == 0)
+            if (App.VM.SuitConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.SuitSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -283,14 +230,14 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "suit");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.SuitConversion.MissingMeasurements);
             }
         }
 
         private void dressConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.DressSize);
-            if (missingMeasurements.Count == 0)
+            if (App.VM.DressConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.DressSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -298,14 +245,14 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "dress size");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.DressConversion.MissingMeasurements);
             }
         }
 
         private void braConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Bra);
-            if (missingMeasurements.Count == 0)
+            if (App.VM.BraConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.BraSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -313,14 +260,14 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "bra");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.BraConversion.MissingMeasurements);
             }
         }
 
         private void hosieryConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Hosiery);
-            if (missingMeasurements.Count == 0)
+            if (App.VM.HosieryConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.HosierySize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -328,14 +275,14 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "hosiery");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.HosieryConversion.MissingMeasurements);
             }
         }
 
         private void shoeConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.Shoes);
-            if (missingMeasurements.Count == 0)
+            if (App.VM.ShoeConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.ShoeSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -343,14 +290,14 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "shoe");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.ShoeConversion.MissingMeasurements);
             }
         }
 
         private void skiBootConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.SkiBoots);
-            if (missingMeasurements.Count == 0)
+            if (App.VM.SkiBootConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.SkiBootSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -358,23 +305,15 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "ski boot");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.SkiBootConversion.MissingMeasurements);
             }
         }
 
 
         private void wetsuitConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            List<MeasurementId> missingMeasurements;
-            if (App.VM.SelectedProfile.Gender == Model.GenderId.Male)
-            {
-                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.WetsuitMens);
-            }
-            else
-            {
-                missingMeasurements = App.VM.GetMissingMeasurements(RequiredMeasurements.WetsuitWomens);
-            }
-            if (missingMeasurements.Count == 0)
+            if (App.VM.WetsuitConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.WetsuitSize;
                 NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
@@ -382,7 +321,8 @@ namespace Pocketailor.View
             }
             else
             {
-                this.PromptForMissingMeasurements(missingMeasurements, "wetsuit");
+                this.JumpToMeasurements();
+                App.VM.NominateRequiredMeasurements(App.VM.WetsuitConversion.MissingMeasurements);
             }
         }
 
@@ -406,7 +346,13 @@ namespace Pocketailor.View
             App.VM.LoadMeasurements(App.VM.ViewingUnitCulture);
         }
 
-
+		private void measurementBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e) 
+		{
+            MeasurementDataContainer m = (sender as MeasurementBtn).DataContext as MeasurementDataContainer;
+            int profileId = App.VM.SelectedProfile.Id;
+            NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?MeasurementId={0}&ProfileId={1}",
+                m.MeasurementId, profileId), UriKind.Relative));
+		}
 
         #endregion
 

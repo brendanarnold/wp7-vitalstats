@@ -17,7 +17,7 @@ namespace Pocketailor.ViewModel
             {
                 this.SelectedProfile = (from Profile p in this.Profiles where p.Id == profileId select p).First();
             }
-            this.ViewingUnitCulture = App.VM.UnitCulture;
+            this.ViewingUnitCulture = this.UnitCulture;
             this.LoadMeasurements(this.ViewingUnitCulture);
         }
 
@@ -329,8 +329,8 @@ namespace Pocketailor.ViewModel
         private MeasurementDataContainer _measurementChest;
         public MeasurementDataContainer MeasurementChest {
             get 
-            { 
-                if (this._measurementChest == null) this._measurementChest = new MeasurementDataContainer();
+            {
+                if (this._measurementChest == null) this._measurementChest = new MeasurementDataContainer() { MeasurementId = MeasurementId.Chest, };
                 return this._measurementChest;
             }
             set
@@ -348,7 +348,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementFootLength == null) this._measurementFootLength = new MeasurementDataContainer();
+                if (this._measurementFootLength == null) this._measurementFootLength = new MeasurementDataContainer() { MeasurementId = MeasurementId.FootLength, };
                 return this._measurementFootLength;
             }
             set
@@ -366,7 +366,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementFootWidth == null) this._measurementFootWidth = new MeasurementDataContainer();
+                if (this._measurementFootWidth == null) this._measurementFootWidth = new MeasurementDataContainer() { MeasurementId = MeasurementId.FootWidth, };
                 return this._measurementFootWidth;
             }
             set
@@ -384,7 +384,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementHead == null) this._measurementHead = new MeasurementDataContainer();
+                if (this._measurementHead == null) this._measurementHead = new MeasurementDataContainer() { MeasurementId = MeasurementId.Head, };
                 return this._measurementHead;
             }
             set
@@ -402,7 +402,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementHips == null) this._measurementHips = new MeasurementDataContainer();
+                if (this._measurementHips == null) this._measurementHips = new MeasurementDataContainer() { MeasurementId = MeasurementId.Hips, };
                 return this._measurementHips;
             }
             set
@@ -421,7 +421,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementHeight == null) this._measurementHeight = new MeasurementDataContainer();
+                if (this._measurementHeight == null) this._measurementHeight = new MeasurementDataContainer() { MeasurementId = MeasurementId.Height, };
                 return this._measurementHeight;
             }
             set
@@ -439,7 +439,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementInsideLeg == null) this._measurementInsideLeg = new MeasurementDataContainer();
+                if (this._measurementInsideLeg == null) this._measurementInsideLeg = new MeasurementDataContainer() { MeasurementId = MeasurementId.InsideLeg, };
                 return this._measurementInsideLeg;
             }
             set
@@ -457,7 +457,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementNeck == null) this._measurementNeck = new MeasurementDataContainer();
+                if (this._measurementNeck == null) this._measurementNeck = new MeasurementDataContainer() { MeasurementId = MeasurementId.Neck, };
                 return this._measurementNeck;
             }
             set
@@ -475,7 +475,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementShoulder == null) this._measurementShoulder = new MeasurementDataContainer();
+                if (this._measurementShoulder == null) this._measurementShoulder = new MeasurementDataContainer() { MeasurementId = MeasurementId.Shoulder, };
                 return this._measurementShoulder;
             }
             set
@@ -494,7 +494,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementSleeve == null) this._measurementSleeve = new MeasurementDataContainer();
+                if (this._measurementSleeve == null) this._measurementSleeve = new MeasurementDataContainer() { MeasurementId = MeasurementId.Sleeve, };
                 return this._measurementSleeve;
             }
             set
@@ -512,7 +512,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementTorsoLength == null) this._measurementTorsoLength = new MeasurementDataContainer();
+                if (this._measurementTorsoLength == null) this._measurementTorsoLength = new MeasurementDataContainer() { MeasurementId = MeasurementId.TorsoLength, };
                 return this._measurementTorsoLength;
             }
             set
@@ -530,7 +530,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementUnderBust == null) this._measurementUnderBust = new MeasurementDataContainer();
+                if (this._measurementUnderBust == null) this._measurementUnderBust = new MeasurementDataContainer() { MeasurementId = MeasurementId.UnderBust, };
                 return this._measurementUnderBust;
             }
             set
@@ -548,7 +548,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementWaist == null) this._measurementWaist = new MeasurementDataContainer();
+                if (this._measurementWaist == null) this._measurementWaist = new MeasurementDataContainer() { MeasurementId = MeasurementId.Waist, };
                 return this._measurementWaist;
             }
             set
@@ -566,7 +566,7 @@ namespace Pocketailor.ViewModel
         {
             get
             {
-                if (this._measurementWeight == null) this._measurementWeight = new MeasurementDataContainer();
+                if (this._measurementWeight == null) this._measurementWeight = new MeasurementDataContainer() { MeasurementId = MeasurementId.Weight, };
                 return this._measurementWeight;
             }
             set
@@ -746,6 +746,20 @@ namespace Pocketailor.ViewModel
                 {
                     this._isCandidate = value;
                     this.NotifyPropertyChanged("IsCandidate");
+                }
+            }
+        }
+
+        private MeasurementId _measurementId;
+        public MeasurementId MeasurementId
+        {
+            get { return this._measurementId; }
+            set
+            {
+                if (this._measurementId != value)
+                {
+                    this._measurementId = value;
+                    this.NotifyPropertyChanged("MeasurementId");
                 }
             }
         }

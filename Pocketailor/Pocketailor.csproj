@@ -177,6 +177,7 @@
     <Compile Include="ViewModel\ConversionAdjustmentViewModel.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
     <Compile Include="ViewModel\EditBlacklistedBrandsViewModel.cs" />
+    <Compile Include="ViewModel\EditMeasurementViewModel.cs" />
     <Compile Include="ViewModel\EditRegionsViewModel.cs" />
     <Compile Include="ViewModel\LongListSelectorGroup.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
@@ -205,7 +206,7 @@
     <Compile Include="View\EditBlacklistedBrands.xaml.cs">
       <DependentUpon>EditBlacklistedBrands.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HelpData.cs" />
+    <Compile Include="Model\Static\HelpData.cs" />
     <Compile Include="Model\Static\BrandIds.cs" />
     <Compile Include="Model\MeasurementType.cs" />
     <Compile Include="Model\Static\MeasurementTemplates.cs" />

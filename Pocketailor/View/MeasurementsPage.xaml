@@ -13,33 +13,13 @@
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
 	xmlns:iv="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	xmlns:Controls="clr-namespace:Pocketailor.View.Controls" 
+	xmlns:AdDuplex="clr-namespace:AdDuplex;assembly=AdDuplex.WindowsPhone" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="Pocketailor.View.MeasurementsPage"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
 	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
-	
-	<toolkit:TransitionService.NavigationInTransition>
-    <toolkit:NavigationInTransition>
-        <toolkit:NavigationInTransition.Backward>
-            <toolkit:TurnstileTransition Mode="BackwardIn"/>
-        </toolkit:NavigationInTransition.Backward>
-        <toolkit:NavigationInTransition.Forward>
-            <toolkit:TurnstileTransition Mode="ForwardIn"/>
-        </toolkit:NavigationInTransition.Forward>
-    </toolkit:NavigationInTransition>
-</toolkit:TransitionService.NavigationInTransition>
-<toolkit:TransitionService.NavigationOutTransition>
-    <toolkit:NavigationOutTransition>
-        <toolkit:NavigationOutTransition.Backward>
-            <toolkit:TurnstileTransition Mode="BackwardOut"/>
-        </toolkit:NavigationOutTransition.Backward>
-        <toolkit:NavigationOutTransition.Forward>
-            <toolkit:TurnstileTransition Mode="ForwardOut"/>
-        </toolkit:NavigationOutTransition.Forward>
-    </toolkit:NavigationOutTransition>
-</toolkit:TransitionService.NavigationOutTransition>
 	
 	<phone:PhoneApplicationPage.Resources>
 		
@@ -189,6 +169,28 @@
 		
 
 	</phone:PhoneApplicationPage.Resources>
+	
+	<toolkit:TransitionService.NavigationInTransition>
+    <toolkit:NavigationInTransition>
+        <toolkit:NavigationInTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardIn"/>
+        </toolkit:NavigationInTransition.Backward>
+        <toolkit:NavigationInTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardIn"/>
+        </toolkit:NavigationInTransition.Forward>
+    </toolkit:NavigationInTransition>
+</toolkit:TransitionService.NavigationInTransition>
+<toolkit:TransitionService.NavigationOutTransition>
+    <toolkit:NavigationOutTransition>
+        <toolkit:NavigationOutTransition.Backward>
+            <toolkit:TurnstileTransition Mode="BackwardOut"/>
+        </toolkit:NavigationOutTransition.Backward>
+        <toolkit:NavigationOutTransition.Forward>
+            <toolkit:TurnstileTransition Mode="ForwardOut"/>
+        </toolkit:NavigationOutTransition.Forward>
+    </toolkit:NavigationOutTransition>
+</toolkit:TransitionService.NavigationOutTransition>
+	
 	<shell:SystemTray.BackgroundColor>
 		<StaticResource ResourceKey="SystemTrayBGColor"/>
 	</shell:SystemTray.BackgroundColor>
@@ -217,9 +219,14 @@
 	
 	<Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}" Margin="0">
 
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="81" />
+		</Grid.RowDefinitions>
 		
-		
-		<controls:Pivot  x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
+		<controls:Pivot 
+			Grid.Row="0"
+			x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
 			
 			<controls:Pivot.Title>
                 
@@ -281,7 +288,13 @@
 									<ImageBrush Stretch="Fill" ImageSource="/Images/shirt-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
-							<Controls:ConversionBtn x:Name="trouserConversionBtn" Title="Trousers" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,10" BorderThickness="0" HasMeasurements="{Binding TrouserConversion.HasRequiredMeasurements}" Tap="trouserConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="trouserConversionBtn" 
+								Title="Trousers" 
+								Grid.Column="1" 
+								HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+								Margin="0,0,0,10" BorderThickness="0" 
+								HasMeasurements="{Binding TrouserConversion.HasRequiredMeasurements}" 
+								Tap="trouserConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/trousers-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
@@ -361,7 +374,7 @@
 
 						<Controls:HelpTextBlock 
 							Margin="0,0,0,24"
-							HelpText="Unlock a conversion button by tapping and adding measurements" />
+							HelpText="Tap a locked conversion button to see which measurements are needed to unlock it" />
 
 						
 					</StackPanel>			
@@ -377,7 +390,7 @@
 					</Grid>
 				</controls:PivotItem.Header>
 				
-				<Grid Margin="12,0,12,0">
+				<Grid Margin="0,0,12,0">
 					<!--
 					<StackPanel Margin="0,0,0,12" Orientation="Horizontal">
 						<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
@@ -425,78 +438,105 @@
 							<Controls:AboutButton 
 								x:Name="switchUnitsBtn"
 								Grid.Row="0"
-								Margin="0,24,12,0"
+								Margin="12,24,12,0"
 								TitleText="{Binding ViewingUnitCulture, ConverterParameter=Show imperial units|Show metric units, Converter={StaticResource UnitCultureToString}}" IconImage="/Images/Appbar/appbar.arrow.right.left.png" Tap="switchUnitsBtn_Tap" />
 
 							<TextBlock x:Name="measurementsSubTitle"  
 								Grid.Row="1"
-								Margin="0,12,0,12" Style="{StaticResource SubTitleTextBoxStyle}">
+								Margin="12,12,0,12" Style="{StaticResource SubTitleTextBoxStyle}">
 								<Run Text="MEASUREMENTS"/>
 							</TextBlock>
 
 							<StackPanel
-								Grid.Row="2" Margin="0,0,12,0">
+								Grid.Row="2" Margin="12,0,12,0">
 								
-								<Controls:MeasurementBtn 
-									IsCandidate="{Binding MeasurementChest.IsCandidate}"
+								<Controls:MeasurementBtn x:Name="chestMeasurementBtn"
+									DataContext="{Binding MeasurementChest}" 
 									MeasurementName="Chest"
-									ValueText="{Binding MeasurementChest.Value}"
-									Margin="0,0,0,5"  />
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
 
-								<Controls:MeasurementBtn 
+								<Controls:MeasurementBtn x:Name="footLengthMeasurementBtn" 
 									MeasurementName="Foot Length"
-									ValueText="{Binding MeasurementFootLength.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementFootLength}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="footWidthMeasurementBtn" 
 									MeasurementName="Foot Width"
-									ValueText="{Binding MeasurementFootWidth.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementFootWidth}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="headMeasurementBtn" 
 									MeasurementName="Head"
-									ValueText="{Binding MeasurementHead.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementHead}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="heightMeasurementBtn" 
 									MeasurementName="Height"
-									ValueText="{Binding MeasurementHeight.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementHeight}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="hipsMeasurementBtn" 
 									MeasurementName="Hips"
-									ValueText="{Binding MeasurementHips.Value}"
+									DataContext="{Binding MeasurementHips}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
 									Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}" 
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="insideLegMeasurementBtn" 
 									MeasurementName="Inside Leg"
-									ValueText="{Binding MeasurementInsideLeg.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementInsideLeg}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="neckMeasurementBtn" 
 									MeasurementName="Neck"
-									ValueText="{Binding MeasurementNeck.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementNeck}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="sleeveMeasurementBtn" 
 									MeasurementName="Sleeve"
-									ValueText="{Binding MeasurementSleeve.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementSleeve}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="shoulderMeasurementBtn" 
 									MeasurementName="Shoulder"
-									ValueText="{Binding MeasurementShoulder.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementShoulder}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="torsoLengthMeasurementBtn" 
 									MeasurementName="Torso Length"
-									ValueText="{Binding MeasurementTorsoLength.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementTorsoLength}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="underBustMeasurementBtn" 
 									MeasurementName="Underbust"
-									ValueText="{Binding MeasurementUnderBust.Value}"
+									DataContext="{Binding MeasurementUnderBust}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
 									Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}" 
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="waistMeasurementBtn" 
 									MeasurementName="Waist"
-									ValueText="{Binding MeasurementWaist.Value}"
-									Margin="0,0,0,5"  />
-								<Controls:MeasurementBtn 
+									DataContext="{Binding MeasurementWaist}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+								<Controls:MeasurementBtn x:Name="weightMeasurementBtn" 
 									MeasurementName="Weight"
-									ValueText="{Binding MeasurementWeight.Value}"
-									Margin="0,0,0,5"  />
+									DataContext="{Binding MeasurementWeight}"
+									IsCandidate="{Binding IsCandidate}"
+									ValueText="{Binding Value}"
+									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
 							</StackPanel>
 
 							<!--
@@ -533,9 +573,9 @@
 
 							<Controls:HelpTextBlock 
 								Grid.Row="3"
-								HelpText="Long press a measurement to edit, tap for other units"
-								Margin="0,0,6,24" />
-                            <!--
+								HelpText="Tap a measurement to edit"
+								Margin="12,0,6,24" />
+							<!--
 							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
 								<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
 									<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
@@ -555,6 +595,15 @@
 			
 		</controls:Pivot>
 
+
+		<AdDuplex:AdControl
+			x:Name="adDuplexAd"
+			Grid.Row="1"
+			AppId="39175" BorderThickness="0,1,0,0" BorderBrush="{StaticResource PageTxtColor}"
+			/>
+
+
+		
 		
 	
 	</Grid>
