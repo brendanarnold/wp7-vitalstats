@@ -19,19 +19,23 @@
 
         
         <ResourceDictionary>
+          
+          
+          <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="View/ThemeDictionaries/LightThemeResourceDictionary.xaml"/>
+        		<ResourceDictionary Source="View/ThemeDictionaries/MainResourceDictionary.xaml"/>
+          </ResourceDictionary.MergedDictionaries>
+          
+
             
 
-            <ResourceDictionary.MergedDictionaries>
-    			<ResourceDictionary Source="View/PocketailorResourceDictionary.xaml"/>
-    		</ResourceDictionary.MergedDictionaries>
-
-            <Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelLocator" />
+          <Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelLocator" />
 
 
-            <SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+          <SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
 
 
-            <Pocketailor_View:WordsOnNewlines x:Key="WordsOnNewlines"/>
+          <Pocketailor_View:WordsOnNewlines x:Key="WordsOnNewlines"/>
     		<Pocketailor_View:BoolToVisibility x:Key="BoolToVisibility" />
 		
     		<Style x:Key="popUpBtnStyle" TargetType="Button">

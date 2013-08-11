@@ -1,0 +1,87 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- Resource dictionary entries should be defined here. -->
+
+  <!--
+	Olive  #8ABE2D
+	Banana #FCCD43
+	DarkGrey #313131
+	-->
+
+ <SolidColorBrush x:Key="PivotTitleColor">#DB6842</SolidColorBrush>
+	<SolidColorBrush x:Key="PivotHeaderColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="PageBGColor">#ffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="PageTxtColor">#1E1E1E</SolidColorBrush>
+	<SolidColorBrush x:Key="SubTitleColor">#FFAA00</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="AccentColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
+	
+	
+	<SolidColorBrush x:Key="DialogBGColor">#FFFFFF</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogTxtColor">#FFAA00</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#000000</SolidColorBrush>
+	
+	<SolidColorBrush x:Key="HelpTxtColor">#444444</SolidColorBrush>
+	<SolidColorBrush x:Key="HelpTxtBGColor">#00FFFFFF</SolidColorBrush>
+
+
+
+  <!-- Background for text over an image -->
+  <!--
+	<SolidColorBrush x:Key="ImgOverlayColor">#99000000</SolidColorBrush>
+	-->
+
+  <SolidColorBrush x:Key="UIBGColor">#66333333</SolidColorBrush>
+  <SolidColorBrush x:Key="UIFGColor">#ffffff</SolidColorBrush>
+  <!-- Yellow scheme -->
+  <!--
+	<Color x:Key="ApplicationBarBGColor">#FCCD43</Color>
+	<Color x:Key="ApplicationBarFGColor">#313131</Color>
+	-->
+  <Color x:Key="ApplicationBarBGColor">#313131</Color>
+  <Color x:Key="ApplicationBarFGColor">#feffff</Color>
+  <!-- Can't be exactly white for the light theme -->
+
+  <Color x:Key="SystemTrayFGColor">#feffff</Color>
+  <Color x:Key="SystemTrayBGColor">#000000</Color>
+  <!--
+	<Color x:Key="SystemTrayFGColor">#313131</Color> 
+	<Color x:Key="SystemTrayBGColor">#FCCD43</Color>
+	-->
+
+	<BitmapImage x:Key="LassivTitleSmall" UriSource="/Images/Light/LassivTitleSmall.png" />
+		
+	<BitmapImage x:Key="LassivTitle" UriSource="/Images/Light/LassivTitle.png" />
+
+	<Style x:Key="SubTitleTextBoxStyle" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="{StaticResource SubTitleColor}"/>
+    <Setter Property="FontSize" Value="24"/>
+  </Style>
+
+
+
+  <!--
+
+  <SolidColorBrush x:Key="RadioCheckBoxCheckBrush">#DE000000</SolidColorBrush>
+  <SolidColorBrush x:Key="RadioCheckBoxCheckDisabledBrush">#4D000000</SolidColorBrush>
+  <SolidColorBrush x:Key="RadioCheckBoxBrush">#26000000</SolidColorBrush>
+  <SolidColorBrush x:Key="RadioCheckBoxDisabledBrush">#00000000</SolidColorBrush>
+  <SolidColorBrush x:Key="RadioCheckBoxPressedBorderBrush">#DE000000</SolidColorBrush>
+  <SolidColorBrush x:Key="RadioCheckBoxPressedBrush">#00000000</SolidColorBrush>
+  <Color x:Key="TextBoxColor">#26000000</Color>
+  <Color x:Key="TextBoxEditBGColor">#00000000</Color>
+  <Color x:Key="TextBoxEditBorderColor">#FFFFFFFF</Color>
+  <Color x:Key="TextBoxFGColor">#DE000000</Color>
+  <Color x:Key="TextBoxReadOnlyColor">#2E000000</Color>
+  <Color x:Key="TextBoxSelectionFGColor">#FFFFFFFF</Color>
+
+  -->
+
+  
+
+
+</ResourceDictionary>

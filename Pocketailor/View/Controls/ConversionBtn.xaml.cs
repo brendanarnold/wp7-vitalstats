@@ -9,11 +9,17 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.ComponentModel;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Pocketailor.View.Controls
 {
     public partial class ConversionBtn : UserControl//, INotifyPropertyChanged
     {
+
+        public Brush activatedBG;
+        public Brush deactivatedBG = new SolidColorBrush(Color.FromArgb(180, 138, 190, 45)) as Brush;
+        
+
         [Description("A button to use on the Conversions page")]
         public ConversionBtn()
         {
@@ -22,7 +28,8 @@ namespace Pocketailor.View.Controls
             if (!TiltEffect.TiltableItems.Contains(typeof(ConversionBtn)))
                 TiltEffect.TiltableItems.Add(typeof(ConversionBtn));
 
-            this.Opacity = 0.7;
+            //this.Opacity = 0.7;
+            this.btnGrid.Background = deactivatedBG;
 
 
             //this.DataContext = this;
@@ -43,8 +50,8 @@ namespace Pocketailor.View.Controls
 
         public new Brush Background
         {
-            get { return this.btnGrid.Background; }
-            set { this.btnGrid.Background = value; }
+            get { return this.activatedBG; }
+            set { this.activatedBG = value; }
         }
 
 
@@ -65,12 +72,14 @@ namespace Pocketailor.View.Controls
             if (val)
             {
                 cBtn.notAvailableImg.Visibility = Visibility.Collapsed;
-                cBtn.Opacity = 1.0;
+                cBtn.btnGrid.Background = cBtn.activatedBG;
+                //cBtn.Opacity = 1.0;
             }
             else
             {
                 cBtn.notAvailableImg.Visibility = Visibility.Visible;
-                cBtn.Opacity = 0.7;
+                cBtn.btnGrid.Background = cBtn.deactivatedBG;
+                //cBtn.Opacity = 0.7;
             }
             //cBtn.HasMeasurements = val;
                 

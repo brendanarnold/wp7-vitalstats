@@ -184,6 +184,37 @@ namespace Pocketailor.Model
             }
         }
 
+        public string GetFormattedValueOfType(UnitCultureId unitCultureId)
+        {
+            string formattedValue = String.Empty;
+            // Special case for height
+            if (this.MeasurementId == Model.MeasurementId.Height)
+            {
+                formattedValue = this.MeasurementType.GetAltDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
+            }
+            // Special case for weight
+            else if (this.MeasurementId == Model.MeasurementId.Weight)
+            {
+                // Inlcude both stones and lbs in Imperial measurement for weight
+                if (unitCultureId == UnitCultureId.Imperial)
+                {
+                    string lb = this.MeasurementType.GetDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
+                    string st = this.MeasurementType.GetAltDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
+                    formattedValue = String.Format("{0} ({1})", lb, st);
+                }
+                else
+                {
+                    formattedValue = this.MeasurementType.GetDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
+                }
+            }
+            // All others 
+            else
+            {
+                formattedValue = this.MeasurementType.GetDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
+            }
+            return formattedValue;
+        }
+
         public ObservableCollection<string> OtherUnitFormattedValues
         {
             get

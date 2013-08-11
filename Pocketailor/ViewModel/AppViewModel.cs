@@ -36,6 +36,24 @@ namespace Pocketailor.ViewModel
         }
 
 
+        # region Application Theme methods/properties
+
+        private ApplicationTheme? _applicationTheme;
+        public ApplicationTheme ApplicationTheme
+        {
+            get 
+            { 
+                // This reflects the current application theme - not the stored value
+                if (this._applicationTheme == null) this._applicationTheme = ThemeHelpers.GetTheme();
+                return (ApplicationTheme)this._applicationTheme;
+            }
+            
+        }
+
+
+        #endregion
+
+
         #region UnitCulture property
 
         // Cache this for fast access

@@ -18,6 +18,10 @@ namespace Pocketailor.Model
                     {UnitCultureId.Metric, UnitId.Centimetre},
                     {UnitCultureId.Imperial, UnitId.Inch} 
                 },
+                AltDefaultUnitDict = new Dictionary<UnitCultureId,UnitId>() {
+                    {UnitCultureId.Metric, UnitId.Centimetre},
+                    {UnitCultureId.Imperial, UnitId.FeetInch},
+                },
                 Units = new List<IUnit>() {
                     new SingleValueUnit() { 
                         _id = UnitId.Metre,
@@ -69,6 +73,10 @@ namespace Pocketailor.Model
                 DefaultUnitDict = new Dictionary<UnitCultureId,UnitId>() {
                     {UnitCultureId.Metric, UnitId.Kilogram},
                     {UnitCultureId.Imperial, UnitId.Pound},
+                },
+                AltDefaultUnitDict = new Dictionary<UnitCultureId,UnitId>() {
+                    {UnitCultureId.Metric, UnitId.Kilogram},
+                    {UnitCultureId.Imperial, UnitId.Stone},
                 },
                 Units = new List<IUnit>() {
                     new SingleValueUnit() {

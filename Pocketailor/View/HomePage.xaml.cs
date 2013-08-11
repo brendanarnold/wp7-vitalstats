@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Pocketailor.Model;
 using Microsoft.Phone.Shell;
+using Pocketailor.ViewModel;
 
 namespace Pocketailor.View
 {
@@ -107,10 +108,15 @@ namespace Pocketailor.View
 
         #region Settings methods
 
+        // Initialise the checkboxes
         private void LoadSettingsIntoPage()
         {
+            
             this.metricRadioBtn.IsChecked = (App.VM.UnitCulture == UnitCultureId.Metric);
             this.imperialRadioBtn.IsChecked = !(App.VM.UnitCulture == UnitCultureId.Metric);
+
+            this.darkThemeRadioBtn.IsChecked = (ThemeHelpers.GetTheme() == ApplicationTheme.Dark);
+            this.lightThemeRadioBtn.IsChecked = (ThemeHelpers.GetTheme() == ApplicationTheme.Light);
 
             if (App.VM.AllowFeedBack != null)
             {
@@ -144,7 +150,15 @@ namespace Pocketailor.View
             App.VM.AllowFeedBack = false;
         }
 
+        private void darkThemeRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ViewModel.ThemeHelpers.SetThemePreference(ViewModel.ApplicationTheme.Dark);
+        }
 
+        private void lightThemeRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+           ViewModel.ThemeHelpers.SetThemePreference(ViewModel.ApplicationTheme.Light);
+        }
 
         #endregion
 
@@ -303,6 +317,10 @@ namespace Pocketailor.View
         {
             App.VM.ViewFacebook();
         }
+
+        
+
+       
 
 
         

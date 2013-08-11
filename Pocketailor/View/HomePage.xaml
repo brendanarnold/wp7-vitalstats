@@ -9,9 +9,10 @@
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:views="clr-namespace:Pocketailor.View"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:viewmodel="clr-namespace:Pocketailor.ViewModel"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls" 
-    xmlns:Controls="clr-namespace:Pocketailor.View.Controls" 
+    xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     x:Class="Pocketailor.View.HomePage" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     SupportedOrientations="Portrait"  Orientation="Portrait"
@@ -44,17 +45,20 @@
 
 	<phone:PhoneApplicationPage.Resources>
 		
+		<viewmodel:ViewModelLocator x:Key="ViewModelLocator" />
 		<views:VisibilityToOpposite x:Key="VisibilityToOpposite"/>
-		
 		<views:EmptyCollectionToCollapsed x:Key="EmptyCollectionToCollapsed"/>
 		<views:EmptyCollectionToVisible x:Key="EmptyCollectionToVisible"/>
+		<views:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
 		
 		<views:BoolToStrings x:Key="BoolToStrings"/>
 		<Style x:Key="MaleProfileBtnStyle" TargetType="Button">
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="Button">
-						<Grid Background="{StaticResource TileBGColor}" Margin="0">
+						<Grid Background="{StaticResource TileBGColor}"
+							views:Clip.ToBounds="True"
+							Margin="0">
 							<TextBlock HorizontalAlignment="Left" 
 								TextWrapping="Wrap" 
 								Text="{TemplateBinding Content}" 
@@ -62,11 +66,15 @@
 								Foreground="{StaticResource TileTxtColor}" 
 								FontFamily="Segoe WP" 
 								Margin="12,6,0,0"/>
-							<Image Source="/Images/MaleProfileIcon.png" 
+							<Image Source="/Images/MaleProfileIconFull.png" 
 								HorizontalAlignment="Right" 
 								VerticalAlignment="Center" 
 								Stretch="None" 
-								Margin="0,0,2,0"/>
+								Margin="0,0,2,0" RenderTransformOrigin="0.5,0.5">
+								<Image.RenderTransform>
+									<CompositeTransform Rotation="20" TranslateX="27"/>
+								</Image.RenderTransform>
+							</Image>
 						</Grid>
 					</ControlTemplate>
 				</Setter.Value>
@@ -77,7 +85,9 @@
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="Button">
-						<Grid Background="{StaticResource TileBGColor}" Margin="0">
+						<Grid Background="{StaticResource TileBGColor}" 
+							views:Clip.ToBounds="True"
+							Margin="0">
 							<TextBlock HorizontalAlignment="Left" 
 								TextWrapping="Wrap" 
 								Text="{TemplateBinding Content}" 
@@ -85,16 +95,29 @@
 								Foreground="{StaticResource TileTxtColor}" 
 								FontFamily="Segoe WP" 
 								Margin="12,6,0,0"/>
-							<Image Source="/Images/FemaleProfileIcon.png" 
+							<Image Source="/Images/FemaleProfileIconFull.png" 
 								HorizontalAlignment="Right" 
 								VerticalAlignment="Center" 
 								Stretch="None" 
-								Margin="0,0,2,0"/>
+								Margin="0,0,2,0" RenderTransformOrigin="0.5,0.5">
+								<Image.RenderTransform>
+									<CompositeTransform Rotation="20" TranslateX="36"/>
+								</Image.RenderTransform>
+							</Image>
 						</Grid>
 					</ControlTemplate>
 				</Setter.Value>
 			</Setter>
 		</Style>
+
+
+		<DataTemplate x:Key="panoramaTitle">
+            <ContentPresenter>
+                <TextBlock Text="{Binding}" 
+					FontFamily="Segoe WP Light"
+					FontSize="{StaticResource DialogTitleFontSize}" Margin="0,10,0,0" />
+            </ContentPresenter>
+        </DataTemplate>
 
 		
 		<Style x:Key="questionStyle" TargetType="TextBlock">
@@ -130,28 +153,45 @@
 		
 
 	</phone:PhoneApplicationPage.Resources>
-
-	 <d:DataContext>
-        <Binding Source="{StaticResource SampleDataSource}"/>
-    </d:DataContext>
-
+	
+    <shell:SystemTray.BackgroundColor>
+        <StaticResource ResourceKey="SystemTrayBGColor"/>
+    </shell:SystemTray.BackgroundColor>
+    <shell:SystemTray.ForegroundColor>
+        <StaticResource ResourceKey="SystemTrayFGColor"/>
+    </shell:SystemTray.ForegroundColor>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PageTxtColor"/>
+    </phone:PhoneApplicationPage.Foreground>
+    <phone:PhoneApplicationPage.Background>
+        <StaticResource ResourceKey="PageBGColor"/>
+    </phone:PhoneApplicationPage.Background>
 	<phone:PhoneApplicationPage.FontFamily>
 		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
 	</phone:PhoneApplicationPage.FontFamily>
 	<phone:PhoneApplicationPage.FontSize>
 		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
 	</phone:PhoneApplicationPage.FontSize>
-	<phone:PhoneApplicationPage.Foreground>
-		<StaticResource ResourceKey="PhoneForegroundBrush"/>
-	</phone:PhoneApplicationPage.Foreground>
+
+
+	 <d:DataContext>
+        <Binding Source="{StaticResource SampleDataSource}"/>
+    </d:DataContext>
+
+
 <!--LayoutRoot contains the root grid where all other page content is placed-->
-	<Grid x:Name="LayoutRoot">
-		<controls:Panorama x:Name="mainPanorama" Title="pocketailor" Background="{StaticResource PageBGColor}" Foreground="{StaticResource PageTxtColor}" SelectionChanged="Panorama_SelectionChanged">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}">
+		<controls:Panorama x:Name="mainPanorama"
+			HeaderTemplate="{StaticResource panoramaTitle}" 
+			Title="pocketailor" 
+			Background="{StaticResource PageBGColor}" 
+			Foreground="{StaticResource PageTxtColor}" 
+			SelectionChanged="Panorama_SelectionChanged">
 
 
 			<controls:Panorama.TitleTemplate>
 				<DataTemplate>
-					<Image Margin="0,100,0,0" Source="/Images/LassivTitle.png" />
+					<Image Margin="0,100,0,0" Source="{StaticResource LassivTitle}" />
 				</DataTemplate>
 			</controls:Panorama.TitleTemplate>
 
@@ -160,7 +200,7 @@
 			<controls:PanoramaItem x:Name="homePanoramaItem" Header="home" >
 				<Grid>
 					<ScrollViewer>
-						<Grid>
+						<Grid Margin="0,0,12,0">
 					
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto"/>
@@ -252,7 +292,7 @@
 
 							</Grid>
 
-							<Grid Grid.Row="1" Margin="12,0,0,0">
+							<Grid Grid.Row="1" Margin="12,0,0,12">
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="1*"/>
 									<ColumnDefinition Width="1*"/>
@@ -334,9 +374,36 @@
 							</Grid>
 
 
-							<TextBlock 
+							<TextBlock x:Name="quicklistSubTitle" 
 								Grid.Row="2"
-								Text="QUICKLIST" Style="{StaticResource SubTitleTextBoxStyle}" Margin="12,0,0,6"/>
+								Text="QUICKLIST" Style="{StaticResource SubTitleTextBoxStyle}" Margin="12,0,0,12" Foreground="{StaticResource SubTitleColor}"/>
+
+
+							<Grid x:Name="noQuickListContainer" 
+								Grid.Row="3"
+								Visibility="{Binding QuickProfiles, Converter={StaticResource EmptyCollectionToVisible}}"
+								
+								>
+								<!--
+								
+								-->
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="*" />
+								</Grid.RowDefinitions>
+								
+								<Controls:HelpTextBlock Margin="30,24,30,0"
+									Grid.Row="1"
+									HelpText="Long tap a profile to add the the quicklist" />
+								
+								<Image 
+									Grid.Row="0"
+									Source="/Images/RightArrow.png" Stretch="None" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+									<Image.RenderTransform>
+										<CompositeTransform ScaleY="-1" TranslateX="100" TranslateY="23"/>
+									</Image.RenderTransform></Image>
+
+							</Grid>
 
 							<ItemsControl x:Name="quicklistItemsControl" Margin="12,0,-12,6"
 								ItemsSource="{Binding QuickProfiles}" 
@@ -350,7 +417,7 @@
 								<ItemsControl.ItemTemplate>
 									<DataTemplate>
 										<Button x:Name="profileBtn" 
-											Width="198" Height="130" Margin="0,0,12,12"
+											Width="192" Height="130" Margin="0,0,12,12"
 											Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" Style="{StaticResource MaleProfileBtnStyle}" Tap="profileBtn_Tap">
 											<i:Interaction.Triggers>
 												<ec:DataTrigger Binding="{Binding Gender}" Value="Female">
@@ -376,14 +443,14 @@
 
 				</Grid>
 			</controls:PanoramaItem>
-			<controls:PanoramaItem x:Name="profilesPanoramaItem" Header="profiles">
+			<controls:PanoramaItem x:Name="profilesPanoramaItem" Header="profiles" FontFamily="{StaticResource HelpTxtFont}">
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto"/>
 						<RowDefinition Height="*" />
 					</Grid.RowDefinitions>
 					
-					<Button x:Name="addNewProfileButton" Content="add a new profile" Grid.Row="0" Tap="addNewProfileButton_Tap">
+					<Button x:Name="addNewProfileButton" Content="add a new profile" Grid.Row="0" Tap="addNewProfileButton_Tap" Margin="0,-22,0,22">
 						<Button.Resources>
 							<Style x:Key="ButtonStyle1" TargetType="Button">
 								<Setter Property="Template">
@@ -396,6 +463,9 @@
 								</Setter>
 							</Style>
 						</Button.Resources>
+						<Button.Foreground>
+							<StaticResource ResourceKey="SubTitleColor"/>
+						</Button.Foreground>
 						<Button.Style>
 							<StaticResource ResourceKey="ButtonStyle1"/>
 						</Button.Style>
@@ -403,13 +473,38 @@
 					
 					<Grid x:Name="noProfilesContainer"
 						Grid.Row="1"
-						Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}"/>
+						Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToVisible}}"
+						
+						>
+						<!--
+						 
+						-->
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+
+						<Image 
+							Grid.Row="0" Source="/Images/UpArrow.png" Stretch="None" Margin="0,-20,0,0" RenderTransformOrigin="0.5,0.5"
+							>
+							<Image.RenderTransform>
+								<CompositeTransform ScaleX="-1"/>
+							</Image.RenderTransform>
+						</Image>
+						
+						
+						<Controls:HelpTextBlock 
+							Grid.Row="1"
+							Width="250"
+							HelpText="Tap here to add a profile" HorizontalAlignment="Center" />
+						
+					</Grid>
 
 					<ScrollViewer
 						Grid.Row="1">
 						
 						<Grid x:Name="profilesContainer"
-							Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Margin="12,0,0,0" HorizontalAlignment="Left" Width="350">
+							Visibility="{Binding Profiles, Converter={StaticResource EmptyCollectionToCollapsed}}" Margin="12,0" HorizontalAlignment="Left" Width="350">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto"/>
 								<RowDefinition Height="*" />
@@ -418,7 +513,7 @@
 
 							<ItemsControl x:Name="mainProfileItemsControl"
 								Grid.Row="0"
-								ItemsSource="{Binding Profiles}" Margin="0,0,-12,6" >
+								ItemsSource="{Binding Profiles}" Margin="0,0,-12,6" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeNormal}" >
 								<ItemsControl.ItemsPanel>
 									<ItemsPanelTemplate>
 										<toolkit:WrapPanel Orientation="Horizontal" />
@@ -430,8 +525,8 @@
 										<Button Content="{Binding Name, Converter={StaticResource WordsOnNewlines}}" 
 											Height="130" 
 											Margin="0,0,12,12" 
-											Style="{StaticResource FemaleProfileBtnStyle}" 
-											Width="198">
+											Style="{StaticResource MaleProfileBtnStyle}" 
+											Width="198" Tap="profileBtn_Tap">
 											<toolkit:ContextMenuService.ContextMenu>
 												<toolkit:ContextMenu>
 													<toolkit:MenuItem Header="{Binding IsQuickProfile, ConverterParameter=remove from quicklist|pin to quicklist, Converter={StaticResource BoolToStrings}}" Tap="toggleQuickListContextMenuItem_Tap" />
@@ -452,13 +547,13 @@
 
 								</ItemsControl.ItemTemplate>
 							</ItemsControl>
-                                
-							<TextBlock 
+                            
+
+							<Controls:HelpTextBlock 
 								Grid.Row="1"
-								TextWrapping="Wrap" Margin="0"
-								Text="Long press a profile for more options" 
-								TextAlignment="Left" FontFamily="{StaticResource HelpTxtFont}" 
-								FontSize="{StaticResource HelpTxtFontSizeNormal}"/>
+								Margin="0,0,0,24"
+								HelpText="Long press a profile for more options" HorizontalAlignment="Left" />
+							
 						</Grid>
 					
 					</ScrollViewer>
@@ -471,7 +566,7 @@
 			<controls:PanoramaItem x:Name="opinionPanoramaItem" Header="opinion" >
 				<Grid>
 					<ScrollViewer>
-						<Grid x:Name="scrollingContainerGrid">
+						<Grid x:Name="scrollingContainerGrid" Margin="0,0,12,0">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto" />
 								<RowDefinition Height="*" />
@@ -507,7 +602,7 @@
 									Visibility="Collapsed"
 									Margin="0,0,0,18">
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="We're listening to Tweets on #Pocketailor and @LassivTech"/>
+										<Run Text="We're listening to Tweets on @LassivTech"/>
 									</TextBlock>
 									<Controls:AboutButton x:Name="twitterBtn" 
 										IconImage="/Images/AppBar/appbar.twitter.bird.png" 
@@ -554,20 +649,60 @@
 								</StackPanel>
 							</StackPanel>
 
-							<StackPanel 
-								VerticalAlignment="Bottom"
-								Orientation="Horizontal" 
-								Grid.Row="1"
-								Margin="12,0,0,24">
 
-								<Image Source="/Images/AppBar/appbar.twitter.bird.png"
-									Margin="-20" />
-								<TextBlock 
-									Margin="6,0,0,0"
-									Text="#Pocketailor" Foreground="{StaticResource PageTxtColor}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="32" />
-								
+							<StackPanel
+								Grid.Row="1" 
+								VerticalAlignment="Bottom" Margin="12,0,0,24">
 
+								<Button x:Name="facebookBtn2" Content="/Pocketailor" Margin="0,0,0,6" Tap="facebookBtn_Tap">
+									<Button.Resources>
+										<Style x:Key="ButtonStyle1" TargetType="Button">
+											<Setter Property="Template">
+												<Setter.Value>
+													<ControlTemplate TargetType="Button">
+														<StackPanel Orientation="Horizontal">
+															<Border Padding="0" Margin="0" Background="#3B5998">
+																<Image Margin="-10" Source="/Images/AppBar/appbar.facebook.heart.png"/>
+															</Border>
+															<TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP" />
+															
+														</StackPanel>
+													</ControlTemplate>
+												</Setter.Value>
+											</Setter>
+											<Setter Property="FontSize" Value="32"/>
+											<Setter Property="Foreground" Value="{StaticResource PageTxtColor}"/>
+										</Style>
+									</Button.Resources>
+									<Button.Style>
+										<StaticResource ResourceKey="ButtonStyle1"/>
+									</Button.Style>
+								</Button>
+								<Button x:Name="twitterBtn2" Content="@LassivTech" Tap="twitterBtn_Tap">
+									<Button.Resources>
+										<Style x:Key="ButtonStyle1" TargetType="Button">
+											<Setter Property="Template">
+												<Setter.Value>
+													<ControlTemplate TargetType="Button">
+														<StackPanel Orientation="Horizontal">
+															<Border Padding="0" Margin="0" Background="#FF1DCAFF">
+																<Image Margin="-10" Source="/Images/AppBar/appbar.twitter.bird.png"/>
+															</Border>
+															<TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP" />
+														</StackPanel>
+													</ControlTemplate>
+												</Setter.Value>
+											</Setter>
+											<Setter Property="FontSize" Value="32"/>
+											<Setter Property="Foreground" Value="{StaticResource PageTxtColor}"/>
+										</Style>
+									</Button.Resources>
+									<Button.Style>
+										<StaticResource ResourceKey="ButtonStyle1"/>
+									</Button.Style>
+								</Button>
 							</StackPanel>
+
 
 
 						</Grid>
@@ -581,7 +716,7 @@
 					
 					<ScrollViewer>
 
-						<Grid x:Name="aboutScrollingContainerGrid">
+						<Grid x:Name="aboutScrollingContainerGrid" Margin="0,0,12,-3">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto" />
 								<RowDefinition Height="*" />
@@ -651,10 +786,8 @@
 										You can select whether this happens or not in the settings, here.
 									</TextBlock>
 							
-									<Image Margin="0,0,0,12" HorizontalAlignment="Right" Source="/Images/ChalkArrowHorizontal.png" Stretch="None" RenderTransformOrigin="0.5,0.5">
-										<Image.RenderTransform>
-											<CompositeTransform ScaleX="-1"/>
-										</Image.RenderTransform>
+									<Image Margin="0,0,0,12" HorizontalAlignment="Right" Source="/Images/RightArrow.png" Stretch="None" RenderTransformOrigin="0.5,0.5">
+										
 									</Image>
 
 								</StackPanel>
@@ -729,7 +862,7 @@
 			<controls:PanoramaItem x:Name="settingsPanoramaItem" Header="settings" >
 				<Grid>
 					<ScrollViewer>
-						<Grid>
+						<Grid Margin="0,0,12,0">
 							<StackPanel>
 								<Controls:AboutButton x:Name="editFavouriteBrandBtn" 
 									Margin="12,0,0,12"
@@ -764,13 +897,13 @@
 										Foreground="{StaticResource PageTxtColor}" Margin="12,0,0,0" TextWrapping="Wrap" FontSize="21.333">The default units for measurements. This can be overridden for each measurement.</TextBlock>
 									<RadioButton x:Name="imperialRadioBtn" 
 										Grid.Row="1"
-										Content="IMPERIAL (ft/in/lb)" Background="{StaticResource UIBGColor}" 
+										Content="IMPERIAL (ft/in/lb)" 
 										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
 										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
 										Checked="imperialRadioBtn_Checked"/>
 									<RadioButton x:Name="metricRadioBtn" 
 										Grid.Row="2"
-										Content="METRIC (m/cm/kg)" Background="{StaticResource UIBGColor}" 
+										Content="METRIC (m/cm/kg)" 
 										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
 										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
 										Checked="metricRadioBtn_Checked"/>
@@ -787,18 +920,41 @@
 										Foreground="{StaticResource PageTxtColor}" Margin="12,24,0,0" TextWrapping="Wrap" FontSize="21.333">Allow adjustments to be sent anonymously over the internet to Pocketailor. This will be used to improve the measurements.</TextBlock>
 									<RadioButton x:Name="allowFeedbackRadioBtn" 
 										Grid.Row="1"
-										Content="ALLOW FEEDBACK" Background="{StaticResource UIBGColor}" 
+										Content="ALLOW FEEDBACK" 
 										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
 										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
 										GroupName="feedbackRadioGroup" Checked="allowFeedbackRadioBtn_Checked" />
 									<RadioButton x:Name="disallowFeedbackRadioBtn" 
 										Grid.Row="2"
-										Content="DISALLOW FEEDBACK" Background="{StaticResource UIBGColor}" 
+										Content="DISALLOW FEEDBACK" 
 										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
 										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
 										GroupName="feedbackRadioGroup" Checked="disallowFeedbackRadioBtn_Checked" />
 								</Grid>
 
+
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto"/>
+										<RowDefinition Height="Auto"/>
+										<RowDefinition Height="Auto"/>
+									</Grid.RowDefinitions>
+								</Grid>
+								<TextBlock
+									Grid.Row="0"
+									Foreground="{StaticResource PageTxtColor}" Margin="12,24,0,0" TextWrapping="Wrap" FontSize="21.333">Override the light or dark theme selection. Pocketailor will need to restart for this to take effect.</TextBlock>
+								<RadioButton x:Name="lightThemeRadioBtn" 
+										Grid.Row="1"
+										Content="LIGHT THEME" 
+										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
+										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+										GroupName="themeRadioGroup" Checked="lightThemeRadioBtn_Checked" />
+								<RadioButton x:Name="darkThemeRadioBtn" 
+										Grid.Row="1"
+										Content="DARK THEME" 
+										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
+										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+										GroupName="themeRadioGroup" Checked="darkThemeRadioBtn_Checked" />	
 
 							</StackPanel>
 

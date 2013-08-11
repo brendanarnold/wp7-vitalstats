@@ -14,6 +14,58 @@ using System.Windows.Media;
 namespace Pocketailor.View
 {
 
+
+
+
+    public class UnitCultureToString : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type taretType, object parameter, CultureInfo cultureInfo)
+        {
+            string[] s = (parameter as string).Split(new char[] { '|' });
+            UnitCultureId unitCulture = (UnitCultureId)value;
+            if (unitCulture == UnitCultureId.Metric) 
+            {
+                return s[0];
+            } 
+            else 
+            {
+                return s[1];
+            }
+        }
+
+        public object ConvertBack(object value, Type taretType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
+    /// <summary>
+    /// Converter which binds to ApplicationTheme enum. Takes as a parameter two pipe 
+    /// delimited filenames to first the light theme image, then the dark theme image.
+    /// </summary>
+    public class ApplicationThemeToImage : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            Pocketailor.ViewModel.ApplicationTheme theme = (Pocketailor.ViewModel.ApplicationTheme)value;
+            string[] fns = (parameter as string).Split(new char[] { '|' });
+            if (theme == Pocketailor.ViewModel.ApplicationTheme.Light)
+            {
+                return new BitmapImage(new Uri(fns[0], UriKind.Relative));
+            }
+            else
+            {
+                return new BitmapImage(new Uri(fns[1], UriKind.Relative));
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     /// <summary>
     /// Takes a pipe delimited string as a parameter and returns a string prefixed by the part before the pipe and suffixed y the part after the pipe
     /// </summary>

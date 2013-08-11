@@ -335,6 +335,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private double _ApplicationTheme = 0;
+
+		public double ApplicationTheme
+		{
+			get
+			{
+				return this._ApplicationTheme;
+			}
+
+			set
+			{
+				if (this._ApplicationTheme != value)
+				{
+					this._ApplicationTheme = value;
+					this.OnPropertyChanged("ApplicationTheme");
+				}
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>

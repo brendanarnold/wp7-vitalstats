@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Pocketailor.View.Controls.HelpTextBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+     d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Border
+			Grid.Row="0" 
+			Background="{StaticResource HelpTxtBGColor}"
+			>
+			<!--
+			Padding="12,6,12,0"
+			-->
+			<TextBlock x:Name="helpTextBlock" Text="Some help text here just to test out if it wraps correctly given enough content" FontFamily="{StaticResource HelpTxtFont}" Foreground="{StaticResource HelpTxtColor}" TextWrapping="Wrap" FontSize="{StaticResource HelpTxtFontSizeNormal}" Margin="0,0,0,12" />
+		</Border>
+		
+		<Image 
+			Grid.Row="1"
+			Source="/Images/TapeUnderline.png" Stretch="None" />
+
+		<!--
+		<Grid
+			Grid.Row="1" Height="35">
+			<Grid.Background>
+				<ImageBrush ImageSource="/Images/TapeUnderline.png" Stretch="None"/>
+			</Grid.Background>
+			
+		</Grid>
+		-->
+
+    </Grid>
+</UserControl>

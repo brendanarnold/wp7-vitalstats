@@ -9,6 +9,7 @@
     xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
     
 	xmlns:local="clr-namespace:Pocketailor.View"
+    xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     x:Class="Pocketailor.View.EditBlacklistedBrands"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -19,6 +20,7 @@
   <phone:PhoneApplicationPage.Resources>
 
   	<local:BoolToGroupItemBGColor x:Key="BoolToGroupItemBGColor"/>
+	<local:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
 
 	<SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
 
@@ -102,16 +104,25 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<TextBlock
+		<Image
 			Grid.Row="0" 
-			TextWrapping="Wrap" Text="select preferred brands" Margin="36,15,36,0" FontSize="66.667" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
+			Source="{StaticResource LassivTitleSmall}" 
+			HorizontalAlignment="Left" Margin="36,12,0,6" Stretch="None" />
 		<TextBlock
-			Grid.Row="1"
-			TextWrapping="Wrap" Text="Uncheck any brands that you do not want to appear in the main list." Margin="36,0,36,10" Foreground="{StaticResource DialogSecondaryTxtColor}" FontSize="21.333" />
+			Grid.Row="1" 
+			TextWrapping="Wrap" Text="select preferred brands" 
+			Margin="36,0,36,6" FontSize="{StaticResource DialogTitleFontSize}" FontFamily="{StaticResource DialogTitleFont}" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
+		
+		<Controls:HelpTextBlock
+			Grid.Row="2" 
+			Margin="36,0,36,24"
+			HelpText="Uncheck any brands that you do not want to appear in the main list." />
+		
 		<toolkit:LongListSelector
-			Grid.Row="2"
+			Grid.Row="3"
 			Background="Transparent" ItemsSource="{Binding GroupedBrands, Mode=OneWay}" GroupViewOpened="LongListSelector_GroupViewOpened" GroupViewClosing="LongListSelector_GroupViewClosing">
 			<toolkit:LongListSelector.Resources>
 				<DataTemplate x:Key="ItemTemplate">
@@ -120,7 +131,6 @@
 							Grid.Column="0" 
 							IsChecked="{Binding Selected, Mode=TwoWay}"
 							Foreground="{StaticResource DialogTxtColor}" 
-							Background="{StaticResource UIBGColor}" 
 							FontSize="{StaticResource PhoneFontSizeMediumLarge}"
 							Content="{Binding Name, FallbackValue=Some Brand}"
 						/>
@@ -131,11 +141,12 @@
 						Width="62" Height="62"
 						HorizontalAlignment="Left"
 						Margin="34,0,0,0"
-						Background="Transparent">
+						Background="{StaticResource TileBGColor}">
 						<TextBlock 
 							Text="{Binding Key}" 
-							Foreground="{StaticResource DialogSecondaryTxtColor}" 
+							Foreground="{StaticResource TileTxtColor}" 
 							FontSize="48"
+							Margin="8,0,0,0"
 							FontFamily="{StaticResource PhoneFontFamilySemiLight}"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Bottom" />
@@ -148,12 +159,13 @@
 					<Border 
 						Margin="6" 
 						IsHitTestVisible="{Binding HasItems}"
-						Width="99" Height="99" Background="{Binding HasItems, Converter={StaticResource BoolToGroupItemBGColor}}"  
+						Width="99" Height="99" 
+						Background="{Binding HasItems, Converter={StaticResource BoolToGroupItemBGColor}}"  
 							>
 						<Border.Projection>
 							<PlaneProjection RotationX="-60"/>
 						</Border.Projection>
-						<TextBlock Text="{Binding Key}" Foreground="{StaticResource DialogSecondaryTxtColor}" FontSize="48" 
+						<TextBlock Text="{Binding Key}" Foreground="#ffffff" FontSize="48" 
 							Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 					</Border>
 				</DataTemplate>
@@ -172,6 +184,11 @@
 			</toolkit:LongListSelector.ItemTemplate>
 		
 		</toolkit:LongListSelector>
+	 
+	 
+	 
+    
+		
 	 
 	 
 	 

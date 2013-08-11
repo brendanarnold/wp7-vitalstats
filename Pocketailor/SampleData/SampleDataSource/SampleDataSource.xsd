@@ -28,6 +28,7 @@
     <xs:attribute name="AppVersion" type="xs:string" />
     <xs:attribute name="HasTrouserMeasurements" type="xs:boolean" />
     <xs:attribute name="SelectedRegionString" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1" name="ApplicationTheme" type="xs:double" />
   </xs:complexType>
   <xs:complexType name="Profiles">
     <xs:sequence>

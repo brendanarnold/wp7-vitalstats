@@ -11,6 +11,7 @@ using Pocketailor.Model;
 using System.Windows.Media.Animation;
 using System.Windows.Media;
 using Pocketailor.View.Controls;
+using Pocketailor.ViewModel;
 
 namespace Pocketailor.View
 {

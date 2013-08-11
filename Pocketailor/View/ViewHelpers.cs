@@ -62,11 +62,7 @@ namespace Pocketailor.View
         }
 
 
-
-
-
-
-
+     
 
     }
 }

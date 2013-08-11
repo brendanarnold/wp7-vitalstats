@@ -26,6 +26,7 @@ namespace Pocketailor
         {
             InitializeComponent();
             this.PageState = new EditProfilePageState();
+            this.DataContext = App.VM;
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)

@@ -65,6 +65,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AdRotatorWP.1.0.3\lib\sl4-wp71\Inneractive.Nokia.Ad.dll</HintPath>
     </Reference>
+    <Reference Include="JeffWilcox.PhoneThemeManager">
+      <HintPath>..\packages\PhoneThemeManager.1.4\lib\sl4-windowsphone71\JeffWilcox.PhoneThemeManager.dll</HintPath>
+    </Reference>
     <Reference Include="Mangopollo.Light">
       <HintPath>..\packages\Mangopollo.Light.1.3\lib\sl4-windowsphone71\Mangopollo.Light.dll</HintPath>
     </Reference>
@@ -170,6 +173,7 @@
     <Compile Include="Model\Static\UnitCultureIds.cs" />
     <Compile Include="Model\Static\UnitIds.cs" />
     <Compile Include="SampleData\SampleDataSource\LongListSampleData.cs" />
+    <Compile Include="ViewModel\AsyncHelpers.cs" />
     <Compile Include="ViewModel\ConversionAdjustmentViewModel.cs" />
     <Compile Include="ViewModel\ConversionPageViewModel.cs" />
     <Compile Include="ViewModel\EditBlacklistedBrandsViewModel.cs" />
@@ -177,7 +181,9 @@
     <Compile Include="ViewModel\LongListSelectorGroup.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\MeasurementsPageViewModel.cs" />
+    <Compile Include="ViewModel\ThemeHelpers.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ClipToBounds.cs" />
     <Compile Include="View\Controls\AboutButton.xaml.cs">
       <DependentUpon>AboutButton.xaml</DependentUpon>
     </Compile>
@@ -186,6 +192,12 @@
     </Compile>
     <Compile Include="View\Controls\ConversionResultsBtn.xaml.cs">
       <DependentUpon>ConversionResultsBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\HelpTextBlock.xaml.cs">
+      <DependentUpon>HelpTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MeasurementBtn.xaml.cs">
+      <DependentUpon>MeasurementBtn.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ConversionAdjustmentPage.xaml.cs">
       <DependentUpon>ConversionAdjustmentPage.xaml</DependentUpon>
@@ -243,9 +255,6 @@
       <DependentUpon>MeasurementsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AppViewModel.cs" />
-    <Compile Include="View\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\ViewHelpers.cs" />
   </ItemGroup>
@@ -262,6 +271,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
     <Page Include="View\Controls\AboutButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -275,6 +289,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Controls\ConversionResultsBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\HelpTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\MeasurementBtn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -314,10 +336,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -326,10 +344,45 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PocketailorResourceDictionary.xaml">
+    <Content Include="Images\AppBar\appbar.arrow.right.left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AppBar\appbar.loop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\LassivTitleSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\LassivTitle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Light\LassivTitleSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\RightArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TapeUnderline.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UpArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\ThemeDictionaries\MainResourceDictionary.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
-    </Page>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\ThemeDictionaries\DarkThemeResourceDictionary.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\ThemeDictionaries\LightThemeResourceDictionary.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\about-btn.jpg">
@@ -338,7 +391,13 @@
     <Content Include="Images\AppBar\appbar.twitter.bird.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\LassivTitle.png">
+    <Content Include="Images\FemaleProfileIconFull.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dark\LassivTitle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MaleProfileIconFull.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\opinion-btn.jpg">
@@ -651,6 +710,33 @@
     <Content Include="Images\shirt-btn.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <BlendEmbeddedFont Include="Fonts\75749___.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Segoepr.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Segoeprb.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
     <Resource Include="Images\Shirt.png" />
     <Content Include="Images\shoes-btn.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

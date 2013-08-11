@@ -7,6 +7,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:local="clr-namespace:Pocketailor.View"
     
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
 	x:Class="Pocketailor.EditProfilePage"
@@ -40,6 +41,15 @@
     </toolkit:NavigationOutTransition>
 </toolkit:TransitionService.NavigationOutTransition>
 
+
+
+	<phone:PhoneApplicationPage.Resources>
+		<local:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
+		<ControlTemplate x:Key="PhoneDisabledTextBoxTemplate" TargetType="TextBox">
+			<ContentControl x:Name="ContentElement" BorderThickness="0" HorizontalContentAlignment="Stretch" Margin="{StaticResource PhoneTextBoxInnerMargin}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="Stretch"/>
+		</ControlTemplate>
+		
+	</phone:PhoneApplicationPage.Resources>
 
 
 	<phone:PhoneApplicationPage.ApplicationBar>
@@ -100,40 +110,101 @@
 		</VisualStateManager.CustomVisualStateManager>
 		<ScrollViewer>
 		
-			<StackPanel Orientation="Vertical" Height="696" Width="480">
-				<TextBlock x:Name="titleTextBlock" Margin="36,15,0,50" TextWrapping="Wrap" Text="add profile" Padding="0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource DialogSecondaryTxtColor}" />
-				<Canvas Height="144" Margin="23,0,0,95">
-					<RadioButton x:Name="femaleRadioBtn" Content="FEMALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" IsChecked="True" Canvas.Top="68" Canvas.Left="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
-						<i:Interaction.Triggers>
-							<i:EventTrigger EventName="Checked">
-								<ec:GoToStateAction StateName="IsFemale"/>
-							</i:EventTrigger>
-						</i:Interaction.Triggers>
-					</RadioButton>
-					<RadioButton x:Name="maleRadioBtn" Content="MALE" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Canvas.Top="140" Canvas.Left="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}" >
-						<i:Interaction.Triggers>
-							<i:EventTrigger EventName="Click">
-								<ec:GoToStateAction StateName="IsMale"/>
-							</i:EventTrigger>
-						</i:Interaction.Triggers>
-					</RadioButton>
-					<Image x:Name="image" Source="/Pocketailor;component/Images/Shirt.png" Canvas.Left="220" Canvas.Top="-37" RenderTransformOrigin="0.5,0.5" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Image
+					Grid.Row="0"
+					Source="{StaticResource LassivTitleSmall}" 
+					HorizontalAlignment="Left" 
+					Margin="36,12,0,6" 
+					Stretch="None" >
+				</Image>
+				<TextBlock 
+					Grid.Row="1"
+					x:Name="titleTextBlock" Margin="36,0,0,24" TextWrapping="Wrap" Text="new profile" Padding="0" FontFamily="{StaticResource DialogTitleFont}" FontSize="{StaticResource DialogTitleFontSize}" Foreground="{StaticResource DialogSecondaryTxtColor}" />
+				<Canvas 
+					local:Clip.ToBounds="True"
+					Grid.Row="2"
+					Height="150" Margin="36,0,36,12" 
+					
+					Background="{StaticResource TileBGColor}">
+					
+					
+					<Image x:Name="image" Source="/Pocketailor;component/Images/Shirt.png" 
+						Canvas.Left="177" 
+						Canvas.Top="-37" RenderTransformOrigin="0.5,0.5" >
 						<Image.Projection>
 							<PlaneProjection/>
 						</Image.Projection>
 						<Image.RenderTransform>
-							<CompositeTransform ScaleX="0.9" ScaleY="0.9"/>
+							<CompositeTransform ScaleX="0.5" ScaleY="0.5" TranslateX="90" TranslateY="43"/>
 						</Image.RenderTransform>
 					</Image>
 				</Canvas>
-				<TextBlock TextWrapping="Wrap" Text="NAME" Padding="0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="36,0,0,0" Foreground="{StaticResource DialogTxtColor}"/>
-				<TextBox x:Name="nameTextBox" TextWrapping="Wrap" Padding="2" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource UIFGColor}" Margin="24,0,24,20"/>
-				<StackPanel x:Name="genderGroupStackPanel"/>
+
+				<StackPanel
+					Grid.Row="3"
+					Margin="24,0,0,12">
+					
+					<RadioButton x:Name="femaleRadioBtn" 
+							Margin="0,0,0,-12"
+							Content="FEMALE" 
+							Foreground="{StaticResource DialogTxtColor}" 
+							IsChecked="True"
+							FontSize="{StaticResource PhoneFontSizeMediumLarge}">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Checked">
+									<ec:GoToStateAction StateName="IsFemale"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</RadioButton>
+
+					<RadioButton 
+							x:Name="maleRadioBtn" 
+							Content="MALE" 
+							Foreground="{StaticResource DialogTxtColor}" 
+							FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+							 >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Click">
+									<ec:GoToStateAction StateName="IsMale"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+					</RadioButton>
+				</StackPanel>
+
+				<TextBlock 
+					Grid.Row="4"
+					TextWrapping="Wrap" 
+					Text="NAME" 
+					Padding="0" 
+					FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+					Margin="36,0,0,0" Foreground="{StaticResource DialogTxtColor}"/>
+				<TextBox 
+					Grid.Row="5"
+					x:Name="nameTextBox" 
+					TextWrapping="Wrap" 
+					Padding="2" 
+					Margin="24,0,24,12" />
 				<!--
 				<CheckBox x:Name="isProtectedCheckBox" Content="PROTECT WITH PIN" BorderThickness="3" Foreground="{StaticResource DialogTxtColor}" BorderBrush="{StaticResource UIBGColor}" Background="{StaticResource UIBGColor}"/>
 				-->
-				<CheckBox x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" Background="{StaticResource UIBGColor}" BorderBrush="{StaticResource UIBGColor}" Foreground="{StaticResource DialogTxtColor}" Margin="24,0,0,0" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-			</StackPanel>
+				<CheckBox 
+					Grid.Row="6"
+					x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" 
+					Foreground="{StaticResource DialogTxtColor}" 
+					Margin="24,0,0,0" 
+					FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+					/>
+			</Grid>
 		
 		</ScrollViewer>
 	</Grid>

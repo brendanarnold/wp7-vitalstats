@@ -13,10 +13,22 @@
     <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
 		
 		<Grid x:Name="btnGrid" toolkit:TiltEffect.IsTiltEnabled="True" Height="115">
-			<Border Background="{StaticResource ImgOverlayColor}" BorderThickness="0" Padding="0" VerticalAlignment="Top"  >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Border x:Name="imgBorder" 
+				Grid.Row="0"
+				Background="{StaticResource ImgOverlayColor}" BorderThickness="0" Padding="0" VerticalAlignment="Top"  >
 				<TextBlock x:Name="titleTxtBlock" Foreground="{StaticResource TileTxtColor}" Margin="6,0,0,0" Style="{StaticResource TileFontStyle}"/>
 			</Border>
-			<Image x:Name="notAvailableImg" Source="/Images/ConversionNotAvailableOverlay.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
+			<Image 
+				Grid.Row="1"
+				x:Name="notAvailableImg" Source="/Images/ConversionNotAvailableOverlay.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6" RenderTransformOrigin="0.5,0.5" >
+				<Image.RenderTransform>
+					<CompositeTransform ScaleX="0.9" ScaleY="0.9"/>
+				</Image.RenderTransform>
+			</Image>
 		</Grid>
 
     </Grid>

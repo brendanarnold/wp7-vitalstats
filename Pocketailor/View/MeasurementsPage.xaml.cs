@@ -24,6 +24,7 @@ namespace Pocketailor.View
         public MeasurementsPage()
         {
             InitializeComponent();
+            
         }
 
         
@@ -37,6 +38,8 @@ namespace Pocketailor.View
             // Find the selected profile and assign it  
             int id = Convert.ToInt32(NavigationContext.QueryString["ProfileId"]);
             App.VM.LoadMeasurementsPageData(id);
+            App.VM.RefreshRequiredMeasurement();
+
         }
 
         #endregion
@@ -140,11 +143,7 @@ namespace Pocketailor.View
                 EditMeasurementPageActions.New), UriKind.Relative));
         }
 
-        private void measurementsListBox_SizeChanged(object sender, System.Windows.SizeChangedEventArgs e)
-        {
-            // Bit if a hack to get the conversion buttons to update when a measurement is added/removed
-            App.VM.RefreshRequiredMeasurement();
-        }
+        
 
 
         private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
@@ -198,6 +197,7 @@ namespace Pocketailor.View
 
         private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            /*
             List<MeasurementId> missingMeasurements;
             if (App.VM.SelectedProfile.Gender == GenderId.Male)
             {
@@ -218,6 +218,18 @@ namespace Pocketailor.View
             {
                 this.PromptForMissingMeasurements(missingMeasurements, "trouser");
             }
+             */
+            if (App.VM.TrouserConversion.HasRequiredMeasurements)
+            {
+                App.VM.SelectedConversionType = ConversionId.TrouserSize;
+                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                    App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
+            }
+            else
+            {
+                App.VM.NominateRequiredMeasurements(App.VM.TrouserConversion.MissingMeasurements);
+            }
+
         }
 
         private void shirtConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -380,6 +392,18 @@ namespace Pocketailor.View
             Grid g = sender as Grid;
             ListBox lb = g.FindName("otherUnitsListBox") as ListBox;
             if (lb.Visibility == Visibility.Visible) lb.Visibility = Visibility.Collapsed; else lb.Visibility = Visibility.Visible;
+        }
+
+        private void switchUnitsBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (App.VM.ViewingUnitCulture == UnitCultureId.Imperial) 
+            {
+                App.VM.ViewingUnitCulture = UnitCultureId.Metric;
+            } else 
+            {
+                App.VM.ViewingUnitCulture = UnitCultureId.Imperial;
+            }
+            App.VM.LoadMeasurements(App.VM.ViewingUnitCulture);
         }
 
 

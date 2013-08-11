@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="80" />
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="titleTextBlock" Grid.Column="0" Margin="20,0,0,0" Text="Title Here" VerticalAlignment="Center" Style="{StaticResource TileFontStyle}" />
+        <TextBlock x:Name="titleTextBlock" Grid.Column="0" Margin="20,0,0,0" Text="Title Here" VerticalAlignment="Center" Style="{StaticResource TileFontStyle}" Foreground="{StaticResource TileTxtColor}" />
         <Image x:Name="iconImage" Grid.Column="1" Margin="0"  Source="/Images/appbar.heart.png" />
     </Grid>
 </UserControl>

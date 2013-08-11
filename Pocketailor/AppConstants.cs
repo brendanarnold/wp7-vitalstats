@@ -61,5 +61,9 @@ namespace Pocketailor
         public static string FACEBOOK_URL = "http://on.fb.me/17mPyJh";
         public static string TWITTER_URL = "http://bit.ly/17mPLMB";
 
+        public static string MAIN_RESOURCE_DICTIONARY = "/View/ThemeDictionaries/MainResourceDictionary.xaml";
+        public static string DARK_THEME_RESOURCE_DICTIONARY = "/View/ThemeDictionaries/DarkThemeResourceDictionary.xaml";
+        public static string LIGHT_THEME_RESOURCE_DICTIONARY = "/View/ThemeDictionaries/LightThemeResourceDictionary.xaml";
+
     }
 }
