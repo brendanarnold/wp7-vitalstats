@@ -317,12 +317,16 @@ namespace Pocketailor.ViewModel
         public void LoadMeasurements(UnitCultureId unitCultureId)
         {
             List<MeasurementId> keys = new List<MeasurementId>(this.Measurements.Keys);
-            foreach (Measurement m in this.SelectedProfile.Measurements)
+            foreach (MeasurementId mId in keys)
             {
-                string val =  m.GetFormattedValueOfType(this.ViewingUnitCulture);
-                this.Measurements[m.MeasurementId].Value = val;
+                string val = String.Empty;
+                if (this.SelectedProfile.Measurements.Select(m => m.MeasurementId).Contains(mId))
+                {
+                    val = this.SelectedProfile.Measurements.Where(m => m.MeasurementId == mId)
+                        .First().GetFormattedValueOfType(this.ViewingUnitCulture);
+                }
+                this.Measurements[mId].Value = val;
             }
-
         }
 
 

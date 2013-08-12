@@ -21,6 +21,19 @@ namespace Pocketailor.View.Controls
 
         }
 
+
+        public void GoToHasMeasurementState()
+        {
+            this.LayoutRoot.Opacity = 1.0;
+        }
+
+        public void GoToNoMeasurementState()
+        {
+            this.LayoutRoot.Opacity = 0.7;
+        }
+
+
+
         public static readonly DependencyProperty MeasurementNameProperty =
                     DependencyProperty.Register("MeasurementName", typeof(string), typeof(MeasurementBtn),
                     new PropertyMetadata(String.Empty, new PropertyChangedCallback(MeasurementNamePropertyChanged)));
@@ -41,20 +54,22 @@ namespace Pocketailor.View.Controls
 
         public static readonly DependencyProperty ValueTextProperty =
                     DependencyProperty.Register("ValueText", typeof(string), typeof(MeasurementBtn),
-                    new PropertyMetadata(String.Empty, new PropertyChangedCallback(ValueTextPropertyChanged)));
+                    new PropertyMetadata(null, new PropertyChangedCallback(ValueTextPropertyChanged)));
 
         public static void ValueTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             MeasurementBtn mBtn = (MeasurementBtn)d;
             string val = (string)e.NewValue;
-            mBtn.valueTextBlock.Text = val;
+            
             if (val == null || val == String.Empty)
             {
-                mBtn.LayoutRoot.Opacity = 0.7;
+                mBtn.GoToNoMeasurementState();
+                mBtn.valueTextBlock.Text = "";
             }
             else
             {
-                mBtn.LayoutRoot.Opacity = 1.0;
+                mBtn.GoToHasMeasurementState();
+                mBtn.valueTextBlock.Text = val;
             }
             
         }
