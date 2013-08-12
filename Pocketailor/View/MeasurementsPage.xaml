@@ -8,6 +8,7 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 	xmlns:local="clr-namespace:Pocketailor"
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
+	xmlns:Pocketailor_ViewModel="clr-namespace:Pocketailor.ViewModel"
 	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
 	xmlns:System="clr-namespace:System;assembly=mscorlib"
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
@@ -27,6 +28,8 @@
 		
 		<Pocketailor_View:StringToNextString x:Key="StringToNextString"/>
 		
+		<Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelLocator" />
+
 		<System:Double x:Key="ConversionBtnHeight">115</System:Double>
 		<Pocketailor_View:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
 		<Pocketailor_View:EmptyCollectionToVisible x:Key="EmptyCollectionToVisible"/>
@@ -113,7 +116,7 @@
 			</Setter>
 		</Style>
 		
-
+		
 
 		<shell:ApplicationBar x:Key="measurementsAppBar" IsVisible="True"  Mode="Minimized" IsMenuEnabled="True"  BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
 			<shell:ApplicationBar.MenuItems>
@@ -166,6 +169,7 @@
 			<Setter Property="Margin" Value="3,0,0,0"/>
 		</Style>
 	
+		
 		
 
 	</phone:PhoneApplicationPage.Resources>
@@ -486,7 +490,10 @@
 									DataContext="{Binding MeasurementHips}"
 									IsCandidate="{Binding IsCandidate}"
 									ValueText="{Binding Value}"
-									Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}" 
+									Visibility="{Binding Path=AppViewModel.SelectedProfile.Gender, 
+										ConverterParameter=HideIfMale, 
+										Source={StaticResource ViewModelLocator},
+										Converter={StaticResource GenderToVisibility}}"
 									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
 								<Controls:MeasurementBtn x:Name="insideLegMeasurementBtn" 
 									MeasurementName="Inside Leg"
@@ -523,7 +530,10 @@
 									DataContext="{Binding MeasurementUnderBust}"
 									IsCandidate="{Binding IsCandidate}"
 									ValueText="{Binding Value}"
-									Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}" 
+									Visibility="{Binding Path=AppViewModel.SelectedProfile.Gender, 
+										ConverterParameter=HideIfMale, 
+										Source={StaticResource ViewModelLocator},
+										Converter={StaticResource GenderToVisibility}}"
 									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
 								<Controls:MeasurementBtn x:Name="waistMeasurementBtn" 
 									MeasurementName="Waist"
