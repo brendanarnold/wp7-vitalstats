@@ -450,25 +450,12 @@
 						<RowDefinition Height="*" />
 					</Grid.RowDefinitions>
 					
-					<Button x:Name="addNewProfileButton" Content="add a new profile" Grid.Row="0" Tap="addNewProfileButton_Tap" Margin="0,-22,0,22">
-						<Button.Resources>
-							<Style x:Key="ButtonStyle1" TargetType="Button">
-								<Setter Property="Template">
-									<Setter.Value>
-										<ControlTemplate TargetType="Button">
-											<TextBlock 
-												Text="{TemplateBinding Content}" Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP" Margin="12,0,0,24" FontSize="42.667" />
-										</ControlTemplate>
-									</Setter.Value>
-								</Setter>
-							</Style>
-						</Button.Resources>
-						<Button.Foreground>
-							<StaticResource ResourceKey="SubTitleColor"/>
-						</Button.Foreground>
-						<Button.Style>
-							<StaticResource ResourceKey="ButtonStyle1"/>
-						</Button.Style>
+					<Button x:Name="addNewProfileButton"
+						Grid.Row="0"  
+						Content="add a new profile" 
+						Tap="addNewProfileButton_Tap" 
+						Margin="12,0,0,24"
+						Style="{StaticResource typographicalBtnStyle}">
 					</Button>
 					
 					<Grid x:Name="noProfilesContainer"

@@ -49,6 +49,7 @@ namespace Pocketailor.Model
 
         public string GetFormattedValue(string val)
         {
+            if (val == null) return String.Empty;
             List<string> formattedVals = this.ConvertFromDBString(val);
             string outStr = String.Empty;
             for (int i = 0; i < formattedVals.Count; i++)

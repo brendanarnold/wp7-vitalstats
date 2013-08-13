@@ -50,7 +50,7 @@ Measure from the base of the back of the collar down to where you expect the bot
                 { MeasurementId.Shoulder, @"Measure from the seam on one should, across the front of the body to the seam on the other shoulder.
 
 The seam should lie just past the corner of the shoulder." },
-                { MeasurementId.OutsideLeg, @"Stand upright and measure from where you typically wear the top of your trousers down to where you expect the trouser seam to stop." },
+                //{ MeasurementId.OutsideLeg, @"Stand upright and measure from where you typically wear the top of your trousers down to where you expect the trouser seam to stop." },
                 { MeasurementId.Weight, @"Stand evenly on the scales and read off the value." },
             };
 
@@ -69,7 +69,7 @@ The seam should lie just past the corner of the shoulder." },
                 { MeasurementId.FootLength, "FootLengthMan.png" },
                 { MeasurementId.TorsoLength, "TorsoLengthMan.png" },
                 { MeasurementId.Shoulder, "ShoulderMan.png" },
-                { MeasurementId.OutsideLeg, "OutsideLegMan.png" },
+                //{ MeasurementId.OutsideLeg, "OutsideLegMan.png" },
                 { MeasurementId.Weight, "WeightMan.png" },
             };
 
@@ -88,7 +88,7 @@ The seam should lie just past the corner of the shoulder." },
                 { MeasurementId.FootLength, "FootLengthWoman.png" },
                 { MeasurementId.TorsoLength, "TorsoLengthWoman.png" },
                 { MeasurementId.Shoulder, "ShoulderWoman.png" },
-                { MeasurementId.OutsideLeg, "OutsideLegWoman.png" },
+                //{ MeasurementId.OutsideLeg, "OutsideLegWoman.png" },
                 { MeasurementId.Weight, "WeightWoman.png" },
             };
 

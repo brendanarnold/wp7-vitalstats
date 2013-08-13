@@ -83,6 +83,65 @@
 				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Name="showImperialStoryBoard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="metricValueTextBlock">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="metricValueTextBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="90"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imperialValueTextBlock">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="imperialValueTextBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="94"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="showMetricStoryBoard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imperialValueTextBlock">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="imperialValueTextBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="90"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="metricValueTextBlock">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="metricValueTextBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="90"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			
+		</Storyboard>
 
 	</UserControl.Resources>
 	<UserControl.Projection>
@@ -101,11 +160,12 @@
 		<CompositeTransform/>
 	</UserControl.RenderTransform>
     
-	<Grid x:Name="LayoutRoot" Background="{StaticResource TileBGColor}">
+	<Grid x:Name="LayoutRoot" Background="{StaticResource InactiveTileBGColor}" VerticalAlignment="Center">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="45*" />
 			<ColumnDefinition Width="55*" />
 		</Grid.ColumnDefinitions>
+
 		<TextBlock 
 			x:Name="titleTextBlock"
 			Grid.Column="0" 
@@ -114,15 +174,51 @@
 			HorizontalAlignment="Left" 
 			Margin="24,18,0,18" FontFamily="Segoe WP" FontSize="26.667"/>
 		
-		<TextBlock 
-			x:Name="valueTextBlock"
+		<Grid x:Name="valueContainer"
 			Grid.Column="1"
-			TextWrapping="Wrap" 
-			Text="Value here ..." 
-			Foreground="White" 
-			HorizontalAlignment="Right" 
-			Margin="0,18,24,18" 
-			FontSize="26.667" FontFamily="Segoe WP"/>
+			Visibility="Collapsed">
+			
+			<TextBlock 
+				x:Name="imperialValueTextBlock"
+				Grid.Column="1"
+				Visibility="Collapsed"
+				TextWrapping="Wrap" 
+				Text="Value here ..." 
+				Foreground="White" 
+				HorizontalAlignment="Right" 
+				Margin="0,18,24,18" 
+				FontSize="26.667" FontFamily="Segoe WP">
+				<TextBlock.Projection>
+					<PlaneProjection/>
+				</TextBlock.Projection>
+			</TextBlock>
+
+			<TextBlock 
+				x:Name="metricValueTextBlock"
+				Grid.Column="1"
+				Visibility="Collapsed"
+				TextWrapping="Wrap" 
+				Text="Value here ..." 
+				Foreground="White" 
+				HorizontalAlignment="Right" 
+				Margin="0,18,24,18" 
+				FontSize="26.667" FontFamily="Segoe WP">
+				<TextBlock.Projection>
+					<PlaneProjection/>
+				</TextBlock.Projection>
+			</TextBlock>
+
+		</Grid>
+
+		<Image
+			x:Name="missingMeasurementImage"
+			Grid.Column="1" Source="/Images/ConversionNotAvailableOverlay.png" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-5,-5,19,-5" RenderTransformOrigin="0.5,0.5"
+			>
+			<Image.RenderTransform>
+				<CompositeTransform ScaleX="0.7" ScaleY="0.7"/>
+			</Image.RenderTransform>
+		</Image>
+
 		
 	</Grid>
 </UserControl>

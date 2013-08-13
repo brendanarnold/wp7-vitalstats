@@ -16,6 +16,8 @@
 	<SolidColorBrush x:Key="SubTitleColor">#FFAA00</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="AccentColor">#8ABE2D</SolidColorBrush>
+
+	<SolidColorBrush x:Key="InactiveTileBGColor">#CCCCCC</SolidColorBrush>
 	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
 	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>

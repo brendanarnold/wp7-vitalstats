@@ -17,8 +17,11 @@
   <SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
   <SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
   <SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
+
+  <SolidColorBrush x:Key="InactiveTileBGColor">#888ABE2D</SolidColorBrush>
   <SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
   <SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
+  
   <SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
   <SolidColorBrush x:Key="DialogBGColor">#000000</SolidColorBrush>
   <SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>

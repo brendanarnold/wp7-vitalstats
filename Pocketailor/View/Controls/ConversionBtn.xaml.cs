@@ -17,7 +17,8 @@ namespace Pocketailor.View.Controls
     {
 
         public Brush activatedBG;
-        public Brush deactivatedBG = new SolidColorBrush(Color.FromArgb(180, 138, 190, 45)) as Brush;
+        public Brush deactivatedBG;
+        //new SolidColorBrush(Color.FromArgb(180, 138, 190, 45)) as Brush;
         
 
         [Description("A button to use on the Conversions page")]
@@ -28,8 +29,11 @@ namespace Pocketailor.View.Controls
             if (!TiltEffect.TiltableItems.Contains(typeof(ConversionBtn)))
                 TiltEffect.TiltableItems.Add(typeof(ConversionBtn));
 
+
+            this.deactivatedBG = App.Current.Resources["InactiveTileBGColor"] as Brush;
+
             //this.Opacity = 0.7;
-            this.btnGrid.Background = deactivatedBG;
+            this.btnGrid.Background = this.deactivatedBG;
 
 
             //this.DataContext = this;

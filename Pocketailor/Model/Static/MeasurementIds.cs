@@ -5,6 +5,43 @@ using System.Text;
 
 namespace Pocketailor.Model
 {
+
+    public static class MeasurmentIdsByGender
+    {
+        public static List<MeasurementId> Female = new List<MeasurementId>()
+        {
+            MeasurementId.Height,
+            MeasurementId.Weight,
+            MeasurementId.Waist,
+            MeasurementId.Chest,
+            MeasurementId.Hips,
+            MeasurementId.InsideLeg,
+            MeasurementId.Sleeve,
+            MeasurementId.Shoulder,
+            MeasurementId.Neck,
+            MeasurementId.FootLength,
+            MeasurementId.FootWidth,
+            MeasurementId.UnderBust,
+            MeasurementId.Head,
+            MeasurementId.TorsoLength,
+        };
+        public static List<MeasurementId> Male = new List<MeasurementId>()
+        {
+            MeasurementId.Height,
+            MeasurementId.Weight,
+            MeasurementId.Waist,
+            MeasurementId.Chest,
+            MeasurementId.InsideLeg,
+            MeasurementId.Sleeve,
+            MeasurementId.Shoulder,
+            MeasurementId.Neck,
+            MeasurementId.FootLength,
+            MeasurementId.FootWidth,
+            MeasurementId.Head,
+            MeasurementId.TorsoLength,
+        };
+    }
+
     public enum MeasurementId
     {
         Height = 0,
@@ -38,18 +75,18 @@ namespace Pocketailor.Model
            { MeasurementId.Chest, "Chest"},
            { MeasurementId.Hips, "Hips"},
            { MeasurementId.InsideLeg, "Inside Leg"},
-           { MeasurementId.OutsideLeg, "Outside Leg"},
+           //{ MeasurementId.OutsideLeg, "Outside Leg"},
            { MeasurementId.Sleeve, "Sleeve"},
-           { MeasurementId.Wrist, "Wrist"},
+           //{ MeasurementId.Wrist, "Wrist"},
            { MeasurementId.Shoulder, "Shoulder"},
            { MeasurementId.Neck, "Neck"},
-           { MeasurementId.OverBust, "Overbust"},
+           //{ MeasurementId.OverBust, "Overbust"},
            { MeasurementId.UnderBust, "Underbust"},
            { MeasurementId.FootLength, "Foot Length"},
            { MeasurementId.FootWidth, "Foot Width"},
-           { MeasurementId.Crotch, "Crotch"},
+           //{ MeasurementId.Crotch, "Crotch"},
            { MeasurementId.Head, "Head"},
-           { MeasurementId.TennisGrip, "Tennis Grip"},
+           //{ MeasurementId.TennisGrip, "Tennis Grip"},
            { MeasurementId.TorsoLength, "Torso Length"},
         };
     }

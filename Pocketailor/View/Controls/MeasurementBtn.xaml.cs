@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media;
+using Pocketailor.Model;
 
 namespace Pocketailor.View.Controls
 {
@@ -19,17 +21,27 @@ namespace Pocketailor.View.Controls
             if (!TiltEffect.TiltableItems.Contains(typeof(MeasurementBtn)))
                 TiltEffect.TiltableItems.Add(typeof(MeasurementBtn));
 
+            this.HasMeasurements = false;
+
         }
 
 
+        public bool HasMeasurements;
+
         public void GoToHasMeasurementState()
         {
-            this.LayoutRoot.Opacity = 1.0;
+            this.LayoutRoot.Background = App.Current.Resources["TileBGColor"] as Brush;
+            this.missingMeasurementImage.Visibility = Visibility.Collapsed;
+            this.valueContainer.Visibility = Visibility.Visible;
+            this.HasMeasurements = true;
         }
 
         public void GoToNoMeasurementState()
         {
-            this.LayoutRoot.Opacity = 0.7;
+            this.LayoutRoot.Background = App.Current.Resources["InactiveTileBGColor"] as Brush;
+            this.missingMeasurementImage.Visibility = Visibility.Visible;
+            this.valueContainer.Visibility = Visibility.Collapsed;
+            this.HasMeasurements = false;
         }
 
 
@@ -51,33 +63,87 @@ namespace Pocketailor.View.Controls
         }
 
 
+        public static readonly DependencyProperty UnitCultureProperty =
+                    DependencyProperty.Register("UnitCulture", typeof(UnitCultureId?), typeof(MeasurementBtn),
+                    new PropertyMetadata(null, new PropertyChangedCallback(UnitCulturePropertyChanged)));
 
-        public static readonly DependencyProperty ValueTextProperty =
-                    DependencyProperty.Register("ValueText", typeof(string), typeof(MeasurementBtn),
-                    new PropertyMetadata(null, new PropertyChangedCallback(ValueTextPropertyChanged)));
+        public static void UnitCulturePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            MeasurementBtn mBtn = (MeasurementBtn)d;
+            UnitCultureId? val = (UnitCultureId?)e.NewValue;
+            if (val == UnitCultureId.Imperial)
+            {
+                mBtn.showImperialStoryBoard.Begin();
+            }
+            else
+            {
+                mBtn.showMetricStoryBoard.Begin();
+            }
+        }
 
-        public static void ValueTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public UnitCultureId? UnitCulture
+        {
+            get { return (UnitCultureId?)GetValue(UnitCultureProperty); }
+            set { SetValue(UnitCultureProperty, value); }
+        }
+
+
+
+
+        public static readonly DependencyProperty ImperialValueTextProperty =
+                    DependencyProperty.Register("ImperialValueText", typeof(string), typeof(MeasurementBtn),
+                    new PropertyMetadata(null, new PropertyChangedCallback(ImperialValueTextPropertyChanged)));
+
+        public static void ImperialValueTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             MeasurementBtn mBtn = (MeasurementBtn)d;
             string val = (string)e.NewValue;
             
+            // Only do the state change in the imperial value event handler to prevent doubling up of animation etc.
             if (val == null || val == String.Empty)
             {
-                mBtn.GoToNoMeasurementState();
-                mBtn.valueTextBlock.Text = "";
+                if (mBtn.HasMeasurements) mBtn.GoToNoMeasurementState();
+                mBtn.imperialValueTextBlock.Text = "";
             }
             else
             {
-                mBtn.GoToHasMeasurementState();
-                mBtn.valueTextBlock.Text = val;
+                if (!mBtn.HasMeasurements) mBtn.GoToHasMeasurementState();
+                mBtn.imperialValueTextBlock.Text = val;
             }
             
         }
 
-        public string ValueText
+        public string ImperialValueText
         {
-            get { return (string)GetValue(ValueTextProperty); }
-            set { SetValue(ValueTextProperty, value); }
+            get { return (string)GetValue(ImperialValueTextProperty); }
+            set { SetValue(ImperialValueTextProperty, value); }
+        }
+
+
+        public static readonly DependencyProperty MetricValueTextProperty =
+                    DependencyProperty.Register("MetricValueText", typeof(string), typeof(MeasurementBtn),
+                    new PropertyMetadata(null, new PropertyChangedCallback(MetricValueTextPropertyChanged)));
+
+        public static void MetricValueTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            MeasurementBtn mBtn = (MeasurementBtn)d;
+            string val = (string)e.NewValue;
+
+            if (val == null || val == String.Empty)
+            {
+                mBtn.metricValueTextBlock.Text = "";
+            }
+            else
+            {
+                mBtn.metricValueTextBlock.Text = val;
+            }
+
+        }
+
+        public string MetricValueText
+        {
+            get { return (string)GetValue(MetricValueTextProperty); }
+            set { SetValue(MetricValueTextProperty, value); }
         }
 
 

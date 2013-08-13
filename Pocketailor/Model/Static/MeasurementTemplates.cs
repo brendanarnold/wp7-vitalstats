@@ -12,23 +12,23 @@ namespace Pocketailor.Model
         static public List<MeasurementTemplate> MeasurementTemplates = new List<MeasurementTemplate>() 
         {
             new MeasurementTemplate() { Id = MeasurementId.Chest, _measurementTypeId = MeasurementTypeId.Length},
-            new MeasurementTemplate() { Id = MeasurementId.Crotch, _measurementTypeId = MeasurementTypeId.Length},
+            //new MeasurementTemplate() { Id = MeasurementId.Crotch, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.FootLength, _measurementTypeId = MeasurementTypeId.Length },
             new MeasurementTemplate() { Id = MeasurementId.FootWidth, _measurementTypeId = MeasurementTypeId.Length },
             new MeasurementTemplate() { Id = MeasurementId.Height, _measurementTypeId = MeasurementTypeId.Length },
             new MeasurementTemplate() { Id = MeasurementId.Hips, _measurementTypeId = MeasurementTypeId.Length },
             new MeasurementTemplate() { Id = MeasurementId.InsideLeg, _measurementTypeId = MeasurementTypeId.Length },
             new MeasurementTemplate() { Id = MeasurementId.Neck, _measurementTypeId = MeasurementTypeId.Length},
-            new MeasurementTemplate() { Id = MeasurementId.OutsideLeg, _measurementTypeId = MeasurementTypeId.Length},
-            new MeasurementTemplate() { Id = MeasurementId.OverBust, _measurementTypeId = MeasurementTypeId.Length},
+            //new MeasurementTemplate() { Id = MeasurementId.OutsideLeg, _measurementTypeId = MeasurementTypeId.Length},
+            //new MeasurementTemplate() { Id = MeasurementId.OverBust, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.Shoulder, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.Sleeve, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.UnderBust, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.Waist, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.Weight, _measurementTypeId = MeasurementTypeId.Weight},
-            new MeasurementTemplate() { Id = MeasurementId.Wrist, _measurementTypeId = MeasurementTypeId.Length},
+            //new MeasurementTemplate() { Id = MeasurementId.Wrist, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.Head, _measurementTypeId = MeasurementTypeId.Length },
-            new MeasurementTemplate() { Id = MeasurementId.TennisGrip, _measurementTypeId = MeasurementTypeId.Length},
+            //new MeasurementTemplate() { Id = MeasurementId.TennisGrip, _measurementTypeId = MeasurementTypeId.Length},
             new MeasurementTemplate() { Id = MeasurementId.TorsoLength, _measurementTypeId = MeasurementTypeId.Length},
         };
 

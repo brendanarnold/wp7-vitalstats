@@ -115,6 +115,14 @@ namespace Pocketailor.View
 
         private void Pivot_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+
+            if (this.ActivateShowNominatedConversionHelpAnimation)
+            {
+                this.showNeededMeasurementsHelpStoryBoard.Begin();
+                this.ActivateShowNominatedConversionHelpAnimation = false;
+            }
+            
+
             //switch ((sender as Pivot).SelectedIndex)
             //{
             //    case 0:
@@ -169,8 +177,12 @@ namespace Pocketailor.View
         //    }
         //}
 
+
+        private bool ActivateShowNominatedConversionHelpAnimation;
+
         private void JumpToMeasurements()
         {
+            this.ActivateShowNominatedConversionHelpAnimation = true;
             this.mainPivot.SelectedIndex = 1;
         }
 
@@ -186,7 +198,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.TrouserConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.TrouserSize);
             }
 
         }
@@ -201,7 +213,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.ShirtConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.ShirtSize);
             }
         }
 
@@ -216,7 +228,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.HatConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.HatSize);
             }
         }
 
@@ -231,7 +243,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.SuitConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.SuitSize);
             }
         }
 
@@ -246,7 +258,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.DressConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.DressSize);
             }
         }
 
@@ -261,7 +273,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.BraConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.BraSize);
             }
         }
 
@@ -276,7 +288,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.HosieryConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.HosierySize);
             }
         }
 
@@ -291,7 +303,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.ShoeConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.ShoeSize);
             }
         }
 
@@ -306,7 +318,7 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.SkiBootConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.SkiBootSize);
             }
         }
 
@@ -322,17 +334,24 @@ namespace Pocketailor.View
             else
             {
                 this.JumpToMeasurements();
-                App.VM.NominateRequiredMeasurements(App.VM.WetsuitConversion.MissingMeasurements);
+                App.VM.NominateConversion(ConversionId.WetsuitSize);
             }
         }
 
-        // Toggle the visibility
-        private void measurementGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void cancelShowNominatedMeasurementsHelpBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Grid g = sender as Grid;
-            ListBox lb = g.FindName("otherUnitsListBox") as ListBox;
-            if (lb.Visibility == Visibility.Visible) lb.Visibility = Visibility.Collapsed; else lb.Visibility = Visibility.Visible;
+            App.VM.UnNominateConversion();
+            this.hideNeededMeasurementsHelpStoryBoard.Begin();
         }
+
+
+        // Toggle the visibility
+        //private void measurementGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    Grid g = sender as Grid;
+        //    ListBox lb = g.FindName("otherUnitsListBox") as ListBox;
+        //    if (lb.Visibility == Visibility.Visible) lb.Visibility = Visibility.Collapsed; else lb.Visibility = Visibility.Visible;
+        //}
 
         private void switchUnitsBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -343,16 +362,17 @@ namespace Pocketailor.View
             {
                 App.VM.ViewingUnitCulture = UnitCultureId.Imperial;
             }
-            App.VM.LoadMeasurements(App.VM.ViewingUnitCulture);
         }
 
 		private void measurementBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e) 
 		{
-            MeasurementDataContainer m = (sender as MeasurementBtn).DataContext as MeasurementDataContainer;
+            Measurement m = (sender as MeasurementBtn).DataContext as Measurement;
             int profileId = App.VM.SelectedProfile.Id;
             NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?MeasurementId={0}&ProfileId={1}",
                 m.MeasurementId, profileId), UriKind.Relative));
 		}
+
+		
 
         #endregion
 

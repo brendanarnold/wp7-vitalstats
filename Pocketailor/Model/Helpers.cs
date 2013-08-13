@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 namespace Pocketailor.Model
 {
@@ -62,7 +63,12 @@ namespace Pocketailor.Model
             return (long)deltaSeconds;
         }
 
-
+        public static IEnumerable<T> GetEnumValues<T>()
+        {
+            Type enumType = typeof(T);
+            IEnumerable<FieldInfo> fields = enumType.GetFields().Where(field => field.IsLiteral);
+            return fields.Select(field => field.GetValue(enumType)).Select(value => (T)value);
+        }
 
     }
 }

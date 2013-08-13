@@ -24,6 +24,12 @@
 	
 	<phone:PhoneApplicationPage.Resources>
 		
+    
+    
+		<Pocketailor_View:StringToAffixedString x:Key="StringToAffixedString"/>
+		
+    
+    
 		<Pocketailor_View:UnitCultureToString x:Key="UnitCultureToString"/>
 		
 		<Pocketailor_View:StringToNextString x:Key="StringToNextString"/>
@@ -168,6 +174,135 @@
 			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
 			<Setter Property="Margin" Value="3,0,0,0"/>
 		</Style>
+		<Storyboard x:Name="showNeededMeasurementsHelpStoryBoard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="neededMeasurementsHelpContainer">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="helpTextBlock">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="cancelShowNominatedMeasurementsHelpBtn">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="neededMeasurementsHelpContainer">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="194">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuinticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="helpTextBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="90"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="cancelShowNominatedMeasurementsHelpBtn">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="90"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			
+			
+		</Storyboard>
+		<Storyboard x:Name="hideNeededMeasurementsHelpStoryBoard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="neededMeasurementsHelpContainer">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="helpTextBlock">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="cancelShowNominatedMeasurementsHelpBtn">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="neededMeasurementsHelpContainer">
+				<SplineDoubleKeyFrame KeyTime="0" Value="194"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="helpTextBlock">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="90">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="cancelShowNominatedMeasurementsHelpBtn">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="90">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			
+			
+		</Storyboard>
 	
 		
 		
@@ -241,9 +376,7 @@
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="*"/>
 						</Grid.ColumnDefinitions>
-						<!--
-						Source="{Binding ApplicationTheme, ConverterParameter=/Images/Light/LassivTitleSmall.png|/Images/Dark/LassivTitleSmall.png, Converter={StaticResource ApplicationThemeToImage}}" 
-						-->
+						
 						<Image
 							Grid.Column="0" 
 							Source="{StaticResource LassivTitleSmall}"
@@ -282,7 +415,7 @@
 						
 						
 						
-						<Grid  >
+						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
@@ -352,33 +485,19 @@
 							<Run Text="SPORTS"/>
 						</TextBlock>
 
-						<Grid  >
+						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
 							<Controls:ConversionBtn x:Name="skiBootConversionBtn" Title="Ski Boots" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10" HasMeasurements="{Binding SkiBootConversion.HasRequiredMeasurements}" Tap="skiBootConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wetsuits" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding WetsuitConversion.HasRequiredMeasurements}" Tap="wetsuitConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
-							
 						</Grid>
-						<!--
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="5*"/>
-							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="tennisGripBtn" Grid.Column="0" Title="Tennis Grip" Background="{StaticResource TileBGColor}" Style="{StaticResource ConversionBtnStyle}"  HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,10" Opacity="{Binding HasTennisGripMeasurements, ConverterParameter=TrueIsOpaque, Converter={StaticResource BoolToOpacity}}" Tap="tennisGripBtn_Tap">
-								<Border Width="217" Background="{StaticResource ImgOverlayColor}">
-									<TextBlock TextWrapping="Wrap" Text="Tennis Grip" Height="27" HorizontalAlignment="Left" Margin="12,0,0,0"/>
-								</Border>
-							</Controls:ConversionBtn>
-							
-							
-						</Grid>
-						-->
+						
 
 						<Controls:HelpTextBlock 
 							Margin="0,0,0,24"
-							HelpText="Tap a locked conversion button to see which measurements are needed to unlock it" />
+							HelpText="Tap a locked button to see what measurements are needed to unlock it" />
 
 						
 					</StackPanel>			
@@ -395,42 +514,49 @@
 				</controls:PivotItem.Header>
 				
 				<Grid Margin="0,0,12,0">
-					<!--
-					<StackPanel Margin="0,0,0,12" Orientation="Horizontal">
-						<TextBlock TextWrapping="Wrap" Text="This profile " FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-						<TextBlock TextWrapping="Wrap" Text="{Binding SelectedProfile.IsProtected, ConverterParameter=is protected|is not protected, Converter={StaticResource BoolToStrings}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-					
-					</StackPanel>
-					-->
-					<!--
-					
-					-->
-					<!--
-					<Grid x:Name="noMeasurementsContainer" VerticalAlignment="Center" Margin="0,-50,0,0" 
-						Visibility="{Binding SelectedProfile.Measurements, Converter={StaticResource EmptyCollectionToVisible}}"
-						>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+
+					<Border 
+						x:Name="neededMeasurementsHelpContainer"
+						Grid.Row="0"
+						BorderThickness="0,0,0,1" Margin="-12,0,-24,0" BorderBrush="{StaticResource PageTxtColor}" Visibility="Collapsed" Height="0">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Controls:HelpTextBlock x:Name="helpTextBlock"
+								Grid.Row="0"
+								HelpText="{Binding CurrentNominatedConversionName, 
+									ConverterParameter=The measurements highlighted below are needed to calculate | sizes, 
+									Converter={StaticResource StringToAffixedString}, 
+									FallbackValue=The measurements highlighted below are needed to calculate foobar sizes}" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}" 
+								Margin="21,0,33,0"
+								>
+								<Controls:HelpTextBlock.Projection>
+									<PlaneProjection/>
+								</Controls:HelpTextBlock.Projection>
+							</Controls:HelpTextBlock>
+							<Button x:Name="cancelShowNominatedMeasurementsHelpBtn" 
+								Grid.Row="1"
+								Content="cancel" 
+								HorizontalAlignment="Right" 
+								Margin="0,12,33,12"
+								Style="{StaticResource typographicalBtnStyle}" Tap="cancelShowNominatedMeasurementsHelpBtn_Tap"
+								>
+								<Button.Projection>
+									<PlaneProjection/>
+								</Button.Projection>
+							</Button>
 							
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-						</Grid.RowDefinitions>				
-						<Controls:HelpTextBlock 
-							Grid.Row="1"
-							HelpText="Unlock a conversion button by tapping and adding measurements" Width="370" />
-						<Image
-							Grid.Row="0" Source="/Images/RightArrow.png" Stretch="None" RenderTransformOrigin="0.5,0.5" Margin="0"
 							
-							>
-							<Image.RenderTransform>
-								<CompositeTransform ScaleY="-1" ScaleX="-1" TranslateX="-99"/>
-							</Image.RenderTransform>
-						</Image>
-					</Grid>	
-					-->
-					<!-- 
-					Visibility="{Binding SelectedProfile.Measurements, Converter={StaticResource EmptyCollectionToCollapsed}}"
-					-->
-					<ScrollViewer >
+						</Grid>
+					</Border>
+
+					<ScrollViewer Grid.Row="1">
 						<Grid>
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto"/>
@@ -451,149 +577,35 @@
 								<Run Text="MEASUREMENTS"/>
 							</TextBlock>
 
-							<StackPanel
-								Grid.Row="2" Margin="12,0,12,0">
-								
-								<Controls:MeasurementBtn x:Name="chestMeasurementBtn"
-									DataContext="{Binding MeasurementChest}" 
-									MeasurementName="Chest"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
+							
 
-								<Controls:MeasurementBtn x:Name="footLengthMeasurementBtn" 
-									MeasurementName="Foot Length"
-									DataContext="{Binding MeasurementFootLength}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="footWidthMeasurementBtn" 
-									MeasurementName="Foot Width"
-									DataContext="{Binding MeasurementFootWidth}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="headMeasurementBtn" 
-									MeasurementName="Head"
-									DataContext="{Binding MeasurementHead}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="heightMeasurementBtn" 
-									MeasurementName="Height"
-									DataContext="{Binding MeasurementHeight}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="hipsMeasurementBtn" 
-									MeasurementName="Hips"
-									DataContext="{Binding MeasurementHips}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Visibility="{Binding Path=AppViewModel.SelectedProfile.Gender, 
-										ConverterParameter=HideIfMale, 
-										Source={StaticResource ViewModelLocator},
-										Converter={StaticResource GenderToVisibility}}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="insideLegMeasurementBtn" 
-									MeasurementName="Inside Leg"
-									DataContext="{Binding MeasurementInsideLeg}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="neckMeasurementBtn" 
-									MeasurementName="Neck"
-									DataContext="{Binding MeasurementNeck}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="sleeveMeasurementBtn" 
-									MeasurementName="Sleeve"
-									DataContext="{Binding MeasurementSleeve}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="shoulderMeasurementBtn" 
-									MeasurementName="Shoulder"
-									DataContext="{Binding MeasurementShoulder}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="torsoLengthMeasurementBtn" 
-									MeasurementName="Torso Length"
-									DataContext="{Binding MeasurementTorsoLength}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="underBustMeasurementBtn" 
-									MeasurementName="Underbust"
-									DataContext="{Binding MeasurementUnderBust}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Visibility="{Binding Path=AppViewModel.SelectedProfile.Gender, 
-										ConverterParameter=HideIfMale, 
-										Source={StaticResource ViewModelLocator},
-										Converter={StaticResource GenderToVisibility}}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="waistMeasurementBtn" 
-									MeasurementName="Waist"
-									DataContext="{Binding MeasurementWaist}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-								<Controls:MeasurementBtn x:Name="weightMeasurementBtn" 
-									MeasurementName="Weight"
-									DataContext="{Binding MeasurementWeight}"
-									IsCandidate="{Binding IsCandidate}"
-									ValueText="{Binding Value}"
-									Margin="0,0,0,5" Tap="measurementBtn_Tap"  />
-							</StackPanel>
-
-							<!--
-							<ListBox   Grid.Row="2" x:Name="measurementsListBox" ItemsSource="{Binding SelectedProfile.Measurements}" ItemContainerStyle="{StaticResource ListBoxItemStyle2}" SizeChanged="measurementsListBox_SizeChanged" Style="{StaticResource measurementsListBoxTemplate}" Margin="0,0,12,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" BorderThickness="0">
+							
+							<ListBox   Grid.Row="2" x:Name="measurementsListBox" 
+								ItemsSource="{Binding FullMeasurements}" 
+								ItemContainerStyle="{StaticResource ListBoxItemStyle2}" Style="{StaticResource measurementsListBoxTemplate}" Margin="0,0,12,18" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" BorderThickness="0">
 								
 								<ListBox.ItemTemplate>
 									<DataTemplate>
-										<Grid x:Name="measurementGrid" 
-											Margin="0,0,0,5" 
-											Tap="measurementGrid_Tap"
-											Background="{StaticResource TileBGColor}">
-												<Grid.ColumnDefinitions>
-													<ColumnDefinition Width="1*"/>
-													<ColumnDefinition Width="1*"/>
-												</Grid.ColumnDefinitions>
-												<toolkit:ContextMenuService.ContextMenu>
-													<toolkit:ContextMenu>
-														<toolkit:MenuItem Header="edit" Tap="editContextMenuItem_Tap" />
-														<toolkit:MenuItem Header="delete" Tap="deleteContextMenuItem_Tap" />
-													</toolkit:ContextMenu>
-												</toolkit:ContextMenuService.ContextMenu>
-												<TextBlock Grid.Column="0" TextWrapping="Wrap" Text="{Binding Name}" Foreground="{StaticResource TileTxtColor}" HorizontalAlignment="Left" Margin="24,18,3,18" FontFamily="Segoe WP" FontSize="26.667"/>
-												<StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
-													<TextBlock TextWrapping="Wrap" Text="{Binding FormattedValue}" Foreground="White" HorizontalAlignment="Right" Margin="3,0,24,0" FontSize="26.667" VerticalAlignment="Center" FontFamily="Segoe WP"/>
-												</StackPanel>
-											</Grid>
-
-										
+										<Grid>
+											<Controls:MeasurementBtn
+												MeasurementName="{Binding Name}"
+												IsCandidate="{Binding IsCandidate}"
+												UnitCulture="{Binding AppViewModel.ViewingUnitCulture, Source={StaticResource ViewModelLocator}}"
+												ImperialValueText="{Binding FormattedValueImperial}"
+												MetricValueText="{Binding FormattedValueMetric}"
+												Margin="12,0,0,5" Tap="measurementBtn_Tap"  />
+										</Grid>
 									</DataTemplate>
 								</ListBox.ItemTemplate>
 							</ListBox>
-                            -->
+                            
 
 
 							<Controls:HelpTextBlock 
 								Grid.Row="3"
-								HelpText="Tap a measurement to edit"
-								Margin="12,0,6,24" />
-							<!--
-							<Grid Height="40" Margin="0,10,0,0" Background="{StaticResource TileBGColor}" Tap="suggestedStatGrid_Tap" Visibility="{Binding SuggestedStatTemplate, ConverterParameter=CollapsedIfNull, Converter={StaticResource NullToVisibility}}">
-								<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Center">
-									<TextBlock TextWrapping="Wrap" Text="Add " FontSize="25.333" Margin="0,3"/>
-									<TextBlock TextWrapping="Wrap" Text="{Binding SuggestedStatTemplate.Name, Converter={StaticResource StringToLower}}" FontSize="25.333" FontWeight="Bold" Margin="0,3"/>
-									<TextBlock TextWrapping="Wrap" Text="?" FontSize="25.333" Margin="0,3"/>
-								</StackPanel>
-							</Grid>
-							-->
+								HelpText="Tap a measurement to edit the value"
+								Margin="12,0,6,28" />
+							
 
 						</Grid>
 					</ScrollViewer>

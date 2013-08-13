@@ -1,6 +1,7 @@
 ﻿using Pocketailor.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Pocketailor.ViewModel
                 this.SelectedProfile = (from Profile p in this.Profiles where p.Id == profileId select p).First();
             }
             this.ViewingUnitCulture = this.UnitCulture;
-            this.LoadMeasurements(this.ViewingUnitCulture);
+            this.LoadFullMeasurements();
         }
 
         // Helkper method to notify the View of possible updates to HasMeasurement properties
@@ -29,7 +30,7 @@ namespace Pocketailor.ViewModel
         }
 
         
-        #region Bindable objects for the conversion button data
+        #region Bindable 'conversion' objects for the conversion button data
 
 
         // Convenience data structure to access the conversion data containers
@@ -278,12 +279,63 @@ namespace Pocketailor.ViewModel
             }
         }
 
-
-
         
         #endregion
 
-        #region Bindable properties with values for the measurements plus loading functions
+
+        #region Methods to manage the nomination of a conversion for unlocking
+
+        // A proeprty that is not null when measurements should be highlighted
+        // Contains the ConversionId that defines which measurements need to be highlighted 
+        private ConversionId? _currentNominatedConversion;
+        public ConversionId? CurrentNominatedConversion 
+        {
+            get
+            {
+                return this._currentNominatedConversion;
+            }
+            set
+            {
+                if (this._currentNominatedConversion != value)
+                {
+                    this._currentNominatedConversion = value;
+                    this.NotifyPropertyChanged("CurrentNominatedConversion");
+                    this.NotifyPropertyChanged("CurrentNominatedConversionName");
+                }
+            }
+        }
+
+        public string CurrentNominatedConversionName
+        {
+            get
+            {
+                if (this.CurrentNominatedConversion == null)
+                    return String.Empty;
+                else
+                    return Lookup.Conversions[(ConversionId)this.CurrentNominatedConversion].ToLower();
+            }
+        }
+
+        public void NominateConversion(ConversionId cId) 
+        {
+            List<MeasurementId> missingMeasurementIds = this.Conversions[cId].MissingMeasurements;
+            foreach (Measurement m in this.FullMeasurements)
+            {
+                m.IsCandidate = missingMeasurementIds.Contains(m.MeasurementId);
+            }
+            this.CurrentNominatedConversion = cId;
+        }
+
+        public void UnNominateConversion()
+        {
+            foreach (Measurement m in this.FullMeasurements)
+            {
+                m.IsCandidate = false;
+            }
+            this.CurrentNominatedConversion = null;
+        }
+
+        #endregion
 
         // The unit type (metric/imperial) that is being viewed at the moment
         private UnitCultureId? _viewingUnitCulture;
@@ -306,312 +358,310 @@ namespace Pocketailor.ViewModel
             }
         }
 
-        public void NominateRequiredMeasurements(List<MeasurementId> candidateIds)
-        {
-            foreach (MeasurementId m in this.Measurements.Keys)
-            {
-                this.Measurements[m].IsCandidate = candidateIds.Contains(m);
-            }
-        }
 
-        public void LoadMeasurements(UnitCultureId unitCultureId)
+
+        public void LoadFullMeasurements()
         {
-            List<MeasurementId> keys = new List<MeasurementId>(this.Measurements.Keys);
-            foreach (MeasurementId mId in keys)
+            IEnumerable<MeasurementId> fullListIds = (this.SelectedProfile.Gender == GenderId.Male) ?
+                Model.MeasurmentIdsByGender.Male : Model.MeasurmentIdsByGender.Female;
+            IEnumerable<MeasurementId> missingMeasurementIds = fullListIds.Except<MeasurementId>(this.SelectedProfile.Measurements.Select(m => m.MeasurementId));
+            // Need to operate on a buffer to overcome limitations of ObservableCollection (no AddRange method)
+            List<Measurement> buff = new List<Measurement>(); 
+            buff.AddRange(this.SelectedProfile.Measurements.ToList());
+            foreach (MeasurementId mId in missingMeasurementIds)
             {
-                string val = String.Empty;
-                if (this.SelectedProfile.Measurements.Select(m => m.MeasurementId).Contains(mId))
+                MeasurementTemplate mt = Model.Static.MeasurementTemplates.Where(m => m.Id == mId).First();
+                buff.Add(new Measurement()
                 {
-                    val = this.SelectedProfile.Measurements.Where(m => m.MeasurementId == mId)
-                        .First().GetFormattedValueOfType(this.ViewingUnitCulture);
-                }
-                this.Measurements[mId].Value = val;
+                    MeasurementId = mId,
+                    Name = mt.Name,
+                    Value = null,
+                    MeasurementType = mt.MeasurementType,
+                });
             }
+            buff.Sort((x, y) => x.Name.CompareTo(y.Name));
+            this.FullMeasurements = new ObservableCollection<Measurement>(buff);
         }
 
-
-        private MeasurementDataContainer _measurementChest;
-        public MeasurementDataContainer MeasurementChest {
-            get 
-            {
-                if (this._measurementChest == null) this._measurementChest = new MeasurementDataContainer() { MeasurementId = MeasurementId.Chest, };
-                return this._measurementChest;
-            }
+        private ObservableCollection<Measurement> _fullMeasurements;
+        public ObservableCollection<Measurement> FullMeasurements
+        {
+            get { return this._fullMeasurements; }
             set
             {
-                if (this._measurementChest != value)
+                if (this._fullMeasurements != value)
                 {
-                    this._measurementChest = value;
-                    this.NotifyPropertyChanged("MeasurementChest");
+                    this._fullMeasurements = value;
+                    this.NotifyPropertyChanged("FullMeasurements");
                 }
             }
         }
 
-        private MeasurementDataContainer _measurementFootLength;
-        public MeasurementDataContainer MeasurementFootLength
-        {
-            get
-            {
-                if (this._measurementFootLength == null) this._measurementFootLength = new MeasurementDataContainer() { MeasurementId = MeasurementId.FootLength, };
-                return this._measurementFootLength;
-            }
-            set
-            {
-                if (this._measurementFootLength != value)
-                {
-                    this._measurementFootLength = value;
-                    this.NotifyPropertyChanged("MeasurementFootLength");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementFootWidth;
-        public MeasurementDataContainer MeasurementFootWidth
-        {
-            get
-            {
-                if (this._measurementFootWidth == null) this._measurementFootWidth = new MeasurementDataContainer() { MeasurementId = MeasurementId.FootWidth, };
-                return this._measurementFootWidth;
-            }
-            set
-            {
-                if (this._measurementFootWidth != value)
-                {
-                    this._measurementFootWidth = value;
-                    this.NotifyPropertyChanged("MeasurementFootWidth");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementHead;
-        public MeasurementDataContainer MeasurementHead
-        {
-            get
-            {
-                if (this._measurementHead == null) this._measurementHead = new MeasurementDataContainer() { MeasurementId = MeasurementId.Head, };
-                return this._measurementHead;
-            }
-            set
-            {
-                if (this._measurementHead != value)
-                {
-                    this._measurementHead = value;
-                    this.NotifyPropertyChanged("MeasurementHead");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementHips;
-        public MeasurementDataContainer MeasurementHips
-        {
-            get
-            {
-                if (this._measurementHips == null) this._measurementHips = new MeasurementDataContainer() { MeasurementId = MeasurementId.Hips, };
-                return this._measurementHips;
-            }
-            set
-            {
-                if (this._measurementHips != value)
-                {
-                    this._measurementHips = value;
-                    this.NotifyPropertyChanged("MeasurementHips");
-                }
-            }
-        }
+        
 
 
-        private MeasurementDataContainer _measurementHeight;
-        public MeasurementDataContainer MeasurementHeight
-        {
-            get
-            {
-                if (this._measurementHeight == null) this._measurementHeight = new MeasurementDataContainer() { MeasurementId = MeasurementId.Height, };
-                return this._measurementHeight;
-            }
-            set
-            {
-                if (this._measurementHeight != value)
-                {
-                    this._measurementHeight = value;
-                    this.NotifyPropertyChanged("MeasurementHeight");
-                }
-            }
-        }
+        #region Bindable 'Measurement' object for use with the measurement buttons
 
-        private MeasurementDataContainer _measurementInsideLeg;
-        public MeasurementDataContainer MeasurementInsideLeg
-        {
-            get
-            {
-                if (this._measurementInsideLeg == null) this._measurementInsideLeg = new MeasurementDataContainer() { MeasurementId = MeasurementId.InsideLeg, };
-                return this._measurementInsideLeg;
-            }
-            set
-            {
-                if (this._measurementInsideLeg != value)
-                {
-                    this._measurementInsideLeg = value;
-                    this.NotifyPropertyChanged("MeasurementInsideLeg");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementNeck;
-        public MeasurementDataContainer MeasurementNeck
-        {
-            get
-            {
-                if (this._measurementNeck == null) this._measurementNeck = new MeasurementDataContainer() { MeasurementId = MeasurementId.Neck, };
-                return this._measurementNeck;
-            }
-            set
-            {
-                if (this._measurementNeck != value)
-                {
-                    this._measurementNeck = value;
-                    this.NotifyPropertyChanged("MeasurementNeck");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementShoulder;
-        public MeasurementDataContainer MeasurementShoulder
-        {
-            get
-            {
-                if (this._measurementShoulder == null) this._measurementShoulder = new MeasurementDataContainer() { MeasurementId = MeasurementId.Shoulder, };
-                return this._measurementShoulder;
-            }
-            set
-            {
-                if (this._measurementShoulder != value)
-                {
-                    this._measurementShoulder = value;
-                    this.NotifyPropertyChanged("MeasurementShoulder");
-                }
-            }
-
-        }
-
-        private MeasurementDataContainer _measurementSleeve;
-        public MeasurementDataContainer MeasurementSleeve
-        {
-            get
-            {
-                if (this._measurementSleeve == null) this._measurementSleeve = new MeasurementDataContainer() { MeasurementId = MeasurementId.Sleeve, };
-                return this._measurementSleeve;
-            }
-            set
-            {
-                if (this._measurementSleeve != value)
-                {
-                    this._measurementSleeve = value;
-                    this.NotifyPropertyChanged("MeasurementSleeve");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementTorsoLength;
-        public MeasurementDataContainer MeasurementTorsoLength
-        {
-            get
-            {
-                if (this._measurementTorsoLength == null) this._measurementTorsoLength = new MeasurementDataContainer() { MeasurementId = MeasurementId.TorsoLength, };
-                return this._measurementTorsoLength;
-            }
-            set
-            {
-                if (this._measurementTorsoLength != value)
-                {
-                    this._measurementTorsoLength = value;
-                    this.NotifyPropertyChanged("MeasurementTorsoLength");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementUnderBust;
-        public MeasurementDataContainer MeasurementUnderBust
-        {
-            get
-            {
-                if (this._measurementUnderBust == null) this._measurementUnderBust = new MeasurementDataContainer() { MeasurementId = MeasurementId.UnderBust, };
-                return this._measurementUnderBust;
-            }
-            set
-            {
-                if (this._measurementUnderBust != value)
-                {
-                    this._measurementUnderBust = value;
-                    this.NotifyPropertyChanged("MeasurementUnderBust");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementWaist;
-        public MeasurementDataContainer MeasurementWaist
-        {
-            get
-            {
-                if (this._measurementWaist == null) this._measurementWaist = new MeasurementDataContainer() { MeasurementId = MeasurementId.Waist, };
-                return this._measurementWaist;
-            }
-            set
-            {
-                if (this._measurementWaist != value)
-                {
-                    this._measurementWaist = value;
-                    this.NotifyPropertyChanged("MeasurementWaist");
-                }
-            }
-        }
-
-        private MeasurementDataContainer _measurementWeight;
-        public MeasurementDataContainer MeasurementWeight
-        {
-            get
-            {
-                if (this._measurementWeight == null) this._measurementWeight = new MeasurementDataContainer() { MeasurementId = MeasurementId.Weight, };
-                return this._measurementWeight;
-            }
-            set
-            {
-                if (this._measurementWeight != value)
-                {
-                    this._measurementWeight = value;
-                    this.NotifyPropertyChanged("MeasurementWeight");
-                }
-            }
-        }
+        
 
 
-        // Convenience data structure to access the measurement variables
-        private Dictionary<MeasurementId, MeasurementDataContainer> _measurements;
-        private Dictionary<MeasurementId, MeasurementDataContainer> Measurements {
+        ////private MeasurementDataContainer _measurementChest;
+        ////public MeasurementDataContainer MeasurementChest {
+        ////    get 
+        ////    {
+        ////        if (this._measurementChest == null) this._measurementChest = new MeasurementDataContainer() { MeasurementId = MeasurementId.Chest, };
+        ////        return this._measurementChest;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementChest != value)
+        ////        {
+        ////            this._measurementChest = value;
+        ////            this.NotifyPropertyChanged("MeasurementChest");
+        ////        }
+        ////    }
+        ////}
 
-            get
-            {
-                if (this._measurements == null) this._measurements = 
-                    new Dictionary<MeasurementId, MeasurementDataContainer>()
-                    {
-                        { MeasurementId.Chest, this.MeasurementChest},
-                        { MeasurementId.FootLength, this.MeasurementFootLength},
-                        { MeasurementId.FootWidth, this.MeasurementFootWidth},
-                        { MeasurementId.Head, this.MeasurementHead},
-                        { MeasurementId.Height, this.MeasurementHeight},
-                        { MeasurementId.Hips, this.MeasurementHips},
-                        { MeasurementId.InsideLeg, this.MeasurementInsideLeg},
-                        { MeasurementId.Neck, this.MeasurementNeck},
-                        { MeasurementId.Sleeve, this.MeasurementSleeve},
-                        { MeasurementId.Shoulder, this.MeasurementShoulder},
-                        { MeasurementId.TorsoLength, this.MeasurementTorsoLength},
-                        { MeasurementId.UnderBust, this.MeasurementUnderBust},
-                        { MeasurementId.Waist, this.MeasurementWaist},
-                        { MeasurementId.Weight, this.MeasurementWeight},
-                    };
-                return this._measurements;
-            }
-        }
+        ////private MeasurementDataContainer _measurementFootLength;
+        ////public MeasurementDataContainer MeasurementFootLength
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementFootLength == null) this._measurementFootLength = new MeasurementDataContainer() { MeasurementId = MeasurementId.FootLength, };
+        ////        return this._measurementFootLength;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementFootLength != value)
+        ////        {
+        ////            this._measurementFootLength = value;
+        ////            this.NotifyPropertyChanged("MeasurementFootLength");
+        ////        }
+        ////    }
+        ////}
 
+        ////private MeasurementDataContainer _measurementFootWidth;
+        ////public MeasurementDataContainer MeasurementFootWidth
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementFootWidth == null) this._measurementFootWidth = new MeasurementDataContainer() { MeasurementId = MeasurementId.FootWidth, };
+        ////        return this._measurementFootWidth;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementFootWidth != value)
+        ////        {
+        ////            this._measurementFootWidth = value;
+        ////            this.NotifyPropertyChanged("MeasurementFootWidth");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementHead;
+        ////public MeasurementDataContainer MeasurementHead
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementHead == null) this._measurementHead = new MeasurementDataContainer() { MeasurementId = MeasurementId.Head, };
+        ////        return this._measurementHead;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementHead != value)
+        ////        {
+        ////            this._measurementHead = value;
+        ////            this.NotifyPropertyChanged("MeasurementHead");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementHips;
+        ////public MeasurementDataContainer MeasurementHips
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementHips == null) this._measurementHips = new MeasurementDataContainer() { MeasurementId = MeasurementId.Hips, };
+        ////        return this._measurementHips;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementHips != value)
+        ////        {
+        ////            this._measurementHips = value;
+        ////            this.NotifyPropertyChanged("MeasurementHips");
+        ////        }
+        ////    }
+        ////}
+
+
+        ////private MeasurementDataContainer _measurementHeight;
+        ////public MeasurementDataContainer MeasurementHeight
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementHeight == null) this._measurementHeight = new MeasurementDataContainer() { MeasurementId = MeasurementId.Height, };
+        ////        return this._measurementHeight;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementHeight != value)
+        ////        {
+        ////            this._measurementHeight = value;
+        ////            this.NotifyPropertyChanged("MeasurementHeight");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementInsideLeg;
+        ////public MeasurementDataContainer MeasurementInsideLeg
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementInsideLeg == null) this._measurementInsideLeg = new MeasurementDataContainer() { MeasurementId = MeasurementId.InsideLeg, };
+        ////        return this._measurementInsideLeg;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementInsideLeg != value)
+        ////        {
+        ////            this._measurementInsideLeg = value;
+        ////            this.NotifyPropertyChanged("MeasurementInsideLeg");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementNeck;
+        ////public MeasurementDataContainer MeasurementNeck
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementNeck == null) this._measurementNeck = new MeasurementDataContainer() { MeasurementId = MeasurementId.Neck, };
+        ////        return this._measurementNeck;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementNeck != value)
+        ////        {
+        ////            this._measurementNeck = value;
+        ////            this.NotifyPropertyChanged("MeasurementNeck");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementShoulder;
+        ////public MeasurementDataContainer MeasurementShoulder
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementShoulder == null) this._measurementShoulder = new MeasurementDataContainer() { MeasurementId = MeasurementId.Shoulder, };
+        ////        return this._measurementShoulder;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementShoulder != value)
+        ////        {
+        ////            this._measurementShoulder = value;
+        ////            this.NotifyPropertyChanged("MeasurementShoulder");
+        ////        }
+        ////    }
+
+        ////}
+
+        ////private MeasurementDataContainer _measurementSleeve;
+        ////public MeasurementDataContainer MeasurementSleeve
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementSleeve == null) this._measurementSleeve = new MeasurementDataContainer() { MeasurementId = MeasurementId.Sleeve, };
+        ////        return this._measurementSleeve;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementSleeve != value)
+        ////        {
+        ////            this._measurementSleeve = value;
+        ////            this.NotifyPropertyChanged("MeasurementSleeve");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementTorsoLength;
+        ////public MeasurementDataContainer MeasurementTorsoLength
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementTorsoLength == null) this._measurementTorsoLength = new MeasurementDataContainer() { MeasurementId = MeasurementId.TorsoLength, };
+        ////        return this._measurementTorsoLength;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementTorsoLength != value)
+        ////        {
+        ////            this._measurementTorsoLength = value;
+        ////            this.NotifyPropertyChanged("MeasurementTorsoLength");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementUnderBust;
+        ////public MeasurementDataContainer MeasurementUnderBust
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementUnderBust == null) this._measurementUnderBust = new MeasurementDataContainer() { MeasurementId = MeasurementId.UnderBust, };
+        ////        return this._measurementUnderBust;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementUnderBust != value)
+        ////        {
+        ////            this._measurementUnderBust = value;
+        ////            this.NotifyPropertyChanged("MeasurementUnderBust");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementWaist;
+        ////public MeasurementDataContainer MeasurementWaist
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementWaist == null) this._measurementWaist = new MeasurementDataContainer() { MeasurementId = MeasurementId.Waist, };
+        ////        return this._measurementWaist;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementWaist != value)
+        ////        {
+        ////            this._measurementWaist = value;
+        ////            this.NotifyPropertyChanged("MeasurementWaist");
+        ////        }
+        ////    }
+        ////}
+
+        ////private MeasurementDataContainer _measurementWeight;
+        ////public MeasurementDataContainer MeasurementWeight
+        ////{
+        ////    get
+        ////    {
+        ////        if (this._measurementWeight == null) this._measurementWeight = new MeasurementDataContainer() { MeasurementId = MeasurementId.Weight, };
+        ////        return this._measurementWeight;
+        ////    }
+        ////    set
+        ////    {
+        ////        if (this._measurementWeight != value)
+        ////        {
+        ////            this._measurementWeight = value;
+        ////            this.NotifyPropertyChanged("MeasurementWeight");
+        ////        }
+        ////    }
+        ////}
+
+
+        
+
+        
         #endregion
 
     }

@@ -41,9 +41,10 @@ namespace Pocketailor.ViewModel
             this.EditMeasurementsPageAction =  (this.SelectedProfile.Measurements.Select(m => m.MeasurementId).Contains(mId)) ?
                 EditMeasurementPageActions.Edit : EditMeasurementPageActions.New;
             // Load up the selected measurement if necessary
-            if (this.SelectedMeasurement == null ||
-                this.SelectedMeasurement.Profile.Id != profileId ||
-                this.SelectedMeasurement.MeasurementId != mId)
+            if (this.SelectedMeasurement == null 
+                || this.SelectedMeasurement.Profile == null 
+                || this.SelectedMeasurement.Profile.Id != profileId  // Execution should not get here if the attached profile is null
+                || this.SelectedMeasurement.MeasurementId != mId)
             {
                 if (this.EditMeasurementsPageAction == EditMeasurementPageActions.New)
                 {

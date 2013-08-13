@@ -74,6 +74,8 @@ namespace Pocketailor.Model
                 // Changing this changes the formatted value so need to notify UI
                 NotifyPropertyChanged("FormattedValue");
                 this.NotifyPropertyChanged("OtherUnitFormattedValues");
+                this.NotifyPropertyChanged("FormattedValueImperial");
+                this.NotifyPropertyChanged("FormattedValueMetric");
                 // Also need to notify units attached to this stat
                 if (this.MeasurementType != null)
                 {
@@ -182,6 +184,34 @@ namespace Pocketailor.Model
                     return this.PreferredUnit.GetFormattedValue(this.Value);
                 }
             }
+        }
+
+        // If true then is a candidate measurement for a selected, locked conversion
+        // It will be highlighted in the UI
+        private bool _isCandidate;
+        public bool IsCandidate
+        {
+            get { return this._isCandidate; }
+            set
+            {
+                if (this._isCandidate != value)
+                {
+                    this._isCandidate = value;
+                    this.NotifyPropertyChanged("IsCandidate");
+                }
+            }
+        }
+
+        // Bindable property
+        public string FormattedValueImperial
+        {
+            get { return this.GetFormattedValueOfType(UnitCultureId.Imperial); }
+        }
+
+        // Bindable property
+        public string FormattedValueMetric
+        {
+            get { return this.GetFormattedValueOfType(UnitCultureId.Metric); }
         }
 
         public string GetFormattedValueOfType(UnitCultureId unitCultureId)
