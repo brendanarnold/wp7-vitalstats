@@ -63,16 +63,11 @@ namespace Pocketailor.View
 
         private void changeRegionsAppBarBtn_Click(Object sender, EventArgs e) 
         {
-            NavigationService.Navigate(new Uri("/View/EditRegionPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/View/Pages/EditRegionPage.xaml", UriKind.Relative));
         }
 
 
-        // User declined to select a measurement type, custom measurement type has been selected instead, move on to new measurement page
-        //private void customMeasurementTypeTextBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}",
-        //        EditMeasurementPageActions.New), UriKind.Relative));
-        //}
+       
 
         #endregion
 
@@ -95,7 +90,7 @@ namespace Pocketailor.View
         //    {
         //        Measurement s = (sender as MenuItem).DataContext as Measurement;
         //        App.VM.SelectedMeasurement = s;
-        //        NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}", EditMeasurementPageActions.Edit), UriKind.Relative));
+        //        NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditMeasurementPage.xaml?Action={0}", EditMeasurementPageActions.Edit), UriKind.Relative));
         //    }
         //}
 
@@ -109,7 +104,7 @@ namespace Pocketailor.View
         // navigate to the edit profile page
         private void editProfileAppBarMenuItem_Click(object sender, System.EventArgs e)
         {
-            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
         }
 
 
@@ -149,7 +144,7 @@ namespace Pocketailor.View
         //        MeasurementType = st.MeasurementType,
         //        MeasurementId = st.Id,
         //    };
-        //    NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?Action={0}",
+        //    NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditMeasurementPage.xaml?Action={0}",
         //        EditMeasurementPageActions.New), UriKind.Relative));
         //}
 
@@ -192,7 +187,7 @@ namespace Pocketailor.View
             if (App.VM.TrouserConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.TrouserSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -207,7 +202,7 @@ namespace Pocketailor.View
         {
             if (App.VM.ShirtConversion.HasRequiredMeasurements) {
                 App.VM.SelectedConversionType = ConversionId.ShirtSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -222,7 +217,7 @@ namespace Pocketailor.View
             if (App.VM.HatConversion.HasRequiredMeasurements) 
             {
                 App.VM.SelectedConversionType = ConversionId.HatSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -237,7 +232,7 @@ namespace Pocketailor.View
             if (App.VM.SuitConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.SuitSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -252,7 +247,7 @@ namespace Pocketailor.View
             if (App.VM.DressConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.DressSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -267,7 +262,7 @@ namespace Pocketailor.View
             if (App.VM.BraConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.BraSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -282,7 +277,7 @@ namespace Pocketailor.View
             if (App.VM.HosieryConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.HosierySize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -297,7 +292,7 @@ namespace Pocketailor.View
             if (App.VM.ShoeConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.ShoeSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -312,7 +307,7 @@ namespace Pocketailor.View
             if (App.VM.SkiBootConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.SkiBootSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -328,7 +323,7 @@ namespace Pocketailor.View
             if (App.VM.WetsuitConversion.HasRequiredMeasurements)
             {
                 App.VM.SelectedConversionType = ConversionId.WetsuitSize;
-                NavigationService.Navigate(new Uri(String.Format("/View/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
+                NavigationService.Navigate(new Uri(String.Format("/View/Pages/ConversionsPage.xaml?ProfileId={0}&ConversionId={1}",
                     App.VM.SelectedProfile.Id, App.VM.SelectedConversionType.ToString()), UriKind.Relative));
             }
             else
@@ -368,7 +363,7 @@ namespace Pocketailor.View
 		{
             Measurement m = (sender as MeasurementBtn).DataContext as Measurement;
             int profileId = App.VM.SelectedProfile.Id;
-            NavigationService.Navigate(new Uri(String.Format("/View/EditMeasurementPage.xaml?MeasurementId={0}&ProfileId={1}",
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditMeasurementPage.xaml?MeasurementId={0}&ProfileId={1}",
                 m.MeasurementId, profileId), UriKind.Relative));
 		}
 

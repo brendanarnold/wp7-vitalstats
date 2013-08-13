@@ -188,16 +188,16 @@ namespace Pocketailor.Model
 
         // If true then is a candidate measurement for a selected, locked conversion
         // It will be highlighted in the UI
-        private bool _isCandidate;
-        public bool IsCandidate
+        private bool _isNeeded;
+        public bool IsNeeded
         {
-            get { return this._isCandidate; }
+            get { return this._isNeeded; }
             set
             {
-                if (this._isCandidate != value)
+                if (this._isNeeded != value)
                 {
-                    this._isCandidate = value;
-                    this.NotifyPropertyChanged("IsCandidate");
+                    this._isNeeded = value;
+                    this.NotifyPropertyChanged("IsNeeded");
                 }
             }
         }

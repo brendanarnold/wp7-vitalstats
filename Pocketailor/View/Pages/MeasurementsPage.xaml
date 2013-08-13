@@ -589,7 +589,7 @@
 										<Grid>
 											<Controls:MeasurementBtn
 												MeasurementName="{Binding Name}"
-												IsCandidate="{Binding IsCandidate}"
+												IsCandidate="{Binding IsNeeded}"
 												UnitCulture="{Binding AppViewModel.ViewingUnitCulture, Source={StaticResource ViewModelLocator}}"
 												ImperialValueText="{Binding FormattedValueImperial}"
 												MetricValueText="{Binding FormattedValueMetric}"

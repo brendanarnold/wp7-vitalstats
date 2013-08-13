@@ -7,6 +7,14 @@ using System.Windows.Media;
 
 namespace Pocketailor.View
 {
+    // From http://www.codeproject.com/Articles/36495/Silverlight-ClipToBounds-Can-I-Clip-It-Yes-You-Can
+    // Use:
+    //
+    // xmlns:View="clr-namespace:View"
+    //
+    // <Grid View:Clip.ToBounds="true"> ... </Grid>
+
+
     public class Clip
     {
         public static bool GetToBounds(DependencyObject depObj)

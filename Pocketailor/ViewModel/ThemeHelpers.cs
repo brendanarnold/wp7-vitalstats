@@ -9,6 +9,9 @@ namespace Pocketailor.ViewModel
     class ThemeHelpers
     {
 
+
+        // Also use external library "Windows Phone Theme Manager"
+
         public static void SetThemePreference(ApplicationTheme theme)
         {
             App.Settings.AddOrUpdateValue("ApplicationTheme", theme as ApplicationTheme?);

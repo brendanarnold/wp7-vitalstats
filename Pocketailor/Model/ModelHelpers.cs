@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace Pocketailor.Model
 {
-    public static class Helpers
+    public static class ModelHelpers
     {
         public static List<string> UnpickleStrings(string str)
         {

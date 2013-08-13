@@ -287,7 +287,7 @@ namespace Pocketailor.View
         {
             ConversionData c = (sender as Grid).DataContext as ConversionData;
             App.VM.SelectedConversionData = c;
-            string uriStr = String.Format("/View/ConversionAdjustmentPage.xaml?GenderId={0}&BrandId={1}&ConversionId={2}&RegionId={3}&ProfileId={4}",
+            string uriStr = String.Format("/View/Pages/ConversionAdjustmentPage.xaml?GenderId={0}&BrandId={1}&ConversionId={2}&RegionId={3}&ProfileId={4}",
                 App.VM.SelectedProfile.Gender, c.Brand, c.Conversion, c.Region, App.VM.SelectedProfile.Id);
             NavigationService.Navigate(new Uri(uriStr, UriKind.Relative));
         }

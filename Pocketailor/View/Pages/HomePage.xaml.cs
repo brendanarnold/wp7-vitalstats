@@ -40,7 +40,7 @@ namespace Pocketailor.View
         private void profileBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as Button).DataContext as Profile;
-            NavigationService.Navigate(new Uri(String.Format("/View/MeasurementsPage.xaml?ProfileId={0}", p.Id), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/MeasurementsPage.xaml?ProfileId={0}", p.Id), UriKind.Relative));
         }
 
         private void toggleQuickListContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -54,7 +54,7 @@ namespace Pocketailor.View
         {
             Profile p = (sender as MenuItem).DataContext as Profile;
             App.VM.SelectedProfile = p;
-            NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
         }
 
         private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -102,7 +102,7 @@ namespace Pocketailor.View
 
         private void addNewProfileButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-        	NavigationService.Navigate(new Uri(String.Format("/View/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
+        	NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
         }
 
 

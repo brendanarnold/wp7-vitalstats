@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace Pocketailor.ViewModel
 {
+
+    // TODO: This does not work - see following blog post for potential solution
+    // http://andywigley.com/2013/07/31/beware-the-perils-of-asyncawait-in-application-lifecycle-event-handlers-in-fact-in-any-event-handlers/
+
+
+
     public static class AsyncHelpers
     {
         /// <summary>

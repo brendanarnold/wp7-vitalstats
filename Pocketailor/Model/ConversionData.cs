@@ -300,7 +300,7 @@ namespace Pocketailor.Model
                     g = this.Gender,
                     i = App.VM.AppGuid,
                     s = this.GetSizeId(),
-                    t = Helpers.GetUnixTime(),
+                    t = ModelHelpers.GetUnixTime(),
                     v = AppConstants.APP_VERSION,
                 };
                 App.FeedbackAgent.QueueFeedback(feedbackAdj);

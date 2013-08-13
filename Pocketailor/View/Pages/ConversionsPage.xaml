@@ -91,7 +91,7 @@
 				IconImage="/Images/AppBar/appbar.globe.png">
 				<i:Interaction.Triggers>
 					<i:EventTrigger EventName="Tap">
-						<ec:NavigateToPageAction TargetPage="/View/EditRegionPage.xaml"/>
+						<ec:NavigateToPageAction TargetPage="/View/Pages/EditRegionPage.xaml"/>
 					</i:EventTrigger>
 				</i:Interaction.Triggers>	
 			</Controls:AboutButton>
@@ -103,7 +103,7 @@
 				IconImage="/Images/AppBar/appbar.edit.png" >
 				<i:Interaction.Triggers>
 					<i:EventTrigger EventName="Tap">
-						<ec:NavigateToPageAction TargetPage="/View/EditBlacklistedBrands.xaml"/>
+						<ec:NavigateToPageAction TargetPage="/View/Pages/EditBlacklistedBrands.xaml"/>
 					</i:EventTrigger>
 				</i:Interaction.Triggers>
 			</Controls:AboutButton>
@@ -351,7 +351,7 @@
 					</Button.Foreground>
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Click">
-							<ec:NavigateToPageAction TargetPage="/View/EditRegionPage.xaml"/>
+							<ec:NavigateToPageAction TargetPage="/View/Pages/EditRegionPage.xaml"/>
 						</i:EventTrigger>
 					</i:Interaction.Triggers>
 					<Button.Style>
