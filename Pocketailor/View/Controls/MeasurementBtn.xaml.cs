@@ -26,7 +26,7 @@ namespace Pocketailor.View.Controls
         }
 
 
-        public bool HasMeasurements;
+        public bool HasMeasurements { get; set; }
 
         public void GoToHasMeasurementState()
         {

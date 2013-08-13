@@ -15,6 +15,20 @@ using System.Windows.Media;
 namespace Pocketailor.View
 {
 
+
+
+    public class NullableToBool : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            return (value != null);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
     
     public class UnitCultureToString : System.Windows.Data.IValueConverter
     {

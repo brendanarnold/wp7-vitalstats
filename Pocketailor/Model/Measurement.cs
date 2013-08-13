@@ -271,7 +271,7 @@ namespace Pocketailor.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(string propertyName)
+        public void NotifyPropertyChanged(string propertyName)
         {
             if (this.PropertyChanged != null)
             {

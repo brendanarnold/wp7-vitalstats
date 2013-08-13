@@ -40,7 +40,7 @@ namespace Pocketailor.View
             // Find the selected profile and assign it  
             int id = Convert.ToInt32(NavigationContext.QueryString["ProfileId"]);
             App.VM.LoadMeasurementsPageData(id);
-            App.VM.RefreshRequiredMeasurement();
+            App.VM.RefreshPostMeasurementEdit();
 
         }
 
@@ -111,10 +111,11 @@ namespace Pocketailor.View
         private void Pivot_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 
-            if (this.ActivateShowNominatedConversionHelpAnimation)
+            if (App.VM.PendingCurrentNominatedConversion.HasValue)
             {
-                this.showNeededMeasurementsHelpStoryBoard.Begin();
-                this.ActivateShowNominatedConversionHelpAnimation = false;
+                // Activate animation through binding
+                App.VM.CurrentNominatedConversion = App.VM.PendingCurrentNominatedConversion;
+                App.VM.PendingCurrentNominatedConversion = null;
             }
             
 
@@ -173,14 +174,17 @@ namespace Pocketailor.View
         //}
 
 
-        private bool ActivateShowNominatedConversionHelpAnimation;
 
         private void JumpToMeasurements()
         {
-            this.ActivateShowNominatedConversionHelpAnimation = true;
             this.mainPivot.SelectedIndex = 1;
         }
 
+        private void profileNameBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?ProfileId={0}&Action={1}", 
+                App.VM.SelectedProfile.Id, EditProfilePageActions.Edit), UriKind.Relative));
+        }
 
         private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -192,8 +196,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.TrouserSize);
+                this.JumpToMeasurements();
+                
             }
 
         }
@@ -207,8 +212,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.ShirtSize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -222,8 +228,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.HatSize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -237,8 +244,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.SuitSize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -252,8 +260,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.DressSize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -267,8 +276,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.BraSize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -282,8 +292,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.HosierySize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -297,8 +308,8 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.ShoeSize);
+                this.JumpToMeasurements();
             }
         }
 
@@ -312,8 +323,9 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.SkiBootSize);
+                this.JumpToMeasurements();
+                
             }
         }
 
@@ -328,15 +340,15 @@ namespace Pocketailor.View
             }
             else
             {
-                this.JumpToMeasurements();
                 App.VM.NominateConversion(ConversionId.WetsuitSize);
+                this.JumpToMeasurements();
             }
         }
 
         private void cancelShowNominatedMeasurementsHelpBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.UnNominateConversion();
-            this.hideNeededMeasurementsHelpStoryBoard.Begin();
+            //this.hideNeededMeasurementsHelpStoryBoard.Begin();
         }
 
 

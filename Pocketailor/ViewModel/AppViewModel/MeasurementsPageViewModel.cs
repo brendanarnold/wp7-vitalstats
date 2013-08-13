@@ -11,22 +11,25 @@ namespace Pocketailor.ViewModel
     public partial class AppViewModel
     {
 
-        // Helper method for tombstoning
+        // Should load only the required data if it isn't present
         public void LoadMeasurementsPageData(int profileId)
         {
+            // Only load data if it is not present or is for the wrong profile
             if (this.SelectedProfile == null || this.SelectedProfile.Id != profileId)
             {
                 this.SelectedProfile = (from Profile p in this.Profiles where p.Id == profileId select p).First();
+                this.ViewingUnitCulture = this.UnitCulture;
+                this.LoadFullMeasurements();
             }
-            this.ViewingUnitCulture = this.UnitCulture;
-            this.LoadFullMeasurements();
+            
         }
 
         // Helkper method to notify the View of possible updates to HasMeasurement properties
-        internal void RefreshRequiredMeasurement()
+        internal void RefreshPostMeasurementEdit()
         {
             foreach (ConversionBtnData c in this.Conversions.Values)
                 c.NotifyPropertyChanged("HasRequiredMeasurements");
+            if (this.CurrentNominatedConversion.HasValue) this.NominateConversion((ConversionId)this.CurrentNominatedConversion);
         }
 
         
@@ -305,6 +308,10 @@ namespace Pocketailor.ViewModel
             }
         }
 
+        // A temporary store for CurrentNominatedConversion which activates animations through binding when changed
+        // so that the animations can occur at the right time
+        public ConversionId? PendingCurrentNominatedConversion { get; set; }
+
         public string CurrentNominatedConversionName
         {
             get
@@ -323,7 +330,7 @@ namespace Pocketailor.ViewModel
             {
                 m.IsNeeded = missingMeasurementIds.Contains(m.MeasurementId);
             }
-            this.CurrentNominatedConversion = cId;
+            this.PendingCurrentNominatedConversion = cId;
         }
 
         public void UnNominateConversion()
@@ -358,7 +365,7 @@ namespace Pocketailor.ViewModel
             }
         }
 
-
+        #region FullMeasurements and helper methods
 
         public void LoadFullMeasurements()
         {
@@ -383,6 +390,17 @@ namespace Pocketailor.ViewModel
             this.FullMeasurements = new ObservableCollection<Measurement>(buff);
         }
 
+        // Swap in the new Measurement object which is tied to a profile (as a result of editing) instead
+        // of the placeholder one used to pad the UI
+        public void SwapInToFullMeasurements(Measurement newMeasurement)
+        {
+            List<Measurement> buff = App.VM.FullMeasurements.ToList();
+            buff.Remove(buff.Where(m => m.MeasurementId == newMeasurement.MeasurementId).First());
+            buff.Add(newMeasurement);
+            buff.Sort((x, y) => x.Name.CompareTo(y.Name));
+            App.VM.FullMeasurements = new System.Collections.ObjectModel.ObservableCollection<Measurement>(buff);
+        }
+
         private ObservableCollection<Measurement> _fullMeasurements;
         public ObservableCollection<Measurement> FullMeasurements
         {
@@ -397,7 +415,7 @@ namespace Pocketailor.ViewModel
             }
         }
 
-
+        #endregion
 
         
     }

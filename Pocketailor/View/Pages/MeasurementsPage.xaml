@@ -15,6 +15,7 @@
 	xmlns:iv="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	xmlns:Controls="clr-namespace:Pocketailor.View.Controls" 
 	xmlns:AdDuplex="clr-namespace:AdDuplex;assembly=AdDuplex.WindowsPhone" 
+	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="Pocketailor.View.MeasurementsPage"
 	Orientation="Portrait"
@@ -23,6 +24,10 @@
 	>
 	
 	<phone:PhoneApplicationPage.Resources>
+		
+    
+    
+		<Pocketailor_View:NullableToBool x:Key="NullableToBool"/>
 		
     
     
@@ -363,6 +368,15 @@
 			<RowDefinition Height="81" />
 		</Grid.RowDefinitions>
 		
+		<i:Interaction.Triggers>
+			<iv:DataTrigger Binding="{Binding CurrentNominatedConversion, Converter={StaticResource NullableToBool}}" Value="true">
+				<eim:ControlStoryboardAction x:Name="showNeededMeasurementsHelpControlStoryBoardAction" Storyboard="{StaticResource showNeededMeasurementsHelpStoryBoard}"/>
+			</iv:DataTrigger>
+			<iv:DataTrigger Binding="{Binding CurrentNominatedConversion, Converter={StaticResource NullableToBool}}" Value="false">
+				<eim:ControlStoryboardAction x:Name="hideNeededMeasurementsHelpControlStoryBoardAction" Storyboard="{StaticResource hideNeededMeasurementsHelpStoryBoard}"/>
+			</iv:DataTrigger>
+		</i:Interaction.Triggers>
+		
 		<controls:Pivot 
 			Grid.Row="0"
 			x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
@@ -381,13 +395,32 @@
 							Grid.Column="0" 
 							Source="{StaticResource LassivTitleSmall}"
 							HorizontalAlignment="Left" Margin="0,0,0,-3" Stretch="None" />
-						<TextBlock Grid.Column="1" 
-							x:Name="profileName" 
-							FontSize="26" 
-							TextAlignment="Right"
-							VerticalAlignment="Center" 
+						<Button Grid.Column="1" 
+							x:Name="profileNameBtn" 
 							Margin="0,0,12,0" 
-							Text="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"/>
+							Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
+							Tap="profileNameBtn_Tap">
+							<Button.Style>
+								<Style TargetType="Button">
+									<Setter Property="Template">
+										<Setter.Value>
+											<ControlTemplate TargetType="Button">
+												<Grid>
+													<TextBlock 
+														FontSize="26"
+														VerticalAlignment="Center" 
+														HorizontalAlignment="Right"
+														FontWeight="Normal"
+														FontFamily="Segoe WP Semilight"
+														Foreground="{StaticResource PageTxtColor}"
+														Text="{TemplateBinding Content}" />
+												</Grid>
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter> 
+								</Style>
+							</Button.Style>
+						</Button>
 					</Grid>
 
 				</StackPanel>
@@ -530,10 +563,7 @@
 							</Grid.RowDefinitions>
 							<Controls:HelpTextBlock x:Name="helpTextBlock"
 								Grid.Row="0"
-								HelpText="{Binding CurrentNominatedConversionName, 
-									ConverterParameter=The measurements highlighted below are needed to calculate | sizes, 
-									Converter={StaticResource StringToAffixedString}, 
-									FallbackValue=The measurements highlighted below are needed to calculate foobar sizes}" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}" 
+								HelpText="{Binding CurrentNominatedConversionName, ConverterParameter=The measurements highlighted below are needed to calculate | sizes, Converter={StaticResource StringToAffixedString}, FallbackValue=The measurements highlighted below are needed to calculate foobar sizes}" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}" 
 								Margin="21,0,33,0"
 								>
 								<Controls:HelpTextBlock.Projection>
