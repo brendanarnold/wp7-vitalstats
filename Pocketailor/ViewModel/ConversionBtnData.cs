@@ -10,16 +10,25 @@ namespace Pocketailor.ViewModel
     // A container class for the conversion data
     public class ConversionBtnData : INotifyPropertyChanged
     {
-        private bool _hasMeasurements;
-        public bool HasMeasurements
+
+        public string ConversionName
         {
-            get { return this._hasMeasurements; }
-            set
+            get { return Lookup.Conversions[this.ConversionId]; }
+        }
+
+        public ConversionId ConversionId { get; set; }
+
+
+        private bool _isNewlyUnlocked;
+        public bool IsNewlyUnlocked
+        {
+            get { return this._isNewlyUnlocked; }
+            set 
             {
-                if (this._hasMeasurements != value)
+                if (this._isNewlyUnlocked != value)
                 {
-                    this._hasMeasurements = value;
-                    this.NotifyPropertyChanged("HasMeasurements");
+                    this._isNewlyUnlocked = value;
+                    this.NotifyPropertyChanged("IsNewlyUnlocked");
                 }
             }
         }
@@ -38,6 +47,7 @@ namespace Pocketailor.ViewModel
                 }
             }
         }
+
 
         private List<MeasurementId> _requiredMeasurementsFemale;
         public List<MeasurementId> RequiredMeasurementsFemale

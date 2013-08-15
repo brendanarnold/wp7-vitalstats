@@ -143,7 +143,7 @@ namespace Pocketailor.View
             else
             {
                 App.VM.AddMeasurementToProfile(App.VM.SelectedMeasurement, App.VM.SelectedProfile);
-                App.VM.SwapInToFullMeasurements(App.VM.SelectedMeasurement);
+                
             }
 
             this.ClearInput();

@@ -353,4 +353,8 @@
       </SampleData:SelectedConversionData.Notes>
     </SampleData:SelectedConversionData>
   </SampleData:SampleDataSource.SelectedConversionData>
+  <SampleData:SampleDataSource.NewlyUnlockedConversions>
+    <SampleData:NewlyUnlockedConversionsItem1 ConversionName="ski boot" />
+    <SampleData:NewlyUnlockedConversionsItem1 ConversionName="shoe" />
+  </SampleData:SampleDataSource.NewlyUnlockedConversions>
 </SampleData:SampleDataSource>

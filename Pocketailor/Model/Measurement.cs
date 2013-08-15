@@ -230,7 +230,12 @@ namespace Pocketailor.Model
                 {
                     string lb = this.MeasurementType.GetDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
                     string st = this.MeasurementType.GetAltDefaultUnit(unitCultureId).GetFormattedValue(this.Value);
-                    formattedValue = String.Format("{0} ({1})", lb, st);
+                    // Return empty string if both strings are empty since any string other than empty triggers the enabled state on the MeasurementBtn
+                    if (lb != String.Empty
+                        && st != String.Empty)
+                        formattedValue = String.Format("{0} ({1})", lb, st);
+                    else
+                        formattedValue = String.Empty;
                 }
                 else
                 {

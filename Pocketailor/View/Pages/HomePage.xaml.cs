@@ -53,8 +53,7 @@ namespace Pocketailor.View
         private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Profile p = (sender as MenuItem).DataContext as Profile;
-            App.VM.SelectedProfile = p;
-            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, App.VM.SelectedProfile.Id), UriKind.Relative));
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}&ProfileId={1}", EditProfilePageActions.Edit, p.Id), UriKind.Relative));
         }
 
         private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)

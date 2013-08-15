@@ -1,0 +1,57 @@
+﻿<UserControl x:Name="userControl" x:Class="Pocketailor.View.Controls.NewlyUnlockedConversionNotificationBtn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="115" d:DesignWidth="480" RenderTransformOrigin="0.5,0.5">
+	<UserControl.Resources>
+		<Storyboard x:Name="bounceStoryBoard">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="userControl" RepeatBehavior="Forever">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<QuadraticEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BounceEase EasingMode="EaseOut" Bounces="2"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.RenderTransform>
+		<CompositeTransform/>
+	</UserControl.RenderTransform>
+	<UserControl.Projection>
+		<PlaneProjection/>
+	</UserControl.Projection>
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Image Grid.Column="0" 
+			Source="/Images/SmallLeftArrow.png" 
+			Stretch="None" RenderTransformOrigin="0.5,0.5" Margin="0,4,0,0"
+			>
+			<Image.RenderTransform>
+				<CompositeTransform ScaleX="0.7" ScaleY="0.7"/>
+			</Image.RenderTransform>
+		</Image>
+		<TextBlock x:Name="conversionNameTextBlock" 
+			Grid.Column="1"
+			Text="foo" VerticalAlignment="Center" FontSize="{StaticResource HelpTxtFontSizeLarge}" Margin="6,0,0,0" Foreground="{StaticResource SubTitleColor}" />
+		<TextBlock
+			Grid.Column="2"
+			Text=" size unlocked" VerticalAlignment="Center" FontSize="{StaticResource HelpTxtFontSizeLarge}" Foreground="{StaticResource SubTitleColor}" />
+    </Grid>
+</UserControl>

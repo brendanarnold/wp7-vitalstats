@@ -18,13 +18,17 @@ namespace Pocketailor.ViewModel
             if (this.SelectedProfile == null || this.SelectedProfile.Id != profileId)
             {
                 this.SelectedProfile = (from Profile p in this.Profiles where p.Id == profileId select p).First();
-                this.ViewingUnitCulture = this.UnitCulture;
+                if (this.ViewingUnitCulture == null) this.ViewingUnitCulture = this.UnitCulture;
                 this.LoadFullMeasurements();
+            } else {
+                if (this.ViewingUnitCulture == null) this.ViewingUnitCulture = this.UnitCulture;
+                if (this.FullMeasurements == null) this.LoadFullMeasurements();
             }
             
         }
 
         // Helkper method to notify the View of possible updates to HasMeasurement properties
+        // TODO: May not be necessary now add profile updated
         internal void RefreshPostMeasurementEdit()
         {
             foreach (ConversionBtnData c in this.Conversions.Values)
@@ -32,7 +36,108 @@ namespace Pocketailor.ViewModel
             if (this.CurrentNominatedConversion.HasValue) this.NominateConversion((ConversionId)this.CurrentNominatedConversion);
         }
 
-        
+        // Stores newly unlocked conversions ready for an alert animation in the UI
+        private ObservableCollection<ConversionBtnData> _newlyUnlockedConversions;
+        public ObservableCollection<ConversionBtnData> NewlyUnlockedConversions 
+        {
+            get { return this._newlyUnlockedConversions; }
+            set
+            {
+                if (this._newlyUnlockedConversions != value)
+                {
+                    this._newlyUnlockedConversions = value;
+                    this.NotifyPropertyChanged("NewlyUnlockedConversions");
+                }
+            }
+        }
+
+
+        // Lame variable needed to show the help box
+        //public bool ShowMeasurementPageHelpContainer
+        //{
+        //    get
+        //    {
+        //        return (this.NewlyUnlockedConversions != null)
+        //        && this.CurrentNominatedConversion.HasValue;
+        //    }
+        //}
+
+
+        #region Add/remove measurements to/from profile
+
+        public void AddMeasurementToProfile(Measurement measurement, Profile profile)
+        {
+            // Need to calculate which conversions are unlocked. Take a tally of which are 
+            // available before attaching to the profile. Use a List to resolve now.
+            List<ConversionBtnData> unlockedBefore = this.Conversions.Values.Where(c => c.HasRequiredMeasurements).ToList();
+            
+            // Attach to the profile
+            measurement.Profile = profile;
+            profile.Measurements.Add(measurement);
+            this.appDB.Measurements.InsertOnSubmit(measurement);
+            this.appDB.SubmitChanges();
+            profile.NotifyPropertyChanged("Measurements");
+            
+            // Need to swap out the placeholder measurement in FullMeasurements for the one attached to the profile
+            this.SwapInToFullMeasurements(App.VM.SelectedMeasurement);
+            
+            // Compare to before
+            IEnumerable<ConversionBtnData> unlockedAfter = this.Conversions.Values.Where(c => c.HasRequiredMeasurements);
+            List<ConversionBtnData> newlyUnlocked = unlockedAfter.Except(unlockedBefore).ToList();
+            List<ConversionBtnData> newlyLocked = unlockedBefore.Except(unlockedAfter).ToList();
+
+            // Update the UI
+            foreach (ConversionBtnData c in newlyLocked)
+            {
+                c.NotifyPropertyChanged("HasRequiredMeasurements");
+            }
+            // Set the NewlyUnlocked flag on the conversions and update UI
+            foreach (ConversionBtnData c in newlyUnlocked)
+            {
+                c.IsNewlyUnlocked = true;
+                c.NotifyPropertyChanged("HasRequiredMeasurements");
+            }
+            if (newlyUnlocked.Count == 0)
+                this.NewlyUnlockedConversions = null;
+            else 
+                this.NewlyUnlockedConversions = new ObservableCollection<ConversionBtnData>(newlyUnlocked);
+            
+            //this.NotifyPropertyChanged("ShowMeasurementPageHelpContainer");
+
+            // Check if final measurement entered for currently nominated conversion
+            if (this.CurrentNominatedConversion.HasValue
+                && this.NewlyUnlockedConversions != null
+                && this.NewlyUnlockedConversions.Where(c => c.ConversionId == this.CurrentNominatedConversion).Any())
+            {
+                // This will activate animations etc. maybe too soon?
+                this.CurrentNominatedConversion = null;
+            }
+        }
+
+        public void CancelNewlyUnlocked()
+        {
+            foreach (ConversionBtnData c in this.Conversions.Values)
+            {
+                c.IsNewlyUnlocked = false;
+            }
+            this.NewlyUnlockedConversions = null;
+            this.NotifyPropertyChanged("NewlyUnlockedConversions");
+            //this.NotifyPropertyChanged("ShowMeasurementPageHelpContainer");
+        }
+
+
+        public void DeleteMeasurementsFromProfile(Measurement measurement, Profile profile)
+        {
+            profile.Measurements.Remove(measurement);
+            this.appDB.Measurements.DeleteOnSubmit(measurement);
+            this.appDB.SubmitChanges();
+            profile.NotifyPropertyChanged("Measurements");
+            // TODO: similar to above
+            
+        }
+
+        #endregion
+
         #region Bindable 'conversion' objects for the conversion button data
 
 
@@ -68,6 +173,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._trouserConversion == null) this._trouserConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.TrouserSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.TrousersWomens,
                     RequiredMeasurementsMale = RequiredMeasurements.TrousersMens,
                 };
@@ -90,6 +196,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._shirtConversion == null) this._shirtConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.ShirtSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.ShirtWomens,
                     RequiredMeasurementsMale = RequiredMeasurements.ShirtMens,
                 };
@@ -112,6 +219,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._dressConversion == null) this._dressConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.DressSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.DressSize,
                     RequiredMeasurementsMale = RequiredMeasurements.DressSize,
                 };
@@ -135,6 +243,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._hatConversion == null) this._hatConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.HatSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.Hat,
                     RequiredMeasurementsMale = RequiredMeasurements.Hat,
                 };
@@ -157,6 +266,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._suitConversion == null) this._suitConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.SuitSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.SuitWomens,
                     RequiredMeasurementsMale = RequiredMeasurements.SuitMens,
                 };
@@ -179,6 +289,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._shoeConversion == null) this._shoeConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.ShoeSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.Shoes,
                     RequiredMeasurementsMale = RequiredMeasurements.Shoes,
                 };
@@ -201,6 +312,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._braConversion == null) this._braConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.BraSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.Bra,
                     RequiredMeasurementsMale = RequiredMeasurements.Bra,
                 };
@@ -223,6 +335,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._hosieryConversion == null) this._hosieryConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.HosierySize,
                     RequiredMeasurementsFemale = RequiredMeasurements.Hosiery,
                     RequiredMeasurementsMale = RequiredMeasurements.Hosiery,
                 };
@@ -245,6 +358,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._skiBootConversion == null) this._skiBootConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.SkiBootSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.SkiBoots,
                     RequiredMeasurementsMale = RequiredMeasurements.SkiBoots,
                 };
@@ -267,6 +381,7 @@ namespace Pocketailor.ViewModel
             {
                 if (this._wetsuitConversion == null) this._wetsuitConversion = new ConversionBtnData()
                 {
+                    ConversionId = Model.ConversionId.WetsuitSize,
                     RequiredMeasurementsFemale = RequiredMeasurements.WetsuitWomens,
                     RequiredMeasurementsMale = RequiredMeasurements.WetsuitMens,
                 };
@@ -304,6 +419,7 @@ namespace Pocketailor.ViewModel
                     this._currentNominatedConversion = value;
                     this.NotifyPropertyChanged("CurrentNominatedConversion");
                     this.NotifyPropertyChanged("CurrentNominatedConversionName");
+                    //this.NotifyPropertyChanged("ShowMeasurementPageHelpContainer");
                 }
             }
         }
@@ -344,16 +460,16 @@ namespace Pocketailor.ViewModel
 
         #endregion
 
+
+        #region ViewingUnitCulture properties/methods
+
         // The unit type (metric/imperial) that is being viewed at the moment
         private UnitCultureId? _viewingUnitCulture;
-        public UnitCultureId ViewingUnitCulture
+        public UnitCultureId? ViewingUnitCulture
         {
             get 
             { 
-                if (this._viewingUnitCulture == null) 
-                    return UnitCultureId.Metric; 
-                else 
-                    return (UnitCultureId)this._viewingUnitCulture; 
+                return this._viewingUnitCulture; 
             }
             set
             {
@@ -364,6 +480,9 @@ namespace Pocketailor.ViewModel
                 }
             }
         }
+
+        #endregion
+
 
         #region FullMeasurements and helper methods
 

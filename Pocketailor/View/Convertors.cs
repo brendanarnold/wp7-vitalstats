@@ -610,6 +610,34 @@ namespace Pocketailor.View
         }        
     }
 
+    public class ConversionIdToLookup : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            ConversionId cId = (ConversionId)value;
+            return Lookup.Conversions[cId];
+        }
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class VisibilityToBool : System.Windows.Data.IValueConverter
+    {
+        public object Convert(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            Visibility v = (Visibility)value;
+            return (v == Visibility.Visible);
+        }
+
+        public object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
     // Converter that returns visibility if value is null based on parameter
     public class NullToVisibility : System.Windows.Data.IValueConverter
     {

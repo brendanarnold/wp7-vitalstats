@@ -354,6 +354,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private NewlyUnlockedConversions1 _NewlyUnlockedConversions = new NewlyUnlockedConversions1();
+
+		public NewlyUnlockedConversions1 NewlyUnlockedConversions
+		{
+			get
+			{
+				return this._NewlyUnlockedConversions;
+			}
+		}
 	}
 
 	public class Profiles : System.Collections.ObjectModel.ObservableCollection<ProfilesItem>
@@ -2268,6 +2278,69 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+	}
+
+	public class NewlyUnlockedConversionsItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private NewlyUnlockedConversions _NewlyUnlockedConversions = new NewlyUnlockedConversions();
+
+		public NewlyUnlockedConversions NewlyUnlockedConversions
+		{
+			get
+			{
+				return this._NewlyUnlockedConversions;
+			}
+		}
+	}
+
+	public class NewlyUnlockedConversions : System.Collections.ObjectModel.ObservableCollection<NewlyUnlockedConversionsItem>
+	{ 
+	}
+
+	public class NewlyUnlockedConversionsItem1 : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _ConversionName = string.Empty;
+
+		public string ConversionName
+		{
+			get
+			{
+				return this._ConversionName;
+			}
+
+			set
+			{
+				if (this._ConversionName != value)
+				{
+					this._ConversionName = value;
+					this.OnPropertyChanged("ConversionName");
+				}
+			}
+		}
+	}
+
+	public class NewlyUnlockedConversions1 : System.Collections.ObjectModel.ObservableCollection<NewlyUnlockedConversionsItem1>
+	{ 
 	}
 #endif
 }

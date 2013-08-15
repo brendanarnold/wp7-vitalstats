@@ -201,6 +201,9 @@
     <Compile Include="View\Controls\MeasurementBtn.xaml.cs">
       <DependentUpon>MeasurementBtn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Controls\NewlyUnlockedConversionNotificationBtn.xaml.cs">
+      <DependentUpon>NewlyUnlockedConversionNotificationBtn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\ConversionAdjustmentPage.xaml.cs">
       <DependentUpon>ConversionAdjustmentPage.xaml</DependentUpon>
     </Compile>
@@ -299,6 +302,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Controls\NewlyUnlockedConversionNotificationBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\ValueUnitTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -355,6 +362,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\RightArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SmallLeftArrow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\TapeUnderline.png">

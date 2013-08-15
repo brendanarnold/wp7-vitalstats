@@ -15,7 +15,7 @@
 	xmlns:iv="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
 	xmlns:Controls="clr-namespace:Pocketailor.View.Controls" 
 	xmlns:AdDuplex="clr-namespace:AdDuplex;assembly=AdDuplex.WindowsPhone" 
-	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" 
+	xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" x:Name="phoneApplicationPage" 
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="Pocketailor.View.MeasurementsPage"
 	Orientation="Portrait"
@@ -24,6 +24,14 @@
 	>
 	
 	<phone:PhoneApplicationPage.Resources>
+		
+    
+    
+		<Pocketailor_View:VisibilityToBool x:Key="VisibilityToBool"/>
+		
+    
+    
+		
 		
     
     
@@ -179,6 +187,7 @@
 			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
 			<Setter Property="Margin" Value="3,0,0,0"/>
 		</Style>
+
 		<Storyboard x:Name="showNeededMeasurementsHelpStoryBoard">
 			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="neededMeasurementsHelpContainer">
 				<DiscreteObjectKeyFrame KeyTime="0">
@@ -235,22 +244,11 @@
 					</EasingDoubleKeyFrame.EasingFunction>
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
+      
 			
 			
 		</Storyboard>
 		<Storyboard x:Name="hideNeededMeasurementsHelpStoryBoard">
-			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="neededMeasurementsHelpContainer">
-				<DiscreteObjectKeyFrame KeyTime="0">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Visible</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-				<DiscreteObjectKeyFrame KeyTime="0:0:1">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Collapsed</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-			</ObjectAnimationUsingKeyFrames>
 			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="helpTextBlock">
 				<DiscreteObjectKeyFrame KeyTime="0">
 					<DiscreteObjectKeyFrame.Value>
@@ -284,7 +282,7 @@
 				<SplineDoubleKeyFrame KeyTime="0" Value="194"/>
 				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
 					<EasingDoubleKeyFrame.EasingFunction>
-						<CircleEase EasingMode="EaseOut"/>
+						<QuinticEase EasingMode="EaseOut"/>
 					</EasingDoubleKeyFrame.EasingFunction>
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
@@ -305,8 +303,49 @@
 					</EasingDoubleKeyFrame.EasingFunction>
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="neededMeasurementsHelpContainer">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
 			
 			
+		</Storyboard>
+		<Storyboard x:Name="showNewlyUnlockedHelpStoryBoard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="newlyUnlockedConversionHelpContainer">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+     
+		</Storyboard>
+		<Storyboard x:Name="hideNewlyUnlockedHelpStoryBoard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="newlyUnlockedConversionHelpContainer">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
 		</Storyboard>
 	
 		
@@ -365,18 +404,27 @@
 
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="81" />
+			<RowDefinition Height="10" />
+			<RowDefinition Height="71"/>
 		</Grid.RowDefinitions>
+		
 		
 		<i:Interaction.Triggers>
 			<iv:DataTrigger Binding="{Binding CurrentNominatedConversion, Converter={StaticResource NullableToBool}}" Value="true">
-				<eim:ControlStoryboardAction x:Name="showNeededMeasurementsHelpControlStoryBoardAction" Storyboard="{StaticResource showNeededMeasurementsHelpStoryBoard}"/>
+				<iv:CallMethodAction x:Name="showNeededMeasurementsHelpCallMethodAction" MethodName="ShowNeededMeasurementsHelp" TargetObject="{Binding ElementName=phoneApplicationPage}"/>
 			</iv:DataTrigger>
 			<iv:DataTrigger Binding="{Binding CurrentNominatedConversion, Converter={StaticResource NullableToBool}}" Value="false">
-				<eim:ControlStoryboardAction x:Name="hideNeededMeasurementsHelpControlStoryBoardAction" Storyboard="{StaticResource hideNeededMeasurementsHelpStoryBoard}"/>
+				<iv:CallMethodAction x:Name="hideNeededMeasurementsHelpCallMethodAction" MethodName="HideNeededMeasurementsHelp" TargetObject="{Binding ElementName=phoneApplicationPage}"/>
+			</iv:DataTrigger>
+			<iv:DataTrigger Binding="{Binding NewlyUnlockedConversions, Converter={StaticResource NullableToBool}}" Value="true">
+				<iv:CallMethodAction x:Name="showNewlyUnlockedHelpCallMethodAction" MethodName="ShowNewlyUnlockedConversionsHelp" TargetObject="{Binding ElementName=phoneApplicationPage}"/>
+			</iv:DataTrigger>
+			<iv:DataTrigger Binding="{Binding NewlyUnlockedConversions, Converter={StaticResource NullableToBool}}" Value="false">
+				<iv:CallMethodAction x:Name="hideNewlyUnlockedHelpCallMethodAction" MethodName="HideNewlyUnlockedConversionsHelp" TargetObject="{Binding ElementName=phoneApplicationPage}"/>
 			</iv:DataTrigger>
 		</i:Interaction.Triggers>
 		
+
 		<controls:Pivot 
 			Grid.Row="0"
 			x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
@@ -439,7 +487,7 @@
 
 				
 
-				<ScrollViewer>
+				<ScrollViewer x:Name="conversionsScrollViewer">
 					<StackPanel Orientation="Vertical" Margin="12,0">
 						
 						<TextBlock x:Name="clothingSubTitle"  Margin="0,12,0,12" Style="{StaticResource SubTitleTextBoxStyle}">
@@ -448,12 +496,17 @@
 						
 						
 						
-						<Grid>
+						<Grid Visibility="Visible">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="6*"/>
 								<ColumnDefinition Width="3*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="shirtConversionBtn" Title="Shirts &amp; tops" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding ShirtConversion.HasRequiredMeasurements}" Tap="shirtConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="shirtConversionBtn" 
+								Title="Shirts &amp; tops" 
+								HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" 
+								HasMeasurements="{Binding ShirtConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding ShirtConversion.IsNewlyUnlocked}"
+								Tap="shirtConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/shirt-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
@@ -464,6 +517,7 @@
 								HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
 								Margin="0,0,0,10" BorderThickness="0" 
 								HasMeasurements="{Binding TrouserConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding TrouserConversion.IsNewlyUnlocked}"
 								Tap="trouserConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/trousers-btn.jpg"/>
@@ -471,24 +525,39 @@
 							</Controls:ConversionBtn>
 							
 						</Grid>
-						<Grid  >
+						<Grid Visibility="Visible" >
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="3*"/>
 								<ColumnDefinition Width="6*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="hatConversionBtn" Title="Hats" HorizontalAlignment="Stretch" Margin="0,0,10,10" Grid.Column="0" HasMeasurements="{Binding HatConversion.HasRequiredMeasurements}" Tap="hatConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="hatConversionBtn" 
+								Title="Hats" HorizontalAlignment="Stretch" 
+								Margin="0,0,10,10" Grid.Column="0" 
+								HasMeasurements="{Binding HatConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding HatConversion.IsNewlyUnlocked}"
+								Tap="hatConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/hat-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
-							<Controls:ConversionBtn x:Name="suitConversionBtn" Title="Suits" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="1" HasMeasurements="{Binding SuitConversion.HasRequiredMeasurements}" Tap="suitConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="suitConversionBtn" 
+								Title="Suits" HorizontalAlignment="Stretch" Margin="0,0,0,10" 
+								Grid.Column="1" 
+								HasMeasurements="{Binding SuitConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding SuitConversion.IsNewlyUnlocked}"
+								Tap="suitConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/suit-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
 							</Controls:ConversionBtn>
 						</Grid>
-						<Grid   Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
-							<Controls:ConversionBtn x:Name="dressConversionBtn" Title="Dresses" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Column="0" HasMeasurements="{Binding DressConversion.HasRequiredMeasurements}" Tap="dressConversionBtn_Tap">
+						<Grid Visibility="{Binding SelectedProfile.Gender, ConverterParameter=HideIfMale, Converter={StaticResource GenderToVisibility}}">
+							<Controls:ConversionBtn x:Name="dressConversionBtn" 
+								Title="Dresses" HorizontalAlignment="Stretch" Margin="0,0,0,10" 
+								Grid.Column="0" 
+								HasMeasurements="{Binding DressConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding DressConversion.IsNewlyUnlocked}"
+								Tap="dressConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/dress-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
@@ -500,14 +569,26 @@
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="braConversionBtn" Title="Bras" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10"  HasMeasurements="{Binding BraConversion.HasRequiredMeasurements}" Tap="braConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
-							<Controls:ConversionBtn x:Name="hosieryConversionBtn" Title="Hosiery" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10"  HasMeasurements="{Binding HosieryConversion.HasRequiredMeasurements}" Tap="hosieryConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+							<Controls:ConversionBtn x:Name="braConversionBtn" 
+								Title="Bras" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10"  
+								HasMeasurements="{Binding BraConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding BraConversion.IsNewlyUnlocked}"
+								Tap="braConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+							<Controls:ConversionBtn x:Name="hosieryConversionBtn" 
+								Title="Hosiery" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10"  
+								HasMeasurements="{Binding HosieryConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding HosieryConversion.IsNewlyUnlocked}"
+								Tap="hosieryConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 						</Grid>
-						<Grid>
+						<Grid Visibility="Visible">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="shoeConversionBtn" Title="Shoes"  Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding ShoeConversion.HasRequiredMeasurements}" Tap="shoeConversionBtn_Tap">
+							<Controls:ConversionBtn x:Name="shoeConversionBtn" 
+								Title="Shoes"  Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,0,10" 
+								HasMeasurements="{Binding ShoeConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding ShoeConversion.IsNewlyUnlocked}"
+								Tap="shoeConversionBtn_Tap">
 								<Controls:ConversionBtn.Background>
 									<ImageBrush Stretch="Fill" ImageSource="/Images/shoes-btn.jpg"/>
 								</Controls:ConversionBtn.Background>
@@ -518,18 +599,26 @@
 							<Run Text="SPORTS"/>
 						</TextBlock>
 
-						<Grid>
+						<Grid Visibility="Visible">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="5*"/>
 								<ColumnDefinition Width="5*"/>
 							</Grid.ColumnDefinitions>
-							<Controls:ConversionBtn x:Name="skiBootConversionBtn" Title="Ski Boots" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10" HasMeasurements="{Binding SkiBootConversion.HasRequiredMeasurements}" Tap="skiBootConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
-							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" Title="Wetsuits" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10" HasMeasurements="{Binding WetsuitConversion.HasRequiredMeasurements}" Tap="wetsuitConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+							<Controls:ConversionBtn x:Name="skiBootConversionBtn" 
+								Title="Ski Boots" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10" 
+								HasMeasurements="{Binding SkiBootConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding SkiBootConversion.IsNewlyUnlocked}"
+								Tap="skiBootConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" 
+								Title="Wetsuits" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10" 
+								HasMeasurements="{Binding WetsuitConversion.HasRequiredMeasurements}" 
+								IsNewlyUnlocked="{Binding WetsuitConversion.IsNewlyUnlocked}"
+								Tap="wetsuitConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
 						</Grid>
 						
 
-						<Controls:HelpTextBlock 
-							Margin="0,0,0,24"
+						<Controls:HelpTextBlock x:Name="bottomHelpText" 
+							Margin="0,0,3,24"
 							HelpText="Tap a locked button to see what measurements are needed to unlock it" />
 
 						
@@ -552,39 +641,68 @@
 						<RowDefinition Height="*" />
 					</Grid.RowDefinitions>
 
-					<Border 
-						x:Name="neededMeasurementsHelpContainer"
+					<Border
+						x:Name="toastHelpContainer"
 						Grid.Row="0"
-						BorderThickness="0,0,0,1" Margin="-12,0,-24,0" BorderBrush="{StaticResource PageTxtColor}" Visibility="Collapsed" Height="0">
+						BorderThickness="0,0,0,1"
+						Margin="-12,0,-24,0" BorderBrush="{StaticResource PageTxtColor}" 
+						Visibility="Visible">
+						
 						<Grid>
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto"/>
 								<RowDefinition Height="Auto"/>
 							</Grid.RowDefinitions>
-							<Controls:HelpTextBlock x:Name="helpTextBlock"
+							
+							<ListBox 
 								Grid.Row="0"
-								HelpText="{Binding CurrentNominatedConversionName, ConverterParameter=The measurements highlighted below are needed to calculate | sizes, Converter={StaticResource StringToAffixedString}, FallbackValue=The measurements highlighted below are needed to calculate foobar sizes}" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}" 
-								Margin="21,0,33,0"
-								>
-								<Controls:HelpTextBlock.Projection>
-									<PlaneProjection/>
-								</Controls:HelpTextBlock.Projection>
-							</Controls:HelpTextBlock>
-							<Button x:Name="cancelShowNominatedMeasurementsHelpBtn" 
+								x:Name="newlyUnlockedConversionHelpContainer"
+								ItemsSource="{Binding NewlyUnlockedConversions}">
+								<ListBox.ItemTemplate>
+									<DataTemplate>
+										<Controls:NewlyUnlockedConversionNotificationBtn 
+											x:Name="newlyUnlockedBtn"
+											Margin="21,0,0,24"
+											ConversionName="{Binding ConversionName, Converter={StaticResource StringToLower}}"
+											IsVisible="{Binding Visibility, ElementName=newlyUnlockedConversionHelpContainer, Converter={StaticResource VisibilityToBool}}" Tap="newlyUnlockedBtn_Tap" />
+									</DataTemplate>
+								</ListBox.ItemTemplate>
+							</ListBox>
+
+							<Grid 
 								Grid.Row="1"
-								Content="cancel" 
-								HorizontalAlignment="Right" 
-								Margin="0,12,33,12"
-								Style="{StaticResource typographicalBtnStyle}" Tap="cancelShowNominatedMeasurementsHelpBtn_Tap"
-								>
-								<Button.Projection>
-									<PlaneProjection/>
-								</Button.Projection>
-							</Button>
-							
-							
+								x:Name="neededMeasurementsHelpContainer">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+								<Controls:HelpTextBlock x:Name="helpTextBlock"
+									Grid.Row="0"
+									HelpText="{Binding CurrentNominatedConversionName, ConverterParameter=The measurements highlighted below are needed to calculate | sizes, Converter={StaticResource StringToAffixedString}, FallbackValue=The measurements highlighted below are needed to calculate foobar sizes}" FontFamily="{StaticResource HelpTxtFont}" FontSize="{StaticResource HelpTxtFontSizeLarge}" 
+									Margin="21,0,33,0"
+									>
+									<Controls:HelpTextBlock.Projection>
+										<PlaneProjection/>
+									</Controls:HelpTextBlock.Projection>
+								</Controls:HelpTextBlock>
+								<Button x:Name="cancelShowNominatedMeasurementsHelpBtn" 
+									Grid.Row="1"
+									Content="cancel" 
+									HorizontalAlignment="Right" 
+									Margin="0,12,33,12"
+									Style="{StaticResource typographicalBtnStyle}" Tap="cancelShowNominatedMeasurementsHelpBtn_Tap"
+									>
+									<Button.Projection>
+										<PlaneProjection/>
+									</Button.Projection>
+								</Button>
+							</Grid>
 						</Grid>
+						
+					
 					</Border>
+
+					
 
 					<ScrollViewer Grid.Row="1">
 						<Grid>
@@ -651,7 +769,7 @@
 		<AdDuplex:AdControl
 			x:Name="adDuplexAd"
 			Grid.Row="1"
-			AppId="39175" BorderThickness="0,1,0,0" BorderBrush="{StaticResource PageTxtColor}"
+			AppId="39175" Margin="0,1,0,0" Grid.RowSpan="2" 
 			/>
 
 

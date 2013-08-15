@@ -65,6 +65,39 @@ namespace Pocketailor.View.Controls
             set { this.titleTxtBlock.Text = value; }
         }
 
+
+        public static readonly DependencyProperty IsNewlyUnlockedProperty =
+            DependencyProperty.Register("IsNewlyUnlocked", typeof(bool), typeof(ConversionBtn),
+            new PropertyMetadata(false, new PropertyChangedCallback(IsNewlyUnlockedPropertyChanged)));
+
+        private static void IsNewlyUnlockedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ConversionBtn cBtn = (ConversionBtn)d;
+            bool val = (bool)e.NewValue;
+            if (val)
+            {
+                cBtn.newlyUnlockedStoryBoard.Begin();
+            }
+            else
+            {
+                cBtn.newlyUnlockedStoryBoard.Stop();
+            }
+        }
+
+        public bool IsNewlyUnlocked
+        {
+            get
+            {
+                return (bool)GetValue(IsNewlyUnlockedProperty);
+            }
+            set
+            {
+                SetValue(IsNewlyUnlockedProperty, value);
+            }
+        }
+
+
+
         public static readonly DependencyProperty HasMeasurementsProperty =
             DependencyProperty.Register("HasMeasurements", typeof(bool), typeof(ConversionBtn),
             new PropertyMetadata(false, new PropertyChangedCallback(HasMeasurementsPropertyChanged)));

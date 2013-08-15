@@ -50,6 +50,8 @@ namespace Pocketailor.ViewModel
         {
             p.IsQuickProfile = !p.IsQuickProfile;
             this.LoadQuickProfilesFromDB();
+            this.SaveChangesToAppDB();
+            
         }
 
         public void LoadQuickProfilesFromDB()
@@ -127,22 +129,7 @@ namespace Pocketailor.ViewModel
             this.NotifyPropertyChanged("QuickProfiles");
         }
 
-        public void AddMeasurementToProfile(Measurement measurement, Profile profile)
-        {
-            measurement.Profile = profile;
-            profile.Measurements.Add(measurement);
-            this.appDB.Measurements.InsertOnSubmit(measurement);
-            this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Measurements");
-        }
-
-        public void DeleteMeasurementsFromProfile(Measurement measurement, Profile profile)
-        {
-            profile.Measurements.Remove(measurement);
-            this.appDB.Measurements.DeleteOnSubmit(measurement);
-            this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Measurements");
-        }
+        
 
         #endregion
 

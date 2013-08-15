@@ -13,33 +13,13 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls" 
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
+    xmlns:AdDuplex="clr-namespace:AdDuplex;assembly=AdDuplex.WindowsPhone"
     x:Class="Pocketailor.View.HomePage" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"
 	toolkit:TiltEffect.IsTiltEnabled="True" 
 	Margin="-4,0,4,0">
-	
-	<toolkit:TransitionService.NavigationInTransition>
-		<toolkit:NavigationInTransition>
-			<toolkit:NavigationInTransition.Backward>
-				<toolkit:TurnstileTransition Mode="BackwardIn"/>
-			</toolkit:NavigationInTransition.Backward>
-			<toolkit:NavigationInTransition.Forward>
-				<toolkit:TurnstileTransition Mode="ForwardIn"/>
-			</toolkit:NavigationInTransition.Forward>
-		</toolkit:NavigationInTransition>
-	</toolkit:TransitionService.NavigationInTransition>
-	<toolkit:TransitionService.NavigationOutTransition>
-		<toolkit:NavigationOutTransition>
-			<toolkit:NavigationOutTransition.Backward>
-				<toolkit:TurnstileTransition Mode="BackwardOut"/>
-			</toolkit:NavigationOutTransition.Backward>
-			<toolkit:NavigationOutTransition.Forward>
-				<toolkit:TurnstileTransition Mode="ForwardOut"/>
-			</toolkit:NavigationOutTransition.Forward>
-		</toolkit:NavigationOutTransition>
-	</toolkit:TransitionService.NavigationOutTransition>
 
 
 
@@ -112,11 +92,11 @@
 
 
 		<DataTemplate x:Key="panoramaTitle">
-            <ContentPresenter>
-                <TextBlock Text="{Binding}" 
+			<ContentPresenter>
+				<TextBlock Text="{Binding}" 
 					FontFamily="Segoe WP Light"
 					FontSize="{StaticResource DialogTitleFontSize}" Margin="0,10,0,0" />
-            </ContentPresenter>
+			</ContentPresenter>
         </DataTemplate>
 
 		
@@ -154,6 +134,29 @@
 
 	</phone:PhoneApplicationPage.Resources>
 	
+	<toolkit:TransitionService.NavigationInTransition>
+		<toolkit:NavigationInTransition>
+			<toolkit:NavigationInTransition.Backward>
+				<toolkit:TurnstileTransition Mode="BackwardIn"/>
+			</toolkit:NavigationInTransition.Backward>
+			<toolkit:NavigationInTransition.Forward>
+				<toolkit:TurnstileTransition Mode="ForwardIn"/>
+			</toolkit:NavigationInTransition.Forward>
+		</toolkit:NavigationInTransition>
+	</toolkit:TransitionService.NavigationInTransition>
+	<toolkit:TransitionService.NavigationOutTransition>
+		<toolkit:NavigationOutTransition>
+			<toolkit:NavigationOutTransition.Backward>
+				<toolkit:TurnstileTransition Mode="BackwardOut"/>
+			</toolkit:NavigationOutTransition.Backward>
+			<toolkit:NavigationOutTransition.Forward>
+				<toolkit:TurnstileTransition Mode="ForwardOut"/>
+			</toolkit:NavigationOutTransition.Forward>
+		</toolkit:NavigationOutTransition>
+	</toolkit:TransitionService.NavigationOutTransition>
+
+
+
     <shell:SystemTray.BackgroundColor>
         <StaticResource ResourceKey="SystemTrayBGColor"/>
     </shell:SystemTray.BackgroundColor>
@@ -179,9 +182,17 @@
     </d:DataContext>
 
 
-<!--LayoutRoot contains the root grid where all other page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="{StaticResource PageBGColor}">
-		<controls:Panorama x:Name="mainPanorama"
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="80" />
+		</Grid.RowDefinitions>
+
+
+		<controls:Panorama 
+			Grid.Row="0"
+			x:Name="mainPanorama"
 			HeaderTemplate="{StaticResource panoramaTitle}" 
 			Title="pocketailor" 
 			Background="{StaticResource PageBGColor}" 
@@ -392,16 +403,19 @@
 									<RowDefinition Height="*" />
 								</Grid.RowDefinitions>
 								
-								<Controls:HelpTextBlock Margin="30,24,30,0"
-									Grid.Row="1"
-									HelpText="Long tap a profile to add the the quicklist" />
-								
 								<Image 
 									Grid.Row="0"
+									Margin="0,-48,0,0"
 									Source="/Images/RightArrow.png" Stretch="None" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
 									<Image.RenderTransform>
 										<CompositeTransform ScaleY="-1" TranslateX="100" TranslateY="23"/>
 									</Image.RenderTransform></Image>
+
+								<Controls:HelpTextBlock Margin="30,24,30,0"
+									Grid.Row="1"
+									HelpText="Long tap a profile to add the the quicklist" />
+								
+								
 
 							</Grid>
 
@@ -455,8 +469,7 @@
 						Content="add a new profile" 
 						Tap="addNewProfileButton_Tap" 
 						Margin="12,0,0,24"
-						Style="{StaticResource typographicalBtnStyle}">
-					</Button>
+						Style="{StaticResource typographicalBtnStyle}"/>
 					
 					<Grid x:Name="noProfilesContainer"
 						Grid.Row="1"
@@ -472,7 +485,7 @@
 						</Grid.RowDefinitions>
 
 						<Image 
-							Grid.Row="0" Source="/Images/UpArrow.png" Stretch="None" Margin="0,-20,0,0" RenderTransformOrigin="0.5,0.5"
+							Grid.Row="0" Source="/Images/UpArrow.png" Stretch="None" Margin="0,12,0,0" RenderTransformOrigin="0.5,0.5"
 							>
 							<Image.RenderTransform>
 								<CompositeTransform ScaleX="-1"/>
@@ -711,8 +724,7 @@
 					
 							<StackPanel Margin="0,0,0,0">
 
-								<Button x:Name="whatIsPocketailorQuestionBtn" Style="{StaticResource questionButtonStyle}" >
-									What is Pocketailor?
+								<Button x:Name="whatIsPocketailorQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="What is Pocketailor?" >
 									<i:Interaction.Triggers>
 										<i:EventTrigger EventName="Tap">
 											<ec:ChangePropertyAction TargetName="whatIsPocketailorAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=whatIsPocketailorAnswerContainer}"/>
@@ -723,15 +735,14 @@
 								<StackPanel x:Name="whatIsPocketailorAnswerContainer"
 									Visibility="Collapsed">
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,5">
-										Help beat vanity sizing! Enter your measurements to find out your ideal clothing size for hundreds of brands worldwide.
+										<Run Text="Help beat vanity sizing! Enter your measurements to find out your ideal clothing size for hundreds of brands worldwide."/>
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12">
-										Pocketailor uses the manufacturers own size charts, but if the clothes don't fit, adjust and send the data back to the Pocketailor cloud so we can adjust the data for everyone else too.
+										<Run Text="Pocketailor uses the manufacturers own size charts, but if the clothes don't fit, adjust and send the data back to the Pocketailor cloud so we can adjust the data for everyone else too."/>
 									</TextBlock>
 								</StackPanel>
 
-								<Button x:Name="whatIsVanitySizingQuestionBtn" Style="{StaticResource questionButtonStyle}">
-									What is Vanity Sizing?
+								<Button x:Name="whatIsVanitySizingQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="What is Vanity Sizing?">
 									<i:Interaction.Triggers>
 										<i:EventTrigger EventName="Tap">
 											<ec:ChangePropertyAction TargetName="whatIsVanitySizingAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=whatIsVanitySizingAnswerContainer}"/>
@@ -742,18 +753,17 @@
 								<StackPanel x:Name="whatIsVanitySizingAnswerContainer"
 									Visibility="Collapsed">
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										Ever find that you are a size larger than you expected in one shop and a a size smaller in another?
+										<Run Text="Ever find that you are a size larger than you expected in one shop and a a size smaller in another?"/>
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										 Manufacturers have different standards for clothing sizes and some believe this is intentional to flatter their customers.
+										<Run Text="Manufacturers have different standards for clothing sizes and some believe this is intentional to flatter their customers."/>
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12">
-										 This is known as vanity sizing.
+										<Run Text="This is known as vanity sizing."/>
 									</TextBlock>
 								</StackPanel>
 
-								<Button x:Name="adjustmentProcessQuestionBtn" Style="{StaticResource questionButtonStyle}">
-									What happens when I make an adjustment?
+								<Button x:Name="adjustmentProcessQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="What happens when I make an adjustment?">
 									<i:Interaction.Triggers>
 										<i:EventTrigger EventName="Tap">
 											<ec:ChangePropertyAction TargetName="adjustmentProcessAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=adjustmentProcessAnswerContainer}"/>
@@ -764,24 +774,21 @@
 								<StackPanel x:Name="adjustmentProcessAnswerContainer"
 									Visibility="Collapsed">
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										Pocketailor is based on measurements given by each manufacturer. If you find that these are incorrect, you can adjust it in the app. 
+										<Run Text="Pocketailor is based on measurements given by each manufacturer. If you find that these are incorrect, you can adjust it in the app."/> 
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										Optionally this is sent back to the Pocketailor cloud anonymously so everyone that uses Pocketailor can benefit from your findings.
+										<Run Text="Optionally this is sent back to the Pocketailor cloud anonymously so everyone that uses Pocketailor can benefit from your findings."/>
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12">
-										You can select whether this happens or not in the settings, here.
+										<Run Text="You can select whether this happens or not in the settings, here."/>
 									</TextBlock>
 							
-									<Image Margin="0,0,0,12" HorizontalAlignment="Right" Source="/Images/RightArrow.png" Stretch="None" RenderTransformOrigin="0.5,0.5">
-										
-									</Image>
+									<Image Margin="0,0,0,12" HorizontalAlignment="Right" Source="/Images/RightArrow.png" Stretch="None" RenderTransformOrigin="0.5,0.5"/>
 
 								</StackPanel>
 
 
-								<Button x:Name="guaranteeQuestionBtn"  Style="{StaticResource questionButtonStyle}">
-									How accurate is Pocketailor sizing?
+								<Button x:Name="guaranteeQuestionBtn"  Style="{StaticResource questionButtonStyle}" Content="How accurate is Pocketailor sizing?">
 									<i:Interaction.Triggers>
 										<i:EventTrigger EventName="Tap">
 											<ec:ChangePropertyAction TargetName="guaranteeAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=guaranteeAnswerContainer}"/>
@@ -792,17 +799,16 @@
 								<StackPanel x:Name="guaranteeAnswerContainer"
 									Visibility="Collapsed">
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										As accurate as we can make it and with your input it will only get better!
+										<Run Text="As accurate as we can make it and with your input it will only get better!"/>
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12" FontFamily="Segoe WP Semibold">
-										 However, we cannot accept any responsibility for purchases or other decisions made based on Pocketailor sizing.
+										<Run Text="However, we cannot accept any responsibility for purchases or other decisions made based on Pocketailor sizing."/>
 									</TextBlock>
 
 								</StackPanel>
 
 
-								<Button x:Name="whoQuestionBtn" Style="{StaticResource questionButtonStyle}">
-									Who makes Pocketailor?
+								<Button x:Name="whoQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="Who makes Pocketailor?">
 									<i:Interaction.Triggers>
 										<i:EventTrigger EventName="Tap">
 											<ec:ChangePropertyAction TargetName="whoAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=whoAnswerContainer}"/>
@@ -813,10 +819,10 @@
 								<StackPanel x:Name="whoAnswerContainer"
 									Visibility="Collapsed">
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										You do! Pocketailor is built on the adjustments and feedback of its users. The bits and bytes are written by Brendan Arnold of Lassiv software.
+										<Run Text="You do! Pocketailor is built on the adjustments and feedback of its users. The bits and bytes are written by Brendan Arnold of Lassiv software."/>
 									</TextBlock>
 									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										Pocketailor is also built using Creative Commons photos and Open Source code, visit the 'legal and thanks' page to see a full list of contributors.
+										<Run Text="Pocketailor is also built using Creative Commons photos and Open Source code, visit the 'legal and thanks' page to see a full list of contributors."/>
 									</TextBlock>
 									<Controls:AboutButton x:Name="legalThanksBtn" TitleText="Legal and thanks" Margin="12,12,0,12" IconImage="/Images/AppBar/appbar.scale.unbalanced.png" Tap="legalThanksBtn_Tap" />
 
@@ -830,7 +836,9 @@
 								VerticalAlignment="Bottom" 
 								Margin="12,0,0,24" Grid.Row="1">
 								<TextBlock
-									FontSize="32" Foreground="{StaticResource PageTxtColor}">Version</TextBlock>
+									FontSize="32" Foreground="{StaticResource PageTxtColor}">
+									<Run Text="Version"/>
+								</TextBlock>
 								<TextBlock 
 									Margin="6,0,0,0" 
 									FontSize="32"
@@ -881,7 +889,9 @@
 					
 									<TextBlock 
 										Grid.Row="0"
-										Foreground="{StaticResource PageTxtColor}" Margin="12,0,0,0" TextWrapping="Wrap" FontSize="21.333">The default units for measurements. This can be overridden for each measurement.</TextBlock>
+										Foreground="{StaticResource PageTxtColor}" Margin="12,0,0,0" TextWrapping="Wrap" FontSize="21.333">
+										<Run Text="The default units for measurements. This can be overridden for each measurement."/>
+									</TextBlock>
 									<RadioButton x:Name="imperialRadioBtn" 
 										Grid.Row="1"
 										Content="IMPERIAL (ft/in/lb)" 
@@ -904,7 +914,9 @@
 									</Grid.RowDefinitions>
 									<TextBlock
 										Grid.Row="0" 
-										Foreground="{StaticResource PageTxtColor}" Margin="12,24,0,0" TextWrapping="Wrap" FontSize="21.333">Allow adjustments to be sent anonymously over the internet to Pocketailor. This will be used to improve the measurements.</TextBlock>
+										Foreground="{StaticResource PageTxtColor}" Margin="12,24,0,0" TextWrapping="Wrap" FontSize="21.333">
+										<Run Text="Allow adjustments to be sent anonymously over the internet to Pocketailor. This will be used to improve the measurements."/>
+									</TextBlock>
 									<RadioButton x:Name="allowFeedbackRadioBtn" 
 										Grid.Row="1"
 										Content="ALLOW FEEDBACK" 
@@ -929,19 +941,21 @@
 								</Grid>
 								<TextBlock
 									Grid.Row="0"
-									Foreground="{StaticResource PageTxtColor}" Margin="12,24,0,0" TextWrapping="Wrap" FontSize="21.333">Override the light or dark theme selection. Pocketailor will need to restart for this to take effect.</TextBlock>
+									Foreground="{StaticResource PageTxtColor}" Margin="12,24,0,0" TextWrapping="Wrap" FontSize="21.333">
+									<Run Text="Override the light or dark theme selection. Pocketailor will need to restart for this to take effect."/>
+								</TextBlock>
 								<RadioButton x:Name="lightThemeRadioBtn" 
-										Grid.Row="1"
-										Content="LIGHT THEME" 
-										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
-										GroupName="themeRadioGroup" Checked="lightThemeRadioBtn_Checked" />
+									Grid.Row="1"
+									Content="LIGHT THEME" 
+									Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
+									FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+									GroupName="themeRadioGroup" Checked="lightThemeRadioBtn_Checked" />
 								<RadioButton x:Name="darkThemeRadioBtn" 
-										Grid.Row="1"
-										Content="DARK THEME" 
-										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
-										GroupName="themeRadioGroup" Checked="darkThemeRadioBtn_Checked" />	
+									Grid.Row="1"
+									Content="DARK THEME" 
+									Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
+									FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+									GroupName="themeRadioGroup" Checked="darkThemeRadioBtn_Checked" />	
 
 							</StackPanel>
 
@@ -950,6 +964,19 @@
 				</Grid>
 			</controls:PanoramaItem>
 		</controls:Panorama>
+
+
+
+		<AdDuplex:AdControl
+			x:Name="adDuplexAd"
+			Grid.Row="1"
+			AppId="39175"
+			/>
+
+
+
+
+
 	</Grid>
 
 </phone:PhoneApplicationPage>

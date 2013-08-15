@@ -19,6 +19,7 @@
       <xs:element name="ConversionMeasurements" type="tns:ConversionMeasurements" />
       <xs:element name="Brands" type="tns:Brands" />
       <xs:element name="SelectedConversionData" type="tns:SelectedConversionData" />
+      <xs:element name="NewlyUnlockedConversions" type="tns:NewlyUnlockedConversions1" />
     </xs:sequence>
     <xs:attribute name="IsLocked" type="xs:boolean" />
     <xs:attribute name="ConversionsByRegionPageBGImage" type="tns:Basic-Image" />
@@ -253,7 +254,25 @@
   <xs:complexType name="NotesItem">
     <xs:attribute name="Text" type="xs:string" />
   </xs:complexType>
+  <xs:complexType name="NewlyUnlockedConversions1">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="NewlyUnlockedConversionsItem1" type="tns:NewlyUnlockedConversionsItem1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NewlyUnlockedConversionsItem1">
+    <xs:attribute name="ConversionName" type="xs:string" />
+  </xs:complexType>
   <xs:simpleType name="Basic-Image">
     <xs:restriction base="xs:anyURI" />
   </xs:simpleType>
+  <xs:complexType name="NewlyUnlockedConversionsItem">
+    <xs:sequence>
+      <xs:element name="NewlyUnlockedConversions" type="tns:NewlyUnlockedConversions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NewlyUnlockedConversions">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="NewlyUnlockedConversionsItem" type="tns:NewlyUnlockedConversionsItem" />
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>

@@ -21,15 +21,59 @@ namespace Pocketailor.View
     public partial class MeasurementsPage : PhoneApplicationPage
     {
 
-        #region Initialise page
 
         public MeasurementsPage()
         {
             InitializeComponent();
+
+
+
+            this.hideNeededMeasurementsHelpStoryBoard.Completed += (s, e) =>
+            {
+                if (App.VM.NewlyUnlockedConversions == null)
+                    this.toastHelpContainer.Visibility = Visibility.Collapsed;
+            };
+
+            this.hideNewlyUnlockedHelpStoryBoard.Completed += (s, e) =>
+            {
+                if (App.VM.CurrentNominatedConversion == null)
+                    this.toastHelpContainer.Visibility = Visibility.Collapsed;
+            };
+            
+
+
             
         }
 
-        
+        #region Animation gayness
+
+        public void ShowNeededMeasurementsHelp()
+        {
+            this.toastHelpContainer.Visibility = Visibility.Visible;
+            this.showNeededMeasurementsHelpStoryBoard.Begin();
+        }
+
+        public void HideNeededMeasurementsHelp()
+        {
+            this.hideNeededMeasurementsHelpStoryBoard.Begin();
+        }
+
+        public void ShowNewlyUnlockedConversionsHelp()
+        {
+            this.toastHelpContainer.Visibility = Visibility.Visible;
+            this.showNewlyUnlockedHelpStoryBoard.Begin();
+        }
+
+        public void HideNewlyUnlockedConversionsHelp()
+        {
+            this.hideNewlyUnlockedHelpStoryBoard.Begin();
+        }
+
+        #endregion
+
+
+
+
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
@@ -40,11 +84,21 @@ namespace Pocketailor.View
             // Find the selected profile and assign it  
             int id = Convert.ToInt32(NavigationContext.QueryString["ProfileId"]);
             App.VM.LoadMeasurementsPageData(id);
-            App.VM.RefreshPostMeasurementEdit();
+            //App.VM.RefreshPostMeasurementEdit();
 
         }
 
-        #endregion
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            // Switch off the NewlyUnlockedAnimations
+            if (e.IsNavigationInitiator)
+            {
+                App.VM.CancelNewlyUnlocked();
+            }
+
+        }
 
 
         private void ConfirmAndDeleteMeasurement(Measurement s)
@@ -58,42 +112,13 @@ namespace Pocketailor.View
 
 
 
-        #region New Measurement behaviours
-
 
         private void changeRegionsAppBarBtn_Click(Object sender, EventArgs e) 
         {
             NavigationService.Navigate(new Uri("/View/Pages/EditRegionPage.xaml", UriKind.Relative));
         }
 
-
-       
-
-        #endregion
-
-        #region Other page behaviours
-
         
-        // Delete a measurement from the context menu
-        //private void deleteContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    if (sender != null)
-        //    {
-        //        Measurement s = (sender as MenuItem).DataContext as Measurement;
-        //        this.ConfirmAndDeleteMeasurement(s);
-        //    }
-        //}
-
-        //private void editContextMenuItem_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    if (sender != null)
-        //    {
-        //        Measurement s = (sender as MenuItem).DataContext as Measurement;
-        //        App.VM.SelectedMeasurement = s;
-        //        NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditMeasurementPage.xaml?Action={0}", EditMeasurementPageActions.Edit), UriKind.Relative));
-        //    }
-        //}
-
         //private void secondaryTileAppBarMenuItem_Click(object sender, System.EventArgs e)
         //{
         //    SecondaryTileHelpers.CreateSecondaryTile(App.VM.SelectedProfile);
@@ -117,7 +142,13 @@ namespace Pocketailor.View
                 App.VM.CurrentNominatedConversion = App.VM.PendingCurrentNominatedConversion;
                 App.VM.PendingCurrentNominatedConversion = null;
             }
-            
+
+            if (this.ScrollDownAfterPivotJump.HasValue)
+            {
+                this.conversionsScrollViewer.ScrollToVerticalOffset((int)this.ScrollDownAfterPivotJump);
+                this.ScrollDownAfterPivotJump = null;
+            }
+
 
             //switch ((sender as Pivot).SelectedIndex)
             //{
@@ -136,43 +167,7 @@ namespace Pocketailor.View
 
 
 
-        //private void EditMeasurementFromTemplate(MeasurementId id)
-        //{
-        //    MeasurementTemplate st = App.VM.MeasurementTemplates.Where(x => x.Id == id).First();
-        //    App.VM.SelectedMeasurement = new Measurement()
-        //    {
-        //        Name = st.Name,
-        //        MeasurementType = st.MeasurementType,
-        //        MeasurementId = st.Id,
-        //    };
-        //    NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditMeasurementPage.xaml?Action={0}",
-        //        EditMeasurementPageActions.New), UriKind.Relative));
-        //}
-
-        
-
-
-        //private void PromptForMissingMeasurements(List<MeasurementId> missingIds, string conversionName)
-        //{
-        //    string s = String.Empty;
-        //    foreach (MeasurementId id in missingIds)
-        //    {
-        //        s += Environment.NewLine + "  \u2022 " +  Lookup.Measurements[id].ToLower();
-        //    }
-        //    string measurementName = Lookup.Measurements[missingIds[0]];
-        //    string msg = String.Format("To calculate {0} conversions the following measurements need to be entered,{1}",
-        //        conversionName, s);
-        //    string title = String.Format("Add {0} measurement?", measurementName.ToLower());
-        //    string btnTitle = String.Format("add {0} measurement", measurementName.ToLower());
-
-            
-        //    MessageBoxResult result = MessageBox.Show(msg, title, MessageBoxButton.OKCancel);
-        //    if (result == MessageBoxResult.OK)
-        //    {
-        //        this.EditMeasurementFromTemplate(missingIds[0]);
-        //    }
-        //}
-
+       
 
 
         private void JumpToMeasurements()
@@ -185,6 +180,9 @@ namespace Pocketailor.View
             NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?ProfileId={0}&Action={1}", 
                 App.VM.SelectedProfile.Id, EditProfilePageActions.Edit), UriKind.Relative));
         }
+
+
+        #region Conversion button handlers
 
         private void trouserConversionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -345,20 +343,16 @@ namespace Pocketailor.View
             }
         }
 
+
+        #endregion
+
+
         private void cancelShowNominatedMeasurementsHelpBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.UnNominateConversion();
-            //this.hideNeededMeasurementsHelpStoryBoard.Begin();
         }
 
 
-        // Toggle the visibility
-        //private void measurementGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    Grid g = sender as Grid;
-        //    ListBox lb = g.FindName("otherUnitsListBox") as ListBox;
-        //    if (lb.Visibility == Visibility.Visible) lb.Visibility = Visibility.Collapsed; else lb.Visibility = Visibility.Visible;
-        //}
 
         private void switchUnitsBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -377,23 +371,78 @@ namespace Pocketailor.View
             int profileId = App.VM.SelectedProfile.Id;
             NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditMeasurementPage.xaml?MeasurementId={0}&ProfileId={1}",
                 m.MeasurementId, profileId), UriKind.Relative));
+        }
+
+		private void newlyUnlockedBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+		{
+            ConversionId cId = ((sender as NewlyUnlockedConversionNotificationBtn).DataContext as ConversionBtnData).ConversionId;
+            this.JumpToConversionBtn(cId);
 		}
 
-		
+
+        public int? ScrollDownAfterPivotJump { get; set; }
+
+        public void JumpToConversionBtn(ConversionId cId)
+        {
+            List<ConversionId> bottomHalfConversions = new List<ConversionId>()
+            {
+                ConversionId.WetsuitSize,
+                ConversionId.SkiBootSize,
+                ConversionId.ShoeSize,
+            };
+            if (bottomHalfConversions.Contains(cId))
+            {
+                this.ScrollDownAfterPivotJump = 800;
+            }
+            if (this.mainPivot.SelectedIndex != 0) this.mainPivot.SelectedIndex = 0;
+            
+        }
+
+
+
+        #region Animations
+
+        //public void ShowNewlyUnlockedBtnHelp()
+        //{
+        //    Dispatcher.BeginInvoke(() => {
+
+        //        if (this.LayoutRoot.Resources.Contains("showNewlyUnlockedBtnHelp")) {
+        //            (this.LayoutRoot.Resources["showNewlyUnlockedBtnHelp"] as Storyboard).Begin();
+        //        } else {
+        //            IEasingFunction quinticEase = new QuinticEase() { EasingMode = System.Windows.Media.Animation.EasingMode.EaseOut };
+        //            Duration oneSecDuration = new Duration(TimeSpan.FromMilliseconds(1000));
+
+        //            Storyboard sb = new Storyboard()
+        //            sb.Duration = oneSecDuration;
+        //            sb.SetValue(NameProperty, "showNewlyUnlockedBtnHelp");
+
+        //            // Animate the container
+        //            FrameworkElement container = this.toastHelpContainer as FrameworkElement;
+        //            DoubleAnimation containerAnimation = new DoubleAnimation()
+        //            {
+        //                Duration = oneSecDuration,
+        //                From = container.Height,
+        //                To = container.Height + 194,
+        //            };
+        //            Storyboard.SetTargetProperty(containerAnimation, new PropertyPath(HeightProperty)); // Unsure about this latter param
+        //            Storyboard.SetTarget(containerAnimation, this.toastHelpContainer); // Unsure about this latter param
+        //            sb.Children.Add(containerAnimation);
+                    
+        //            // Animate the 
+
+
+        //            // Add to resource dictionary for later reference
+        //            this.LayoutRoot.Resources.Add("showNewlyUnlockedBtnHelp", sb);
+        //            sb.Begin();
+        //        }
+
+
+
+        //    });
+        //}
+
 
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
