@@ -181,11 +181,14 @@ namespace Pocketailor.ViewModel
         }
 
 
-        internal void ViewTwitter()
+        internal void ViewTwitter(string s)
         {
-            WebBrowserTask wbTask = new WebBrowserTask();
-            wbTask.Uri = new Uri(AppConstants.TWITTER_URL, UriKind.Absolute);
-            wbTask.Show();
+            ShareStatusTask sTask = new ShareStatusTask();
+            sTask.Status = s;
+            sTask.Show();
+            //WebBrowserTask wbTask = new WebBrowserTask();
+            //wbTask.Uri = new Uri(AppConstants.TWITTER_URL, UriKind.Absolute);
+            //wbTask.Show();
         }
 
         internal void ViewFacebook()

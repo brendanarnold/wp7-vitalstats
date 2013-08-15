@@ -307,9 +307,14 @@ namespace Pocketailor.View
             App.VM.RateApp();
         }
 
+        private void twitterBtn2_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.ViewTwitter("@LassivCo");
+        }
+
         private void twitterBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            App.VM.ViewTwitter();
+            App.VM.ViewTwitter("@LassivCo #Pocketailor needs: ");
         }
 
         private void facebookBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)

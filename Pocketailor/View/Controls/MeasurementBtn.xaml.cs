@@ -63,6 +63,7 @@ namespace Pocketailor.View.Controls
         }
 
 
+
         public static readonly DependencyProperty UnitCultureProperty =
                     DependencyProperty.Register("UnitCulture", typeof(UnitCultureId?), typeof(MeasurementBtn),
                     new PropertyMetadata(null, new PropertyChangedCallback(UnitCulturePropertyChanged)));

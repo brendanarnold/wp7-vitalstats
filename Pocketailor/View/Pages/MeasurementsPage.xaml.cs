@@ -97,6 +97,11 @@ namespace Pocketailor.View
             {
                 App.VM.CancelNewlyUnlocked();
             }
+            // Switch off NominatedConversion
+            if (e.IsNavigationInitiator && !e.Uri.ToString().StartsWith("/View/Pages/EditMeasurementPage.xaml"))
+            {
+                App.VM.UnNominateConversion();
+            }
 
         }
 
@@ -106,7 +111,7 @@ namespace Pocketailor.View
             MessageBoxResult res = MessageBox.Show(String.Format("Are you sure you want to delete the measurement '{0}'?", s.Name), "Delete measurement?", MessageBoxButton.OKCancel);
             if (res == MessageBoxResult.OK)
             {
-                App.VM.DeleteMeasurementsFromProfile(s, App.VM.SelectedProfile);
+                App.VM.DeleteMeasurementFromProfile(s, App.VM.SelectedProfile);
             }
         }
 

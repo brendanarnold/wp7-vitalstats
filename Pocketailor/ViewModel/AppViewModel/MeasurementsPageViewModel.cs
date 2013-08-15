@@ -16,16 +16,29 @@ namespace Pocketailor.ViewModel
         {
             // Only load data if it is not present or is for the wrong profile
             if (this.SelectedProfile == null || this.SelectedProfile.Id != profileId)
-            {
                 this.SelectedProfile = (from Profile p in this.Profiles where p.Id == profileId select p).First();
-                if (this.ViewingUnitCulture == null) this.ViewingUnitCulture = this.UnitCulture;
+
+            if (this.ViewingUnitCulture == null) this.ViewingUnitCulture = this.UnitCulture;
+
+            // Only load FullMeasurements if not set for the current profile - may be incongruous with profile Measurements if 
+            // FullMeasurements not updated properly based on changes elsewhere in the app
+            if (!this.IsFullMeasurementsLoadedForProfile(this.SelectedProfile))
                 this.LoadFullMeasurements();
-            } else {
-                if (this.ViewingUnitCulture == null) this.ViewingUnitCulture = this.UnitCulture;
-                if (this.FullMeasurements == null) this.LoadFullMeasurements();
-            }
             
         }
+
+
+        public bool IsFullMeasurementsLoadedForProfile(Profile profile)
+        {
+            if (this.FullMeasurements == null) return false;
+            // Check that there is the same number of measurements in FullMeasurements as there are on the profile
+            bool isSameNumberMeasuremnts = this.FullMeasurements.Where(m => m._profileId != null).Count() == profile.Measurements.Count();
+            // Check there isn't another measurements belonging to other profiles in the list
+            bool isAnyOtherProfileMeasurement = this.FullMeasurements.Where(m => (m._profileId != null && m._profileId != profile.Id)).Any();
+            // N.B. may be just empty measurements in the list from when another (empty) profile was loaded - this is cool, do not need to reload
+            return !isAnyOtherProfileMeasurement && isSameNumberMeasuremnts;
+        }
+
 
         // Helkper method to notify the View of possible updates to HasMeasurement properties
         // TODO: May not be necessary now add profile updated
@@ -70,7 +83,11 @@ namespace Pocketailor.ViewModel
             // Need to calculate which conversions are unlocked. Take a tally of which are 
             // available before attaching to the profile. Use a List to resolve now.
             List<ConversionBtnData> unlockedBefore = this.Conversions.Values.Where(c => c.HasRequiredMeasurements).ToList();
-            
+
+            // Need to run IsFullMeasurementsLoadeForProfile before adding to profile in order that one of the tests 
+            // in the method remains consistant
+            if (this.IsFullMeasurementsLoadedForProfile(profile))
+                this.SwapInToFullMeasurements(measurement);
             // Attach to the profile
             measurement.Profile = profile;
             profile.Measurements.Add(measurement);
@@ -78,19 +95,10 @@ namespace Pocketailor.ViewModel
             this.appDB.SubmitChanges();
             profile.NotifyPropertyChanged("Measurements");
             
-            // Need to swap out the placeholder measurement in FullMeasurements for the one attached to the profile
-            this.SwapInToFullMeasurements(App.VM.SelectedMeasurement);
-            
             // Compare to before
             IEnumerable<ConversionBtnData> unlockedAfter = this.Conversions.Values.Where(c => c.HasRequiredMeasurements);
             List<ConversionBtnData> newlyUnlocked = unlockedAfter.Except(unlockedBefore).ToList();
-            List<ConversionBtnData> newlyLocked = unlockedBefore.Except(unlockedAfter).ToList();
 
-            // Update the UI
-            foreach (ConversionBtnData c in newlyLocked)
-            {
-                c.NotifyPropertyChanged("HasRequiredMeasurements");
-            }
             // Set the NewlyUnlocked flag on the conversions and update UI
             foreach (ConversionBtnData c in newlyUnlocked)
             {
@@ -102,8 +110,6 @@ namespace Pocketailor.ViewModel
             else 
                 this.NewlyUnlockedConversions = new ObservableCollection<ConversionBtnData>(newlyUnlocked);
             
-            //this.NotifyPropertyChanged("ShowMeasurementPageHelpContainer");
-
             // Check if final measurement entered for currently nominated conversion
             if (this.CurrentNominatedConversion.HasValue
                 && this.NewlyUnlockedConversions != null
@@ -114,6 +120,36 @@ namespace Pocketailor.ViewModel
             }
         }
 
+        public void DeleteMeasurementFromProfile(Measurement measurement, Profile profile)
+        {
+            List<ConversionBtnData> unlockedBefore = this.Conversions.Values.Where(c => c.HasRequiredMeasurements).ToList();
+
+            // Need to run IsFullMeasurementsLoadedForProfile before removing from profile so that one of the 
+            // internal tests remains consistant
+            if (this.IsFullMeasurementsLoadedForProfile(profile))
+                this.SwapInToFullMeasurements(this.GetEmptyMeasurementFromTemplate(measurement.MeasurementId));
+            profile.Measurements.Remove(measurement);
+            this.appDB.Measurements.DeleteOnSubmit(measurement);
+            this.appDB.SubmitChanges();
+            profile.NotifyPropertyChanged("Measurements");
+
+            
+
+            IEnumerable<ConversionBtnData> unlockedAfter = this.Conversions.Values.Where(c => c.HasRequiredMeasurements);
+            IEnumerable<ConversionBtnData> newlyLocked = unlockedBefore.Except(unlockedAfter);
+
+            // Set the NewlyUnlocked flag on the conversions and update UI
+            foreach (ConversionBtnData c in newlyLocked)
+            {
+                c.IsNewlyUnlocked = false;
+                c.NotifyPropertyChanged("HasRequiredMeasurements");
+                if (this.NewlyUnlockedConversions.Contains(c)) this.NewlyUnlockedConversions.Remove(c);
+                if (this.NewlyUnlockedConversions.Count == 0) this.NewlyUnlockedConversions = null;
+            }
+
+        }
+
+
         public void CancelNewlyUnlocked()
         {
             foreach (ConversionBtnData c in this.Conversions.Values)
@@ -121,20 +157,10 @@ namespace Pocketailor.ViewModel
                 c.IsNewlyUnlocked = false;
             }
             this.NewlyUnlockedConversions = null;
-            this.NotifyPropertyChanged("NewlyUnlockedConversions");
-            //this.NotifyPropertyChanged("ShowMeasurementPageHelpContainer");
         }
 
 
-        public void DeleteMeasurementsFromProfile(Measurement measurement, Profile profile)
-        {
-            profile.Measurements.Remove(measurement);
-            this.appDB.Measurements.DeleteOnSubmit(measurement);
-            this.appDB.SubmitChanges();
-            profile.NotifyPropertyChanged("Measurements");
-            // TODO: similar to above
-            
-        }
+        
 
         #endregion
 
@@ -495,18 +521,27 @@ namespace Pocketailor.ViewModel
             List<Measurement> buff = new List<Measurement>(); 
             buff.AddRange(this.SelectedProfile.Measurements.ToList());
             foreach (MeasurementId mId in missingMeasurementIds)
-            {
-                MeasurementTemplate mt = Model.Static.MeasurementTemplates.Where(m => m.Id == mId).First();
-                buff.Add(new Measurement()
-                {
-                    MeasurementId = mId,
-                    Name = mt.Name,
-                    Value = null,
-                    MeasurementType = mt.MeasurementType,
-                });
-            }
+                buff.Add(this.GetEmptyMeasurementFromTemplate(mId));
             buff.Sort((x, y) => x.Name.CompareTo(y.Name));
+            // Finally nominate conversions if necessary
+            if (this.CurrentNominatedConversion != null)
+            {
+                this.NominateConversion((ConversionId)this.CurrentNominatedConversion);
+            }
             this.FullMeasurements = new ObservableCollection<Measurement>(buff);
+        }
+
+
+        public Measurement GetEmptyMeasurementFromTemplate(MeasurementId mId)
+        {
+            MeasurementTemplate mt = Model.Static.MeasurementTemplates.Where(m => m.Id == mId).First();
+            return new Measurement()
+            {
+                MeasurementId = mId,
+                Name = mt.Name,
+                Value = null,
+                MeasurementType = mt.MeasurementType,
+            };
         }
 
         // Swap in the new Measurement object which is tied to a profile (as a result of editing) instead

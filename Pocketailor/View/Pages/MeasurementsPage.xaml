@@ -657,12 +657,13 @@
 							<ListBox 
 								Grid.Row="0"
 								x:Name="newlyUnlockedConversionHelpContainer"
+								Margin="0,0,0,0"
 								ItemsSource="{Binding NewlyUnlockedConversions}">
 								<ListBox.ItemTemplate>
 									<DataTemplate>
 										<Controls:NewlyUnlockedConversionNotificationBtn 
 											x:Name="newlyUnlockedBtn"
-											Margin="21,0,0,24"
+											Margin="21,0,0,12"
 											ConversionName="{Binding ConversionName, Converter={StaticResource StringToLower}}"
 											IsVisible="{Binding Visibility, ElementName=newlyUnlockedConversionHelpContainer, Converter={StaticResource VisibilityToBool}}" Tap="newlyUnlockedBtn_Tap" />
 									</DataTemplate>
