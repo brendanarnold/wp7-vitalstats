@@ -10,7 +10,14 @@
     d:DesignHeight="480" d:DesignWidth="480">
     
     <StackPanel x:Name="LayoutRoot" Orientation="Horizontal">
-        <TextBox x:Name="txtBox" Width="150" InputScope="Number" Background="{StaticResource UIBGColor}"></TextBox>
-        <TextBlock x:Name="txtBlock" VerticalAlignment="Center" Foreground="{StaticResource DialogTxtColor}">unit</TextBlock>
+        <TextBox 
+			x:Name="txtBox" 
+			Width="150" 
+			InputScope="Number"></TextBox>
+        <TextBlock 
+			x:Name="txtBlock" 
+			VerticalAlignment="Center" 
+			Style="{StaticResource dialogLabelTextBlockStyle}" 
+			>unit</TextBlock>
     </StackPanel>
 </UserControl>

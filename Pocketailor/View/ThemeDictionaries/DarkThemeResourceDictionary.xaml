@@ -4,75 +4,43 @@
 	<!-- Resource dictionary entries should be defined here. -->
 
 
-  <!--
+	<!--
 	Olive  #8ABE2D
 	Banana #FCCD43
 	DarkGrey #313131
 	-->
 
-  <SolidColorBrush x:Key="PivotTitleColor">#FCCD43</SolidColorBrush>
-  <SolidColorBrush x:Key="PivotHeaderColor">#ffffff</SolidColorBrush>
-  <SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
-  <SolidColorBrush x:Key="PageTxtColor">#ffffff</SolidColorBrush>
-  <SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
-  <SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
-  <SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
+	<SolidColorBrush x:Key="PivotTitleColor">#FCCD43</SolidColorBrush>
+	<SolidColorBrush x:Key="PivotHeaderColor">#ffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="PageBGColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="PageTxtColor">#ffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="SubTitleColor">#FCCD43</SolidColorBrush>
+	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="AccentColor">#212021</SolidColorBrush>
 
-  <SolidColorBrush x:Key="InactiveTileBGColor">#FF444444</SolidColorBrush>
-  <SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
-  <SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
+	<SolidColorBrush x:Key="InactiveTileBGColor">#FF444444</SolidColorBrush>
+	<SolidColorBrush x:Key="TileBGColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="TileTxtColor">#ffffff</SolidColorBrush>
   
-  <SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
-  <SolidColorBrush x:Key="DialogBGColor">#000000</SolidColorBrush>
-  <SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
-  <SolidColorBrush x:Key="DialogSecondaryTxtColor">#FFFFFF</SolidColorBrush>
+	<SolidColorBrush x:Key="ImgOverlayColor">#8ABE2D</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogBGColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogTxtColor">#FCCD43</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#FFFFFF</SolidColorBrush>
   
-  <SolidColorBrush x:Key="HelpTxtColor">#FFFFFF</SolidColorBrush>
+	<SolidColorBrush x:Key="HelpTxtColor">#FFFFFF</SolidColorBrush>
 	<SolidColorBrush x:Key="HelpTxtBGColor">#00FFFFFF</SolidColorBrush>
 
-  <SolidColorBrush x:Key="UIBGColor">#aaffffff</SolidColorBrush>
-  <SolidColorBrush x:Key="UIFGColor">#313131</SolidColorBrush>
+	<Color x:Key="ApplicationBarBGColor">#313131</Color>
+	<Color x:Key="ApplicationBarFGColor">#feffff</Color>
+	<!-- Can't be exactly white for the light theme -->
 
-  <Color x:Key="ApplicationBarBGColor">#313131</Color>
-  <Color x:Key="ApplicationBarFGColor">#feffff</Color>
-  <!-- Can't be exactly white for the light theme -->
-
-  <Color x:Key="SystemTrayFGColor">#feffff</Color>
-  <Color x:Key="SystemTrayBGColor">#000000</Color>
+	<Color x:Key="SystemTrayFGColor">#feffff</Color>
+	<Color x:Key="SystemTrayBGColor">#000000</Color>
 
 
-  <BitmapImage x:Key="LassivTitleSmall" UriSource="/Images/Dark/LassivTitleSmall.png" />
-		
+	<BitmapImage x:Key="LassivTitleSmall" UriSource="/Images/Dark/LassivTitleSmall.png" />
 	<BitmapImage x:Key="LassivTitle" UriSource="/Images/Dark/LassivTitle.png" />
 
 
-	<Style x:Key="SubTitleTextBoxStyle" TargetType="TextBlock">
-    <Setter Property="Foreground" Value="{StaticResource SubTitleColor}"/>
-    <Setter Property="FontSize" Value="24"/>
-  </Style>
-
-  <!--
-
-  <SolidColorBrush x:Key="RadioCheckBoxCheckBrush">#FF000000</SolidColorBrush>
-  <SolidColorBrush x:Key="RadioCheckBoxCheckDisabledBrush">#66000000</SolidColorBrush>
-  <SolidColorBrush x:Key="RadioCheckBoxBrush">#BFFFFFFF</SolidColorBrush>
-  <SolidColorBrush x:Key="RadioCheckBoxDisabledBrush">#66FFFFFF</SolidColorBrush>
-  <SolidColorBrush x:Key="RadioCheckBoxPressedBorderBrush">#FFFFFFFF</SolidColorBrush>
-  <SolidColorBrush x:Key="RadioCheckBoxPressedBrush">#FFFFFFFF</SolidColorBrush>
-  <Color x:Key="TextBoxColor">#BFFFFFFF</Color>
-  <Color x:Key="TextBoxEditBackgroundColor">#FFFFFFFF</Color>
-  <Color x:Key="TextBoxEditBorderColor">#FFFFFFFF</Color>
-  <Color x:Key="TextBoxForegroundColor">#FF000000</Color>
-  <Color x:Key="TextBoxReadOnlyColor">#77000000</Color>
-  <Color x:Key="TextBoxSelectionForegroundColor">#FFFFFFFF</Color>
-
-  -->
-
-
-
-
-  
-
-  
 
 </ResourceDictionary>

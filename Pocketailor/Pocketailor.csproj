@@ -189,9 +189,6 @@
     <Compile Include="View\Controls\AboutButton.xaml.cs">
       <DependentUpon>AboutButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\AdjustmentWidget.xaml.cs">
-      <DependentUpon>AdjustmentWidget.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Controls\ConversionResultsBtn.xaml.cs">
       <DependentUpon>ConversionResultsBtn.xaml</DependentUpon>
     </Compile>
@@ -279,10 +276,6 @@
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
     <Page Include="View\Controls\AboutButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Controls\AdjustmentWidget.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

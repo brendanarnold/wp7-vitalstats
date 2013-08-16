@@ -28,23 +28,9 @@
     
     
 		<Pocketailor_View:VisibilityToBool x:Key="VisibilityToBool"/>
-		
-    
-    
-		
-		
-    
-    
 		<Pocketailor_View:NullableToBool x:Key="NullableToBool"/>
-		
-    
-    
 		<Pocketailor_View:StringToAffixedString x:Key="StringToAffixedString"/>
-		
-    
-    
 		<Pocketailor_View:UnitCultureToString x:Key="UnitCultureToString"/>
-		
 		<Pocketailor_View:StringToNextString x:Key="StringToNextString"/>
 		
 		<Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelLocator" />
@@ -404,8 +390,7 @@
 
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="10" />
-			<RowDefinition Height="71"/>
+			<RowDefinition Height="80" />
 		</Grid.RowDefinitions>
 		
 		
@@ -430,49 +415,45 @@
 			x:Name="mainPivot" Margin="0" SelectionChanged="Pivot_SelectionChanged_1">
 			
 			<controls:Pivot.Title>
-                
-				<StackPanel Orientation="Vertical" Margin="0,0,0,0">
-					
-					<Grid x:Name="titleBarGrid" Margin="0,0,0,0" VerticalAlignment="Top">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto"/>
-							<ColumnDefinition Width="*"/>
-						</Grid.ColumnDefinitions>
+                	
+				<Grid x:Name="titleBarGrid" Margin="0,0,0,0" VerticalAlignment="Top">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
 						
-						<Image
-							Grid.Column="0" 
-							Source="{StaticResource LassivTitleSmall}"
-							HorizontalAlignment="Left" Margin="0,0,0,-3" Stretch="None" />
-						<Button Grid.Column="1" 
-							x:Name="profileNameBtn" 
-							Margin="0,0,12,0" 
-							Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
-							Tap="profileNameBtn_Tap">
-							<Button.Style>
-								<Style TargetType="Button">
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="Button">
-												<Grid>
-													<TextBlock 
-														FontSize="26"
-														VerticalAlignment="Center" 
-														HorizontalAlignment="Right"
-														FontWeight="Normal"
-														FontFamily="Segoe WP Semilight"
-														Foreground="{StaticResource PageTxtColor}"
-														Text="{TemplateBinding Content}" />
-												</Grid>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter> 
-								</Style>
-							</Button.Style>
-						</Button>
-					</Grid>
+					<Image
+						Grid.Column="0" 
+						Source="{StaticResource LassivTitleSmall}"
+						HorizontalAlignment="Left" Margin="0,0,0,-3" Stretch="None" />
+					<Button Grid.Column="1" 
+						x:Name="profileNameBtn" 
+						Margin="0,0,12,0" 
+						Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
+						Tap="profileNameBtn_Tap">
+						<Button.Style>
+							<Style TargetType="Button">
+								<Setter Property="Template">
+									<Setter.Value>
+										<ControlTemplate TargetType="Button">
+											<Grid>
+												<TextBlock 
+													FontSize="26"
+													VerticalAlignment="Center" 
+													HorizontalAlignment="Right"
+													FontWeight="Normal"
+													FontFamily="Segoe WP Semilight"
+													Foreground="{StaticResource PageTxtColor}"
+													Text="{TemplateBinding Content}" />
+											</Grid>
+										</ControlTemplate>
+									</Setter.Value>
+								</Setter> 
+							</Style>
+						</Button.Style>
+					</Button>
+				</Grid>
 
-				</StackPanel>
-          
 			</controls:Pivot.Title>
 		
 		
@@ -490,7 +471,9 @@
 				<ScrollViewer x:Name="conversionsScrollViewer">
 					<StackPanel Orientation="Vertical" Margin="12,0">
 						
-						<TextBlock x:Name="clothingSubTitle"  Margin="0,12,0,12" Style="{StaticResource SubTitleTextBoxStyle}">
+						<TextBlock x:Name="clothingSubTitle"  
+							Margin="0,12,0,12" 
+							Style="{StaticResource subTitleTextBlockStyle}">
 							<Run Text="CLOTHING"/>
 						</TextBlock>
 						
@@ -595,7 +578,7 @@
 							</Controls:ConversionBtn>	
 						</Grid>
 
-						<TextBlock   x:Name="sportsSubTitle" Margin="0,12,0,12" Style="{StaticResource SubTitleTextBoxStyle}">
+						<TextBlock   x:Name="sportsSubTitle" Margin="0,12,0,12" Style="{StaticResource subTitleTextBlockStyle}">
 							<Run Text="SPORTS"/>
 						</TextBlock>
 
@@ -722,7 +705,7 @@
 
 							<TextBlock x:Name="measurementsSubTitle"  
 								Grid.Row="1"
-								Margin="12,12,0,12" Style="{StaticResource SubTitleTextBoxStyle}">
+								Margin="12,12,0,12" Style="{StaticResource subTitleTextBlockStyle}">
 								<Run Text="MEASUREMENTS"/>
 							</TextBlock>
 

@@ -10,8 +10,10 @@
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 	xmlns:Pocketailor_View="clr-namespace:Pocketailor.View"
 	xmlns:Pocketailor_View_Controls="clr-namespace:Pocketailor.View.Controls"
-	xmlns:Pocketailor="clr-namespace:Pocketailor"
-	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+	xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
+    xmlns:Pocketailor="clr-namespace:Pocketailor"
+	xmlns:AdDuplex="clr-namespace:AdDuplex;assembly=AdDuplex.WindowsPhone"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
 	x:Class="Pocketailor.View.EditMeasurementPage"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True" 
@@ -45,6 +47,8 @@
 	<phone:PhoneApplicationPage.Resources>
 		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
 		<Pocketailor_View:StringToUpper x:Key="StringToUpper"/>
+		<Pocketailor_View:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty"/>
+
 
         <DataTemplate x:Name="defaultListPickerTemplate">
             <StackPanel>
@@ -80,25 +84,89 @@
 
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}">
 		
-		<ScrollViewer x:Name="containerScrollViewer">
-			<StackPanel x:Name="containerStackPanel">
-				<TextBlock x:Name="profileNameTextBlock" TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
-				<TextBlock x:Name="pageTitleTextBlock" TextWrapping="Wrap" Text="title here" Margin="36,0,0,0" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
+		                	
+		<Grid x:Name="titleBarGrid" 
+			Grid.Row="0"
+			Margin="36,0,0,0" VerticalAlignment="Top">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+						
+			<Image
+				Grid.Column="0" 
+				Source="{StaticResource LassivTitleSmall}"
+				HorizontalAlignment="Left" Margin="0,0,0,-3" Stretch="None" />
+			<Button Grid.Column="1" 
+				x:Name="profileNameBtn" 
+				Margin="0,0,36,0" 
+				Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
+				Tap="profileNameBtn_Tap">
+				<Button.Style>
+					<Style TargetType="Button">
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="Button">
+									<Grid>
+										<TextBlock 
+											FontSize="26"
+											VerticalAlignment="Center" 
+											HorizontalAlignment="Right"
+											FontWeight="Normal"
+											FontFamily="Segoe WP Semilight"
+											Foreground="{StaticResource PageTxtColor}"
+											Text="{TemplateBinding Content}" />
+									</Grid>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter> 
+					</Style>
+				</Button.Style>
+			</Button>
+		</Grid>
+
+
+		<TextBlock
+			Grid.Row="1" 
+			x:Name="pageTitleTextBlock"
+			TextWrapping="Wrap" Text="title here" 
+			Margin="36,0,36,6" 
+			FontSize="{StaticResource DialogTitleFontSize}" 
+			FontFamily="{StaticResource DialogTitleFont}" 
+			Foreground="{StaticResource DialogSecondaryTxtColor}"/>
+		
+		<Controls:HelpTextBlock
+			Grid.Row="2" 
+			Margin="36,0,36,24"
+			HelpText="Uncheck any brands that you do not want to appear in the main list." />
+		
+
+
+		<ScrollViewer
+			Grid.Row="3"
+			x:Name="containerScrollViewer">
+			
+			<StackPanel x:Name="containerStackPanel">
+				
 				<toolkit:ListPicker x:Name="preferredUnitListPicker" 
 					Header="UNITS"
 					SelectionChanged="preferredUnitListPicker_SelectionChanged"
 					Margin="36,12" >
 					<toolkit:ListPicker.Resources>
 						<DataTemplate x:Key="DataTemplate1">
-							<TextBlock Foreground="{StaticResource DialogTxtColor}">
+							<TextBlock
+								Style="{StaticResource dialogLabelTextBlockStyle}">
 								<Run Text="UNITS"/>
 							</TextBlock>
 						</DataTemplate>
 					</toolkit:ListPicker.Resources>
-					<toolkit:ListPicker.Background>
-						<StaticResource ResourceKey="UIBGColor"/>
-					</toolkit:ListPicker.Background>
 					<toolkit:ListPicker.FullModeItemTemplate>
 						<StaticResource ResourceKey="defaultListPickerTemplate"/>
 					</toolkit:ListPicker.FullModeItemTemplate>
@@ -111,27 +179,29 @@
 				</toolkit:ListPicker>
 
 				<StackPanel  x:Name="valueContainer" Margin="25,0,25,20" Orientation="Horizontal">
-					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox" Background="{StaticResource UIBGColor}"/>
-					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox" Background="{StaticResource UIBGColor}"/>
+					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox" />
+					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox" />
 				</StackPanel>
 			
-				<Grid>
+				<Grid Background="{StaticResource TileBGColor}">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="1*"/>
 						<ColumnDefinition Width="1*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,0,0,0" FontSize="21.333" Foreground="{StaticResource DialogSecondaryTxtColor}">
+					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,24,0,24" FontSize="21.333" Foreground="White">
 						<Run Text="Lorum ipsum dolor sit insitam. "/>
 						<LineBreak />
 						<LineBreak />
 						<Run Text=" Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam."/>
 					</TextBlock>
-					<Image x:Name="helpImg" Grid.Column="1" Source="/Images/HelpImages/SleeveMan.png" />
+					<Image x:Name="helpImg" Grid.Column="1" Source="/Images/HelpImages/SleeveMan.png" Margin="0,24,0,24" />
 				</Grid>
 
 
 			</StackPanel>
 		</ScrollViewer>
+
+
 	</Grid>
 	
 </phone:PhoneApplicationPage>

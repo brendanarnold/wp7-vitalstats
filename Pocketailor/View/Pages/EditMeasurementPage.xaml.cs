@@ -263,6 +263,10 @@ namespace Pocketailor.View
         	// TODO: Add event handler implementation here.
         }
 
+        private void profileNameBtn_Tap(object sender, System.EventArgs e)
+        {
+            
+        }
 
         #endregion
 

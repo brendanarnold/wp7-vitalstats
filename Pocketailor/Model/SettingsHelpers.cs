@@ -16,7 +16,7 @@ namespace Pocketailor.Model
     // Settings that apply to the backend
     public class SettingsHelpers
     {
-        IsolatedStorageSettings settings;
+        IsolatedStorageSettings Settings;
 
         // Keynames
         //const string ExampleKeyName = "Example";
@@ -26,24 +26,24 @@ namespace Pocketailor.Model
 
         public SettingsHelpers()
         {
-            settings = IsolatedStorageSettings.ApplicationSettings;
+            this.Settings = IsolatedStorageSettings.ApplicationSettings;
         }
 
         // Update the settings
         public bool AddOrUpdateValue(string key, Object value)
         {
             bool valueChanged = false;
-            if (settings.Contains(key))
+            if (Settings.Contains(key))
             {
-                if (settings[key] != value)
+                if (Settings[key] != value)
                 {
-                    settings[key] = value;
+                    Settings[key] = value;
                     valueChanged = true;
                 }
             }
             else
             {
-                settings.Add(key, value);
+                Settings.Add(key, value);
                 valueChanged = true;
             }
             return valueChanged;
@@ -53,9 +53,9 @@ namespace Pocketailor.Model
         public T GetValueOrDefault<T>(string key, T defaultValue)
         {
             T value;
-            if (settings.Contains(key))
+            if (Settings.Contains(key))
             {
-                value = (T)settings[key];
+                value = (T)Settings[key];
             }
             else
             {
@@ -67,7 +67,7 @@ namespace Pocketailor.Model
         // Save the settings
         public void Save()
         {
-            settings.Save();
+            Settings.Save();
         }
 
         // Example setting property

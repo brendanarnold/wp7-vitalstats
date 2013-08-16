@@ -9,16 +9,43 @@
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:local="clr-namespace:Pocketailor.View"
     
+	xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
+    
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
 	x:Class="Pocketailor.EditProfilePage"
-	FontFamily="{StaticResource PhoneFontFamilyNormal}"
-	FontSize="{StaticResource PhoneFontSizeNormal}"
-	Foreground="{StaticResource PageTxtColor}"
 	Orientation="Portrait"
 	shell:SystemTray.IsVisible="True" 
-	shell:SystemTray.BackgroundColor="{StaticResource SystemTrayBGColor}"
-	shell:SystemTray.ForegroundColor="{StaticResource SystemTrayFGColor}"
-	Background="{StaticResource PageBGColor}">
+	>
+
+
+
+	<phone:PhoneApplicationPage.Resources>
+		<local:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
+		<ControlTemplate x:Key="PhoneDisabledTextBoxTemplate" TargetType="TextBox">
+			<ContentControl x:Name="ContentElement" BorderThickness="0" HorizontalContentAlignment="Stretch" Margin="{StaticResource PhoneTextBoxInnerMargin}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="Stretch"/>
+		</ControlTemplate>
+		
+	</phone:PhoneApplicationPage.Resources>
+
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PageTxtColor"/>
+	</phone:PhoneApplicationPage.Foreground>
+	<shell:SystemTray.BackgroundColor>
+		<StaticResource ResourceKey="SystemTrayBGColor"/>
+	</shell:SystemTray.BackgroundColor>
+	<shell:SystemTray.ForegroundColor>
+		<StaticResource ResourceKey="SystemTrayFGColor"/>
+	</shell:SystemTray.ForegroundColor>
+	<phone:PhoneApplicationPage.Background>
+		<StaticResource ResourceKey="PageBGColor"/>
+	</phone:PhoneApplicationPage.Background>
 	
 	<toolkit:TransitionService.NavigationInTransition>
     <toolkit:NavigationInTransition>
@@ -41,15 +68,6 @@
     </toolkit:NavigationOutTransition>
 </toolkit:TransitionService.NavigationOutTransition>
 
-
-
-	<phone:PhoneApplicationPage.Resources>
-		<local:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
-		<ControlTemplate x:Key="PhoneDisabledTextBoxTemplate" TargetType="TextBox">
-			<ContentControl x:Name="ContentElement" BorderThickness="0" HorizontalContentAlignment="Stretch" Margin="{StaticResource PhoneTextBoxInnerMargin}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="Stretch"/>
-		</ControlTemplate>
-		
-	</phone:PhoneApplicationPage.Resources>
 
 
 	<phone:PhoneApplicationPage.ApplicationBar>
@@ -125,8 +143,7 @@
 					Source="{StaticResource LassivTitleSmall}" 
 					HorizontalAlignment="Left" 
 					Margin="36,12,0,6" 
-					Stretch="None" >
-				</Image>
+					Stretch="None" />
 				<TextBlock 
 					Grid.Row="1"
 					x:Name="titleTextBlock" Margin="36,0,0,24" TextWrapping="Wrap" Text="new profile" Padding="0" FontFamily="{StaticResource DialogTitleFont}" FontSize="{StaticResource DialogTitleFontSize}" Foreground="{StaticResource DialogSecondaryTxtColor}" />
@@ -155,55 +172,45 @@
 					Margin="24,0,0,12">
 					
 					<RadioButton x:Name="femaleRadioBtn" 
-							Margin="0,0,0,-12"
-							Content="FEMALE" 
-							Foreground="{StaticResource DialogTxtColor}" 
-							IsChecked="True"
-							FontSize="{StaticResource PhoneFontSizeMediumLarge}">
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Checked">
-									<ec:GoToStateAction StateName="IsFemale"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
-						</RadioButton>
+						Margin="0,0,0,-12"
+						Content="FEMALE" 
+						IsChecked="True"
+						Style="{StaticResource dialogRadioButtonStyle}">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Checked">
+								<ec:GoToStateAction StateName="IsFemale"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</RadioButton>
 
 					<RadioButton 
-							x:Name="maleRadioBtn" 
-							Content="MALE" 
-							Foreground="{StaticResource DialogTxtColor}" 
-							FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+						x:Name="maleRadioBtn" 
+						Content="MALE" 
+						Style="{StaticResource dialogRadioButtonStyle}" 
 							 >
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Click">
-									<ec:GoToStateAction StateName="IsMale"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<ec:GoToStateAction StateName="IsMale"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
 					</RadioButton>
 				</StackPanel>
 
-				<TextBlock 
-					Grid.Row="4"
-					TextWrapping="Wrap" 
-					Text="NAME" 
-					Padding="0" 
-					FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
-					Margin="36,0,0,0" Foreground="{StaticResource DialogTxtColor}"/>
-				<TextBox 
+				
+				
+				<Controls:TitledTextBox 
+					x:Name="nameTitledTextBox"
 					Grid.Row="5"
-					x:Name="nameTextBox" 
-					TextWrapping="Wrap" 
-					Padding="2" 
-					Margin="24,0,24,12" />
-				<!--
-				<CheckBox x:Name="isProtectedCheckBox" Content="PROTECT WITH PIN" BorderThickness="3" Foreground="{StaticResource DialogTxtColor}" BorderBrush="{StaticResource UIBGColor}" Background="{StaticResource UIBGColor}"/>
-				-->
+					Title="NAME"
+					Margin="24,0,24,12"
+					/>
+				
 				<CheckBox 
 					Grid.Row="6"
 					x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" 
-					Foreground="{StaticResource DialogTxtColor}" 
-					Margin="24,0,0,0" 
-					FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+					Margin="24,0,0,0" Style="{StaticResource dialogCheckBoxStyle}" 
 					/>
+				
 			</Grid>
 		
 		</ScrollViewer>

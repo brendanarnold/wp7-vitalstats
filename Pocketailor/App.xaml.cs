@@ -42,7 +42,14 @@ namespace Pocketailor
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
-           
+            // Initialise the ViewModel
+            VM = new AppViewModel();
+
+            // Setup settings
+            Settings = new SettingsHelpers();
+
+            
+
 
             // Standard Silverlight initialization
             InitializeComponent();
@@ -50,6 +57,13 @@ namespace Pocketailor
             // Phone-specific initialization
             InitializePhoneApplication();
 
+            // Set theme dictionaries before  loading components
+            // Load appropriate resource dictionary
+            if (VM.ApplicationTheme == ApplicationTheme.Light)
+                ThemeManager.ToLightTheme();
+            else
+                ThemeManager.ToDarkTheme();
+            ThemeHelpers.LoadThemeDictionary(VM.ApplicationTheme);
             
 
             // Show graphics profiling information while debugging.
@@ -82,24 +96,9 @@ namespace Pocketailor
             }
             // Load cache
             Cache = new Cache();
-            // Load ViewModel
-            VM = new AppViewModel(AppConstants.APP_DB_CONNECTION_STRING, AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
-
-            // Setup settings
-            Settings = new SettingsHelpers();
-
-            // Load appropriate resource dictionary
-            if (VM.ApplicationTheme == ApplicationTheme.Light)
-            {
-                ThemeManager.ToLightTheme();
-            }
-            else
-            {
-                ThemeManager.ToDarkTheme();
-            }
-            ThemeHelpers.LoadThemeDictionary(VM.ApplicationTheme);
- 
-
+            // Connect to databases
+            VM.ConnectToAppDB(AppConstants.APP_DB_CONNECTION_STRING);
+            VM.ConnectToConversionsDB(AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
 
             // Load and send feedback
             FeedbackAgent = new FeedbackAgent();

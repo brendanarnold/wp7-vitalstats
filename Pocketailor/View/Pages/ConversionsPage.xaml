@@ -24,6 +24,7 @@
 
 	<phone:PhoneApplicationPage.Resources>
 		<Pocketailor_View:CountToVisibility x:Key="CountToVisibility"/>
+		<Pocketailor_View:BoolToVisibility x:Key="BoolToVisibility"/>
 		<Pocketailor_View:BoolToGroupItemBGColor x:Key="BoolToGroupItemBGColor"/>
 		<Pocketailor_View:BoolToCollapsed x:Key="BoolToCollapsed"/>
 		<Pocketailor_View:BoolToNotBool x:Key="BoolToNotBool"/>

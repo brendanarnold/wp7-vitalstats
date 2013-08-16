@@ -30,6 +30,7 @@
 		<views:EmptyCollectionToCollapsed x:Key="EmptyCollectionToCollapsed"/>
 		<views:EmptyCollectionToVisible x:Key="EmptyCollectionToVisible"/>
 		<views:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
+		<views:WordsOnNewlines x:Key="WordsOnNewlines" />
 		
 		<views:BoolToStrings x:Key="BoolToStrings"/>
 		<Style x:Key="MaleProfileBtnStyle" TargetType="Button">
@@ -387,7 +388,8 @@
 
 							<TextBlock x:Name="quicklistSubTitle" 
 								Grid.Row="2"
-								Text="QUICKLIST" Style="{StaticResource SubTitleTextBoxStyle}" Margin="12,0,0,12" Foreground="{StaticResource SubTitleColor}"/>
+								Text="QUICKLIST" 
+								Style="{StaticResource subTitleTextBlockStyle}" Margin="12,0,0,12"/>
 
 
 							<Grid x:Name="noQuickListContainer" 
@@ -894,15 +896,13 @@
 									</TextBlock>
 									<RadioButton x:Name="imperialRadioBtn" 
 										Grid.Row="1"
-										Content="IMPERIAL (ft/in/lb)" 
-										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
-										Checked="imperialRadioBtn_Checked"/>
+										Content="IMPERIAL (ft/in/lb)" Margin="12,0,0,0" 
+										Checked="imperialRadioBtn_Checked" Style="{StaticResource dialogRadioButtonStyle}"/>
 									<RadioButton x:Name="metricRadioBtn" 
 										Grid.Row="2"
 										Content="METRIC (m/cm/kg)" 
-										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+										Margin="12,0,0,0" 
+										Style="{StaticResource dialogRadioButtonStyle}" 
 										Checked="metricRadioBtn_Checked"/>
 								</Grid>
 
@@ -920,14 +920,14 @@
 									<RadioButton x:Name="allowFeedbackRadioBtn" 
 										Grid.Row="1"
 										Content="ALLOW FEEDBACK" 
-										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+										Margin="12,0,0,0" 
+										Style="{StaticResource dialogRadioButtonStyle}"
 										GroupName="feedbackRadioGroup" Checked="allowFeedbackRadioBtn_Checked" />
 									<RadioButton x:Name="disallowFeedbackRadioBtn" 
 										Grid.Row="2"
 										Content="DISALLOW FEEDBACK" 
-										Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-										FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+										Margin="12,0,0,0" 
+										Style="{StaticResource dialogRadioButtonStyle}"
 										GroupName="feedbackRadioGroup" Checked="disallowFeedbackRadioBtn_Checked" />
 								</Grid>
 
@@ -947,14 +947,14 @@
 								<RadioButton x:Name="lightThemeRadioBtn" 
 									Grid.Row="1"
 									Content="LIGHT THEME" 
-									Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-									FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+									Margin="12,0,0,0" 
+									Style="{StaticResource dialogRadioButtonStyle}"
 									GroupName="themeRadioGroup" Checked="lightThemeRadioBtn_Checked" />
 								<RadioButton x:Name="darkThemeRadioBtn" 
 									Grid.Row="1"
 									Content="DARK THEME" 
-									Foreground="{StaticResource DialogTxtColor}" Margin="12,0,0,0" 
-									FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
+									Margin="12,0,0,0" 
+									Style="{StaticResource dialogRadioButtonStyle}"
 									GroupName="themeRadioGroup" Checked="darkThemeRadioBtn_Checked" />	
 
 							</StackPanel>

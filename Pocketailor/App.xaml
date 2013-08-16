@@ -1,4 +1,5 @@
 ﻿<Application
+    x:Name="pocketailorApp"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -20,39 +21,16 @@
         
         <ResourceDictionary>
           
-          
+		  <!-- MainResourceDictionary loads the light theme dictionary internally to avoid referencing problems -->
           <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="View/ThemeDictionaries/LightThemeResourceDictionary.xaml"/>
-        		<ResourceDictionary Source="View/ThemeDictionaries/MainResourceDictionary.xaml"/>
+            <ResourceDictionary Source="/View/ThemeDictionaries/MainResourceDictionary.xaml"/>  
           </ResourceDictionary.MergedDictionaries>
-          
 
-            
-
+          <!-- An object from which the base ViewModel can be accessed -->
           <Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelLocator" />
 
-
           <SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
-
-
-          <Pocketailor_View:WordsOnNewlines x:Key="WordsOnNewlines"/>
-    		<Pocketailor_View:BoolToVisibility x:Key="BoolToVisibility" />
-		
-    		<Style x:Key="popUpBtnStyle" TargetType="Button">
-    			<Setter Property="Template">
-    				<Setter.Value>
-    					<ControlTemplate TargetType="Button">
-    						<Grid Margin="30,10">
-    							<ContentPresenter Margin="0,0,32,0"/>
-    						</Grid>
-    					</ControlTemplate>
-    				</Setter.Value>
-    			</Setter>
-    			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-    		</Style>
-
-
-  
+    		
         </ResourceDictionary>
     	
     </Application.Resources>

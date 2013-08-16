@@ -25,16 +25,7 @@ namespace Pocketailor.ViewModel
         // Empty constructor needed for design-time data created in XAML
         public AppViewModel() { }
 
-        public AppViewModel(string appDbConnectionString, string conversionsDbConnectionString)
-        {
-            // Open up app db
-            this.AppDatabaseConnectionString = appDbConnectionString;
-            this.RecreateDataContext();
-            // Open up conversions db
-            this.ConversionsDatabaseConnectionString = conversionsDbConnectionString;
-            this.RecreateConversionsDataContext();
-        }
-
+        
 
         # region Application Theme methods/properties
 
@@ -155,6 +146,14 @@ namespace Pocketailor.ViewModel
         private string ConversionsDatabaseConnectionString;
         private ConversionsDataContext conversiondsDB;
 
+        public void ConnectToConversionsDB(string conversionsDbConnectionString)
+        {
+             // Open up conversions db
+            this.ConversionsDatabaseConnectionString = conversionsDbConnectionString;
+            this.RecreateConversionsDataContext();
+        }
+
+
         public void RecreateConversionsDataContext()
         {
             this.conversiondsDB = null;
@@ -168,6 +167,14 @@ namespace Pocketailor.ViewModel
 
         private string AppDatabaseConnectionString;
         private AppDataContext appDB;
+
+
+        public void ConnectToAppDB(string appDbConnectionString)
+        {
+            // Open up app db
+            this.AppDatabaseConnectionString = appDbConnectionString;
+            this.RecreateDataContext();
+        }
 
         // Checks for uncommitted changes in the ORM
         public bool IsPendingChangesForDB()
@@ -190,95 +197,7 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
-     
-
-        // Not used
-        #region PIN locking methods
-
-        //private bool _isLocked = true;
-        //public bool IsLocked
-        //{
-        //    get { return this._isLocked; }
-        //    set
-        //    {
-        //        if (this._isLocked != value)
-        //        {
-        //            this._isLocked = value;
-        //            this.NotifyPropertyChanged("IsLocked");
-        //        }
-        //    }
-        //}
-
-        //public bool IsValidPin(string pin)
-        //{
-        //    if (pin.Length != 4) return false;
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        if (!char.IsDigit(pin[i])) return false;
-        //    }
-        //    return true;
-        //}
-
-        //public bool SetPin(string pin)
-        //{
-        //    if (this.IsLocked) return false;
-        //    if (this.stngs.Contains("pin"))
-        //    {
-        //        this.stngs["pin"] = pin;
-        //    }
-        //    else
-        //    {
-        //        this.stngs.Add("pin", pin);
-        //    }
-        //    return true;
-        //}
-
-        //public string GetPin()
-        //{
-        //    string pin;
-        //    try
-        //    {
-        //        pin = (string)this.stngs["pin"];
-        //    }
-        //    catch (System.Collections.Generic.KeyNotFoundException)
-        //    {
-        //        pin = null;
-        //        this.SetPin(null);
-        //    }
-        //    return pin;
-        //}
-
-        //public bool TryUnlock(string pin)
-        //{
-        //    string appPin;
-
-        //    appPin = this.GetPin();
-        //    if (appPin == null) 
-        //    {
-        //        this.IsLocked = false;
-        //        if (this.IsValidPin(pin)) this.SetPin(pin);
-        //        return true;
-        //    } 
-        //    else if (appPin == pin)
-        //    {
-        //        this.IsLocked = false;
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        this.IsLocked = true;
-        //        return false;
-        //    }
-
-        //}
-
-        //public void Lock()
-        //{
-        //    this.IsLocked = true;
-        //}
-
-        #endregion
-      
+ 
 
         #region SelectedProfile methods/properties
 
@@ -292,46 +211,6 @@ namespace Pocketailor.ViewModel
                 this.NotifyPropertyChanged("SelectedProfile");
             }
         }
-
-        #endregion
-
-        // Not used
-        #region SuggestedMeasurement methods/proprties
-
-        //private StatTemplate _suggestedStatTemplate;
-        //public StatTemplate SuggestedStatTemplate
-        //{
-        //    get { return this._suggestedStatTemplate; }
-        //    set
-        //    {
-        //        this._suggestedStatTemplate = value;
-        //        this.NotifyPropertyChanged("SuggestedStatTemplate");
-        //    }
-        //}
-
-        //// Following is some code to present a different suggested stat that has not already been
-        //// used in the selectedProfile
-        //private int _suggestedStatTemplateInd = 0;
-        //public void LoadNextSuggestedStatTemplate()
-        //{
-
-        //    this._suggestedStatTemplateInd += 1;
-        //    List<MeasurementId> suggIds = (from StatTemplate st in this.StatTemplates
-        //                              select
-        //                                  st.Id).Except(from Stat st in this.SelectedProfile.Stats
-        //                                                  select st.MeasurementId).ToList();
-        //    // Check if any suggested stats left over
-        //    if (suggIds.Count == 0)
-        //    {
-        //        this.SuggestedStatTemplate = null;
-        //        return;
-        //    }
-        //    int ind = this._suggestedStatTemplateInd % suggIds.Count;
-        //    this.SuggestedStatTemplate = (from StatTemplate st in this.StatTemplates
-        //                                  where st.Id == suggIds[ind]
-        //                                  select st).First();
-        //}
-
 
         #endregion
 
@@ -399,9 +278,6 @@ namespace Pocketailor.ViewModel
         }
 
         #endregion
-
-
-
 
 
     }

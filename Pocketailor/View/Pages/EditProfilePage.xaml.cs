@@ -106,21 +106,21 @@ namespace Pocketailor
 
         public void TakeSnapshotState()
         {
-            this.PageState.Name = this.nameTextBox.Text;
+            this.PageState.Name = this.nameTitledTextBox.Text;
             this.PageState.IsQuickProfile = this.IsQuickListCheckBox.IsChecked;
             this.PageState.Gender = this.GetSelectedGender();
         }
 
         public void LoadFromState()
         {
-            this.nameTextBox.Text = this.PageState.Name;
+            this.nameTitledTextBox.Text = this.PageState.Name;
             this.IsQuickListCheckBox.IsChecked = this.PageState.IsQuickProfile;
             this.SetSelectedGender(this.PageState.Gender);
         }
 
         public void LoadFromSelectedProfile()
         {
-            this.nameTextBox.Text = App.VM.SelectedProfile.Name;
+            this.nameTitledTextBox.Text = App.VM.SelectedProfile.Name;
             this.IsQuickListCheckBox.IsChecked = App.VM.SelectedProfile.IsQuickProfile;
             this.SetSelectedGender(App.VM.SelectedProfile.Gender);
         }
@@ -177,7 +177,7 @@ namespace Pocketailor
 
         private void ResetPage()
         {
-            this.nameTextBox.Text = String.Empty;
+            this.nameTitledTextBox.Text = String.Empty;
             this.IsQuickListCheckBox.IsChecked = false;
             this.femaleRadioBtn.IsChecked = true;
         }
