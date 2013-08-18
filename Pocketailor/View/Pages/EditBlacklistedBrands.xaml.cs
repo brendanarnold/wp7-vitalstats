@@ -24,6 +24,8 @@ namespace Pocketailor.View
         }
 
 
+
+
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
@@ -218,8 +220,29 @@ namespace Pocketailor.View
             }
         }
 
+        
 
         #endregion
+
+        private void suggestBrandByEmailBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.EmailAuthor("Brand suggestion for Pocketailor");
+        }
+
+
+        private void suggestbrandByTwitterBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	App.VM.ViewTwitter("@LassivCo #Pocketailor needs: ");
+        }
+
+        private void suggestBrandBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.SuggestedOptionsVisible = !App.VM.SuggestedOptionsVisible;
+            if (App.VM.SuggestedOptionsVisible)
+                VisualStateManager.GoToState(this, "optionsVisibleVisualState", true);
+            else
+                VisualStateManager.GoToState(this, "optionsCollapsedVisualState", true);
+        }
 
 
     }

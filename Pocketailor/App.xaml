@@ -23,7 +23,7 @@
           
 		  <!-- MainResourceDictionary loads the light theme dictionary internally to avoid referencing problems -->
           <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="/View/ThemeDictionaries/MainResourceDictionary.xaml"/>  
+            <ResourceDictionary Source="View/ThemeDictionaries/MainResourceDictionary.xaml"/>  
           </ResourceDictionary.MergedDictionaries>
 
           <!-- An object from which the base ViewModel can be accessed -->

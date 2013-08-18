@@ -29,6 +29,22 @@ namespace Pocketailor.ViewModel
             }
         }
 
+
+        private bool _sugestedOptionsVisible;
+        public bool SuggestedOptionsVisible
+        {
+            get { return this._sugestedOptionsVisible; }
+            set
+            {
+                if (this._sugestedOptionsVisible != value)
+                {
+                    this._sugestedOptionsVisible = value;
+                    this.NotifyPropertyChanged("SuggestedOptionsVisible");
+                }
+            }
+        }
+
+
         public void LoadBlacklistedBrands()
         {
             this.BlacklistedBrands = App.Settings.GetValueOrDefault<List<BrandId>>("BlacklistedBrands", new List<BrandId>());

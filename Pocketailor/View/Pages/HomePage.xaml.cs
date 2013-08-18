@@ -299,7 +299,7 @@ namespace Pocketailor.View
 
         private void emailBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            App.VM.EmailAuthor();
+            App.VM.EmailAuthor("Feedback on Pocketailor");
         }
 
         private void reviewBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)

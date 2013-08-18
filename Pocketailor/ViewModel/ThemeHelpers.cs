@@ -33,8 +33,8 @@ namespace Pocketailor.ViewModel
         public static void LoadThemeDictionary(ApplicationTheme theme)
         {
             // Light theme is loaded by default, only need to do anything if it is dark theme - dictionaries loaded later override dictionaries loaded earlier
-            if (theme == ApplicationTheme.Dark)
-                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri(AppConstants.DARK_THEME_RESOURCE_DICTIONARY, UriKind.Relative) });
+            //if (theme == ApplicationTheme.Dark)
+            //    Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri(AppConstants.DARK_THEME_RESOURCE_DICTIONARY, UriKind.Relative) });
         }
 
     }

@@ -87,7 +87,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
+			<!-- <RowDefinition Height="Auto" /> -->
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
@@ -142,63 +142,72 @@
 			FontFamily="{StaticResource DialogTitleFont}" 
 			Foreground="{StaticResource DialogSecondaryTxtColor}"/>
 		
-		<Controls:HelpTextBlock
-			Grid.Row="2" 
-			Margin="36,0,36,24"
-			HelpText="Uncheck any brands that you do not want to appear in the main list." />
 		
-
-
 		<ScrollViewer
-			Grid.Row="3"
+			Grid.Row="2"
 			x:Name="containerScrollViewer">
 			
-			<StackPanel x:Name="containerStackPanel">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
 				
-				<toolkit:ListPicker x:Name="preferredUnitListPicker" 
-					Header="UNITS"
-					SelectionChanged="preferredUnitListPicker_SelectionChanged"
-					Margin="36,12" >
-					<toolkit:ListPicker.Resources>
-						<DataTemplate x:Key="DataTemplate1">
-							<TextBlock
-								Style="{StaticResource dialogLabelTextBlockStyle}">
-								<Run Text="UNITS"/>
-							</TextBlock>
-						</DataTemplate>
-					</toolkit:ListPicker.Resources>
-					<toolkit:ListPicker.FullModeItemTemplate>
-						<StaticResource ResourceKey="defaultListPickerTemplate"/>
-					</toolkit:ListPicker.FullModeItemTemplate>
-					<toolkit:ListPicker.ItemTemplate>
-						<StaticResource ResourceKey="defaultListPickerTemplate"/>
-					</toolkit:ListPicker.ItemTemplate>
-					<toolkit:ListPicker.HeaderTemplate>
-						<StaticResource ResourceKey="DataTemplate1"/>
-					</toolkit:ListPicker.HeaderTemplate>
-				</toolkit:ListPicker>
+				<StackPanel x:Name="inputContainerStackPanel"
+					Grid.Row="0">
 
-				<StackPanel  x:Name="valueContainer" Margin="25,0,25,20" Orientation="Horizontal">
-					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox" />
-					<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox" />
+					<toolkit:ListPicker x:Name="preferredUnitListPicker" 
+						Header="UNITS"
+						SelectionChanged="preferredUnitListPicker_SelectionChanged"
+						Margin="36,12" >
+						<toolkit:ListPicker.Resources>
+							<DataTemplate x:Key="DataTemplate1">
+								<TextBlock
+									Style="{StaticResource dialogLabelTextBlockStyle}">
+									<Run Text="UNITS"/>
+								</TextBlock>
+							</DataTemplate>
+						</toolkit:ListPicker.Resources>
+						<toolkit:ListPicker.FullModeItemTemplate>
+							<StaticResource ResourceKey="defaultListPickerTemplate"/>
+						</toolkit:ListPicker.FullModeItemTemplate>
+						<toolkit:ListPicker.ItemTemplate>
+							<StaticResource ResourceKey="defaultListPickerTemplate"/>
+						</toolkit:ListPicker.ItemTemplate>
+						<toolkit:ListPicker.HeaderTemplate>
+							<StaticResource ResourceKey="DataTemplate1"/>
+						</toolkit:ListPicker.HeaderTemplate>
+					</toolkit:ListPicker>
+
+					<StackPanel  x:Name="valueContainer" Margin="25,0,25,20" Orientation="Horizontal">
+						<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value1TextBox" />
+						<Pocketailor_View_Controls:ValueUnitTextBox x:Name="value2TextBox" />
+					</StackPanel>
 				</StackPanel>
 			
-				<Grid Background="{StaticResource TileBGColor}">
+				<Grid x:Name="helpContainerGrid" 
+					Grid.Row="1"
+					Background="{StaticResource TileBGColor}">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="1*"/>
 						<ColumnDefinition Width="1*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,24,0,24" FontSize="21.333" Foreground="White">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<TextBlock x:Name="helpTextBlock" TextWrapping="Wrap" Margin="36,24,0,24" FontSize="21.333" Foreground="White" VerticalAlignment="Center">
 						<Run Text="Lorum ipsum dolor sit insitam. "/>
 						<LineBreak />
 						<LineBreak />
 						<Run Text=" Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam Lorum ipsum dolor sit insitam."/>
 					</TextBlock>
-					<Image x:Name="helpImg" Grid.Column="1" Source="/Images/HelpImages/SleeveMan.png" Margin="0,24,0,24" />
+					<Image x:Name="helpImg" Grid.Column="1" Source="/Images/HelpImages/SleeveMan.png" Margin="0,24,0,24" Stretch="None" VerticalAlignment="Center" />
 				</Grid>
 
 
-			</StackPanel>
+			
+			</Grid>
 		</ScrollViewer>
 
 

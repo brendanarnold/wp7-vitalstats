@@ -45,11 +45,8 @@ namespace Pocketailor
             // Initialise the ViewModel
             VM = new AppViewModel();
 
-            // Setup settings
+            // Setup settings, since are used to resolve some XAML loaded
             Settings = new SettingsHelpers();
-
-            
-
 
             // Standard Silverlight initialization
             InitializeComponent();

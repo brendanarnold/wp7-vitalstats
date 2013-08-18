@@ -12,7 +12,7 @@
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" 
-    xmlns:adRotator="cle-namespace:AdRotator"
+    xmlns:AdDuplex="clr-namespace:AdDuplex;assembly=AdDuplex.WindowsPhone"
     xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
     x:Class="Pocketailor.View.ConversionsPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
@@ -38,183 +38,14 @@
 		<Pocketailor_View:BoolToStrings x:Key="BoolToStrings"/>
 		<Pocketailor_View:BoolToOpacity x:Key="BoolToOpacity"/>
     
-   
+ <!--  
 		<Pocketailor_ViewModel:ViewModelLocator x:Key="ViewModelInstanceLocator" />
-	
-	
-  
+-->	
 		<SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
 
+		
 
-
-
-		<Style x:Key="noScrollListBoxStyle" TargetType="ListBox">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-			<Setter Property="BorderThickness" Value="0"/>
-			<Setter Property="BorderBrush" Value="Transparent"/>
-			<Setter Property="Padding" Value="0"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ListBox">
-						<ItemsPresenter/>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-
-		<DataTemplate x:Key="listHeaderTemplate">
-	<!-- Top of whole control -->
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-			</Grid.RowDefinitions>
-
-			<!--
-			<Button
-				Grid.Row="0" 
-				Content="Edit preferred brands"></Button>
-
-			<Button
-				Grid.Row="1" 
-				Content="Brand not found?"></Button>
-				-->
-
-			<Controls:AboutButton x:Name="changeRegionBtn"
-				Grid.Row="0"
-				Margin="12,12,12,0"
-				VerticalAlignment="Top" TitleText="Change region"
-				IconImage="/Images/AppBar/appbar.globe.png">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Tap">
-						<ec:NavigateToPageAction TargetPage="/View/Pages/EditRegionPage.xaml"/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>	
-			</Controls:AboutButton>
-							
-			<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
-				Grid.Row="1"
-				Margin="12,12,12,0"
-				VerticalAlignment="Top" TitleText="Edit preferred brands"
-				IconImage="/Images/AppBar/appbar.edit.png" >
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Tap">
-						<ec:NavigateToPageAction TargetPage="/View/Pages/EditBlacklistedBrands.xaml"/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</Controls:AboutButton>
-							
-			<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
-				Grid.Row="2"
-				Margin="12,12,12,12" 
-				VerticalAlignment="Top" TitleText="Show key measurements" 
-				IconImage="/Images/AppBar/appbar.pocketailor.tape.png">
-				<i:Interaction.Triggers>
-					<i:EventTrigger EventName="Tap">
-						<ec:ChangePropertyAction x:Name="showHiddenContentChangePropertyAction" TargetName="hiddenContentContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=hiddenContentContainer}"/>
-					</i:EventTrigger>
-					<i:EventTrigger EventName="Tap">
-						<ec:ChangePropertyAction x:Name="changeTextChangePropertyAction" PropertyName="TitleText" Value="{Binding TitleText, ConverterParameter=Show key measurements|Hide key measurements, Converter={StaticResource StringToNextString}, ElementName=showKeyMeasurementsBtn}"/>
-					</i:EventTrigger>
-				</i:Interaction.Triggers>
-			</Controls:AboutButton>
-							
-			<Grid
-				x:Name="hiddenContentContainer"
-				Visibility="Collapsed"
-				Grid.Row="3">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-				</Grid.RowDefinitions>
-
-
-				<ListBox x:Name="measurementsListBox"
-					Grid.Row="0"
-					Margin="12,0,12,8">
-					<ListBox.Resources>
-						<DataTemplate x:Key="DataTemplate1">
-							<Grid x:Name="otherUnitMeasurmentGrid" Margin="0,0,0,12">
-								<i:Interaction.Triggers>
-									<i:EventTrigger EventName="Tap">
-										<ec:ChangePropertyAction TargetName="otherMeasurementUnitsListBox" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=otherMeasurementUnitsListBox}"/>
-									</i:EventTrigger>
-								</i:Interaction.Triggers>
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="1*" />
-									<ColumnDefinition Width="1*" />
-								</Grid.ColumnDefinitions>
-								<Grid.RowDefinitions>
-									<RowDefinition Height="Auto" />
-									<RowDefinition Height="Auto" />
-								</Grid.RowDefinitions>
-								<TextBlock 
-									Grid.Column="0" Grid.Row="0"
-									FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PageTxtColor}"
-									Text="{Binding Name, FallbackValue=Height}" HorizontalAlignment="Right" />
-								<TextBlock 
-									Grid.Column="1" Grid.Row="0"
-									FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource SubTitleColor}"
-									Text="{Binding FormattedValue, FallbackValue=5 ft. 8 in.}" Margin="6,0,0,0" HorizontalAlignment="Left" />
-								<ListBox
-									x:Name="otherMeasurementUnitsListBox"
-									Grid.Column="1" Grid.Row="1"
-									Visibility="Collapsed"
-									ItemsSource="{Binding OtherUnitFormattedValues}"
-								>
-									<ListBox.Resources>
-										<DataTemplate x:Key="DataTemplate2">
-											<Grid>
-												<TextBlock 
-													Text="{Binding FallbackValue=170 cm.}" 
-													Foreground="{StaticResource SubTitleColor}"
-													Margin="6,0,0,0" FontSize="25.333" />
-											</Grid>
-										</DataTemplate>
-									</ListBox.Resources>
-									<ListBox.Style>
-										<StaticResource ResourceKey="noScrollListBoxStyle"/>
-									</ListBox.Style>
-									<ListBox.ItemTemplate>
-										<StaticResource ResourceKey="DataTemplate2"/>
-									</ListBox.ItemTemplate>
-											
-											
-								</ListBox>
-							</Grid>
-						</DataTemplate>
-					</ListBox.Resources>
-					<ListBox.ItemsSource>
-						<Binding Path="AppViewModel.ConversionMeasurements" Source="{StaticResource ViewModelLocator}"/>
-					</ListBox.ItemsSource>
-					<ListBox.Style>
-						<StaticResource ResourceKey="noScrollListBoxStyle"/>
-					</ListBox.Style>
-					<ListBox.ItemTemplate>
-						<StaticResource ResourceKey="DataTemplate1"/>
-					</ListBox.ItemTemplate>
-				</ListBox>
-
-				<TextBlock
-					Grid.Row="1" 
-					Margin="12,0,12,24"
-					FontFamily="/Pocketailor;component/Fonts/Fonts.zip#EraserDust" FontSize="{StaticResource HelpTxtFontSizeNormal}" 
-					TextWrapping="Wrap" Foreground="{StaticResource PageTxtColor}">
-					The above are the measurements used for this calculation.
-				</TextBlock>
-
-
-			</Grid>
-
-		</Grid>
-					
-	</DataTemplate>
+		
 
 		<Storyboard x:Name="animateLoadingPlaceholderStoryboard">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="rulerImage" RepeatBehavior="Forever">
@@ -305,20 +136,45 @@
 				Grid.RowSpan="3" 
 				VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
 			
-			<Grid x:Name="titleBarGrid"  
-				Grid.Row="0" 
-				Margin="0" Background="{StaticResource PageBGColor}" VerticalAlignment="Top">
+			<Grid x:Name="titleBarGrid" 
+				Grid.Row="0"
+				Background="{StaticResource PageBGColor}"
+				Margin="0,0,0,0" VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
-				<StackPanel x:Name="logoContainer" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="0" Margin="12,0,0,0">
-					<Image Source="/Images/SmallLogo.png" Margin="0,3,2,0" Stretch="None"/>
-					<TextBlock Foreground="{StaticResource PivotTitleColor}">
-						<Run Text="POCKETAILOR"/>
-					</TextBlock>
-				</StackPanel>
-				<TextBlock Grid.Column="1" x:Name="profileName" FontSize="22" TextAlignment="Right" Margin="0,0,12,0" Text="{Binding SelectedProfile.Name, ConverterParameter=[no name];, Converter={StaticResource StringOrDefaultOnEmpty}}"/>
+						
+				<Image
+					Grid.Column="0" 
+					Source="{StaticResource LassivTitleSmall}"
+					HorizontalAlignment="Left" Margin="24,0,0,-3" Stretch="None" />
+				<Button Grid.Column="1" 
+					x:Name="profileNameBtn" 
+					Margin="0,0,24,0" 
+					Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
+					Tap="profileNameBtn_Tap">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Grid>
+											<TextBlock 
+												FontSize="26"
+												VerticalAlignment="Center" 
+												HorizontalAlignment="Right"
+												FontWeight="Normal"
+												FontFamily="Segoe WP Semilight"
+												Foreground="{StaticResource PageTxtColor}"
+												Text="{TemplateBinding Content}" />
+										</Grid>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter> 
+						</Style>
+					</Button.Style>
+				</Button>
 			</Grid>
 			
 			<Grid x:Name="pageTitleContainerGrid" 
@@ -328,36 +184,44 @@
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
-				<TextBlock x:Name="pageTitleTextBlock" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" FontFamily="{StaticResource ScriptFont}" Margin="24,0,0,0" FontSize="53.333" Foreground="{StaticResource PageBGColor}" />
-				<Button x:Name="regionChangeBtn" Content="{Binding SelectedRegionString}" Grid.Column="1" HorizontalAlignment="Right" Margin="24,0" VerticalAlignment="Center">
-					<Button.Resources>
-						<Style x:Key="ButtonStyle1" TargetType="Button">
+				<TextBlock x:Name="pageTitleTextBlock" 
+					Grid.Column="0" 
+					TextWrapping="Wrap" 
+					Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" 
+					FontFamily="Segoe WP Light" 
+					Margin="24,0,0,0" 
+					FontSize="53.333" 
+					Foreground="{StaticResource TileTxtColor}" />
+				<Button x:Name="regionChangeBtn" 
+					Grid.Column="1" 
+					Content="{Binding SelectedRegionString}" 
+					HorizontalAlignment="Right" Margin="24,0,24,6" 
+					VerticalAlignment="Bottom">
+					<Button.Style>
+						<Style TargetType="Button">
 							<Setter Property="Template">
 								<Setter.Value>
 									<ControlTemplate TargetType="Button">
 										<Grid>
-											<TextBlock Text="{TemplateBinding Content}" FontFamily="Segoe WP" FontSize="32" />
+											<TextBlock Text="{TemplateBinding Content}" 
+												FontFamily="Segoe WP SemiLight" 
+												FontSize="32"
+												Foreground="{StaticResource TileTxtColor}" />
 										</Grid>
 									</ControlTemplate>
 								</Setter.Value>
 							</Setter>
 							<Setter Property="FontSize" Value="26.667"/>
 						</Style>
-					</Button.Resources>
+					</Button.Style>
 					<Button.Projection>
 						<PlaneProjection/>
 					</Button.Projection>
-					<Button.Foreground>
-						<StaticResource ResourceKey="PageBGColor"/>
-					</Button.Foreground>
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="Click">
 							<ec:NavigateToPageAction TargetPage="/View/Pages/EditRegionPage.xaml"/>
 						</i:EventTrigger>
 					</i:Interaction.Triggers>
-					<Button.Style>
-						<StaticResource ResourceKey="ButtonStyle1"/>
-					</Button.Style>
 				</Button>
 			</Grid>
 				
@@ -385,140 +249,231 @@
 				</Canvas>
 			</Grid>
 		</Grid>
-		<Grid Grid.Row="1">
-			<toolkit:LongListSelector x:Name="conversionsLongListSelector" 
-				Margin="0,0,0,0"
-				IsFlatList="False" 
-				ItemsSource="{Binding GroupedConversions}"
-				GroupViewOpened="conversionsLongListSelector_GroupViewOpened"
-				GroupViewClosing="conversionsLongListSelector_GroupViewClosing"
-				DisplayAllGroups="True" Background="Transparent" BufferSize="2" MaximumFlickVelocity="3000" Canvas.Left="480">
-				<toolkit:LongListSelector.Resources>
+
+
+		<toolkit:LongListSelector 
+			Grid.Row="1"
+			x:Name="conversionsLongListSelector" 
+			Margin="0,0,0,0"
+			IsFlatList="False"
+			ItemsSource="{Binding GroupedConversions}"
+			GroupViewOpened="conversionsLongListSelector_GroupViewOpened"
+			GroupViewClosing="conversionsLongListSelector_GroupViewClosing"
+			DisplayAllGroups="True" Background="Transparent" BufferSize="2" 
+			MaximumFlickVelocity="3000">
 				
-					<DataTemplate x:Key="groupHeaderTemplate">
-					<!-- The header for the group e.g. letter -->
-						<Border Background="Transparent" Margin="12,6,0,6" 
-							Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}" 
-							HorizontalAlignment="Left">
-							<Border Background="{StaticResource TileBGColor}" 	
-								Padding="8,0,0,0" 
-								Width="62" Height="62" 				 
-								HorizontalAlignment="Left">
-								<TextBlock Text="{Binding Key}" 
-									Foreground="{StaticResource PageTxtColor}" 
-									FontSize="48"
-									FontFamily="{StaticResource PhoneFontFamilySemiLight}"
-									HorizontalAlignment="Left"
-									VerticalAlignment="Bottom"/>
-							</Border>
-						</Border>
-					</DataTemplate>
-        
-					<DataTemplate x:Key="groupFooterTemplate">
-						<!-- The footer for each group -->
-
-					</DataTemplate>
-
-					<ItemsPanelTemplate x:Key="groupItemsPanelTemplate">
-					<!-- The selection dialog container -->
-						<toolkit:WrapPanel Orientation="Horizontal" />
-					</ItemsPanelTemplate>
-        
-					<DataTemplate x:Key="groupItemTemplate">
-					<!-- The individual item in the selector dialog -->
-						<Border 
-							Margin="6" 
-							IsHitTestVisible="{Binding HasItems}"
-							Width="99" Height="99" Background="{Binding HasItems, Converter={StaticResource BoolToGroupItemBGColor}}"  
-							>
-							<Border.Projection>
-								<PlaneProjection RotationX="-60"/>
-							</Border.Projection>
-							<TextBlock Text="{Binding Key}" Foreground="{StaticResource PageTxtColor}" FontSize="48" 
-								Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-						</Border>
-					</DataTemplate>
-
-					<DataTemplate x:Key="itemTemplate" toolkit:TiltEffect.SuppressTilt="True">
-						<!-- Applied to each item -->
-
-						<Grid x:Name="conversionResultContainerGrid"
-							Tap="conversionResultContainerGrid_Tap"
-							Margin="12,0,0,0" HorizontalAlignment="Left" Height="95">
-							<!--
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="Auto"/>
-								<ColumnDefinition Width="Auto"/>
-							</Grid.ColumnDefinitions>
-							-->
+			<toolkit:LongListSelector.ListHeaderTemplate>
+				<DataTemplate>
+				<!-- Top of whole control -->
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
+							Grid.Row="1"
+							Margin="12,12,12,0"
+							VerticalAlignment="Top" TitleText="Edit preferred brands"
+							IconImage="/Images/AppBar/appbar.edit.png" >
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Tap">
+									<ec:NavigateToPageAction TargetPage="/View/Pages/EditBlacklistedBrands.xaml"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</Controls:AboutButton>
+						<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
+							Grid.Row="2"
+							Margin="12,12,12,12" 
+							VerticalAlignment="Top" TitleText="Show key measurements" 
+							IconImage="/Images/AppBar/appbar.pocketailor.tape.png">
+							<i:Interaction.Triggers>
+								<i:EventTrigger EventName="Tap">
+									<ec:ChangePropertyAction x:Name="showHiddenContentChangePropertyAction" TargetName="hiddenContentContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=hiddenContentContainer}"/>
+								</i:EventTrigger>
+								<i:EventTrigger EventName="Tap">
+									<ec:ChangePropertyAction x:Name="changeTextChangePropertyAction" PropertyName="TitleText" Value="{Binding TitleText, ConverterParameter=Show key measurements|Hide key measurements, Converter={StaticResource StringToNextString}, ElementName=showKeyMeasurementsBtn}"/>
+								</i:EventTrigger>
+							</i:Interaction.Triggers>
+						</Controls:AboutButton>
+						<Grid
+							x:Name="hiddenContentContainer"
+							Visibility="Collapsed"
+							Grid.Row="3">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="Auto"/>
 								<RowDefinition Height="Auto"/>
 							</Grid.RowDefinitions>
-
-							<TextBlock x:Name="brandNameTextBlock"
-								Text="{Binding BrandName, FallbackValue=Loading ...}"
-								Grid.Row="0" 
-								FontFamily="Segoe WP"
-								FontSize="34.667" Foreground="{StaticResource PageTxtColor}" VerticalAlignment="Top"/>
-							
-							<StackPanel 
+							<ListBox x:Name="measurementsListBox"
+								Grid.Row="0"
+								Margin="12,0,12,8"
+								Style="{StaticResource noScrollListBoxStyle}"
+								ItemsSource="{Binding Path=AppViewModel.ConversionMeasurements, Source={StaticResource ViewModelLocator}}">
+								<ListBox.ItemTemplate>
+									<DataTemplate>
+										<Grid x:Name="otherUnitMeasurmentGrid" Margin="0,0,0,12">
+											<i:Interaction.Triggers>
+												<i:EventTrigger EventName="Tap">
+													<ec:ChangePropertyAction TargetName="otherMeasurementUnitsListBox" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=otherMeasurementUnitsListBox}"/>
+												</i:EventTrigger>
+											</i:Interaction.Triggers>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="1*" />
+												<ColumnDefinition Width="1*" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="Auto" />
+												<RowDefinition Height="Auto" />
+											</Grid.RowDefinitions>
+											<TextBlock 
+												Grid.Column="0" Grid.Row="0"
+												FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PageTxtColor}"
+												Text="{Binding Name, FallbackValue=Height}" HorizontalAlignment="Right" />
+											<TextBlock 
+												Grid.Column="1" Grid.Row="0"
+												FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource SubTitleColor}"
+												Text="{Binding FormattedValue, FallbackValue=5 ft. 8 in.}" Margin="6,0,0,0" HorizontalAlignment="Left" />
+											<ListBox
+												x:Name="otherMeasurementUnitsListBox"
+												Grid.Column="1" Grid.Row="1"
+												Visibility="Collapsed"
+												ItemsSource="{Binding OtherUnitFormattedValues}"
+												Style="{StaticResource noScrollListBoxStyle}"
+												>
+												<ListBox.ItemTemplate>
+													<DataTemplate>
+														<Grid>
+															<TextBlock 
+																Text="{Binding FallbackValue=170 cm.}" 
+																Foreground="{StaticResource SubTitleColor}"
+																Margin="6,0,0,0" FontSize="25.333" />
+														</Grid>
+													</DataTemplate>
+												</ListBox.ItemTemplate>		
+											</ListBox>
+										</Grid>
+									</DataTemplate>
+								</ListBox.ItemTemplate>
+							</ListBox>
+							<Controls:HelpTextBlock 
 								Grid.Row="1"
-								Orientation="Horizontal">
-								<TextBlock x:Name="regionTextBlock"
-									Text="{Binding RegionString, Converter={StaticResource StringToUpper}}"
-									Margin="0" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"
-									FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-
-								<TextBlock x:Name="clothingSizeTextBlock"
-									Text="{Binding FormattedValue, FallbackValue=''}"
-									Margin="6,0,0,0" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"
-									FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-							</StackPanel>
+								Margin="16,0,16,24"
+								HelpText="If a brand is not listed, use the above measurements to find the right size."/>
 						</Grid>
-			
-					</DataTemplate>
+					</Grid>
+				</DataTemplate>
+			</toolkit:LongListSelector.ListHeaderTemplate>
 
-					<DataTemplate x:Key="listFooterTemplate">
-					<!-- Bottom of whole control -->
-						<Grid/>
-					</DataTemplate>
-					
-				</toolkit:LongListSelector.Resources>
-				<toolkit:LongListSelector.Visibility>
-					<Binding Converter="{StaticResource BoolToCollapsed}" Path="IsConversionDataLoading"/>
-				</toolkit:LongListSelector.Visibility>
+			<toolkit:LongListSelector.GroupHeaderTemplate>
+				<DataTemplate>
+				<!-- The header for the group e.g. letter -->
+					<Border Background="Transparent" Margin="12,6,0,6" 
+						Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}" 
+						HorizontalAlignment="Left">
+						<Border Background="{StaticResource TileBGColor}" 	
+							Padding="8,0,0,0" 
+							Width="62" Height="62" 				 
+							HorizontalAlignment="Left">
+							<TextBlock Text="{Binding Key}" 
+								Foreground="{StaticResource TileTxtColor}" 
+								FontSize="48"
+								FontFamily="Segoe WP SemiLight"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Bottom"/>
+						</Border>
+					</Border>	
+				</DataTemplate>
+			</toolkit:LongListSelector.GroupHeaderTemplate>
+				
+			<toolkit:LongListSelector.GroupFooterTemplate>
+				<DataTemplate>
+					<!-- The footer for each group -->
+				</DataTemplate>
+			</toolkit:LongListSelector.GroupFooterTemplate>
 
-				<d:DataContext>
-					<StaticResource ResourceKey="LongListSampleDataInstance"/>
-				</d:DataContext>
+			<toolkit:LongListSelector.GroupItemTemplate>
+				<DataTemplate>
+				<!-- The individual item in the selector dialog -->
+					<Border 
+						Margin="6" 
+						IsHitTestVisible="{Binding HasItems}"
+						Width="99" Height="99" Background="{Binding HasItems, Converter={StaticResource BoolToGroupItemBGColor}}"  
+						>
+						<Border.Projection>
+							<PlaneProjection RotationX="-60"/>
+						</Border.Projection>
+						<TextBlock Text="{Binding Key}" 
+							Foreground="{StaticResource TileTxtColor}" 
+							FontFamily="Segoe WP SemiLight"
+							FontSize="48" 
+							Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+					</Border>
+				</DataTemplate>
+			</toolkit:LongListSelector.GroupItemTemplate>
 
-				<toolkit:LongListSelector.ListHeaderTemplate>
-					<StaticResource ResourceKey="listHeaderTemplate"/>
-				</toolkit:LongListSelector.ListHeaderTemplate>
-				<toolkit:LongListSelector.ListFooterTemplate>
-					<StaticResource ResourceKey="listFooterTemplate"/>
-				</toolkit:LongListSelector.ListFooterTemplate>
-				<toolkit:LongListSelector.ItemTemplate>
-					<StaticResource ResourceKey="itemTemplate"/>
-				</toolkit:LongListSelector.ItemTemplate>
-			
-				<toolkit:LongListSelector.GroupItemTemplate>
-					<StaticResource ResourceKey="groupItemTemplate"/>
-				</toolkit:LongListSelector.GroupItemTemplate>
-				<toolkit:LongListSelector.GroupItemsPanel>
-					<StaticResource ResourceKey="groupItemsPanelTemplate"/>
-				</toolkit:LongListSelector.GroupItemsPanel>
-			
-				<toolkit:LongListSelector.GroupFooterTemplate>
-					<StaticResource ResourceKey="groupFooterTemplate"/>
-				</toolkit:LongListSelector.GroupFooterTemplate>
-				<toolkit:LongListSelector.GroupHeaderTemplate>
-					<StaticResource ResourceKey="groupHeaderTemplate"/>
-				</toolkit:LongListSelector.GroupHeaderTemplate>
-			</toolkit:LongListSelector>
-			
-		</Grid>
+			<toolkit:LongListSelector.ItemTemplate>
+				<DataTemplate toolkit:TiltEffect.SuppressTilt="True">
+					<!-- Applied to each item -->
+
+					<Grid x:Name="conversionResultContainerGrid"
+						Tap="conversionResultContainerGrid_Tap"
+						Margin="12,0,0,0" HorizontalAlignment="Left" Height="95">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+
+						<TextBlock x:Name="brandNameTextBlock"
+							Text="{Binding BrandName, FallbackValue=Loading ...}"
+							Grid.Row="0" 
+							FontFamily="Segoe WP SemiLight"
+							FontSize="34.667" Foreground="{StaticResource PageTxtColor}"
+							VerticalAlignment="Top"/>
+							
+						<StackPanel 
+							Grid.Row="1"
+							Orientation="Horizontal">
+							<TextBlock x:Name="regionTextBlock"
+								Text="{Binding RegionString, Converter={StaticResource StringToUpper}}"
+								Margin="0" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"
+								FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+							<TextBlock x:Name="clothingSizeTextBlock"
+								Text="{Binding FormattedValue, FallbackValue=''}"
+								Margin="6,0,0,0" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"
+								FontFamily="Segoe WP" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+						</StackPanel>
+					</Grid>
+				</DataTemplate>
+			</toolkit:LongListSelector.ItemTemplate>
+
+
+			<toolkit:LongListSelector.ListFooterTemplate>
+				<DataTemplate>
+				<!-- Bottom of whole control -->
+					<Grid/>
+				</DataTemplate>
+			</toolkit:LongListSelector.ListFooterTemplate>
+
+			<toolkit:LongListSelector.GroupItemsPanel>
+				<ItemsPanelTemplate>
+				<!-- The selection dialog container -->
+					<toolkit:WrapPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</toolkit:LongListSelector.GroupItemsPanel>
+
+			<toolkit:LongListSelector.Visibility>
+				<Binding Converter="{StaticResource BoolToCollapsed}" Path="IsConversionDataLoading"/>
+			</toolkit:LongListSelector.Visibility>
+
+			<d:DataContext>
+				<StaticResource ResourceKey="LongListSampleDataInstance"/>
+			</d:DataContext>				
+		</toolkit:LongListSelector>
+
+		
+
 		<Border
 			Grid.Row="2"
 			Width="480" Height="80" BorderThickness="0,2,0,0" BorderBrush="{StaticResource PageTxtColor}"
@@ -544,7 +499,11 @@
 			</TextBlock>
 		</Border>
 		-->
-			
+		<AdDuplex:AdControl
+			x:Name="adDuplexAd"
+			Grid.Row="2"
+			AppId="39175"
+			/>
 	
 	</Grid>
 	

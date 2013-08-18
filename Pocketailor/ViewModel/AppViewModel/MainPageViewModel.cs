@@ -143,11 +143,11 @@ namespace Pocketailor.ViewModel
             set { if (this._appVersion != value) this._appVersion = value; }
         }
 
-        public void EmailAuthor()
+        public void EmailAuthor(string subject)
         {
             EmailComposeTask emailTask = new EmailComposeTask()
             {
-                Subject = "Feedback on Pocketailor",
+                Subject = subject,
                 To = AppConstants.AUTHOR_EMAIL,
             };
             emailTask.Show();

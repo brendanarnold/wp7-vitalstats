@@ -16,6 +16,22 @@ namespace Pocketailor.View
 {
 
 
+    public class VisibilityToString : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            Visibility v = (Visibility)value;
+            string[] s = (parameter as string).Split(new Char[] { '|' });
+            return (v == Visibility.Visible) ? s[0] : s[1];
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
 
     public class NullableToBool : System.Windows.Data.IValueConverter
     {

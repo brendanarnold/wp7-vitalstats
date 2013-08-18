@@ -10,39 +10,50 @@
     
 	xmlns:local="clr-namespace:Pocketailor.View"
     xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
+    xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     x:Class="Pocketailor.View.EditBlacklistedBrands"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
+	toolkit:TiltEffect.IsTiltEnabled="True"
 	>
 
 
   <phone:PhoneApplicationPage.Resources>
 
+  	<local:VisibilityToString x:Key="VisibilityToString"/>
+
   	<local:BoolToGroupItemBGColor x:Key="BoolToGroupItemBGColor"/>
-	<local:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
+  	<local:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
 
-	<SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
+  	<SampleData:LongListSampleData x:Key="LongListSampleDataInstance" d:IsDataSource="True"/>
 
 
-	<Style x:Key="ListBoxStyle1" TargetType="ListBox">
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-		<Setter Property="BorderThickness" Value="0"/>
-		<Setter Property="BorderBrush" Value="Transparent"/>
-		<Setter Property="Padding" Value="0"/>
-		<Setter Property="Template">
-			<Setter.Value>
-				<ControlTemplate TargetType="ListBox">
-					<ScrollViewer x:Name="ScrollViewer" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" Padding="{TemplateBinding Padding}">
-						<ItemsPresenter/>
-					</ScrollViewer>
-				</ControlTemplate>
-			</Setter.Value>
-		</Setter>
-	</Style>
+  	<Style x:Key="ListBoxStyle1" TargetType="ListBox">
+  		<Setter Property="Background" Value="Transparent"/>
+  		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+  		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+  		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+  		<Setter Property="BorderThickness" Value="0"/>
+  		<Setter Property="BorderBrush" Value="Transparent"/>
+  		<Setter Property="Padding" Value="0"/>
+  		<Setter Property="Template">
+  			<Setter.Value>
+  				<ControlTemplate TargetType="ListBox">
+  					<ScrollViewer x:Name="ScrollViewer" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" Padding="{TemplateBinding Padding}">
+  						<ItemsPresenter/>
+  					</ScrollViewer>
+  				</ControlTemplate>
+  			</Setter.Value>
+  		</Setter>
+  	</Style>
+  	<ControlTemplate x:Key="suggestBrandBtnTemplate" TargetType="Button">
+  		<TextBlock Text="{TemplateBinding Content}" 
+  			Foreground="{StaticResource SubTitleColor}"
+  			FontSize="36"
+  			FontFamily="Segoe WP"
+			/>
+  	</ControlTemplate>
   </phone:PhoneApplicationPage.Resources>
   
 	<phone:PhoneApplicationPage.FontFamily>
@@ -101,28 +112,114 @@
 
 
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}" d:DataContext="{Binding Source={StaticResource LongListSampleDataInstance}}">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="suggestOptionsVisualStateGroup" ec:ExtendedVisualStateManager.UseFluidLayout="True">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0:0:0.75" To="optionsVisibleVisualState">
+						<VisualTransition.GeneratedEasingFunction>
+							<CircleEase EasingMode="EaseOut"/>
+						</VisualTransition.GeneratedEasingFunction>
+					</VisualTransition>
+					<VisualTransition GeneratedDuration="0:0:0.75" To="optionsCollapsedVisualState">
+						<VisualTransition.GeneratedEasingFunction>
+							<CircleEase EasingMode="EaseOut"/>
+						</VisualTransition.GeneratedEasingFunction>
+					</VisualTransition>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="optionsVisibleVisualState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="suggestBrandByEmailBtn" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="suggestBrandByEmailBtn" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="suggestbrandByTwitterBtn" d:IsOptimized="True"/>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="optionsCollapsedVisualState"/>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
 		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
+		<VisualStateManager.CustomVisualStateManager>
+			<ec:ExtendedVisualStateManager/>
+		</VisualStateManager.CustomVisualStateManager>
 		<Image
 			Grid.Row="0" 
 			Source="{StaticResource LassivTitleSmall}" 
 			HorizontalAlignment="Left" Margin="36,12,0,6" Stretch="None" />
 		<TextBlock
 			Grid.Row="1" 
-			TextWrapping="Wrap" Text="select preferred brands" 
+			TextWrapping="Wrap" Text="preferred brands" 
 			Margin="36,0,36,6" FontSize="{StaticResource DialogTitleFontSize}" FontFamily="{StaticResource DialogTitleFont}" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
 		
 		<Controls:HelpTextBlock
 			Grid.Row="2" 
 			Margin="36,0,36,24"
-			HelpText="Uncheck any brands that you do not want to appear in the main list." />
+			HelpText="Uncheck any brands that you do not want to appear in the conversion results." />
 		
-		<toolkit:LongListSelector
+		<Grid
 			Grid.Row="3"
+			>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			
+			<Controls:AboutButton 
+				Grid.Row="0"
+				x:Name="suggestBrandBtn"
+				TitleText="Suggest a brand"
+				Margin="36,0,36,12"
+				IconImage="/Images/AppBar/appbar.chat.png" Tap="suggestBrandBtn_Tap"
+				/>
+			<Grid x:Name="grid"
+				Grid.Row="1"
+				Visibility="Collapsed"
+				Margin="36,0,36,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*" />
+					<ColumnDefinition Width="1*" />
+				</Grid.ColumnDefinitions>
+				<Button x:Name="suggestBrandByEmailBtn" 
+					Grid.Row="1"
+					Grid.Column="0"
+					Margin="0,0,0,24"
+					Content="by email?" Template="{StaticResource suggestBrandBtnTemplate}" HorizontalAlignment="Left" Tap="suggestBrandByEmailBtn_Tap" 
+					>
+					<Button.Projection>
+						<PlaneProjection />
+					</Button.Projection>
+				</Button>
+				<Button x:Name="suggestbrandByTwitterBtn" 
+					Grid.Row="1"
+					Grid.Column="1"
+					Margin="0,0,0,24"
+					Content="by Twitter?" Template="{StaticResource suggestBrandBtnTemplate}" HorizontalAlignment="Right" Tap="suggestbrandByTwitterBtn_Tap" 
+					>
+					<Button.Projection>
+						<PlaneProjection/>
+					</Button.Projection>
+				</Button>
+			</Grid>
+		</Grid>
+		<!--
+		<Button 
+			x:Name="suggestBrandBtn"
+			Grid.Row="3"
+			Content="suggest a brand" Style="{StaticResource typographicalBtnStyle}" HorizontalAlignment="Right" Margin="0,-12,36,12" BorderThickness="3" Tap="suggestBrandBtn_Tap" />
+-->
+		<toolkit:LongListSelector
+			Grid.Row="4"
 			Background="Transparent" ItemsSource="{Binding GroupedBrands, Mode=OneWay}" GroupViewOpened="LongListSelector_GroupViewOpened" GroupViewClosing="LongListSelector_GroupViewClosing">
 			<toolkit:LongListSelector.Resources>
 				<DataTemplate x:Key="ItemTemplate">
