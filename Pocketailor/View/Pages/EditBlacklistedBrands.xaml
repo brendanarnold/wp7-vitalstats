@@ -206,38 +206,6 @@
 
 	<Grid x:Name="LayoutRoot" Background="{StaticResource DialogBGColor}" d:DataContext="{Binding Source={StaticResource LongListSampleDataInstance}}">
 
-		<!--
-		<VisualStateManager.VisualStateGroups>
-			<VisualStateGroup x:Name="suggestOptionsVisualStateGroup" ec:ExtendedVisualStateManager.UseFluidLayout="True">
-				<VisualStateGroup.Transitions>
-					<VisualTransition GeneratedDuration="0:0:0.75" To="optionsVisibleVisualState">
-						<VisualTransition.GeneratedEasingFunction>
-							<CircleEase EasingMode="EaseOut"/>
-						</VisualTransition.GeneratedEasingFunction>
-					</VisualTransition>
-					<VisualTransition GeneratedDuration="0:0:0.75" To="optionsCollapsedVisualState">
-						<VisualTransition.GeneratedEasingFunction>
-							<CircleEase EasingMode="EaseOut"/>
-						</VisualTransition.GeneratedEasingFunction>
-					</VisualTransition>
-				</VisualStateGroup.Transitions>
-				<VisualState x:Name="optionsVisibleVisualState">
-					<Storyboard>
-						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
-							<DiscreteObjectKeyFrame KeyTime="0">
-								<DiscreteObjectKeyFrame.Value>
-									<Visibility>Visible</Visibility>
-								</DiscreteObjectKeyFrame.Value>
-							</DiscreteObjectKeyFrame>
-						</ObjectAnimationUsingKeyFrames>
-					</Storyboard>
-				</VisualState>
-				<VisualState x:Name="optionsCollapsedVisualState"/>
-			</VisualStateGroup>
-		</VisualStateManager.VisualStateGroups>
-		-->
-
-
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
@@ -264,7 +232,7 @@
 		
 		<Grid
 			Grid.Row="3"
-			>
+			Margin="0,0,0,12">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
@@ -367,7 +335,13 @@
 							Margin="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 					</Border>
 				</DataTemplate>
+				<DataTemplate x:Key="listHeaderTemplate">
+					<Grid />
+				</DataTemplate>
 			</toolkit:LongListSelector.Resources>
+			<toolkit:LongListSelector.ListHeaderTemplate>
+				<StaticResource ResourceKey="listHeaderTemplate"/>
+			</toolkit:LongListSelector.ListHeaderTemplate>
 			<toolkit:LongListSelector.GroupItemTemplate>
 				<StaticResource ResourceKey="GroupItemTemplate"/>
 			</toolkit:LongListSelector.GroupItemTemplate>

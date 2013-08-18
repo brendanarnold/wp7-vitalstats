@@ -346,7 +346,7 @@
     <SampleData:BrandsItem Name="Donec etiam praesent" Selected="False" />
   </SampleData:SampleDataSource.Brands>
   <SampleData:SampleDataSource.SelectedConversionData>
-    <SampleData:SelectedConversionData FormattedValue="18/xxxl (regular)" BrandName="Marks &amp; Spencer" ConversionString="3" IsPreviouslyAdjusted="True">
+    <SampleData:SelectedConversionData FormattedValue="18/xxxl (regular)" BrandName="Marks &amp; Spencer" ConversionString="Class" IsPreviouslyAdjusted="True">
       <SampleData:SelectedConversionData.Notes>
         <SampleData:NotesItem Text="This is an unofficial size" />
         <SampleData:NotesItem Text="This has previously been adjusted" />

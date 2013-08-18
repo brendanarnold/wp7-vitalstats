@@ -184,6 +184,16 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
+		private NewlyUnlockedConversions1 _NewlyUnlockedConversions = new NewlyUnlockedConversions1();
+
+		public NewlyUnlockedConversions1 NewlyUnlockedConversions
+		{
+			get
+			{
+				return this._NewlyUnlockedConversions;
+			}
+		}
+
 		private bool _IsLocked = false;
 
 		public bool IsLocked
@@ -352,16 +362,6 @@ namespace Expression.Blend.SampleData.SampleDataSource
 					this._ApplicationTheme = value;
 					this.OnPropertyChanged("ApplicationTheme");
 				}
-			}
-		}
-
-		private NewlyUnlockedConversions1 _NewlyUnlockedConversions = new NewlyUnlockedConversions1();
-
-		public NewlyUnlockedConversions1 NewlyUnlockedConversions
-		{
-			get
-			{
-				return this._NewlyUnlockedConversions;
 			}
 		}
 	}
@@ -2205,9 +2205,9 @@ namespace Expression.Blend.SampleData.SampleDataSource
 			}
 		}
 
-		private double _ConversionString = 0;
+		private string _ConversionString = string.Empty;
 
-		public double ConversionString
+		public string ConversionString
 		{
 			get
 			{
@@ -2280,30 +2280,7 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class NewlyUnlockedConversionsItem : System.ComponentModel.INotifyPropertyChanged
-	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			if (this.PropertyChanged != null)
-			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private NewlyUnlockedConversions _NewlyUnlockedConversions = new NewlyUnlockedConversions();
-
-		public NewlyUnlockedConversions NewlyUnlockedConversions
-		{
-			get
-			{
-				return this._NewlyUnlockedConversions;
-			}
-		}
-	}
-
-	public class NewlyUnlockedConversions : System.Collections.ObjectModel.ObservableCollection<NewlyUnlockedConversionsItem>
+	public class NewlyUnlockedConversions1 : System.Collections.ObjectModel.ObservableCollection<NewlyUnlockedConversionsItem1>
 	{ 
 	}
 
@@ -2339,7 +2316,30 @@ namespace Expression.Blend.SampleData.SampleDataSource
 		}
 	}
 
-	public class NewlyUnlockedConversions1 : System.Collections.ObjectModel.ObservableCollection<NewlyUnlockedConversionsItem1>
+	public class NewlyUnlockedConversionsItem : System.ComponentModel.INotifyPropertyChanged
+	{
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private NewlyUnlockedConversions _NewlyUnlockedConversions = new NewlyUnlockedConversions();
+
+		public NewlyUnlockedConversions NewlyUnlockedConversions
+		{
+			get
+			{
+				return this._NewlyUnlockedConversions;
+			}
+		}
+	}
+
+	public class NewlyUnlockedConversions : System.Collections.ObjectModel.ObservableCollection<NewlyUnlockedConversionsItem>
 	{ 
 	}
 #endif

@@ -245,7 +245,7 @@
 				<Canvas x:Name="loadingImageContainer" Grid.Row="1">
 					<Image x:Name="rulerImage" 
 						Canvas.Left="-30"
-						Source="/Images/ruler.jpg" Stretch="None" />
+						Source="/Images/ruler.png" Stretch="None" />
 				</Canvas>
 			</Grid>
 		</Grid>

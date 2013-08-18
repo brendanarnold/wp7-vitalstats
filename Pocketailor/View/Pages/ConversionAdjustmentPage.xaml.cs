@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Pocketailor.Model;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Pocketailor.View
 {
@@ -19,6 +21,94 @@ namespace Pocketailor.View
 
             this.DataContext = App.VM;
 
+           
+
+
+        }
+
+        void gestureListener_DragDelta(object sender, DragDeltaGestureEventArgs e)
+        {
+            double sizeDownThreshold = (-App.VM.ScreenWidth + App.VM.ScreenWidth / 3);
+            double sizeUpThreshold = (-App.VM.ScreenWidth - App.VM.ScreenWidth / 3);
+
+            double newX = this.sliderTransform.TranslateX + e.HorizontalChange;
+            if (this.sliderTransform.TranslateX < sizeDownThreshold
+                && newX > sizeDownThreshold) 
+                this.SwitchToNextSizeDown(e.HorizontalChange);
+            else if (this.sliderTransform.TranslateX > sizeUpThreshold 
+                   && newX < sizeUpThreshold) 
+                this.SwitchToNextSizeUp(e.HorizontalChange);
+            else
+                this.sliderTransform.TranslateX = newX;
+            
+        }
+
+        void gestureListener_DragStarted(object sender, DragStartedGestureEventArgs e)
+        {
+
+
+        }
+
+        
+        void gestureListener_DragCompleted(object sender, DragCompletedGestureEventArgs e)
+        {
+
+            this.JumpToCentralMeasurement();
+        }
+
+        void JumpToCentralMeasurement()
+        {
+            double finalX = -App.VM.ScreenWidth;
+            double initialX = this.sliderTransform.TranslateX;
+
+            Dispatcher.BeginInvoke(() =>
+            {
+                Storyboard sb = new Storyboard();
+                IEasingFunction easing = new QuarticEase() { EasingMode = EasingMode.EaseOut };
+
+                DoubleAnimation xTransAnim = new DoubleAnimation()
+                {
+                    From = initialX,
+                    To = finalX,
+                    Duration = TimeSpan.FromMilliseconds(750),
+                    EasingFunction = easing,
+                };
+
+                Storyboard.SetTarget(xTransAnim, this.sliderTransform);
+                Storyboard.SetTargetProperty(xTransAnim, new PropertyPath(CompositeTransform.TranslateXProperty));
+                sb.Children.Add(xTransAnim);
+                sb.Begin();
+            });
+        }
+
+        void gestureListener_Flick(object sender, FlickGestureEventArgs e)
+        {
+            if (Math.Abs(e.HorizontalVelocity) > 600)
+            {
+                if (e.HorizontalVelocity > 0)
+                {
+                    this.SwitchToNextSizeDown(0);
+                    this.JumpToCentralMeasurement();
+                }
+                else
+                {
+                    this.SwitchToNextSizeUp(0);
+                    this.JumpToCentralMeasurement();
+                }
+            }
+        }
+
+
+        void SwitchToNextSizeUp(double delta)
+        {
+            this.sliderTransform.TranslateX += (delta + App.VM.ScreenWidth);
+            Microsoft.Devices.VibrateController.Default.Start(TimeSpan.FromMilliseconds(10));
+        }
+
+        void SwitchToNextSizeDown(double delta)
+        {
+            this.sliderTransform.TranslateX += (delta - App.VM.ScreenWidth);
+            Microsoft.Devices.VibrateController.Default.Start(TimeSpan.FromMilliseconds(10));
         }
 
         public ConversionId ConversionId { get; set; }
@@ -91,17 +181,17 @@ namespace Pocketailor.View
 
 
 
-        private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            App.VM.SelectedConversionData.TweakSizeDown();
-            this.sizeDownStoryboard.Begin();
-        }
+        //private void tooBigBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    App.VM.SelectedConversionData.TweakSizeDown();
+        //    this.sizeDownStoryboard.Begin();
+        //}
 
-        private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            App.VM.SelectedConversionData.TweakSizeUp();
-            this.sizeDownStoryboard.Begin();
-        }
+        //private void tooSmallBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    App.VM.SelectedConversionData.TweakSizeUp();
+        //    this.sizeDownStoryboard.Begin();
+        //}
 
         private void PromptForFeedbackPermission()
         {

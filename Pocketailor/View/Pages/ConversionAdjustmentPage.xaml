@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:Pocketailor.View"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
+    xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
     x:Class="Pocketailor.View.ConversionAdjustmentPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -20,33 +21,26 @@
 
 	<phone:PhoneApplicationPage.Resources>
 		
+		
+		<local:DoubleToArithmetic x:Key="DoubleToArithmetic"/>
+		
+		
+		<local:DoubleToNegative x:Key="DoubleToNegative"/>
+		
 
 		<local:BoolToOpacity x:Key="BoolToOpacity"/>
 		<local:BoolToVisibility x:Key="BoolToVisibility"/>
-		
+		<local:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty" />
 
 		<local:BoolToNotBool x:Key="BoolToNotBool"/>
 		
 
 		<local:StringToAffixedString x:Key="StringToAffixedString"/>
-		<Storyboard x:Name="sizeDownStoryboard">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="selectedSizeTextBlock">
-				<EasingDoubleKeyFrame KeyTime="0" Value="30">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<ElasticEase EasingMode="EaseOut" Springiness="11"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BounceEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
 		
 
 	</phone:PhoneApplicationPage.Resources>
 
+		
 
 			<toolkit:TransitionService.NavigationInTransition>
     <toolkit:NavigationInTransition>
@@ -105,64 +99,206 @@
 
 
 	<!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot"  Background="{StaticResource DialogBGColor}">
+	<Grid x:Name="LayoutRoot"  Background="{StaticResource DialogBGColor}" Width="1440">
+		<Grid.Clip>
+			<RectangleGeometry Rect="0,0,1440,800" />
+		</Grid.Clip>
         
-		<ScrollViewer>
-		
-			<StackPanel Orientation="Vertical">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
-				<TextBlock x:Name="profileNameTextBlock"
-					TextWrapping="Wrap" Text="{Binding SelectedProfile.Name}" Margin="12,0,20,0" HorizontalAlignment="Right" FontSize="22" Foreground="{StaticResource PageTxtColor}"/>
-				<TextBlock x:Name="pageTitleTextBlock" 
-					TextWrapping="Wrap" Text="adjust size" Margin="36,0,0,12" FontFamily="/Pocketailor;component/Fonts/Fonts.zip#Lobster" FontSize="66.667" Foreground="{StaticResource PageTxtColor}"/>
-				<StackPanel Orientation="Horizontal" Margin="0,0,0,24">
+		<Grid x:Name="titleBarGrid" 
+			Grid.Row="0"
+			Margin="36,0,0,0" VerticalAlignment="Top">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+						
+			<Image
+				Grid.Column="0" 
+				Source="{StaticResource LassivTitleSmall}"
+				HorizontalAlignment="Left" Margin="0,0,0,-3" Stretch="None" />
+			<Button Grid.Column="1" 
+				x:Name="profileNameBtn" 
+				Margin="0,0,36,0" 
+				Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
+				>
+				<Button.Style>
+					<Style TargetType="Button">
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="Button">
+									<Grid>
+										<TextBlock 
+											FontSize="26"
+											VerticalAlignment="Center" 
+											HorizontalAlignment="Right"
+											FontWeight="Normal"
+											FontFamily="Segoe WP Semilight"
+											Foreground="{StaticResource PageTxtColor}"
+											Text="{TemplateBinding Content}" />
+									</Grid>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter> 
+					</Style>
+				</Button.Style>
+			</Button>
+		</Grid>
+
+
+		<ScrollViewer
+			Grid.Row="2">
+			
+			
+
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+		
+			
+				<TextBlock
+					Grid.Row="0"
+					x:Name="pageTitleTextBlock"
+					TextWrapping="Wrap" Text="adjust size" 
+					Margin="36,0,36,6" 
+					FontSize="{StaticResource DialogTitleFontSize}" 
+					FontFamily="{StaticResource DialogTitleFont}" 
+					Foreground="{StaticResource DialogSecondaryTxtColor}" HorizontalAlignment="Left"/>
+				
+				<StackPanel 
+					Grid.Row="1"
+					Orientation="Horizontal" Margin="36,0,0,24">
 					<TextBlock 
 						x:Name="helpTextBlock" 
 						Text="{Binding SelectedConversionData.ConversionString, FallbackValue=Dress}"
-						Margin="36,0,0,0" FontSize="26.667" Foreground="{StaticResource PageTxtColor}"/>
+						FontSize="26.667" 
+						Foreground="{StaticResource PageTxtColor}"/>
 					<TextBlock 
-						Text="from"
-						Margin="6,0,0,0" FontSize="26.667" Foreground="{StaticResource PageTxtColor}"/>
+						Text=" from "
+						FontSize="26.667" 
+						Foreground="{StaticResource PageTxtColor}"/>
 					<TextBlock 
 						Text="{Binding SelectedConversionData.BrandName, FallbackValue=Marks &amp; Spencer}"
-						Margin="6,0,0,0" FontSize="26.667" Foreground="{StaticResource PageTxtColor}"/>
+						FontSize="26.667" 
+						Foreground="{StaticResource PageTxtColor}"/>
 				</StackPanel>
-				<TextBlock 
-					Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
-					Margin="36,0,36,-6" FontSize="26.667" Foreground="{StaticResource SubTitleColor}"/>
-				<Canvas Margin="36,0,0,24" Height="58">
-					<TextBlock
-						x:Name="selectedSizeTextBlock"
-						Canvas.Left="0" Canvas.Top="0"
-						Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
-						Foreground="{StaticResource SubTitleColor}" FontFamily="Segoe WP Semibold" FontSize="48"/>
-				</Canvas>
-				<Grid Margin="36,0,36,6">
+
+				<Controls:HelpTextBlock
+					
+					Grid.Row="2"
+					Margin="36,0,0,24"
+					HelpText="Swipe below to change the size" HorizontalAlignment="Left" Width="{Binding ScreenWidth, ConverterParameter=-72, Converter={StaticResource DoubleToArithmetic}, FallbackValue=408}"
+					/>
+
+
+				<Grid x:Name="sliderContainer"
+					Grid.Row="3"
+					Margin="0,0,0,24" RenderTransformOrigin="0.5,0.5"
+					>
+					
+					<toolkit:GestureService.GestureListener>
+						<toolkit:GestureListener 
+							DragDelta="gestureListener_DragDelta"
+							DragStarted="gestureListener_DragStarted"
+							DragCompleted="gestureListener_DragCompleted"
+							Flick="gestureListener_Flick" />
+					</toolkit:GestureService.GestureListener>
+
+					<Grid.RenderTransform>
+						<CompositeTransform x:Name="sliderTransform" TranslateX="{Binding ScreenWidth, Converter={StaticResource DoubleToNegative}, FallbackValue=-480}"/>
+					</Grid.RenderTransform>
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="1*"/>
-						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="{Binding ScreenWidth, FallbackValue=480}" />
+						<ColumnDefinition Width="{Binding ScreenWidth, FallbackValue=480}" />
+						<ColumnDefinition Width="{Binding ScreenWidth, FallbackValue=480}" />
 					</Grid.ColumnDefinitions>
-					<Button x:Name="tooBigBtn"
-						Grid.Column="0" 
-						IsHitTestVisible="{Binding SelectedConversionData.NoneSmaller, Converter={StaticResource BoolToNotBool}}"
-						Opacity="{Binding SelectedConversionData.NoneSmaller, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"
-						Content="size too big" Margin="-12,0,0,0" Tap="tooBigBtn_Tap" Foreground="{StaticResource TileBGColor}" FontFamily="Segoe WP Semibold" FontSize="26.667"  />
-					<Button x:Name="tooSmallBtn"
-						Grid.Column="1"
-						IsHitTestVisible="{Binding SelectedConversionData.NoneBigger, Converter={StaticResource BoolToNotBool}}"
-						Opacity="{Binding SelectedConversionData.NoneBigger, ConverterParameter=FalseIsOpaque, Converter={StaticResource BoolToOpacity}}"
-						Content="size too small" BorderThickness="3" Margin="0,0,-12,0" Tap="tooSmallBtn_Tap" Foreground="{StaticResource TileBGColor}"  FontFamily="Segoe WP Semibold" FontSize="26.667"/>
+
+					<StackPanel x:Name="sizeContainer1"
+					
+						Grid.Column="0" HorizontalAlignment="Center">
+						<TextBlock 
+							x:Name="sizeRegion1TextBlock"
+							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
+							Margin="36,0,0,-6" 
+							FontSize="26.667" 
+							Foreground="{StaticResource SubTitleColor}"/>
+						<TextBlock
+							x:Name="sizeValue1TextBlock"
+							Margin="36,0,0,0"
+							Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
+							Foreground="{StaticResource SubTitleColor}"
+							FontFamily="Segoe WP Semibold" 
+							FontSize="48"/>
+					</StackPanel>
+
+					<StackPanel x:Name="sizeContainer2"
+						
+						Grid.Column="1" HorizontalAlignment="Center">
+						<TextBlock 
+							x:Name="sizeRegion2TextBlock"
+							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
+							Margin="36,0,0,-6" 
+							FontSize="26.667" 
+							Foreground="{StaticResource SubTitleColor}"/>
+						<TextBlock
+							x:Name="sizeValue2TextBlock"
+							Margin="36,0,0,0"
+							Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
+							Foreground="{StaticResource SubTitleColor}"
+							FontFamily="Segoe WP Semibold" 
+							FontSize="48"/>
+					</StackPanel>
+
+					<StackPanel x:Name="sizeContainer3"
+						Grid.Column="2" HorizontalAlignment="Center"
+					
+						>
+						<TextBlock 
+							x:Name="sizeRegion3TextBlock"
+							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
+							Margin="36,0,0,-6" 
+							FontSize="26.667" 
+							Foreground="{StaticResource SubTitleColor}"/>
+						<TextBlock
+							x:Name="sizeValue3TextBlock"
+							Margin="36,0,0,0"
+							Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (rgularar)?}" 
+							Foreground="{StaticResource SubTitleColor}"
+							FontFamily="Segoe WP Semibold" 
+							FontSize="48"/>
+
+					</StackPanel>
+
+
+
 				</Grid>
 
-				<TextBlock 
+				<TextBlock
+					Grid.Row="4" 
 					Text="* This size was adjusted previously"
 					
-					Margin="36,0,36,0" FontSize="21.333" Foreground="{StaticResource PageTxtColor}" Visibility="{Binding SelectedConversionData.IsPreviouslyAdjusted, Converter={StaticResource BoolToVisibility}}"/>
+					Margin="36,0,36,0" FontSize="21.333" Foreground="{StaticResource PageTxtColor}" Visibility="{Binding SelectedConversionData.IsPreviouslyAdjusted, Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Left"/>
 
-				<Image Source="/Images/TailorShears.png" Stretch="None" HorizontalAlignment="Right" Margin="0,12,36,0"/>
+				<Image 
+					Grid.Row="5"
+					Source="/Images/TailorShears.png" Stretch="None" HorizontalAlignment="Left" Margin="0,12,36,0"/>
 
 
-			</StackPanel>
+
+
+			</Grid>
 
 
 		</ScrollViewer>

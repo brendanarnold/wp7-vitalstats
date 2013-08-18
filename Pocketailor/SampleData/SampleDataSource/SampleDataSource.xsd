@@ -243,7 +243,7 @@
     </xs:sequence>
     <xs:attribute name="FormattedValue" type="xs:string" />
     <xs:attribute name="BrandName" type="xs:string" />
-    <xs:attribute blend:FormatParameters="1" name="ConversionString" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1,8" name="ConversionString" type="xs:string" />
     <xs:attribute name="IsPreviouslyAdjusted" type="xs:boolean" />
   </xs:complexType>
   <xs:complexType name="Notes">

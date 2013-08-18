@@ -15,6 +15,50 @@ using System.Windows.Media;
 namespace Pocketailor.View
 {
 
+    public class DoubleToArithmetic : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            double d = (double)value;
+            string s = parameter as string;
+            char op = s[0];
+            double operand = double.Parse(s.Substring(1));
+            switch (op)
+            {
+                case '*':
+                    return d * operand;
+                case '/':
+                    return d / operand;
+                case '+':
+                    return d + operand;
+                case '-':
+                    return d - operand;
+                default:
+                    throw new Exception("Unrecognised operand");
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
+
+    public class DoubleToNegative : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            double d = (double)value;
+            return -d;
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            double d = (double)value;
+            return -d;
+        }
+    }
 
     public class VisibilityToString : System.Windows.Data.IValueConverter
     {

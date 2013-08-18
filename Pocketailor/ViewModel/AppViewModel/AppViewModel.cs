@@ -25,7 +25,20 @@ namespace Pocketailor.ViewModel
         // Empty constructor needed for design-time data created in XAML
         public AppViewModel() { }
 
-        
+        #region Phone resolution properties and methods
+
+        public double ScreenWidth
+        {
+            get { return App.Current.Host.Content.ActualWidth; }
+        }
+
+        public double ScreenHeight
+        {
+            get { return App.Current.Host.Content.ActualHeight; }
+        }
+
+
+        #endregion
 
         # region Application Theme methods/properties
 
