@@ -322,6 +322,11 @@ namespace Pocketailor.View
             App.VM.ViewFacebook();
         }
 
+        private void facebookQuestionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Animations.BlindDown.OpenToHeight(this.facebookAnswer, 113);
+        }
+
         
 
        

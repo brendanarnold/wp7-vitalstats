@@ -77,6 +77,8 @@
   					<CubicEase EasingMode="EaseOut"/>
   				</EasingDoubleKeyFrame.EasingFunction>
   			</EasingDoubleKeyFrame>
+  			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+  			<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
   		</DoubleAnimationUsingKeyFrames>
   		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="suggestbrandByTwitterBtn">
   			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="90"/>
@@ -90,11 +92,13 @@
   			<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
   			<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1.1"/>
   			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+  			<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
   		</DoubleAnimationUsingKeyFrames>
   		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="suggestBrandByEmailBtn" RepeatBehavior="Forever">
   			<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
   			<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1.1"/>
   			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+  			<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
   		</DoubleAnimationUsingKeyFrames>
   		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="suggestbrandByTwitterBtn" RepeatBehavior="Forever">
   			<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1"/>

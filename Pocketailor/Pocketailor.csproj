@@ -185,6 +185,7 @@
     <Compile Include="ViewModel\AppViewModel\MeasurementsPageViewModel.cs" />
     <Compile Include="ViewModel\ThemeHelpers.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\Animations\BlindDown.cs" />
     <Compile Include="View\ClipToBounds.cs" />
     <Compile Include="View\Controls\AboutButton.xaml.cs">
       <DependentUpon>AboutButton.xaml</DependentUpon>
@@ -200,6 +201,9 @@
     </Compile>
     <Compile Include="View\Controls\NewlyUnlockedConversionNotificationBtn.xaml.cs">
       <DependentUpon>NewlyUnlockedConversionNotificationBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\QAButton.xaml.cs">
+      <DependentUpon>QAButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\ConversionAdjustmentPage.xaml.cs">
       <DependentUpon>ConversionAdjustmentPage.xaml</DependentUpon>
@@ -297,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Controls\NewlyUnlockedConversionNotificationBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\QAButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

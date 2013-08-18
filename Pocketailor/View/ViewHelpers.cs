@@ -11,6 +11,33 @@ namespace Pocketailor.View
     {
 
 
+        public static List<FrameworkElement> GetChildren(FrameworkElement parent)
+        {
+            List<FrameworkElement> children = new List<FrameworkElement>();
+            if (parent == null) return null;
+            int numChildren = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < numChildren; i++)
+            {
+                FrameworkElement f = VisualTreeHelper.GetChild(parent, i) as FrameworkElement;
+                if (f != null) children.Add(f);
+            }
+            return children;
+        }
+
+        public static FrameworkElement FindSiblingByName(FrameworkElement fe, string siblingName)
+        {
+            if (fe == null) return null;
+            FrameworkElement parent = fe.Parent as FrameworkElement;
+            int numSiblings = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i=0; i < numSiblings; i++) 
+            {
+                FrameworkElement sibling = VisualTreeHelper.GetChild(parent, i) as FrameworkElement;
+                if (sibling != null && sibling.Name == siblingName)
+                    return sibling;
+            }
+            return null;
+        }
+
         // From http://stackoverflow.com/a/1759923/199
         /// <summary>
         /// Finds a Child of a given item in the visual tree. 

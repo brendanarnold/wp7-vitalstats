@@ -106,6 +106,20 @@ namespace Pocketailor.View
         }
 
 
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (App.VM.CurrentNominatedConversion != null)
+            {
+                e.Cancel = true;
+                App.VM.UnNominateConversion();
+            }
+            else
+            {
+                base.OnBackKeyPress(e);
+            }
+        }
+
+
         private void ConfirmAndDeleteMeasurement(Measurement s)
         {
             MessageBoxResult res = MessageBox.Show(String.Format("Are you sure you want to delete the measurement '{0}'?", s.Name), "Delete measurement?", MessageBoxButton.OKCancel);

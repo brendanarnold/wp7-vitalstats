@@ -31,6 +31,7 @@
 		<views:EmptyCollectionToVisible x:Key="EmptyCollectionToVisible"/>
 		<views:ApplicationThemeToImage x:Key="ApplicationThemeToImage" />
 		<views:WordsOnNewlines x:Key="WordsOnNewlines" />
+		<views:BoolToVisibility x:Key="BoolToVisibility" />
 		
 		<views:BoolToStrings x:Key="BoolToStrings"/>
 		<Style x:Key="MaleProfileBtnStyle" TargetType="Button">
@@ -575,79 +576,97 @@
 							</Grid.RowDefinitions>
 
 							<StackPanel Grid.Row="0">
-								<Button x:Name="facebookQuestionBtn" Content="Want to discuss clothes sizes?" Style="{StaticResource questionButtonStyle}">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction TargetName="facebookAnswer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=facebookAnswer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
-								<StackPanel x:Name="facebookAnswer" 
-									Visibility="Collapsed" 
-									Margin="0,0,0,18">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Try the Pocketailor Facebook page"/>
-									</TextBlock>
-									<Controls:AboutButton x:Name="facebookBtn" 
-										TitleText="Pocketailor on Facebook" 
-										IconImage="/Images/AppBar/appbar.facebook.heart.png"
-										Margin="12,0,0,0" Tap="facebookBtn_Tap"/>
+								
+								
+								<StackPanel Margin="12,0,0,6">
+									<Controls:QAButton x:Name="facebookQuestionBtn"
+										Grid.Row="0"
+										Title="Want to discuss clothes sizes?"
+										AnswerContainerName="facebookAnswer"
+										AnswerContainerHeight="113" 
+										Margin="0,0,0,6"
+										/>
+									<StackPanel x:Name="facebookAnswer" 
+										Grid.Row="1"
+										Visibility="Collapsed" 
+										>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Try the Pocketailor Facebook page"/>
+										</TextBlock>
+										<Controls:AboutButton x:Name="facebookBtn" 
+											TitleText="Pocketailor on Facebook" 
+											IconImage="/Images/AppBar/appbar.facebook.heart.png"
+												Tap="facebookBtn_Tap"
+												Margin="0,0,0,24">
+										</Controls:AboutButton>
+									</StackPanel>
 								</StackPanel>
-								<Button x:Name="twitterQuestionBtn" Content="Missing your favourite brand?" Style="{StaticResource questionButtonStyle}">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction PropertyName="Visibility" TargetName="twitterAnswer" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=twitterAnswer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
-								<StackPanel x:Name="twitterAnswer"
-									Visibility="Collapsed"
-									Margin="0,0,0,18">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="We're listening to Tweets on @LassivCo"/>
-									</TextBlock>
-									<Controls:AboutButton x:Name="twitterBtn" 
-										IconImage="/Images/AppBar/appbar.twitter.bird.png" 
-										TitleText="Tweet a suggestion"
-										Margin="12,0,0,6" Tap="twitterBtn_Tap"/>
-								</StackPanel>
-								<Button x:Name="reviewQuestionBtn" Content="Want to rate Pocketailor?" Style="{StaticResource questionButtonStyle}">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction PropertyName="Visibility" TargetName="reviewAnswer" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=reviewAnswer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
 							
-								<StackPanel x:Name="reviewAnswer"
-									Visibility="Collapsed"
-									Margin="0,0,0,18">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="We thrive on your reviews!"/>
-									</TextBlock>
-									<Controls:AboutButton x:Name="reviewBtn" 
-										IconImage="/Images/AppBar/appbar.heart.png" 
-										TitleText="Rate Pocketailor" 
-										Margin="12,0,0,6" Tap="reviewBtn_Tap"/>
+								<StackPanel Margin="12,0,0,6">
+									
+									<Controls:QAButton
+										x:Name="twitterQuestionBtn"
+										Title="Missing your favourite brand?"
+										AnswerContainerName="twitterAnswer"
+										AnswerContainerHeight="151"
+										Margin="0,0,0,6" />
+									
+									<StackPanel x:Name="twitterAnswer"
+										Visibility="Collapsed"
+										>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="We're listening to Tweets on @LassivCo"/>
+										</TextBlock>
+										<Controls:AboutButton x:Name="twitterBtn" 
+											IconImage="/Images/AppBar/appbar.twitter.bird.png" 
+											TitleText="Tweet a suggestion"
+											Margin="0,0,0,24" Tap="twitterBtn_Tap"/>
+									</StackPanel>
 								</StackPanel>
 
-								<Button x:Name="emailQuestionBtn" Content="Got something more to say?" Style="{StaticResource questionButtonStyle}">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction PropertyName="Visibility" TargetName="emailAnswer" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=emailAnswer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
-								<StackPanel x:Name="emailAnswer"
-									Visibility="Collapsed"
-									Margin="0,0,0,18">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Email the author at"/>
-									</TextBlock>
-									<Controls:AboutButton x:Name="emailBtn" 
-										TitleText="pocketailor@lassiv.com" 
-										IconImage="/Images/AppBar/appbar.globe.wire.png" 
-										Margin="12,0,0,6" Tap="emailBtn_Tap"/>
+								<StackPanel 
+									Visibility="{Binding AllowFeedback, Converter={StaticResource BoolToVisibility}}"
+									Margin="12,0,0,6">
+								
+									<Controls:QAButton x:Name="reviewQuestionBtn"
+										Title="Want to rate Pocketailor?"
+										AnswerContainerHeight="119"
+										AnswerContainerName="reviewAnswer"
+										Margin="0,0,0,6" />
+							
+									<StackPanel x:Name="reviewAnswer"
+										Visibility="Collapsed"
+										>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="We thrive on your reviews!"/>
+										</TextBlock>
+										<Controls:AboutButton x:Name="reviewBtn" 
+											IconImage="/Images/AppBar/appbar.heart.png" 
+											TitleText="Rate Pocketailor" 
+											Margin="0,0,0,24" Tap="reviewBtn_Tap"/>
+									</StackPanel>
+								</StackPanel>
+
+								<StackPanel Margin="12,0,0,6">
+									<Controls:QAButton
+										x:Name="emailQuestionsBtn"
+										Title="Got something more to say?"
+										AnswerContainerHeight="119"
+										AnswerContainerName="emailAnswer"
+										Margin="0,0,0,6"
+										 />
+
+									<StackPanel x:Name="emailAnswer"
+										Visibility="Collapsed"
+										>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Email the author at"/>
+										</TextBlock>
+										<Controls:AboutButton x:Name="emailBtn" 
+											TitleText="pocketailor@lassiv.com" 
+											IconImage="/Images/AppBar/appbar.globe.wire.png" 
+											Margin="0,0,0,24" Tap="emailBtn_Tap"/>
+									</StackPanel>
 								</StackPanel>
 							</StackPanel>
 
@@ -726,107 +745,126 @@
 					
 							<StackPanel Margin="0,0,0,0">
 
-								<Button x:Name="whatIsPocketailorQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="What is Pocketailor?" >
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction TargetName="whatIsPocketailorAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=whatIsPocketailorAnswerContainer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
+								<StackPanel
+									Margin="12,0,0,6">
 
-								<StackPanel x:Name="whatIsPocketailorAnswerContainer"
-									Visibility="Collapsed">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,5">
-										<Run Text="Help beat vanity sizing! Enter your measurements to find out your ideal clothing size for hundreds of brands worldwide."/>
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12">
-										<Run Text="Pocketailor uses the manufacturers own size charts, but if the clothes don't fit, adjust and send the data back to the Pocketailor cloud so we can adjust the data for everyone else too."/>
-									</TextBlock>
+									<Controls:QAButton
+										Title="What is Pocketailor?" 
+										AnswerContainerHeight="337"
+										AnswerContainerName="whatIsPocketailorAnswerContainer"
+										Margin="0,0,0,6"
+									/>
+
+									<StackPanel x:Name="whatIsPocketailorAnswerContainer"
+										Visibility="Collapsed">
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,5">
+											<Run Text="Help beat vanity sizing! Enter your measurements to find out your ideal clothing size for hundreds of brands worldwide."/>
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,24">
+											<Run Text="Pocketailor uses the manufacturers own size charts, but if the clothes don't fit, adjust and send the data back to the Pocketailor cloud so we can adjust the data for everyone else too."/>
+										</TextBlock>
+									</StackPanel>
+
 								</StackPanel>
 
-								<Button x:Name="whatIsVanitySizingQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="What is Vanity Sizing?">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction TargetName="whatIsVanitySizingAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=whatIsVanitySizingAnswerContainer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
+								<StackPanel Margin="12,0,0,6">
 
-								<StackPanel x:Name="whatIsVanitySizingAnswerContainer"
-									Visibility="Collapsed">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Ever find that you are a size larger than you expected in one shop and a a size smaller in another?"/>
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Manufacturers have different standards for clothing sizes and some believe this is intentional to flatter their customers."/>
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12">
-										<Run Text="This is known as vanity sizing."/>
-									</TextBlock>
+									<Controls:QAButton
+										Title="What is Vanity Sizing?" 
+										AnswerContainerHeight="280"
+										AnswerContainerName="whatIsVanitySizingAnswerContainer"
+										Margin="0,0,0,6"
+										/>
+
+									<StackPanel x:Name="whatIsVanitySizingAnswerContainer"
+										Visibility="Collapsed">
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Ever find that you are a size larger than you expected in one shop and a a size smaller in another?"/>
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Manufacturers have different standards for clothing sizes and some believe this is intentional to flatter their customers."/>
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,24">
+											<Run Text="This is known as vanity sizing."/>
+										</TextBlock>
+									</StackPanel>
+
 								</StackPanel>
 
-								<Button x:Name="adjustmentProcessQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="What happens when I make an adjustment?">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction TargetName="adjustmentProcessAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=adjustmentProcessAnswerContainer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
+								<StackPanel Margin="12,0,0,6">
 
-								<StackPanel x:Name="adjustmentProcessAnswerContainer"
-									Visibility="Collapsed">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Pocketailor is based on measurements given by each manufacturer. If you find that these are incorrect, you can adjust it in the app."/> 
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Optionally this is sent back to the Pocketailor cloud anonymously so everyone that uses Pocketailor can benefit from your findings."/>
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12">
-										<Run Text="You can select whether this happens or not in the settings, here."/>
-									</TextBlock>
+									<Controls:QAButton
+										Title="What happens when I make an adjustment?"
+										AnswerContainerHeight="437"
+										AnswerContainerName="adjustmentProcessAnswerContainer"
+										Margin="0,0,0,6"
+									/>
+
+									<StackPanel x:Name="adjustmentProcessAnswerContainer"
+										Visibility="Collapsed">
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Pocketailor is based on measurements given by each manufacturer. If you find that these are incorrect, you can adjust it in the app."/> 
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Optionally this is sent back to the Pocketailor cloud anonymously so everyone that uses Pocketailor can benefit from your findings."/>
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,12">
+											<Run Text="You can select whether this happens or not in the settings, here."/>
+										</TextBlock>
 							
-									<Image Margin="0,0,0,12" HorizontalAlignment="Right" Source="/Images/RightArrow.png" Stretch="None" RenderTransformOrigin="0.5,0.5"/>
+										<Image Margin="0,0,0,24" HorizontalAlignment="Right" Source="/Images/RightArrow.png" Stretch="None" RenderTransformOrigin="0.5,0.5"/>
+
+									</StackPanel>
+
 
 								</StackPanel>
+								<StackPanel Margin="12,0,0,6">
 
+									<Controls:QAButton
+										Title="How accurate is Pocketailor sizing?"
+										AnswerContainerHeight="210"
+										AnswerContainerName="guaranteeAnswerContainer"
+										Margin="0,0,0,6"
+										/>
 
-								<Button x:Name="guaranteeQuestionBtn"  Style="{StaticResource questionButtonStyle}" Content="How accurate is Pocketailor sizing?">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction TargetName="guaranteeAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=guaranteeAnswerContainer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
+									<StackPanel x:Name="guaranteeAnswerContainer"
+										Visibility="Collapsed">
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="As accurate as we can make it and with your input it will only get better!"/>
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,24" FontFamily="Segoe WP Semibold">
+											<Run Text="However, we cannot accept any responsibility for purchases or other decisions made based on Pocketailor sizing."/>
+										</TextBlock>
 
-								<StackPanel x:Name="guaranteeAnswerContainer"
-									Visibility="Collapsed">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="As accurate as we can make it and with your input it will only get better!"/>
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,12" FontFamily="Segoe WP Semibold">
-										<Run Text="However, we cannot accept any responsibility for purchases or other decisions made based on Pocketailor sizing."/>
-									</TextBlock>
+									</StackPanel>
+
 
 								</StackPanel>
+								<StackPanel Margin="12,0,0,6">
 
+									<Controls:QAButton
+										Title="Who makes Pocketailor?"
+										AnswerContainerHeight="387"
+										AnswerContainerName="whoAnswerContainer"
+										Margin="0,0,0,6"
+										/>
 
-								<Button x:Name="whoQuestionBtn" Style="{StaticResource questionButtonStyle}" Content="Who makes Pocketailor?">
-									<i:Interaction.Triggers>
-										<i:EventTrigger EventName="Tap">
-											<ec:ChangePropertyAction TargetName="whoAnswerContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=whoAnswerContainer}"/>
-										</i:EventTrigger>
-									</i:Interaction.Triggers>
-								</Button>
+									<StackPanel x:Name="whoAnswerContainer"
+										Visibility="Collapsed">
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="You do! Pocketailor is built on the adjustments and feedback of its users. The bits and bytes are written by Brendan Arnold of Lassiv software."/>
+										</TextBlock>
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,12">
+											<Run Text="Pocketailor is also built using Creative Commons photos and Open Source code, visit the 'legal and thanks' page to see a full list of contributors."/>
+										</TextBlock>
+										<Controls:AboutButton x:Name="legalThanksBtn" 
+											TitleText="Legal and thanks" 
+											Margin="0,0,0,24" 
+											IconImage="/Images/AppBar/appbar.scale.unbalanced.png" Tap="legalThanksBtn_Tap" />
 
-								<StackPanel x:Name="whoAnswerContainer"
-									Visibility="Collapsed">
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="You do! Pocketailor is built on the adjustments and feedback of its users. The bits and bytes are written by Brendan Arnold of Lassiv software."/>
-									</TextBlock>
-									<TextBlock Style="{StaticResource answerStyle}" Margin="12,0,0,6">
-										<Run Text="Pocketailor is also built using Creative Commons photos and Open Source code, visit the 'legal and thanks' page to see a full list of contributors."/>
-									</TextBlock>
-									<Controls:AboutButton x:Name="legalThanksBtn" TitleText="Legal and thanks" Margin="12,12,0,12" IconImage="/Images/AppBar/appbar.scale.unbalanced.png" Tap="legalThanksBtn_Tap" />
+									</StackPanel>
+
+						
 
 								</StackPanel>
 
