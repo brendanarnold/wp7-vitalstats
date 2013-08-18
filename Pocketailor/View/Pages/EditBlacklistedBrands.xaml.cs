@@ -21,6 +21,8 @@ namespace Pocketailor.View
 
             this.DataContext = App.VM;
 
+            
+
         }
 
 
@@ -72,8 +74,16 @@ namespace Pocketailor.View
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            App.VM.SkipLoadConversionPageData = true;
-            base.OnBackKeyPress(e);
+            if (App.VM.SuggestedOptionsVisible)
+            {
+                e.Cancel = true;
+                App.VM.SuggestedOptionsVisible = false;
+            }
+            else
+            {
+                App.VM.SkipLoadConversionPageData = true;
+                base.OnBackKeyPress(e);
+            }
         }
 
 
@@ -238,11 +248,14 @@ namespace Pocketailor.View
         private void suggestBrandBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.SuggestedOptionsVisible = !App.VM.SuggestedOptionsVisible;
-            if (App.VM.SuggestedOptionsVisible)
-                VisualStateManager.GoToState(this, "optionsVisibleVisualState", true);
-            else
-                VisualStateManager.GoToState(this, "optionsCollapsedVisualState", true);
+            //if (App.VM.SuggestedOptionsVisible)
+            //    VisualStateManager.GoToState(this, "optionsVisibleVisualState", true);
+            //else
+            //    VisualStateManager.GoToState(this, "optionsCollapsedVisualState", true);
         }
+
+
+        
 
 
     }
