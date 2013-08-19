@@ -26,21 +26,65 @@ namespace Pocketailor.View
 
         }
 
+        #region Slider behaviour
+
+
+        enum PendingSlide
+        {
+            None,
+            Down,
+            Up,
+        }
+
+        PendingSlide PendingJump { get; set; }
+
+
+        bool CrossThresholdUp(double threshold, double x, double delta)
+        {
+            return (x <= threshold && (x + delta) > threshold);
+        }
+
+        bool CrossThresholdDown(double threshold, double x, double delta)
+        {
+            return (x >= threshold && (x + delta) < threshold);
+        }
+
         void gestureListener_DragDelta(object sender, DragDeltaGestureEventArgs e)
         {
-            double sizeDownThreshold = (-App.VM.ScreenWidth + App.VM.ScreenWidth / 3);
-            double sizeUpThreshold = (-App.VM.ScreenWidth - App.VM.ScreenWidth / 3);
-
-            double newX = this.sliderTransform.TranslateX + e.HorizontalChange;
-            if (this.sliderTransform.TranslateX < sizeDownThreshold
-                && newX > sizeDownThreshold) 
+            // Beware reversed geometry - more negative translation means grid more to 
+            // the left and more towards jumping up a size
+            double sizeDownThreshold = (-App.VM.ScreenWidth + App.VM.ScreenWidth / 6);
+            double sizeUpThreshold = (-App.VM.ScreenWidth - App.VM.ScreenWidth / 6);
+            double x = this.sliderTransform.TranslateX;
+            // Start with most common first ...
+            // Test for passing the switch down threshold
+            if (this.CrossThresholdUp(sizeDownThreshold, x, e.HorizontalChange))
+            {
+                this.PendingJump = PendingSlide.Down;
                 this.SwitchToNextSizeDown(e.HorizontalChange);
-            else if (this.sliderTransform.TranslateX > sizeUpThreshold 
-                   && newX < sizeUpThreshold) 
+            }
+            // Test for passing the switch up threshold
+            else if (this.CrossThresholdDown(sizeUpThreshold, x, e.HorizontalChange))
+            {
+                this.PendingJump = PendingSlide.Up;
                 this.SwitchToNextSizeUp(e.HorizontalChange);
+            }
+            // Test for passing back past the switch down threshold (cancel jump)
+            else if (this.CrossThresholdDown(sizeDownThreshold, x, e.HorizontalChange))
+            {
+                this.PendingJump = PendingSlide.None;
+                this.SwitchToNextSizeUp(e.HorizontalChange);
+            }
+            else if (this.CrossThresholdUp(sizeUpThreshold, x, e.HorizontalChange))
+            {
+                this.PendingJump = PendingSlide.None;
+                this.SwitchToNextSizeDown(e.HorizontalChange);
+            }
             else
-                this.sliderTransform.TranslateX = newX;
-            
+            {
+                this.sliderTransform.TranslateX += e.HorizontalChange;
+            }
+
         }
 
         void gestureListener_DragStarted(object sender, DragStartedGestureEventArgs e)
@@ -58,6 +102,8 @@ namespace Pocketailor.View
 
         void JumpToCentralMeasurement()
         {
+            this.PendingJump = PendingSlide.None;
+            
             double finalX = -App.VM.ScreenWidth;
             double initialX = this.sliderTransform.TranslateX;
 
@@ -79,21 +125,25 @@ namespace Pocketailor.View
                 sb.Children.Add(xTransAnim);
                 sb.Begin();
             });
+            
         }
 
         void gestureListener_Flick(object sender, FlickGestureEventArgs e)
         {
-            if (Math.Abs(e.HorizontalVelocity) > 600)
+            if (this.PendingJump == PendingSlide.None)
             {
-                if (e.HorizontalVelocity > 0)
+                if (Math.Abs(e.HorizontalVelocity) > 600)
                 {
-                    this.SwitchToNextSizeDown(0);
-                    this.JumpToCentralMeasurement();
-                }
-                else
-                {
-                    this.SwitchToNextSizeUp(0);
-                    this.JumpToCentralMeasurement();
+                    if (e.HorizontalVelocity > 0)
+                    {
+                        this.SwitchToNextSizeDown(0);
+                        this.JumpToCentralMeasurement();
+                    }
+                    else
+                    {
+                        this.SwitchToNextSizeUp(0);
+                        this.JumpToCentralMeasurement();
+                    }
                 }
             }
         }
@@ -110,6 +160,11 @@ namespace Pocketailor.View
             this.sliderTransform.TranslateX += (delta - App.VM.ScreenWidth);
             Microsoft.Devices.VibrateController.Default.Start(TimeSpan.FromMilliseconds(10));
         }
+
+
+
+        #endregion
+
 
         public ConversionId ConversionId { get; set; }
         public BrandId BrandId { get; set; }
