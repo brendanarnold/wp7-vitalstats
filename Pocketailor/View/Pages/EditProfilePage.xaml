@@ -135,8 +135,8 @@
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+					
 				</Grid.RowDefinitions>
 				<Image
 					Grid.Row="0"
@@ -147,28 +147,10 @@
 				<TextBlock 
 					Grid.Row="1"
 					x:Name="titleTextBlock" Margin="36,0,0,24" TextWrapping="Wrap" Text="new profile" Padding="0" FontFamily="{StaticResource DialogTitleFont}" FontSize="{StaticResource DialogTitleFontSize}" Foreground="{StaticResource DialogSecondaryTxtColor}" />
-				<Canvas 
-					local:Clip.ToBounds="True"
-					Grid.Row="2"
-					Height="150" Margin="36,0,36,12" 
-					
-					Background="{StaticResource TileBGColor}">
-					
-					
-					<Image x:Name="image" Source="/Pocketailor;component/Images/Shirt.png" 
-						Canvas.Left="177" 
-						Canvas.Top="-37" RenderTransformOrigin="0.5,0.5" >
-						<Image.Projection>
-							<PlaneProjection/>
-						</Image.Projection>
-						<Image.RenderTransform>
-							<CompositeTransform ScaleX="0.5" ScaleY="0.5" TranslateX="90" TranslateY="43"/>
-						</Image.RenderTransform>
-					</Image>
-				</Canvas>
+				
 
 				<StackPanel
-					Grid.Row="3"
+					Grid.Row="2"
 					Margin="24,0,0,12">
 					
 					<RadioButton x:Name="femaleRadioBtn" 
@@ -200,16 +182,53 @@
 				
 				<Controls:TitledTextBox 
 					x:Name="nameTitledTextBox"
-					Grid.Row="5"
+					Grid.Row="3"
 					Title="NAME"
 					Margin="24,0,24,12"
 					/>
 				
 				<CheckBox 
-					Grid.Row="6"
+					Grid.Row="4"
 					x:Name="IsQuickListCheckBox" Content="ADD TO QUICKLIST" 
-					Margin="24,0,0,0" Style="{StaticResource dialogCheckBoxStyle}" 
+					Margin="24,0,0,12" Style="{StaticResource dialogCheckBoxStyle}" 
 					/>
+
+				
+
+				<Grid 
+					Grid.Row="5" 
+					Background="{StaticResource TileBGColor}"
+					>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock 
+					Grid.Column="0"
+					TextWrapping="Wrap" Margin="36,24,0,24" FontSize="21.333" Foreground="White" VerticalAlignment="Center">
+						<Run Text="Edit this later by long pressing the profile button on the profile page."/>
+						
+					</TextBlock>
+
+
+					<Canvas 
+						Grid.Column="1"
+						local:Clip.ToBounds="True"
+						>
+					
+						<Image x:Name="image" Source="/Pocketailor;component/Images/Shirt.png" 
+							Canvas.Top="-25" RenderTransformOrigin="0.5,0.5" Canvas.Left="5" >
+							<Image.Projection>
+								<PlaneProjection/>
+							</Image.Projection>
+							<Image.RenderTransform>
+								<CompositeTransform ScaleX="0.5" ScaleY="0.5" TranslateX="90" TranslateY="43"/>
+							</Image.RenderTransform>
+						</Image>
+					</Canvas>
+				
+				</Grid>
 				
 			</Grid>
 		

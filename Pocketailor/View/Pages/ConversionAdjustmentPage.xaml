@@ -373,7 +373,7 @@
 				<TextBlock 
 					Grid.Column="0"
 					TextWrapping="Wrap" Margin="36,24,0,24" FontSize="21.333" Foreground="White" VerticalAlignment="Center">
-						<Run Text="Swip left to go to a size down, right to go to the next size up"/>
+						<Run Text="Swipe left to go to a size down, right to go a size up."/>
 						<LineBreak />
 						<LineBreak />
 						<Run Text="When finished hit save below."/>

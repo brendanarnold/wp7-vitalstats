@@ -121,25 +121,32 @@
 	<Grid x:Name="LayoutRoot" Margin="0" Background="{StaticResource PageBGColor}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*" />
 			<RowDefinition Height="80"/>
 		</Grid.RowDefinitions>
+			
 
-		<Grid x:Name="headerGrid"  Grid.Row="0" Margin="0" VerticalAlignment="Top">
+
+		<Grid x:Name="headerGrid"  
+			Grid.Row="0" VerticalAlignment="Top">
+			
 			<Grid.RowDefinitions>
-				<RowDefinition Height="2*"/>
-				<RowDefinition Height="1*"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
 
+			<Image
+				Grid.Row="0"
+				Grid.RowSpan="2"
+				Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}"
+			/>
 
-			<Image x:Name="bgImage" 
-				Grid.RowSpan="3" 
-				VerticalAlignment="Top" Source="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToBGImage}}" Margin="0"/>
-			
+
 			<Grid x:Name="titleBarGrid" 
 				Grid.Row="0"
 				Background="{StaticResource PageBGColor}"
-				Margin="0,0,0,0" VerticalAlignment="Top">
+				VerticalAlignment="Top">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -177,8 +184,12 @@
 				</Button>
 			</Grid>
 			
+
+
 			<Grid x:Name="pageTitleContainerGrid" 
-				Grid.Row="1" VerticalAlignment="Top" Background="{StaticResource TileBGColor}" >
+				Grid.Row="1" 
+				VerticalAlignment="Center" 
+				Background="{StaticResource TileBGColor}" >
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -223,24 +234,124 @@
 					</i:Interaction.Triggers>
 				</Button>
 			</Grid>
-				
 			
+		</Grid>
+		<Grid x:Name="buttonsGrid"
+			Grid.Row="1"
+			Margin="0,0,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
+				Grid.Row="1"
+				Margin="12,12,12,12"
+				VerticalAlignment="Top" TitleText="Edit preferred brands"
+				IconImage="/Images/AppBar/appbar.edit.png" >
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Tap">
+						<ec:NavigateToPageAction TargetPage="/View/Pages/EditBlacklistedBrands.xaml"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Controls:AboutButton>
+			<!--
+			<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
+				Grid.Row="2"
+				Margin="12,12,12,12" 
+				VerticalAlignment="Top" TitleText="Show key measurements" 
+				IconImage="/Images/AppBar/appbar.pocketailor.tape.png" Tap="showKeyMeasurementsBtn_Tap">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Tap">
+						<ec:ChangePropertyAction x:Name="changeTextChangePropertyAction" PropertyName="TitleText" Value="{Binding TitleText, ConverterParameter=Show key measurements|Hide key measurements, Converter={StaticResource StringToNextString}, ElementName=showKeyMeasurementsBtn}"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Controls:AboutButton>
+			<Grid
+				x:Name="hiddenContentContainer"
+				Visibility="Collapsed"
+				Grid.Row="3">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<ListBox x:Name="measurementsListBox"
+					Grid.Row="0"
+					Margin="12,0,12,8"
+					Style="{StaticResource noScrollListBoxStyle}"
+					ItemsSource="{Binding AppViewModel.ConversionMeasurements, Source={StaticResource ViewModelLocator}}">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Grid x:Name="otherUnitMeasurmentGrid" Margin="0,0,0,12">
+								<i:Interaction.Triggers>
+									<i:EventTrigger EventName="Tap">
+										<ec:ChangePropertyAction TargetName="otherMeasurementUnitsListBox" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=otherMeasurementUnitsListBox}"/>
+									</i:EventTrigger>
+								</i:Interaction.Triggers>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="1*" />
+									<ColumnDefinition Width="1*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<TextBlock 
+									Grid.Column="0" Grid.Row="0"
+									FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PageTxtColor}"
+									Text="{Binding Name, FallbackValue=Height}" HorizontalAlignment="Right" />
+								<TextBlock 
+									Grid.Column="1" Grid.Row="0"
+									FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource SubTitleColor}"
+									Text="{Binding FormattedValue, FallbackValue=5 ft. 8 in.}" Margin="6,0,0,0" HorizontalAlignment="Left" />
+								<ListBox
+									x:Name="otherMeasurementUnitsListBox"
+									Grid.Column="1" Grid.Row="1"
+									Visibility="Collapsed"
+									ItemsSource="{Binding OtherUnitFormattedValues}"
+									Style="{StaticResource noScrollListBoxStyle}"
+										>
+									<ListBox.ItemTemplate>
+										<DataTemplate>
+											<Grid>
+												<TextBlock 
+													Text="{Binding FallbackValue=170 cm.}" 
+													Foreground="{StaticResource SubTitleColor}"
+													Margin="6,0,0,0" FontSize="25.333" />
+											</Grid>
+										</DataTemplate>
+									</ListBox.ItemTemplate>		
+								</ListBox>
+							</Grid>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+				<Controls:HelpTextBlock 
+					Grid.Row="1"
+					Margin="16,0,16,24"
+					HelpText="If a brand is not listed, use the above measurements to find the right size."/>
+			</Grid>
+			-->
+				
 		</Grid>
 
 		<Grid x:Name="loadingConversionDataPlaceHolderContainer"
-			Grid.Row="1"
+			Grid.Row="2"
 			Visibility="{Binding IsConversionDataLoading, Converter={StaticResource BoolToVisibility}}" d:IsHidden="True">
 			<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="240" Margin="0,-36,0,0">
 				<Grid.Clip>
 					<RectangleGeometry Rect="0, 0, 240, 110"/>
-				 </Grid.Clip>
+				</Grid.Clip>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
 				<TextBlock x:Name="loadingTextBlock" Grid.Row="0" 
 					FontFamily="Segoe WP" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,6" FontSize="21.333" Foreground="{StaticResource SubTitleColor}" 
-					>CALCULATING ...</TextBlock>
+					>
+					<Run Text="CALCULATING ..."/>
+				</TextBlock>
 				<Canvas x:Name="loadingImageContainer" Grid.Row="1">
 					<Image x:Name="rulerImage" 
 						Canvas.Left="-30"
@@ -251,7 +362,7 @@
 
 
 		<toolkit:LongListSelector 
-			Grid.Row="1"
+			Grid.Row="2"
 			x:Name="conversionsLongListSelector" 
 			Margin="0,0,0,0"
 			IsFlatList="False"
@@ -259,114 +370,18 @@
 			GroupViewOpened="conversionsLongListSelector_GroupViewOpened"
 			GroupViewClosing="conversionsLongListSelector_GroupViewClosing"
 			DisplayAllGroups="True" Background="Transparent" BufferSize="2" 
-			MaximumFlickVelocity="3000">
+			MaximumFlickVelocity="3000" Visibility="{Binding IsConversionDataLoading, Converter={StaticResource BoolToCollapsed}}" d:DataContext="{StaticResource LongListSampleDataInstance}">
 				
 			<toolkit:LongListSelector.ListHeaderTemplate>
 				<DataTemplate>
-				<!-- Top of whole control -->
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-						</Grid.RowDefinitions>
-						<Controls:AboutButton x:Name="editHiddenBrandsBtn" 
-							Grid.Row="1"
-							Margin="12,12,12,0"
-							VerticalAlignment="Top" TitleText="Edit preferred brands"
-							IconImage="/Images/AppBar/appbar.edit.png" >
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Tap">
-									<ec:NavigateToPageAction TargetPage="/View/Pages/EditBlacklistedBrands.xaml"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
-						</Controls:AboutButton>
-						<Controls:AboutButton x:Name="showKeyMeasurementsBtn" 
-							Grid.Row="2"
-							Margin="12,12,12,12" 
-							VerticalAlignment="Top" TitleText="Show key measurements" 
-							IconImage="/Images/AppBar/appbar.pocketailor.tape.png">
-							<i:Interaction.Triggers>
-								<i:EventTrigger EventName="Tap">
-									<ec:ChangePropertyAction x:Name="showHiddenContentChangePropertyAction" TargetName="hiddenContentContainer" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=hiddenContentContainer}"/>
-								</i:EventTrigger>
-								<i:EventTrigger EventName="Tap">
-									<ec:ChangePropertyAction x:Name="changeTextChangePropertyAction" PropertyName="TitleText" Value="{Binding TitleText, ConverterParameter=Show key measurements|Hide key measurements, Converter={StaticResource StringToNextString}, ElementName=showKeyMeasurementsBtn}"/>
-								</i:EventTrigger>
-							</i:Interaction.Triggers>
-						</Controls:AboutButton>
-						<Grid
-							x:Name="hiddenContentContainer"
-							Visibility="Collapsed"
-							Grid.Row="3">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="Auto"/>
-								<RowDefinition Height="Auto"/>
-							</Grid.RowDefinitions>
-							<ListBox x:Name="measurementsListBox"
-								Grid.Row="0"
-								Margin="12,0,12,8"
-								Style="{StaticResource noScrollListBoxStyle}"
-								ItemsSource="{Binding Path=AppViewModel.ConversionMeasurements, Source={StaticResource ViewModelLocator}}">
-								<ListBox.ItemTemplate>
-									<DataTemplate>
-										<Grid x:Name="otherUnitMeasurmentGrid" Margin="0,0,0,12">
-											<i:Interaction.Triggers>
-												<i:EventTrigger EventName="Tap">
-													<ec:ChangePropertyAction TargetName="otherMeasurementUnitsListBox" PropertyName="Visibility" Value="{Binding Visibility, Converter={StaticResource VisibilityToOpposite}, ElementName=otherMeasurementUnitsListBox}"/>
-												</i:EventTrigger>
-											</i:Interaction.Triggers>
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition Width="1*" />
-												<ColumnDefinition Width="1*" />
-											</Grid.ColumnDefinitions>
-											<Grid.RowDefinitions>
-												<RowDefinition Height="Auto" />
-												<RowDefinition Height="Auto" />
-											</Grid.RowDefinitions>
-											<TextBlock 
-												Grid.Column="0" Grid.Row="0"
-												FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PageTxtColor}"
-												Text="{Binding Name, FallbackValue=Height}" HorizontalAlignment="Right" />
-											<TextBlock 
-												Grid.Column="1" Grid.Row="0"
-												FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource SubTitleColor}"
-												Text="{Binding FormattedValue, FallbackValue=5 ft. 8 in.}" Margin="6,0,0,0" HorizontalAlignment="Left" />
-											<ListBox
-												x:Name="otherMeasurementUnitsListBox"
-												Grid.Column="1" Grid.Row="1"
-												Visibility="Collapsed"
-												ItemsSource="{Binding OtherUnitFormattedValues}"
-												Style="{StaticResource noScrollListBoxStyle}"
-												>
-												<ListBox.ItemTemplate>
-													<DataTemplate>
-														<Grid>
-															<TextBlock 
-																Text="{Binding FallbackValue=170 cm.}" 
-																Foreground="{StaticResource SubTitleColor}"
-																Margin="6,0,0,0" FontSize="25.333" />
-														</Grid>
-													</DataTemplate>
-												</ListBox.ItemTemplate>		
-											</ListBox>
-										</Grid>
-									</DataTemplate>
-								</ListBox.ItemTemplate>
-							</ListBox>
-							<Controls:HelpTextBlock 
-								Grid.Row="1"
-								Margin="16,0,16,24"
-								HelpText="If a brand is not listed, use the above measurements to find the right size."/>
-						</Grid>
-					</Grid>
+					<!-- Top of whole control -->
+					<Grid/>
 				</DataTemplate>
 			</toolkit:LongListSelector.ListHeaderTemplate>
 
 			<toolkit:LongListSelector.GroupHeaderTemplate>
 				<DataTemplate>
-				<!-- The header for the group e.g. letter -->
+					<!-- The header for the group e.g. letter -->
 					<Border Background="Transparent" Margin="12,6,0,6" 
 						Visibility="{Binding HasItems, Converter={StaticResource BoolToVisibility}}" 
 						HorizontalAlignment="Left">
@@ -393,7 +408,7 @@
 
 			<toolkit:LongListSelector.GroupItemTemplate>
 				<DataTemplate>
-				<!-- The individual item in the selector dialog -->
+					<!-- The individual item in the selector dialog -->
 					<Border 
 						Margin="6" 
 						IsHitTestVisible="{Binding HasItems}"
@@ -450,57 +465,24 @@
 
 			<toolkit:LongListSelector.ListFooterTemplate>
 				<DataTemplate>
-				<!-- Bottom of whole control -->
+					<!-- Bottom of whole control -->
 					<Grid/>
 				</DataTemplate>
 			</toolkit:LongListSelector.ListFooterTemplate>
 
 			<toolkit:LongListSelector.GroupItemsPanel>
 				<ItemsPanelTemplate>
-				<!-- The selection dialog container -->
+					<!-- The selection dialog container -->
 					<toolkit:WrapPanel Orientation="Horizontal" />
 				</ItemsPanelTemplate>
 			</toolkit:LongListSelector.GroupItemsPanel>
 
-			<toolkit:LongListSelector.Visibility>
-				<Binding Converter="{StaticResource BoolToCollapsed}" Path="IsConversionDataLoading"/>
-			</toolkit:LongListSelector.Visibility>
-
-			<d:DataContext>
-				<StaticResource ResourceKey="LongListSampleDataInstance"/>
-			</d:DataContext>				
 		</toolkit:LongListSelector>
 
-		
 
-		<Border
-			Grid.Row="2"
-			Width="480" Height="80" BorderThickness="0,2,0,0" BorderBrush="{StaticResource PageTxtColor}"
-			>
-	
-			<adRotator:AdRotatorControl
-				xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
-				x:Name="AdRotatorControl"
-				SettingsUrl="http://www.lassiv.com/pocketailor/misc/PocketailorWPAdConfig.xml"
-				DefaultAdType="PubCenter"
-				DefaultSettingsFileUri="/Pocketailor;component/Ads/RotatorAdSettings.xml"
-				SlidingAdDirection="Left"
-				SlidingAdDisplaySeconds="10"
-				SlidingAdHiddenSeconds="0"/>
-			
-	
-		</Border>
-
-		<!--
-		<Border Grid.Row="2"   Width="480" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" BorderBrush="White">
-			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
-				<Run Text="Advert here"/>
-			</TextBlock>
-		</Border>
-		-->
 		<AdDuplex:AdControl
 			x:Name="adDuplexAd"
-			Grid.Row="2"
+			Grid.Row="3"
 			AppId="39175"
 			/>
 	
