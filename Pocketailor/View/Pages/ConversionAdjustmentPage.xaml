@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:Pocketailor.View"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
-    xmlns:Controls="clr-namespace:Pocketailor.View.Controls"
+    xmlns:Controls="clr-namespace:Pocketailor.View.Controls" x:Name="conversionAdjustmentPage"
     x:Class="Pocketailor.View.ConversionAdjustmentPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -29,7 +29,9 @@
 		
 
 		<local:BoolToOpacity x:Key="BoolToOpacity"/>
+		<local:StringToUpper x:Key="StringToUpper" />
 		<local:BoolToVisibility x:Key="BoolToVisibility"/>
+		<local:BoolToCollapsed x:Key="BoolToCollapsed" />
 		<local:StringOrDefaultOnEmpty x:Key="StringOrDefaultOnEmpty" />
 
 		<local:BoolToNotBool x:Key="BoolToNotBool"/>
@@ -99,11 +101,9 @@
 
 
 	<!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot"  Background="{StaticResource DialogBGColor}" Width="1440">
-		<Grid.Clip>
-			<RectangleGeometry Rect="0,0,1440,800" />
-		</Grid.Clip>
-        
+	<Grid x:Name="LayoutRoot"  Background="{StaticResource DialogBGColor}" 
+		Width="{Binding SliderContainerWidth, ConverterParameter=*3, Converter={StaticResource DoubleToArithmetic}, ElementName=conversionAdjustmentPage, FallbackValue=1440}">
+		
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
@@ -162,9 +162,8 @@
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
+					<RowDefinition Height="52" />
 					<RowDefinition Height="*" />
-					<RowDefinition />
 				</Grid.RowDefinitions>
 		
 			
@@ -172,7 +171,7 @@
 					Grid.Row="0"
 					x:Name="pageTitleTextBlock"
 					TextWrapping="Wrap" Text="adjust size" 
-					Margin="36,0,36,6" 
+					Margin="36,0,36,12" 
 					FontSize="{StaticResource DialogTitleFontSize}" 
 					FontFamily="{StaticResource DialogTitleFont}" 
 					Foreground="{StaticResource DialogSecondaryTxtColor}" HorizontalAlignment="Left"/>
@@ -182,30 +181,49 @@
 					Orientation="Horizontal" Margin="36,0,0,24">
 					<TextBlock 
 						x:Name="helpTextBlock" 
-						Text="{Binding SelectedConversionData.ConversionString, FallbackValue=Dress}"
-						FontSize="26.667" 
-						Foreground="{StaticResource PageTxtColor}"/>
+						Text="{Binding SelectedConversionData.ConversionString, 
+							Converter={StaticResource StringToUpper},
+							FallbackValue=Dress}"
+						 
+						Foreground="{StaticResource PageTxtColor}" FontSize="24"/>
 					<TextBlock 
 						Text=" from "
-						FontSize="26.667" 
-						Foreground="{StaticResource PageTxtColor}"/>
+						
+						Foreground="{StaticResource PageTxtColor}" FontSize="24"/>
 					<TextBlock 
-						Text="{Binding SelectedConversionData.BrandName, FallbackValue=Marks &amp; Spencer}"
-						FontSize="26.667" 
-						Foreground="{StaticResource PageTxtColor}"/>
+						Text="{Binding SelectedConversionData.BrandName, 
+						Converter={StaticResource StringToUpper},
+						FallbackValue=Marks &amp; Spencer}"
+						 
+						Foreground="{StaticResource PageTxtColor}" FontSize="24"/>
 				</StackPanel>
+
+				
+				<!--
+				<TextBlock
+					Grid.Row="2"
+					Margin="36,0,0,24"
+					Text="Swipe the size below to the left to switch down, right to switch up."
+					HorizontalAlignment="Left" 
+					Width="{Binding ScreenWidth, ConverterParameter=-72, Converter={StaticResource DoubleToArithmetic}, FallbackValue=408}"
+					TextWrapping="Wrap"
+					FontSize="{StaticResource HelpTxtFontSizeNormal}"
+					FontFamily="{StaticResource HelpTxtFont}"
+					/>
 
 				<Controls:HelpTextBlock
 					
 					Grid.Row="2"
 					Margin="36,0,0,24"
-					HelpText="Swipe below to change the size" HorizontalAlignment="Left" Width="{Binding ScreenWidth, ConverterParameter=-72, Converter={StaticResource DoubleToArithmetic}, FallbackValue=408}"
+					HelpText="Swipe the size below to the left to switch down, right to switch up." HorizontalAlignment="Left" Width="{Binding ScreenWidth, ConverterParameter=-72, Converter={StaticResource DoubleToArithmetic}, FallbackValue=408}"
 					/>
+				-->
 
 
 				<Grid x:Name="sliderContainer"
+					Background="{StaticResource PageBGColor}"
 					Grid.Row="3"
-					Margin="0,0,0,24" RenderTransformOrigin="0.5,0.5"
+					Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"
 					>
 					
 					<toolkit:GestureService.GestureListener>
@@ -217,70 +235,116 @@
 					</toolkit:GestureService.GestureListener>
 
 					<Grid.RenderTransform>
-						<CompositeTransform x:Name="sliderTransform" TranslateX="{Binding ScreenWidth, Converter={StaticResource DoubleToNegative}, FallbackValue=-480}"/>
+						<CompositeTransform x:Name="sliderTransform" TranslateX="{Binding SliderRestTranslateX, ElementName=conversionAdjustmentPage, FallbackValue=-480}"/>
 					</Grid.RenderTransform>
+
+					
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="{Binding ScreenWidth, FallbackValue=480}" />
-						<ColumnDefinition Width="{Binding ScreenWidth, FallbackValue=480}" />
-						<ColumnDefinition Width="{Binding ScreenWidth, FallbackValue=480}" />
+						<ColumnDefinition Width="1*" />
+						<ColumnDefinition Width="1*" />
+						<ColumnDefinition Width="1*" />
 					</Grid.ColumnDefinitions>
 
-					<StackPanel x:Name="sizeContainer1"
-					
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+
+					<StackPanel x:Name="sizeDownContainer"
+						Visibility="{Binding SelectedConversionData.NoneSmaller, Converter={StaticResource BoolToCollapsed}}"
 						Grid.Column="0" HorizontalAlignment="Center">
+						<StackPanel.RenderTransform>
+							<CompositeTransform  x:Name="sizeDownContainerTransform"/>
+						</StackPanel.RenderTransform>
 						<TextBlock 
-							x:Name="sizeRegion1TextBlock"
+							x:Name="sizeDownRegionTextBlock"
 							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
-							Margin="36,0,0,-6" 
+							Margin="0,0,0,-6" 
 							FontSize="26.667" 
-							Foreground="{StaticResource SubTitleColor}"/>
+							Foreground="{StaticResource SubTitleColor}" HorizontalAlignment="Center"/>
 						<TextBlock
-							x:Name="sizeValue1TextBlock"
-							Margin="36,0,0,0"
+							x:Name="sizeDownValueTextBlock"
+							Text="{Binding SelectedConversionData.SizeDownFormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
+							Foreground="{StaticResource SubTitleColor}"
+							FontFamily="Segoe WP Semibold" 
+							FontSize="48" HorizontalAlignment="Center"/>
+					</StackPanel>
+
+					<StackPanel x:Name="sizeContainer"
+						Grid.Column="1" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+						<StackPanel.RenderTransform>
+							<CompositeTransform x:Name="sizeContainerTransform" />
+						</StackPanel.RenderTransform>
+						<TextBlock 
+							x:Name="sizeRegionTextBlock"
+							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
+							Margin="0,0,0,-6" 
+							FontSize="26.667" 
+							Foreground="{StaticResource SubTitleColor}" HorizontalAlignment="Center"/>
+						<TextBlock
+							x:Name="sizeValueTextBlock"
 							Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
 							Foreground="{StaticResource SubTitleColor}"
 							FontFamily="Segoe WP Semibold" 
-							FontSize="48"/>
+							FontSize="48" HorizontalAlignment="Center"/>
 					</StackPanel>
 
-					<StackPanel x:Name="sizeContainer2"
-						
-						Grid.Column="1" HorizontalAlignment="Center">
-						<TextBlock 
-							x:Name="sizeRegion2TextBlock"
-							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
-							Margin="36,0,0,-6" 
-							FontSize="26.667" 
-							Foreground="{StaticResource SubTitleColor}"/>
-						<TextBlock
-							x:Name="sizeValue2TextBlock"
-							Margin="36,0,0,0"
-							Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (regular)?}" 
-							Foreground="{StaticResource SubTitleColor}"
-							FontFamily="Segoe WP Semibold" 
-							FontSize="48"/>
-					</StackPanel>
-
-					<StackPanel x:Name="sizeContainer3"
+					<StackPanel x:Name="sizeUpContainer"
 						Grid.Column="2" HorizontalAlignment="Center"
-					
+						Visibility="{Binding SelectedConversionData.NoneBigger, Converter={StaticResource BoolToCollapsed}}"
 						>
+						<StackPanel.RenderTransform>
+							<CompositeTransform  x:Name="sizeUpContainerTransform"/>
+						</StackPanel.RenderTransform>
 						<TextBlock 
-							x:Name="sizeRegion3TextBlock"
+							x:Name="sizeUpRegionTextBlock"
 							Text="{Binding SelectedConversionData.RegionString, FallbackValue=UK}"
-							Margin="36,0,0,-6" 
+							Margin="0,0,0,-6" 
 							FontSize="26.667" 
-							Foreground="{StaticResource SubTitleColor}"/>
+							Foreground="{StaticResource SubTitleColor}" HorizontalAlignment="Center"/>
 						<TextBlock
-							x:Name="sizeValue3TextBlock"
-							Margin="36,0,0,0"
-							Text="{Binding SelectedConversionData.FormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (rgularar)?}" 
+							x:Name="sizeUpValueTextBlock"
+							Text="{Binding SelectedConversionData.SizeUpFormattedValue, ConverterParameter=|?, Converter={StaticResource StringToAffixedString}, FallbackValue=18/xxxl (rgularar)?}" 
 							Foreground="{StaticResource SubTitleColor}"
 							FontFamily="Segoe WP Semibold" 
-							FontSize="48"/>
+							FontSize="48" HorizontalAlignment="Center"/>
 
 					</StackPanel>
 
+
+					<Image
+						x:Name="sizeDownRulerImage"
+						Visibility="{Binding SelectedConversionData.NoneSmaller, Converter={StaticResource BoolToCollapsed}}"
+						Grid.Row="1"
+						Grid.Column="0"
+						Margin="0,12,0,0"
+						Grid.ColumnSpan="1"
+						Source="/Images/ruler_w480.png" Stretch="None" HorizontalAlignment="Right" />
+
+					<Image
+						x:Name="sizeRulerImage"
+						Grid.Row="1"
+						Grid.Column="1"
+						Margin="0,12,0,0"
+						Grid.ColumnSpan="1"
+						Source="/Images/ruler_w480.png" 
+						Stretch="None"
+						RenderTransformOrigin="0.5,0.5">
+						<Image.RenderTransform>
+							<CompositeTransform x:Name="sizeRulerImageTransform" ScaleX="1"/>
+						</Image.RenderTransform>
+					</Image>
+
+					<Image
+						x:Name="sizeUpRulerImage"
+						Visibility="{Binding SelectedConversionData.NoneBigger, Converter={StaticResource BoolToCollapsed}}"
+						Grid.Row="1"
+						Grid.Column="2"
+						Margin="0,12,0,0"
+						Grid.ColumnSpan="1"
+						Source="/Images/ruler_w480.png" Stretch="None" >
+						
+					</Image>
 
 
 				</Grid>
@@ -288,13 +352,38 @@
 				<TextBlock
 					Grid.Row="4" 
 					Text="* This size was adjusted previously"
-					
-					Margin="36,0,36,0" FontSize="21.333" Foreground="{StaticResource PageTxtColor}" Visibility="{Binding SelectedConversionData.IsPreviouslyAdjusted, Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Left"/>
+					Margin="36,0,36,24" 
+					FontSize="21.333" 
+					Foreground="{StaticResource SubTitleColor}" 
+					Visibility="{Binding SelectedConversionData.IsPreviouslyAdjusted, Converter={StaticResource BoolToVisibility}}" 
+					HorizontalAlignment="Left"/>
 
-				<Image 
+				
+
+				<Grid 
 					Grid.Row="5"
-					Source="/Images/TailorShears.png" Stretch="None" HorizontalAlignment="Left" Margin="0,12,36,0"/>
-
+					Background="{StaticResource TileBGColor}"
+					Width="{Binding ScreenWidth, FallbackValue=480}" HorizontalAlignment="Left">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*" />
+						<ColumnDefinition Width="1*" />
+					</Grid.ColumnDefinitions>
+				
+				
+				<TextBlock 
+					Grid.Column="0"
+					TextWrapping="Wrap" Margin="36,24,0,24" FontSize="21.333" Foreground="White" VerticalAlignment="Center">
+						<Run Text="Swip left to go to a size down, right to go to the next size up"/>
+						<LineBreak />
+						<LineBreak />
+						<Run Text="When finished hit save below."/>
+					</TextBlock>
+				
+				
+				<Image 
+					Grid.Column="1"
+					Source="/Images/TailorShears.png" HorizontalAlignment="Right" Margin="0,12,20,0"/>
+				</Grid>
 
 
 

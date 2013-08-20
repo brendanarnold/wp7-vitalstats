@@ -156,6 +156,8 @@ namespace Pocketailor.Model
                     this.NotifyPropertyChanged("NoneBigger");
                     this.NotifyPropertyChanged("NoneSmaller");
                     this.NotifyPropertyChanged("FormattedValue");
+                    this.NotifyPropertyChanged("SizeUpFormattedValue");
+                    this.NotifyPropertyChanged("SizeDownFormattedValue");
                 }
             }
         }
@@ -175,6 +177,8 @@ namespace Pocketailor.Model
                 this.NotifyPropertyChanged("NoneBigger");
                 this.NotifyPropertyChanged("NoneSmaller");
                 this.NotifyPropertyChanged("FormattedValue");
+                this.NotifyPropertyChanged("SizeUpFormattedValue");
+                this.NotifyPropertyChanged("SizeDownFormattedValue");
             }
         }
 
@@ -219,6 +223,29 @@ namespace Pocketailor.Model
             get
             {
                 int i = this.GetAdbsIndAdjustment();
+                if (i < 0) return "all too big";
+                if (i >= this.SizeIds.Count) return "all too small";
+                return this.Sizes[i];
+            }
+        }
+
+
+        public string SizeDownFormattedValue
+        {
+            get
+            {
+                int i = this.GetAdbsIndAdjustment() - 1;
+                if (i < 0) return "all too big";
+                if (i >= this.SizeIds.Count) return "all too small";
+                return this.Sizes[i];
+            }
+        }
+
+        public string SizeUpFormattedValue
+        {
+            get
+            {
+                int i = this.GetAdbsIndAdjustment() + 1;
                 if (i < 0) return "all too big";
                 if (i >= this.SizeIds.Count) return "all too small";
                 return this.Sizes[i];
@@ -408,7 +435,7 @@ namespace Pocketailor.Model
 
 #endif
 
-        #region A terrible way to set the adjustment state which clearly belongs in the View
+        #region A terrible way to set the adjustment state which clearly belongs in the ViewModel
 
         private bool _isAdjusting = false;
         public bool IsAdjusting

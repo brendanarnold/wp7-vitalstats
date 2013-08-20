@@ -148,10 +148,10 @@
 				<Image
 					Grid.Column="0" 
 					Source="{StaticResource LassivTitleSmall}"
-					HorizontalAlignment="Left" Margin="24,0,0,-3" Stretch="None" />
+					HorizontalAlignment="Left" Margin="24,0,0,3" Stretch="None" />
 				<Button Grid.Column="1" 
 					x:Name="profileNameBtn" 
-					Margin="0,0,24,0" 
+					Margin="0,3,24,3" 
 					Content="{Binding SelectedProfile.Name, ConverterParameter=[no name], Converter={StaticResource StringOrDefaultOnEmpty}}"
 					Tap="profileNameBtn_Tap">
 					<Button.Style>
@@ -178,8 +178,7 @@
 			</Grid>
 			
 			<Grid x:Name="pageTitleContainerGrid" 
-				Grid.Row="1"
-				Background="{StaticResource ImgOverlayColor}" VerticalAlignment="Top" >
+				Grid.Row="1" VerticalAlignment="Top" Background="{StaticResource TileBGColor}" >
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
@@ -188,13 +187,13 @@
 					Grid.Column="0" 
 					TextWrapping="Wrap" 
 					Text="{Binding SelectedConversionType, Converter={StaticResource SelectedConversionToPageTitleString}}" 
-					FontFamily="Segoe WP Light" 
+					FontFamily="{StaticResource DialogTitleFont}" 
 					Margin="24,0,0,0" 
-					FontSize="53.333" 
+					FontSize="{StaticResource DialogTitleFontSize}" 
 					Foreground="{StaticResource TileTxtColor}" />
 				<Button x:Name="regionChangeBtn" 
 					Grid.Column="1" 
-					Content="{Binding SelectedRegionString}" 
+					Content="{Binding SelectedRegionString, Converter={StaticResource StringToUpper}}" 
 					HorizontalAlignment="Right" Margin="24,0,24,6" 
 					VerticalAlignment="Bottom">
 					<Button.Style>
@@ -205,7 +204,7 @@
 										<Grid>
 											<TextBlock Text="{TemplateBinding Content}" 
 												FontFamily="Segoe WP SemiLight" 
-												FontSize="32"
+												FontSize="28"
 												Foreground="{StaticResource TileTxtColor}" />
 										</Grid>
 									</ControlTemplate>
@@ -428,7 +427,7 @@
 							Text="{Binding BrandName, FallbackValue=Loading ...}"
 							Grid.Row="0" 
 							FontFamily="Segoe WP SemiLight"
-							FontSize="34.667" Foreground="{StaticResource PageTxtColor}"
+							FontSize="33" Foreground="{StaticResource PageTxtColor}"
 							VerticalAlignment="Top"/>
 							
 						<StackPanel 
