@@ -94,7 +94,7 @@ namespace Pocketailor.View
                 messageBox.Show();
             }
 
-            if (App.VM.NumberOfLaunches > AppConstants.NUM_BOOTS_TIL_READY_TO_RATE)
+            if (App.VM.NumberOfLaunches == AppConstants.NUM_BOOTS_TIL_READY_TO_RATE)
             {
                 MessageBoxResult res = MessageBox.Show("We hope you have got to know Pocketailor and we hope you love it - one of the best ways to support us is through a rating on the Marketplace. Would you like to leave a rating?"
                     + Environment.NewLine
@@ -106,6 +106,16 @@ namespace Pocketailor.View
                 {
                     App.VM.RateApp();
                 };
+            }
+
+
+            if (App.VM.Profiles.Count == 0)
+            {
+                this.highlightProfilesStoryBoard.Begin();
+            }
+            else
+            {
+                this.highlightProfilesStoryBoard.Stop();
             }
 
 
@@ -562,6 +572,18 @@ namespace Pocketailor.View
         private void facebookQuestionBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Animations.BlindDown.OpenToHeight(this.facebookAnswer, 113);
+        }
+
+        private void mainPanorama_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (this.mainPanorama.SelectedIndex != 0 && this.mainPanorama.SelectedIndex != 4)
+            {
+                this.highlightProfilesStoryBoard.Stop();
+            }
+            else if (App.VM.Profiles.Count == 0)
+            {
+                this.highlightProfilesStoryBoard.Begin();
+            }
         }
 
 
