@@ -262,9 +262,9 @@
 									</Button.Style>
 								</Button>
 
-								<Button x:Name="navToSettingsBtn" 
+								<Button x:Name="navToOpinionBtn" 
 									Grid.Column="1"
-									Content="Settings" Height="125" Margin="12,0,0,12" Grid.Row="0" Tap="navToSettingsBtn_Tap">
+									Content="Opinion" Height="125" Margin="12,0,0,12" Grid.Row="0" Tap="navToOpinionBtn_Tap">
 									<Button.Resources>
 										<Style x:Key="ButtonStyle2" TargetType="Button">
 											<Setter Property="Template">
@@ -272,7 +272,7 @@
 													<ControlTemplate TargetType="Button">
 														<Grid>
 															<Grid.Background>
-																<ImageBrush Stretch="Fill" ImageSource="/Images/settings-btn.jpg"/>
+																<ImageBrush Stretch="Fill" ImageSource="/Images/opinion-btn.jpg"/>
 															</Grid.Background>
 															<Grid.RowDefinitions>
 																<RowDefinition Height="Auto" />
@@ -348,9 +348,9 @@
 								</Button>
 
 
-								<Button x:Name="navToOpinionBtn" 
+								<Button x:Name="navToSettingsBtn" 
 									Grid.Column="1"
-									Content="Opinion" Height="125" Margin="6,0,0,12" Grid.Row="0" Tap="navToOpinionBtn_Tap">
+									Content="Settings" Height="125" Margin="6,0,0,12" Grid.Row="0" Tap="navToSettingsBtn_Tap">
 									<Button.Resources>
 										<Style x:Key="ButtonStyle2" TargetType="Button">
 											<Setter Property="Template">
@@ -358,7 +358,7 @@
 													<ControlTemplate TargetType="Button">
 														<Grid>
 															<Grid.Background>
-																<ImageBrush Stretch="Fill" ImageSource="/Images/opinion-btn.jpg"/>
+																<ImageBrush Stretch="Fill" ImageSource="/Images/settings-btn.jpg"/>
 															</Grid.Background>
 															<Grid.RowDefinitions>
 																<RowDefinition Height="Auto" />
@@ -1008,7 +1008,7 @@
 		<AdDuplex:AdControl
 			x:Name="adDuplexAd"
 			Grid.Row="1"
-			AppId="39175"
+			AppId="39175" HorizontalAlignment="Left"
 			/>
 
 
