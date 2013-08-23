@@ -222,8 +222,12 @@
 			HorizontalAlignment="Left" Margin="36,12,0,6" Stretch="None" />
 		<TextBlock
 			Grid.Row="1" 
-			TextWrapping="Wrap" Text="preferred brands" 
-			Margin="36,0,36,6" FontSize="{StaticResource DialogTitleFontSize}" FontFamily="{StaticResource DialogTitleFont}" Foreground="{StaticResource DialogSecondaryTxtColor}"/>
+			TextWrapping="Wrap" 
+			Text="preferred brands" 
+			Margin="36,0,36,6"
+			 FontSize="{StaticResource DialogTitleFontSize}" 
+			 FontFamily="{StaticResource DialogTitleFont}" 
+			 Foreground="{StaticResource DialogSecondaryTxtColor}"/>
 		
 		<Controls:HelpTextBlock
 			Grid.Row="2" 

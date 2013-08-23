@@ -143,8 +143,11 @@ namespace Pocketailor.ViewModel
             {
                 c.IsNewlyUnlocked = false;
                 c.NotifyPropertyChanged("HasRequiredMeasurements");
-                if (this.NewlyUnlockedConversions.Contains(c)) this.NewlyUnlockedConversions.Remove(c);
-                if (this.NewlyUnlockedConversions.Count == 0) this.NewlyUnlockedConversions = null;
+                if (this.NewlyUnlockedConversions != null)
+                {
+                    if (this.NewlyUnlockedConversions.Contains(c)) this.NewlyUnlockedConversions.Remove(c);
+                    if (this.NewlyUnlockedConversions.Count == 0) this.NewlyUnlockedConversions = null;
+                }
             }
 
         }

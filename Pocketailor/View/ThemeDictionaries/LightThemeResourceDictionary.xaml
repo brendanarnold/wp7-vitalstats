@@ -10,9 +10,9 @@
 	-->
 
     <SolidColorBrush x:Key="PivotTitleColor">#DB6842</SolidColorBrush>
-	<SolidColorBrush x:Key="PivotHeaderColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="PivotHeaderColor">#4d4d4d</SolidColorBrush>
 	<SolidColorBrush x:Key="PageBGColor">#ffffff</SolidColorBrush>
-	<SolidColorBrush x:Key="PageTxtColor">#1E1E1E</SolidColorBrush>
+	<SolidColorBrush x:Key="PageTxtColor">#4d4d4d</SolidColorBrush>
 	<SolidColorBrush x:Key="SubTitleColor">#FFAA00</SolidColorBrush>
 	<SolidColorBrush x:Key="HighlightTxtColor">#8ABE2D</SolidColorBrush>
 	<SolidColorBrush x:Key="AccentColor">#8ABE2D</SolidColorBrush>
@@ -26,7 +26,7 @@
 	
 	<SolidColorBrush x:Key="DialogBGColor">#FFFFFF</SolidColorBrush>
 	<SolidColorBrush x:Key="DialogTxtColor">#FFAA00</SolidColorBrush>
-	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#000000</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogSecondaryTxtColor">#4d4d4d</SolidColorBrush>
 	
 	<SolidColorBrush x:Key="HelpTxtColor">#444444</SolidColorBrush>
 	<SolidColorBrush x:Key="HelpTxtBGColor">#00FFFFFF</SolidColorBrush>

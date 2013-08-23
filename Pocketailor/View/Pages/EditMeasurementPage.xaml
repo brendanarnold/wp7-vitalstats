@@ -77,7 +77,10 @@
 	</d:DataContext>
 	
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="{StaticResource ApplicationBarBGColor}" ForegroundColor="{StaticResource ApplicationBarFGColor}">
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem x:Name="deleteMeasurementMenuItem" IsEnabled="True" Text="delete measurement" Click="deleteMeasurementMenuItem_Click"/>
+			</shell:ApplicationBar.MenuItems>
         	<shell:ApplicationBarIconButton x:Name="saveAppBarBtn" IconUri="/Images/AppBar/appbar.save.png" Text="save" IsEnabled="True" Click="saveAppBarBtn_Click"/>
       	</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>

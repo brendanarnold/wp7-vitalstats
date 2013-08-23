@@ -14,6 +14,8 @@ using Pocketailor.Model;
 using System.Windows.Data;
 using Pocketailor.View.Controls;
 using System.Windows.Media.Imaging;
+using Pocketailor.ViewModel;
+using Microsoft.Phone.Shell;
 
 namespace Pocketailor.View
 {
@@ -48,6 +50,11 @@ namespace Pocketailor.View
 
             // Take a snapshot to determine if changes have been made later
             this.TakeSnapshotOfForm();
+
+            if (App.VM.EditMeasurementsPageAction == EditMeasurementPageActions.New)
+            {
+                (this.ApplicationBar.MenuItems[0] as ApplicationBarMenuItem).IsEnabled = false;
+            }
 
             this.MeasurementInitialised = true;
 
@@ -266,6 +273,17 @@ namespace Pocketailor.View
         private void profileNameBtn_Tap(object sender, System.EventArgs e)
         {
             
+        }
+
+        private void deleteMeasurementMenuItem_Click(object sender, System.EventArgs e)
+        {
+            if (MessageBox.Show("Tap OK to clear this measurement.", "delete measurement?", MessageBoxButton.OKCancel) == MessageBoxResult.OK) 
+            {
+                App.VM.DeleteMeasurementFromProfile(App.VM.SelectedMeasurement, App.VM.SelectedProfile);
+                if (NavigationService.CanGoBack)
+                    NavigationService.GoBack();
+            }
+        	
         }
 
         #endregion

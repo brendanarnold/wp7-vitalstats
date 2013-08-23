@@ -97,6 +97,7 @@
 			<ContentPresenter>
 				<TextBlock Text="{Binding}" 
 					FontFamily="Segoe WP Light"
+					Foreground="{StaticResource PageTxtColor}"
 					FontSize="{StaticResource DialogTitleFontSize}" Margin="0,10,0,0" />
 			</ContentPresenter>
         </DataTemplate>
@@ -198,8 +199,7 @@
 			HeaderTemplate="{StaticResource panoramaTitle}" 
 			Title="pocketailor" 
 			Background="{StaticResource PageBGColor}" 
-			Foreground="{StaticResource PageTxtColor}" 
-			SelectionChanged="Panorama_SelectionChanged">
+			Foreground="{StaticResource PageTxtColor}">
 
 
 			<controls:Panorama.TitleTemplate>
@@ -207,6 +207,8 @@
 					<Image Margin="0,100,0,0" Source="{StaticResource LassivTitle}" />
 				</DataTemplate>
 			</controls:Panorama.TitleTemplate>
+
+			
 
 
             <!--Panorama item one-->
