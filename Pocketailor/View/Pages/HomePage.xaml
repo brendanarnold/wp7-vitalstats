@@ -19,7 +19,7 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"
 	toolkit:TiltEffect.IsTiltEnabled="True" 
-	Margin="-4,0,4,0">
+	>
 
 
 
@@ -627,7 +627,7 @@
 								</StackPanel>
 
 								<StackPanel 
-									Visibility="{Binding AllowFeedback, Converter={StaticResource BoolToVisibility}}"
+									Visibility="{Binding ReadyToRate, Converter={StaticResource BoolToVisibility}}"
 									Margin="12,0,0,6">
 								
 									<Controls:QAButton x:Name="reviewQuestionBtn"

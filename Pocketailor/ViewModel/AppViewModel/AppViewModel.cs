@@ -96,7 +96,7 @@ namespace Pocketailor.ViewModel
             int count = App.Settings.GetValueOrDefault<int>("NumberOfLaunches", -1);
             if (count == -1)
             {
-                App.Settings.AddOrUpdateValue("NumberOfLaunches", 0);
+                App.Settings.AddOrUpdateValue("NumberOfLaunches", 1);
             }
             else
             {

@@ -32,6 +32,83 @@ namespace Pocketailor.View
             base.OnNavigatedTo(e);
             this.DataContext = App.VM;
             App.VM.LoadMainPageData();
+
+            if (App.VM.NumberOfLaunches == 0)
+            {
+
+                ListPicker listPicker = new ListPicker()
+                {
+                    Header = "Please choose your preferred units:",
+                    ItemsSource = new string[] { "Metric (m/cm/kg)", "Imperial (ft/in/lb/st)" },
+                    Margin = new Thickness(12, 42, 24, 18)
+                };
+
+
+                CustomMessageBox messageBox = new CustomMessageBox()
+                {
+                    Caption = "Welcome to Pocketailor!",
+                    Message =
+                        "We are delighted you downloaded our app. Use Pocketailor to calculate the best clothing size for hundreds of brands worldwide."
+                        + Environment.NewLine + Environment.NewLine
+                        + "Whilst we believe Pocketailer gives great results, we cannot accept any responsibility if, for some reason, clothes bought are not the correct size!",
+                    Content = listPicker,
+                    LeftButtonContent = "ok",
+                    IsFullScreen = false,
+                };
+
+                messageBox.Dismissing += (s1, e1) =>
+                {
+                    if (listPicker.ListPickerMode == ListPickerMode.Expanded)
+                    {
+                        e1.Cancel = true;
+                    }
+                };
+
+                messageBox.Dismissed += (s1, e1) =>
+                {
+                    switch (e1.Result)
+                    {
+                        case CustomMessageBoxResult.None:
+                        case CustomMessageBoxResult.LeftButton:
+                            if (listPicker.SelectedIndex == 0)
+                            {
+                                App.VM.UnitCulture = UnitCultureId.Metric;
+                                this.imperialRadioBtn.IsChecked = false;
+                                this.metricRadioBtn.IsChecked = true;
+                            }
+                            else
+                            {
+                                App.VM.UnitCulture = UnitCultureId.Imperial;
+                                this.imperialRadioBtn.IsChecked = true;
+                                this.metricRadioBtn.IsChecked = false;
+                            }
+                            App.Settings.Save();
+                            break;
+                        case CustomMessageBoxResult.RightButton:
+                            break;
+                        default:
+                            break;
+                    }
+                };
+
+                messageBox.Show();
+            }
+
+            if (App.VM.NumberOfLaunches > AppConstants.NUM_BOOTS_TIL_READY_TO_RATE)
+            {
+                MessageBoxResult res = MessageBox.Show("We hope you have got to know Pocketailor and we hope you love it - one of the best ways to support us is through a rating on the Marketplace. Would you like to leave a rating?"
+                    + Environment.NewLine
+                    + Environment.NewLine
+                    + "You can do this later under the 'Opinion' panel.",
+                    "Rate Pocketailor?",
+                    MessageBoxButton.OKCancel);
+                if (res == MessageBoxResult.OK)
+                {
+                    App.VM.RateApp();
+                };
+            }
+
+
         }
 
 
@@ -83,16 +160,15 @@ namespace Pocketailor.View
             messageBox.Show();
         }
 
+        private void addNewProfileButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
+        }
+
 
         #endregion
 
-        
-
-        private void addNewProfileButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-        	NavigationService.Navigate(new Uri(String.Format("/View/Pages/EditProfilePage.xaml?Action={0}", EditProfilePageActions.New), UriKind.Relative));
-        }
-
+    
 
         #region Settings methods
 
