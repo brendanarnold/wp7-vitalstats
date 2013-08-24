@@ -1,0 +1,8 @@
+SizeLetter	S (Cityline 48)	M (Cityline 50)	L (Cityline 52)	XL (Cityline 54)	XXL (Cityline 56)
+SizeId	-40	-20	0	20	40
+Poland	30,31	32,33	34	36	 38
+UK	30,31	32,33	34	36	 38
+US	30,31	32,33	34	36	 38
+EU	30,31	32,33	34	36	 38
+Waist	76-84	82-88	86-92	90-98 	 112-124
+Hips	92-100	98-104	102-108	108-116 	112-124 

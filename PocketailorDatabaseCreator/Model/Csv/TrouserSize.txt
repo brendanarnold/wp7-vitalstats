@@ -174,6 +174,90 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 0	americanapparel	GB	male	0.8382		0.8128	M
 20	americanapparel	GB	male	0.8890		0.8382	L
 40	americanapparel	GB	male	0.9398		0.8636	XL
+-104	americanos	PL	female	0.5800	0.8300	0.7600	24 (30)
+-84	americanos	PL	female	0.6200	0.8650	0.8100	25 (30)
+-64	americanos	PL	female	0.6600	0.9000	0.8600	26 (30)
+-44	americanos	PL	female	0.7000	0.9400	0.9100	27 (30)
+-24	americanos	PL	female	0.7400	0.9800	0.7600	28 (30)
+-4	americanos	PL	female	0.7800	1.0200	0.8100	29 (30)
+16	americanos	PL	female	0.8200	1.0600	0.8600	30 (30)
+36	americanos	PL	female	0.8600	1.1000	0.9100	31 (30)
+56	americanos	PL	female	0.9500	1.1400	0.7600	32 (30)
+76	americanos	PL	female	1.0400	1.1800	0.8100	33 (30)
+-102	americanos	PL	female	0.5800	0.8300	0.8600	24 (32)
+-82	americanos	PL	female	0.6200	0.8650	0.9100	25 (32)
+-62	americanos	PL	female	0.6600	0.9000	0.7600	26 (32)
+-42	americanos	PL	female	0.7000	0.9400	0.8100	27 (32)
+-22	americanos	PL	female	0.7400	0.9800	0.8600	28 (32)
+-2	americanos	PL	female	0.7800	1.0200	0.9100	29 (32)
+18	americanos	PL	female	0.8200	1.0600	0.7600	30 (32)
+38	americanos	PL	female	0.8600	1.1000	0.8100	31 (32)
+58	americanos	PL	female	0.9500	1.1400	0.8600	32 (32)
+78	americanos	PL	female	1.0400	1.1800	0.9100	33 (32)
+-100	americanos	PL	female	0.5800	0.8300	0.7600	24 (34)
+-80	americanos	PL	female	0.6200	0.8650	0.8100	25 (34)
+-60	americanos	PL	female	0.6600	0.9000	0.8600	26 (34)
+-40	americanos	PL	female	0.7000	0.9400	0.9100	27 (34)
+-20	americanos	PL	female	0.7400	0.9800	0.7600	28 (34)
+0	americanos	PL	female	0.7800	1.0200	0.8100	29 (34)
+20	americanos	PL	female	0.8200	1.0600	0.8600	30 (34)
+40	americanos	PL	female	0.8600	1.1000	0.9100	31 (34)
+60	americanos	PL	female	0.9500	1.1400	0.7600	32 (34)
+80	americanos	PL	female	1.0400	1.1800	0.8100	33 (34)
+-98	americanos	PL	female	0.5800	0.8300	0.8600	24 (36)
+-78	americanos	PL	female	0.6200	0.8650	0.9100	25 (36)
+-58	americanos	PL	female	0.6600	0.9000	0.7600	26 (36)
+-38	americanos	PL	female	0.7000	0.9400	0.8100	27 (36)
+-18	americanos	PL	female	0.7400	0.9800	0.8600	28 (36)
+2	americanos	PL	female	0.7800	1.0200	0.9100	29 (36)
+22	americanos	PL	female	0.8200	1.0600	0.7600	30 (36)
+42	americanos	PL	female	0.8600	1.1000	0.8100	31 (36)
+62	americanos	PL	female	0.9500	1.1400	0.8600	32 (36)
+82	americanos	PL	female	1.0400	1.1800	0.9100	33 (36)
+-104	americanos	PL	male	0.7200	0.8400	0.7600	29 (30)
+-84	americanos	PL	male	0.7600	0.8800	0.8100	30 (30)
+-64	americanos	PL	male	0.8000	0.9200	0.8600	31 (30)
+-44	americanos	PL	male	0.8400	0.9600	0.9100	32 (30)
+-24	americanos	PL	male	0.8800	1.0000	0.7600	33 (30)
+-4	americanos	PL	male	0.9200	1.0400	0.8100	34 (30)
+16	americanos	PL	male	0.9600	1.0800	0.8600	35 (30)
+36	americanos	PL	male	1.0000	1.1200	0.9100	36 (30)
+56	americanos	PL	male	1.0400	1.1600	0.7600	38 (30)
+76	americanos	PL	male	1.0800	1.2000	0.8100	40 (30)
+96	americanos	PL	male	1.1200	1.2400	0.8600	42 (30)
+-102	americanos	PL	male	0.7200	0.8400	0.9100	29 (32)
+-82	americanos	PL	male	0.7600	0.8800	0.7600	30 (32)
+-62	americanos	PL	male	0.8000	0.9200	0.8100	31 (32)
+-42	americanos	PL	male	0.8400	0.9600	0.8600	32 (32)
+-22	americanos	PL	male	0.8800	1.0000	0.9100	33 (32)
+-2	americanos	PL	male	0.9200	1.0400	0.7600	34 (32)
+18	americanos	PL	male	0.9600	1.0800	0.8100	35 (32)
+38	americanos	PL	male	1.0000	1.1200	0.8600	36 (32)
+58	americanos	PL	male	1.0400	1.1600	0.9100	38 (32)
+78	americanos	PL	male	1.0800	1.2000	0.7600	40 (32)
+98	americanos	PL	male	1.1200	1.2400	0.8100	42 (32)
+-100	americanos	PL	male	0.7200	0.8400	0.8600	29 (34)
+-80	americanos	PL	male	0.7600	0.8800	0.9100	30 (34)
+-60	americanos	PL	male	0.8000	0.9200	0.7600	31 (34)
+-40	americanos	PL	male	0.8400	0.9600	0.8100	32 (34)
+-20	americanos	PL	male	0.8800	1.0000	0.8600	33 (34)
+0	americanos	PL	male	0.9200	1.0400	0.9100	34 (34)
+20	americanos	PL	male	0.9600	1.0800	0.7600	35 (34)
+40	americanos	PL	male	1.0000	1.1200	0.8100	36 (34)
+60	americanos	PL	male	1.0400	1.1600	0.8600	38 (34)
+80	americanos	PL	male	1.0800	1.2000	0.9100	40 (34)
+100	americanos	PL	male	1.1200	1.2400	0.7600	42 (34)
+-98	americanos	PL	male	0.7200	0.8400	0.8100	29 (36)
+-78	americanos	PL	male	0.7600	0.8800	0.8600	30 (36)
+-58	americanos	PL	male	0.8000	0.9200	0.9100	31 (36)
+-38	americanos	PL	male	0.8400	0.9600	0.7600	32 (36)
+-18	americanos	PL	male	0.8800	1.0000	0.8100	33 (36)
+2	americanos	PL	male	0.9200	1.0400	0.8600	34 (36)
+22	americanos	PL	male	0.9600	1.0800	0.9100	35 (36)
+42	americanos	PL	male	1.0000	1.1200	0.7600	36 (36)
+62	americanos	PL	male	1.0400	1.1600	0.8100	38 (36)
+82	americanos	PL	male	1.0800	1.2000	0.8600	40 (36)
+102	americanos	PL	male	1.1200	1.2400	0.9100	42 (36)
 -40	anneklein	XA	female	0.6604	0.9398		32/XS
 -20	anneklein	XA	female	0.7112	0.9906		34,36/S,M
 0	anneklein	XA	female	0.7620	1.0414		38,40/M
@@ -920,6 +1004,62 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 120	benetton	US	male	1.1400			38/XL
 140	benetton	US	male	1.1600			39/XXL
 160	benetton	US	male	1.1800			40/XXL
+-140	bigstar	XA	female		0.7775		23
+-120	bigstar	XA	female		0.8025		24
+-100	bigstar	XA	female		0.8275		25
+-80	bigstar	XA	female		0.8525		26
+-60	bigstar	XA	female		0.8775		27
+-40	bigstar	XA	female		0.9025		28
+-20	bigstar	XA	female		0.9275		29
+0	bigstar	XA	female		0.9525		30
+20	bigstar	XA	female		0.9775		31
+40	bigstar	XA	female		1.0025		32
+60	bigstar	XA	female		1.0275		33
+80	bigstar	XA	female		1.0525		34
+100	bigstar	XA	female		1.0900		36
+120	bigstar	XA	female		1.1400		38
+-140	bigstar	PL	female		0.7775		23
+-120	bigstar	PL	female		0.8025		24
+-100	bigstar	PL	female		0.8275		25
+-80	bigstar	PL	female		0.8525		26
+-60	bigstar	PL	female		0.8775		27
+-40	bigstar	PL	female		0.9025		28
+-20	bigstar	PL	female		0.9275		29
+0	bigstar	PL	female		0.9525		30
+20	bigstar	PL	female		0.9775		31
+40	bigstar	PL	female		1.0025		32
+60	bigstar	PL	female		1.0275		33
+80	bigstar	PL	female		1.0525		34
+100	bigstar	PL	female		1.0900		36
+120	bigstar	PL	female		1.1400		38
+-140	bigstar	XA	male		0.6825		27
+-120	bigstar	XA	male		0.7075		28
+-100	bigstar	XA	male		0.7325		29
+-80	bigstar	XA	male		0.7575		30
+-60	bigstar	XA	male		0.7825		31
+-40	bigstar	XA	male		0.8075		32
+-20	bigstar	XA	male		0.8325		33
+0	bigstar	XA	male		0.8575		34
+20	bigstar	XA	male		0.8950		36
+40	bigstar	XA	male		0.9450		38
+60	bigstar	XA	male		0.9950		40
+80	bigstar	XA	male		1.0450		42
+100	bigstar	XA	male		1.0950		44
+120	bigstar	XA	male		1.1450		46
+-140	bigstar	PL	male		0.6825		27
+-120	bigstar	PL	male		0.7075		28
+-100	bigstar	PL	male		0.7325		29
+-80	bigstar	PL	male		0.7575		30
+-60	bigstar	PL	male		0.7825		31
+-40	bigstar	PL	male		0.8075		32
+-20	bigstar	PL	male		0.8325		33
+0	bigstar	PL	male		0.8575		34
+20	bigstar	PL	male		0.8950		36
+40	bigstar	PL	male		0.9450		38
+60	bigstar	PL	male		0.9950		40
+80	bigstar	PL	male		1.0450		42
+100	bigstar	PL	male		1.0950		44
+120	bigstar	PL	male		1.1450		46
 -40	billabong	AA	female	0.6200	0.8600	0.8300	XS
 -20	billabong	AA	female	0.6600	0.9000	0.8400	S
 0	billabong	AA	female	0.7000	0.9400	0.8500	M
@@ -1230,6 +1370,34 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	coast	AT	female	0.8000	1.0500	0.6200	40/M (Cropped)
 40	coast	AT	female	0.8500	1.1000	0.8200	42/M,L (Cropped)
 60	coast	AT	female	0.9000	1.1500	0.6200	44/L (Cropped)
+-60	cropp	XA	female	0.6400	0.9000		XS
+-40	cropp	XA	female	0.6800	0.9400		S
+-20	cropp	XA	female	0.7000	0.9600		S
+0	cropp	XA	female	0.7200	0.9800		M
+20	cropp	XA	female	0.7400	1.0000		M
+40	cropp	XA	female	0.7600	1.0200		L
+60	cropp	XA	female	0.8000	1.0600		XL
+-60	cropp	PL	female	0.6400	0.9000		XS
+-40	cropp	PL	female	0.6800	0.9400		S
+-20	cropp	PL	female	0.7000	0.9600		S
+0	cropp	PL	female	0.7200	0.9800		M
+20	cropp	PL	female	0.7400	1.0000		M
+40	cropp	PL	female	0.7600	1.0200		L
+60	cropp	PL	female	0.8000	1.0600		XL
+-60	cropp	XA	male	0.7400			30/S
+-40	cropp	XA	male	0.7700			31/S
+-20	cropp	XA	male	0.8000			32/M
+0	cropp	XA	male	0.8300			33/M
+20	cropp	XA	male	0.8600			34/L
+40	cropp	XA	male	0.9200			36/XL
+60	cropp	XA	male	0.9800			38/XXL
+-60	cropp	PL	male	0.7400			30/S
+-40	cropp	PL	male	0.7700			31/S
+-20	cropp	PL	male	0.8000			32/M
+0	cropp	PL	male	0.8300			33/M
+20	cropp	PL	male	0.8600			34/L
+40	cropp	PL	male	0.9200			36/XL
+60	cropp	PL	male	0.9800			38/XXL
 -60	damselinadress	GB	female	0.6900	0.9500		8/S
 -40	damselinadress	GB	female	0.7300	0.9900		10/S
 -20	damselinadress	GB	female	0.7700	1.0300		12/M
@@ -1364,6 +1532,132 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	diesel	GB	male	0.9271			42/XL
 40	diesel	GB	male	0.9779			44/XXL
 60	diesel	GB	male	1.0287			46/XXXL
+-60	diverse	FR	female	0.6200	0.9000	0.7800	34/XXS
+-40	diverse	FR	female	0.6500	0.9300	0.7850	36/XS
+-20	diverse	FR	female	0.6800	0.9600	0.7900	38/S
+0	diverse	FR	female	0.7400	1.0100	0.7950	40/M
+20	diverse	FR	female	0.8000	1.0600	0.8000	42/L
+40	diverse	FR	female	0.8600	1.1200	0.8050	44/XL
+-60	diverse	XA	female	0.6200	0.9000	0.7800	32/XXS
+-40	diverse	XA	female	0.6500	0.9300	0.7850	34/XS
+-20	diverse	XA	female	0.6800	0.9600	0.7900	36/S
+0	diverse	XA	female	0.7400	1.0100	0.7950	38/M
+20	diverse	XA	female	0.8000	1.0600	0.8000	40/L
+40	diverse	XA	female	0.8600	1.1200	0.8050	42/XL
+-60	diverse	CN	female	0.6200	0.9000	0.7800	TTP/XXS
+-40	diverse	CN	female	0.6500	0.9300	0.7850	TP/XS
+-20	diverse	CN	female	0.6800	0.9600	0.7900	P/S
+0	diverse	CN	female	0.7400	1.0100	0.7950	M/M
+20	diverse	CN	female	0.8000	1.0600	0.8000	G/L
+40	diverse	CN	female	0.8600	1.1200	0.8050	TG/XL
+-60	diverse	DE	female	0.6200	0.9000	0.7800	32/XXS
+-40	diverse	DE	female	0.6500	0.9300	0.7850	34/XS
+-20	diverse	DE	female	0.6800	0.9600	0.7900	36/S
+0	diverse	DE	female	0.7400	1.0100	0.7950	38/M
+20	diverse	DE	female	0.8000	1.0600	0.8000	40/L
+40	diverse	DE	female	0.8600	1.1200	0.8050	42/XL
+-60	diverse	IT	female	0.6200	0.9000	0.7800	36/XXS
+-40	diverse	IT	female	0.6500	0.9300	0.7850	38/XS
+-20	diverse	IT	female	0.6800	0.9600	0.7900	40/S
+0	diverse	IT	female	0.7400	1.0100	0.7950	42/M
+20	diverse	IT	female	0.8000	1.0600	0.8000	44/L
+40	diverse	IT	female	0.8600	1.1200	0.8050	46/XL
+-60	diverse	US	female	0.6200	0.9000	0.7800	XXS
+-40	diverse	US	female	0.6500	0.9300	0.7850	XS
+-20	diverse	US	female	0.6800	0.9600	0.7900	S
+0	diverse	US	female	0.7400	1.0100	0.7950	M
+20	diverse	US	female	0.8000	1.0600	0.8000	L
+40	diverse	US	female	0.8600	1.1200	0.8050	XL
+-60	diverse	ES	female	0.6200	0.9000	0.7800	36/XXS
+-40	diverse	ES	female	0.6500	0.9300	0.7850	38/XS
+-20	diverse	ES	female	0.6800	0.9600	0.7900	40/S
+0	diverse	ES	female	0.7400	1.0100	0.7950	42/M
+20	diverse	ES	female	0.8000	1.0600	0.8000	44/L
+40	diverse	ES	female	0.8600	1.1200	0.8050	46/XL
+-60	diverse	PL	female	0.6200	0.9000	0.7800	32/XXS
+-40	diverse	PL	female	0.6500	0.9300	0.7850	34/XS
+-20	diverse	PL	female	0.6800	0.9600	0.7900	36/S
+0	diverse	PL	female	0.7400	1.0100	0.7950	38/M
+20	diverse	PL	female	0.8000	1.0600	0.8000	40/L
+40	diverse	PL	female	0.8600	1.1200	0.8050	42/XL
+-60	diverse	GB	female	0.6200	0.9000	0.7800	6/XXS
+-40	diverse	GB	female	0.6500	0.9300	0.7850	8/XS
+-20	diverse	GB	female	0.6800	0.9600	0.7900	10/S
+0	diverse	GB	female	0.7400	1.0100	0.7950	12/M
+20	diverse	GB	female	0.8000	1.0600	0.8000	14/L
+40	diverse	GB	female	0.8600	1.1200	0.8050	16/XL
+-80	diverse	FR	male	0.7000	0.8200	0.7800	38/XXS
+-60	diverse	FR	male	0.7600	0.8400	0.7900	42/XS
+-40	diverse	FR	male	0.8200	0.8600	0.8000	46/S
+-20	diverse	FR	male	0.8800	0.8800	0.8100	50/M
+0	diverse	FR	male	0.9600	0.9000	0.8200	54/L
+20	diverse	FR	male	1.0400	0.9200	0.8300	58/XL
+40	diverse	FR	male	1.1400	0.9400	0.8400	62/XXL
+60	diverse	FR	male	1.2400	0.9600	0.8500	66/3XL
+-80	diverse	XA	male	0.7000	0.8200	0.7800	38/XXS
+-60	diverse	XA	male	0.7600	0.8400	0.7900	42/XS
+-40	diverse	XA	male	0.8200	0.8600	0.8000	46/S
+-20	diverse	XA	male	0.8800	0.8800	0.8100	50/M
+0	diverse	XA	male	0.9600	0.9000	0.8200	54/L
+20	diverse	XA	male	1.0400	0.9200	0.8300	58/XL
+40	diverse	XA	male	1.1400	0.9400	0.8400	62/XXL
+60	diverse	XA	male	1.2400	0.9600	0.8500	66/3XL
+-80	diverse	CN	male	0.7000	0.8200	0.7800	TTP/XXS
+-60	diverse	CN	male	0.7600	0.8400	0.7900	TP/XS
+-40	diverse	CN	male	0.8200	0.8600	0.8000	P/S
+-20	diverse	CN	male	0.8800	0.8800	0.8100	M/M
+0	diverse	CN	male	0.9600	0.9000	0.8200	G/L
+20	diverse	CN	male	1.0400	0.9200	0.8300	TG/XL
+40	diverse	CN	male	1.1400	0.9400	0.8400	TTG/XXL
+60	diverse	CN	male	1.2400	0.9600	0.8500	3TG/3XL
+-80	diverse	DE	male	0.7000	0.8200	0.7800	38/XXS
+-60	diverse	DE	male	0.7600	0.8400	0.7900	42/XS
+-40	diverse	DE	male	0.8200	0.8600	0.8000	46/S
+-20	diverse	DE	male	0.8800	0.8800	0.8100	50/M
+0	diverse	DE	male	0.9600	0.9000	0.8200	54/L
+20	diverse	DE	male	1.0400	0.9200	0.8300	58/XL
+40	diverse	DE	male	1.1400	0.9400	0.8400	62/XXL
+60	diverse	DE	male	1.2400	0.9600	0.8500	66/3XL
+-80	diverse	IT	male	0.7000	0.8200	0.7800	38/XXS
+-60	diverse	IT	male	0.7600	0.8400	0.7900	42/XS
+-40	diverse	IT	male	0.8200	0.8600	0.8000	46/S
+-20	diverse	IT	male	0.8800	0.8800	0.8100	50/M
+0	diverse	IT	male	0.9600	0.9000	0.8200	54/L
+20	diverse	IT	male	1.0400	0.9200	0.8300	58/XL
+40	diverse	IT	male	1.1400	0.9400	0.8400	62/XXL
+60	diverse	IT	male	1.2400	0.9600	0.8500	66/3XL
+-80	diverse	US	male	0.7000	0.8200	0.7800	XXS
+-60	diverse	US	male	0.7600	0.8400	0.7900	XS
+-40	diverse	US	male	0.8200	0.8600	0.8000	S
+-20	diverse	US	male	0.8800	0.8800	0.8100	M
+0	diverse	US	male	0.9600	0.9000	0.8200	L
+20	diverse	US	male	1.0400	0.9200	0.8300	XL
+40	diverse	US	male	1.1400	0.9400	0.8400	XXL
+60	diverse	US	male	1.2400	0.9600	0.8500	3XL
+-80	diverse	ES	male	0.7000	0.8200	0.7800	38/XXS
+-60	diverse	ES	male	0.7600	0.8400	0.7900	42/XS
+-40	diverse	ES	male	0.8200	0.8600	0.8000	46/S
+-20	diverse	ES	male	0.8800	0.8800	0.8100	50/M
+0	diverse	ES	male	0.9600	0.9000	0.8200	54/L
+20	diverse	ES	male	1.0400	0.9200	0.8300	58/XL
+40	diverse	ES	male	1.1400	0.9400	0.8400	62/XXL
+60	diverse	ES	male	1.2400	0.9600	0.8500	66/3XL
+-80	diverse	PL	male	0.7000	0.8200	0.7800	38/XXS
+-60	diverse	PL	male	0.7600	0.8400	0.7900	42/XS
+-40	diverse	PL	male	0.8200	0.8600	0.8000	46/S
+-20	diverse	PL	male	0.8800	0.8800	0.8100	50/M
+0	diverse	PL	male	0.9600	0.9000	0.8200	54/L
+20	diverse	PL	male	1.0400	0.9200	0.8300	58/XL
+40	diverse	PL	male	1.1400	0.9400	0.8400	62/XXL
+60	diverse	PL	male	1.2400	0.9600	0.8500	66/3XL
+-80	diverse	GB	male	0.7000	0.8200	0.7800	XXS
+-60	diverse	GB	male	0.7600	0.8400	0.7900	32/XS
+-40	diverse	GB	male	0.8200	0.8600	0.8000	36/S
+-20	diverse	GB	male	0.8800	0.8800	0.8100	40/M
+0	diverse	GB	male	0.9600	0.9000	0.8200	44/L
+20	diverse	GB	male	1.0400	0.9200	0.8300	48/XL
+40	diverse	GB	male	1.1400	0.9400	0.8400	52/XXL
+60	diverse	GB	male	1.2400	0.9600	0.8500	3XL
 -80	dkny	AA	female	0.5842	0.8382	0.8382	XP
 -60	dkny	AA	female	0.6223	0.8763	0.8382	P
 -40	dkny	AA	female	0.6731	0.9271	0.8382	S
@@ -1664,6 +1958,16 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 42	dorothyperkins	ES	female	0.9200	1.1650	0.7400	46/L (Longer)
 62	dorothyperkins	ES	female	1.0000	1.2450	0.7900	48/XL (Longer)
 82	dorothyperkins	ES	female	1.0800	1.3250	0.8400	50/XL (Longer)
+-40	drywash	PL	female	0.6200	0.8800		XS
+-20	drywash	PL	female	0.6600	0.9200		S
+0	drywash	PL	female	0.7000	0.9600		M
+20	drywash	PL	female	0.7400	1.0000		L
+40	drywash	PL	female	0.7800	1.0400		XL
+-40	drywash	PL	male	0.8000			30
+-20	drywash	PL	male	0.8300			31
+0	drywash	PL	male	0.8600			32
+20	drywash	PL	male	0.9100			34
+40	drywash	PL	male	0.9600			36
 -40	dynafit	FR	female	0.6350	0.9150	1.0350	36/XXS
 -20	dynafit	FR	female	0.6750	0.9550	1.0450	38/XS
 0	dynafit	FR	female	0.7150	0.9950	1.0550	40/S
@@ -2812,6 +3116,33 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	hobbs	GB	female	0.8128	1.0668		14/L
 40	hobbs	GB	female	0.8636	1.1176		16/L
 60	hobbs	GB	female	0.9144	1.1684		18/XL
+-40	house	RU	female	0.6700	0.9100		34,36/XS
+-20	house	RU	female	0.7100	0.9500		36,38/S
+0	house	RU	female	0.7500	0.9900		38,40/M
+20	house	RU	female	0.7900	1.0300		40,41/L
+-40	house	XA	female	0.6700	0.9100		34,36/XS
+-20	house	XA	female	0.7100	0.9500		36,38/S
+0	house	XA	female	0.7500	0.9900		38,40/M
+20	house	XA	female	0.7900	1.0300		40,41/L
+-40	house	PL	female	0.6700	0.9100		34,36/XS
+-20	house	PL	female	0.7100	0.9500		36,38/S
+0	house	PL	female	0.7500	0.9900		38,40/M
+20	house	PL	female	0.7900	1.0300		40,41/L
+-40	house	RU	male	0.8100	0.9500		30/S
+-20	house	RU	male	0.8550	1.0100		31/M
+0	house	RU	male	0.9000	1.0700		32,33/L
+20	house	RU	male	0.9400	1.1300		34,36/XL
+40	house	RU	male	0.9800	1.1800		36/XXL
+-40	house	XA	male	0.8100	0.9500		30/S
+-20	house	XA	male	0.8550	1.0100		31/M
+0	house	XA	male	0.9000	1.0700		32,33/L
+20	house	XA	male	0.9400	1.1300		34,36/XL
+40	house	XA	male	0.9800	1.1800		36/XXL
+-40	house	PL	male	0.8100	0.9500		30/S
+-20	house	PL	male	0.8550	1.0100		31/M
+0	house	PL	male	0.9000	1.0700		32,33/L
+20	house	PL	male	0.9400	1.1300		34,36/XL
+40	house	PL	male	0.9800	1.1800		36/XXL
 -62	howick	GB	male	0.7100		0.7500	XS (Short)
 -42	howick	GB	male	0.7600		0.8100	S (Short)
 -22	howick	GB	male	0.8150		0.8600	M (Short)
@@ -6189,6 +6520,69 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 80	oldnavy	US	male	1.1176			XXL
 100	oldnavy	US	male	1.1684			XXL
 120	oldnavy	US	male	1.2192			XXXL
+-60	orsay	ES	female	0.6400	0.8800		34/XXS
+-40	orsay	ES	female	0.6800	0.9200		36/XS
+-20	orsay	ES	female	0.7200	0.9600		38/S
+0	orsay	ES	female	0.7600	1.0000		40/M
+20	orsay	ES	female	0.7800	1.0400		42/L
+40	orsay	ES	female	0.8200	1.0800		44/XL
+60	orsay	ES	female	0.8600	1.1200		46/XXL
+-60	orsay	FR	female	0.6400	0.8800		34/XXS
+-40	orsay	FR	female	0.6800	0.9200		36/XS
+-20	orsay	FR	female	0.7200	0.9600		38/S
+0	orsay	FR	female	0.7600	1.0000		40/M
+20	orsay	FR	female	0.7800	1.0400		42/L
+40	orsay	FR	female	0.8200	1.0800		44/XL
+60	orsay	FR	female	0.8600	1.1200		46/XXL
+-60	orsay	XA	female	0.6400	0.8800		32/XXS
+-40	orsay	XA	female	0.6800	0.9200		34/XS
+-20	orsay	XA	female	0.7200	0.9600		36/S
+0	orsay	XA	female	0.7600	1.0000		38/M
+20	orsay	XA	female	0.7800	1.0400		40/L
+40	orsay	XA	female	0.8200	1.0800		42/XL
+60	orsay	XA	female	0.8600	1.1200		44/XXL
+-60	orsay	PT	female	0.6400	0.8800		34/XXS
+-40	orsay	PT	female	0.6800	0.9200		36/XS
+-20	orsay	PT	female	0.7200	0.9600		38/S
+0	orsay	PT	female	0.7600	1.0000		40/M
+20	orsay	PT	female	0.7800	1.0400		42/L
+40	orsay	PT	female	0.8200	1.0800		44/XL
+60	orsay	PT	female	0.8600	1.1200		46/XXL
+-60	orsay	RU	female	0.6400	0.8800		32/XXS
+-40	orsay	RU	female	0.6800	0.9200		34/XS
+-20	orsay	RU	female	0.7200	0.9600		36/S
+0	orsay	RU	female	0.7600	1.0000		38/M
+20	orsay	RU	female	0.7800	1.0400		40/L
+40	orsay	RU	female	0.8200	1.0800		42/XL
+60	orsay	RU	female	0.8600	1.1200		44/XXL
+-60	orsay	DE	female	0.6400	0.8800		32/XXS
+-40	orsay	DE	female	0.6800	0.9200		34/XS
+-20	orsay	DE	female	0.7200	0.9600		36/S
+0	orsay	DE	female	0.7600	1.0000		38/M
+20	orsay	DE	female	0.7800	1.0400		40/L
+40	orsay	DE	female	0.8200	1.0800		42/XL
+60	orsay	DE	female	0.8600	1.1200		44/XXL
+-60	orsay	IT	female	0.6400	0.8800		38/XXS
+-40	orsay	IT	female	0.6800	0.9200		40/XS
+-20	orsay	IT	female	0.7200	0.9600		42/S
+0	orsay	IT	female	0.7600	1.0000		44/M
+20	orsay	IT	female	0.7800	1.0400		46/L
+40	orsay	IT	female	0.8200	1.0800		48/XL
+60	orsay	IT	female	0.8600	1.1200		50/XXL
+-60	orsay	GB	female	0.6400	0.8800		6/XXS
+-40	orsay	GB	female	0.6800	0.9200		8/XS
+-20	orsay	GB	female	0.7200	0.9600		10/S
+0	orsay	GB	female	0.7600	1.0000		12/M
+20	orsay	GB	female	0.7800	1.0400		14/L
+40	orsay	GB	female	0.8200	1.0800		16/XL
+60	orsay	GB	female	0.8600	1.1200		18/XXL
+-60	orsay	PL	female	0.6400	0.8800		32/XXS
+-40	orsay	PL	female	0.6800	0.9200		34/XS
+-20	orsay	PL	female	0.7200	0.9600		36/S
+0	orsay	PL	female	0.7600	1.0000		38/M
+20	orsay	PL	female	0.7800	1.0400		40/L
+40	orsay	PL	female	0.8200	1.0800		42/XL
+60	orsay	PL	female	0.8600	1.1200		44/XXL
 -40	patagonia	AA	female	0.6250	0.8900	0.7600	XS
 -20	patagonia	AA	female	0.6750	0.9400	0.7900	S
 0	patagonia	AA	female	0.7250	0.9900	0.7900	M
@@ -7336,6 +7730,68 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 0	reiss	GB	male	0.9144	1.1049		36
 20	reiss	GB	male	0.9652	1.1557		38
 40	reiss	GB	male	1.0160	1.2065		40
+-40	reporter	PL	female	0.7325	0.9000		34
+-20	reporter	PL	female	0.7700	0.9400		36
+0	reporter	PL	female	0.8100	0.9800		38
+20	reporter	PL	female	0.8500	1.0200		40
+40	reporter	PL	female	0.8900	1.0600		42
+-40	reporter	PL	male	0.8000			S
+-20	reporter	PL	male	0.8500			M
+0	reporter	PL	male	0.9000			L
+20	reporter	PL	male	0.9500			XL
+40	reporter	PL	male	1.0000			XXL
+-80	reserved	XA	female	0.6000	0.8600		32/XS
+-60	reserved	XA	female	0.6400	0.9000		34/S
+-40	reserved	XA	female	0.6800	0.9400		36/S
+-20	reserved	XA	female	0.7200	0.9800		38/M
+0	reserved	XA	female	0.7600	1.0200		40/M
+20	reserved	XA	female	0.8000	1.0600		42/L
+40	reserved	XA	female	0.8400	1.1000		44/L
+60	reserved	XA	female	0.8800	1.1400		46/XL
+-80	reserved	US	female	0.6000	0.8600		2/XS
+-60	reserved	US	female	0.6400	0.9000		4/S
+-40	reserved	US	female	0.6800	0.9400		6/S
+-20	reserved	US	female	0.7200	0.9800		8/M
+0	reserved	US	female	0.7600	1.0200		10/M
+20	reserved	US	female	0.8000	1.0600		12/L
+40	reserved	US	female	0.8400	1.1000		14/L
+60	reserved	US	female	0.8800	1.1400		16/XL
+-80	reserved	GB	female	0.6000	0.8600		6/XS
+-60	reserved	GB	female	0.6400	0.9000		8/S
+-40	reserved	GB	female	0.6800	0.9400		10/S
+-20	reserved	GB	female	0.7200	0.9800		12/M
+0	reserved	GB	female	0.7600	1.0200		14/M
+20	reserved	GB	female	0.8000	1.0600		16/L
+40	reserved	GB	female	0.8400	1.1000		18/L
+60	reserved	GB	female	0.8800	1.1400		20/XL
+-80	reserved	PL	female	0.6000	0.8600		32/XS
+-60	reserved	PL	female	0.6400	0.9000		34/S
+-40	reserved	PL	female	0.6800	0.9400		36/S
+-20	reserved	PL	female	0.7200	0.9800		38/M
+0	reserved	PL	female	0.7600	1.0200		40/M
+20	reserved	PL	female	0.8000	1.0600		42/L
+40	reserved	PL	female	0.8400	1.1000		44/L
+60	reserved	PL	female	0.8800	1.1400		46/XL
+-40	reserved	XA	male	0.8000	0.9600		30,31/S (Cityline 48)
+-20	reserved	XA	male	0.8500	1.0100		32,33/M (Cityline 50)
+0	reserved	XA	male	0.8900	1.0500		34/L (Cityline 52)
+20	reserved	XA	male	0.9400	1.1200		36/XL (Cityline 54)
+40	reserved	XA	male	1.1800	1.1800		38/XXL (Cityline 56)
+-40	reserved	US	male	0.8000	0.9600		30,31/S (Cityline 48)
+-20	reserved	US	male	0.8500	1.0100		32,33/M (Cityline 50)
+0	reserved	US	male	0.8900	1.0500		34/L (Cityline 52)
+20	reserved	US	male	0.9400	1.1200		36/XL (Cityline 54)
+40	reserved	US	male	1.1800	1.1800		38/XXL (Cityline 56)
+-40	reserved	GB	male	0.8000	0.9600		30,31/S (Cityline 48)
+-20	reserved	GB	male	0.8500	1.0100		32,33/M (Cityline 50)
+0	reserved	GB	male	0.8900	1.0500		34/L (Cityline 52)
+20	reserved	GB	male	0.9400	1.1200		36/XL (Cityline 54)
+40	reserved	GB	male	1.1800	1.1800		38/XXL (Cityline 56)
+-40	reserved	PL	male	0.8000	0.9600		30,31/S (Cityline 48)
+-20	reserved	PL	male	0.8500	1.0100		32,33/M (Cityline 50)
+0	reserved	PL	male	0.8900	1.0500		34/L (Cityline 52)
+20	reserved	PL	male	0.9400	1.1200		36/XL (Cityline 54)
+40	reserved	PL	male	1.1800	1.1800		38/XXL (Cityline 56)
 -62	riverisland	AA	female	0.6100	0.8600	0.7600	6 (Short)
 -42	riverisland	AA	female	0.6500	0.9000	0.8100	8 (Short)
 -22	riverisland	AA	female	0.6900	0.9400	0.8600	10 (Short)
@@ -7538,6 +7994,48 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 -18	superdry	GB	male	0.8128		0.7620	32 (Long)
 2	superdry	GB	male	0.8636		0.8128	34 (Long)
 22	superdry	GB	male	0.9144		0.8636	36 (Long)
+-60	tatuum	RU	female	0.6200	0.8800		34/S
+-40	tatuum	RU	female	0.6600	0.9200		36/S,M
+-20	tatuum	RU	female	0.7000	0.9600		38/M
+0	tatuum	RU	female	0.7400	1.0000		40/L
+20	tatuum	RU	female	0.7800	1.0400		42/L,XL
+40	tatuum	RU	female	0.8200	1.0800		44/XL
+60	tatuum	RU	female	0.8600	1.1200		46/XXL
+-60	tatuum	XA	female	0.6200	0.8800		34/S
+-40	tatuum	XA	female	0.6600	0.9200		36/S,M
+-20	tatuum	XA	female	0.7000	0.9600		38/M
+0	tatuum	XA	female	0.7400	1.0000		40/L
+20	tatuum	XA	female	0.7800	1.0400		42/L,XL
+40	tatuum	XA	female	0.8200	1.0800		44/XL
+60	tatuum	XA	female	0.8600	1.1200		46/XXL
+-60	tatuum	PL	female	0.6200	0.8800		34/S
+-40	tatuum	PL	female	0.6600	0.9200		36/S,M
+-20	tatuum	PL	female	0.7000	0.9600		38/M
+0	tatuum	PL	female	0.7400	1.0000		40/L
+20	tatuum	PL	female	0.7800	1.0400		42/L,XL
+40	tatuum	PL	female	0.8200	1.0800		44/XL
+60	tatuum	PL	female	0.8600	1.1200		46/XXL
+-60	tatuum	RU	male	0.7900			31
+-40	tatuum	RU	male	0.8150			32
+-20	tatuum	RU	male	0.8400			33
+0	tatuum	RU	male	0.8650			34
+20	tatuum	RU	male	0.8900			35
+40	tatuum	RU	male	0.9150			36
+60	tatuum	RU	male	0.9400			37
+-60	tatuum	XA	male	0.7900			31
+-40	tatuum	XA	male	0.8150			32
+-20	tatuum	XA	male	0.8400			33
+0	tatuum	XA	male	0.8650			34
+20	tatuum	XA	male	0.8900			35
+40	tatuum	XA	male	0.9150			36
+60	tatuum	XA	male	0.9400			37
+-60	tatuum	PL	male	0.7900			31
+-40	tatuum	PL	male	0.8150			32
+-20	tatuum	PL	male	0.8400			33
+0	tatuum	PL	male	0.8650			34
+20	tatuum	PL	male	0.8900			35
+40	tatuum	PL	male	0.9150			36
+60	tatuum	PL	male	0.9400			37
 -62	tedbaker	AA	female	0.6350	0.8550	0.7620	XXS, TB0 (Short)
 -42	tedbaker	AA	female	0.6600	0.8800	0.8128	XS, TB1 (Short)
 -22	tedbaker	AA	female	0.7100	0.9300	0.8636	S, TB2 (Short)
@@ -8075,6 +8573,16 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 24	topman	GB	male	0.8600		0.8100	34 (Extra Long)
 44	topman	GB	male	0.9100		0.8600	36 (Extra Long)
 64	topman	GB	male	0.9600		0.9100	38 (Extra Long)
+-40	topsecret	PL	female	0.6400	0.9000		34/XS
+-20	topsecret	PL	female	0.6800	0.9400		36/S
+0	topsecret	PL	female	0.7200	0.9800		38/M
+20	topsecret	PL	female	0.7600	1.0200		40/L
+40	topsecret	PL	female	0.8000	1.0600		42/XL
+-40	topsecret	PL	male	0.8300			31
+-20	topsecret	PL	male	0.8600			32
+0	topsecret	PL	male	0.9100			34
+20	topsecret	PL	male	0.9600			36
+40	topsecret	PL	male	1.0100			38
 -60	topshop	AA	female	0.6240	0.8400		6
 -40	topshop	AA	female	0.6490	0.8650		8
 -20	topshop	AA	female	0.6920	0.9150		10
@@ -8123,6 +8631,16 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 0	topshop	GB	female	0.7420	0.9650		12
 20	topshop	GB	female	0.7920	1.0150		14
 40	topshop	GB	female	0.8420	1.0650		16
+-40	troll	PL	female	0.6200	0.8800		XS
+-20	troll	PL	female	0.6600	0.9200		S
+0	troll	PL	female	0.7000	0.9600		M
+20	troll	PL	female	0.7400	1.0000		L
+40	troll	PL	female	0.7800	1.0400		XL
+-40	troll	PL	male	0.8000			30
+-20	troll	PL	male	0.8300			31
+0	troll	PL	male	0.8600			32
+20	troll	PL	male	0.9100			34
+40	troll	PL	male	0.9600			36
 -80	tu	GB	female	0.6900	0.8900		8
 -60	tu	GB	female	0.7400	0.9400		10
 -40	tu	GB	female	0.7900	0.9900		12

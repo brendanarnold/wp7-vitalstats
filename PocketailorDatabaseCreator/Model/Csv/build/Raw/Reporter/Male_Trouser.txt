@@ -1,0 +1,3 @@
+Poland	S	M	L	XL	XXL
+SizeId	-40	-20	0	20	40
+Waist	78-82	83-87	88-92	93-97	98-102

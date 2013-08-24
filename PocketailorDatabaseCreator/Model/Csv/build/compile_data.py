@@ -71,9 +71,8 @@ def main():
                 continue
             measurements = [r.lower() for r in data.keys() if r.lower() in [i.lower() for i in MEASUREMENT_IDS]]
             if not len(measurements):
-                if not fn.endswith('_Shoe.txt'):
-                    print "WARNING: No measurement data for: " + os.path.join(in_dir,fn)
-                    continue
+                print "WARNING: No measurement data for: " + os.path.join(in_dir,fn)
+                continue
             for region in regions:
                 write_csv_output(data, format_dict[conversion], build_fns[conversion], gender, region, brand)
     # Finally copy the temporary files to the deployment area

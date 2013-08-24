@@ -1,0 +1,7 @@
+SizeLetter	S	M	L	XL	XXL
+SizeId	-40	-20	0	20	40
+Poland					
+Eu					
+Russia					
+Chest	94-98	98-102	102-106	106-108	108-110
+Waist	76-82	82-88	88-94	94-97	97-100

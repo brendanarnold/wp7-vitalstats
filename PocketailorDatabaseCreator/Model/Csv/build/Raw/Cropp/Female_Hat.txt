@@ -1,0 +1,5 @@
+SizeLetter	M	L
+SizeId	-20	0
+Poland		
+Europe		
+Head	55	57

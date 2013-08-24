@@ -1,0 +1,6 @@
+SizeLetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Poland					
+Eu					
+Chest	84	88	92	96	100
+Sleeve	58	58	60	62	62

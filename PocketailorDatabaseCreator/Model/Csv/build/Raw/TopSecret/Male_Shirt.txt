@@ -1,0 +1,4 @@
+SizeLetter	M	L	XL	XXL
+SizeId	-40	-20	0	20
+Poland	40,41	42,43	44,45	46
+Chest	100	104	108	112

@@ -1,0 +1,7 @@
+SizeLetter	S	M
+SizeId	-20	0
+Poland		
+UK		
+US		
+EU		
+Head	56	57.5

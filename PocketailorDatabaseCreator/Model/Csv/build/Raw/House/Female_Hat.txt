@@ -1,0 +1,6 @@
+SizeLetter	S	L
+SizeId	-20	0
+Poland		
+Eu		
+Russia		
+Head	55	57

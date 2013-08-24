@@ -1,0 +1,7 @@
+SizeLetter	M	L
+Poland		
+EU		
+UK		
+US		
+SizeId	-20	0
+Head	57	59

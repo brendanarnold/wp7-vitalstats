@@ -780,6 +780,16 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -20	cooperst	AU	female	0.8900	0.7100	1.0200	10
 0	cooperst	AU	female	0.9400	0.7600	1.0700	12
 20	cooperst	AU	female	0.9900	0.8100	1.1200	14
+-40	cropp	XA	female	0.8400			XS
+-20	cropp	XA	female	0.8800			S
+0	cropp	XA	female	0.9200			M
+20	cropp	XA	female	0.9600			L
+40	cropp	XA	female	1.0000			XL
+-40	cropp	PL	female	0.8400			XS
+-20	cropp	PL	female	0.8800			S
+0	cropp	PL	female	0.9200			M
+20	cropp	PL	female	0.9600			L
+40	cropp	PL	female	1.0000			XL
 -80	cutielondon	XA	female	0.8000	0.6200	0.8650	36/S
 -60	cutielondon	XA	female	0.8400	0.6600	0.9050	38/S
 -40	cutielondon	XA	female	0.8800	0.7000	0.9450	40/M
@@ -948,6 +958,60 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	diesel	GB	female	1.0160	0.8255		14/XL
 40	diesel	GB	female	1.0668	0.8763		16/XXL
 60	diesel	GB	female	1.1176	0.9398		18,20/XXXL
+-60	diverse	FR	female	0.7800	0.6200	0.9000	34/XXS
+-40	diverse	FR	female	0.8200	0.6500	0.9300	36/XS
+-20	diverse	FR	female	0.8600	0.6800	0.9600	38/S
+0	diverse	FR	female	0.9100	0.7400	1.0100	40/M
+20	diverse	FR	female	0.9600	0.8000	1.0600	42/L
+40	diverse	FR	female	1.0100	0.8600	1.1200	44/XL
+-60	diverse	XA	female	0.7800	0.6200	0.9000	32/XXS
+-40	diverse	XA	female	0.8200	0.6500	0.9300	34/XS
+-20	diverse	XA	female	0.8600	0.6800	0.9600	36/S
+0	diverse	XA	female	0.9100	0.7400	1.0100	38/M
+20	diverse	XA	female	0.9600	0.8000	1.0600	40/L
+40	diverse	XA	female	1.0100	0.8600	1.1200	42/XL
+-60	diverse	CN	female	0.7800	0.6200	0.9000	TTP/XXS
+-40	diverse	CN	female	0.8200	0.6500	0.9300	TP/XS
+-20	diverse	CN	female	0.8600	0.6800	0.9600	P/S
+0	diverse	CN	female	0.9100	0.7400	1.0100	M/M
+20	diverse	CN	female	0.9600	0.8000	1.0600	G/L
+40	diverse	CN	female	1.0100	0.8600	1.1200	TG/XL
+-60	diverse	DE	female	0.7800	0.6200	0.9000	32/XXS
+-40	diverse	DE	female	0.8200	0.6500	0.9300	34/XS
+-20	diverse	DE	female	0.8600	0.6800	0.9600	36/S
+0	diverse	DE	female	0.9100	0.7400	1.0100	38/M
+20	diverse	DE	female	0.9600	0.8000	1.0600	40/L
+40	diverse	DE	female	1.0100	0.8600	1.1200	42/XL
+-60	diverse	IT	female	0.7800	0.6200	0.9000	36/XXS
+-40	diverse	IT	female	0.8200	0.6500	0.9300	38/XS
+-20	diverse	IT	female	0.8600	0.6800	0.9600	40/S
+0	diverse	IT	female	0.9100	0.7400	1.0100	42/M
+20	diverse	IT	female	0.9600	0.8000	1.0600	44/L
+40	diverse	IT	female	1.0100	0.8600	1.1200	46/XL
+-60	diverse	US	female	0.7800	0.6200	0.9000	XXS
+-40	diverse	US	female	0.8200	0.6500	0.9300	XS
+-20	diverse	US	female	0.8600	0.6800	0.9600	S
+0	diverse	US	female	0.9100	0.7400	1.0100	M
+20	diverse	US	female	0.9600	0.8000	1.0600	L
+40	diverse	US	female	1.0100	0.8600	1.1200	XL
+-60	diverse	ES	female	0.7800	0.6200	0.9000	36/XXS
+-40	diverse	ES	female	0.8200	0.6500	0.9300	38/XS
+-20	diverse	ES	female	0.8600	0.6800	0.9600	40/S
+0	diverse	ES	female	0.9100	0.7400	1.0100	42/M
+20	diverse	ES	female	0.9600	0.8000	1.0600	44/L
+40	diverse	ES	female	1.0100	0.8600	1.1200	46/XL
+-60	diverse	PL	female	0.7800	0.6200	0.9000	32/XXS
+-40	diverse	PL	female	0.8200	0.6500	0.9300	34/XS
+-20	diverse	PL	female	0.8600	0.6800	0.9600	36/S
+0	diverse	PL	female	0.9100	0.7400	1.0100	38/M
+20	diverse	PL	female	0.9600	0.8000	1.0600	40/L
+40	diverse	PL	female	1.0100	0.8600	1.1200	42/XL
+-60	diverse	GB	female	0.7800	0.6200	0.9000	6/XXS
+-40	diverse	GB	female	0.8200	0.6500	0.9300	8/XS
+-20	diverse	GB	female	0.8600	0.6800	0.9600	10/S
+0	diverse	GB	female	0.9100	0.7400	1.0100	12/M
+20	diverse	GB	female	0.9600	0.8000	1.0600	14/L
+40	diverse	GB	female	1.0100	0.8600	1.1200	16/XL
 -80	dkny	AA	female	0.8128	0.5842	0.8382	XP
 -60	dkny	AA	female	0.8382	0.6223	0.8763	P
 -40	dkny	AA	female	0.8636	0.6731	0.9271	S
@@ -1096,6 +1160,10 @@ sizeid	brand	region	gender	chest	waist	hips	size
 40	dorothyperkins	ES	female	1.1000	0.9200	1.1650	46/L
 60	dorothyperkins	ES	female	1.1200	1.0000	1.2450	48/XL
 80	dorothyperkins	ES	female	1.1600	1.0800	1.3250	50/XL
+-40	drywash	PL	female		0.6200	0.8800	XS
+-20	drywash	PL	female		0.6600	0.9200	S
+0	drywash	PL	female		0.7000	0.9600	M
+20	drywash	PL	female		0.7400	1.0000	L
 -60	east	FR	female	0.8400	0.6750	0.9000	36/S
 -40	east	FR	female	0.8900	0.7250	0.9500	38/S,M
 -20	east	FR	female	0.9400	0.7750	1.0000	40/S,M
@@ -1591,6 +1659,18 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	hobbs	GB	female	0.9906	0.8128	1.0668	14/L
 40	hobbs	GB	female	1.0414	0.8636	1.1176	16/L
 60	hobbs	GB	female	1.0922	0.9144	1.1684	18/XL
+-40	house	RU	female	0.8500	0.6700	0.9100	XS
+-20	house	RU	female	0.8900	0.7100	0.9500	S
+0	house	RU	female	0.9300	0.7500	0.9900	M
+20	house	RU	female	0.9700	0.7900	1.0300	L
+-40	house	XA	female	0.8500	0.6700	0.9100	XS
+-20	house	XA	female	0.8900	0.7100	0.9500	S
+0	house	XA	female	0.9300	0.7500	0.9900	M
+20	house	XA	female	0.9700	0.7900	1.0300	L
+-40	house	PL	female	0.8500	0.6700	0.9100	XS
+-20	house	PL	female	0.8900	0.7100	0.9500	S
+0	house	PL	female	0.9300	0.7500	0.9900	M
+20	house	PL	female	0.9700	0.7900	1.0300	L
 -80	hugoboss_boss	AA	female	0.7800	0.6000	0.8600	32
 -60	hugoboss_boss	AA	female	0.8200	0.6400	0.9000	34
 -40	hugoboss_boss	AA	female	0.8600	0.6800	0.9400	36
@@ -2845,6 +2925,69 @@ sizeid	brand	region	gender	chest	waist	hips	size
 60	oldnavy	US	female	1.0795	0.8763		16/XL
 80	oldnavy	US	female	1.1430	0.9398		18/XL
 100	oldnavy	US	female	1.2065	1.0033		20/XXL
+-60	orsay	ES	female	0.8000	0.6400	0.8800	34/XXS
+-40	orsay	ES	female	0.8400	0.6800	0.9200	36/XS
+-20	orsay	ES	female	0.8800	0.7200	0.9600	38/S
+0	orsay	ES	female	0.9200	0.7600	1.0000	40/M
+20	orsay	ES	female	0.9600	0.7800	1.0400	42/L
+40	orsay	ES	female	1.0000	0.8200	1.0800	44/XL
+60	orsay	ES	female	1.0400	0.8600	1.1200	46/XXL
+-60	orsay	FR	female	0.8000	0.6400	0.8800	34/XXS
+-40	orsay	FR	female	0.8400	0.6800	0.9200	36/XS
+-20	orsay	FR	female	0.8800	0.7200	0.9600	38/S
+0	orsay	FR	female	0.9200	0.7600	1.0000	40/M
+20	orsay	FR	female	0.9600	0.7800	1.0400	42/L
+40	orsay	FR	female	1.0000	0.8200	1.0800	44/XL
+60	orsay	FR	female	1.0400	0.8600	1.1200	46/XXL
+-60	orsay	XA	female	0.8000	0.6400	0.8800	32/XXS
+-40	orsay	XA	female	0.8400	0.6800	0.9200	34/XS
+-20	orsay	XA	female	0.8800	0.7200	0.9600	36/S
+0	orsay	XA	female	0.9200	0.7600	1.0000	38/M
+20	orsay	XA	female	0.9600	0.7800	1.0400	40/L
+40	orsay	XA	female	1.0000	0.8200	1.0800	42/XL
+60	orsay	XA	female	1.0400	0.8600	1.1200	44/XXL
+-60	orsay	PT	female	0.8000	0.6400	0.8800	34/XXS
+-40	orsay	PT	female	0.8400	0.6800	0.9200	36/XS
+-20	orsay	PT	female	0.8800	0.7200	0.9600	38/S
+0	orsay	PT	female	0.9200	0.7600	1.0000	40/M
+20	orsay	PT	female	0.9600	0.7800	1.0400	42/L
+40	orsay	PT	female	1.0000	0.8200	1.0800	44/XL
+60	orsay	PT	female	1.0400	0.8600	1.1200	46/XXL
+-60	orsay	RU	female	0.8000	0.6400	0.8800	32/XXS
+-40	orsay	RU	female	0.8400	0.6800	0.9200	34/XS
+-20	orsay	RU	female	0.8800	0.7200	0.9600	36/S
+0	orsay	RU	female	0.9200	0.7600	1.0000	38/M
+20	orsay	RU	female	0.9600	0.7800	1.0400	40/L
+40	orsay	RU	female	1.0000	0.8200	1.0800	42/XL
+60	orsay	RU	female	1.0400	0.8600	1.1200	44/XXL
+-60	orsay	DE	female	0.8000	0.6400	0.8800	32/XXS
+-40	orsay	DE	female	0.8400	0.6800	0.9200	34/XS
+-20	orsay	DE	female	0.8800	0.7200	0.9600	36/S
+0	orsay	DE	female	0.9200	0.7600	1.0000	38/M
+20	orsay	DE	female	0.9600	0.7800	1.0400	40/L
+40	orsay	DE	female	1.0000	0.8200	1.0800	42/XL
+60	orsay	DE	female	1.0400	0.8600	1.1200	44/XXL
+-60	orsay	IT	female	0.8000	0.6400	0.8800	38/XXS
+-40	orsay	IT	female	0.8400	0.6800	0.9200	40/XS
+-20	orsay	IT	female	0.8800	0.7200	0.9600	42/S
+0	orsay	IT	female	0.9200	0.7600	1.0000	44/M
+20	orsay	IT	female	0.9600	0.7800	1.0400	46/L
+40	orsay	IT	female	1.0000	0.8200	1.0800	48/XL
+60	orsay	IT	female	1.0400	0.8600	1.1200	50/XXL
+-60	orsay	GB	female	0.8000	0.6400	0.8800	6/XXS
+-40	orsay	GB	female	0.8400	0.6800	0.9200	8/XS
+-20	orsay	GB	female	0.8800	0.7200	0.9600	10/S
+0	orsay	GB	female	0.9200	0.7600	1.0000	12/M
+20	orsay	GB	female	0.9600	0.7800	1.0400	14/L
+40	orsay	GB	female	1.0000	0.8200	1.0800	16/XL
+60	orsay	GB	female	1.0400	0.8600	1.1200	18/XXL
+-60	orsay	PL	female	0.8000	0.6400	0.8800	32/XXS
+-40	orsay	PL	female	0.8400	0.6800	0.9200	34/XS
+-20	orsay	PL	female	0.8800	0.7200	0.9600	36/S
+0	orsay	PL	female	0.9200	0.7600	1.0000	38/M
+20	orsay	PL	female	0.9600	0.7800	1.0400	40/L
+40	orsay	PL	female	1.0000	0.8200	1.0800	42/XL
+60	orsay	PL	female	1.0400	0.8600	1.1200	44/XXL
 -80	phaseeight	FR	female	0.7600	0.5900	0.8400	34/XS
 -60	phaseeight	FR	female	0.8100	0.6400	0.8900	36/XS,S
 -40	phaseeight	FR	female	0.8600	0.6900	0.9400	38/S,M
@@ -3259,6 +3402,43 @@ sizeid	brand	region	gender	chest	waist	hips	size
 20	reiss	GB	female	0.9300	0.7400	1.0100	12/M
 40	reiss	GB	female	0.9900	0.8000	1.0700	14/L
 60	reiss	GB	female	1.0400	0.8500	1.1200	16/XL
+-40	reporter	PL	female	0.8400	0.6600	0.9000	34
+-20	reporter	PL	female	0.8800	0.7000	0.9400	36
+0	reporter	PL	female	0.9200	0.7400	0.9800	38
+20	reporter	PL	female	0.9600	0.7800	1.0200	40
+40	reporter	PL	female	1.0000	0.8200	1.0600	42
+-80	reserved	XA	female	0.8000	0.6000	0.8600	32/XS
+-60	reserved	XA	female	0.8400	0.6400	0.9000	34/S
+-40	reserved	XA	female	0.8800	0.6800	0.9400	36/S
+-20	reserved	XA	female	0.9200	0.7200	0.9800	38/M
+0	reserved	XA	female	0.9600	0.7600	1.0200	40/M
+20	reserved	XA	female	1.0000	0.8000	1.0600	42/L
+40	reserved	XA	female	1.0400	0.8400	1.1000	44/L
+60	reserved	XA	female	1.0800	0.8800	1.1400	46/XL
+-80	reserved	US	female	0.8000	0.6000	0.8600	2/XS
+-60	reserved	US	female	0.8400	0.6400	0.9000	4/S
+-40	reserved	US	female	0.8800	0.6800	0.9400	6/S
+-20	reserved	US	female	0.9200	0.7200	0.9800	8/M
+0	reserved	US	female	0.9600	0.7600	1.0200	10/M
+20	reserved	US	female	1.0000	0.8000	1.0600	12/L
+40	reserved	US	female	1.0400	0.8400	1.1000	14/L
+60	reserved	US	female	1.0800	0.8800	1.1400	16/XL
+-80	reserved	GB	female	0.8000	0.6000	0.8600	6/XS
+-60	reserved	GB	female	0.8400	0.6400	0.9000	8/S
+-40	reserved	GB	female	0.8800	0.6800	0.9400	10/S
+-20	reserved	GB	female	0.9200	0.7200	0.9800	12/M
+0	reserved	GB	female	0.9600	0.7600	1.0200	14/M
+20	reserved	GB	female	1.0000	0.8000	1.0600	16/L
+40	reserved	GB	female	1.0400	0.8400	1.1000	18/L
+60	reserved	GB	female	1.0800	0.8800	1.1400	20/XL
+-80	reserved	PL	female	0.8000	0.6000	0.8600	32/XS
+-60	reserved	PL	female	0.8400	0.6400	0.9000	34/S
+-40	reserved	PL	female	0.8800	0.6800	0.9400	36/S
+-20	reserved	PL	female	0.9200	0.7200	0.9800	38/M
+0	reserved	PL	female	0.9600	0.7600	1.0200	40/M
+20	reserved	PL	female	1.0000	0.8000	1.0600	42/L
+40	reserved	PL	female	1.0400	0.8400	1.1000	44/L
+60	reserved	PL	female	1.0800	0.8800	1.1400	46/XL
 -60	riverisland	AA	female	0.8000	0.6100	0.8600	6
 -40	riverisland	AA	female	0.8400	0.6500	0.9000	8
 -20	riverisland	AA	female	0.8800	0.6900	0.9400	10
@@ -3338,6 +3518,27 @@ sizeid	brand	region	gender	chest	waist	hips	size
 -20	superdry	GB	female	0.8636	0.6731	0.9525	10/S
 0	superdry	GB	female	0.8890	0.6985	0.9779	12/M
 20	superdry	GB	female	0.9144	0.7239	1.0033	14/L
+-60	tatuum	RU	female	0.8000	0.6200	0.8800	34/S
+-40	tatuum	RU	female	0.8400	0.6600	0.9200	36/S,M
+-20	tatuum	RU	female	0.8800	0.7000	0.9600	38/M
+0	tatuum	RU	female	0.9200	0.7400	1.0000	40/L
+20	tatuum	RU	female	0.9800	0.8000	1.0600	42/L,XL
+40	tatuum	RU	female	1.0400	0.8600	1.1200	44/XL
+60	tatuum	RU	female	1.1000	0.9200	1.1800	46/XXL
+-60	tatuum	XA	female	0.8000	0.6200	0.8800	34/S
+-40	tatuum	XA	female	0.8400	0.6600	0.9200	36/S,M
+-20	tatuum	XA	female	0.8800	0.7000	0.9600	38/M
+0	tatuum	XA	female	0.9200	0.7400	1.0000	40/L
+20	tatuum	XA	female	0.9800	0.8000	1.0600	42/L,XL
+40	tatuum	XA	female	1.0400	0.8600	1.1200	44/XL
+60	tatuum	XA	female	1.1000	0.9200	1.1800	46/XXL
+-60	tatuum	PL	female	0.8000	0.6200	0.8800	34/S
+-40	tatuum	PL	female	0.8400	0.6600	0.9200	36/S,M
+-20	tatuum	PL	female	0.8800	0.7000	0.9600	38/M
+0	tatuum	PL	female	0.9200	0.7400	1.0000	40/L
+20	tatuum	PL	female	0.9800	0.8000	1.0600	42/L,XL
+40	tatuum	PL	female	1.0400	0.8600	1.1200	44/XL
+60	tatuum	PL	female	1.1000	0.9200	1.1800	46/XXL
 -60	tedbaker	AA	female	0.7900	0.6350	0.8550	XXS, TB0
 -40	tedbaker	AA	female	0.8400	0.6600	0.8800	XS, TB1
 -20	tedbaker	AA	female	0.8900	0.7100	0.9300	S, TB2
@@ -3484,6 +3685,11 @@ sizeid	brand	region	gender	chest	waist	hips	size
 0	tommyhilfiger_denim	GB	female	0.8550			10/M
 20	tommyhilfiger_denim	GB	female	0.8950			12/L
 40	tommyhilfiger_denim	GB	female	0.9200			14/XL
+-40	topsecret	PL	female		0.6400	0.9000	34/XS
+-20	topsecret	PL	female		0.6800	0.9400	36/S
+0	topsecret	PL	female		0.7200	0.9800	38/M
+20	topsecret	PL	female		0.7600	1.0200	40/L
+40	topsecret	PL	female		0.8000	1.0600	42/XL
 -60	topshop	AA	female	0.7950	0.6240	0.8400	6
 -40	topshop	AA	female	0.8200	0.6490	0.8650	8
 -20	topshop	AA	female	0.8700	0.6920	0.9150	10
@@ -3541,6 +3747,10 @@ sizeid	brand	region	gender	chest	waist	hips	size
 40	trixxi	US	female	0.9900	0.7600	1.0300	11
 60	trixxi	US	female	1.0300	0.8000	1.0650	13
 80	trixxi	US	female	1.0650	0.8400	1.1050	15
+-40	troll	PL	female		0.6200	0.8800	XS
+-20	troll	PL	female		0.6600	0.9200	S
+0	troll	PL	female		0.7000	0.9600	M
+20	troll	PL	female		0.7400	1.0000	L
 -40	truedecadence	XA	female	0.7900	0.6400	0.8800	38/S
 -20	truedecadence	XA	female	0.8400	0.6900	0.9300	40/M
 0	truedecadence	XA	female	0.8900	0.7400	0.9800	42/M

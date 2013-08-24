@@ -1,0 +1,7 @@
+Poland	1/2	3/4
+SizeId	-20	0
+Europe	1,2	3,4
+US	1,2	3,4
+UK	1,2	3,4
+Height	158-168	168-178
+Hips	85-110	90-115

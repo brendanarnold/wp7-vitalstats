@@ -1,0 +1,5 @@
+SizeLetter	S	S	M	M	L	XL	XXL
+SizeId	-60	-40	-20	0	20	40	60
+Poland	30	31	32	33	34	36	38
+Europe	30	31	32	33	34	36	38
+Waist	74	77	80	83	86	92	98

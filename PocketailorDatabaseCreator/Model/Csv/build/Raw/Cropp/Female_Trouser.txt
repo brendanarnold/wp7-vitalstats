@@ -1,0 +1,7 @@
+SizeLetter	XS	S	S	M	M	L	XL
+SizeId	-60	-40	-20	0	20	40	60
+Poland							
+Europe							
+Waist	64	68	70	72	74	76	80
+Hips	90	94	96	98	100	102	106
+

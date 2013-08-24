@@ -182,6 +182,18 @@ namespace Pocketailor.Model
         TopMan = 173,
         VeroModa = 174,
         RiverIsland = 175,
+        Troll = 176,
+        TopSecret = 177,
+        Drywash = 178,
+        Cropp = 179,
+        Reserved = 180,
+        House = 181,
+        BigStar = 182,
+        Diverse = 183,
+        Tatuum = 184,
+        Reporter = 185,
+        Orsay = 186,
+        Americanos = 187,
 
     }
 
@@ -363,6 +375,18 @@ namespace Pocketailor.Model
             { BrandId.TopMan, "TopMan" },
             { BrandId.VeroModa, "Vero Moda" },
             { BrandId.RiverIsland, "River Island" },
+            { BrandId.Troll, "Troll" },
+            { BrandId.TopSecret, "Top Secret" },
+            { BrandId.Drywash, "Drywash" },
+            { BrandId.Cropp, "Cropp" },
+            { BrandId.Reserved, "Reserved" },
+            { BrandId.House, "House" },
+            { BrandId.BigStar, "Big Star" },
+            { BrandId.Diverse, "Diverse" },
+            { BrandId.Tatuum, "Tatuum" },
+            { BrandId.Reporter, "Reporter" },
+            { BrandId.Orsay, "Orsay" },
+            { BrandId.Americanos, "Americanos" },
 
 
         };

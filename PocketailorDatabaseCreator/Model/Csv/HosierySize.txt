@@ -196,6 +196,14 @@ sizeid	brand	region	gender	weight	waist	hips	height	insideleg	size
 60	oldnavy	US	female		0.8636				16/XL
 80	oldnavy	US	female		0.9144				18/XL
 100	oldnavy	US	female		0.9652				20/XXL
+-20	reserved	XA	female			0.9750	1.6300		1,2
+0	reserved	XA	female			1.0250	1.7300		3,4
+-20	reserved	US	female			0.9750	1.6300		1,2
+0	reserved	US	female			1.0250	1.7300		3,4
+-20	reserved	GB	female			0.9750	1.6300		1,2
+0	reserved	GB	female			1.0250	1.7300		3,4
+-20	reserved	PL	female			0.9750	1.6300		1/2
+0	reserved	PL	female			1.0250	1.7300		3/4
 -40	riverisland	AA	female		0.6350	0.8950			XS
 -20	riverisland	AA	female		0.6950	0.9550			S
 0	riverisland	AA	female		0.7550	1.0150			M

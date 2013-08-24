@@ -1,0 +1,5 @@
+SizeLetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Poland					
+Waist	62	66	70	74	78
+Hips	88	92	96	100	104
