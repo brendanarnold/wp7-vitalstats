@@ -33,7 +33,7 @@ namespace Pocketailor.View
             this.DataContext = App.VM;
             App.VM.LoadMainPageData();
 
-            if (App.VM.NumberOfLaunches == 0)
+            if (App.Settings.GetValueOrDefault("ShowWelcome", true))
             {
 
                 ListPicker listPicker = new ListPicker()
@@ -92,9 +92,11 @@ namespace Pocketailor.View
                 };
 
                 messageBox.Show();
+                App.Settings.AddOrUpdateValue("ShowWelcome", false);
             }
 
-            if (App.VM.NumberOfLaunches == AppConstants.NUM_BOOTS_TIL_READY_TO_RATE)
+            if (App.VM.NumberOfLaunches == AppConstants.NUM_BOOTS_TIL_READY_TO_RATE
+                && App.Settings.GetValueOrDefault("ShowReadyToRate", true))
             {
                 MessageBoxResult res = MessageBox.Show("We hope you have got to know Pocketailor and we hope you love it - one of the best ways to support us is through a rating on the Marketplace. Would you like to leave a rating?"
                     + Environment.NewLine
@@ -106,6 +108,7 @@ namespace Pocketailor.View
                 {
                     App.VM.RateApp();
                 };
+                App.Settings.AddOrUpdateValue("ShowReadyToRate", false);
             }
 
 
@@ -239,6 +242,18 @@ namespace Pocketailor.View
 
 
         #region Navigation methods
+
+        private void mainPanorama_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (this.mainPanorama.SelectedIndex != 0 && this.mainPanorama.SelectedIndex != 4)
+            {
+                this.highlightProfilesStoryBoard.Stop();
+            }
+            else if (App.VM.Profiles.Count == 0)
+            {
+                this.highlightProfilesStoryBoard.Begin();
+            }
+        }
 
         private void navToSettingsBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -574,17 +589,7 @@ namespace Pocketailor.View
             Animations.BlindDown.OpenToHeight(this.facebookAnswer, 113);
         }
 
-        private void mainPanorama_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            if (this.mainPanorama.SelectedIndex != 0 && this.mainPanorama.SelectedIndex != 4)
-            {
-                this.highlightProfilesStoryBoard.Stop();
-            }
-            else if (App.VM.Profiles.Count == 0)
-            {
-                this.highlightProfilesStoryBoard.Begin();
-            }
-        }
+       
 
 
 

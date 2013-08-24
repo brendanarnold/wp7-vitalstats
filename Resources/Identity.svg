@@ -238,6 +238,17 @@
          id="rect13061"
          style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4174">
+      <rect
+         style="fill:#8cbe29;fill-opacity:1;stroke:#8cbe29;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect4176"
+         width="311.42856"
+         height="155.71428"
+         x="570.38568"
+         y="-606.61163" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -246,9 +257,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="2701.0923"
-     inkscape:cy="-6420.8909"
+     inkscape:zoom="0.50000001"
+     inkscape:cx="8530.0944"
+     inkscape:cy="-2243.2108"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -276,7 +287,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -7820,7 +7831,7 @@
        y="6713.9893" />
     <path
        style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 2879.9282,6630.5725 110.5218,92.5299"
+       d="m 3131.9282,6654.5725 110.5218,92.5299"
        id="path10496"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -9731,7 +9742,7 @@
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        id="path4263"
-       d="m 2762.8152,6703.9695 -7.5286,4.0121 c 0,0 -4.5713,-3.9556 -7.5239,-3.9556 -2.2947,0 -3.5396,0.9754 -5.289,2.1613 -1.7492,1.1861 -18.4075,22.2692 -18.4075,22.2692 l 5.2419,4.7654 13.2127,-14.1837 c 5.8271,12.2584 -1.6799,13.294 -1.6797,23.8419 l 27.9924,10e-5 -1e-4,-20.7763 2.6537,2.6607 5.5619,-5.5613 -1e-4,-6.0935 -9.1332,-9.1401 -5.1007,0 z"
+       d="m 2773.9463,6716.4554 -8.1606,-2.4865 c 0,0 -0.4353,-6.0295 -2.5231,-8.1173 -1.6226,-1.6226 -3.1925,-1.8132 -5.2681,-2.2116 -2.0756,-0.3982 -28.7629,2.7307 -28.7629,2.7307 l 0.3371,7.0762 19.3721,-0.6866 c -4.5476,12.7884 -10.5881,8.2124 -18.0464,15.6711 l 19.7934,19.7936 14.6911,-14.6912 0,3.758 7.8652,3e-4 4.3087,-4.3088 0,-12.9212 -3.6068,-3.6067 z"
        style="fill:#0c9ac9;fill-opacity:1;stroke:none;display:inline"
        inkscape:connector-curvature="0" />
     <rect
@@ -9745,7 +9756,7 @@
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <g
-       transform="matrix(0.32819437,0,0,0.32819437,2107.9901,4645.8908)"
+       transform="matrix(0.23206846,0.23206846,-0.23206846,0.23206846,3766.1965,4798.1427)"
        id="g4275"
        style="fill:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;display:inline"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
@@ -9859,7 +9870,7 @@
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
-       transform="matrix(0.34756199,0,0,0.34756199,1994.3038,4528.1241)"
+       transform="matrix(0.24576344,0.24576343,-0.24576343,0.24576344,3769.0816,4634.4807)"
        id="g4295"
        style="display:inline">
       <path
@@ -9882,7 +9893,7 @@
     </g>
     <path
        style="fill:none;stroke:#8abe2d;stroke-width:0.65638876;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
-       d="m 2746.9434,6704.3628 6.7279,6.8101 2.0513,-2.0922 1.9281,2.0513 6.8102,-6.851"
+       d="m 2762.4451,6705.5104 -0.058,9.5729 2.9299,-0.029 -0.087,2.8138 9.6599,-0.029"
        id="path4301"
        inkscape:connector-curvature="0"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
@@ -9900,7 +9911,7 @@
        sodipodi:rx="2.0883482"
        sodipodi:ry="2.0883482"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
-       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4802.5978)" />
+       transform="matrix(0.21439483,0.21439482,-0.21439482,0.21439483,3554.9934,4808.5569)" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
@@ -9913,9 +9924,9 @@
        sodipodi:rx="2.0883482"
        sodipodi:ry="2.0883482"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
-       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4808.1473)" />
+       transform="matrix(0.21439483,0.21439482,-0.21439482,0.21439483,3551.0693,4812.481)" />
     <path
-       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4824.7961)"
+       transform="matrix(0.21439483,0.21439482,-0.21439482,0.21439483,3539.2968,4824.2535)"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
        sodipodi:ry="2.0883482"
        sodipodi:rx="2.0883482"
@@ -9939,9 +9950,9 @@
        sodipodi:rx="2.0883482"
        sodipodi:ry="2.0883482"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
-       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4813.6969)" />
+       transform="matrix(0.21439483,0.21439482,-0.21439482,0.21439483,3547.1451,4816.4051)" />
     <path
-       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4830.3455)"
+       transform="matrix(0.21439483,0.21439482,-0.21439482,0.21439483,3535.3728,4828.1775)"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
        sodipodi:ry="2.0883482"
        sodipodi:rx="2.0883482"
@@ -9957,7 +9968,7 @@
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
-       transform="matrix(0.30320007,0,0,0.30320007,1966.0109,4819.2465)"
+       transform="matrix(0.21439483,0.21439482,-0.21439482,0.21439483,3543.221,4820.3293)"
        d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
        sodipodi:ry="2.0883482"
        sodipodi:rx="2.0883482"
@@ -9973,14 +9984,14 @@
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path4315"
-       d="m 2755.5161,6744.0326 -2.6862,2.9802 -11.8193,-2.8702"
+       d="m 2740.4561,6739.6231 -4.0067,0.2079 -6.3279,-10.3871"
        style="fill:#ffffff;stroke:#ffffff;stroke-width:0.38285848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        style="fill:#ffffff;stroke:#ffffff;stroke-width:0.38285848px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
-       d="m 2755.5353,6744.0326 2.6862,2.9802 10.6229,-2.8702"
+       d="m 2740.4698,6739.6366 -0.2079,4.0067 9.5411,5.482"
        id="path4317"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
@@ -9991,7 +10002,7 @@
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\ApplicationIcon.png"
        inkscape:connector-curvature="0"
        id="path4319"
-       d="m 2757.6185,6711.1106 0,31.4395 -4.3039,4.8055"
+       d="m 2765.2221,6717.8303 -22.231,22.231 -6.4413,0.3547"
        style="fill:none;stroke:#8abe2d;stroke-width:0.76571697;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
     <g
        inkscape:export-ydpi="666.07001"
@@ -11407,11 +11418,11 @@
        d="m 2853.7528,6907.5235 -3.8348,3.8347 12.3144,12.3414 3.1866,-3.1865 1.2153,-1.2153 1.2152,1.2153 3.1866,3.1865 12.4495,-12.4494 -3.7538,-3.7267 -4.4558,4.4559 -17.0673,0 -4.4559,-4.4559 z m 31.6501,4.2399 -13.1515,13.1515 -0.108,0.108 0,0.027 0,71.4017 -5.6442,5.6441 5.4551,5.428 24.8717,-7.9394 0.027,0 0,-0.027 0,-49.0955 7.1024,7.1294 6.0762,-6.0762 5.374,-5.374 6.8863,-6.8864 -6.8863,-6.8593 -5.374,-5.401 -15.231,-15.2309 -9.3707,0 -0.027,0 z m -37.3482,0.189 c -4.4076,0.3228 -7.0749,2.3532 -10.6941,4.8069 -3.9483,2.6769 -37.1052,45.8278 -37.1052,45.8278 l 11.8284,10.7481 25.3849,-27.5723 c 13.1525,27.6688 -3.7808,30.013 -3.7808,53.8214 l 0.189,0 24.7639,7.9125 6.6702,-6.6433 1.5663,-1.5663 3.5377,-3.5377 0,-70.2405 -3.7807,-3.7538 -3.1867,3.1597 -1.1882,1.2152 -0.027,0.027 -1.2152,-1.2422 -12.9625,-12.9625 z m 18.5796,14.9068 c 1.2335,0 2.2143,1.0076 2.2143,2.2414 0,1.234 -0.9808,2.2145 -2.2143,2.2145 -1.234,0 -2.2415,-0.9805 -2.2415,-2.2145 0,-1.2338 1.0075,-2.2414 2.2415,-2.2414 z m 0,12.2604 c 1.2335,0 2.2143,1.0075 2.2143,2.2415 0,1.2338 -0.9808,2.2414 -2.2143,2.2414 -1.234,0 -2.2415,-1.0076 -2.2415,-2.2414 0,-1.234 1.0075,-2.2415 2.2415,-2.2415 z m 0,12.2874 c 1.2335,0 2.2143,0.9805 2.2143,2.2144 0,1.2339 -0.9808,2.2414 -2.2143,2.2414 -1.234,0 -2.2415,-1.0075 -2.2415,-2.2414 0,-1.2339 1.0075,-2.2144 2.2415,-2.2144 z m 0,12.2603 c 1.2335,0 2.2143,1.0075 2.2143,2.2415 0,1.2338 -0.9808,2.2414 -2.2143,2.2414 -1.234,0 -2.2415,-1.0076 -2.2415,-2.2414 0,-1.234 1.0075,-2.2415 2.2415,-2.2415 z m 0,12.2604 c 1.2335,0 2.2143,1.0075 2.2143,2.2414 0,1.2339 -0.9808,2.2414 -2.2143,2.2414 -1.234,0 -2.2415,-1.0075 -2.2415,-2.2414 0,-1.2339 1.0075,-2.2414 2.2415,-2.2414 z m 0,12.2874 c 1.2335,0 2.2143,1.0075 2.2143,2.2414 0,1.2339 -0.9808,2.2145 -2.2143,2.2145 -1.234,0 -2.2415,-0.9806 -2.2415,-2.2145 0,-1.2339 1.0075,-2.2414 2.2415,-2.2414 z"
        style="fill:#ffffff;fill-opacity:1;stroke:none" />
     <path
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
-       d="m 2656.5023,6927.7373 -3.8438,3.8126 12.3126,12.3437 3.1874,-3.1875 1.2188,-1.1875 1.2188,1.1875 3.1874,3.1875 12.4688,-12.4375 -3.7812,-3.7188 -4.4376,4.4376 -17.0624,0 z m 31.5312,4.3438 -13.0312,13.0312 -0.094,0.125 0,0.031 0,71.375 -5.6562,5.6563 5.4688,5.4374 27.4374,-7.9062 0.2188,0 c 0,-23.8084 -16.9338,-26.175 -3.7812,-53.8438 l 25.375,27.5938 11.8124,-10.75 c 0,0 -33.1454,-43.1669 -37.0937,-45.8438 -3.6103,-2.4476 -6.2681,-4.482 -10.6563,-4.8124 z m -37.2187,0.062 c -4.4076,0.3228 -7.0683,2.3588 -10.6875,4.8125 -3.9483,2.6769 -37.125,45.8438 -37.125,45.8438 l 11.8438,10.75 25.375,-27.5938 c 13.1524,27.6688 -3.7813,30.0354 -3.7813,53.8438 l 0.1875,0 24.7812,7.9062 6.6563,-6.6562 1.5625,-1.5626 3.5312,-3.5312 0,-70.25 -3.7812,-3.75 -3.1875,3.1562 -1.1875,1.2188 -0.031,0.031 -1.1876,-1.25 z m 18.5625,14.9063 c 1.2335,0 2.2188,1.0162 2.2188,2.25 0,1.234 -0.9853,2.2187 -2.2188,2.2187 -1.234,0 -2.2188,-0.9847 -2.2188,-2.2187 0,-1.2338 0.9848,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.2335,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9853,2.2188 -2.2188,2.2188 -1.234,0 -2.2188,-0.985 -2.2188,-2.2188 0,-1.234 0.9848,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.2335,0 2.2188,0.9849 2.2188,2.2188 0,1.2339 -0.9853,2.25 -2.2188,2.25 -1.234,0 -2.2188,-1.0161 -2.2188,-2.25 0,-1.2339 0.9848,-2.2188 2.2188,-2.2188 z m 0,12.25 c 1.2335,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9853,2.25 -2.2188,2.25 -1.234,0 -2.2188,-1.0162 -2.2188,-2.25 0,-1.234 0.9848,-2.25 2.2188,-2.25 z m 0,12.2813 c 1.2335,0 2.2188,0.9848 2.2188,2.2187 0,1.234 -0.9853,2.25 -2.2188,2.25 -1.234,0 -2.2188,-1.016 -2.2188,-2.25 0,-1.2339 0.9848,-2.2187 2.2188,-2.2187 z m 0,12.2813 c 1.2335,0 2.2188,1.016 2.2188,2.25 0,1.2339 -0.9853,2.1874 -2.2188,2.1874 -1.234,0 -2.2188,-0.9535 -2.2188,-2.1874 0,-1.234 0.9848,-2.25 2.2188,-2.25 z"
-       id="path5952"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss" />
+       id="path4537"
+       d="m 2622.5612,6945.415 -3.8438,3.8126 12.3126,12.3437 3.1874,-3.1875 1.2188,-1.1875 1.2188,1.1875 3.1874,3.1875 12.4688,-12.4375 -3.7812,-3.7188 -4.4376,4.4376 -17.0624,0 z m 31.5312,4.3438 -13.0312,13.0312 -0.094,0.125 0,0.031 0,71.375 -5.6562,5.6563 5.4688,5.4374 27.4374,-7.9062 0.2188,0 c 0,-23.8084 -16.9338,-26.175 -3.7812,-53.8438 l 25.375,27.5938 11.8124,-10.75 c 0,0 -33.1454,-43.1669 -37.0937,-45.8438 -3.6103,-2.4476 -6.2681,-4.482 -10.6563,-4.8124 z m -37.2187,0.062 c -4.4076,0.3228 -7.0683,2.3588 -10.6875,4.8125 -3.9483,2.6769 -37.125,45.8438 -37.125,45.8438 l 11.8438,10.75 25.375,-27.5938 c 13.1524,27.6688 -3.7813,30.0354 -3.7813,53.8438 l 0.1875,0 24.7812,7.9062 6.6563,-6.6562 1.5625,-1.5626 3.5312,-3.5312 0,-70.25 -3.7812,-3.75 -3.1875,3.1562 -1.1875,1.2188 -0.031,0.031 -1.1876,-1.25 z m 18.5625,14.9063 c 1.2335,0 2.2188,1.0162 2.2188,2.25 0,1.234 -0.9853,2.2187 -2.2188,2.2187 -1.234,0 -2.2188,-0.9847 -2.2188,-2.2187 0,-1.2338 0.9848,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.2335,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9853,2.2188 -2.2188,2.2188 -1.234,0 -2.2188,-0.985 -2.2188,-2.2188 0,-1.234 0.9848,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.2335,0 2.2188,0.9849 2.2188,2.2188 0,1.2339 -0.9853,2.25 -2.2188,2.25 -1.234,0 -2.2188,-1.0161 -2.2188,-2.25 0,-1.2339 0.9848,-2.2188 2.2188,-2.2188 z m 0,12.25 c 1.2335,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9853,2.25 -2.2188,2.25 -1.234,0 -2.2188,-1.0162 -2.2188,-2.25 0,-1.234 0.9848,-2.25 2.2188,-2.25 z m 0,12.2813 c 1.2335,0 2.2188,0.9848 2.2188,2.2187 0,1.234 -0.9853,2.25 -2.2188,2.25 -1.234,0 -2.2188,-1.016 -2.2188,-2.25 0,-1.2339 0.9848,-2.2187 2.2188,-2.2187 z m 0,12.2813 c 1.2335,0 2.2188,1.016 2.2188,2.25 0,1.2339 -0.9853,2.1874 -2.2188,2.1874 -1.234,0 -2.2188,-0.9535 -2.2188,-2.1874 0,-1.234 0.9848,-2.25 2.2188,-2.25 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none" />
     <path
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss"
        inkscape:connector-curvature="0"
@@ -11428,21 +11439,30 @@
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\MaleProfileIconFull.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 2787.0748,7087.52 -3.7812,3.7187 12.4688,12.4687 3.1874,-3.1874 1.2188,-1.2188 1.2188,1.2188 3.1874,3.1874 12.3126,-12.3437 -3.8438,-3.8437 -4.4688,4.4687 -17.0624,0 z m -15.0937,4.25 -15.2187,15.2187 -5.375,5.4063 -6.875,6.8437 6.875,6.9063 5.375,5.375 6.0624,6.0624 7.125,-7.125 0,49.0938 0,0.031 0.031,0 24.875,7.9376 5.4375,-5.4376 -5.6562,-5.625 0,-71.4062 0,-0.031 -0.094,-0.094 -13.1562,-13.1562 -0.031,0 z m 47.0313,0.062 -0.1563,0.1563 c -0.043,0 -0.081,-0.028 -0.125,-0.031 l -12.9687,12.9688 -1.1876,1.2188 -0.031,-0.031 -1.1875,-1.1875 -3.1875,-3.1875 -3.7812,3.7813 0,70.2187 3.5312,3.5313 1.5625,1.5937 6.6875,6.625 22.2812,-7.8437 0.031,0 0,-0.031 0,-49.0937 7.0937,7.125 6.0938,-6.0626 5.375,-5.375 6.875,-6.9062 -6.875,-6.8438 -5.375,-5.4062 -15.25,-15.2188 -9.375,0 z m -18.8438,15.0313 c 1.234,0 2.2188,0.985 2.2188,2.2187 0,1.2341 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9847 -2.2188,-2.2188 0,-1.2337 0.9853,-2.2187 2.2188,-2.2187 z m 0,12.25 c 1.234,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0162 -2.2188,-2.25 0,-1.234 0.9853,-2.25 2.2188,-2.25 z m 0,12.2813 c 1.234,0 2.2188,0.9848 2.2188,2.2187 0,1.2339 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0161 -2.2188,-2.25 0,-1.2339 0.9853,-2.2187 2.2188,-2.2187 z m 0,12.2812 c 1.234,0 2.2188,0.9847 2.2188,2.2188 0,1.2337 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0163 -2.2188,-2.25 0,-1.2341 0.9853,-2.2188 2.2188,-2.2188 z m 0,12.25 c 1.234,0 2.2188,1.0161 2.2188,2.25 0,1.2339 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9849 -2.2188,-2.2188 0,-1.2339 0.9853,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.234,0 2.2188,1.0161 2.2188,2.25 0,1.234 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9848 -2.2188,-2.2188 0,-1.2339 0.9853,-2.25 2.2188,-2.25 z"
+       id="path4539"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss" />
+    <path
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss"
        inkscape:connector-curvature="0"
        id="path5950"
-       d="m 2528.2738,6919.2286 -3.7812,3.7187 12.4688,12.4687 3.1874,-3.1874 1.2188,-1.2188 1.2188,1.2188 3.1874,3.1874 12.3126,-12.3437 -3.8438,-3.8437 -4.4688,4.4687 -17.0624,0 z m -15.0937,4.25 -15.2187,15.2187 -5.375,5.4063 -6.875,6.8437 6.875,6.9063 5.375,5.375 6.0624,6.0624 7.125,-7.125 0,49.0938 0,0.031 0.031,0 24.875,7.9376 5.4375,-5.4376 -5.6562,-5.625 0,-71.4062 0,-0.031 -0.094,-0.094 -13.1562,-13.1562 -0.031,0 z m 47.0313,0.062 -0.1563,0.1563 c -0.043,0 -0.081,-0.028 -0.125,-0.031 l -12.9687,12.9688 -1.1876,1.2188 -0.031,-0.031 -1.1875,-1.1875 -3.1875,-3.1875 -3.7812,3.7813 0,70.2187 3.5312,3.5313 1.5625,1.5937 6.6875,6.625 22.2812,-7.8437 0.031,0 0,-0.031 0,-49.0937 7.0937,7.125 6.0938,-6.0626 5.375,-5.375 6.875,-6.9062 -6.875,-6.8438 -5.375,-5.4062 -15.25,-15.2188 -9.375,0 z m -18.8438,15.0313 c 1.234,0 2.2188,0.985 2.2188,2.2187 0,1.2341 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9847 -2.2188,-2.2188 0,-1.2337 0.9853,-2.2187 2.2188,-2.2187 z m 0,12.25 c 1.234,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0162 -2.2188,-2.25 0,-1.234 0.9853,-2.25 2.2188,-2.25 z m 0,12.2813 c 1.234,0 2.2188,0.9848 2.2188,2.2187 0,1.2339 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0161 -2.2188,-2.25 0,-1.2339 0.9853,-2.2187 2.2188,-2.2187 z m 0,12.2812 c 1.234,0 2.2188,0.9847 2.2188,2.2188 0,1.2337 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0163 -2.2188,-2.25 0,-1.2341 0.9853,-2.2188 2.2188,-2.2188 z m 0,12.25 c 1.234,0 2.2188,1.0161 2.2188,2.25 0,1.2339 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9849 -2.2188,-2.2188 0,-1.2339 0.9853,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.234,0 2.2188,1.0161 2.2188,2.25 0,1.234 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9848 -2.2188,-2.2188 0,-1.2339 0.9853,-2.25 2.2188,-2.25 z"
+       d="m 2787.0748,7207.021 -3.7812,3.7187 12.4688,12.4687 3.1874,-3.1874 1.2188,-1.2188 1.2188,1.2188 3.1874,3.1874 12.3126,-12.3437 -3.8438,-3.8437 -4.4688,4.4687 -17.0624,0 z m -15.0937,4.25 -15.2187,15.2187 -5.375,5.4063 -6.875,6.8437 6.875,6.9063 5.375,5.375 6.0624,6.0624 7.125,-7.125 0,49.0938 0,0.031 0.031,0 24.875,7.9376 5.4375,-5.4376 -5.6562,-5.625 0,-71.4062 0,-0.031 -0.094,-0.094 -13.1562,-13.1562 -0.031,0 z m 47.0313,0.062 -0.1563,0.1563 c -0.043,0 -0.081,-0.028 -0.125,-0.031 l -12.9687,12.9688 -1.1876,1.2188 -0.031,-0.031 -1.1875,-1.1875 -3.1875,-3.1875 -3.7812,3.7813 0,70.2187 3.5312,3.5313 1.5625,1.5937 6.6875,6.625 22.2812,-7.8437 0.031,0 0,-0.031 0,-49.0937 7.0937,7.125 6.0938,-6.0626 5.375,-5.375 6.875,-6.9062 -6.875,-6.8438 -5.375,-5.4062 -15.25,-15.2188 -9.375,0 z m -18.8438,15.0313 c 1.234,0 2.2188,0.985 2.2188,2.2187 0,1.2341 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9847 -2.2188,-2.2188 0,-1.2337 0.9853,-2.2187 2.2188,-2.2187 z m 0,12.25 c 1.234,0 2.2188,1.016 2.2188,2.25 0,1.2338 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0162 -2.2188,-2.25 0,-1.234 0.9853,-2.25 2.2188,-2.25 z m 0,12.2813 c 1.234,0 2.2188,0.9848 2.2188,2.2187 0,1.2339 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0161 -2.2188,-2.25 0,-1.2339 0.9853,-2.2187 2.2188,-2.2187 z m 0,12.2812 c 1.234,0 2.2188,0.9847 2.2188,2.2188 0,1.2337 -0.9848,2.25 -2.2188,2.25 -1.2335,0 -2.2188,-1.0163 -2.2188,-2.25 0,-1.2341 0.9853,-2.2188 2.2188,-2.2188 z m 0,12.25 c 1.234,0 2.2188,1.0161 2.2188,2.25 0,1.2339 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9849 -2.2188,-2.2188 0,-1.2339 0.9853,-2.25 2.2188,-2.25 z m 0,12.2812 c 1.234,0 2.2188,1.0161 2.2188,2.25 0,1.234 -0.9848,2.2188 -2.2188,2.2188 -1.2335,0 -2.2188,-0.9848 -2.2188,-2.2188 0,-1.2339 0.9853,-2.25 2.2188,-2.25 z"
        style="fill:#ffffff;fill-opacity:1;stroke:none"
        inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\MaleProfileIconFull.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <rect
-       style="fill:#faf8f2;fill-opacity:1;stroke:none"
+       style="fill:#808080;fill-opacity:1;stroke:none"
        id="rect5930"
        width="1040.6464"
-       height="226.5"
-       x="2220"
-       y="7314.8623" />
+       height="557.42596"
+       x="2258.5"
+       y="7532.2661" />
     <rect
        style="fill:#eeaaff;fill-opacity:1;stroke:none"
        id="rect5926"
@@ -11505,5 +11525,664 @@
        height="105.71246"
        x="2924.8438"
        y="7380.2607" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       y="7216.3618"
+       x="3334"
+       height="300"
+       width="300"
+       id="rect10305-4-7-4-7"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       transform="matrix(0.70519446,0,0,0.72040444,-2290.3109,4974.3219)"
+       id="g10530-5-0-4"
+       style="fill:#fccd43;fill-opacity:1;display:inline">
+      <g
+         id="g10532-7-6-0"
+         transform="matrix(0.94544357,0,0,1,447.33683,0)"
+         style="fill:#fccd43;fill-opacity:1">
+        <path
+           id="path10534-6-1-9"
+           d="m 8016.2282,3390.4216 239.4847,0 0,71.3962 -13.5463,0 0,-33.7511 -9.6335,0 0,33.7511 -23.5968,0 0,-45.7511 -9.6335,-10e-5 1e-4,45.7512 -23.597,0 0,-33.7511 -9.6334,0 0,33.7511 -23.5969,0 0,-45.751 -9.6334,-1e-4 0,45.7511 -23.5969,0 0,-33.7511 -9.6335,-10e-5 1e-4,33.7512 -23.597,0 1e-4,-45.7511 -9.6136,0 0,45.7511 -23.6167,0 0,-33.7511 -9.6136,0 0,33.7511 -16.9428,0 z"
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+        <path
+           id="path10536-1-89-4"
+           d="m 8115.8419,3390.4216 239.4847,0 0,71.3962 -13.5463,0 0,-45.7511 -9.6335,0 0,45.7511 -23.5968,0 0,-33.7511 -9.6335,-10e-5 1e-4,33.7512 -23.597,0 0,-45.7511 -9.6334,0 0,45.7511 -23.5969,0 0,-45.751 -9.6334,-1e-4 0,45.7511 -23.5969,0 0,-45.7511 -9.6335,-10e-5 10e-5,45.7512 -23.597,0 1e-4,-45.7511 -9.6136,0 0,45.7511 -23.6167,0 0,-45.7511 -9.6136,0 0,45.7511 -16.9428,0 z"
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+      </g>
+      <rect
+         style="fill:#fccd43;fill-opacity:1;stroke:none"
+         id="rect10538-8-8-8"
+         width="11.490485"
+         height="71.396004"
+         x="8338.0928"
+         y="3390.4219" />
+    </g>
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       style="fill:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;display:inline"
+       id="g10307-3-4-8"
+       transform="matrix(1.0519328,1.0511217,-1.0519328,1.0511217,8083.255,-1389.9936)">
+      <rect
+         y="3048.0205"
+         x="5814.9399"
+         height="8.3368826"
+         width="24.563316"
+         id="rect10309-2-1-2"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         transform="matrix(0.70683405,0.70737941,-0.70683405,0.70737941,0,0)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         transform="matrix(-0.70683405,0.70737941,0.70683405,0.70737941,0,0)"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect10311-2-4-4"
+         width="24.563316"
+         height="8.3368826"
+         x="3023.2224"
+         y="5839.7383"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect10313-1-3-5"
+         width="24.763962"
+         height="11.216905"
+         x="1960.8579"
+         y="6275.5063"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         transform="matrix(0.70683405,0.70737941,-0.70683405,0.70737941,0,0)"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect10315-6-9-5"
+         width="24.563316"
+         height="8.3368826"
+         x="5814.9399"
+         y="3048.0205" />
+      <rect
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         y="5839.7383"
+         x="3023.2224"
+         height="8.3368826"
+         width="24.563316"
+         id="rect10317-8-8-1"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         transform="matrix(-0.70683405,0.70737941,0.70683405,0.70737941,0,0)" />
+      <rect
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         y="6275.5063"
+         x="1960.8579"
+         height="11.216905"
+         width="24.763962"
+         id="rect10319-5-8-7"
+         style="fill:#ffffff;fill-opacity:1;stroke:none" />
+      <path
+         d="m 1959.3929,5057.415 c 0,2.1479 -1.7412,3.8891 -3.8891,3.8891 -2.1479,0 -3.8891,-1.7412 -3.8891,-3.8891 0,-2.1478 1.7412,-3.889 3.8891,-3.889 2.1479,0 3.8891,1.7412 3.8891,3.889 z"
+         sodipodi:ry="3.8890872"
+         sodipodi:rx="3.8890872"
+         sodipodi:cy="5057.415"
+         sodipodi:cx="1955.5038"
+         id="path10321-7-0-1"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         sodipodi:type="arc"
+         transform="matrix(0.67695675,0,0,0.67695675,649.73729,2874.0888)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <path
+         d="m 1959.3929,5057.415 c 0,2.1479 -1.7412,3.8891 -3.8891,3.8891 -2.1479,0 -3.8891,-1.7412 -3.8891,-3.8891 0,-2.1478 1.7412,-3.889 3.8891,-3.889 2.1479,0 3.8891,1.7412 3.8891,3.889 z"
+         sodipodi:ry="3.8890872"
+         sodipodi:rx="3.8890872"
+         sodipodi:cy="5057.415"
+         sodipodi:cx="1955.5038"
+         id="path10323-6-8-1"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         sodipodi:type="arc"
+         transform="matrix(0.67695675,0,0,0.67695675,649.73749,2886.6551)"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <path
+         inkscape:export-ydpi="89.999985"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         transform="matrix(0.67695675,0,0,0.67695675,649.73749,2899.2213)"
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="path10325-1-7-5"
+         sodipodi:cx="1955.5038"
+         sodipodi:cy="5057.415"
+         sodipodi:rx="3.8890872"
+         sodipodi:ry="3.8890872"
+         d="m 1959.3929,5057.415 c 0,2.1479 -1.7412,3.8891 -3.8891,3.8891 -2.1479,0 -3.8891,-1.7412 -3.8891,-3.8891 0,-2.1478 1.7412,-3.889 3.8891,-3.889 2.1479,0 3.8891,1.7412 3.8891,3.889 z" />
+    </g>
+    <g
+       style="display:inline"
+       id="g10327-8-7-2"
+       transform="matrix(1.1140101,1.1131512,-1.1140101,1.1131512,8096.3334,-2131.2779)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         sodipodi:nodetypes="ccsccccccccccccc"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         d="m 2211.4955,6264.4303 -21.661,11.5435 c 0,0 -13.1522,-11.3809 -21.6479,-11.3807 -6.6019,-2e-4 -10.184,2.8065 -15.2171,6.2186 -5.033,3.4123 -47.3048,58.415 -47.3048,58.415 l 15.0817,13.7115 32.3587,-35.1519 c 16.7655,35.2694 -4.8332,38.2487 -4.8332,68.5972 l 80.5392,2e-4 1e-4,-62.6057 9.0496,9.0694 14.5881,-14.5869 -10e-5,-17.5319 -26.2782,-26.298 -14.6755,1e-4 z"
+         id="path10329-9-8-7"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+         inkscape:export-xdpi="89.999985"
+         inkscape:export-ydpi="89.999985" />
+      <rect
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         y="6030.3716"
+         x="-2878.667"
+         height="22.036686"
+         width="22.036686"
+         id="rect10331-2-3-6"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:connector-curvature="0"
+       id="path10333-79-8-1"
+       d="m 3533.3955,7249.1619 -0.2633,43.3585 13.2806,-0.1301 -0.3948,12.7445 43.7873,-0.1301"
+       style="fill:none;stroke:#8abe2d;stroke-width:2.97416782;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
+    <path
+       transform="matrix(0.97182072,0.97107147,-0.97182072,0.97107147,7125.902,-1342.8249)"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       sodipodi:ry="2.0883482"
+       sodipodi:rx="2.0883482"
+       sodipodi:cy="6301.0234"
+       sodipodi:cx="2603.8489"
+       id="path10343-5-3-4"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.97182072,0.97107147,-0.97182072,0.97107147,7108.1146,-1325.051)"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       sodipodi:ry="2.0883482"
+       sodipodi:rx="2.0883482"
+       sodipodi:cy="6301.0234"
+       sodipodi:cx="2603.8489"
+       id="path10349-4-7-2"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path10335-3-1-3"
+       sodipodi:cx="2603.8489"
+       sodipodi:cy="6301.0234"
+       sodipodi:rx="2.0883482"
+       sodipodi:ry="2.0883482"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       transform="matrix(0.97182072,0.97107147,-0.97182072,0.97107147,7054.752,-1271.7294)" />
+    <path
+       transform="matrix(0.97182072,0.97107147,-0.97182072,0.97107147,7090.327,-1307.277)"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       sodipodi:ry="2.0883482"
+       sodipodi:rx="2.0883482"
+       sodipodi:cy="6301.0234"
+       sodipodi:cx="2603.8489"
+       id="path10351-1-0-2"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path10337-2-7-2"
+       sodipodi:cx="2603.8489"
+       sodipodi:cy="6301.0234"
+       sodipodi:rx="2.0883482"
+       sodipodi:ry="2.0883482"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       transform="matrix(0.97182072,0.97107147,-0.97182072,0.97107147,7036.9646,-1253.9555)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#8abe2d;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path10353-3-3-1"
+       sodipodi:cx="2603.8489"
+       sodipodi:cy="6301.0234"
+       sodipodi:rx="2.0883482"
+       sodipodi:ry="2.0883482"
+       d="m 2605.9372,6301.0234 a 2.0883482,2.0883482 0 1 1 -4.1767,0 2.0883482,2.0883482 0 1 1 4.1767,0 z"
+       transform="matrix(0.97182072,0.97107147,-0.97182072,0.97107147,7072.5394,-1289.5031)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:1.73477292px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+       d="m 3433.9548,7403.8462 -23.0708,-0.035 -23.7747,-46.0711"
+       id="path12540-3-4-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path4402-41-9-8"
+       d="m 3430.1813,7400.0756 0.035,23.0528 46.1067,23.7565"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:1.73477292px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:3.46954584;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 3545.9833,7304.9629 -101.384,101.3055 -28.5785,0.3361"
+       id="path10341-1-6-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 2371.8785,7736.5627 -1.9008,-0.01 -0.01,6.1211 1.5826,-10e-5 0.5974,0.01 0.01,0.5973 0,1.5827 6.1831,0.01 -0.015,-1.8619 -2.2034,0 -4.2357,-4.2357 z m 6.7493,8.906 -6.47,0 -0.054,0.01 -0.01,0.01 -17.7191,17.7191 -2.8083,0 0.01,2.7076 8.7743,4.8487 0.054,0.054 c 5.9105,-5.9105 2.2941,-10.7019 12.4282,-14.3056 l -0.5508,13.1496 5.6012,0.2638 c 0,0 2.4878,-18.9448 2.1722,-20.5895 -0.2887,-1.5039 -0.4434,-2.6687 -1.4507,-3.8401 z m -9.2549,-9.2243 c -1.1743,-1.014 -2.3403,-1.1692 -3.848,-1.4585 -1.6447,-0.3156 -20.5972,2.1645 -20.5972,2.1645 l 0.2716,5.609 13.1496,-0.5509 c -3.6037,10.134 -8.3951,6.5177 -14.3057,12.4282 l 0.047,0.046 4.1893,8.1147 3.3048,1e-4 0.7759,0 1.7532,0 17.4398,-17.4398 -0.01,-1.8696 -1.5748,-0.01 -0.5974,0.01 -0.015,0 0.015,-0.6051 z m 0.9077,8.3087 c 0.3062,0.3063 0.2985,0.8031 -0.01,1.1094 -0.3063,0.3064 -0.7953,0.3062 -1.1016,0 -0.3064,-0.3063 -0.3064,-0.7953 0,-1.1016 0.3062,-0.3063 0.803,-0.3142 1.1094,-0.01 z m -3.0489,3.0489 c 0.3063,0.3062 0.2987,0.803 -0.01,1.1094 -0.3063,0.3063 -0.7955,0.3062 -1.1017,0 -0.3063,-0.3064 -0.3063,-0.7954 0,-1.1016 0.3064,-0.3064 0.8031,-0.3142 1.1094,-0.01 z m -3.0488,3.0488 c 0.3062,0.3062 0.3063,0.7953 0,1.1017 -0.3063,0.3063 -0.8032,0.314 -1.1094,0.01 -0.3064,-0.3065 -0.2986,-0.8032 0.01,-1.1095 0.3064,-0.3063 0.7954,-0.3064 1.1017,0 z m -3.0412,3.0412 c 0.3063,0.3062 0.2987,0.803 -0.01,1.1093 -0.3063,0.3064 -0.8031,0.314 -1.1094,0.01 -0.3063,-0.3064 -0.2986,-0.8031 0.01,-1.1095 0.3064,-0.3064 0.8031,-0.3141 1.1094,-0.01 z m -3.0488,3.0488 c 0.3062,0.3062 0.3063,0.7953 0,1.1016 -0.3063,0.3064 -0.8032,0.314 -1.1094,0.01 -0.3064,-0.3064 -0.2986,-0.8031 0.01,-1.1094 0.3063,-0.3063 0.7953,-0.3064 1.1016,0 z m -3.0489,3.0489 c 0.3062,0.3062 0.2986,0.803 -0.01,1.1094 -0.3063,0.3063 -0.7876,0.2984 -1.0939,-0.01 -0.3063,-0.3063 -0.3141,-0.7875 -0.01,-1.0938 0.3064,-0.3064 0.803,-0.3141 1.1094,-0.01 z"
+       id="path5952"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss"
+       clip-path="none" />
+    <rect
+       y="7656.1841"
+       x="2078.3928"
+       height="123.78877"
+       width="111.21131"
+       id="rect4545"
+       style="fill:#800080;fill-opacity:1;stroke:#4d4d4d;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Background.png"
+       transform="matrix(0.10330863,0.10330863,-0.10553683,0.10553684,1881.3527,6496.1596)"
+       id="g10530-5-0-4-1"
+       style="fill:#fccd43;fill-opacity:1;display:inline">
+      <g
+         id="g10532-7-6-0-8"
+         transform="matrix(0.94544357,0,0,1,447.33683,0)"
+         style="fill:#fccd43;fill-opacity:1">
+        <path
+           id="path10534-6-1-9-9"
+           d="m 8016.2282,3390.4216 239.4847,0 0,71.3962 -13.5463,0 0,-33.7511 -9.6335,0 0,33.7511 -23.5968,0 0,-45.7511 -9.6335,-10e-5 1e-4,45.7512 -23.597,0 0,-33.7511 -9.6334,0 0,33.7511 -23.5969,0 0,-45.751 -9.6334,-1e-4 0,45.7511 -23.5969,0 0,-33.7511 -9.6335,-10e-5 1e-4,33.7512 -23.597,0 1e-4,-45.7511 -9.6136,0 0,45.7511 -23.6167,0 0,-33.7511 -9.6136,0 0,33.7511 -16.9428,0 z"
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+        <path
+           id="path10536-1-89-4-2"
+           d="m 8115.8419,3390.4216 239.4847,0 0,71.3962 -13.5463,0 0,-45.7511 -9.6335,0 0,45.7511 -23.5968,0 0,-33.7511 -9.6335,-10e-5 1e-4,33.7512 -23.597,0 0,-45.7511 -9.6334,0 0,45.7511 -23.5969,0 0,-45.751 -9.6334,-1e-4 0,45.7511 -23.5969,0 0,-45.7511 -9.6335,-10e-5 10e-5,45.7512 -23.597,0 1e-4,-45.7511 -9.6136,0 0,45.7511 -23.6167,0 0,-45.7511 -9.6136,0 0,45.7511 -16.9428,0 z"
+           style="fill:#fccd43;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+      </g>
+      <rect
+         style="fill:#fccd43;fill-opacity:1;stroke:none"
+         id="rect10538-8-8-8-7"
+         width="11.490485"
+         height="71.396004"
+         x="8338.0928"
+         y="3390.4219" />
+    </g>
+    <rect
+       style="fill:#8abe2d;fill-opacity:1;stroke:#4d4d4d;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4535"
+       width="62"
+       height="62"
+       x="2645.8271"
+       y="6693.4199"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+       d="m 2671.9276,6703.0866 -1.6132,1.5867 5.3199,5.3201 1.36,-1.36 0.5201,-0.5201 0.52,0.5201 1.36,1.36 5.2534,-5.2668 -1.64,-1.64 -1.9068,1.9067 -7.28,0 z m -6.44,1.8133 -6.4934,6.4935 -2.2934,2.3067 -2.9333,2.92 2.9333,2.9467 2.2934,2.2933 2.5867,2.5867 3.04,-3.04 0,20.9468 0,0.013 0.013,0 10.6134,3.3868 2.3201,-2.3201 -2.4133,-2.3999 0,-30.467 0,-0.013 -0.041,-0.041 -5.6134,-5.6133 -0.013,0 z m 20.0669,0.026 -0.067,0.067 c -0.018,0 -0.035,-0.012 -0.053,-0.013 l -5.5334,5.5334 -0.5067,0.52 -0.013,-0.013 -0.5067,-0.5067 -1.3601,-1.36 -1.6132,1.6133 0,29.9603 1.5067,1.5067 0.6665,0.68 2.8534,2.8267 9.5067,-3.3467 0.013,0 0,-0.013 0,-20.9468 3.0266,3.04 2.6001,-2.5868 2.2934,-2.2933 2.9333,-2.9467 -2.9333,-2.92 -2.2934,-2.3067 -6.5067,-6.4934 -4,0 z m -8.0401,6.4134 c 0.5264,0 0.9467,0.4204 0.9467,0.9467 0,0.5265 -0.4203,0.9467 -0.9467,0.9467 -0.5263,0 -0.9467,-0.4202 -0.9467,-0.9467 0,-0.5263 0.4204,-0.9467 0.9467,-0.9467 z m 0,5.2267 c 0.5264,0 0.9467,0.4335 0.9467,0.9601 0,0.5263 -0.4203,0.96 -0.9467,0.96 -0.5263,0 -0.9467,-0.4337 -0.9467,-0.96 0,-0.5266 0.4204,-0.9601 0.9467,-0.9601 z m 0,5.2401 c 0.5264,0 0.9467,0.4201 0.9467,0.9467 0,0.5265 -0.4203,0.96 -0.9467,0.96 -0.5263,0 -0.9467,-0.4335 -0.9467,-0.96 0,-0.5266 0.4204,-0.9467 0.9467,-0.9467 z m 0,5.24 c 0.5264,0 0.9467,0.4202 0.9467,0.9467 0,0.5265 -0.4203,0.96 -0.9467,0.96 -0.5263,0 -0.9467,-0.4335 -0.9467,-0.96 0,-0.5265 0.4204,-0.9467 0.9467,-0.9467 z m 0,5.2267 c 0.5264,0 0.9467,0.4336 0.9467,0.96 0,0.5265 -0.4203,0.9467 -0.9467,0.9467 -0.5263,0 -0.9467,-0.4202 -0.9467,-0.9467 0,-0.5264 0.4204,-0.96 0.9467,-0.96 z m 0,5.2401 c 0.5264,0 0.9467,0.4335 0.9467,0.9599 0,0.5266 -0.4203,0.9467 -0.9467,0.9467 -0.5263,0 -0.9467,-0.4201 -0.9467,-0.9467 0,-0.5264 0.4204,-0.9599 0.9467,-0.9599 z"
+       id="path4539-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:1.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 2666.7187,6701.945 c -0.094,0.352 8.5295,8.5295 8.5295,8.5295 l 2.3423,-2.3423 2.2538,2.2539 8.0434,-8.2201"
+       id="path4625"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:1.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 2675.4692,6710.5188 0,30.1404 6.2314,6.585"
+       id="path5395"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.36649871;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5407"
+       width="0.94060808"
+       height="27.899054"
+       x="2677.1201"
+       y="6711.1973"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       sodipodi:ry="1.5026019"
+       sodipodi:rx="1.5026019"
+       sodipodi:cy="7231.5029"
+       sodipodi:cx="3024.384"
+       id="path5411"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="translate(-344.97226,-516.3536)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="translate(-344.97226,-509.04696)"
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5417"
+       sodipodi:cx="3024.384"
+       sodipodi:cy="7231.5029"
+       sodipodi:rx="1.5026019"
+       sodipodi:ry="1.5026019"
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       sodipodi:ry="1.5026019"
+       sodipodi:rx="1.5026019"
+       sodipodi:cy="7231.5029"
+       sodipodi:cx="3024.384"
+       id="path5415"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="translate(-344.97226,-501.74032)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5409"
+       sodipodi:cx="3024.384"
+       sodipodi:cy="7231.5029"
+       sodipodi:rx="1.5026019"
+       sodipodi:ry="1.5026019"
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       transform="translate(-344.97226,-494.43338)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#8abe2d;fill-opacity:1;stroke:#4d4d4d;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="rect4535-8"
+       width="62"
+       height="62"
+       x="2607.2153"
+       y="6591.9492"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+       d="m 2648.8488,6612.3193 -2.2627,-0.019 -1e-4,7.5236 1.9232,2e-4 0.7356,0 1e-4,0.7353 -2e-4,1.9233 7.439,-0.01 -2e-4,-2.3195 -2.6965,0 -5.1477,-5.1476 z m -5.836,-3.2714 -9.1834,2e-4 -3.2527,0.01 -4.1389,-0.01 -0.01,4.1579 0,3.2432 0,3.6582 4.2993,0 -14.8117,14.8116 0,0.012 0.013,0 5.11,9.8996 3.2811,-2e-4 -0.01,-3.4032 21.5432,-21.5436 0,-0.011 0,-0.058 0,-7.9384 -0.012,0 z m 14.171,14.208 -0.094,-4e-4 c -0.013,0 -0.016,-0.033 -0.029,-0.047 l -7.8253,1e-4 -0.726,0.01 -0.01,-0.02 0,-0.7166 0,-1.9232 -2.2815,-2e-4 -21.1851,21.1852 -1e-4,2.1308 -0.01,0.9523 0.019,4.0162 9.0887,4.3559 0.012,0 0,-0.012 14.8117,-14.8117 -0.01,4.2897 3.6677,0.01 3.2433,1e-4 4.1579,-0.01 -0.01,-4.1388 0.01,-3.2528 -0.01,-9.1925 -2.8284,-2.8283 z m -10.2202,-1.1503 c 0.3723,0.372 0.3722,0.9666 10e-5,1.3386 -0.3723,0.3724 -0.9668,0.3724 -1.3389,1e-4 -0.3723,-0.372 -0.3723,-0.9664 -1e-4,-1.3387 0.3721,-0.3723 0.9667,-0.3722 1.3389,0 z m -3.6957,3.6957 c 0.3722,0.3723 0.3628,0.9757 -0.01,1.3482 -0.3721,0.3724 -0.9759,0.3819 -1.3481,0.01 -0.3723,-0.372 -0.3628,-0.9761 0.01,-1.3481 0.3724,-0.3725 0.9761,-0.3817 1.3485,-0.01 z m -3.7054,3.7054 c 0.3721,0.3722 0.3723,0.9664 1e-4,1.3388 -0.3725,0.3724 -0.9761,0.3815 -1.3483,0.01 -0.3721,-0.3723 -0.363,-0.9762 0.01,-1.3483 0.3723,-0.3724 0.9665,-0.3722 1.3389,0 z m -3.7054,3.7053 c 0.3725,0.3719 0.3725,0.9664 10e-5,1.3387 -0.3722,0.3723 -0.976,0.3815 -1.3481,0.01 -0.3723,-0.3722 -0.363,-0.9759 0.01,-1.3483 0.3724,-0.3723 0.9667,-0.3722 1.3388,10e-5 z m -3.6956,3.6957 c 0.3721,0.3722 0.3628,0.9759 -0.01,1.3483 -0.3724,0.3723 -0.9669,0.3722 -1.339,-2e-4 -0.3721,-0.3719 -0.3723,-0.9664 1e-4,-1.3386 0.3722,-0.3722 0.976,-0.3815 1.3483,-0.01 z m -3.7054,3.7051 c 0.3722,0.3725 0.3628,0.9762 -0.01,1.3484 -0.3725,0.3722 -0.9666,0.3722 -1.339,0 -0.372,-0.3722 -0.3723,-0.9664 10e-5,-1.3388 0.3722,-0.3722 0.9762,-0.3816 1.3482,-0.01 z"
+       id="path4539-9-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 2646.0518,6607.7318 c -0.3154,0.1825 0,12.0625 0,12.0625 l 3.3125,0 0,3.1875 11.5,-0.125"
+       id="path4625-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:1.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 2646.0976,6620.079 -21.3124,21.3124 -0.2498,9.0625"
+       id="path5395-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.166;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="rect5407-0"
+       width="0.94060808"
+       height="27.899054"
+       x="6553.8271"
+       y="2810.7075"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
+    <path
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       sodipodi:ry="1.5026019"
+       sodipodi:rx="1.5026019"
+       sodipodi:cy="7231.5029"
+       sodipodi:cx="3024.384"
+       id="path5411-1"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       transform="matrix(0.70710678,0.70710679,-0.70710679,0.70710678,5620.4935,-625.86613)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.70710678,0.70710679,-0.70710679,0.70710678,5615.327,-620.69959)"
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path5417-4"
+       sodipodi:cx="3024.384"
+       sodipodi:cy="7231.5029"
+       sodipodi:rx="1.5026019"
+       sodipodi:ry="1.5026019"
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       sodipodi:ry="1.5026019"
+       sodipodi:rx="1.5026019"
+       sodipodi:cy="7231.5029"
+       sodipodi:cx="3024.384"
+       id="path5415-5"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       sodipodi:type="arc"
+       transform="matrix(0.70710678,0.70710679,-0.70710679,0.70710678,5610.1604,-615.53275)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="path5409-6"
+       sodipodi:cx="3024.384"
+       sodipodi:cy="7231.5029"
+       sodipodi:rx="1.5026019"
+       sodipodi:ry="1.5026019"
+       d="m 3025.8866,7231.5029 a 1.5026019,1.5026019 0 1 1 -3.0052,0 1.5026019,1.5026019 0 1 1 3.0052,0 z"
+       transform="matrix(0.70710678,0.70710679,-0.70710679,0.70710678,5604.9935,-610.36619)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5527"
+       width="56.214989"
+       height="8.8388348"
+       x="2609.7544"
+       y="6644.5059" />
+    <rect
+       style="fill:#8abe2d;fill-opacity:1;stroke:#4d4d4d;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="rect4535-8-6"
+       width="62"
+       height="62"
+       x="2530.75"
+       y="6595.1118"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+       d="m 2572.3834,6615.4821 -2.2627,-0.019 -10e-5,7.5236 1.9232,2e-4 0.7356,0 1e-4,0.7353 -2e-4,1.9233 7.439,-0.01 -2e-4,-2.3195 -2.6965,0 -5.1477,-5.1476 z m -5.836,-3.2714 -9.1834,2e-4 -3.2527,0.01 -4.1389,-0.01 -0.01,4.1579 0,3.2432 0,3.6582 4.2993,0 -14.8117,14.8116 0,0.012 0.013,0 5.11,9.8996 3.2811,-2e-4 -0.01,-3.4032 21.5432,-21.5436 0,-0.011 0,-0.058 0,-7.9384 -0.012,0 z m 14.171,14.208 -0.094,-4e-4 c -0.013,0 -0.016,-0.033 -0.029,-0.047 l -7.8253,1e-4 -0.726,0.01 -0.01,-0.02 0,-0.7166 0,-1.9232 -2.2815,-2e-4 -21.1851,21.1852 -1e-4,2.1308 -0.01,0.9523 0.019,4.0162 9.0887,4.3559 0.012,0 0,-0.012 14.8117,-14.8117 -0.01,4.2897 3.6677,0.01 3.2433,1e-4 4.1579,-0.01 -0.01,-4.1388 0.01,-3.2528 -0.01,-9.1925 -2.8284,-2.8283 z m -10.2202,-1.1503 c 0.3723,0.372 0.3722,0.9666 1e-4,1.3386 -0.3723,0.3724 -0.9668,0.3724 -1.3389,1e-4 -0.3723,-0.372 -0.3723,-0.9664 -1e-4,-1.3387 0.3721,-0.3723 0.9667,-0.3722 1.3389,0 z m -3.6957,3.6957 c 0.3722,0.3723 0.3628,0.9757 -0.01,1.3482 -0.3721,0.3724 -0.9759,0.3819 -1.3481,0.01 -0.3723,-0.372 -0.3628,-0.9761 0.01,-1.3481 0.3724,-0.3725 0.9761,-0.3817 1.3485,-0.01 z m -3.7054,3.7054 c 0.3721,0.3722 0.3723,0.9664 1e-4,1.3388 -0.3725,0.3724 -0.9761,0.3815 -1.3483,0.01 -0.3721,-0.3723 -0.363,-0.9762 0.01,-1.3483 0.3723,-0.3724 0.9665,-0.3722 1.3389,0 z m -3.7054,3.7053 c 0.3725,0.3719 0.3725,0.9664 10e-5,1.3387 -0.3722,0.3723 -0.976,0.3815 -1.3481,0.01 -0.3723,-0.3722 -0.363,-0.9759 0.01,-1.3483 0.3724,-0.3723 0.9667,-0.3722 1.3388,10e-5 z m -3.6956,3.6957 c 0.3721,0.3722 0.3628,0.9759 -0.01,1.3483 -0.3724,0.3723 -0.9669,0.3722 -1.339,-2e-4 -0.3721,-0.3719 -0.3723,-0.9664 1e-4,-1.3386 0.3722,-0.3722 0.976,-0.3815 1.3483,-0.01 z m -3.7054,3.7051 c 0.3722,0.3725 0.3628,0.9762 -0.01,1.3484 -0.3725,0.3722 -0.9666,0.3722 -1.339,0 -0.372,-0.3722 -0.3723,-0.9664 10e-5,-1.3388 0.3722,-0.3722 0.9762,-0.3816 1.3482,-0.01 z"
+       id="path4539-9-3-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss" />
+    <path
+       style="fill:none;stroke:#8abe2d;stroke-width:1.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 2567.5864,6668.8946 c -0.3154,0.1825 0,12.0625 0,12.0625 l 3.3125,0 0,3.1875 11.5,-0.125"
+       id="path4625-4-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#8abe2d;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+       id="rect5527-5"
+       width="56.214989"
+       height="8.8388348"
+       x="2533.2891"
+       y="6647.6685"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\ApplicationIcon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\SplashScreen.png"
+       y="2890.3621"
+       x="9086"
+       height="800"
+       width="480"
+       id="rect10502-2"
+       style="fill:#8abe2d;fill-opacity:1;stroke:none;display:inline" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\SplashScreen.png"
+       style="fill:#ffffff;stroke:none;display:inline"
+       transform="matrix(1.1074401,0,0,1.1408209,9138.0359,1960.9714)"
+       id="g10504-2">
+      <g
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         id="g10506-1"
+         transform="translate(116.05082,400.53572)">
+        <path
+           style="fill:#ffffff;stroke:none"
+           d="m 209.00289,471.38278 c -0.82135,-0.0746 -1.67467,-0.11729 -2.55997,-0.128 -3.64205,0.0479 -7.43895,0.0931 -10.94121,0.72686 -3.01768,0.54605 -8.58471,1.26341 -10.80453,3.77632 1.23622,3.36237 6.09758,5.3179 8.39412,5.26608 2.96445,-7.72109 4.86549,-7.35654 6.23654,-6.17783 4.32055,3.71445 0.65116,37.59292 0.65116,44.40795 l 9.72788,0 17.79177,-47.67939 -4.47994,0 -13.43983,39.1675 z"
+           id="path10508-7"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccsccscccccc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4'"
+         x="186.69893"
+         y="920.48822"
+         id="text10510-4"
+         sodipodi:linespacing="100%"><tspan
+           sodipodi:role="line"
+           id="tspan10512-8"
+           x="186.69893"
+           y="920.48822">Lassi</tspan></text>
+    </g>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\SplashScreen.png"
+       transform="scale(0.98526118,1.0149593)"
+       sodipodi:linespacing="125%"
+       id="text10540-5"
+       y="3084.8213"
+       x="9273.9482"
+       style="font-size:61.67199707px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Segoe WP;-inkscape-font-specification:Segoe WP"
+       xml:space="preserve"><tspan
+         y="3084.8213"
+         x="9273.9482"
+         id="tspan10542-2"
+         sodipodi:role="line">POCKETAILOR</tspan></text>
+    <g
+       transform="matrix(1.3617168,-1.844892e-7,1.844892e-7,1.3617168,8335.4032,4253.983)"
+       id="g4211"
+       clip-path="url(#clipPath4174)"
+       inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor-v.2.x.x\Pocketailor\SplashScreen.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss"
+         inkscape:connector-curvature="0"
+         id="path4213"
+         d="m 685.58212,-551.24981 -6.98908,-0.0582 10e-5,23.23897 5.9406,2e-5 2.27158,-2e-5 10e-6,2.27157 -10e-6,5.94063 22.97693,-0.029 -9e-5,-7.16389 -8.32877,-9e-5 -15.90024,-15.90025 z m -18.02616,-10.10511 -28.36429,-2e-5 -10.04698,0.0293 -12.7843,-0.0291 -0.0291,12.84264 1e-5,10.01781 -1e-5,11.29897 13.27942,-2e-5 -45.74996,45.74997 -0.0288,0.0288 0.0288,0.0288 15.78375,30.57769 10.1344,-9e-5 -0.0291,-10.51285 66.54266,-66.54262 0.0288,-0.029 2e-5,-0.1752 -2e-5,-24.52024 -0.0288,-0.0288 z m 43.77015,43.88572 -0.29131,-2e-5 c -0.0401,-0.0401 -0.0494,-0.10148 -0.0875,-0.14541 l -24.17085,9e-5 -2.2425,0.0291 8e-5,-0.0578 -2e-5,-2.21324 0,-5.94081 -7.0474,1.1e-4 -65.43602,65.43602 -1e-4,6.58146 -0.0291,2.94125 0.0582,12.40577 28.07305,13.45412 0.029,0.0289 0.0288,-0.0289 45.74988,-45.74986 -0.0291,13.25026 11.32841,0.0291 10.01781,10e-6 12.84253,-0.0291 -0.0291,-12.78439 0.0291,-10.04689 -0.0291,-28.39354 -8.73647,-8.73645 z m -31.56781,-3.55284 c 1.14994,1.14997 1.14975,2.9856 8e-5,4.13526 -1.15005,1.15005 -2.9854,1.14996 -4.13534,0 -1.14951,-1.14948 -1.15005,-2.9853 0,-4.13535 1.14966,-1.14966 2.98575,-1.14939 4.13526,9e-5 z m -11.41564,11.41564 c 1.14993,1.14997 1.12086,3.01448 -0.0291,4.16443 -1.14976,1.14976 -3.01449,1.17902 -4.16442,0.0291 -1.1495,-1.14948 -1.12071,-3.01467 0.0291,-4.16444 1.14993,-1.14993 3.01493,-1.17854 4.16442,-0.0291 z m -11.44483,11.44481 c 1.14996,1.14995 1.14996,2.9854 1.1e-4,4.13528 -1.14987,1.14983 -3.01448,1.179 -4.16442,0.0291 -1.14949,-1.14948 -1.12078,-3.01456 0.0291,-4.16442 1.14987,-1.14986 2.98578,-1.14939 4.13526,8e-5 z m -11.44472,11.44472 c 1.14997,1.14995 1.15005,2.9853 2e-5,4.13535 -1.14966,1.14966 -3.01448,1.17902 -4.16443,0.0291 -1.14948,-1.14949 -1.1206,-3.01475 0.0291,-4.16441 1.15006,-1.15005 2.98587,-1.14951 4.13535,0 z m -11.41561,11.41564 c 1.14993,1.14994 1.12077,3.01456 -0.0291,4.16442 -1.14986,1.14987 -2.98542,1.14995 -4.13535,0 -1.14949,-1.14949 -1.14987,-2.9855 0,-4.13535 1.14985,-1.14985 3.01492,-1.17855 4.16443,-0.0291 z m -11.44473,11.44471 c 1.14995,1.14996 1.12079,3.01456 -0.0291,4.16443 -1.14995,1.14995 -2.9854,1.14995 -4.13535,0 -1.14947,-1.1495 -1.14994,-2.98541 10e-6,-4.13536 1.14985,-1.14985 3.01494,-1.17856 4.16441,-0.0291 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+         inkscape:export-filename="C:\Users\brendan\Documents\Code\WindowsPhone\Pocketailor\Pocketailor\Images\MaleProfileIconFull.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+         d="m 833.47156,-548.42033 -7.13488,-0.0291 -0.029,22.97689 5.9407,-7e-5 2.2424,0.0291 0.0291,2.24238 -8e-5,5.94071 23.2099,0.0291 -0.0581,-6.98918 -8.27071,10e-6 -15.90027,-15.90025 z m 25.33565,33.43154 -24.28729,0 -0.20407,0.0287 -0.0287,0.0289 -66.51356,66.51357 -10.542,6e-5 0.0293,10.16339 32.93627,18.20091 0.20393,0.20387 c 22.18678,-22.18676 8.61178,-40.17261 46.65278,-53.70011 l -2.06767,49.36105 21.02563,0.99003 c 0,0 9.33894,-71.11457 8.15414,-77.2885 -1.0835,-5.64534 -1.66443,-10.01793 -5.44586,-14.41511 z M 824.0657,-549.6147 c -4.40819,-3.80657 -8.785,-4.38874 -14.44427,-5.47486 -6.17394,-1.1848 -77.31769,8.12496 -77.31769,8.12496 l 1.01929,21.0549 49.36103,-2.06765 c -13.52768,38.04082 -31.51339,24.46591 -53.7002,46.65268 l 0.17477,0.1747 15.72562,30.46104 12.40577,8e-5 2.91225,-9e-5 6.58136,0 65.46519,-65.46522 -0.0291,-7.01824 -5.91162,-0.0291 -2.24239,0.0292 -0.0578,-7e-5 0.0581,-2.27157 z m 3.40717,31.1892 c 1.1495,1.14949 1.12069,3.01466 -0.0291,4.16442 -1.14998,1.14996 -2.98577,1.14938 -4.13528,-7e-5 -1.14991,-1.14997 -1.15003,-2.98531 -7e-5,-4.13526 1.14977,-1.14977 3.01447,-1.17903 4.16442,-0.0291 z m -11.4447,11.44472 c 1.14947,1.14949 1.12087,3.01447 -0.0291,4.16442 -1.14974,1.14977 -2.98585,1.14949 -4.13533,2e-5 -1.14994,-1.14998 -1.14976,-2.9856 10e-6,-4.13537 1.14993,-1.14996 3.01445,-1.17903 4.1644,-0.0291 z m -11.4447,11.44471 c 1.14945,1.14949 1.14984,2.98549 -3e-5,4.13535 -1.14984,1.14986 -3.01493,1.17856 -4.16443,0.0291 -1.14993,-1.14998 -1.12077,-3.01458 0.0291,-4.16445 1.14986,-1.14984 2.9854,-1.14992 4.13537,2e-5 z m -11.41565,11.41566 c 1.14949,1.14944 1.12088,3.01443 -0.0291,4.1644 -1.14976,1.14978 -3.01494,1.17857 -4.16441,0.0291 -1.14996,-1.14995 -1.12071,-3.01464 0.0291,-4.16441 1.14995,-1.14995 3.01448,-1.17903 4.16443,-0.029 z M 781.723,-472.6756 c 1.14952,1.14947 1.14996,2.98538 1.1e-4,4.13521 -1.14995,1.14999 -3.01496,1.1786 -4.16445,0.0291 -1.14994,-1.14993 -1.12087,-3.01444 0.0291,-4.1644 1.14985,-1.14986 2.98534,-1.14987 4.13527,7e-5 z m -11.44484,11.44478 c 1.14952,1.14949 1.12092,3.01448 -0.0291,4.16444 -1.14985,1.14985 -2.95657,1.12022 -4.10608,-0.0293 -1.14994,-1.14994 -1.17912,-2.95623 -0.0293,-4.10611 1.14995,-1.14995 3.01448,-1.17902 4.16441,-0.0291 z"
+         id="path4215"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccssssssssssssssssssssssssssssss" />
+    </g>
   </g>
 </svg>

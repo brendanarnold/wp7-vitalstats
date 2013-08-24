@@ -100,8 +100,16 @@ namespace Pocketailor
             // Load and send feedback
             FeedbackAgent = new FeedbackAgent();
             FeedbackAgent.DeliverAdjustmentsTaskAsync();
+
             //  Check if ready to rate
             VM.AddALaunch();
+
+            TileHelpers.UpdateFlipTile("Pocketailor", "", "", "", 0, new Uri("/", UriKind.Relative),
+                new Uri("/Images/Tiles/SmallBackgroundImage.png", UriKind.Relative),
+                new Uri("/Images/Tiles/BackgroundImage.png", UriKind.Relative),
+                new Uri("/Images/Tiles/BackBackgroundImage.png", UriKind.Relative),
+                new Uri("/Images/Tiles/WideBackgroundImage.png", UriKind.Relative),
+                new Uri("/Images/Tiles/WideBackBackgroundImage.png", UriKind.Relative));
 
         }
 

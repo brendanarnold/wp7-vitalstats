@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <AppExtra xmlns="" AppPlatformVersion="8.0">
+    <Extra Name="Tiles" />
+  </AppExtra>
   <App xmlns="" ProductID="{a37a641a-11e8-40fb-bddc-647851cf1719}" Title="Pocketailor" RuntimeType="Silverlight" Version="1.0.1" Genre="apps.normal" Author="Brendan Arnold" Description="Enter your measurements to find the right clothing size for hundreds of brands worldwide." Publisher="Lassiv">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
