@@ -47,7 +47,9 @@ namespace Pocketailor
         public static string[] VALUE_DELIMITERS = { "|" };
         public static string FORMATTED_NAME_SEPARATOR = "/";
         public static string DEFAULT_REGION = Globalisation.CustomRegions.GlobalRegion;
-        public static string CONVERSIONS_DB_CONNECTION_STRING = "Data Source = 'appdata:/PocketailorConversions.sdf'; File Mode = read only;";
+        public static string CONVERSIONS_DB_WP8_CONNECTION_STRING = "Data Source = 'appdata:/PocketailorConversionsWP8.sdf'; File Mode = read only;";
+        public static string CONVERSIONS_DB_WP7_CONNECTION_STRING = "Data Source = 'appdata:/PocketailorConversionsWP7.sdf'; File Mode = read only;";
+        
         public static string APP_DB_CONNECTION_STRING = "Data Source=isostore:/Pocketailor.sdf";
         public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";
         public static string AUTHOR_EMAIL = "brendanarnold@outlook.com";

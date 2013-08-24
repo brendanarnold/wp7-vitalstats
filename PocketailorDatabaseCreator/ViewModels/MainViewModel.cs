@@ -25,7 +25,15 @@ namespace PocketailorDatabaseCreator
 
         public void LoadUpCsv() 
         {
-            string dbConnectionString = "Data Source=isostore:/PocketailorConversions.sdf";
+            string dbConnectionString;
+            if (VersionHelpers.IsWP8)
+            {
+                dbConnectionString = "Data Source=isostore:/PocketailorConversionsWP8.sdf";
+            }
+            else
+            {
+                dbConnectionString = "Data Source=isostore:/PocketailorConversionsWP7.sdf";
+            }
             ConversionsDataContext conversionsDb = new ConversionsDataContext(dbConnectionString);
             if (conversionsDb.DatabaseExists())
             {

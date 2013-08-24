@@ -162,6 +162,7 @@
     <Compile Include="ViewModel\AppViewModel\MeasurementsPageViewModel.cs" />
     <Compile Include="ViewModel\ThemeHelpers.cs" />
     <Compile Include="ViewModel\TileHelpers.cs" />
+    <Compile Include="ViewModel\VersionHelpers.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\Animations\BlindDown.cs" />
     <Compile Include="View\ClipToBounds.cs" />
@@ -268,6 +269,9 @@
     </Content>
     <Content Include="Images\Tiles\WideBackgroundImage.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PocketailorConversionsWP7.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
@@ -487,7 +491,7 @@
     <Content Include="Images\wetsuit-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="PocketailorConversions.sdf">
+    <Content Include="PocketailorConversionsWP8.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Pocketailor_2013_05_27_22_21_47.sap" />

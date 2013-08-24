@@ -95,7 +95,14 @@ namespace Pocketailor
             Cache = new Cache();
             // Connect to databases
             VM.ConnectToAppDB(AppConstants.APP_DB_CONNECTION_STRING);
-            VM.ConnectToConversionsDB(AppConstants.CONVERSIONS_DB_CONNECTION_STRING);
+            if (VersionHelpers.IsWP8)
+            {
+                VM.ConnectToConversionsDB(AppConstants.CONVERSIONS_DB_WP8_CONNECTION_STRING);
+            }
+            else
+            {
+                VM.ConnectToConversionsDB(AppConstants.CONVERSIONS_DB_WP7_CONNECTION_STRING);
+            }
 
             // Load and send feedback
             FeedbackAgent = new FeedbackAgent();
@@ -104,12 +111,18 @@ namespace Pocketailor
             //  Check if ready to rate
             VM.AddALaunch();
 
-            TileHelpers.UpdateFlipTile("Pocketailor", "", "", "", 0, new Uri("/", UriKind.Relative),
-                new Uri("/Images/Tiles/SmallBackgroundImage.png", UriKind.Relative),
-                new Uri("/Images/Tiles/BackgroundImage.png", UriKind.Relative),
-                new Uri("/Images/Tiles/BackBackgroundImage.png", UriKind.Relative),
-                new Uri("/Images/Tiles/WideBackgroundImage.png", UriKind.Relative),
-                new Uri("/Images/Tiles/WideBackBackgroundImage.png", UriKind.Relative));
+            // Update to cool new tiles if v.7.8+
+            if (VersionHelpers.IsWideTileCapable)
+            {
+                TileHelpers.UpdateFlipTile("Pocketailor", "", "", "", 0, new Uri("/", UriKind.Relative),
+                    new Uri("/Images/Tiles/SmallBackgroundImage.png", UriKind.Relative),
+                    new Uri("/Images/Tiles/BackgroundImage.png", UriKind.Relative),
+                    new Uri("/Images/Tiles/BackBackgroundImage.png", UriKind.Relative),
+                    new Uri("/Images/Tiles/WideBackgroundImage.png", UriKind.Relative),
+                    new Uri("/Images/Tiles/WideBackBackgroundImage.png", UriKind.Relative));
+            }
+
+
 
         }
 

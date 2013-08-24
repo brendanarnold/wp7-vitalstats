@@ -45,6 +45,9 @@ namespace Pocketailor.View
                 if (App.VM.SkipLoadConversionPageData)
                     App.VM.SkipLoadConversionPageData = false;
                     await App.VM.LoadConversionsPageDataAsyncTask(profileId, conversionId);
+                    // Have to raise these synchronously to avoid crashes
+                    App.VM.NotifyPropertyChanged("SelectedProfile");
+                    App.VM.NotifyPropertyChanged("SelectedConversionType");
             }
             else
             {

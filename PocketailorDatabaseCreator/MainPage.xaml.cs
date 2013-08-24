@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Threading.Tasks;
+
 
 namespace PocketailorDatabaseCreator
 {
@@ -29,7 +31,7 @@ namespace PocketailorDatabaseCreator
         {
         }
 
-        private void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private async void Button_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             // In case wat to do twice
             this.doneTextBlock.Visibility = Visibility.Collapsed;
@@ -37,8 +39,10 @@ namespace PocketailorDatabaseCreator
             this.readyTextBlock.Visibility = Visibility.Collapsed;
             this.workingTextBlock.Visibility = Visibility.Visible;
 
-            App.ViewModel.LoadUpCsv();
-
+            await TaskEx.Run(() =>
+            {
+                App.ViewModel.LoadUpCsv();
+            });
             this.workingTextBlock.Visibility = Visibility.Collapsed;
             this.doneTextBlock.Visibility = Visibility.Visible;
 

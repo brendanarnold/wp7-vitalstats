@@ -8,15 +8,7 @@ namespace Pocketailor.ViewModel
 {
     class TileHelpers
     {
-        static Version SupportsWideTileVersion = new Version(7, 10, 8858);
-
-        static bool IsWideTileCapable
-        {
-            get
-            {
-                return Environment.OSVersion.Version > TileHelpers.SupportsWideTileVersion;
-            }
-        }
+        
 
         public static void UpdateFlipTile(
             string title,
@@ -31,7 +23,7 @@ namespace Pocketailor.ViewModel
             Uri wideBackgroundImage,
             Uri wideBackBackgroundImage)
         {
-            if (TileHelpers.IsWideTileCapable)
+            if (VersionHelpers.IsWideTileCapable)
             {
                 Type flipTileDataType = Type.GetType("Microsoft.Phone.Shell.FlipTileData, Microsoft.Phone");
 
