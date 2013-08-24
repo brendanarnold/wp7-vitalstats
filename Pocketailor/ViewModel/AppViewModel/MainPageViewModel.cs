@@ -173,6 +173,12 @@ namespace Pocketailor.ViewModel
             reviewTask.Show();
         }
 
+        public void UpgradeApp()
+        {
+            MarketplaceDetailTask mdTask = new MarketplaceDetailTask();
+            mdTask.Show();
+        }
+
         public void GiveFeedback()
         {
             WebBrowserTask wbTask = new WebBrowserTask();

@@ -211,7 +211,7 @@
 		
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="80" />
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
 
@@ -891,7 +891,31 @@
 
 									</StackPanel>
 
-						
+								</StackPanel>
+
+								<StackPanel Margin="12,0,0,6"
+									Visibility="{Binding IsTrial, Converter={StaticResource BoolToVisibility}}"
+									
+									>
+
+									<Controls:QAButton
+										Title="Can I remove the adverts?"
+										AnswerContainerHeight="201"
+										AnswerContainerName="upgradeAnswerContainer"
+										Margin="0,0,0,6"
+										/>
+
+									<StackPanel x:Name="upgradeAnswerContainer"
+										Visibility="Collapsed">
+										<TextBlock Style="{StaticResource answerStyle}" Margin="0,0,0,6">
+											<Run Text="Yes! You can upgrade Pocketailor in the Marketplace to remove the adverts."/>
+										</TextBlock>
+										<Controls:AboutButton x:Name="upgradeBtn" 
+											TitleText="Upgrade Pocketailor" 
+											Margin="0,0,0,24" 
+											IconImage="/Images/AppBar/appbar.marketplace.png" Tap="upgradeBtn_Tap" />
+										
+									</StackPanel>
 
 								</StackPanel>
 
@@ -1031,12 +1055,13 @@
 		</controls:Panorama>
 
 
-
+		<!--
 		<AdDuplex:AdControl
 			x:Name="adDuplexAd"
 			Grid.Row="1"
 			AppId="39175" HorizontalAlignment="Left"
 			/>
+			-->
 
 
 

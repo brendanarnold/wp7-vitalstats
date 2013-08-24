@@ -55,9 +55,24 @@ namespace Pocketailor.View
                     App.VM.SkipLoadConversionPageData = false;
             }
 
-            
+            // Add the advert is not paid
+            if (App.VM.IsTrial && this.adControl == null)
+            {
+                this.adControl = new AdDuplex.AdControl()
+                {
+                    AppId = AppConstants.ADDUPLEX_APP_ID,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                };
+                this.LayoutRoot.Children.Add(this.adControl);
+                Grid.SetColumn(this.adControl, 0);
+                Grid.SetRow(this.adControl, 3);
+            }
+
 
         }
+
+
+        public AdDuplex.AdControl adControl;
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {

@@ -390,7 +390,7 @@
 
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="80" />
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 		
 		
@@ -749,13 +749,13 @@
 			
 		</controls:Pivot>
 
-
+		<!--
 		<AdDuplex:AdControl
 			x:Name="adDuplexAd"
 			Grid.Row="1"
-			AppId="39175" Margin="0,1,0,0" Grid.RowSpan="2" 
+			AppId="39175"
 			/>
-
+		-->
 
 		
 		

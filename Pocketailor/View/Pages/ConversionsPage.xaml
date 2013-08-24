@@ -123,7 +123,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="80"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 			
 
@@ -479,13 +479,13 @@
 
 		</toolkit:LongListSelector>
 
-
+		<!--
 		<AdDuplex:AdControl
 			x:Name="adDuplexAd"
 			Grid.Row="3"
 			AppId="39175"
 			/>
-	
+		-->
 	</Grid>
 	
 

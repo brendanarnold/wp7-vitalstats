@@ -278,6 +278,31 @@ namespace Pocketailor.ViewModel
         #endregion
 
 
+        #region Trial methods
+
+        private bool _isTrial = true;
+        public bool IsTrial
+        {
+            get { return this._isTrial; }
+        }
+
+        public void UpdateLicenseInfo()
+        {
+            Microsoft.Phone.Marketplace.LicenseInformation licenseInfo = new Microsoft.Phone.Marketplace.LicenseInformation();
+#if TEST_TRIAL
+            this._isTrial = true;
+#else
+            this._isTrial = licenseInfo.IsTrial();
+#endif
+
+        }
+
+        #endregion
+
+
+
+
+
         #region INotifyPropertyChanged members
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -17,7 +17,7 @@ namespace Pocketailor
     {
         // TODO: These need to be changed on each release and in the XAP file too
         public static int ADJUSTMENT_FORMAT_VERSION = 1;
-        public static string APP_VERSION = "1.0.1";
+        public static string APP_VERSION = "2.0.0";
 
 
         // These are the 'magic' SizeId values which signify that all the sizes are too big or small
@@ -52,7 +52,7 @@ namespace Pocketailor
         
         public static string APP_DB_CONNECTION_STRING = "Data Source=isostore:/Pocketailor.sdf";
         public static string HELP_IMAGE_DIRECTORY = "/Images/HelpImages/";
-        public static string AUTHOR_EMAIL = "brendanarnold@outlook.com";
+        public static string AUTHOR_EMAIL = "brendan@lassiv.com";
         public static UnitCultureId DEFAULT_UNIT_CULTURE = UnitCultureId.Metric;
         public static bool? DEFAULT_ALLOW_FEEDBACK = null;
         public static int NUM_BOOTS_TIL_READY_TO_RATE = 3;
@@ -66,6 +66,8 @@ namespace Pocketailor
         public static string MAIN_RESOURCE_DICTIONARY = "/View/ThemeDictionaries/MainResourceDictionary.xaml";
         public static string DARK_THEME_RESOURCE_DICTIONARY = "/View/ThemeDictionaries/DarkThemeResourceDictionary.xaml";
         public static string LIGHT_THEME_RESOURCE_DICTIONARY = "/View/ThemeDictionaries/LightThemeResourceDictionary.xaml";
+
+        public static string ADDUPLEX_APP_ID = "39175";
 
     }
 }

@@ -14,6 +14,7 @@ using Pocketailor.Model;
 using Microsoft.Phone.Shell;
 using Pocketailor.ViewModel;
 using Microsoft.Phone.Controls.Primitives;
+using Microsoft.Phone.Marketplace;
 
 namespace Pocketailor.View
 {
@@ -32,6 +33,16 @@ namespace Pocketailor.View
             base.OnNavigatedTo(e);
             this.DataContext = App.VM;
             App.VM.LoadMainPageData();
+
+
+            if (!App.VM.IsTrial && App.Settings.GetValueOrDefault("ShowWelcomePaid", true))
+            {
+                MessageBoxResult res = MessageBox.Show("Fantastic! We are delighted that you like Pocketailor enough to upgrade. If you have not done so already, be sure to rate Pocketailor under 'Opinions'.",
+                   "Thanks!",
+                   MessageBoxButton.OK);
+                App.Settings.AddOrUpdateValue("ShowWelcomePaid", false);
+            }
+
 
             if (App.Settings.GetValueOrDefault("ShowWelcome", true))
             {
@@ -122,9 +133,23 @@ namespace Pocketailor.View
             }
 
 
+            // Add the advert is not paid
+            if (App.VM.IsTrial && this.adControl == null)
+            {
+                this.adControl = new AdDuplex.AdControl()
+                {
+                    AppId = AppConstants.ADDUPLEX_APP_ID,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                };
+                this.LayoutRoot.Children.Add(this.adControl);
+                Grid.SetColumn(this.adControl, 0);
+                Grid.SetRow(this.adControl, 1);
+            }
+
+
         }
 
-
+        public AdDuplex.AdControl adControl;
 
         #region Profile button methods
 
@@ -557,6 +582,11 @@ namespace Pocketailor.View
         private void legalThanksBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             App.VM.ViewLicences();
+        }
+
+        private void upgradeBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.VM.UpgradeApp();
         }
 
         private void emailBtn_Tap(object sender, System.Windows.Input.GestureEventArgs e)

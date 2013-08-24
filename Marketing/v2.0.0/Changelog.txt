@@ -1,0 +1,11 @@
+Version 2.0.0
+
+Major changes this time around ...
+
+  • Complete redesign of the app, now even more Metro
+  • New ad supported trial version with option to upgrade
+  • Awesome animations and even easier to use UI
+  • Smart new LiveTiles for a brighter Start Screen
+  • Included built in feedback so you can suggest new brands easily
+  • Fixed bugs for Windows Phone 8 users
+
