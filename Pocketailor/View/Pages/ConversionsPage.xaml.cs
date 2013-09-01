@@ -56,7 +56,8 @@ namespace Pocketailor.View
             }
 
             // Add the advert is not paid
-            if (App.VM.IsTrial && this.adControl == null)
+            if (!(bool)App.Settings.GetValueOrDefault("DisableAds", false)
+                && this.adControl == null)
             {
                 this.adControl = new AdDuplex.AdControl()
                 {

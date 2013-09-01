@@ -25,6 +25,8 @@
 
 	<phone:PhoneApplicationPage.Resources>
 		
+		<views:BoolToNotBool x:Key="BoolToNotBool"/>
+		
 		<viewmodel:ViewModelLocator x:Key="ViewModelLocator" />
 		<views:VisibilityToOpposite x:Key="VisibilityToOpposite"/>
 		<views:EmptyCollectionToCollapsed x:Key="EmptyCollectionToCollapsed"/>
@@ -971,6 +973,40 @@
 									</i:Interaction.Triggers>
 								</Controls:AboutButton>
 									
+
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+									<TextBlock 
+										Grid.Row="0"
+										Foreground="{StaticResource PageTxtColor}" Margin="12,0,0,0" TextWrapping="Wrap" FontSize="21.333">
+										<Run Text="Choose to show adverts. A restart is required." />
+									</TextBlock>
+									<TextBlock 
+										Grid.Row="1"
+										Visibility="{Binding IsTrial, Converter={StaticResource BoolToVisibility}}"
+										Foreground="{StaticResource PageTxtColor}" Margin="12,0,0,0" TextWrapping="Wrap" FontSize="21.333" FontFamily="Segoe WP Semibold">
+										<Run Text="Not available in trial mode. To upgrade see the 'about' section." />
+									</TextBlock>
+									<RadioButton x:Name="turnOnAdsRadioBtn" 
+										Grid.Row="2"
+										IsEnabled="{Binding IsTrial, Converter={StaticResource BoolToNotBool}}"
+										Content="SHOW ADS" Margin="12,0,0,0" 
+										Checked="turnOnAdsRadioBtn_Checked" Style="{StaticResource dialogRadioButtonStyle}"/>
+									<RadioButton x:Name="turnOffAdsRadioBtn" 
+										Grid.Row="3"
+										IsEnabled="{Binding IsTrial, Converter={StaticResource BoolToNotBool}}"
+										Content="TURN OFF ADS" 
+										Margin="12,0,0,0" 
+										Style="{StaticResource dialogRadioButtonStyle}" 
+										Checked="turnOffAdsRadioBtn_Checked"/>
+
+								</Grid>
+
 								<Grid>
 									<Grid.RowDefinitions>
 										<RowDefinition Height="Auto"/>

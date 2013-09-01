@@ -134,7 +134,8 @@ namespace Pocketailor.View
 
 
             // Add the advert is not paid
-            if (App.VM.IsTrial && this.adControl == null)
+            if (!(bool)App.Settings.GetValueOrDefault("DisableAds", false)
+                && this.adControl == null)
             {
                 this.adControl = new AdDuplex.AdControl()
                 {
@@ -226,8 +227,22 @@ namespace Pocketailor.View
                 this.disallowFeedbackRadioBtn.IsChecked = !App.VM.AllowFeedBack;
             }
 
+            bool disableAds = App.Settings.GetValueOrDefault("DisableAds", false);
+            this.turnOnAdsRadioBtn.IsChecked = !disableAds;
+            this.turnOffAdsRadioBtn.IsChecked = disableAds;
+
         }
 
+        private void turnOnAdsRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            // For people who miss ads ...
+            App.Settings.AddOrUpdateValue("DisableAds", false);
+        }
+
+        private void turnOffAdsRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            App.Settings.AddOrUpdateValue("DisableAds", true);
+        }
 
         private void imperialRadioBtn_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
