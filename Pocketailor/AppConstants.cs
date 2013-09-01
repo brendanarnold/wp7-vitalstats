@@ -17,7 +17,7 @@ namespace Pocketailor
     {
         // TODO: These need to be changed on each release and in the XAP file too
         public static int ADJUSTMENT_FORMAT_VERSION = 1;
-        public static string APP_VERSION = "2.0.0";
+        public static string APP_VERSION = "2.1.0";
 
 
         // These are the 'magic' SizeId values which signify that all the sizes are too big or small

@@ -1,0 +1,4 @@
+#Unit:Inch
+Global	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Chest	33	34	36	38	40

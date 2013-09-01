@@ -1209,6 +1209,32 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	cache	US	female	0.3050	0.4050		10/L
 40	cache	US	female	0.3200	0.4200		12/L
 60	cache	US	female	0.3350	0.4350		14/XL
+-80	campri	AA	female	0.5600	0.8100		2XS
+-60	campri	AA	female	0.6100	0.8600		XS
+-40	campri	AA	female	0.6400	0.8900		S
+-20	campri	AA	female	0.6900	0.9400		M
+0	campri	AA	female	0.7400	0.9900		L
+20	campri	AA	female	0.7900	1.0400		XL
+40	campri	AA	female	0.8400	1.0900		2XL
+60	campri	AA	female	0.8900	1.1400		3XL
+80	campri	AA	female	0.9400	1.1900		4XL
+-80	campri	GB	female	0.5600	0.8100		6/2XS
+-60	campri	GB	female	0.6100	0.8600		8/XS
+-40	campri	GB	female	0.6400	0.8900		10/S
+-20	campri	GB	female	0.6900	0.9400		12/M
+0	campri	GB	female	0.7400	0.9900		14/L
+20	campri	GB	female	0.7900	1.0400		16/XL
+40	campri	GB	female	0.8400	1.0900		18/2XL
+60	campri	GB	female	0.8900	1.1400		20/3XL
+80	campri	GB	female	0.9400	1.1900		22/4XL
+-80	campri	AA	male	0.7350			XS
+-60	campri	AA	male	0.7850			S
+-40	campri	AA	male	0.8350			M
+-20	campri	AA	male	0.8900			L
+0	campri	AA	male	0.9450			XL
+20	campri	AA	male	0.9950			2XL
+40	campri	AA	male	1.0450			3XL
+60	campri	AA	male	1.0950			4XL
 -60	chesca	GB	female	0.8200	1.1000		12/Chesca 1
 -40	chesca	GB	female	0.8800	1.1600		14/Chesca 1
 -20	chesca	GB	female	0.9400	1.2200		16/Chesca 2
@@ -1968,6 +1994,32 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 0	drywash	PL	male	0.8600			32
 20	drywash	PL	male	0.9100			34
 40	drywash	PL	male	0.9600			36
+-80	dunlop	AA	female	0.5600	0.8100		2XS
+-60	dunlop	AA	female	0.6100	0.8600		XS
+-40	dunlop	AA	female	0.6400	0.8900		S
+-20	dunlop	AA	female	0.6900	0.9400		M
+0	dunlop	AA	female	0.7400	0.9900		L
+20	dunlop	AA	female	0.7900	1.0400		XL
+40	dunlop	AA	female	0.8400	1.0900		2XL
+60	dunlop	AA	female	0.8900	1.1400		3XL
+80	dunlop	AA	female	0.9400	1.1900		4XL
+-80	dunlop	GB	female	0.5600	0.8100		6/2XS
+-60	dunlop	GB	female	0.6100	0.8600		8/XS
+-40	dunlop	GB	female	0.6400	0.8900		10/S
+-20	dunlop	GB	female	0.6900	0.9400		12/M
+0	dunlop	GB	female	0.7400	0.9900		14/L
+20	dunlop	GB	female	0.7900	1.0400		16/XL
+40	dunlop	GB	female	0.8400	1.0900		18/2XL
+60	dunlop	GB	female	0.8900	1.1400		20/3XL
+80	dunlop	GB	female	0.9400	1.1900		22/4XL
+-80	dunlop	AA	male	0.7350			XS
+-60	dunlop	AA	male	0.7850			S
+-40	dunlop	AA	male	0.8350			M
+-20	dunlop	AA	male	0.8900			L
+0	dunlop	AA	male	0.9450			XL
+20	dunlop	AA	male	0.9950			2XL
+40	dunlop	AA	male	1.0450			3XL
+60	dunlop	AA	male	1.0950			4XL
 -40	dynafit	FR	female	0.6350	0.9150	1.0350	36/XXS
 -20	dynafit	FR	female	0.6750	0.9550	1.0450	38/XS
 0	dynafit	FR	female	0.7150	0.9950	1.0550	40/S
@@ -3838,6 +3890,38 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	kaliko	GB	female	0.8400	1.0900		16/L
 40	kaliko	GB	female	0.8900	1.1400		18/L
 60	kaliko	GB	female	0.9400	1.1900		20/XL
+-60	kappa	AA	male	0.7366			XS
+-40	kappa	AA	male	0.7620			S
+-20	kappa	AA	male	0.7874			M
+0	kappa	AA	male	0.8382			L
+20	kappa	AA	male	0.8890			XL
+40	kappa	AA	male	0.9398			XXL
+-80	karrimor	AA	female	0.5600	0.8100		2XS
+-60	karrimor	AA	female	0.6100	0.8600		XS
+-40	karrimor	AA	female	0.6400	0.8900		S
+-20	karrimor	AA	female	0.6900	0.9400		M
+0	karrimor	AA	female	0.7400	0.9900		L
+20	karrimor	AA	female	0.7900	1.0400		XL
+40	karrimor	AA	female	0.8400	1.0900		2XL
+60	karrimor	AA	female	0.8900	1.1400		3XL
+80	karrimor	AA	female	0.9400	1.1900		4XL
+-80	karrimor	GB	female	0.5600	0.8100		6/2XS
+-60	karrimor	GB	female	0.6100	0.8600		8/XS
+-40	karrimor	GB	female	0.6400	0.8900		10/S
+-20	karrimor	GB	female	0.6900	0.9400		12/M
+0	karrimor	GB	female	0.7400	0.9900		14/L
+20	karrimor	GB	female	0.7900	1.0400		16/XL
+40	karrimor	GB	female	0.8400	1.0900		18/2XL
+60	karrimor	GB	female	0.8900	1.1400		20/3XL
+80	karrimor	GB	female	0.9400	1.1900		22/4XL
+-80	karrimor	AA	male	0.7350			XS
+-60	karrimor	AA	male	0.7850			S
+-40	karrimor	AA	male	0.8350			M
+-20	karrimor	AA	male	0.8900			L
+0	karrimor	AA	male	0.9450			XL
+20	karrimor	AA	male	0.9950			2XL
+40	karrimor	AA	male	1.0450			3XL
+60	karrimor	AA	male	1.0950			4XL
 -60	labellab	GB	female	0.6150	0.8750		6/XS
 -40	labellab	GB	female	0.6500	0.9200		8/S
 -20	labellab	GB	female	0.7000	0.9700		10/S
@@ -3901,6 +3985,28 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	laundry	US	female	0.7874	1.0287	0.8509	10
 40	laundry	US	female	0.8255	1.0668	0.8509	12
 60	laundry	US	female	0.8636	1.1049	0.8509	14
+-100	levi	AA	female	0.5475	0.4900		24
+-80	levi	AA	female	0.5725	0.5025		25
+-60	levi	AA	female	0.5975	0.5150		26
+-40	levi	AA	female	0.6225	0.5275		27
+-20	levi	AA	female	0.6475	0.5400		28
+0	levi	AA	female	0.6725	0.5525		29
+20	levi	AA	female	0.6975	0.5650		30
+40	levi	AA	female	0.7225	0.5775		31
+60	levi	AA	female	0.7475	0.5900		32
+80	levi	AA	female	0.7725	0.6025		33
+100	levi	AA	female	0.8000	0.6150		34
+-100	levi	AA	male	0.6875	0.5275		28
+-80	levi	AA	male	0.7125	0.5400		29
+-60	levi	AA	male	0.7375	0.5525		30
+-40	levi	AA	male	0.7625	0.5650		31
+-20	levi	AA	male	0.7875	0.5775		32
+0	levi	AA	male	0.8125	0.5900		33
+20	levi	AA	male	0.8375	0.6025		34
+40	levi	AA	male	0.8800	0.6225		36
+60	levi	AA	male	0.9350	0.6475		38
+80	levi	AA	male	0.9850	0.6725		40
+100	levi	AA	male	1.0350	0.6975		42
 -60	linea	GB	female	0.6500	0.9200	0.8150	8/S
 -40	linea	GB	female	0.7000	0.9700	0.8150	10/S
 -20	linea	GB	female	0.7500	1.0200	0.8150	12/M
@@ -4122,6 +4228,32 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 60	loft	AT	female	0.8250	1.0800		44/L
 80	loft	AT	female	0.8650	1.1200		46/XL
 100	loft	AT	female	0.9150	1.1700		48/XXL
+-80	lonsdale	AA	female	0.5600	0.8100		2XS
+-60	lonsdale	AA	female	0.6100	0.8600		XS
+-40	lonsdale	AA	female	0.6400	0.8900		S
+-20	lonsdale	AA	female	0.6900	0.9400		M
+0	lonsdale	AA	female	0.7400	0.9900		L
+20	lonsdale	AA	female	0.7900	1.0400		XL
+40	lonsdale	AA	female	0.8400	1.0900		2XL
+60	lonsdale	AA	female	0.8900	1.1400		3XL
+80	lonsdale	AA	female	0.9400	1.1900		4XL
+-80	lonsdale	GB	female	0.5600	0.8100		6/2XS
+-60	lonsdale	GB	female	0.6100	0.8600		8/XS
+-40	lonsdale	GB	female	0.6400	0.8900		10/S
+-20	lonsdale	GB	female	0.6900	0.9400		12/M
+0	lonsdale	GB	female	0.7400	0.9900		14/L
+20	lonsdale	GB	female	0.7900	1.0400		16/XL
+40	lonsdale	GB	female	0.8400	1.0900		18/2XL
+60	lonsdale	GB	female	0.8900	1.1400		20/3XL
+80	lonsdale	GB	female	0.9400	1.1900		22/4XL
+-80	lonsdale	AA	male	0.7350			XS
+-60	lonsdale	AA	male	0.7850			S
+-40	lonsdale	AA	male	0.8350			M
+-20	lonsdale	AA	male	0.8900			L
+0	lonsdale	AA	male	0.9450			XL
+20	lonsdale	AA	male	0.9950			2XL
+40	lonsdale	AA	male	1.0450			3XL
+60	lonsdale	AA	male	1.0950			4XL
 -40	mango	DE	female	0.6200	0.8800		34/XS
 -20	mango	DE	female	0.6600	0.9200		36/S
 0	mango	DE	female	0.7000	0.9600		38/M
@@ -4797,6 +4929,60 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 0	mela	GB	female	0.7350	0.9900		12/M,L
 20	mela	GB	female	0.7850	1.0400		14/L
 40	mela	GB	female	0.8350	1.0900		16
+-62	millets	AA	female	0.6600	0.8900	0.7100	XS (Short)
+-42	millets	AA	female	0.7100	0.9400	0.7600	S (Short)
+-22	millets	AA	female	0.7600	0.9900	0.8100	M (Short)
+-2	millets	AA	female	0.7900	1.0400	0.7100	L (Short)
+18	millets	AA	female	0.8400	1.0900	0.7600	XL (Short)
+38	millets	AA	female	0.8900	1.1400	0.8100	XXL (Short)
+-60	millets	AA	female	0.6600	0.8900	0.7100	XS (Regular)
+-40	millets	AA	female	0.7100	0.9400	0.7600	S (Regular)
+-20	millets	AA	female	0.7600	0.9900	0.8100	M (Regular)
+0	millets	AA	female	0.7900	1.0400	0.7100	L (Regular)
+20	millets	AA	female	0.8400	1.0900	0.7600	XL (Regular)
+40	millets	AA	female	0.8900	1.1400	0.8100	XXL (Regular)
+-58	millets	AA	female	0.6600	0.8900	0.7100	XS (Long)
+-38	millets	AA	female	0.7100	0.9400	0.7600	S (Long)
+-18	millets	AA	female	0.7600	0.9900	0.8100	M (Long)
+2	millets	AA	female	0.7900	1.0400	0.7100	L (Long)
+22	millets	AA	female	0.8400	1.0900	0.7600	XL (Long)
+42	millets	AA	female	0.8900	1.1400	0.8100	XXL (Long)
+-62	millets	GB	female	0.6600	0.8900	0.7100	8 (Short)
+-42	millets	GB	female	0.7100	0.9400	0.7600	10 (Short)
+-22	millets	GB	female	0.7600	0.9900	0.8100	12 (Short)
+-2	millets	GB	female	0.7900	1.0400	0.7100	14 (Short)
+18	millets	GB	female	0.8400	1.0900	0.7600	16 (Short)
+38	millets	GB	female	0.8900	1.1400	0.8100	18 (Short)
+-60	millets	GB	female	0.6600	0.8900	0.7100	8 (Regular)
+-40	millets	GB	female	0.7100	0.9400	0.7600	10 (Regular)
+-20	millets	GB	female	0.7600	0.9900	0.8100	12 (Regular)
+0	millets	GB	female	0.7900	1.0400	0.7100	14 (Regular)
+20	millets	GB	female	0.8400	1.0900	0.7600	16 (Regular)
+40	millets	GB	female	0.8900	1.1400	0.8100	18 (Regular)
+-58	millets	GB	female	0.6600	0.8900	0.7100	8 (Long)
+-38	millets	GB	female	0.7100	0.9400	0.7600	10 (Long)
+-18	millets	GB	female	0.7600	0.9900	0.8100	12 (Long)
+2	millets	GB	female	0.7900	1.0400	0.7100	14 (Long)
+22	millets	GB	female	0.8400	1.0900	0.7600	16 (Long)
+42	millets	GB	female	0.8900	1.1400	0.8100	18 (Long)
+-62	millets	AA	male	0.7150		0.7400	XS (Short)
+-42	millets	AA	male	0.7850		0.7900	S (Short)
+-22	millets	AA	male	0.8650		0.8400	M (Short)
+-2	millets	AA	male	0.9400		0.7400	L (Short)
+18	millets	AA	male	1.0150		0.7900	XL (Short)
+38	millets	AA	male	1.0950		0.8400	XXL (Short)
+-60	millets	AA	male	0.7150		0.7400	XS (Regular)
+-40	millets	AA	male	0.7850		0.7900	S (Regular)
+-20	millets	AA	male	0.8650		0.8400	M (Regular)
+0	millets	AA	male	0.9400		0.7400	L (Regular)
+20	millets	AA	male	1.0150		0.7900	XL (Regular)
+40	millets	AA	male	1.0950		0.8400	XXL (Regular)
+-58	millets	AA	male	0.7150		0.7400	XS (Long)
+-38	millets	AA	male	0.7850		0.7900	S (Long)
+-18	millets	AA	male	0.8650		0.8400	M (Long)
+2	millets	AA	male	0.9400		0.7400	L (Long)
+22	millets	AA	male	1.0150		0.7900	XL (Long)
+42	millets	AA	male	1.0950		0.8400	XXL (Long)
 -60	mintvelvet	GB	female	0.6600	0.9100		8/S
 -40	mintvelvet	GB	female	0.7000	0.9500		10/S
 -20	mintvelvet	GB	female	0.7400	0.9900		12/M
@@ -6351,6 +6537,99 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 62	nike	ES	male	1.2100	1.2800	0.7900	60 (Tall)
 82	nike	ES	male	1.2100	1.2800	0.8400	62/XXXL (Tall)
 102	nike	ES	male	1.3300	1.3600	0.8900	64 (Tall)
+-62	northface	XA	female		0.8350	0.7250	32-34/XS (Short)
+-42	northface	XA	female		0.9000	0.7750	36-38/S (Short)
+-22	northface	XA	female		0.9650	0.8250	40-42/M (Short)
+-2	northface	XA	female		1.0550	0.7250	44-46/L (Short)
+18	northface	XA	female		1.1400	0.7750	48-50/XL (Short)
+38	northface	XA	female		1.2300	0.8250	52-54/XXL (Short)
+-60	northface	XA	female		0.8350	0.7250	32-34/XS (Regular)
+-40	northface	XA	female		0.9000	0.7750	36-38/S (Regular)
+-20	northface	XA	female		0.9650	0.8250	40-42/M (Regular)
+0	northface	XA	female		1.0550	0.7250	44-46/L (Regular)
+20	northface	XA	female		1.1400	0.7750	48-50/XL (Regular)
+40	northface	XA	female		1.2300	0.8250	52-54/XXL (Regular)
+-58	northface	XA	female		0.8350	0.7250	32-34/XS (Long)
+-38	northface	XA	female		0.9000	0.7750	36-38/S (Long)
+-18	northface	XA	female		0.9650	0.8250	40-42/M (Long)
+2	northface	XA	female		1.0550	0.7250	44-46/L (Long)
+22	northface	XA	female		1.1400	0.7750	48-50/XL (Long)
+42	northface	XA	female		1.2300	0.8250	52-54/XXL (Long)
+-62	northface	IT	female		0.8350	0.7250	36-38/XS (Short)
+-42	northface	IT	female		0.9000	0.7750	40-42/S (Short)
+-22	northface	IT	female		0.9650	0.8250	44-46/M (Short)
+-2	northface	IT	female		1.0550	0.7250	48-50/L (Short)
+18	northface	IT	female		1.1400	0.7750	52-54/XL (Short)
+38	northface	IT	female		1.2300	0.8250	56-58/XXL (Short)
+-60	northface	IT	female		0.8350	0.7250	36-38/XS (Regular)
+-40	northface	IT	female		0.9000	0.7750	40-42/S (Regular)
+-20	northface	IT	female		0.9650	0.8250	44-46/M (Regular)
+0	northface	IT	female		1.0550	0.7250	48-50/L (Regular)
+20	northface	IT	female		1.1400	0.7750	52-54/XL (Regular)
+40	northface	IT	female		1.2300	0.8250	56-58/XXL (Regular)
+-58	northface	IT	female		0.8350	0.7250	36-38/XS (Long)
+-38	northface	IT	female		0.9000	0.7750	40-42/S (Long)
+-18	northface	IT	female		0.9650	0.8250	44-46/M (Long)
+2	northface	IT	female		1.0550	0.7250	48-50/L (Long)
+22	northface	IT	female		1.1400	0.7750	52-54/XL (Long)
+42	northface	IT	female		1.2300	0.8250	56-58/XXL (Long)
+-62	northface	US	female		0.8350	0.7250	XS (Short)
+-42	northface	US	female		0.9000	0.7750	S (Short)
+-22	northface	US	female		0.9650	0.8250	M (Short)
+-2	northface	US	female		1.0550	0.7250	L (Short)
+18	northface	US	female		1.1400	0.7750	XL (Short)
+38	northface	US	female		1.2300	0.8250	XXL (Short)
+-60	northface	US	female		0.8350	0.7250	XS (Regular)
+-40	northface	US	female		0.9000	0.7750	S (Regular)
+-20	northface	US	female		0.9650	0.8250	M (Regular)
+0	northface	US	female		1.0550	0.7250	L (Regular)
+20	northface	US	female		1.1400	0.7750	XL (Regular)
+40	northface	US	female		1.2300	0.8250	XXL (Regular)
+-58	northface	US	female		0.8350	0.7250	XS (Long)
+-38	northface	US	female		0.9000	0.7750	S (Long)
+-18	northface	US	female		0.9650	0.8250	M (Long)
+2	northface	US	female		1.0550	0.7250	L (Long)
+22	northface	US	female		1.1400	0.7750	XL (Long)
+42	northface	US	female		1.2300	0.8250	XXL (Long)
+-62	northface	GB	female		0.8350	0.7250	XS (Short)
+-42	northface	GB	female		0.9000	0.7750	S (Short)
+-22	northface	GB	female		0.9650	0.8250	M (Short)
+-2	northface	GB	female		1.0550	0.7250	L (Short)
+18	northface	GB	female		1.1400	0.7750	XL (Short)
+38	northface	GB	female		1.2300	0.8250	XXL (Short)
+-60	northface	GB	female		0.8350	0.7250	XS (Regular)
+-40	northface	GB	female		0.9000	0.7750	S (Regular)
+-20	northface	GB	female		0.9650	0.8250	M (Regular)
+0	northface	GB	female		1.0550	0.7250	L (Regular)
+20	northface	GB	female		1.1400	0.7750	XL (Regular)
+40	northface	GB	female		1.2300	0.8250	XXL (Regular)
+-58	northface	GB	female		0.8350	0.7250	XS (Long)
+-38	northface	GB	female		0.9000	0.7750	S (Long)
+-18	northface	GB	female		0.9650	0.8250	M (Long)
+2	northface	GB	female		1.0550	0.7250	L (Long)
+22	northface	GB	female		1.1400	0.7750	XL (Long)
+42	northface	GB	female		1.2300	0.8250	XXL (Long)
+-62	northface	AA	male	0.6850	0.8350	0.7700	XS (Short)
+-42	northface	AA	male	0.7650	0.9150	0.8200	S (Short)
+-22	northface	AA	male	0.8350	0.9950	0.8700	M (Short)
+-2	northface	AA	male	0.9150	1.0650	0.7700	L (Short)
+18	northface	AA	male	1.0000	1.1450	0.8200	XL (Short)
+38	northface	AA	male	1.1050	1.2150	0.8700	XXL (Short)
+58	northface	AA	male	1.2050	1.2950	0.7700	3XL (Short)
+-60	northface	AA	male	0.6850	0.8350	0.8200	XS (Regular)
+-40	northface	AA	male	0.7650	0.9150	0.8700	S (Regular)
+-20	northface	AA	male	0.8350	0.9950	0.7700	M (Regular)
+0	northface	AA	male	0.9150	1.0650	0.8200	L (Regular)
+20	northface	AA	male	1.0000	1.1450	0.8700	XL (Regular)
+40	northface	AA	male	1.1050	1.2150	0.7700	XXL (Regular)
+60	northface	AA	male	1.2050	1.2950	0.8200	3XL (Regular)
+-58	northface	AA	male	0.6850	0.8350	0.8700	XS (Long)
+-38	northface	AA	male	0.7650	0.9150	0.7700	S (Long)
+-18	northface	AA	male	0.8350	0.9950	0.8200	M (Long)
+2	northface	AA	male	0.9150	1.0650	0.8700	L (Long)
+22	northface	AA	male	1.0000	1.1450	0.7700	XL (Long)
+42	northface	AA	male	1.1050	1.2150	0.8200	XXL (Long)
+62	northface	AA	male	1.2050	1.2950	0.8700	3XL (Long)
 -60	oasis	XA	female	0.6250	0.8550		32/XS
 -40	oasis	XA	female	0.6500	0.8800		34/XS
 -20	oasis	XA	female	0.7000	0.9300		36/S
@@ -7102,6 +7381,49 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	rebeccataylor	CA	female	0.7366	1.0033		8/M
 40	rebeccataylor	CA	female	0.7620	1.0287		10/L
 60	rebeccataylor	CA	female	0.8001	1.0668		12/L
+-60	reebok	AA	female	0.6350	0.8890		XS
+-40	reebok	AA	female	0.6985	0.9525		S
+-20	reebok	AA	female	0.7620	1.0160		M
+0	reebok	AA	female	0.8382	1.0795		L
+20	reebok	AA	female	0.9144	1.1430		XL
+40	reebok	AA	female	1.0033	1.2192		2XL
+-60	reebok	FR	female	0.6350	0.8890		32-34/XS
+-40	reebok	FR	female	0.6985	0.9525		36-38/S
+-20	reebok	FR	female	0.7620	1.0160		40-42/M
+0	reebok	FR	female	0.8382	1.0795		44-46/L
+20	reebok	FR	female	0.9144	1.1430		48-50/XL
+40	reebok	FR	female	1.0033	1.2192		52-54/2XL
+-60	reebok	DE	female	0.6350	0.8890		30-32/XS
+-40	reebok	DE	female	0.6985	0.9525		34-36/S
+-20	reebok	DE	female	0.7620	1.0160		38-40/M
+0	reebok	DE	female	0.8382	1.0795		42-44/L
+20	reebok	DE	female	0.9144	1.1430		46-48/XL
+40	reebok	DE	female	1.0033	1.2192		50-52/2XL
+-60	reebok	XA	female	0.6350	0.8890		30-32/XS
+-40	reebok	XA	female	0.6985	0.9525		34-36/S
+-20	reebok	XA	female	0.7620	1.0160		38-40/M
+0	reebok	XA	female	0.8382	1.0795		42-44/L
+20	reebok	XA	female	0.9144	1.1430		46-48/XL
+40	reebok	XA	female	1.0033	1.2192		50-52/2XL
+-60	reebok	US	female	0.6350	0.8890		0-2/XS
+-40	reebok	US	female	0.6985	0.9525		4-6/S
+-20	reebok	US	female	0.7620	1.0160		8-10/M
+0	reebok	US	female	0.8382	1.0795		12-14/L
+20	reebok	US	female	0.9144	1.1430		16-18/XL
+40	reebok	US	female	1.0033	1.2192		20-22/2XL
+-60	reebok	GB	female	0.6350	0.8890		4 - 6/XS
+-40	reebok	GB	female	0.6985	0.9525		8 - 10/S
+-20	reebok	GB	female	0.7620	1.0160		12 - 14/M
+0	reebok	GB	female	0.8382	1.0795		16 - 18/L
+20	reebok	GB	female	0.9144	1.1430		20 - 22/XL
+40	reebok	GB	female	1.0033	1.2192		24-26/2XL
+-60	reebok	AA	male	0.8382			XS/2
+-40	reebok	AA	male	0.9144			S/3,4
+-20	reebok	AA	male	0.9779			M/5,6
+0	reebok	AA	male	1.0668			L/7,8
+20	reebok	AA	male	1.1684			XL/9,10
+40	reebok	AA	male	1.2573			2XL/11,12
+60	reebok	AA	male	1.3589			3XL/13,14
 -60	regatta	ES	female	0.6850		0.6858	36-38/S (Short)
 -40	regatta	ES	female	0.7850		0.7366	40-42/M (Short)
 -20	regatta	ES	female	0.8900		0.7874	44-46/L (Short)
@@ -7958,6 +8280,22 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 20	shoshanna	US	female	0.7112	0.9779		8
 40	shoshanna	US	female	0.7493	1.0160		10
 60	shoshanna	US	female	0.7874	1.0541		12
+-80	slazenger	AA	male	0.7350			XS
+-60	slazenger	AA	male	0.7850			S
+-40	slazenger	AA	male	0.8350			M
+-20	slazenger	AA	male	0.8900			L
+0	slazenger	AA	male	0.9450			XL
+20	slazenger	AA	male	0.9950			2XL
+40	slazenger	AA	male	1.0450			3XL
+60	slazenger	AA	male	1.0950			4XL
+-80	sondico	AA	male	0.7350			XS
+-60	sondico	AA	male	0.7850			S
+-40	sondico	AA	male	0.8350			M
+-20	sondico	AA	male	0.8900			L
+0	sondico	AA	male	0.9450			XL
+20	sondico	AA	male	0.9950			2XL
+40	sondico	AA	male	1.0450			3XL
+60	sondico	AA	male	1.0950			4XL
 -40	superdry	AA	female	0.6477	0.9271		XS
 -20	superdry	AA	female	0.6731	0.9525		S
 0	superdry	AA	female	0.6985	0.9779		M
@@ -8433,6 +8771,36 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 160	tmlewin	SG	male	1.1938		0.9144	46R
 180	tmlewin	SG	male	1.2192		0.9144	47R
 200	tmlewin	SG	male	1.2446		0.9144	48R
+-42	tog24	GB	female	0.6800	0.9000	0.7100	8-10 (Short)
+-22	tog24	GB	female	0.7400	0.9300	0.7600	10-12 (Short)
+-2	tog24	GB	female	0.8000	0.9900	0.8100	12-14 (Short)
+18	tog24	GB	female	0.8600	1.0500	0.7100	14-16 (Short)
+38	tog24	GB	female	0.9200	1.1100	0.7600	15-18 (Short)
+-40	tog24	GB	female	0.6800	0.9000	0.8100	8-10 (Regular)
+-20	tog24	GB	female	0.7400	0.9300	0.7100	10-12 (Regular)
+0	tog24	GB	female	0.8000	0.9900	0.7600	12-14 (Regular)
+20	tog24	GB	female	0.8600	1.0500	0.8100	14-16 (Regular)
+40	tog24	GB	female	0.9200	1.1100	0.7100	15-18 (Regular)
+-38	tog24	GB	female	0.6800	0.9000	0.7600	8-10 (Long)
+-18	tog24	GB	female	0.7400	0.9300	0.8100	10-12 (Long)
+2	tog24	GB	female	0.8000	0.9900	0.7100	12-14 (Long)
+22	tog24	GB	female	0.8600	1.0500	0.7600	14-16 (Long)
+42	tog24	GB	female	0.9200	1.1100	0.8100	15-18 (Long)
+-42	tog24	AA	male	0.8100		0.7400	S (Short)
+-22	tog24	AA	male	0.8350		0.7900	M (Short)
+-2	tog24	AA	male	0.8850		0.8400	L (Short)
+18	tog24	AA	male	0.9400		0.7400	XL (Short)
+38	tog24	AA	male	0.9950		0.7900	XXL (Short)
+-40	tog24	AA	male	0.8100		0.8400	S (Regular)
+-20	tog24	AA	male	0.8350		0.7400	M (Regular)
+0	tog24	AA	male	0.8850		0.7900	L (Regular)
+20	tog24	AA	male	0.9400		0.8400	XL (Regular)
+40	tog24	AA	male	0.9950		0.7400	XXL (Regular)
+-38	tog24	AA	male	0.8100		0.7900	S (Long)
+-18	tog24	AA	male	0.8350		0.8400	M (Long)
+2	tog24	AA	male	0.8850		0.7400	L (Long)
+22	tog24	AA	male	0.9400		0.7900	XL (Long)
+42	tog24	AA	male	0.9950		0.8400	XXL (Long)
 -64	topman	AA	male	0.6600		0.7100	26 (Extra Short)
 -44	topman	AA	male	0.7100		0.7600	28 (Extra Short)
 -24	topman	AA	male	0.7600		0.8100	30 (Extra Short)
@@ -8804,6 +9172,38 @@ sizeid	brand	region	gender	waist	hips	insideleg	size
 0	uttamboutique	GB	female	0.7350	0.9900		12/M,L
 20	uttamboutique	GB	female	0.7850	1.0400		14/L
 40	uttamboutique	GB	female	0.8350	1.0900		16
+-80	vans	AA	female	0.6100			0
+-60	vans	AA	female	0.6400			1
+-40	vans	AA	female	0.6600			3
+-20	vans	AA	female	0.6900			5
+0	vans	AA	female	0.7100			7
+20	vans	AA	female	0.7400			9
+40	vans	AA	female	0.7600			11
+60	vans	AA	female	0.7900			13
+-80	vans	XA	female	0.6100			34/0
+-60	vans	XA	female	0.6400			36/1
+-40	vans	XA	female	0.6600			38/3
+-20	vans	XA	female	0.6900			40/5
+0	vans	XA	female	0.7100			42/7
+20	vans	XA	female	0.7400			44/9
+40	vans	XA	female	0.7600			46/11
+60	vans	XA	female	0.7900			48/13
+-80	vans	GB	female	0.6100			6/0
+-60	vans	GB	female	0.6400			8/1
+-40	vans	GB	female	0.6600			10/3
+-20	vans	GB	female	0.6900			12/5
+0	vans	GB	female	0.7100			14/7
+20	vans	GB	female	0.7400			16/9
+40	vans	GB	female	0.7600			18/11
+60	vans	GB	female	0.7900			20/13
+-80	vans	AA	male	0.6550	0.8300		26
+-60	vans	AA	male	0.7050	0.8800		28
+-40	vans	AA	male	0.7550	0.9350		30
+-20	vans	AA	male	0.8075	0.9825		32
+0	vans	AA	male	0.8600	1.0350		34
+20	vans	AA	male	0.9100	1.0850		36
+40	vans	AA	male	0.9600	0.6350		38
+60	vans	AA	male	1.0100	1.1875		40
 -60	veromoda	XA	female	0.6200	0.8800	0.7900	32/XXS
 -40	veromoda	XA	female	0.6500	0.9100	0.7900	34/XXS,XXS
 -20	veromoda	XA	female	0.6800	0.9400	0.7900	36/XS

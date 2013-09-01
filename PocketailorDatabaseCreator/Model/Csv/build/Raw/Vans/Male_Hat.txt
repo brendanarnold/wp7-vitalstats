@@ -1,0 +1,4 @@
+Global	S/M	M/L	L/XL
+SizeId	-20	0	20
+Head	55-57	57-59	59-62
+

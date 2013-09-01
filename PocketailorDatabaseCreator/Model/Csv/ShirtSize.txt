@@ -971,6 +971,32 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 20	cache	US	female	0.3750					0.3050	10/L
 40	cache	US	female	0.3900					0.3200	12/L
 60	cache	US	female	0.4050					0.3350	14/XL
+-80	campri	AA	female	0.7600					0.5600	2XS
+-60	campri	AA	female	0.8100					0.6100	XS
+-40	campri	AA	female	0.8600					0.6400	S
+-20	campri	AA	female	0.9100					0.6900	M
+0	campri	AA	female	0.9700					0.7400	L
+20	campri	AA	female	1.0200					0.7900	XL
+40	campri	AA	female	1.0700					0.8400	2XL
+60	campri	AA	female	1.1200					0.8900	3XL
+80	campri	AA	female	1.1700					0.9400	4XL
+-80	campri	GB	female	0.7600					0.5600	6/2XS
+-60	campri	GB	female	0.8100					0.6100	8/XS
+-40	campri	GB	female	0.8600					0.6400	10/S
+-20	campri	GB	female	0.9100					0.6900	12/M
+0	campri	GB	female	0.9700					0.7400	14/L
+20	campri	GB	female	1.0200					0.7900	16/XL
+40	campri	GB	female	1.0700					0.8400	18/2XL
+60	campri	GB	female	1.1200					0.8900	20/3XL
+80	campri	GB	female	1.1700					0.9400	22/4XL
+-80	campri	AA	male	0.8600					0.7350	XS
+-60	campri	AA	male	0.9100					0.7850	S
+-40	campri	AA	male	0.9950					0.8350	M
+-20	campri	AA	male	1.0950					0.8900	L
+0	campri	AA	male	1.1950					0.9450	XL
+20	campri	AA	male	1.2950					0.9950	2XL
+40	campri	AA	male	1.3950					1.0450	3XL
+60	campri	AA	male	1.4950					1.0950	4XL
 -40	cropp	XA	female	0.8400		0.5800				XS
 -20	cropp	XA	female	0.8800		0.5800				S
 0	cropp	XA	female	0.9200		0.6000				M
@@ -1456,6 +1482,32 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	drywash	PL	male		0.4250				1.0400	L
 20	drywash	PL	male		0.4450				1.0800	XL
 40	drywash	PL	male		0.4600				1.1200	XXL
+-80	dunlop	AA	female	0.7600				0.8100	0.5600	2XS
+-60	dunlop	AA	female	0.8100				0.8600	0.6100	XS
+-40	dunlop	AA	female	0.8600				0.8900	0.6400	S
+-20	dunlop	AA	female	0.9100				0.9400	0.6900	M
+0	dunlop	AA	female	0.9700				0.9900	0.7400	L
+20	dunlop	AA	female	1.0200				1.0400	0.7900	XL
+40	dunlop	AA	female	1.0700				1.0900	0.8400	2XL
+60	dunlop	AA	female	1.1200				1.1400	0.8900	3XL
+80	dunlop	AA	female	1.1700				1.1900	0.9400	4XL
+-80	dunlop	GB	female	0.7600				0.8100	0.5600	6/2XS
+-60	dunlop	GB	female	0.8100				0.8600	0.6100	8/XS
+-40	dunlop	GB	female	0.8600				0.8900	0.6400	10/S
+-20	dunlop	GB	female	0.9100				0.9400	0.6900	12/M
+0	dunlop	GB	female	0.9700				0.9900	0.7400	14/L
+20	dunlop	GB	female	1.0200				1.0400	0.7900	16/XL
+40	dunlop	GB	female	1.0700				1.0900	0.8400	18/2XL
+60	dunlop	GB	female	1.1200				1.1400	0.8900	20/3XL
+80	dunlop	GB	female	1.1700				1.1900	0.9400	22/4XL
+-80	dunlop	AA	male	0.8600					0.7350	XS
+-60	dunlop	AA	male	0.9100					0.7850	S
+-40	dunlop	AA	male	0.9950					0.8350	M
+-20	dunlop	AA	male	1.0950					0.8900	L
+0	dunlop	AA	male	1.1950					0.9450	XL
+20	dunlop	AA	male	1.2950					0.9950	2XL
+40	dunlop	AA	male	1.3950					1.0450	3XL
+60	dunlop	AA	male	1.4950					1.0950	4XL
 -40	dynafit	FR	female	0.8750				0.9150	0.6350	36/XXS
 -20	dynafit	FR	female	0.9150				0.9550	0.6750	38/XS
 0	dynafit	FR	female	0.9550				0.9950	0.7150	40/S
@@ -2570,6 +2622,17 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 20	kaliko	GB	female	1.0300					0.8400	16/L
 40	kaliko	GB	female	1.0800					0.8900	18/L
 60	kaliko	GB	female	1.1300					0.9400	20/XL
+-40	kappa	AA	female	0.8382						XS
+-20	kappa	AA	female	0.8636						S
+0	kappa	AA	female	0.9144						M
+20	kappa	AA	female	0.9652						L
+40	kappa	AA	female	1.0160						XL
+-60	kappa	AA	male	0.8509					0.7366	XS
+-40	kappa	AA	male	0.8890					0.7620	S
+-20	kappa	AA	male	0.9398					0.7874	M
+0	kappa	AA	male	0.9779					0.8382	L
+20	kappa	AA	male	1.0033					0.8890	XL
+40	kappa	AA	male	1.0668					0.9398	XXL
 -40	karenmillen	XA	female	0.8200				0.9000	0.6400	34,36/1
 -20	karenmillen	XA	female	0.8600				0.9400	0.6800	38/2
 0	karenmillen	XA	female	0.9200				1.0000	0.7400	40,42/3
@@ -2582,6 +2645,32 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 -20	karenmillen	GB	female	0.8600				0.9400	0.6800	10/2
 0	karenmillen	GB	female	0.9200				1.0000	0.7400	12,14/3
 20	karenmillen	GB	female	0.9800				1.0600	0.8000	16/4
+-80	karrimor	AA	female	0.7600					0.5600	2XS
+-60	karrimor	AA	female	0.8100					0.6100	XS
+-40	karrimor	AA	female	0.8600					0.6400	S
+-20	karrimor	AA	female	0.9100					0.6900	M
+0	karrimor	AA	female	0.9700					0.7400	L
+20	karrimor	AA	female	1.0200					0.7900	XL
+40	karrimor	AA	female	1.0700					0.8400	2XL
+60	karrimor	AA	female	1.1200					0.8900	3XL
+80	karrimor	AA	female	1.1700					0.9400	4XL
+-80	karrimor	GB	female	0.7600					0.5600	6/2XS
+-60	karrimor	GB	female	0.8100					0.6100	8/XS
+-40	karrimor	GB	female	0.8600					0.6400	10/S
+-20	karrimor	GB	female	0.9100					0.6900	12/M
+0	karrimor	GB	female	0.9700					0.7400	14/L
+20	karrimor	GB	female	1.0200					0.7900	16/XL
+40	karrimor	GB	female	1.0700					0.8400	18/2XL
+60	karrimor	GB	female	1.1200					0.8900	20/3XL
+80	karrimor	GB	female	1.1700					0.9400	22/4XL
+-80	karrimor	AA	male	0.8600					0.7350	XS
+-60	karrimor	AA	male	0.9100					0.7850	S
+-40	karrimor	AA	male	0.9950					0.8350	M
+-20	karrimor	AA	male	1.0950					0.8900	L
+0	karrimor	AA	male	1.1950					0.9450	XL
+20	karrimor	AA	male	1.2950					0.9950	2XL
+40	karrimor	AA	male	1.3950					1.0450	3XL
+60	karrimor	AA	male	1.4950					1.0950	4XL
 -80	lacoste	AA	female	0.8000						32
 -60	lacoste	AA	female	0.8200						34
 -40	lacoste	AA	female	0.8400						36
@@ -2636,6 +2725,12 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 20	laundry	US	female	0.9779					0.7874	10
 40	laundry	US	female	1.0160					0.8255	12
 60	laundry	US	female	1.0541					0.8636	14
+-60	levi	AA	female	0.7300	0.3125				0.5175	XXS
+-40	levi	AA	female	0.7900	0.3250				0.5775	XS
+-20	levi	AA	female	0.8475	0.3375				0.6415	S
+0	levi	AA	female	0.9075	0.3525				0.7015	M
+20	levi	AA	female	0.9725	0.3675				0.7575	L
+40	levi	AA	female	1.0325	0.3800				0.8175	XL
 -60	linea	GB	female	0.8200					0.6500	8/S
 -40	linea	GB	female	0.8700					0.7000	10/S
 -20	linea	GB	female	0.9200					0.7500	12/M
@@ -2852,6 +2947,32 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 60	loft	AT	female	1.0150		0.8150			0.8250	44/L
 80	loft	AT	female	1.0550		0.8250			0.8650	46/XL
 100	loft	AT	female	1.1050		0.8300			0.9150	48/XXL
+-80	lonsdale	AA	female	0.7600					0.5600	2XS
+-60	lonsdale	AA	female	0.8100					0.6100	XS
+-40	lonsdale	AA	female	0.8600					0.6400	S
+-20	lonsdale	AA	female	0.9100					0.6900	M
+0	lonsdale	AA	female	0.9700					0.7400	L
+20	lonsdale	AA	female	1.0200					0.7900	XL
+40	lonsdale	AA	female	1.0700					0.8400	2XL
+60	lonsdale	AA	female	1.1200					0.8900	3XL
+80	lonsdale	AA	female	1.1700					0.9400	4XL
+-80	lonsdale	GB	female	0.7600					0.5600	6/2XS
+-60	lonsdale	GB	female	0.8100					0.6100	8/XS
+-40	lonsdale	GB	female	0.8600					0.6400	10/S
+-20	lonsdale	GB	female	0.9100					0.6900	12/M
+0	lonsdale	GB	female	0.9700					0.7400	14/L
+20	lonsdale	GB	female	1.0200					0.7900	16/XL
+40	lonsdale	GB	female	1.0700					0.8400	18/2XL
+60	lonsdale	GB	female	1.1200					0.8900	20/3XL
+80	lonsdale	GB	female	1.1700					0.9400	22/4XL
+-80	lonsdale	AA	male	0.8600					0.7350	XS
+-60	lonsdale	AA	male	0.9100					0.7850	S
+-40	lonsdale	AA	male	0.9950					0.8350	M
+-20	lonsdale	AA	male	1.0950					0.8900	L
+0	lonsdale	AA	male	1.1950					0.9450	XL
+20	lonsdale	AA	male	1.2950					0.9950	2XL
+40	lonsdale	AA	male	1.3950					1.0450	3XL
+60	lonsdale	AA	male	1.4950					1.0950	4XL
 -60	mantaray	GB	male	0.9150						XS
 -40	mantaray	GB	male	0.9650						S
 -20	mantaray	GB	male	1.0300						M
@@ -3058,6 +3179,24 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	mela	GB	female	0.9150					0.7350	12/M,L
 20	mela	GB	female	0.9650					0.7850	14/L
 40	mela	GB	female	1.0150					0.8350	16
+-60	millets	AA	female	0.8100				0.8900	0.6600	XS
+-40	millets	AA	female	0.8600				0.9400	0.7100	S
+-20	millets	AA	female	0.9200				0.9900	0.7600	M
+0	millets	AA	female	0.9700				1.0400	0.7900	L
+20	millets	AA	female	1.0200				1.0900	0.8400	XL
+40	millets	AA	female	1.0700				1.1400	0.8900	XXL
+-60	millets	GB	female	0.8100				0.8900	0.6600	8
+-40	millets	GB	female	0.8600				0.9400	0.7100	10
+-20	millets	GB	female	0.9200				0.9900	0.7600	12
+0	millets	GB	female	0.9700				1.0400	0.7900	14
+20	millets	GB	female	1.0200				1.0900	0.8400	16
+40	millets	GB	female	1.0700				1.1400	0.8900	18
+-60	millets	AA	male	0.8650					0.7150	XS
+-40	millets	AA	male	0.9400					0.7850	S
+-20	millets	AA	male	1.0150					0.8650	M
+0	millets	AA	male	1.0950					0.9400	L
+20	millets	AA	male	1.1650					1.0150	XL
+40	millets	AA	male	1.2450					1.0950	XXL
 -60	missselfridge	FR	female	0.7950					0.6150	34/S (Denim 25)
 -40	missselfridge	FR	female	0.8200					0.6400	36/S (Denim 26)
 -20	missselfridge	FR	female	0.8700					0.6900	38/M (Denim 28)
@@ -3580,6 +3719,37 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	nike	GB	male	1.1800				1.1600	1.0300	46-48/XL
 20	nike	GB	male	1.3000				1.2400	1.1500	50-52/XXL
 40	nike	GB	male	1.4200				1.3200	1.2700	54-56/XXXL
+-60	northface	XA	female	0.8000		0.8000		0.8350	0.6250	32-34/XS
+-40	northface	XA	female	0.8650		0.8100		0.9000	0.6850	36-38/S
+-20	northface	XA	female	0.9250		0.8300		0.9650	0.7500	40-42/M
+0	northface	XA	female	1.0050		0.8800		1.0550	0.8250	44-46/L
+20	northface	XA	female	1.0950		0.8900		1.1400	0.9150	48-50/XL
+40	northface	XA	female	1.1800		0.9100		1.2300	1.0050	52-54/XXL
+-60	northface	IT	female	0.8000		0.8000		0.8350	0.6250	36-38/XS
+-40	northface	IT	female	0.8650		0.8100		0.9000	0.6850	40-42/S
+-20	northface	IT	female	0.9250		0.8300		0.9650	0.7500	44-46/M
+0	northface	IT	female	1.0050		0.8800		1.0550	0.8250	48-50/L
+20	northface	IT	female	1.0950		0.8900		1.1400	0.9150	52-54/XL
+40	northface	IT	female	1.1800		0.9100		1.2300	1.0050	56-58/XXL
+-60	northface	US	female	0.8000		0.8000		0.8350	0.6250	XS
+-40	northface	US	female	0.8650		0.8100		0.9000	0.6850	S
+-20	northface	US	female	0.9250		0.8300		0.9650	0.7500	M
+0	northface	US	female	1.0050		0.8800		1.0550	0.8250	L
+20	northface	US	female	1.0950		0.8900		1.1400	0.9150	XL
+40	northface	US	female	1.1800		0.9100		1.2300	1.0050	XXL
+-60	northface	GB	female	0.8000		0.8000		0.8350	0.6250	XS
+-40	northface	GB	female	0.8650		0.8100		0.9000	0.6850	S
+-20	northface	GB	female	0.9250		0.8300		0.9650	0.7500	M
+0	northface	GB	female	1.0050		0.8800		1.0550	0.8250	L
+20	northface	GB	female	1.0950		0.8900		1.1400	0.9150	XL
+40	northface	GB	female	1.1800		0.9100		1.2300	1.0050	XXL
+-60	northface	AA	male	0.8500		0.8400		0.8350	0.6850	XS
+-40	northface	AA	male	0.9350		0.8500		0.9150	0.7650	S
+-20	northface	AA	male	1.0150		0.8600		0.9950	0.8350	M
+0	northface	AA	male	1.0950		0.8800		1.0650	0.9150	L
+20	northface	AA	male	1.1800		0.9000		1.1450	1.0000	XL
+40	northface	AA	male	1.2950		0.9200		1.2150	1.1050	XXL
+60	northface	AA	male	1.4200		0.9500		1.2950	1.2050	3XL
 -60	oasis	XA	female	0.8050					0.6250	32/XS
 -40	oasis	XA	female	0.8300					0.6500	34/XS
 -20	oasis	XA	female	0.8800					0.7000	36/S
@@ -4127,6 +4297,49 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 20	rebeccataylor	CA	female	0.9271					0.7366	8/M
 40	rebeccataylor	CA	female	0.9525					0.7620	10/L
 60	rebeccataylor	CA	female	0.9906					0.8001	12/L
+-60	reebok	AA	female	0.7874					0.6350	XS
+-40	reebok	AA	female	0.8636					0.6985	S
+-20	reebok	AA	female	0.9271					0.7620	M
+0	reebok	AA	female	0.9906					0.8382	L
+20	reebok	AA	female	1.0668					0.9144	XL
+40	reebok	AA	female	1.1430					1.0033	2XL
+-60	reebok	FR	female	0.7874					0.6350	32-34/XS
+-40	reebok	FR	female	0.8636					0.6985	36-38/S
+-20	reebok	FR	female	0.9271					0.7620	40-42/M
+0	reebok	FR	female	0.9906					0.8382	44-46/L
+20	reebok	FR	female	1.0668					0.9144	48-50/XL
+40	reebok	FR	female	1.1430					1.0033	52-54/2XL
+-60	reebok	DE	female	0.7874					0.6350	30-32/XS
+-40	reebok	DE	female	0.8636					0.6985	34-36/S
+-20	reebok	DE	female	0.9271					0.7620	38-40/M
+0	reebok	DE	female	0.9906					0.8382	42-44/L
+20	reebok	DE	female	1.0668					0.9144	46-48/XL
+40	reebok	DE	female	1.1430					1.0033	50-52/2XL
+-60	reebok	XA	female	0.7874					0.6350	30-32/XS
+-40	reebok	XA	female	0.8636					0.6985	34-36/S
+-20	reebok	XA	female	0.9271					0.7620	38-40/M
+0	reebok	XA	female	0.9906					0.8382	42-44/L
+20	reebok	XA	female	1.0668					0.9144	46-48/XL
+40	reebok	XA	female	1.1430					1.0033	50-52/2XL
+-60	reebok	US	female	0.7874					0.6350	0-2/XS
+-40	reebok	US	female	0.8636					0.6985	4-6/S
+-20	reebok	US	female	0.9271					0.7620	8-10/M
+0	reebok	US	female	0.9906					0.8382	12-14/L
+20	reebok	US	female	1.0668					0.9144	16-18/XL
+40	reebok	US	female	1.1430					1.0033	20-22/2XL
+-60	reebok	GB	female	0.7874					0.6350	4 - 6/XS
+-40	reebok	GB	female	0.8636					0.6985	8 - 10/S
+-20	reebok	GB	female	0.9271					0.7620	12 - 14/M
+0	reebok	GB	female	0.9906					0.8382	16 - 18/L
+20	reebok	GB	female	1.0668					0.9144	20 - 22/XL
+40	reebok	GB	female	1.1430					1.0033	24-26/2XL
+-60	reebok	AA	male	0.8128					0.8382	XS/2
+-40	reebok	AA	male	0.9017					0.9144	S/3,4
+-20	reebok	AA	male	0.9779					0.9779	M/5,6
+0	reebok	AA	male	1.0668					1.0668	L/7,8
+20	reebok	AA	male	1.1684					1.1684	XL/9,10
+40	reebok	AA	male	1.2700					1.2573	2XL/11,12
+60	reebok	AA	male	1.4097					1.3589	3XL/13,14
 -160	regatta	ES	female	0.7600					0.5800	34
 -140	regatta	ES	female	0.8100					0.6300	36
 -120	regatta	ES	female	0.8600					0.6800	38
@@ -4530,6 +4743,14 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 20	shoshanna	US	female	0.9144					0.7112	8
 40	shoshanna	US	female	0.9525					0.7493	10
 60	shoshanna	US	female	0.9906					0.7874	12
+-80	slazenger	AA	male	0.8600					0.7350	XS
+-60	slazenger	AA	male	0.9100					0.7850	S
+-40	slazenger	AA	male	0.9950					0.8350	M
+-20	slazenger	AA	male	1.0950					0.8900	L
+0	slazenger	AA	male	1.1950					0.9450	XL
+20	slazenger	AA	male	1.2950					0.9950	2XL
+40	slazenger	AA	male	1.3950					1.0450	3XL
+60	slazenger	AA	male	1.4950					1.0950	4XL
 -80	sodamix	XA	female	0.8000					0.6200	36/S
 -60	sodamix	XA	female	0.8400					0.6600	38/S
 -40	sodamix	XA	female	0.8800					0.7000	40/M
@@ -4554,6 +4775,14 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 20	sodamix	GB	female	1.0200					0.8400	16/L
 40	sodamix	GB	female	1.1000					0.9200	18/XL
 60	sodamix	GB	female	1.1200					1.0000	20/XL
+-80	sondico	AA	male	0.8600					0.7350	XS
+-60	sondico	AA	male	0.9100					0.7850	S
+-40	sondico	AA	male	0.9950					0.8350	M
+-20	sondico	AA	male	1.0950					0.8900	L
+0	sondico	AA	male	1.1950					0.9450	XL
+20	sondico	AA	male	1.2950					0.9950	2XL
+40	sondico	AA	male	1.3950					1.0450	3XL
+60	sondico	AA	male	1.4950					1.0950	4XL
 -40	superdry	AA	female	0.8636					0.6477	XS
 -20	superdry	AA	female	0.8636					0.6731	S
 0	superdry	AA	female	0.8890					0.6985	M
@@ -4578,6 +4807,17 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	superdry	GB	male	1.0668						L
 20	superdry	GB	male	1.1176						XL
 40	superdry	GB	male	1.1684						XXL
+-60	tapout	AA	female	0.7112			0.6350		0.6350	XS
+-40	tapout	AA	female	0.7874			0.6604		0.7366	S
+-20	tapout	AA	female	0.8382			0.6604		0.7874	M
+0	tapout	AA	female	0.8890			0.6858		0.8382	L
+20	tapout	AA	female	0.9398			0.6858		0.8890	XL
+40	tapout	AA	female	1.0160			0.7112		0.9652	XXL
+-40	tapout	AA	male	0.9144			0.6858			S
+-20	tapout	AA	male	0.9906			0.7366			M
+0	tapout	AA	male	1.0668			0.7366			L
+20	tapout	AA	male	1.1684			0.7620			XL
+40	tapout	AA	male	1.2700			0.7874			XXL
 -60	tatuum	RU	female	0.8000				0.8800	0.6200	34/S
 -40	tatuum	RU	female	0.8400				0.9200	0.6600	36/S,M
 -20	tatuum	RU	female	0.8800				0.9600	0.7000	38/M
@@ -4813,6 +5053,16 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 40	tmlewin	SG	male	1.4540	0.4570	0.9395			1.3780	18/XL
 60	tmlewin	SG	male	1.5560	0.4830	0.9395			1.4730	19/XL,XXL
 80	tmlewin	SG	male	1.5560	0.5080	0.9650			1.4730	20/XXL
+-40	tog24	GB	female	0.8400					0.6800	8-10
+-20	tog24	GB	female	0.8750					0.7400	10-12
+0	tog24	GB	female	0.9450					0.8000	12-14
+20	tog24	GB	female	1.0150					0.8600	14-16
+40	tog24	GB	female	1.0850					0.9200	15-18
+-40	tog24	AA	male	0.9700					0.8100	S
+-20	tog24	AA	male	0.9950					0.8350	M
+0	tog24	AA	male	1.0550					0.8850	L
+20	tog24	AA	male	1.1250					0.9400	XL
+40	tog24	AA	male	1.1950					0.9950	XXL
 -60	tommyhilfiger	AA	female	0.8350						XS
 -40	tommyhilfiger	AA	female	0.8750						S
 -20	tommyhilfiger	AA	female	0.9200						M
@@ -5004,6 +5254,15 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 40	tu	GB	male	1.1700	0.4440				1.0200	46
 60	tu	GB	male	1.2700	0.4600				1.0700	48
 80	tu	GB	male	1.3200	0.4700				1.1200	50
+-80	umbro	AA	male	0.8800					0.7300	XS
+-60	umbro	AA	male	0.9150					0.7850	S
+-40	umbro	AA	male	0.9950					0.8350	M
+-20	umbro	AA	male	1.0650					0.8900	L
+0	umbro	AA	male	1.1450					0.9450	XL
+20	umbro	AA	male	1.2150					0.9950	XXL
+40	umbro	AA	male	1.2950					1.0450	3XL
+60	umbro	AA	male	1.3750					1.0950	4XL
+80	umbro	AA	male	1.4450					1.1450	5XL
 -40	urbanoutfitters	AA	male	0.8760	0.3300	0.8000		0.8640	0.7110	XS
 -20	urbanoutfitters	AA	male	0.9270	0.3620	0.8190		0.9140	0.7620	S
 0	urbanoutfitters	AA	male	0.9780	0.3940	0.8380		0.9650	0.8130	M
@@ -5079,6 +5338,26 @@ sizeid	brand	region	gender	chest	neck	sleeve	torsolength	hips	waist	size
 0	uttamboutique	GB	female	0.9150					0.7350	12/M,L
 20	uttamboutique	GB	female	0.9650					0.7850	14/L
 40	uttamboutique	GB	female	1.0150					0.8350	16
+-40	vans	AA	female	0.7700						XS
+-20	vans	AA	female	0.8300						S
+0	vans	AA	female	0.8800						M
+20	vans	AA	female	0.9300						L
+40	vans	AA	female	0.9800						XL
+-40	vans	XA	female	0.7700						34/XS
+-20	vans	XA	female	0.8300						36/S
+0	vans	XA	female	0.8800						38/M
+20	vans	XA	female	0.9300						40/L
+40	vans	XA	female	0.9800						42/XL
+-40	vans	GB	female	0.7700						8/XS
+-20	vans	GB	female	0.8300						10/S
+0	vans	GB	female	0.8800						12/M
+20	vans	GB	female	0.9300						14/L
+40	vans	GB	female	0.9800						16/XL
+-40	vans	AA	male	0.8775		0.8275				S
+-20	vans	AA	male	0.9775		0.8775				M
+0	vans	AA	male	1.0775		0.9275				L
+20	vans	AA	male	1.1875		0.9600				XL
+40	vans	AA	male	1.2638		0.9725				XXL
 -60	veromoda	XA	female	0.8000				0.8800		32/XXS
 -40	veromoda	XA	female	0.8300				0.9100		34/XXS,XXS
 -20	veromoda	XA	female	0.8600				0.9400		36/XS

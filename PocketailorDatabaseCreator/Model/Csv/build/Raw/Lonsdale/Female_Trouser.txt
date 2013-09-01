@@ -1,0 +1,6 @@
+UK	6	8	10	12	14	16	18	20	22
+SizeId	-80	-60	-40	-20	0	20	40	60	80
+SizeLetter	2XS	XS	S	M	L	XL	2XL	3XL	4XL
+Global									
+Waist	56	61	64	69	74	79	84	89	94
+Hips	81	86	89	94	99	104	109	114	119

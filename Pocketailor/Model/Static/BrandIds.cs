@@ -195,6 +195,25 @@ namespace Pocketailor.Model
         Orsay = 186,
         Americanos = 187,
 
+        Reebok = 188,
+        Dunlop = 189,
+        Campri = 190,
+        Kangol = 191,
+        Karrimor = 192,
+        Levi = 193,
+        Lonsdale = 194,
+        Slazenger = 195,
+        Sondico = 196,
+        Tog24 = 197,
+        NorthFace = 198,
+        Millets = 199,
+        Vans = 200,
+        Kappa = 201,
+        Umbro = 202,
+        Tapout = 203,
+
+
+
     }
 
     public static partial class Lookup
@@ -387,7 +406,22 @@ namespace Pocketailor.Model
             { BrandId.Reporter, "Reporter" },
             { BrandId.Orsay, "Orsay" },
             { BrandId.Americanos, "Americanos" },
-
+            { BrandId.Reebok, "Reebok" },
+            { BrandId.Dunlop, "Dunlop" },
+            { BrandId.Campri, "Campri" },
+            { BrandId.Kangol, "Kangol" },
+            { BrandId.Karrimor, "Karrimor" },
+            { BrandId.Levi, "Levi" },
+            { BrandId.Lonsdale, "Lonsdale" },
+            { BrandId.Slazenger, "Slazenger" },
+            { BrandId.Sondico, "Sondico" },
+            { BrandId.Tog24, "Tog24" },
+            { BrandId.NorthFace, "NorthFace" },
+            { BrandId.Millets, "Millets" },
+            { BrandId.Vans, "Vans" },
+            { BrandId.Kappa, "Kappa" },
+            { BrandId.Umbro, "Umbro" },
+            { BrandId.Tapout, "Tapout" },
 
         };
     }

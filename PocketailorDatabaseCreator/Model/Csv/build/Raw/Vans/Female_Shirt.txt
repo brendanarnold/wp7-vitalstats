@@ -1,0 +1,6 @@
+SIZELetter	XS	S	M	L	XL
+SizeId	-40	-20	0	20	40
+Global					
+UK	8	10	12	14	16
+EU	34	36	38	40	42
+BUST	77	83	88	93	98

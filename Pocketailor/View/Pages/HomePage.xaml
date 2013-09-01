@@ -692,7 +692,7 @@
 											<Run Text="Email the author at"/>
 										</TextBlock>
 										<Controls:AboutButton x:Name="emailBtn" 
-											TitleText="pocketailor@lassiv.com" 
+											TitleText="brendan@lassiv.com" 
 											IconImage="/Images/AppBar/appbar.globe.wire.png" 
 											Margin="0,0,0,24" Tap="emailBtn_Tap"/>
 									</StackPanel>

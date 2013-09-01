@@ -1,0 +1,5 @@
+#Unit:Inch
+Global	S	M	L	XL	XXL
+SizeId	-40	-20	0	20	40
+CHEST	36	39	42	46	50
+TorsoLENGTH	27	29	29	30	31

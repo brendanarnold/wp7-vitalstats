@@ -1,0 +1,44 @@
+﻿Enter your measurements to find out clothing sizes for brands worldwide. Want to find out sizes for a T.M. Lewin shirt for work? Buying a dress from DKNY? Shopping for a gift abroad? Going skiing and want to know your boot size?
+
+Manufacturers size clothes differently, so called 'vanity sizing'. Pocketailor converts your measurements to the actual sizes published on the manufacturers websites resulting in fewer returns and less time in the fitting rooms.
+
+Pocketailor also features a simple way to adjust the sizes in case the manufacturer recommended size does not fit. This can be sent back to Pocketailor cloud to improve the conversions next time.
+
+  • FREE, full featured, ad supported trial
+  • Conveniently store measurements for you and your loved ones in a safe, discreet way.
+  • Finds your clothing size from the manufacturer supplied sizes.
+  • Growing database of 150+ brands starting next release with real people submitted improvements.
+  • Find sizes for shirts, shoes, dresses, pants, ski boots and wetsuits and for women bras, hosiery and dresses.
+  • Simple to use.
+  • Beat vanity sizing!
+
+New in this version (2.1.0)
+
+Sporty themed update ... 
+
+  • Now over 200 brands including, Reebok, Levi, Kangol, NorthFace, Tog24, Vans, Tapout, Umbro, Slazenger, Dunlop and more! 
+  • Better looking images on the tiles
+  • New setting to remove adverts
+
+Version (2.0.0)
+
+Major changes this time around ...
+
+  • Complete redesign of the app, now even more Metro
+  • New ad supported trial version with option to upgrade
+  • Awesome animations and even easier to use UI
+  • Smart new LiveTiles for a brighter Start Screen
+  • Included built in feedback so you can suggest new brands easily
+  • Fixed bugs for Windows Phone 8 users
+
+New in version (1.0.2)
+
+  • Polskie marki dla Magdalena!
+  • Added a range of Polish brands including Americanos, BigStar, Cropp, Drywash, Reserved, Top Secret, Troll and others.
+  • For Will and James River Island and Solomon ski boot sizes have been added.
+
+Version (1.0.1):
+
+  • Added the following brands: Ann Summers, River Island, Puma, TopMan, Jack Wills, Superdry, Benetton, Doc Martens, Fred Perry, Gossard, Vero Moda, New Balance, Nike
+  • Fixed some errors in Billabong and All Saints sizes
+
