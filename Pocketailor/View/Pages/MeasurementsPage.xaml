@@ -556,12 +556,20 @@
 								Title="Bras" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10"  
 								HasMeasurements="{Binding BraConversion.HasRequiredMeasurements}" 
 								IsNewlyUnlocked="{Binding BraConversion.IsNewlyUnlocked}"
-								Tap="braConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+								Tap="braConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/bra-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
 							<Controls:ConversionBtn x:Name="hosieryConversionBtn" 
 								Title="Hosiery" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10"  
 								HasMeasurements="{Binding HosieryConversion.HasRequiredMeasurements}" 
 								IsNewlyUnlocked="{Binding HosieryConversion.IsNewlyUnlocked}"
-								Tap="hosieryConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+								Tap="hosieryConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/hosiery-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
 						</Grid>
 						<Grid Visibility="Visible">
 							<Grid.ColumnDefinitions>
@@ -591,12 +599,22 @@
 								Title="Ski Boots" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,10,10" 
 								HasMeasurements="{Binding SkiBootConversion.HasRequiredMeasurements}" 
 								IsNewlyUnlocked="{Binding SkiBootConversion.IsNewlyUnlocked}"
-								Tap="skiBootConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+								Tap="skiBootConversionBtn_Tap">
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/skiboots-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
+							
+							
 							<Controls:ConversionBtn x:Name="wetsuitConversionBtn" 
 								Title="Wetsuits" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,10" 
 								HasMeasurements="{Binding WetsuitConversion.HasRequiredMeasurements}" 
 								IsNewlyUnlocked="{Binding WetsuitConversion.IsNewlyUnlocked}"
-								Tap="wetsuitConversionBtn_Tap" Background="{StaticResource TileBGColor}"/>
+								Tap="wetsuitConversionBtn_Tap" >
+								<Controls:ConversionBtn.Background>
+									<ImageBrush Stretch="Fill" ImageSource="/Images/wetsuit-btn.jpg"/>
+								</Controls:ConversionBtn.Background>
+							</Controls:ConversionBtn>
 						</Grid>
 						
 
